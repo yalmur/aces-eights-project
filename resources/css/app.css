@@ -1,11 +1,113 @@
-@import 'tailwindcss';
+/* Google Fonts — load all three typefaces */
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;0,8..60,900;1,8..60,400&display=swap');
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+@layer base {
+  body {
+    @apply bg-surface font-sans text-on-surface antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  /* Primary CTA — glossy gold gradient matching PRD spec */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           font-mono text-xs font-semibold uppercase tracking-widest
+           text-[#1b1c1c] rounded border border-gold-border
+           transition-all duration-150 select-none cursor-pointer;
+    background: linear-gradient(180deg, #F9E392 0%, #D4AF37 50%, #996515 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  }
+  .btn-primary:hover {
+    filter: brightness(0.9);
+  }
+  .btn-primary:active {
+    filter: brightness(0.8);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Secondary CTA — oxblood outline */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           font-mono text-xs font-semibold uppercase tracking-widest
+           text-primary border-2 border-primary rounded bg-transparent
+           transition-colors duration-150 select-none cursor-pointer;
+  }
+  .btn-secondary:hover {
+    @apply bg-primary text-white;
+  }
+
+  /* Ghost button */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2
+           font-mono text-xs font-semibold uppercase tracking-widest
+           text-on-surface-variant underline bg-transparent
+           transition-colors duration-150 cursor-pointer;
+  }
+  .btn-ghost:hover {
+    @apply text-primary;
+  }
+
+  /* Card */
+  .card {
+    @apply bg-surface rounded border border-outline-variant;
+  }
+
+  /* Section double-line divider */
+  .section-divider {
+    position: relative;
+    height: 4px;
+    border-top: 1px solid #8c716e;
+    border-bottom: 1px solid #8c716e;
+  }
+
+  /* Label caps — for UI tags, allergens, prices */
+  .label-caps {
+    @apply font-mono text-[11px] font-semibold uppercase tracking-widest;
+  }
+
+  /* Input — bottom-border ledger style */
+  .input-field {
+    @apply w-full bg-transparent border-0 border-b-2 border-outline
+           pb-2 pt-1 font-sans text-base text-on-surface
+           placeholder:text-on-surface-variant
+           focus:border-primary focus:outline-none
+           transition-colors duration-150;
+  }
+
+  /* Chip / filter badge */
+  .chip {
+    @apply inline-flex items-center px-3 py-1 rounded-chip border border-outline
+           font-mono text-[11px] font-semibold uppercase tracking-wider
+           text-on-surface-variant bg-surface cursor-pointer
+           transition-colors duration-150 select-none;
+  }
+  .chip.active,
+  .chip:hover {
+    @apply bg-primary text-white border-primary;
+  }
+
+  /* Admin sidebar item */
+  .sidebar-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded
+           font-mono text-xs font-semibold uppercase tracking-widest
+           text-[#e0bfbc] transition-colors duration-150 cursor-pointer;
+  }
+  .sidebar-item:hover {
+    @apply bg-primary-hover text-white;
+  }
+  .sidebar-item.active {
+    @apply bg-primary text-white;
+  }
+
+  /* Admin stat card */
+  .stat-card {
+    @apply card p-6 flex flex-col gap-1;
+  }
 }
