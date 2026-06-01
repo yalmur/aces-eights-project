@@ -4,7 +4,7 @@
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
     <div class="mb-12 border-b-4 border-double border-on-surface pb-4">
         <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase tracking-tight">Checkout</h2>
-        <p class="font-body-md text-on-surface-variant mt-2 italic">Secure transaction at our 1922 establishment.</p>
+        <p class="font-body-md text-on-surface-variant mt-2 italic">Secure transaction — 156 &amp; 158 Fortess Road, Tufnell Park, London.</p>
     </div>
 
     <form action="{{ route('checkout') }}" method="POST">
