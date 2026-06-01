@@ -41,10 +41,17 @@
         <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-mono font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
       </a>
       @auth
-        <a href="{{ route('account') }}" class="btn-secondary py-1.5 px-3 text-xs">Account</a>
+        <a href="{{ route('account') }}" class="p-2 text-on-surface-variant hover:text-primary transition-colors" aria-label="My Account">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="square" stroke-linejoin="miter" d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/>
+          </svg>
+        </a>
       @else
-        <a href="{{ route('login') }}"    class="hidden sm:inline font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Login</a>
-        <a href="{{ route('register') }}" class="btn-primary py-1.5 px-3 text-xs">Sign Up</a>
+        <a href="{{ route('login') }}" class="p-2 text-on-surface-variant hover:text-primary transition-colors" aria-label="Login / Sign Up">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="square" stroke-linejoin="miter" d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/>
+          </svg>
+        </a>
       @endauth
     </div>
   </div>
