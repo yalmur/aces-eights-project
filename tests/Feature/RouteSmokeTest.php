@@ -26,6 +26,7 @@ class RouteSmokeTest extends TestCase
             'contact'     => ['/contact'],
             'login'       => ['/login'],
             'register'    => ['/register'],
+            'menu.show'   => ['/menu/the-blueprint'],
         ];
     }
 
