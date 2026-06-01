@@ -1,44 +1,51 @@
 <header class="sticky top-0 z-50 bg-surface border-b-2 border-outline-variant shadow-sm">
-  <div class="max-w-container mx-auto px-4 lg:px-16 flex items-center justify-between h-16">
+  <div class="max-w-container mx-auto px-4 lg:px-16 h-16 flex items-center">
 
-    {{-- Logo --}}
-    <a href="{{ route('home') }}">
-      <img src="{{ asset('images/logo.jpg') }}" alt="Aces & Eights Pizza" class="h-10 w-auto rounded">
-    </a>
+    {{-- LEFT: hamburger (mobile) | logo (desktop) --}}
+    <div class="flex-1 flex items-center justify-start">
+      {{-- Hamburger — mobile only --}}
+      <button x-data @click="$dispatch('toggle-mobile-menu')"
+              class="lg:hidden p-2 -ml-2 text-on-surface-variant hover:text-primary" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="square" stroke-linejoin="miter" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      {{-- Logo — desktop only --}}
+      <a href="{{ route('home') }}" class="hidden lg:block">
+        <img src="{{ asset('images/logo.jpg') }}" alt="Aces & Eights Pizza" class="h-10 w-auto rounded">
+      </a>
+    </div>
 
-    {{-- Desktop Nav --}}
-    <nav class="hidden lg:flex items-center gap-1">
-      <a href="{{ route('home') }}"    class="px-3 py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Home</a>
-      <a href="{{ route('menu') }}"    class="px-3 py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Menu</a>
-      <a href="{{ route('booking') }}" class="px-3 py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Book a Table</a>
-      <a href="{{ route('about') }}"   class="px-3 py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">About</a>
-      <a href="{{ route('contact') }}" class="px-3 py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Contact</a>
-    </nav>
+    {{-- CENTRE: logo (mobile) | nav (desktop) --}}
+    <div class="flex items-center justify-center">
+      {{-- Logo centred — mobile only --}}
+      <a href="{{ route('home') }}" class="lg:hidden">
+        <img src="{{ asset('images/logo.jpg') }}" alt="Aces & Eights Pizza" class="h-10 w-auto rounded">
+      </a>
+      {{-- Nav — desktop only --}}
+      <nav class="hidden lg:flex items-center gap-1">
+        <a href="{{ route('home') }}"    class="px-3 py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Home</a>
+        <a href="{{ route('menu') }}"    class="px-3 py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Menu</a>
+        <a href="{{ route('booking') }}" class="px-3 py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Book a Table</a>
+        <a href="{{ route('about') }}"   class="px-3 py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">About</a>
+        <a href="{{ route('contact') }}" class="px-3 py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Contact</a>
+      </nav>
+    </div>
 
-    {{-- Right actions --}}
-    <div class="flex items-center gap-3">
-      {{-- Cart --}}
+    {{-- RIGHT: cart + auth (both breakpoints) --}}
+    <div class="flex-1 flex items-center justify-end gap-2">
       <a href="{{ route('cart') }}" class="relative p-2 text-on-surface-variant hover:text-primary transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
           <path stroke-linecap="square" stroke-linejoin="miter" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
         <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-mono font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
       </a>
-
-      {{-- Auth --}}
       @auth
-        <a href="{{ route('account') }}" class="btn-secondary py-2 px-4">Account</a>
+        <a href="{{ route('account') }}" class="btn-secondary py-1.5 px-3 text-xs">Account</a>
       @else
-        <a href="{{ route('login') }}"    class="font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Login</a>
-        <a href="{{ route('register') }}" class="btn-primary py-2 px-4">Sign Up</a>
+        <a href="{{ route('login') }}"    class="hidden sm:inline font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Login</a>
+        <a href="{{ route('register') }}" class="btn-primary py-1.5 px-3 text-xs">Sign Up</a>
       @endauth
-
-      {{-- Mobile menu button --}}
-      <button x-data @click="$dispatch('toggle-mobile-menu')" class="lg:hidden p-2 text-on-surface-variant hover:text-primary" aria-label="Toggle menu">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-          <path stroke-linecap="square" stroke-linejoin="miter" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
     </div>
   </div>
 
