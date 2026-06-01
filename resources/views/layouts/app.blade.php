@@ -7,7 +7,9 @@
   <title>{{ $title ?? 'Aces & Eights Pizza' }}</title>
   <meta name="description" content="{{ $description ?? 'Authentic Italian pizza in Tufnell Park, London. Order online for delivery, collection, or eat-in.' }}">
 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   @vite(['resources/css/app.css', 'resources/js/app.js'])
+  @stack('head')
   @livewireStyles
 </head>
 <body class="min-h-screen flex flex-col bg-surface">
