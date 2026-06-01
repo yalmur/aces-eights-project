@@ -10,4 +10,9 @@ class MenuController extends Controller
     {
         return view('menu.index', ['title' => 'Our Menu']);
     }
+
+    public function show(string $slug): View
+    {
+        return view('menu.show', ['title' => ucwords(str_replace('-', ' ', $slug)), 'slug' => $slug]);
+    }
 }
