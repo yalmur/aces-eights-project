@@ -5,13 +5,13 @@
 {{-- Hero Section --}}
 <section class="px-6 md:px-margin-desktop mb-12 max-w-container-max mx-auto pt-8">
     <div class="relative h-[400px] w-full overflow-hidden rounded-lg group border border-surface-variant">
-        <div class="absolute inset-0 bg-gradient-to-t from-surface/80 via-transparent to-transparent z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent z-10"></div>
         <!-- The Meat Lover Pizza hero image -->
-        <img alt="The Meat Lover Pizza" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Menu+Item"/>
+        <img alt="The Meat Lover Pizza" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://placehold.co/1200x400/2a2a2a/666666?text=Wood+Fired+Pizza"/>
         <div class="absolute bottom-12 left-12 z-20">
-            <span class="font-label-bold text-label-bold text-primary-container mb-4 block uppercase tracking-widest">House Special</span>
-            <h1 class="font-display text-display text-on-surface mb-4">THE MEAT LOVER</h1>
-            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Double-fermented sourdough, San Marzano tomato, spicy salami, smoked pancetta, and fennel sausage.</p>
+            <span class="font-label-bold text-label-bold text-secondary-fixed-dim mb-4 block uppercase tracking-widest">House Special</span>
+            <h1 class="font-display text-display text-white mb-4" style="text-shadow:0 2px 8px rgba(0,0,0,0.6)">THE MEAT LOVER</h1>
+            <p class="font-body-lg text-body-lg text-white/75 max-w-xl">Double-fermented sourdough, San Marzano tomato, spicy salami, smoked pancetta, and fennel sausage.</p>
         </div>
     </div>
 </section>
@@ -23,42 +23,14 @@
     <section class="sticky top-16 z-40 bg-surface/95 backdrop-blur-md px-6 md:px-margin-desktop py-6 border-b border-surface-variant">
         <div class="max-w-container-max mx-auto flex flex-col md:flex-row gap-6 items-center">
             {{-- Category chips --}}
-            <div class="flex gap-4 overflow-x-auto no-scrollbar w-full md:w-auto flex-1">
-                <button
-                    @click="active = 'all'"
-                    :class="active === 'all' ? 'px-6 py-2 bg-primary-container text-on-primary font-label-bold text-label-bold whitespace-nowrap' : 'px-6 py-2 bg-surface-container text-on-surface font-label-bold text-label-bold whitespace-nowrap hover:bg-surface-container-high transition-colors'">
-                    All
-                </button>
-                <button
-                    @click="active = 'pizzas'"
-                    :class="active === 'pizzas' ? 'px-6 py-2 bg-primary-container text-on-primary font-label-bold text-label-bold whitespace-nowrap' : 'px-6 py-2 bg-surface-container text-on-surface font-label-bold text-label-bold whitespace-nowrap hover:bg-surface-container-high transition-colors'">
-                    Pizza
-                </button>
-                <button
-                    @click="active = 'starters'"
-                    :class="active === 'starters' ? 'px-6 py-2 bg-primary-container text-on-primary font-label-bold text-label-bold whitespace-nowrap' : 'px-6 py-2 bg-surface-container text-on-surface font-label-bold text-label-bold whitespace-nowrap hover:bg-surface-container-high transition-colors'">
-                    Starters
-                </button>
-                <button
-                    @click="active = 'salads'"
-                    :class="active === 'salads' ? 'px-6 py-2 bg-primary-container text-on-primary font-label-bold text-label-bold whitespace-nowrap' : 'px-6 py-2 bg-surface-container text-on-surface font-label-bold text-label-bold whitespace-nowrap hover:bg-surface-container-high transition-colors'">
-                    Salads
-                </button>
-                <button
-                    @click="active = 'pasta'"
-                    :class="active === 'pasta' ? 'px-6 py-2 bg-primary-container text-on-primary font-label-bold text-label-bold whitespace-nowrap' : 'px-6 py-2 bg-surface-container text-on-surface font-label-bold text-label-bold whitespace-nowrap hover:bg-surface-container-high transition-colors'">
-                    Pasta
-                </button>
-                <button
-                    @click="active = 'desserts'"
-                    :class="active === 'desserts' ? 'px-6 py-2 bg-primary-container text-on-primary font-label-bold text-label-bold whitespace-nowrap' : 'px-6 py-2 bg-surface-container text-on-surface font-label-bold text-label-bold whitespace-nowrap hover:bg-surface-container-high transition-colors'">
-                    Desserts
-                </button>
-                <button
-                    @click="active = 'drinks'"
-                    :class="active === 'drinks' ? 'px-6 py-2 bg-primary-container text-on-primary font-label-bold text-label-bold whitespace-nowrap' : 'px-6 py-2 bg-surface-container text-on-surface font-label-bold text-label-bold whitespace-nowrap hover:bg-surface-container-high transition-colors'">
-                    Drinks
-                </button>
+            <div class="flex gap-2 overflow-x-auto no-scrollbar w-full md:w-auto flex-1 pb-1">
+                <button @click="active = 'all'"     :class="{ 'active': active === 'all' }"     class="chip whitespace-nowrap">All</button>
+                <button @click="active = 'pizzas'"  :class="{ 'active': active === 'pizzas' }"  class="chip whitespace-nowrap">Pizza</button>
+                <button @click="active = 'starters'" :class="{ 'active': active === 'starters' }" class="chip whitespace-nowrap">Starters</button>
+                <button @click="active = 'salads'"  :class="{ 'active': active === 'salads' }"  class="chip whitespace-nowrap">Salads</button>
+                <button @click="active = 'pasta'"   :class="{ 'active': active === 'pasta' }"   class="chip whitespace-nowrap">Pasta</button>
+                <button @click="active = 'desserts'" :class="{ 'active': active === 'desserts' }" class="chip whitespace-nowrap">Desserts</button>
+                <button @click="active = 'drinks'"  :class="{ 'active': active === 'drinks' }"  class="chip whitespace-nowrap">Drinks</button>
             </div>
             {{-- Smart Search --}}
             <div class="flex items-center gap-4 w-full md:w-auto">
@@ -99,7 +71,7 @@
 
     {{-- Pizza items --}}
     <section x-show="active === 'all' || active === 'pizzas'" class="px-6 md:px-margin-desktop py-12 max-w-container-max mx-auto">
-        <h2 class="font-headline-md text-headline-md text-on-surface mb-8 uppercase tracking-wider" x-show="active === 'all'">Pizza</h2>
+        <h2 class="menu-section-heading" x-show="active === 'all'">Pizza</h2>
         <div :class="view === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : view === 'list' ? 'flex flex-col gap-3' : 'grid grid-cols-2 lg:grid-cols-4 gap-4'">
 
             {{-- Card: Classic Margherita --}}
