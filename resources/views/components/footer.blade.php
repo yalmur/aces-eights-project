@@ -49,7 +49,7 @@
     <div class="max-w-container mx-auto px-4 lg:px-16 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
       <p class="label-caps text-[#e0bfbc] text-[10px]">&copy; {{ date('Y') }} Aces &amp; Eights Pizza. All rights reserved.</p>
       <nav class="flex gap-4">
-        <a href="{{ route('menu') }}"    class="label-caps text-[10px] text-[#e0bfbc] hover:text-white transition-colors">Menu</a>
+        <a href="{{ route('menu') }}"    class="label-caps text-[10px] text-[#e0bfbc] hover:text-white transition-colors">Order</a>
         <a href="{{ route('booking') }}" class="label-caps text-[10px] text-[#e0bfbc] hover:text-white transition-colors">Book a Table</a>
         <a href="{{ route('contact') }}" class="label-caps text-[10px] text-[#e0bfbc] hover:text-white transition-colors">Contact</a>
       </nav>

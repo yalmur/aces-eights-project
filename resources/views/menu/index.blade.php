@@ -17,7 +17,7 @@
 </section>
 
 {{-- Alpine.js category filter + menu grid --}}
-<div x-data="{ active: 'all' }">
+<div x-data="{ active: 'all', view: 'grid' }">
 
     {{-- Search & Filter Bar --}}
     <section class="sticky top-16 z-40 bg-surface/95 backdrop-blur-md px-6 md:px-margin-desktop py-6 border-b border-surface-variant">
@@ -69,6 +69,30 @@
                 <button class="p-3 bg-surface-container border border-surface-variant hover:bg-surface-container-high transition-colors">
                     <span class="material-symbols-outlined text-on-surface">tune</span>
                 </button>
+                {{-- View toggle --}}
+                <div class="flex border border-surface-variant overflow-hidden flex-shrink-0">
+                    <button @click="view = 'grid'"
+                            :class="view === 'grid' ? 'bg-primary-container text-on-primary' : 'bg-surface-container text-on-surface-variant hover:bg-surface-container-high'"
+                            class="p-3 transition-colors" title="Grid view">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="square" d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/>
+                        </svg>
+                    </button>
+                    <button @click="view = 'list'"
+                            :class="view === 'list' ? 'bg-primary-container text-on-primary' : 'bg-surface-container text-on-surface-variant hover:bg-surface-container-high'"
+                            class="p-3 border-l border-surface-variant transition-colors" title="List view">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="square" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                    <button @click="view = 'compact'"
+                            :class="view === 'compact' ? 'bg-primary-container text-on-primary' : 'bg-surface-container text-on-surface-variant hover:bg-surface-container-high'"
+                            class="p-3 border-l border-surface-variant transition-colors" title="Compact view">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="square" d="M3 3h5v5H3zM9 3h5v5H9zM15 3h5v5h-5zM3 9h5v5H3zM9 9h5v5H9zM15 9h5v5h-5zM3 15h5v5H3zM9 15h5v5H9zM15 15h5v5h-5z"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -76,11 +100,11 @@
     {{-- Pizza items --}}
     <section x-show="active === 'all' || active === 'pizzas'" class="px-6 md:px-margin-desktop py-12 max-w-container-max mx-auto">
         <h2 class="font-headline-md text-headline-md text-on-surface mb-8 uppercase tracking-wider" x-show="active === 'all'">Pizza</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div :class="view === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : view === 'list' ? 'flex flex-col gap-3' : 'grid grid-cols-2 lg:grid-cols-4 gap-4'">
 
             {{-- Card: Classic Margherita --}}
-            <div class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 relative overflow-hidden flex flex-col shadow-sm">
-                <div class="h-64 overflow-hidden">
+            <div :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'" class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 overflow-hidden shadow-sm">
+                <div :class="view === 'list' ? 'w-32 h-auto flex-shrink-0' : view === 'compact' ? 'h-40 overflow-hidden' : 'h-64 overflow-hidden'" class="overflow-hidden">
                     <!-- Classic Margherita -->
                     <img alt="Classic Margherita" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Menu+Item"/>
                 </div>
@@ -103,8 +127,8 @@
             </div>
 
             {{-- Card: Spicy Diavola --}}
-            <div class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 relative overflow-hidden flex flex-col shadow-sm">
-                <div class="h-64 overflow-hidden">
+            <div :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'" class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 overflow-hidden shadow-sm">
+                <div :class="view === 'list' ? 'w-32 h-auto flex-shrink-0' : view === 'compact' ? 'h-40 overflow-hidden' : 'h-64 overflow-hidden'" class="overflow-hidden">
                     <!-- Spicy Diavola -->
                     <img alt="Spicy Diavola" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Menu+Item"/>
                 </div>
@@ -127,8 +151,8 @@
             </div>
 
             {{-- Card: Tartufo Bianco --}}
-            <div class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 relative overflow-hidden flex flex-col shadow-sm">
-                <div class="h-64 overflow-hidden">
+            <div :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'" class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 overflow-hidden shadow-sm">
+                <div :class="view === 'list' ? 'w-32 h-auto flex-shrink-0' : view === 'compact' ? 'h-40 overflow-hidden' : 'h-64 overflow-hidden'" class="overflow-hidden">
                     <!-- Tartufo Bianco -->
                     <img alt="Tartufo Bianco" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Menu+Item"/>
                 </div>
@@ -151,8 +175,8 @@
             </div>
 
             {{-- Card: Vegan Garden --}}
-            <div class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 relative overflow-hidden flex flex-col shadow-sm">
-                <div class="h-64 overflow-hidden">
+            <div :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'" class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 overflow-hidden shadow-sm">
+                <div :class="view === 'list' ? 'w-32 h-auto flex-shrink-0' : view === 'compact' ? 'h-40 overflow-hidden' : 'h-64 overflow-hidden'" class="overflow-hidden">
                     <!-- Vegan Garden -->
                     <img alt="Vegan Garden" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Menu+Item"/>
                 </div>
@@ -175,8 +199,8 @@
             </div>
 
             {{-- Card: The Meat Lover --}}
-            <div class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 relative overflow-hidden flex flex-col shadow-sm">
-                <div class="h-64 overflow-hidden">
+            <div :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'" class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 overflow-hidden shadow-sm">
+                <div :class="view === 'list' ? 'w-32 h-auto flex-shrink-0' : view === 'compact' ? 'h-40 overflow-hidden' : 'h-64 overflow-hidden'" class="overflow-hidden">
                     <!-- The Meat Lover -->
                     <img alt="The Meat Lover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Menu+Item"/>
                 </div>
@@ -204,11 +228,11 @@
     {{-- Starters items --}}
     <section x-show="active === 'all' || active === 'starters'" class="px-6 md:px-margin-desktop py-12 max-w-container-max mx-auto border-t border-surface-variant">
         <h2 class="font-headline-md text-headline-md text-on-surface mb-8 uppercase tracking-wider">Starters</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div :class="view === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : view === 'list' ? 'flex flex-col gap-3' : 'grid grid-cols-2 lg:grid-cols-4 gap-4'">
 
             {{-- Card: Garlic Bread --}}
-            <div class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 relative overflow-hidden flex flex-col shadow-sm">
-                <div class="h-64 overflow-hidden">
+            <div :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'" class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 overflow-hidden shadow-sm">
+                <div :class="view === 'list' ? 'w-32 h-auto flex-shrink-0' : view === 'compact' ? 'h-40 overflow-hidden' : 'h-64 overflow-hidden'" class="overflow-hidden">
                     <!-- Garlic Bread -->
                     <img alt="Garlic Bread" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Menu+Item"/>
                 </div>
@@ -231,8 +255,8 @@
             </div>
 
             {{-- Card: Nocellara Olives --}}
-            <div class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 relative overflow-hidden flex flex-col shadow-sm">
-                <div class="h-64 overflow-hidden">
+            <div :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'" class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 overflow-hidden shadow-sm">
+                <div :class="view === 'list' ? 'w-32 h-auto flex-shrink-0' : view === 'compact' ? 'h-40 overflow-hidden' : 'h-64 overflow-hidden'" class="overflow-hidden">
                     <!-- Nocellara Olives -->
                     <img alt="Nocellara Olives" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Menu+Item"/>
                 </div>
@@ -254,8 +278,8 @@
             </div>
 
             {{-- Card: Burrata --}}
-            <div class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 relative overflow-hidden flex flex-col shadow-sm">
-                <div class="h-64 overflow-hidden">
+            <div :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'" class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 overflow-hidden shadow-sm">
+                <div :class="view === 'list' ? 'w-32 h-auto flex-shrink-0' : view === 'compact' ? 'h-40 overflow-hidden' : 'h-64 overflow-hidden'" class="overflow-hidden">
                     <!-- Burrata -->
                     <img alt="Burrata" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Menu+Item"/>
                 </div>
@@ -282,11 +306,11 @@
     {{-- Salads items --}}
     <section x-show="active === 'all' || active === 'salads'" class="px-6 md:px-margin-desktop py-12 max-w-container-max mx-auto border-t border-surface-variant">
         <h2 class="font-headline-md text-headline-md text-on-surface mb-8 uppercase tracking-wider">Salads</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div :class="view === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : view === 'list' ? 'flex flex-col gap-3' : 'grid grid-cols-2 lg:grid-cols-4 gap-4'">
 
             {{-- Card: Caesar Salad --}}
-            <div class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 relative overflow-hidden flex flex-col shadow-sm">
-                <div class="h-64 overflow-hidden">
+            <div :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'" class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 overflow-hidden shadow-sm">
+                <div :class="view === 'list' ? 'w-32 h-auto flex-shrink-0' : view === 'compact' ? 'h-40 overflow-hidden' : 'h-64 overflow-hidden'" class="overflow-hidden">
                     <!-- Caesar Salad -->
                     <img alt="Caesar Salad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Menu+Item"/>
                 </div>
@@ -309,8 +333,8 @@
             </div>
 
             {{-- Card: Rocket & Parmesan --}}
-            <div class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 relative overflow-hidden flex flex-col shadow-sm">
-                <div class="h-64 overflow-hidden">
+            <div :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'" class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 overflow-hidden shadow-sm">
+                <div :class="view === 'list' ? 'w-32 h-auto flex-shrink-0' : view === 'compact' ? 'h-40 overflow-hidden' : 'h-64 overflow-hidden'" class="overflow-hidden">
                     <!-- Rocket & Parmesan Salad -->
                     <img alt="Rocket & Parmesan Salad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Menu+Item"/>
                 </div>
@@ -338,11 +362,11 @@
     {{-- Pasta items --}}
     <section x-show="active === 'all' || active === 'pasta'" class="px-6 md:px-margin-desktop py-12 max-w-container-max mx-auto border-t border-surface-variant">
         <h2 class="font-headline-md text-headline-md text-on-surface mb-8 uppercase tracking-wider">Pasta</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div :class="view === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : view === 'list' ? 'flex flex-col gap-3' : 'grid grid-cols-2 lg:grid-cols-4 gap-4'">
 
             {{-- Card: Cacio e Pepe --}}
-            <div class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 relative overflow-hidden flex flex-col shadow-sm">
-                <div class="h-64 overflow-hidden">
+            <div :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'" class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 overflow-hidden shadow-sm">
+                <div :class="view === 'list' ? 'w-32 h-auto flex-shrink-0' : view === 'compact' ? 'h-40 overflow-hidden' : 'h-64 overflow-hidden'" class="overflow-hidden">
                     <!-- Cacio e Pepe -->
                     <img alt="Cacio e Pepe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Menu+Item"/>
                 </div>
@@ -365,8 +389,8 @@
             </div>
 
             {{-- Card: Amatriciana --}}
-            <div class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 relative overflow-hidden flex flex-col shadow-sm">
-                <div class="h-64 overflow-hidden">
+            <div :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'" class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 overflow-hidden shadow-sm">
+                <div :class="view === 'list' ? 'w-32 h-auto flex-shrink-0' : view === 'compact' ? 'h-40 overflow-hidden' : 'h-64 overflow-hidden'" class="overflow-hidden">
                     <!-- Amatriciana -->>
                     <img alt="Amatriciana" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Menu+Item"/>
                 </div>
@@ -394,11 +418,11 @@
     {{-- Desserts items --}}
     <section x-show="active === 'all' || active === 'desserts'" class="px-6 md:px-margin-desktop py-12 max-w-container-max mx-auto border-t border-surface-variant">
         <h2 class="font-headline-md text-headline-md text-on-surface mb-8 uppercase tracking-wider">Desserts</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div :class="view === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : view === 'list' ? 'flex flex-col gap-3' : 'grid grid-cols-2 lg:grid-cols-4 gap-4'">
 
             {{-- Card: Tiramisu --}}
-            <div class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 relative overflow-hidden flex flex-col shadow-sm">
-                <div class="h-64 overflow-hidden">
+            <div :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'" class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 overflow-hidden shadow-sm">
+                <div :class="view === 'list' ? 'w-32 h-auto flex-shrink-0' : view === 'compact' ? 'h-40 overflow-hidden' : 'h-64 overflow-hidden'" class="overflow-hidden">
                     <!-- Tiramisu -->
                     <img alt="Tiramisu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Menu+Item"/>
                 </div>
@@ -422,8 +446,8 @@
             </div>
 
             {{-- Card: Panna Cotta --}}
-            <div class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 relative overflow-hidden flex flex-col shadow-sm">
-                <div class="h-64 overflow-hidden">
+            <div :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'" class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 overflow-hidden shadow-sm">
+                <div :class="view === 'list' ? 'w-32 h-auto flex-shrink-0' : view === 'compact' ? 'h-40 overflow-hidden' : 'h-64 overflow-hidden'" class="overflow-hidden">
                     <!-- Panna Cotta -->
                     <img alt="Panna Cotta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Menu+Item"/>
                 </div>
@@ -451,11 +475,11 @@
     {{-- Drinks items --}}
     <section x-show="active === 'all' || active === 'drinks'" class="px-6 md:px-margin-desktop py-12 max-w-container-max mx-auto border-t border-surface-variant">
         <h2 class="font-headline-md text-headline-md text-on-surface mb-8 uppercase tracking-wider">Drinks</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div :class="view === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : view === 'list' ? 'flex flex-col gap-3' : 'grid grid-cols-2 lg:grid-cols-4 gap-4'">
 
             {{-- Card: Moretti Draft --}}
-            <div class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 relative overflow-hidden flex flex-col shadow-sm">
-                <div class="h-64 overflow-hidden">
+            <div :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'" class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 overflow-hidden shadow-sm">
+                <div :class="view === 'list' ? 'w-32 h-auto flex-shrink-0' : view === 'compact' ? 'h-40 overflow-hidden' : 'h-64 overflow-hidden'" class="overflow-hidden">
                     <!-- Moretti Draft -->
                     <img alt="Moretti Draft" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Menu+Item"/>
                 </div>
@@ -477,8 +501,8 @@
             </div>
 
             {{-- Card: San Pellegrino --}}
-            <div class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 relative overflow-hidden flex flex-col shadow-sm">
-                <div class="h-64 overflow-hidden">
+            <div :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'" class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 overflow-hidden shadow-sm">
+                <div :class="view === 'list' ? 'w-32 h-auto flex-shrink-0' : view === 'compact' ? 'h-40 overflow-hidden' : 'h-64 overflow-hidden'" class="overflow-hidden">
                     <!-- San Pellegrino -->
                     <img alt="San Pellegrino" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Menu+Item"/>
                 </div>
@@ -500,8 +524,8 @@
             </div>
 
             {{-- Card: House Red Wine --}}
-            <div class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 relative overflow-hidden flex flex-col shadow-sm">
-                <div class="h-64 overflow-hidden">
+            <div :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'" class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 overflow-hidden shadow-sm">
+                <div :class="view === 'list' ? 'w-32 h-auto flex-shrink-0' : view === 'compact' ? 'h-40 overflow-hidden' : 'h-64 overflow-hidden'" class="overflow-hidden">
                     <!-- House Red Wine -->
                     <img alt="House Red Wine" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Menu+Item"/>
                 </div>
