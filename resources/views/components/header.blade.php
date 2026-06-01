@@ -1,5 +1,5 @@
 <header class="sticky top-0 z-50 bg-surface border-b-2 border-outline-variant shadow-sm">
-  <div class="max-w-container mx-auto px-4 lg:px-16 h-16 flex items-center">
+  <div class="max-w-container mx-auto px-4 lg:px-16 h-16 lg:h-20 flex items-center">
 
     {{-- LEFT: hamburger (mobile) | logo (desktop) --}}
     <div class="flex-1 flex items-center justify-start">
@@ -12,7 +12,7 @@
       </button>
       {{-- Logo — desktop only --}}
       <a href="{{ route('home') }}" class="hidden lg:block">
-        <img src="{{ asset('images/logo.jpg') }}" alt="Aces & Eights Pizza" class="h-10 w-auto rounded">
+        <img src="{{ asset('images/logo.jpg') }}" alt="Aces & Eights Pizza" class="h-14 w-auto rounded">
       </a>
     </div>
 
@@ -24,11 +24,11 @@
       </a>
       {{-- Nav — desktop only --}}
       <nav class="hidden lg:flex items-center gap-1">
-        <a href="{{ route('home') }}"    class="px-3 py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Home</a>
-        <a href="{{ route('menu') }}"    class="px-3 py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Menu</a>
-        <a href="{{ route('booking') }}" class="px-3 py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Book a Table</a>
-        <a href="{{ route('about') }}"   class="px-3 py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">About</a>
-        <a href="{{ route('contact') }}" class="px-3 py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Contact</a>
+        <a href="{{ route('home') }}"    class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">Home</a>
+        <a href="{{ route('menu') }}"    class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">Menu</a>
+        <a href="{{ route('booking') }}" class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">Book a Table</a>
+        <a href="{{ route('about') }}"   class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">About</a>
+        <a href="{{ route('contact') }}" class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">Contact</a>
       </nav>
     </div>
 
