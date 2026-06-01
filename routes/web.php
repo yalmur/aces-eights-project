@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\MenuItemController;
 use App\Http\Controllers\Admin\DeliveryController;
 use App\Http\Controllers\Admin\PromotionController;
 use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\OurMenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,7 @@ use App\Http\Controllers\Admin\SettingsController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/our-menu', [OurMenuController::class, 'index'])->name('our-menu');
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
 Route::get('/menu/{slug}', [MenuController::class, 'show'])->name('menu.show');
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
