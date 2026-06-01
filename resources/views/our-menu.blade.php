@@ -157,7 +157,7 @@
         </h1>
         <div class="menu-masthead-rule"></div>
         <p class="font-mono text-[0.65rem] tracking-[0.3em] uppercase text-on-surface-variant mt-4">
-            Est. 2010 &nbsp;·&nbsp; Authentic Italian &nbsp;·&nbsp; Wood Fired
+            Est. 2010 &nbsp;·&nbsp; Authentic Italian Takeaway
         </p>
     </div>
 
