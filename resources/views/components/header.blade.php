@@ -2,11 +2,8 @@
   <div class="max-w-container mx-auto px-4 lg:px-16 flex items-center justify-between h-16">
 
     {{-- Logo --}}
-    <a href="{{ route('home') }}" class="flex items-center gap-3">
+    <a href="{{ route('home') }}">
       <img src="{{ asset('images/logo.jpg') }}" alt="Aces & Eights Pizza" class="h-10 w-auto rounded">
-      <span class="font-serif text-lg font-bold text-primary hidden sm:block leading-tight">
-        Aces &amp; Eights<br><span class="text-xs font-mono font-semibold uppercase tracking-widest text-on-surface-variant">Pizza</span>
-      </span>
     </a>
 
     {{-- Desktop Nav --}}
