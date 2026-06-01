@@ -91,8 +91,8 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'classic-margherita') }}" class="glossy-gold w-12 h-12 flex items-center justify-center rounded-sm touch-manipulation">
-                            <span class="material-symbols-outlined text-on-primary-fixed">add</span>
+                        <a href="{{ route('menu.show', 'classic-margherita') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                            <span class="material-symbols-outlined text-white text-[20px]">add</span>
                         </a>
                     </div>
                 </div>
@@ -115,8 +115,8 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'spicy-diavola') }}" class="glossy-gold w-12 h-12 flex items-center justify-center rounded-sm touch-manipulation">
-                            <span class="material-symbols-outlined text-on-primary-fixed">add</span>
+                        <a href="{{ route('menu.show', 'spicy-diavola') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                            <span class="material-symbols-outlined text-white text-[20px]">add</span>
                         </a>
                     </div>
                 </div>
@@ -139,8 +139,8 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'tartufo-bianco') }}" class="glossy-gold w-12 h-12 flex items-center justify-center rounded-sm touch-manipulation">
-                            <span class="material-symbols-outlined text-on-primary-fixed">add</span>
+                        <a href="{{ route('menu.show', 'tartufo-bianco') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                            <span class="material-symbols-outlined text-white text-[20px]">add</span>
                         </a>
                     </div>
                 </div>
@@ -163,8 +163,8 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-primary text-on-primary">VEGAN</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'vegan-garden') }}" class="glossy-gold w-12 h-12 flex items-center justify-center rounded-sm touch-manipulation">
-                            <span class="material-symbols-outlined text-on-primary-fixed">add</span>
+                        <a href="{{ route('menu.show', 'vegan-garden') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                            <span class="material-symbols-outlined text-white text-[20px]">add</span>
                         </a>
                     </div>
                 </div>
@@ -187,8 +187,8 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'the-meat-lover') }}" class="glossy-gold w-12 h-12 flex items-center justify-center rounded-sm touch-manipulation">
-                            <span class="material-symbols-outlined text-on-primary-fixed">add</span>
+                        <a href="{{ route('menu.show', 'the-meat-lover') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                            <span class="material-symbols-outlined text-white text-[20px]">add</span>
                         </a>
                     </div>
                 </div>
@@ -219,8 +219,8 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'garlic-bread') }}" class="glossy-gold w-12 h-12 flex items-center justify-center rounded-sm touch-manipulation">
-                            <span class="material-symbols-outlined text-on-primary-fixed">add</span>
+                        <a href="{{ route('menu.show', 'garlic-bread') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                            <span class="material-symbols-outlined text-white text-[20px]">add</span>
                         </a>
                     </div>
                 </div>
@@ -242,8 +242,8 @@
                         <div class="flex gap-2">
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-primary text-on-primary">VEGAN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'nocellara-olives') }}" class="glossy-gold w-12 h-12 flex items-center justify-center rounded-sm touch-manipulation">
-                            <span class="material-symbols-outlined text-on-primary-fixed">add</span>
+                        <a href="{{ route('menu.show', 'nocellara-olives') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                            <span class="material-symbols-outlined text-white text-[20px]">add</span>
                         </a>
                     </div>
                 </div>
@@ -265,8 +265,8 @@
                         <div class="flex gap-2">
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                         </div>
-                        <a href="{{ route('menu.show', 'burrata') }}" class="glossy-gold w-12 h-12 flex items-center justify-center rounded-sm touch-manipulation">
-                            <span class="material-symbols-outlined text-on-primary-fixed">add</span>
+                        <a href="{{ route('menu.show', 'burrata') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                            <span class="material-symbols-outlined text-white text-[20px]">add</span>
                         </a>
                     </div>
                 </div>
@@ -297,8 +297,8 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'caesar-salad') }}" class="glossy-gold w-12 h-12 flex items-center justify-center rounded-sm touch-manipulation">
-                            <span class="material-symbols-outlined text-on-primary-fixed">add</span>
+                        <a href="{{ route('menu.show', 'caesar-salad') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                            <span class="material-symbols-outlined text-white text-[20px]">add</span>
                         </a>
                     </div>
                 </div>
@@ -321,8 +321,8 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">NUTS</span>
                         </div>
-                        <a href="{{ route('menu.show', 'rocket-parmesan') }}" class="glossy-gold w-12 h-12 flex items-center justify-center rounded-sm touch-manipulation">
-                            <span class="material-symbols-outlined text-on-primary-fixed">add</span>
+                        <a href="{{ route('menu.show', 'rocket-parmesan') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                            <span class="material-symbols-outlined text-white text-[20px]">add</span>
                         </a>
                     </div>
                 </div>
@@ -353,8 +353,8 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'cacio-e-pepe') }}" class="glossy-gold w-12 h-12 flex items-center justify-center rounded-sm touch-manipulation">
-                            <span class="material-symbols-outlined text-on-primary-fixed">add</span>
+                        <a href="{{ route('menu.show', 'cacio-e-pepe') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                            <span class="material-symbols-outlined text-white text-[20px]">add</span>
                         </a>
                     </div>
                 </div>
@@ -377,8 +377,8 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'amatriciana') }}" class="glossy-gold w-12 h-12 flex items-center justify-center rounded-sm touch-manipulation">
-                            <span class="material-symbols-outlined text-on-primary-fixed">add</span>
+                        <a href="{{ route('menu.show', 'amatriciana') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                            <span class="material-symbols-outlined text-white text-[20px]">add</span>
                         </a>
                     </div>
                 </div>
@@ -410,8 +410,8 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">EGGS</span>
                         </div>
-                        <a href="{{ route('menu.show', 'tiramisu') }}" class="glossy-gold w-12 h-12 flex items-center justify-center rounded-sm touch-manipulation">
-                            <span class="material-symbols-outlined text-on-primary-fixed">add</span>
+                        <a href="{{ route('menu.show', 'tiramisu') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                            <span class="material-symbols-outlined text-white text-[20px]">add</span>
                         </a>
                     </div>
                 </div>
@@ -434,8 +434,8 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'panna-cotta') }}" class="glossy-gold w-12 h-12 flex items-center justify-center rounded-sm touch-manipulation">
-                            <span class="material-symbols-outlined text-on-primary-fixed">add</span>
+                        <a href="{{ route('menu.show', 'panna-cotta') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                            <span class="material-symbols-outlined text-white text-[20px]">add</span>
                         </a>
                     </div>
                 </div>
@@ -465,8 +465,8 @@
                         <div class="flex gap-2">
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'moretti-draft') }}" class="glossy-gold w-12 h-12 flex items-center justify-center rounded-sm touch-manipulation">
-                            <span class="material-symbols-outlined text-on-primary-fixed">add</span>
+                        <a href="{{ route('menu.show', 'moretti-draft') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                            <span class="material-symbols-outlined text-white text-[20px]">add</span>
                         </a>
                     </div>
                 </div>
@@ -488,8 +488,8 @@
                         <div class="flex gap-2">
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-primary text-on-primary">VEGAN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'san-pellegrino') }}" class="glossy-gold w-12 h-12 flex items-center justify-center rounded-sm touch-manipulation">
-                            <span class="material-symbols-outlined text-on-primary-fixed">add</span>
+                        <a href="{{ route('menu.show', 'san-pellegrino') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                            <span class="material-symbols-outlined text-white text-[20px]">add</span>
                         </a>
                     </div>
                 </div>
@@ -511,8 +511,8 @@
                         <div class="flex gap-2">
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">SULPHITES</span>
                         </div>
-                        <a href="{{ route('menu.show', 'house-red-wine') }}" class="glossy-gold w-12 h-12 flex items-center justify-center rounded-sm touch-manipulation">
-                            <span class="material-symbols-outlined text-on-primary-fixed">add</span>
+                        <a href="{{ route('menu.show', 'house-red-wine') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                            <span class="material-symbols-outlined text-white text-[20px]">add</span>
                         </a>
                     </div>
                 </div>

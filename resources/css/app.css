@@ -128,7 +128,7 @@
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-  /* Glossy gold — used on card add buttons */
+  /* Glossy gold — kept for backward compat */
   .glossy-gold {
     background: linear-gradient(180deg, #F9E392 0%, #D4AF37 50%, #996515 100%);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.45), 2px 2px 0 #1b1c1c;
@@ -137,6 +137,21 @@
   }
   .glossy-gold:hover { filter: brightness(0.92); }
   .glossy-gold:active { filter: brightness(0.8); box-shadow: inset 0 2px 4px rgba(0,0,0,0.25); }
+
+  /* Add to order — oxblood red, industrial stamped */
+  .btn-add {
+    background-color: #690008;
+    border: 1px solid #4d0006;
+    box-shadow: 2px 2px 0 #1b1c1c;
+    color: #ffffff;
+    transition: background-color 0.15s, box-shadow 0.12s, transform 0.1s;
+  }
+  .btn-add:hover { background-color: #8b1a1a; }
+  .btn-add:active {
+    background-color: #4d0006;
+    box-shadow: 0 0 0 #1b1c1c;
+    transform: translate(2px, 2px);
+  }
 
   /* Gold metallic glow — used on auth sign-in button */
   .gold-metallic-glow {
