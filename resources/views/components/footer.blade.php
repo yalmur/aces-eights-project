@@ -4,7 +4,7 @@
 
     {{-- Brand --}}
     <div class="flex flex-col gap-4">
-      <img src="{{ asset('images/logo.jpg') }}" alt="Aces & Eights Pizza" class="h-14 w-auto rounded">
+      <img src="{{ asset('images/logo.jpg') }}" alt="Aces & Eights Pizza" class="h-14 w-14 object-contain rounded">
       <p class="font-sans text-sm text-[#e0bfbc] leading-relaxed">
         Authentic Italian pizza in the heart of Tufnell Park, North London.
       </p>
