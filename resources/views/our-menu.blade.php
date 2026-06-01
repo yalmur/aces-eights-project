@@ -144,7 +144,7 @@
 
 @section('content')
 <div class="menu-page min-h-screen">
-<div class="max-w-4xl mx-auto px-6 lg:px-8 py-16">
+<div class="max-w-container-max mx-auto px-6 lg:px-16 py-16">
 
     {{-- ── Masthead ──────────────────────────────────────────────────────── --}}
     <div class="menu-masthead text-center">
