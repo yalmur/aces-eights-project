@@ -1,9 +1,9 @@
 <footer class="bg-primary text-white mt-16">
   {{-- Top section --}}
-  <div class="max-w-container mx-auto px-4 lg:px-16 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+  <div class="max-w-container mx-auto px-4 lg:px-16 py-12 grid grid-cols-1 md:grid-cols-5 gap-8">
 
     {{-- Brand --}}
-    <div class="flex flex-col gap-4">
+    <div class="md:col-span-2 flex flex-col gap-4">
       <img src="{{ asset('images/logo.jpg') }}" alt="Aces & Eights Pizza" class="h-28 w-auto self-start rounded">
       <p class="font-sans text-sm text-[#e0bfbc] leading-relaxed">
         Authentic Italian pizza in the heart of Tufnell Park, North London.
@@ -19,7 +19,7 @@
     </div>
 
     {{-- Opening Hours --}}
-    <div class="flex flex-col gap-3">
+    <div class="md:col-span-2 flex flex-col gap-3">
       <h3 class="font-serif text-lg font-bold">Opening Hours</h3>
       <div class="section-divider border-[#8b1a1a]"></div>
       <dl class="grid grid-cols-2 gap-x-4 gap-y-2 font-sans text-sm text-[#e0bfbc]">
@@ -31,7 +31,7 @@
     </div>
 
     {{-- Contact --}}
-    <div class="flex flex-col gap-3">
+    <div class="md:col-span-1 flex flex-col gap-3">
       <h3 class="font-serif text-lg font-bold">Find Us</h3>
       <div class="section-divider border-[#8b1a1a]"></div>
       <address class="font-sans text-sm text-[#e0bfbc] not-italic leading-relaxed">
