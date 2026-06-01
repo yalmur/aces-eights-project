@@ -8,7 +8,7 @@ class MenuController extends Controller
 {
     public function index(): View
     {
-        return view('menu.index', ['title' => 'Our Menu']);
+        return view('menu.index', ['title' => 'Order']);
     }
 
     public function show(string $slug): View
