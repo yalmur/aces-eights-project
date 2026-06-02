@@ -93,7 +93,16 @@ Included once in `resources/views/layouts/app.blade.php` (before `@livewireScrip
 
 **All items**
 
-*Special Instructions* — plain text input, max 120 chars, placeholder "e.g. no onion, extra crispy…"
+*Kitchen Notes* — two-part field:
+
+**Quick-pick chips** (toggle behaviour — click selects/oxblood fill, click again deselects):
+
+- Pizza chips: WELL DONE CRUST · EXTRA SPICY · LESS SAUCE · NO ONION · NO CHILLI · EXTRA CRISPY · CUT IN SQUARES
+- Non-pizza chips: EXTRA SPICY · NO ONION · NO GARLIC · DRESSING ON SIDE · WELL DONE · NO NUTS
+
+Selected chips are stored as an array. The textarea below displays them joined by ", " and is kept in sync — if customer edits the textarea directly, the raw string is used as-is (chip sync is one-way: chip → text; text edits break chip state cleanly).
+
+**Free-text textarea** — max 120 chars, char counter shown bottom-right, placeholder "Or write your own note to the kitchen…". Combined value saved to `instructions` on the cart item.
 
 *Quantity* — −/+ stepper (min 1, max 9)
 
