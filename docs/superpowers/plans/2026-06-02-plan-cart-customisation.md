@@ -2,9 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Add a right-side customisation drawer to the menu page, a header mini-cart dropdown, and a full cart page — all powered by an Alpine.js store persisted to localStorage.
+**Goal:** Add a right-side customisation drawer to the menu page (with removable base ingredients + full toppings list), a header mini-cart dropdown, and a full cart page — all powered by an Alpine.js store persisted to localStorage.
 
-**Architecture:** Alpine.js `$store('cart')` is the single source of truth for cart state. It is registered before `Alpine.start()` in `resources/js/app.js` and is accessible from every Blade component via `$store.cart`. The drawer and mini-cart are Blade components included in the customer layout. No backend is touched — this is pure Plan 2 frontend work.
+**Architecture:** Alpine.js `$store('cart')` is the single source of truth for cart state. It is registered before `Alpine.start()` in `resources/js/app.js` and is accessible from every Blade component via `$store.cart`. The drawer and mini-cart are Blade components included in the customer layout. No backend is touched — this is pure Plan 2 frontend work. Base ingredients and toppings are hardcoded; in Plan 4 they will be replaced by API calls.
 
 **Tech Stack:** Alpine.js 3, Tailwind CSS 3, Laravel Blade, localStorage
 
@@ -47,18 +47,48 @@ Alpine.store('cart', {
     crust: '48hr Sourdough',
     crustExtra: 0,
     toppings: [],
+    removedIngredients: [],
     chips: [],
     instructions: '',
     qty: 1,
   },
 
-  pizzaToppings: [
-    { name: 'Extra Buffalo Mozzarella', price: 2.00 },
-    { name: 'Spicy Salamino',           price: 1.50 },
-    { name: 'Wild Mushrooms',           price: 1.50 },
-    { name: 'Roasted Peppers',          price: 1.00 },
-    { name: 'Red Onion',                price: 1.00 },
-    { name: 'Anchovies',                price: 1.50 },
+  // Base ingredients per pizza item — hardcoded Plan 2, replaced by API in Plan 4
+  baseIngredients: {
+    'classic-margherita': ['Tomato Sauce', 'Fior di Latte', 'Basil', 'Olive Oil'],
+    'spicy-diavola':      ['Tomato Sauce', 'Mozzarella', 'Nduja', 'Calabrese Salami'],
+    'tartufo-bianco':     ['White Base', 'Wild Mushrooms', 'Truffle Oil', 'Pecorino'],
+    'vegan-garden':       ['Tomato Sauce', 'Vegan Mozzarella', 'Roasted Peppers', 'Zucchini', 'Red Onion'],
+    'the-meat-lover':     ['Tomato Sauce', 'Mozzarella', 'Salami', 'Smoked Pancetta', 'Fennel Sausage'],
+  },
+
+  // Global toppings list available on all pizzas
+  allToppings: [
+    { name: 'Aubergines',         price: 2.00 },
+    { name: 'Mixed Peppers',      price: 1.50 },
+    { name: 'Mushrooms',          price: 1.50 },
+    { name: 'Regular Pepperoni',  price: 2.00 },
+    { name: 'Nduja',              price: 2.00 },
+    { name: 'Spicy Ground Beef',  price: 2.00 },
+    { name: 'Broccoli',           price: 2.00 },
+    { name: 'Parmesan',           price: 2.00 },
+    { name: 'Pine Nuts',          price: 1.50 },
+    { name: 'Garlic Oil',         price: 1.50 },
+    { name: 'Mozzarella',         price: 2.00 },
+    { name: 'Olive Oil',          price: 1.50 },
+    { name: 'Smoky Pancetta',     price: 2.00 },
+    { name: 'Tomato Sauce',       price: 1.00 },
+    { name: 'Basil',              price: 0.50 },
+    { name: 'Red Onion',          price: 1.50 },
+    { name: 'Anchovies',          price: 2.00 },
+    { name: 'Chilli Flakes',      price: 1.00 },
+    { name: 'Whole Black Olives', price: 1.50 },
+    { name: 'Oregano',            price: 0.50 },
+    { name: 'Vegan Mozzarella',   price: 2.50 },
+    { name: 'Sicilian Sausage',   price: 2.00 },
+    { name: 'Hot Honey',          price: 2.00 },
+    { name: 'Speck Ham',          price: 2.00 },
+    { name: 'Provolone Picante',  price: 1.50 },
   ],
 
   pizzaChips: [
@@ -99,10 +129,18 @@ Alpine.store('cart', {
       : this.otherChips
   },
 
+  get drawerBaseIngredients() {
+    if (!this.drawerItem || this.drawerItem.category !== 'pizza') return []
+    return this.baseIngredients[this.drawerItem.id] || []
+  },
+
   itemSummary(item) {
     const parts = []
     if (item.size && item.size !== '12" Standard') parts.push(item.size)
     if (item.crust && item.crust !== '48hr Sourdough') parts.push(item.crust)
+    if (item.removedIngredients && item.removedIngredients.length) {
+      parts.push('no ' + item.removedIngredients.join(', no '))
+    }
     if (item.toppings && item.toppings.length) {
       parts.push(item.toppings.map(t => '+' + t.name).join(', '))
     }
@@ -119,6 +157,7 @@ Alpine.store('cart', {
       crust: '48hr Sourdough',
       crustExtra: 0,
       toppings: [],
+      removedIngredients: [],
       chips: [],
       instructions: '',
       qty: 1,
@@ -143,6 +182,7 @@ Alpine.store('cart', {
       crust: item.crust || '48hr Sourdough',
       crustExtra: item.crustExtra || 0,
       toppings: [...item.toppings],
+      removedIngredients: [...(item.removedIngredients || [])],
       chips: [...(item.chips || [])],
       instructions: item.instructions || '',
       qty: item.qty,
@@ -181,6 +221,19 @@ Alpine.store('cart', {
     return this.draft.toppings.some(t => t.name === name)
   },
 
+  toggleIngredient(name) {
+    const idx = this.draft.removedIngredients.indexOf(name)
+    if (idx >= 0) {
+      this.draft.removedIngredients.splice(idx, 1)
+    } else {
+      this.draft.removedIngredients.push(name)
+    }
+  },
+
+  isIngredientRemoved(name) {
+    return this.draft.removedIngredients.includes(name)
+  },
+
   toggleChip(chip) {
     const idx = this.draft.chips.indexOf(chip)
     if (idx >= 0) {
@@ -188,7 +241,6 @@ Alpine.store('cart', {
     } else {
       this.draft.chips.push(chip)
     }
-    // Sync chips → instructions (one-way)
     this.draft.instructions = this.draft.chips.join(', ')
   },
 
@@ -212,11 +264,12 @@ Alpine.store('cart', {
       name: this.drawerItem.name,
       category: this.drawerItem.category,
       basePrice: this.drawerItem.basePrice,
-      size:      isPizza ? this.draft.size  : null,
-      sizeExtra: isPizza ? this.draft.sizeExtra : 0,
-      crust:     isPizza ? this.draft.crust : null,
-      crustExtra:isPizza ? this.draft.crustExtra : 0,
-      toppings:  isPizza ? [...this.draft.toppings] : [],
+      size:               isPizza ? this.draft.size        : null,
+      sizeExtra:          isPizza ? this.draft.sizeExtra   : 0,
+      crust:              isPizza ? this.draft.crust       : null,
+      crustExtra:         isPizza ? this.draft.crustExtra  : 0,
+      toppings:           isPizza ? [...this.draft.toppings] : [],
+      removedIngredients: isPizza ? [...this.draft.removedIngredients] : [],
       chips:     [...this.draft.chips],
       instructions: this.draft.instructions,
       qty: this.draft.qty,
@@ -275,17 +328,21 @@ npm run build
 
 Expected: `✓ built in Xms` — no errors.
 
-- [ ] **Step 3: Verify store is accessible in browser console**
+- [ ] **Step 3: Verify store in browser console**
 
 Start server: `& "C:\xampp\php\php.exe" artisan serve --port=8000`
-Open `http://localhost:8000`, open DevTools console, run:
+Open `http://localhost:8000`, open DevTools console:
 
 ```js
-Alpine.store('cart').itemCount
-// Expected: 0
+Alpine.store('cart').allToppings.length
+// Expected: 25
 
-Alpine.store('cart').openDrawer({ id: 'test', name: 'Test', category: 'pizza', basePrice: 12.50 })
-// Expected: drawerOpen = true (drawer not visible yet — component not built)
+Alpine.store('cart').drawerBaseIngredients
+// Expected: [] (no drawer open yet)
+
+Alpine.store('cart').openDrawer({ id: 'classic-margherita', name: 'Classic Margherita', category: 'pizza', basePrice: 12.50 })
+Alpine.store('cart').drawerBaseIngredients
+// Expected: ['Tomato Sauce', 'Fior di Latte', 'Basil', 'Olive Oil']
 
 Alpine.store('cart').closeDrawer()
 ```
@@ -294,7 +351,7 @@ Alpine.store('cart').closeDrawer()
 
 ```bash
 git add resources/js/app.js
-git commit -m "feat: add Alpine.js cart store with localStorage persistence"
+git commit -m "feat: add Alpine.js cart store with ingredients, full toppings, localStorage"
 ```
 
 ---
@@ -394,11 +451,39 @@ git commit -m "feat: add Alpine.js cart store with localStorage persistence"
         </div>
       </div>
 
-      {{-- TOPPINGS — pizza only --}}
-      <div x-show="$store.cart.drawerItem?.category === 'pizza'">
-        <h4 class="label-caps text-on-surface-variant mb-4">Add Toppings</h4>
+      {{-- INGREDIENTS — pizza only, pre-checked, uncheck to remove --}}
+      <div x-show="$store.cart.drawerItem?.category === 'pizza' && $store.cart.drawerBaseIngredients.length > 0">
+        <h4 class="label-caps text-on-surface-variant mb-1">Ingredients</h4>
+        <p class="font-mono text-[10px] text-on-surface-variant mb-4">Uncheck boxes to remove base ingredients</p>
         <div class="flex flex-col gap-2">
-          <template x-for="topping in $store.cart.pizzaToppings" :key="topping.name">
+          <template x-for="ingredient in $store.cart.drawerBaseIngredients" :key="ingredient">
+            <button @click="$store.cart.toggleIngredient(ingredient)"
+                    :class="$store.cart.isIngredientRemoved(ingredient)
+                      ? 'border border-outline-variant bg-surface-container-low opacity-60'
+                      : 'border-2 border-primary bg-surface-container'"
+                    class="flex items-center gap-3 px-4 py-3 transition-all w-full text-left">
+              <div :class="$store.cart.isIngredientRemoved(ingredient)
+                     ? 'border-outline bg-transparent'
+                     : 'bg-primary border-primary'"
+                   class="w-4 h-4 border flex items-center justify-center flex-shrink-0 transition-colors">
+                <svg x-show="!$store.cart.isIngredientRemoved(ingredient)"
+                     class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                  <path stroke-linecap="square" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <span class="font-sans text-sm text-on-surface" x-text="ingredient"></span>
+              <span x-show="$store.cart.isIngredientRemoved(ingredient)"
+                    class="ml-auto label-caps text-[10px] text-brand-error">REMOVED</span>
+            </button>
+          </template>
+        </div>
+      </div>
+
+      {{-- TOPPINGS — pizza only, full 25-item list --}}
+      <div x-show="$store.cart.drawerItem?.category === 'pizza'">
+        <h4 class="label-caps text-on-surface-variant mb-4">Toppings</h4>
+        <div class="grid grid-cols-1 gap-2">
+          <template x-for="topping in $store.cart.allToppings" :key="topping.name">
             <button @click="$store.cart.toggleTopping(topping)"
                     :class="$store.cart.isToppingSelected(topping.name)
                       ? 'border-2 border-primary bg-surface-container'
@@ -488,7 +573,7 @@ git commit -m "feat: add Alpine.js cart store with localStorage persistence"
 
 ```bash
 git add resources/views/components/cart-drawer.blade.php
-git commit -m "feat: add customisation drawer component"
+git commit -m "feat: add customisation drawer with ingredients, toppings, kitchen notes"
 ```
 
 ---
@@ -533,20 +618,16 @@ git commit -m "feat: add customisation drawer component"
 </html>
 ```
 
-- [ ] **Step 2: Build assets**
+- [ ] **Step 2: Build and smoke test**
 
 ```bash
 npm run build
 ```
 
-Expected: `✓ built in Xms` — no errors.
+Visit `http://localhost:8000` — DevTools console must show 0 errors.
+Run: `Alpine.store('cart').drawerOpen` → `false`.
 
-- [ ] **Step 3: Visit `http://localhost:8000` and confirm page loads without errors**
-
-Open DevTools → Console. Should show 0 errors.
-Run: `Alpine.store('cart').drawerOpen` → returns `false`.
-
-- [ ] **Step 4: Commit**
+- [ ] **Step 3: Commit**
 
 ```bash
 git add resources/views/layouts/app.blade.php
@@ -560,9 +641,9 @@ git commit -m "feat: include cart drawer in app layout"
 **Files:**
 - Modify: `resources/views/components/header.blade.php`
 
-- [ ] **Step 1: Replace the cart icon `<a>` and the RIGHT section with the mini-cart panel**
+- [ ] **Step 1: Find and replace the RIGHT section of the header**
 
-Find this block in `header.blade.php` (lines 37–43):
+Find this exact block (starts at line ~37 of `header.blade.php`):
 
 ```blade
     {{-- RIGHT: cart + auth (both breakpoints) --}}
@@ -573,9 +654,10 @@ Find this block in `header.blade.php` (lines 37–43):
         </svg>
         <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-mono font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
       </a>
+      @auth
 ```
 
-Replace it with:
+Replace that entire RIGHT section (from `{{-- RIGHT: cart + auth --}}` through the closing `</div>` that ends the RIGHT section, just before the `{{-- Mobile Nav --}}` comment) with:
 
 ```blade
     {{-- RIGHT: mini-cart + auth --}}
@@ -591,7 +673,6 @@ Replace it with:
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
             <path stroke-linecap="square" stroke-linejoin="miter" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
           </svg>
-          {{-- Badge --}}
           <span x-show="$store.cart.itemCount > 0"
                 x-text="$store.cart.itemCount"
                 x-cloak
@@ -611,18 +692,15 @@ Replace it with:
              x-transition:leave-end="opacity-0 -translate-y-2"
              class="absolute right-0 top-full mt-2 w-80 bg-surface border-2 border-outline-variant shadow-xl z-[55]">
 
-          {{-- Panel header --}}
           <div class="px-4 py-3 border-b border-outline-variant">
             <h3 class="font-serif text-sm font-bold text-on-surface"
                 x-text="'YOUR ORDER (' + $store.cart.itemCount + ')'"></h3>
           </div>
 
-          {{-- Empty state --}}
           <div x-show="$store.cart.items.length === 0" class="px-4 py-6 text-center">
             <p class="font-sans text-sm text-on-surface-variant">Your cart is empty.</p>
           </div>
 
-          {{-- Item list --}}
           <div x-show="$store.cart.items.length > 0" class="max-h-64 overflow-y-auto">
             <template x-for="item in $store.cart.items" :key="item.cartId">
               <div class="flex items-start justify-between px-4 py-3 border-b border-outline-variant last:border-0">
@@ -646,7 +724,6 @@ Replace it with:
             </template>
           </div>
 
-          {{-- Summary + CTAs --}}
           <div x-show="$store.cart.items.length > 0" class="px-4 py-4 border-t border-outline-variant bg-surface-container-low">
             <div class="flex justify-between items-center mb-1">
               <span class="font-mono text-xs text-on-surface-variant">Subtotal</span>
@@ -674,7 +751,7 @@ Replace it with:
         </div>{{-- end dropdown --}}
       </div>{{-- end mini cart x-data --}}
 
-      {{-- Auth buttons — unchanged from original --}}
+      {{-- Auth buttons — unchanged --}}
       @auth
         <a href="{{ route('account') }}" class="p-2 text-on-surface-variant hover:text-primary transition-colors" aria-label="My Account">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -691,7 +768,7 @@ Replace it with:
     </div>{{-- end RIGHT section --}}
 ```
 
-The rest of `header.blade.php` (Mobile Nav block) remains **unchanged**.
+The `{{-- Mobile Nav --}}` block that follows remains **unchanged**.
 
 - [ ] **Step 2: Build and verify**
 
@@ -699,15 +776,15 @@ The rest of `header.blade.php` (Mobile Nav block) remains **unchanged**.
 npm run build
 ```
 
-Visit `http://localhost:8000`. Cart icon is visible in header. Open DevTools console:
+Open `http://localhost:8000`. Cart icon visible. Run in console:
 
 ```js
-Alpine.store('cart').openDrawer({ id: 'test', name: 'Test Pizza', category: 'pizza', basePrice: 12.50 })
+Alpine.store('cart').openDrawer({ id: 'classic-margherita', name: 'Classic Margherita', category: 'pizza', basePrice: 12.50 })
 Alpine.store('cart').addToCart()
-// Badge should appear showing "1"
+// Badge shows "1"
 ```
 
-Click cart icon — mini cart panel opens, shows "Test Pizza ×1". Click ✕ removes it.
+Click cart icon → dropdown shows "Classic Margherita ×1". Click ✕ → item removed, badge gone.
 
 - [ ] **Step 3: Commit**
 
@@ -723,18 +800,9 @@ git commit -m "feat: add mini-cart dropdown to header"
 **Files:**
 - Modify: `resources/views/menu/index.blade.php`
 
-All pizza cards currently have:
-```blade
-<a href="{{ route('menu.show', 'slug') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
-  <span class="material-symbols-outlined text-white text-[20px]">add</span>
-</a>
-```
+All pizza and non-pizza `+` buttons currently use `<a href="route('menu.show', 'slug')">`. Replace every one with a `<button @click="$store.cart.openDrawer({...})">`.
 
-Replace every `<a href="route('menu.show', 'slug')" class="btn-add...">` with `<button @click="$store.cart.openDrawer({...})" class="btn-add...">`.
-
-- [ ] **Step 1: Replace every pizza card `+` button — pizza category**
-
-For each pizza card replace the `<a>` add button with a `<button>`. Use the exact item data from the card:
+- [ ] **Step 1: Replace pizza card + buttons**
 
 ```blade
 {{-- Classic Margherita --}}
@@ -768,7 +836,7 @@ For each pizza card replace the `<a>` add button with a `<button>`. Use the exac
 </button>
 ```
 
-- [ ] **Step 2: Replace every non-pizza card `+` button — category: 'starter' / 'salad' / 'pasta' / 'dessert' / 'drink'**
+- [ ] **Step 2: Replace non-pizza card + buttons**
 
 ```blade
 {{-- Garlic Bread --}}
@@ -844,25 +912,25 @@ For each pizza card replace the `<a>` add button with a `<button>`. Use the exac
 </button>
 ```
 
-- [ ] **Step 3: Verify drawer opens correctly**
+- [ ] **Step 3: Verify drawer opens correctly for pizza vs non-pizza**
 
 Visit `http://localhost:8000/menu`. Click `+` on Classic Margherita.
 
 Expected:
-- Right drawer slides in
-- Shows "Classic Margherita" heading, "from £12.50"
-- Shows Size section (12"/15"), Crust section, Toppings section, Kitchen Notes chips + textarea
-- Footer shows "ADD TO CART £12.50"
+- Drawer slides in from right
+- Shows Size, Crust sections
+- Shows **INGREDIENTS** section: Tomato Sauce ✓, Fior di Latte ✓, Basil ✓, Olive Oil ✓ (all pre-checked/oxblood)
+- Uncheck "Basil" → row dims, shows "REMOVED" label
+- Shows **TOPPINGS** section with all 25 items unchecked
+- Check "Anchovies" → row highlights oxblood, price updates in footer
+- Footer: `ADD TO CART £12.50` → after selecting 15" + Anchovies → `ADD TO CART £18.00` (12.50 + 4 + 2 × 1 qty)
+- Kitchen Notes chips show pizza set
 
 Click `+` on Garlic Bread.
 Expected:
-- Drawer shows "Garlic Bread", "from £5.50"
-- No Size / Crust / Toppings sections
+- No Size / Crust / Ingredients / Toppings sections
 - Shows Kitchen Notes with non-pizza chips (EXTRA SPICY, NO ONION, etc.)
-
-Select 15" Large + Gluten-Free crust + Extra Mozzarella → footer should show "ADD TO CART £20.50" (12.50 + 4 + 2 + 2).
-
-Click ADD TO CART → drawer closes, header badge shows "1".
+- Footer: `ADD TO CART £5.50`
 
 - [ ] **Step 4: Commit**
 
@@ -917,8 +985,6 @@ git commit -m "feat: wire menu + buttons to customisation drawer"
       {{-- Items --}}
       <template x-for="item in $store.cart.items" :key="item.cartId">
         <div class="bg-surface-container-low border border-outline-variant p-5 flex gap-4">
-
-          {{-- Item info --}}
           <div class="flex-1 min-w-0">
             <div class="flex items-start justify-between gap-3 mb-1">
               <h3 class="font-serif text-base font-bold text-on-surface" x-text="item.name"></h3>
@@ -928,9 +994,7 @@ git commit -m "feat: wire menu + buttons to customisation drawer"
             <p class="font-mono text-[11px] text-on-surface-variant mb-3"
                x-text="$store.cart.itemSummary(item)"></p>
 
-            {{-- Actions row --}}
             <div class="flex items-center gap-4">
-              {{-- Qty stepper --}}
               <div class="flex items-center gap-3">
                 <button @click="$store.cart.updateQty(item.cartId, -1)"
                         class="w-7 h-7 border border-outline flex items-center justify-center hover:bg-surface-container transition-colors font-bold text-base leading-none">−</button>
@@ -938,12 +1002,8 @@ git commit -m "feat: wire menu + buttons to customisation drawer"
                 <button @click="$store.cart.updateQty(item.cartId, 1)"
                         class="w-7 h-7 border border-outline flex items-center justify-center hover:bg-surface-container transition-colors font-bold text-base leading-none">+</button>
               </div>
-
-              {{-- Edit --}}
               <button @click="$store.cart.editItem(item.cartId)"
                       class="font-mono text-[11px] text-on-surface-variant hover:text-primary transition-colors underline">Edit</button>
-
-              {{-- Remove --}}
               <button @click="$store.cart.removeItem(item.cartId)"
                       class="font-mono text-[11px] text-on-surface-variant hover:text-primary transition-colors underline ml-auto">Remove</button>
             </div>
@@ -953,11 +1013,10 @@ git commit -m "feat: wire menu + buttons to customisation drawer"
 
     </div>
 
-    {{-- RIGHT: order summary (sticky on desktop) --}}
+    {{-- RIGHT: order summary --}}
     <div class="lg:col-span-1">
       <div class="bg-surface-container-low border border-outline-variant p-6 lg:sticky lg:top-24">
         <h2 class="font-serif text-headline-sm text-on-surface mb-6">Order Summary</h2>
-
         <div class="space-y-3 mb-6">
           <div class="flex justify-between">
             <span class="font-sans text-sm text-on-surface-variant">Subtotal</span>
@@ -965,9 +1024,7 @@ git commit -m "feat: wire menu + buttons to customisation drawer"
                   x-text="'£' + $store.cart.subtotal.toFixed(2)"></span>
           </div>
           <div class="flex justify-between">
-            <span class="font-sans text-sm text-on-surface-variant">
-              Delivery fee
-            </span>
+            <span class="font-sans text-sm text-on-surface-variant">Delivery fee</span>
             <span class="font-mono text-sm"
                   :class="orderType === 'delivery' ? 'text-on-surface' : 'text-primary'"
                   x-text="orderType === 'delivery' ? '£3.50' : 'FREE'"></span>
@@ -979,7 +1036,6 @@ git commit -m "feat: wire menu + buttons to customisation drawer"
                   x-text="'£' + $store.cart.total(orderType).toFixed(2)"></span>
           </div>
         </div>
-
         <a href="{{ route('checkout') }}" class="btn-primary w-full text-center block mb-3">
           PROCEED TO CHECKOUT
         </a>
@@ -989,59 +1045,46 @@ git commit -m "feat: wire menu + buttons to customisation drawer"
       </div>
     </div>
 
-  </div>{{-- end cart content grid --}}
+  </div>
 
 </div>
 
 @endsection
 ```
 
-- [ ] **Step 2: Verify cart page works end-to-end**
+- [ ] **Step 2: Verify cart page end-to-end**
 
-1. Go to `http://localhost:8000/menu`
-2. Add Classic Margherita with 15" Large + Gluten-Free + Extra Mozzarella → ADD TO CART
-3. Add Garlic Bread ×2 → ADD TO CART
-4. Click "View full cart →" in mini-cart or navigate to `http://localhost:8000/cart`
-5. Verify:
-   - Both items shown with correct customisation summaries
-   - Line totals correct (Margherita: £20.50, Garlic Bread ×2: £11.00)
-   - Delivery toggle: switching to Collection removes £3.50 delivery fee
-   - Click Edit on Margherita → drawer opens pre-filled with 15" / GF / Extra Mozzarella and shows "UPDATE CART"
-   - Change qty stepper → line total updates, order total updates
-   - Remove one item → item disappears
-   - Remove last item → empty state shows
+1. Go to `/menu`, add Classic Margherita: uncheck Basil, add Anchovies, select 15" Large, Gluten-Free crust → ADD TO CART
+2. Add Garlic Bread ×2 → ADD TO CART
+3. Go to `/cart`
+4. Verify:
+   - Margherita summary shows: `15" Large · Gluten-Free · no Basil · +Anchovies` (£20.50 × 1 = £20.50)
+   - Garlic Bread ×2 shows: `No extras` (£5.50 × 2 = £11.00)
+   - Subtotal: £31.50
+   - Delivery toggle: switching to Collection removes £3.50
+   - Edit Margherita → drawer opens pre-filled with 15"/GF/Basil unchecked/Anchovies checked, footer shows UPDATE CART
+   - Qty − on Garlic Bread → qty becomes 1, line total updates
+   - Remove → item disappears
+   - Remove all → empty state with BROWSE MENU
 
 - [ ] **Step 3: Commit**
 
 ```bash
 git add resources/views/cart/index.blade.php
-git commit -m "feat: build full cart page with qty controls, edit, and order summary"
+git commit -m "feat: build full cart page"
 ```
 
 ---
 
-## Task 7: Run Tests + Final Build
-
-**Files:** none
+## Task 7: Run Tests + Final Verification
 
 - [ ] **Step 1: Run smoke tests**
 
 ```bash
-cd C:\AcesAndEightsPizza\webapp
 & "C:\xampp\php\php.exe" artisan test tests/Feature/RouteSmokeTest.php
 ```
 
-Expected:
-```
-PASS  Tests\Feature\RouteSmokeTest
-✓ public routes return 200 with data set "home"
-✓ public routes return 200 with data set "menu"
-✓ public routes return 200 with data set "cart"
-...
-Tests: 16 passed
-```
-
-The cart route must return 200 — it should since the page just extends `layouts.app` which renders fine server-side. The Alpine store runs client-side only, so there are no PHP errors.
+Expected: `Tests: 16 passed`
 
 - [ ] **Step 2: Build production assets**
 
@@ -1049,31 +1092,26 @@ The cart route must return 200 — it should since the page just extends `layout
 npm run build
 ```
 
-Expected: `✓ built in Xms`.
+Expected: `✓ built in Xms`
 
 - [ ] **Step 3: Final manual checklist**
 
-Visit `http://localhost:8000/menu` and confirm:
-
-- [ ] Clicking `+` on any pizza opens drawer with Size, Crust, Toppings, Kitchen Notes sections
-- [ ] Clicking `+` on any non-pizza opens drawer with Kitchen Notes only (no Size/Crust/Toppings)
-- [ ] Price in drawer footer updates live as options are selected
-- [ ] Kitchen note chips toggle on/off (oxblood fill = selected) and update the textarea
-- [ ] Typing in textarea with chips active clears chip selections
-- [ ] Qty stepper min 1, max 9 enforced
-- [ ] ADD TO CART closes drawer, badge count increments
-- [ ] Clicking cart icon shows mini-cart dropdown with item list
-- [ ] Removing item from mini-cart immediately updates badge count
-- [ ] Navigating to `/cart` shows all items with correct totals
-- [ ] Delivery/Collection toggle updates total reactively
-- [ ] Editing item in cart re-opens drawer as UPDATE CART
-- [ ] Removing all items shows empty state with Browse Menu CTA
-- [ ] Refreshing page preserves cart (localStorage persistence)
-- [ ] `/admin` still redirects to `/login`
+- [ ] Pizza drawer: Size, Crust, Ingredients (pre-checked), Toppings (25 items), Kitchen Notes
+- [ ] Uncheck ingredient → dims + REMOVED label
+- [ ] Re-check ingredient → returns to oxblood
+- [ ] Topping selected → price in footer updates
+- [ ] Removing ingredient does NOT change price; adding topping DOES
+- [ ] Non-pizza drawer: no Size/Crust/Ingredients/Toppings, only Kitchen Notes
+- [ ] Kitchen note chips toggle, sync to textarea; typing in textarea clears chips
+- [ ] ADD TO CART → badge increments, drawer closes
+- [ ] Mini-cart dropdown: shows items with customisation summary, remove works
+- [ ] Cart page: correct line totals, delivery toggle reactive, edit works, remove works
+- [ ] Refresh page → cart persists (localStorage)
+- [ ] `/admin` → redirects to `/login`
 
 - [ ] **Step 4: Final commit**
 
 ```bash
 git add .
-git commit -m "feat: complete cart + menu customisation (Plan 2)"
+git commit -m "feat: complete cart + menu customisation with ingredients and toppings (Plan 2)"
 ```

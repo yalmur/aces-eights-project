@@ -29,12 +29,17 @@ Lives in `resources/js/app.js`. Accessible from every page.
   sizeExtra: Number,    // 0 | 4.00
   crust: String,        // 'Sourdough' | 'Gluten-Free' | 'Cauliflower' — pizza only, null otherwise
   crustExtra: Number,   // 0 | 2.00 | 2.50
-  toppings: Array,      // [{ name, price }] — pizza only, [] otherwise
+  toppings: Array,          // [{ name, price }] — added extras, pizza only, [] otherwise
+  removedIngredients: Array,// [{ name }] — base ingredients the customer removed, pizza only, [] otherwise
   instructions: String,
   qty: Number,
-  lineTotal: Number,    // computed: (basePrice + sizeExtra + crustExtra + toppingsTotal) * qty
+  lineTotal: Number,        // computed: (basePrice + sizeExtra + crustExtra + toppingsTotal) * qty
 }
 ```
+
+### Store data
+- `baseIngredients` — map of `itemId → [{name}]` for every pizza. Hardcoded for Plan 2; replaced by API in Plan 4.
+- `allToppings` — global list of 25 extra toppings `[{name, price}]` available on all pizzas.
 
 ### Store methods
 - `openDrawer(itemData)` — sets `drawerItem` and `drawerOpen = true`
@@ -43,6 +48,8 @@ Lives in `resources/js/app.js`. Accessible from every page.
 - `removeItem(cartId)` — removes by cartId
 - `updateQty(cartId, delta)` — adjusts qty, removes if qty reaches 0
 - `editItem(cartId)` — opens drawer pre-filled with existing item data; drawer footer shows **UPDATE CART** instead of ADD TO CART; saving replaces the existing item in-place (same cartId, same array index) rather than appending a new one
+- `toggleIngredient(name)` — adds/removes from `draft.removedIngredients`
+- `isIngredientRemoved(name)` — returns bool
 - `clear()` — empties cart
 - Computed getters: `itemCount`, `subtotal`, `deliveryFee(orderType)`, `total(orderType)`
 
@@ -83,13 +90,17 @@ Included once in `resources/views/layouts/app.blade.php` (before `@livewireScrip
 - Gluten-Free — +£2.00
 - Cauliflower — +£2.50
 
-*Add Toppings* — checkbox list:
-- Extra Buffalo Mozzarella +£2.00
-- Spicy Salamino +£1.50
-- Wild Mushrooms +£1.50
-- Roasted Peppers +£1.00
-- Red Onion +£1.00
-- Anchovies +£1.50
+*Ingredients* — pre-checked checkboxes showing this pizza's base ingredients. Unchecking removes the ingredient (no price change). Tracked in `draft.removedIngredients`. Label: "INGREDIENTS — Uncheck to remove".
+
+Base ingredients per pizza (hardcoded Plan 2; API-driven in Plan 4):
+- Classic Margherita: Tomato Sauce, Fior di Latte, Basil, Olive Oil
+- Spicy Diavola: Tomato Sauce, Mozzarella, Nduja, Calabrese Salami
+- Tartufo Bianco: White Base, Wild Mushrooms, Truffle Oil, Pecorino
+- Vegan Garden: Tomato Sauce, Vegan Mozzarella, Roasted Peppers, Zucchini, Red Onion
+- The Meat Lover: Tomato Sauce, Mozzarella, Salami, Smoked Pancetta, Fennel Sausage
+
+*Toppings* — full global list of 25 extras, all unchecked by default. Three-column grid. Label: "TOPPINGS":
+Aubergines £2.00, Mixed Peppers £1.50, Mushrooms £1.50, Regular Pepperoni £2.00, Nduja £2.00, Spicy Ground Beef £2.00, Broccoli £2.00, Parmesan £2.00, Pine Nuts £1.50, Garlic Oil £1.50, Mozzarella £2.00, Olive Oil £1.50, Smoky Pancetta £2.00, Tomato Sauce £1.00, Basil £0.50, Red Onion £1.50, Anchovies £2.00, Chilli Flakes £1.00, Whole Black Olives £1.50, Oregano £0.50, Vegan Mozzarella £2.50, Sicilian Sausage £2.00, Hot Honey £2.00, Speck Ham £2.00, Provolone Picante £1.50
 
 **All items**
 
