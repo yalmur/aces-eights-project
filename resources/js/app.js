@@ -3,7 +3,7 @@ import Alpine from 'alpinejs'
 window.Alpine = Alpine
 
 Alpine.store('cart', {
-  items: JSON.parse(localStorage.getItem('a8_cart') || '[]'),
+  items: (() => { try { return JSON.parse(localStorage.getItem('a8_cart') || '[]') } catch { return [] } })(),
   drawerOpen: false,
   drawerItem: null,
   editingCartId: null,
@@ -84,7 +84,7 @@ Alpine.store('cart', {
 
   get draftLineTotal() {
     if (!this.drawerItem) return 0
-    const toppingsExtra = this.draft.toppings.reduce((s, t) => s + t.price, 0)
+    const toppingsExtra = this.draft.toppings.reduce((s, t) => s + (t.price || 0), 0)
     return (this.drawerItem.basePrice + this.draft.sizeExtra + this.draft.crustExtra + toppingsExtra) * this.draft.qty
   },
 
@@ -146,7 +146,7 @@ Alpine.store('cart', {
       sizeExtra: item.sizeExtra || 0,
       crust: item.crust || '48hr Sourdough',
       crustExtra: item.crustExtra || 0,
-      toppings: [...item.toppings],
+      toppings: (item.toppings || []).map(t => ({ ...t })),
       removedIngredients: [...(item.removedIngredients || [])],
       chips: [...(item.chips || [])],
       instructions: item.instructions || '',
@@ -266,7 +266,7 @@ Alpine.store('cart', {
       return
     }
     item.qty = newQty
-    const toppingsExtra = item.toppings.reduce((s, t) => s + t.price, 0)
+    const toppingsExtra = (item.toppings || []).reduce((s, t) => s + (t.price || 0), 0)
     item.lineTotal = (item.basePrice + item.sizeExtra + item.crustExtra + toppingsExtra) * item.qty
     this._persist()
   },
