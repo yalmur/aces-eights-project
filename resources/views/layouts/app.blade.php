@@ -11,6 +11,7 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
   @stack('head')
   @livewireStyles
+  <style>[x-cloak]{display:none!important}</style>
 </head>
 <body class="min-h-screen flex flex-col bg-surface">
 
@@ -21,6 +22,8 @@
   </main>
 
   <x-footer />
+
+  <x-cart-drawer />
 
   @livewireScripts
 </body>
