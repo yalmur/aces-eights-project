@@ -91,9 +91,10 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'classic-margherita') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                        <button @click="$store.cart.openDrawer({ id: 'classic-margherita', name: 'Classic Margherita', category: 'pizza', basePrice: 12.50 })"
+                                class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                             <span class="material-symbols-outlined text-white text-[20px]">add</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -115,9 +116,10 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'spicy-diavola') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                        <button @click="$store.cart.openDrawer({ id: 'spicy-diavola', name: 'Spicy Diavola', category: 'pizza', basePrice: 14.50 })"
+                                class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                             <span class="material-symbols-outlined text-white text-[20px]">add</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -139,9 +141,10 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'tartufo-bianco') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                        <button @click="$store.cart.openDrawer({ id: 'tartufo-bianco', name: 'Tartufo Bianco', category: 'pizza', basePrice: 16.00 })"
+                                class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                             <span class="material-symbols-outlined text-white text-[20px]">add</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -163,9 +166,10 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-primary text-on-primary">VEGAN</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'vegan-garden') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                        <button @click="$store.cart.openDrawer({ id: 'vegan-garden', name: 'Vegan Garden', category: 'pizza', basePrice: 13.50 })"
+                                class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                             <span class="material-symbols-outlined text-white text-[20px]">add</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -187,9 +191,10 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'the-meat-lover') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                        <button @click="$store.cart.openDrawer({ id: 'the-meat-lover', name: 'The Meat Lover', category: 'pizza', basePrice: 17.00 })"
+                                class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                             <span class="material-symbols-outlined text-white text-[20px]">add</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -219,9 +224,10 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'garlic-bread') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                        <button @click="$store.cart.openDrawer({ id: 'garlic-bread', name: 'Garlic Bread', category: 'starter', basePrice: 5.50 })"
+                                class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                             <span class="material-symbols-outlined text-white text-[20px]">add</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -242,9 +248,10 @@
                         <div class="flex gap-2">
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-primary text-on-primary">VEGAN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'nocellara-olives') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                        <button @click="$store.cart.openDrawer({ id: 'nocellara-olives', name: 'Nocellara Olives', category: 'starter', basePrice: 4.00 })"
+                                class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                             <span class="material-symbols-outlined text-white text-[20px]">add</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -265,9 +272,10 @@
                         <div class="flex gap-2">
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                         </div>
-                        <a href="{{ route('menu.show', 'burrata') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                        <button @click="$store.cart.openDrawer({ id: 'burrata', name: 'Burrata', category: 'starter', basePrice: 8.50 })"
+                                class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                             <span class="material-symbols-outlined text-white text-[20px]">add</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -297,9 +305,10 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'caesar-salad') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                        <button @click="$store.cart.openDrawer({ id: 'caesar-salad', name: 'Caesar Salad', category: 'salad', basePrice: 9.00 })"
+                                class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                             <span class="material-symbols-outlined text-white text-[20px]">add</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -321,9 +330,10 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">NUTS</span>
                         </div>
-                        <a href="{{ route('menu.show', 'rocket-parmesan') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                        <button @click="$store.cart.openDrawer({ id: 'rocket-parmesan', name: 'Rocket &amp; Parmesan', category: 'salad', basePrice: 7.50 })"
+                                class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                             <span class="material-symbols-outlined text-white text-[20px]">add</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -353,9 +363,10 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'cacio-e-pepe') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                        <button @click="$store.cart.openDrawer({ id: 'cacio-e-pepe', name: 'Cacio e Pepe', category: 'pasta', basePrice: 11.00 })"
+                                class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                             <span class="material-symbols-outlined text-white text-[20px]">add</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -377,9 +388,10 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'amatriciana') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                        <button @click="$store.cart.openDrawer({ id: 'amatriciana', name: 'Amatriciana', category: 'pasta', basePrice: 13.00 })"
+                                class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                             <span class="material-symbols-outlined text-white text-[20px]">add</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -410,9 +422,10 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">EGGS</span>
                         </div>
-                        <a href="{{ route('menu.show', 'tiramisu') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                        <button @click="$store.cart.openDrawer({ id: 'tiramisu', name: 'Tiramisu', category: 'dessert', basePrice: 7.00 })"
+                                class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                             <span class="material-symbols-outlined text-white text-[20px]">add</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -434,9 +447,10 @@
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">MILK</span>
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'panna-cotta') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                        <button @click="$store.cart.openDrawer({ id: 'panna-cotta', name: 'Panna Cotta', category: 'dessert', basePrice: 6.50 })"
+                                class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                             <span class="material-symbols-outlined text-white text-[20px]">add</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -465,9 +479,10 @@
                         <div class="flex gap-2">
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">GLUTEN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'moretti-draft') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                        <button @click="$store.cart.openDrawer({ id: 'moretti-draft', name: 'Moretti Draft', category: 'drink', basePrice: 6.50 })"
+                                class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                             <span class="material-symbols-outlined text-white text-[20px]">add</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -488,9 +503,10 @@
                         <div class="flex gap-2">
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-primary text-on-primary">VEGAN</span>
                         </div>
-                        <a href="{{ route('menu.show', 'san-pellegrino') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                        <button @click="$store.cart.openDrawer({ id: 'san-pellegrino', name: 'San Pellegrino', category: 'drink', basePrice: 3.50 })"
+                                class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                             <span class="material-symbols-outlined text-white text-[20px]">add</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -511,9 +527,10 @@
                         <div class="flex gap-2">
                             <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant">SULPHITES</span>
                         </div>
-                        <a href="{{ route('menu.show', 'house-red-wine') }}" class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
+                        <button @click="$store.cart.openDrawer({ id: 'house-red-wine', name: 'House Red Wine', category: 'drink', basePrice: 28.00 })"
+                                class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                             <span class="material-symbols-outlined text-white text-[20px]">add</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
