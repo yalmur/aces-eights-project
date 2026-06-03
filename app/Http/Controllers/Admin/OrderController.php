@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Events\OrderStatusUpdated;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use Illuminate\Http\RedirectResponse;
@@ -46,6 +47,8 @@ class OrderController extends Controller
         ]);
 
         $orderModel->update(['status' => $data['status']]);
+
+        OrderStatusUpdated::dispatch($orderModel);
 
         return back()->with('success', "Order #{$orderModel->id} updated to {$orderModel->status_label}.");
     }
