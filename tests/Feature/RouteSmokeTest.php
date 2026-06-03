@@ -9,6 +9,12 @@ class RouteSmokeTest extends TestCase
 {
     use RefreshDatabase;
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->seed();
+    }
+
     #[\PHPUnit\Framework\Attributes\DataProvider('publicRouteProvider')]
     public function test_public_routes_return_200(string $uri): void
     {
@@ -29,7 +35,7 @@ class RouteSmokeTest extends TestCase
             'contact'     => ['/contact'],
             'login'       => ['/login'],
             'register'    => ['/register'],
-            'menu.show'   => ['/menu/the-blueprint'],
+            'menu.show'   => ['/menu/margherita'],
         ];
     }
 

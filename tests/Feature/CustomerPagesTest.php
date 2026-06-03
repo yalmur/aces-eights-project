@@ -2,10 +2,19 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class CustomerPagesTest extends TestCase
 {
+    use RefreshDatabase;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->seed();
+    }
+
     public function test_home_has_industrial_content(): void
     {
         $r = $this->get('/');
@@ -22,7 +31,7 @@ class CustomerPagesTest extends TestCase
 
     public function test_menu_show_returns_200(): void
     {
-        $r = $this->get('/menu/the-blueprint');
+        $r = $this->get('/menu/margherita');
         $r->assertStatus(200);
     }
 
