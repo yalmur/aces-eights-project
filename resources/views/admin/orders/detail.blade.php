@@ -5,12 +5,12 @@
 <section class="flex flex-col gap-6 mb-10">
   <div class="flex justify-between items-end">
     <div>
-      <h2 class="font-serif text-3xl font-bold text-on-surface">ORDER #AE-9842</h2>
-      <p class="font-sans text-sm text-on-surface-variant mt-1">Customer: <span class="font-bold text-on-surface">Dominic Vitale</span></p>
+      <h2 class="font-serif text-3xl font-bold text-on-surface">ORDER #{{ $order->id }}</h2>
+      <p class="font-sans text-sm text-on-surface-variant mt-1">Customer: <span class="font-bold text-on-surface">{{ $order->customer_name }}</span></p>
     </div>
     <div class="bg-secondary-container border-2 border-on-surface px-6 py-2 flex items-center gap-3">
       <span class="material-symbols-outlined text-on-secondary-fixed-variant" style="font-variation-settings:'FILL' 1">restaurant</span>
-      <span class="font-mono text-xs font-bold text-on-secondary-fixed-variant uppercase">PREPARING</span>
+      <span class="font-mono text-xs font-bold text-on-secondary-fixed-variant uppercase">{{ $order->status_label }}</span>
     </div>
   </div>
   <div class="industrial-divider w-full"></div>
@@ -47,6 +47,18 @@
         <button class="bg-surface border-2 border-on-surface text-on-surface font-mono text-xs font-bold py-4 px-4 active:scale-95 transition-all hover:bg-surface-container-low uppercase">OUT FOR DELIVERY</button>
         <button class="bg-brand-error text-white font-mono text-xs font-bold py-4 px-4 active:scale-95 transition-all hover:opacity-90 uppercase">CANCEL ORDER</button>
       </div>
+
+      {{-- Status update form --}}
+      <form method="POST" action="{{ route('admin.orders.status', $order->id) }}" class="mt-4 flex gap-3 items-center">
+        @csrf
+        @method('PATCH')
+        <select name="status" class="industrial-border-b font-mono text-xs py-2 flex-1">
+          @foreach(['accepted','cooking','ready','out_for_delivery','collected','delivered','cancelled'] as $s)
+            <option value="{{ $s }}" {{ $order->status === $s ? 'selected' : '' }}>{{ ucfirst(str_replace('_', ' ', $s)) }}</option>
+          @endforeach
+        </select>
+        <button type="submit" class="gold-button px-4 py-2 font-mono text-xs uppercase whitespace-nowrap">Update Status</button>
+      </form>
     </section>
 
     {{-- Order breakdown --}}
@@ -56,30 +68,23 @@
         <span class="font-mono text-sm font-bold">Items: 3</span>
       </div>
       <div class="p-8 flex flex-col gap-6 bg-surface-container-lowest">
+        @foreach($order->items as $item)
         <div class="flex justify-between items-start border-b border-outline-variant pb-6">
-          <div class="flex flex-col gap-2">
-            <span class="font-mono text-sm font-bold">1x THE FULL HOUSE PIZZA (15")</span>
-            <div class="flex gap-2">
-              <span class="bg-on-primary-fixed-variant text-white text-[10px] px-3 py-1 font-bold">EXTRA SPICY</span>
-              <span class="bg-on-primary-fixed-variant text-white text-[10px] px-3 py-1 font-bold">NO OLIVES</span>
-            </div>
+          <div class="flex flex-col gap-1">
+            <span class="font-mono text-sm font-bold">{{ $item->qty }}x {{ strtoupper($item->name) }}</span>
+            @if($item->customisation_summary !== 'No extras')
+              <span class="font-mono text-[10px] text-on-surface-variant">{{ $item->customisation_summary }}</span>
+            @endif
           </div>
-          <span class="font-serif text-xl font-bold">£22.50</span>
+          <span class="font-serif text-xl font-bold">£{{ number_format($item->line_total, 2) }}</span>
         </div>
-        <div class="flex justify-between items-start border-b border-outline-variant pb-6">
-          <span class="font-mono text-sm font-bold">2x GARLIC BREAD</span>
-          <span class="font-serif text-xl font-bold">£11.00</span>
-        </div>
-        <div class="flex justify-between items-start border-b border-outline-variant pb-6">
-          <span class="font-mono text-sm font-bold">1x SAN PELLEGRINO (750ml)</span>
-          <span class="font-serif text-xl font-bold">£3.50</span>
-        </div>
+        @endforeach
         <div class="flex flex-col gap-4 pt-4 ml-auto w-full max-w-xs">
-          <div class="flex justify-between text-on-surface-variant font-sans text-sm"><span>Subtotal</span><span>£37.00</span></div>
-          <div class="flex justify-between text-on-surface-variant font-sans text-sm"><span>Delivery Fee</span><span>£3.50</span></div>
+          <div class="flex justify-between text-on-surface-variant font-sans text-sm"><span>Subtotal</span><span>£{{ number_format($order->subtotal, 2) }}</span></div>
+          <div class="flex justify-between text-on-surface-variant font-sans text-sm"><span>Delivery Fee</span><span>£{{ number_format($order->delivery_fee, 2) }}</span></div>
           <div class="flex justify-between pt-4 border-t-2 border-on-surface">
             <span class="font-serif text-lg font-bold uppercase">TOTAL</span>
-            <span class="font-serif text-lg font-bold text-primary">£40.50</span>
+            <span class="font-serif text-lg font-bold text-primary">£{{ number_format($order->total, 2) }}</span>
           </div>
         </div>
       </div>
@@ -100,13 +105,13 @@
           <span class="material-symbols-outlined text-primary mt-1">location_on</span>
           <div>
             <p class="font-sans text-sm font-bold">Shipping Address</p>
-            <p class="font-sans text-sm text-on-surface-variant">42 Industrial Way, London, NW5 2HP</p>
+            <p class="font-sans text-sm text-on-surface-variant">{{ $order->delivery_address ?? 'Collection' }}, {{ $order->delivery_city ?? '' }}</p>
           </div>
         </div>
         <div class="flex items-center justify-between bg-surface-container-low p-4 border border-outline-variant">
           <div class="flex items-center gap-4">
             <span class="material-symbols-outlined text-primary">phone</span>
-            <p class="font-sans text-sm font-bold">+44 7700 900123</p>
+            <p class="font-sans text-sm font-bold">{{ $order->customer_phone ?? 'N/A' }}</p>
           </div>
           <button class="bg-primary text-on-primary p-2 active:scale-95 transition-all">
             <span class="material-symbols-outlined text-[20px]">call</span>

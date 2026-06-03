@@ -77,6 +77,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/orders', [AdminOrderController::class, 'index'])->name('orders.index');
     Route::get('/orders/in-store', [AdminOrderController::class, 'inStore'])->name('orders.in-store');
     Route::get('/orders/{order}', [AdminOrderController::class, 'show'])->name('orders.detail');
+    Route::patch('/orders/{order}/status', [AdminOrderController::class, 'updateStatus'])->name('orders.status');
 
     // Menu
     Route::get('/menu',             [MenuItemController::class, 'index'])->name('menu.index');

@@ -3,13 +3,24 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class OrderController extends Controller
 {
     public function index(): View
     {
-        return view('admin.orders.index', ['title' => 'Online Orders']);
+        $orders = Order::with(['user', 'items'])
+            ->whereNotIn('status', ['pending_payment', 'cancelled'])
+            ->latest()
+            ->paginate(20);
+
+        return view('admin.orders.index', [
+            'title'  => 'Online Orders',
+            'orders' => $orders,
+        ]);
     }
 
     public function inStore(): View
@@ -19,6 +30,23 @@ class OrderController extends Controller
 
     public function show(string $order): View
     {
-        return view('admin.orders.detail', ['title' => 'Order #' . $order, 'orderId' => $order]);
+        $orderModel = Order::with(['user', 'items'])->findOrFail($order);
+
+        return view('admin.orders.detail', [
+            'title' => 'Order #' . $orderModel->id,
+            'order' => $orderModel,
+        ]);
+    }
+
+    public function updateStatus(Request $request, string $order): RedirectResponse
+    {
+        $orderModel = Order::findOrFail($order);
+        $data = $request->validate([
+            'status' => 'required|in:accepted,cooking,ready,out_for_delivery,collected,delivered,cancelled',
+        ]);
+
+        $orderModel->update(['status' => $data['status']]);
+
+        return back()->with('success', "Order #{$orderModel->id} updated to {$orderModel->status_label}.");
     }
 }
