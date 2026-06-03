@@ -1,6 +1,27 @@
 @extends('layouts.admin')
 @section('content')
 
+{{-- Live order updates toast --}}
+<div x-data="{
+       show: false,
+       message: '',
+       notify(msg) { this.message = msg; this.show = true; setTimeout(() => this.show = false, 4000) },
+       init() {
+         if (window.Echo) {
+           window.Echo.private('admin.orders')
+             .listen('.OrderStatusUpdated', (data) => {
+               this.notify('Order #' + data.order_id + ' → ' + data.status_label)
+             })
+         }
+       }
+     }"
+     x-show="show"
+     x-cloak
+     x-transition
+     class="fixed bottom-6 right-6 z-50 bg-on-surface text-surface px-6 py-3 font-mono text-xs font-bold uppercase shadow-xl">
+  <span x-text="message"></span>
+</div>
+
 @if(session('success'))
   <div class="mb-6 p-4 bg-green-50 border border-green-200 text-green-800 font-mono text-xs">
     {{ session('success') }}
@@ -11,7 +32,13 @@
 <section class="mb-10">
   <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-4">
     <div>
-      <h1 class="font-serif text-4xl font-black text-on-surface uppercase">Online Orders</h1>
+      <div class="flex items-center gap-3">
+        <h1 class="font-serif text-4xl font-black text-on-surface uppercase">Online Orders</h1>
+        <span x-data x-show="window.Echo !== undefined" x-cloak
+              class="font-mono text-[10px] bg-green-100 text-green-800 px-2 py-1 border border-green-300 uppercase tracking-widest">
+          ● LIVE
+        </span>
+      </div>
       <p class="font-mono text-xs text-on-surface-variant mt-1 uppercase tracking-widest">{{ now()->format('l, d M Y') }}</p>
     </div>
     <div x-data="{ status: 'all' }" class="flex gap-1 p-1 industrial-border bg-surface-container">

@@ -26,7 +26,7 @@
 <div class="flex flex-col gap-4">
 <div class="flex items-center justify-between border-b-2 border-on-surface pb-2">
 <h3 class="font-headline-md text-headline-md text-primary">ORDER QUEUE</h3>
-<span class="bg-outline text-on-primary px-3 py-1 text-label-bold rounded-full">3</span>
+<span id="status-badge-pending_payment" class="bg-outline text-on-primary px-3 py-1 text-label-bold rounded-full transition-all duration-200">3</span>
 </div>
 <div class="flex flex-col gap-6 industrial-scrollbar max-h-[80vh] overflow-y-auto pr-2">
 <!-- Ticket 1 -->
@@ -74,7 +74,7 @@ ACCEPT ORDER
 <div class="flex flex-col gap-4">
 <div class="flex items-center justify-between border-b-2 border-on-surface pb-2">
 <h3 class="font-headline-md text-headline-md text-primary">IN THE KITCHEN</h3>
-<span class="bg-primary text-on-primary px-3 py-1 text-label-bold rounded-full">2</span>
+<span id="status-badge-cooking" class="bg-primary text-on-primary px-3 py-1 text-label-bold rounded-full transition-all duration-200">2</span>
 </div>
 <div class="flex flex-col gap-6 industrial-scrollbar max-h-[80vh] overflow-y-auto pr-2">
 <!-- Cooking Ticket -->
@@ -109,7 +109,7 @@ MARK AS READY
 <div class="flex flex-col gap-4">
 <div class="flex items-center justify-between border-b-2 border-on-surface pb-2">
 <h3 class="font-headline-md text-headline-md text-primary">READY FOR DISPATCH</h3>
-<span class="bg-secondary text-on-secondary px-3 py-1 text-label-bold rounded-full">1</span>
+<span id="status-badge-ready" class="bg-secondary text-on-secondary px-3 py-1 text-label-bold rounded-full transition-all duration-200">1</span>
 </div>
 <div class="flex flex-col gap-6 industrial-scrollbar max-h-[80vh] overflow-y-auto pr-2">
 <!-- Dispatch Ticket -->
@@ -143,7 +143,7 @@ DISPATCH ORDER
 <div class="flex flex-col gap-4">
 <div class="flex items-center justify-between border-b-2 border-on-surface pb-2">
 <h3 class="font-headline-md text-headline-md text-primary">OUT FOR DELIVERY</h3>
-<span class="bg-on-surface text-surface px-3 py-1 text-label-bold rounded-full">4</span>
+<span id="status-badge-out_for_delivery" class="bg-on-surface text-surface px-3 py-1 text-label-bold rounded-full transition-all duration-200">4</span>
 </div>
 <div class="flex flex-col gap-6 industrial-scrollbar max-h-[80vh] overflow-y-auto pr-2">
 <!-- Out for Delivery Ticket -->
@@ -179,6 +179,25 @@ TRACK MAP
 </div>
 </div>
 </div>
+</div>
+
+{{-- Live kitchen updates via Pusher --}}
+<div x-data="{
+       init() {
+         if (window.Echo) {
+           window.Echo.private('admin.orders')
+             .listen('.OrderStatusUpdated', (data) => {
+               // Flash the status badge for the updated status
+               const badge = document.getElementById('status-badge-' + data.status)
+               if (badge) {
+                 badge.classList.add('ring-2', 'ring-yellow-400', 'scale-110')
+                 setTimeout(() => badge.classList.remove('ring-2', 'ring-yellow-400', 'scale-110'), 2000)
+               }
+             })
+         }
+       }
+     }"
+     x-init="init()">
 </div>
 
 @endsection
