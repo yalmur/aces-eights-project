@@ -43,8 +43,9 @@ Route::post('/contact', [PageController::class, 'sendContact'])->name('contact.s
 */
 
 Route::get('/login', fn () => view('auth.login', ['title' => 'Login']))->name('login');
+Route::post('/login', [App\Http\Controllers\AuthController::class, 'login'])->name('login.post');
 Route::get('/register', fn () => view('auth.register', ['title' => 'Create Account']))->name('register');
-Route::post('/logout', fn () => redirect('/'))->name('logout');
+Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 
 /*
 |--------------------------------------------------------------------------
@@ -84,4 +85,10 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
     // Settings
     Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');
+
+    // Kitchen Command
+    Route::get('/kitchen', [App\Http\Controllers\Admin\KitchenController::class, 'index'])->name('kitchen.index');
+
+    // Allergy Management
+    Route::get('/allergy', [App\Http\Controllers\Admin\AllergyController::class, 'index'])->name('allergy.index');
 });

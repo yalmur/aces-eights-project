@@ -22,7 +22,7 @@
 </div>
 
 {{-- Login form --}}
-<form action="{{ route('login') }}" method="POST" class="space-y-6">
+<form method="POST" action="{{ route('login.post') }}" class="space-y-6">
     @csrf
 
     <div class="flex flex-col">
