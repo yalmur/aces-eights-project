@@ -7,14 +7,18 @@
         <p class="font-body-md text-on-surface-variant mt-2 italic">Secure transaction — 156 &amp; 158 Fortess Road, Tufnell Park, London.</p>
     </div>
 
-    <form action="{{ route('checkout') }}" method="POST">
+    <form action="{{ route('checkout.store') }}" method="POST"
+          x-data="{ orderType: 'delivery' }"
+          @submit.prevent="document.getElementById('cart-json').value = JSON.stringify($store.cart.items); document.getElementById('order-type-input').value = orderType; $el.submit()">
         @csrf
+        <input type="hidden" name="cart_items" id="cart-json">
+        <input type="hidden" name="order_type" id="order-type-input" value="delivery">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
             <!-- Left Column: Forms -->
             <div class="lg:col-span-7 space-y-12">
 
                 <!-- Toggle: Delivery/Collection -->
-                <div x-data="{ orderType: 'delivery' }">
+                <div>
                     <section>
                         <h3 class="font-label-bold text-label-bold uppercase mb-4 text-primary">Order Type</h3>
                         <div class="flex border-2 border-on-surface p-1 gap-1">

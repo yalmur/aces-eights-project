@@ -28,7 +28,12 @@ Route::get('/our-menu', [OurMenuController::class, 'index'])->name('our-menu');
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
 Route::get('/menu/{slug}', [MenuController::class, 'show'])->name('menu.show');
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
-Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
+Route::middleware('auth')->group(function () {
+    Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
+    Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+});
+
+Route::post('/stripe/webhook', [App\Http\Controllers\StripeWebhookController::class, 'handle'])->name('stripe.webhook');
 Route::get('/orders/{order}/confirmation', [OrderController::class, 'confirmation'])->name('orders.confirmation');
 Route::get('/orders/{order}/tracking', [OrderController::class, 'tracking'])->name('orders.tracking');
 Route::get('/booking', [BookingController::class, 'index'])->name('booking');
