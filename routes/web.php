@@ -73,9 +73,12 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/orders/{order}', [AdminOrderController::class, 'show'])->name('orders.detail');
 
     // Menu
-    Route::get('/menu', [MenuItemController::class, 'index'])->name('menu.index');
-    Route::get('/menu/create', [MenuItemController::class, 'create'])->name('menu.create');
+    Route::get('/menu',             [MenuItemController::class, 'index'])->name('menu.index');
+    Route::get('/menu/create',      [MenuItemController::class, 'create'])->name('menu.create');
+    Route::post('/menu',            [MenuItemController::class, 'store'])->name('menu.store');
     Route::get('/menu/{item}/edit', [MenuItemController::class, 'edit'])->name('menu.edit');
+    Route::put('/menu/{item}',      [MenuItemController::class, 'update'])->name('menu.update');
+    Route::delete('/menu/{item}',   [MenuItemController::class, 'destroy'])->name('menu.destroy');
 
     // Delivery
     Route::get('/delivery', [DeliveryController::class, 'index'])->name('delivery.index');
