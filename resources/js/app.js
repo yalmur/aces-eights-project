@@ -1,6 +1,20 @@
 import Alpine from 'alpinejs'
+import Echo from 'laravel-echo'
+import Pusher from 'pusher-js'
 
 window.Alpine = Alpine
+
+// Initialise Pusher Echo when credentials are available
+if (import.meta.env.VITE_PUSHER_APP_KEY && import.meta.env.VITE_PUSHER_APP_KEY !== 'your_pusher_app_key') {
+    window.Pusher = Pusher
+    window.Echo = new Echo({
+        broadcaster:  'pusher',
+        key:          import.meta.env.VITE_PUSHER_APP_KEY,
+        cluster:      import.meta.env.VITE_PUSHER_APP_CLUSTER ?? 'eu',
+        forceTLS:     true,
+        authEndpoint: '/broadcasting/auth',
+    })
+}
 
 Alpine.store('cart', {
   items: (() => { try { return JSON.parse(localStorage.getItem('a8_cart') || '[]') } catch { return [] } })(),
