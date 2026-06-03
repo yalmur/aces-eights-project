@@ -78,6 +78,10 @@ export default {
           dark: '#996515',
           border: '#B8860B',
         },
+        'industrial-gray': '#2B2B2B',
+        'carbon-black': '#121212',
+        'heritage-gold': '#D4AF37',
+        'oxblood-red': '#690008',
       },
       fontFamily: {
         serif:        ['"Source Serif 4"', ...defaultTheme.fontFamily.serif],

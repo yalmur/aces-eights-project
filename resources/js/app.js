@@ -281,4 +281,10 @@ Alpine.store('cart', {
   },
 })
 
+Alpine.store('adminNav', {
+  open: false,
+  toggle() { this.open = !this.open },
+  close() { this.open = false },
+})
+
 Alpine.start()

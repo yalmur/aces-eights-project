@@ -170,4 +170,45 @@
     border-bottom: 4px double #8c716e;
     margin-bottom: 2rem;
   }
+
+  /* Admin industrial utilities */
+  .industrial-border {
+    @apply border border-[#2B2B2B];
+  }
+  .industrial-divider {
+    @apply border-b-2 border-double border-[#2B2B2B];
+  }
+  .double-divider {
+    border-bottom: 3px double #1b1c1c;
+  }
+  .gold-button {
+    background-color: #690008;
+    color: white;
+    border-bottom: 2px solid #D4AF37;
+    transition: all 0.2s ease;
+  }
+  .gold-button:active { transform: scale(0.96); opacity: 0.9; }
+  .gold-metallic {
+    background: linear-gradient(135deg, #D4AF37 0%, #C5A028 50%, #B8860B 100%);
+  }
+  .industrial-border-b {
+    border: none;
+    border-bottom: 2px solid #2B2B2B;
+    background: transparent;
+  }
+  .industrial-border-t {
+    border: none;
+    border-top: 2px solid #2B2B2B;
+  }
+  .admin-nav-item {
+    @apply flex items-center gap-4 py-3 px-4 text-on-surface hover:bg-[#2B2B2B]/10 rounded transition-colors cursor-pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .admin-nav-item.active {
+    @apply bg-primary text-white;
+  }
 }
