@@ -45,6 +45,7 @@ Route::post('/contact', [PageController::class, 'sendContact'])->name('contact.s
 Route::get('/login', fn () => view('auth.login', ['title' => 'Login']))->name('login');
 Route::post('/login', [App\Http\Controllers\AuthController::class, 'login'])->name('login.post');
 Route::get('/register', fn () => view('auth.register', ['title' => 'Create Account']))->name('register');
+Route::post('/register', [App\Http\Controllers\AuthController::class, 'register'])->name('register.post');
 Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 
 /*
