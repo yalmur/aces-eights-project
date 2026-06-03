@@ -29,7 +29,6 @@ class RouteSmokeTest extends TestCase
             'home'        => ['/'],
             'menu'        => ['/menu'],
             'cart'        => ['/cart'],
-            'checkout'    => ['/checkout'],
             'booking'     => ['/booking'],
             'about'       => ['/about'],
             'contact'     => ['/contact'],
@@ -41,14 +40,18 @@ class RouteSmokeTest extends TestCase
 
     public function test_order_confirmation_route_returns_200(): void
     {
-        $response = $this->get('/orders/TEST123/confirmation');
+        $order = \App\Models\Order::factory()->create();
+
+        $response = $this->get('/orders/' . $order->id . '/confirmation');
 
         $response->assertStatus(200);
     }
 
     public function test_order_tracking_route_returns_200(): void
     {
-        $response = $this->get('/orders/TEST123/tracking');
+        $order = \App\Models\Order::factory()->create();
+
+        $response = $this->get('/orders/' . $order->id . '/tracking');
 
         $response->assertStatus(200);
     }
@@ -108,18 +111,27 @@ class RouteSmokeTest extends TestCase
     public static function adminRouteProvider(): array
     {
         return [
-            'admin dashboard'    => ['/admin'],
-            'admin orders'       => ['/admin/orders'],
-            'admin in-store'     => ['/admin/orders/in-store'],
-            'admin order detail' => ['/admin/orders/preview'],
-            'admin kitchen'      => ['/admin/kitchen'],
-            'admin menu'         => ['/admin/menu'],
-            'admin menu create'  => ['/admin/menu/create'],
-            'admin allergy'      => ['/admin/allergy'],
-            'admin delivery'     => ['/admin/delivery'],
-            'admin promotions'   => ['/admin/promotions'],
-            'admin settings'     => ['/admin/settings'],
+            'admin dashboard'  => ['/admin'],
+            'admin orders'     => ['/admin/orders'],
+            'admin in-store'   => ['/admin/orders/in-store'],
+            'admin kitchen'    => ['/admin/kitchen'],
+            'admin menu'       => ['/admin/menu'],
+            'admin menu create'=> ['/admin/menu/create'],
+            'admin allergy'    => ['/admin/allergy'],
+            'admin delivery'   => ['/admin/delivery'],
+            'admin promotions' => ['/admin/promotions'],
+            'admin settings'   => ['/admin/settings'],
         ];
+    }
+
+    public function test_admin_order_detail_returns_200_for_admin(): void
+    {
+        $admin = \App\Models\User::factory()->create(['role' => 'admin']);
+        $order = \App\Models\Order::factory()->create();
+
+        $response = $this->actingAs($admin)->get('/admin/orders/' . $order->id);
+
+        $response->assertStatus(200);
     }
 
     public function test_admin_routes_return_403_for_customer(): void

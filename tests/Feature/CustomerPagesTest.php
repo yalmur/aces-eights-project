@@ -2,6 +2,8 @@
 
 namespace Tests\Feature;
 
+use App\Models\Order;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -37,20 +39,23 @@ class CustomerPagesTest extends TestCase
 
     public function test_checkout_has_delivery_option(): void
     {
-        $r = $this->get('/checkout');
+        $user = User::factory()->create();
+        $r = $this->actingAs($user)->get('/checkout');
         $r->assertStatus(200);
         $r->assertSee('Delivery');
     }
 
     public function test_tracking_page_returns_200(): void
     {
-        $r = $this->get('/orders/TEST123/tracking');
+        $order = Order::factory()->create();
+        $r = $this->get('/orders/' . $order->id . '/tracking');
         $r->assertStatus(200);
     }
 
     public function test_confirmation_page_returns_200(): void
     {
-        $r = $this->get('/orders/TEST123/confirmation');
+        $order = Order::factory()->create();
+        $r = $this->get('/orders/' . $order->id . '/confirmation');
         $r->assertStatus(200);
     }
 
