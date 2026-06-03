@@ -16,12 +16,14 @@ class Order extends Model
         'customer_name', 'customer_email', 'customer_phone',
         'delivery_address', 'delivery_city', 'delivery_postcode',
         'stripe_session_id', 'stripe_payment_intent_id', 'notes',
+        'promo_code', 'discount_amount',
     ];
 
     protected $casts = [
-        'subtotal'     => 'decimal:2',
-        'delivery_fee' => 'decimal:2',
-        'total'        => 'decimal:2',
+        'subtotal'         => 'decimal:2',
+        'delivery_fee'     => 'decimal:2',
+        'total'            => 'decimal:2',
+        'discount_amount'  => 'decimal:2',
     ];
 
     public function user(): BelongsTo

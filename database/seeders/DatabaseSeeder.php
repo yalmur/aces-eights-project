@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             ToppingSeeder::class,
             DeliveryZoneSeeder::class,
             MenuItemSeeder::class,
+            SettingSeeder::class,
         ]);
     }
 }
