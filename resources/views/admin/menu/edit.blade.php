@@ -8,8 +8,12 @@
   <span>{{ $itemId ?? 'Add New Item' }}</span>
 </div>
 
-<form method="POST" action="#" class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
-@csrf
+<form class="grid grid-cols-1 lg:grid-cols-12 gap-gutter"
+      method="POST"
+      action="{{ $item ? route('admin.menu.update', $item->id) : route('admin.menu.store') }}"
+      enctype="multipart/form-data">
+  @csrf
+  @if($item) @method('PUT') @endif
 <!-- Left Column: Primary Details -->
 <div class="lg:col-span-7 space-y-12">
 <!-- Section 1: Basic Info -->
@@ -20,27 +24,27 @@
 <div class="space-y-8">
 <div class="relative">
 <label class="font-label-caps text-label-caps text-on-surface-variant block mb-1">Item Name</label>
-<input class="w-full bg-transparent border-t-0 border-x-0 border-b-2 border-industrial-gray py-2 font-headline-md text-headline-md focus:ring-0 px-0" placeholder="Enter item name..." type="text" value="The Industrialist Supreme"/>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b-2 border-industrial-gray py-2 font-headline-md text-headline-md focus:ring-0 px-0" name="name" value="{{ old('name', $item?->name) }}" placeholder="Enter item name..." type="text"/>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
 <div class="relative">
 <label class="font-label-caps text-label-caps text-on-surface-variant block mb-1">Category</label>
-<select class="w-full bg-transparent border-t-0 border-x-0 border-b-2 border-industrial-gray py-2 font-body-lg text-body-lg focus:ring-0 px-0 appearance-none">
-<option>Signature Pizzas</option>
-<option>Classic Pizzas</option>
-<option>Sides &amp; Starters</option>
-<option>Desserts</option>
-<option>Beverages</option>
+<select name="category_id" class="w-full bg-transparent border-t-0 border-x-0 border-b-2 border-industrial-gray py-2 font-body-lg text-body-lg focus:ring-0 px-0 appearance-none">
+  @foreach($categories as $cat)
+    <option value="{{ $cat->id }}" {{ $item && $item->category_id == $cat->id ? 'selected' : '' }}>
+      {{ $cat->name }}
+    </option>
+  @endforeach
 </select>
 </div>
 <div class="relative">
 <label class="font-label-caps text-label-caps text-on-surface-variant block mb-1">Base Price ($)</label>
-<input class="w-full bg-transparent border-t-0 border-x-0 border-b-2 border-industrial-gray py-2 font-body-lg text-body-lg focus:ring-0 px-0" placeholder="0.00" step="0.01" type="number" value="24.50"/>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b-2 border-industrial-gray py-2 font-body-lg text-body-lg focus:ring-0 px-0" name="base_price" value="{{ old('base_price', $item?->base_price) }}" placeholder="0.00" step="0.01" type="number"/>
 </div>
 </div>
 <div class="relative">
 <label class="font-label-caps text-label-caps text-on-surface-variant block mb-1">Description</label>
-<textarea class="w-full bg-transparent border-t-0 border-x-0 border-b-2 border-industrial-gray py-2 font-body-md text-body-md focus:ring-0 px-0 resize-none" placeholder="Describe the flavors and ingredients..." rows="4">Double-smoked mozzarella, heritage pepperoni, coal-fired peppers, and our signature 48-hour fermented sourdough crust. Finished with a drizzle of spicy honey.</textarea>
+<textarea name="description" class="w-full bg-transparent border-t-0 border-x-0 border-b-2 border-industrial-gray py-2 font-body-md text-body-md focus:ring-0 px-0 resize-none" placeholder="Describe the flavors and ingredients..." rows="4">{{ old('description', $item?->description) }}</textarea>
 </div>
 </div>
 </section>
@@ -50,30 +54,14 @@
 <span class="material-symbols-outlined">warning</span> Allergy Information
 </h3>
 <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+@foreach($allergens as $allergen)
 <label class="flex items-center gap-3 cursor-pointer group">
-<input checked="" class="w-5 h-5 border-2 border-industrial-gray text-oxblood-red focus:ring-oxblood-red rounded-sm" type="checkbox"/>
-<span class="font-body-md text-body-md group-hover:text-oxblood-red transition-colors">Gluten</span>
+  <input type="checkbox" name="allergens[]" value="{{ $allergen->id }}"
+         {{ $item && $item->allergens->contains($allergen->id) ? 'checked' : '' }}
+         class="w-5 h-5 border-2 border-industrial-gray text-oxblood-red focus:ring-oxblood-red rounded-sm"/>
+  <span class="font-body-md text-body-md group-hover:text-oxblood-red transition-colors">{{ $allergen->name }}</span>
 </label>
-<label class="flex items-center gap-3 cursor-pointer group">
-<input checked="" class="w-5 h-5 border-2 border-industrial-gray text-oxblood-red focus:ring-oxblood-red rounded-sm" type="checkbox"/>
-<span class="font-body-md text-body-md group-hover:text-oxblood-red transition-colors">Dairy</span>
-</label>
-<label class="flex items-center gap-3 cursor-pointer group">
-<input class="w-5 h-5 border-2 border-industrial-gray text-oxblood-red focus:ring-oxblood-red rounded-sm" type="checkbox"/>
-<span class="font-body-md text-body-md group-hover:text-oxblood-red transition-colors">Nuts</span>
-</label>
-<label class="flex items-center gap-3 cursor-pointer group">
-<input class="w-5 h-5 border-2 border-industrial-gray text-oxblood-red focus:ring-oxblood-red rounded-sm" type="checkbox"/>
-<span class="font-body-md text-body-md group-hover:text-oxblood-red transition-colors">Soy</span>
-</label>
-<label class="flex items-center gap-3 cursor-pointer group">
-<input class="w-5 h-5 border-2 border-industrial-gray text-oxblood-red focus:ring-oxblood-red rounded-sm" type="checkbox"/>
-<span class="font-body-md text-body-md group-hover:text-oxblood-red transition-colors">Egg</span>
-</label>
-<label class="flex items-center gap-3 cursor-pointer group">
-<input class="w-5 h-5 border-2 border-industrial-gray text-oxblood-red focus:ring-oxblood-red rounded-sm" type="checkbox"/>
-<span class="font-body-md text-body-md group-hover:text-oxblood-red transition-colors">Shellfish</span>
-</label>
+@endforeach
 </div>
 </section>
 <!-- Section 3: Upselling & Customization -->
@@ -145,14 +133,14 @@
 <div class="flex items-center justify-between">
 <span class="font-body-md">Visible on Menu</span>
 <label class="relative inline-flex items-center cursor-pointer">
-<input checked="" class="sr-only peer" type="checkbox"/>
+<input name="is_available" type="checkbox" {{ $item?->is_available ? 'checked' : 'checked' }} class="sr-only peer"/>
 <div class="w-11 h-6 bg-industrial-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-oxblood-red"></div>
 </label>
 </div>
 <div class="flex items-center justify-between">
 <span class="font-body-md">Featured Item</span>
 <label class="relative inline-flex items-center cursor-pointer">
-<input class="sr-only peer" type="checkbox"/>
+<input name="is_featured" type="checkbox" {{ $item?->is_featured ? 'checked' : '' }} class="sr-only peer"/>
 <div class="w-11 h-6 bg-industrial-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-heritage-gold"></div>
 </label>
 </div>
