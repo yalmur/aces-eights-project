@@ -1,7 +1,22 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="max-w-container mx-auto px-4 lg:px-16 py-12">
+<div class="max-w-container mx-auto px-4 lg:px-16 py-12"
+     x-data="{
+       currentStatus: '{{ $order->status }}',
+       statusLabel:   '{{ addslashes($order->status_label) }}',
+       statusColor:   '{{ $order->status_color }}',
+       init() {
+         if (window.Echo) {
+           window.Echo.private('order.{{ $order->id }}')
+             .listen('.OrderStatusUpdated', (data) => {
+               this.currentStatus = data.status
+               this.statusLabel   = data.status_label
+               this.statusColor   = data.status_color
+             })
+         }
+       }
+     }">
 
   <div class="mb-8">
     <h1 class="font-serif text-3xl font-black text-on-surface uppercase">Tracking Order #{{ $order->id }}</h1>
@@ -37,11 +52,21 @@
   {{-- Current status card --}}
   <div class="bg-surface-container-low border border-outline-variant p-6 mb-8 text-center">
     <p class="font-mono text-[10px] uppercase text-on-surface-variant mb-2">Current Status</p>
-    <p class="font-serif text-2xl font-black {{ $order->status_color }}">{{ $order->status_label }}</p>
+    <p class="font-serif text-2xl font-black" :class="statusColor" x-text="statusLabel"></p>
     @if($order->isDelivery() && $order->delivery_address)
       <p class="font-sans text-sm text-on-surface-variant mt-2">{{ $order->delivery_address }}, {{ $order->delivery_city }}</p>
     @endif
   </div>
+
+  {{-- Live connection indicator (only shown when Echo connected and user owns this order) --}}
+  @auth
+    @if(auth()->id() === $order->user_id)
+    <p class="font-mono text-[10px] text-on-surface-variant mt-3 text-center" x-data x-show="window.Echo !== undefined" x-cloak>
+      <span class="inline-block w-2 h-2 rounded-full bg-green-500 mr-1"></span>
+      Live updates active
+    </p>
+    @endif
+  @endauth
 
   {{-- Items summary --}}
   <div class="border border-outline-variant p-6 mb-8">
