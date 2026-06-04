@@ -109,5 +109,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/kitchen', [App\Http\Controllers\Admin\KitchenController::class, 'index'])->name('kitchen.index');
 
     // Allergy Management
-    Route::get('/allergy', [App\Http\Controllers\Admin\AllergyController::class, 'index'])->name('allergy.index');
+    Route::get('/allergy',                       [App\Http\Controllers\Admin\AllergyController::class, 'index'])->name('allergy.index');
+    Route::post('/allergy/settings',             [App\Http\Controllers\Admin\AllergyController::class, 'saveSettings'])->name('allergy.settings');
+    Route::post('/allergy/map',                  [App\Http\Controllers\Admin\AllergyController::class, 'saveMap'])->name('allergy.map');
+    Route::patch('/allergens/{allergen}/toggle', [App\Http\Controllers\Admin\AllergyController::class, 'toggle'])->name('allergens.toggle');
+    Route::delete('/allergens/{allergen}',       [App\Http\Controllers\Admin\AllergyController::class, 'destroyAllergen'])->name('allergens.destroy');
 });
