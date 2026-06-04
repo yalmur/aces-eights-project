@@ -24,9 +24,9 @@
       <div class="section-divider border-[#8b1a1a]"></div>
       <dl class="grid grid-cols-2 gap-x-4 gap-y-2 font-sans text-sm text-[#e0bfbc]">
         <dt class="font-semibold text-white">Sun – Thu</dt>
-        <dd>16:00 – 22:45</dd>
+        <dd>{{ \App\Models\Setting::get('opening_sun_thu', '16:00 – 22:45') }}</dd>
         <dt class="font-semibold text-white">Fri – Sat</dt>
-        <dd>16:00 – 23:15</dd>
+        <dd>{{ \App\Models\Setting::get('opening_fri_sat', '16:00 – 23:15') }}</dd>
       </dl>
     </div>
 
@@ -35,12 +35,10 @@
       <h3 class="font-serif text-lg font-bold">Find Us</h3>
       <div class="section-divider border-[#8b1a1a]"></div>
       <address class="font-sans text-sm text-[#e0bfbc] not-italic leading-relaxed">
-        156 &amp; 158 Fortess Road<br>
-        Tufnell Park<br>
-        London, NW5 2HP
+        {{ \App\Models\Setting::get('store_address', '156 & 158 Fortess Road, Tufnell Park, London, NW5 2HP') }}
       </address>
-      <a href="tel:+442074854033" class="font-mono text-xs tracking-widest text-[#e0bfbc] hover:text-white transition-colors">+44 020 7485 4033</a>
-      <a href="mailto:nw5pizza@gmail.com" class="font-mono text-xs tracking-widest text-[#e0bfbc] hover:text-white transition-colors">nw5pizza@gmail.com</a>
+      <a href="tel:+442074854033" class="font-mono text-xs tracking-widest text-[#e0bfbc] hover:text-white transition-colors">{{ \App\Models\Setting::get('store_phone', '+44 020 7485 4033') }}</a>
+      <a href="mailto:nw5pizza@gmail.com" class="font-mono text-xs tracking-widest text-[#e0bfbc] hover:text-white transition-colors">{{ \App\Models\Setting::get('store_email', 'nw5pizza@gmail.com') }}</a>
     </div>
   </div>
 
