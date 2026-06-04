@@ -53,4 +53,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Order::class)->latest();
     }
+
+    public function addresses(): HasMany
+    {
+        return $this->hasMany(UserAddress::class)->orderByDesc('is_default');
+    }
+
+    public function defaultAddress(): ?UserAddress
+    {
+        return $this->addresses()->default()->first();
+    }
 }
