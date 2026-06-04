@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 @section('content')
+{{-- Delivery Zones Manager --}}
+@if(session('success'))
+  <div class="mb-4 p-3 bg-green-50 border border-green-200 text-green-800 font-mono text-xs col-span-1 lg:col-span-12">{{ session('success') }}</div>
+@endif
 <!-- Page Header -->
 <div class="col-span-1 lg:col-span-12 mb-8 border-b-4 border-double border-outline pb-4">
 <h1 class="font-display text-display text-on-background uppercase tracking-tight">Delivery Logistics</h1>
@@ -108,46 +112,47 @@
 </div>
 <!-- Right Column: Settings & Fees -->
 <div class="col-span-1 lg:col-span-4 flex flex-col gap-gutter">
-<!-- Fee Structure Card -->
-<div class="bg-surface border-2 border-outline rounded-sm">
-<div class="bg-surface-container px-4 py-3 border-b-2 border-outline">
-<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
-<span class="material-symbols-outlined filled-icon">payments</span> Zonal Fees
-                    </h3>
-</div>
-<div class="p-4 flex flex-col gap-4">
-<!-- Form Group -->
-<div class="flex flex-col gap-1">
-<label class="font-label-bold text-label-bold text-on-surface uppercase tracking-wide">Base Delivery Fee</label>
-<div class="relative">
-<span class="absolute left-3 top-1/2 -translate-y-1/2 font-body-lg text-body-lg text-on-surface-variant">£</span>
-<input class="w-full bg-background border-0 border-b-2 border-outline focus:ring-0 focus:border-primary font-body-lg text-body-lg text-on-surface pl-8 py-2 font-mono" type="text" value="4.00"/>
-</div>
-</div>
-<div class="border-t border-outline my-2"></div>
-<!-- Zone Sliders/Inputs -->
-<div class="flex flex-col gap-3">
-<div class="flex justify-between items-center">
-<label class="font-label-bold text-label-bold text-on-surface flex items-center gap-2">
-<span class="w-3 h-3 rounded-full bg-primary-container inline-block border border-on-surface"></span> Zone A Surge
-                            </label>
-<div class="flex items-center gap-2">
-<span class="font-body-md text-body-md text-on-surface-variant">+ £</span>
-<input class="w-16 bg-background border-0 border-b-2 border-outline focus:ring-0 focus:border-primary font-body-md text-body-md text-on-surface text-center font-mono py-1 px-0" type="text" value="2.50"/>
-</div>
-</div>
-<div class="flex justify-between items-center">
-<label class="font-label-bold text-label-bold text-on-surface flex items-center gap-2">
-<span class="w-3 h-3 rounded-full bg-secondary-fixed inline-block border border-on-surface"></span> Zone B Surge
-                            </label>
-<div class="flex items-center gap-2">
-<span class="font-body-md text-body-md text-on-surface-variant">+ £</span>
-<input class="w-16 bg-background border-0 border-b-2 border-outline focus:ring-0 focus:border-primary font-body-md text-body-md text-on-surface text-center font-mono py-1 px-0" type="text" value="0.00"/>
-</div>
-</div>
-</div>
-<button class="mt-4 w-full bg-primary text-on-primary font-label-bold text-label-bold py-3 uppercase tracking-wider border-b-2 border-[#D4AF37] hover:bg-on-primary-fixed transition-colors">Update Ledger</button>
-</div>
+{{-- Delivery Zones Manager --}}
+<div class="mb-8 bg-surface border-2 border-outline p-4">
+  <h2 class="font-serif text-xl font-bold text-on-surface mb-4 uppercase">Delivery Zone Fees</h2>
+  <div class="flex flex-col gap-3">
+    @foreach($zones as $zone)
+    <div class="flex items-center gap-3 border-b border-outline pb-3">
+      <div class="flex-1">
+        <span class="font-mono text-[10px] font-bold text-on-surface uppercase">{{ $zone->name }}</span>
+        <span class="font-mono text-[9px] text-on-surface-variant block">{{ $zone->min_km }}–{{ $zone->max_km }}km</span>
+      </div>
+      <form method="POST" action="{{ route('admin.delivery.update', $zone->id) }}" class="flex items-center gap-2">
+        @csrf @method('PUT')
+        <input type="hidden" name="name" value="{{ $zone->name }}">
+        <input type="hidden" name="min_km" value="{{ $zone->min_km }}">
+        <input type="hidden" name="max_km" value="{{ $zone->max_km }}">
+        <input type="hidden" name="is_active" value="{{ $zone->is_active ? '1' : '0' }}">
+        <span class="font-mono text-[10px] text-on-surface-variant">£</span>
+        <input type="number" name="fee" step="0.01" min="0" value="{{ $zone->fee }}"
+               class="w-16 bg-background border-0 border-b border-outline font-mono text-xs text-center py-1 focus:ring-0 focus:border-primary"/>
+        <button type="submit" class="font-mono text-[10px] text-primary hover:underline uppercase">SAVE</button>
+      </form>
+      <form method="POST" action="{{ route('admin.delivery.destroy', $zone->id) }}" onsubmit="return confirm('Delete?')">
+        @csrf @method('DELETE')
+        <button type="submit" class="font-mono text-[10px] text-brand-error hover:underline uppercase">DEL</button>
+      </form>
+    </div>
+    @endforeach
+
+    <form method="POST" action="{{ route('admin.delivery.store') }}" class="pt-3 flex flex-col gap-2">
+      @csrf
+      <p class="font-mono text-[10px] uppercase text-on-surface-variant font-bold">Add New Zone</p>
+      <input type="text" name="name" placeholder="Zone name" required class="w-full border-0 border-b border-outline font-mono text-xs py-1 focus:ring-0">
+      <div class="grid grid-cols-3 gap-2">
+        <input type="number" name="min_km" placeholder="From km" step="0.1" min="0" required class="border-0 border-b border-outline font-mono text-xs py-1 focus:ring-0">
+        <input type="number" name="max_km" placeholder="To km" step="0.1" min="0" required class="border-0 border-b border-outline font-mono text-xs py-1 focus:ring-0">
+        <input type="number" name="fee" placeholder="Fee £" step="0.01" min="0" required class="border-0 border-b border-outline font-mono text-xs py-1 focus:ring-0">
+      </div>
+      <input type="hidden" name="is_active" value="1">
+      <button type="submit" class="w-full bg-primary text-on-primary py-2 font-mono text-[10px] font-bold uppercase mt-1">ADD ZONE</button>
+    </form>
+  </div>
 </div>
 <!-- Quick Actions -->
 <div class="bg-surface-container-high border-2 border-outline p-4 flex flex-col gap-3 relative overflow-hidden">

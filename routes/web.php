@@ -87,8 +87,11 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::put('/menu/{item}',      [MenuItemController::class, 'update'])->name('menu.update');
     Route::delete('/menu/{item}',   [MenuItemController::class, 'destroy'])->name('menu.destroy');
 
-    // Delivery
-    Route::get('/delivery', [DeliveryController::class, 'index'])->name('delivery.index');
+    // Delivery Zones
+    Route::get('/delivery',           [DeliveryController::class, 'index'])->name('delivery.index');
+    Route::post('/delivery',          [DeliveryController::class, 'store'])->name('delivery.store');
+    Route::put('/delivery/{zone}',    [DeliveryController::class, 'update'])->name('delivery.update');
+    Route::delete('/delivery/{zone}', [DeliveryController::class, 'destroy'])->name('delivery.destroy');
 
     // Promotions
     Route::get('/promotions',              [PromotionController::class, 'index'])->name('promotions.index');
