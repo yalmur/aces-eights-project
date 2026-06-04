@@ -60,7 +60,11 @@ Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->
 */
 
 Route::middleware('auth')->prefix('account')->group(function () {
-    Route::get('/', [AccountController::class, 'index'])->name('account');
+    Route::get('/',                              [AccountController::class, 'index'])->name('account');
+    Route::post('/addresses',                    [App\Http\Controllers\Account\AddressController::class, 'store'])->name('account.addresses.store');
+    Route::delete('/addresses/{address}',        [App\Http\Controllers\Account\AddressController::class, 'destroy'])->name('account.addresses.destroy');
+    Route::patch('/addresses/{address}/default', [App\Http\Controllers\Account\AddressController::class, 'setDefault'])->name('account.addresses.default');
+    Route::post('/password',                     [App\Http\Controllers\Account\PasswordController::class, 'update'])->name('account.password');
 });
 
 /*
