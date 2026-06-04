@@ -10,13 +10,15 @@ class AccountController extends Controller
 {
     public function index(): View
     {
-        $user   = Auth::user();
-        $orders = $user->orders()->with('items')->paginate(10);
+        $user      = Auth::user();
+        $orders    = $user->orders()->with('items')->paginate(10);
+        $addresses = $user->addresses()->get();
 
         return view('account.index', [
-            'title'  => 'My Account',
-            'user'   => $user,
-            'orders' => $orders,
+            'title'     => 'My Account',
+            'user'      => $user,
+            'orders'    => $orders,
+            'addresses' => $addresses,
         ]);
     }
 }
