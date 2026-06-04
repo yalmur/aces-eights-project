@@ -30,7 +30,7 @@ Route::get('/menu/{slug}', [MenuController::class, 'show'])->name('menu.show');
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::middleware('auth')->group(function () {
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
-    Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+    Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store')->middleware('throttle:10,1');
 });
 
 Route::post('/stripe/webhook', [App\Http\Controllers\StripeWebhookController::class, 'handle'])->name('stripe.webhook');
@@ -48,9 +48,9 @@ Route::post('/contact', [PageController::class, 'sendContact'])->name('contact.s
 */
 
 Route::get('/login', fn () => view('auth.login', ['title' => 'Login']))->name('login');
-Route::post('/login', [App\Http\Controllers\AuthController::class, 'login'])->name('login.post');
+Route::post('/login', [App\Http\Controllers\AuthController::class, 'login'])->name('login.post')->middleware('throttle:5,1');
 Route::get('/register', fn () => view('auth.register', ['title' => 'Create Account']))->name('register');
-Route::post('/register', [App\Http\Controllers\AuthController::class, 'register'])->name('register.post');
+Route::post('/register', [App\Http\Controllers\AuthController::class, 'register'])->name('register.post')->middleware('throttle:3,1');
 Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 
 /*
