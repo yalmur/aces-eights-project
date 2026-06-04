@@ -91,7 +91,12 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/delivery', [DeliveryController::class, 'index'])->name('delivery.index');
 
     // Promotions
-    Route::get('/promotions', [PromotionController::class, 'index'])->name('promotions.index');
+    Route::get('/promotions',              [PromotionController::class, 'index'])->name('promotions.index');
+    Route::get('/promotions/create',       [PromotionController::class, 'create'])->name('promotions.create');
+    Route::post('/promotions',             [PromotionController::class, 'store'])->name('promotions.store');
+    Route::get('/promotions/{promo}/edit', [PromotionController::class, 'edit'])->name('promotions.edit');
+    Route::put('/promotions/{promo}',      [PromotionController::class, 'update'])->name('promotions.update');
+    Route::delete('/promotions/{promo}',   [PromotionController::class, 'destroy'])->name('promotions.destroy');
 
     // Settings
     Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');
