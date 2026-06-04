@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\MenuItem;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
 
@@ -50,7 +51,14 @@ class MenuItemController extends Controller
             'allergens.*'   => 'exists:allergens,id',
             'ingredients'   => 'nullable|array',
             'ingredients.*' => 'string|max:100',
+            'image'         => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
+
+        // Handle image upload
+        $imagePath = null;
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('menu', 'public');
+        }
 
         $item = MenuItem::create([
             'category_id'  => $data['category_id'],
@@ -61,6 +69,7 @@ class MenuItemController extends Controller
             'is_available' => $request->boolean('is_available'),
             'is_featured'  => $request->boolean('is_featured'),
             'sort_order'   => MenuItem::max('sort_order') + 1,
+            'image_path'   => $imagePath,
         ]);
 
         $item->allergens()->sync($data['allergens'] ?? []);
@@ -97,7 +106,16 @@ class MenuItemController extends Controller
             'allergens.*'   => 'exists:allergens,id',
             'ingredients'   => 'nullable|array',
             'ingredients.*' => 'string|max:100',
+            'image'         => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            if ($menuItem->image_path) {
+                Storage::disk('public')->delete($menuItem->image_path);
+            }
+            $menuItem->image_path = $request->file('image')->store('menu', 'public');
+        }
 
         $menuItem->update([
             'category_id'  => $data['category_id'],
@@ -107,6 +125,7 @@ class MenuItemController extends Controller
             'base_price'   => $data['base_price'],
             'is_available' => $request->boolean('is_available'),
             'is_featured'  => $request->boolean('is_featured'),
+            'image_path'   => $menuItem->image_path,
         ]);
 
         $menuItem->allergens()->sync($data['allergens'] ?? []);

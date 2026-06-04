@@ -113,13 +113,26 @@
 <!-- Section 4: Image Upload -->
 <section class="industrial-border p-8 bg-surface-container-lowest">
 <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-6 uppercase tracking-widest">Item Photography</h3>
+{{-- Existing image preview --}}
+@if($item?->image_path)
+<div class="mb-4 flex items-center gap-4">
+  <img src="{{ asset('storage/' . $item->image_path) }}" alt="{{ $item->name }}"
+       class="w-20 h-20 object-cover industrial-border">
+  <div>
+    <p class="font-mono text-[10px] uppercase text-on-surface-variant">Current Image</p>
+    <p class="font-mono text-[10px] text-on-surface truncate max-w-[200px]">{{ basename($item->image_path) }}</p>
+  </div>
+</div>
+@endif
 <div class="relative group cursor-pointer border-2 border-dashed border-industrial-gray h-80 flex flex-col items-center justify-center bg-surface overflow-hidden">
 <img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" src="https://placehold.co/400x400/e4e2e1/1b1c1c?text=Upload+Photo" alt="Upload Photo"/>
 <div class="relative z-10 flex flex-col items-center text-on-surface text-center px-6">
 <span class="material-symbols-outlined text-4xl mb-4">cloud_upload</span>
 <p class="font-label-bold text-label-bold mb-1">Drag and drop or click</p>
-<p class="text-xs text-on-surface-variant">High-resolution JPEG or PNG. Max 5MB.</p>
+<p class="text-xs text-on-surface-variant">High-resolution JPEG or PNG. Max 2MB.</p>
 </div>
+<input type="file" name="image" accept="image/jpeg,image/png,image/jpg,image/webp"
+       class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
 </div>
 <div class="mt-4 flex gap-4">
 <button class="flex-1 py-2 industrial-border text-label-caps font-label-caps hover:bg-industrial-gray hover:text-white transition-colors" type="button">Edit Crop</button>
