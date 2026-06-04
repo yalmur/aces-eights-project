@@ -22,3 +22,11 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Composer installer artifacts
+composer-setup.php
+composer.phar
+
+# Graphify temp/cache files
+graphify-out/.graphify_*
+graphify-out/cache/
