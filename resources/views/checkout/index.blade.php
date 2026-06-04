@@ -43,21 +43,24 @@
                             <h3 class="font-label-bold text-label-bold uppercase text-primary">Delivery Address</h3>
                             <span class="material-symbols-outlined text-outline">location_on</span>
                         </div>
+                        @if($defaultAddress)
+                          <p class="font-mono text-[10px] text-primary mt-1">Pre-filled from saved address: {{ $defaultAddress->full_address }}</p>
+                        @endif
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
                             <div class="md:col-span-2">
                                 <label class="block font-label-sm text-label-sm uppercase mb-1">Street Address</label>
                                 <input class="w-full bg-transparent border-b-2 border-on-surface py-2 focus:ring-0 focus:border-primary placeholder:text-outline-variant font-body-md"
-                                       name="street_address" placeholder="123 Foundry Lane" type="text"/>
+                                       name="street_address" placeholder="123 Foundry Lane" type="text" value="{{ old('street_address', $defaultAddress?->street_address) }}"/>
                             </div>
                             <div>
                                 <label class="block font-label-sm text-label-sm uppercase mb-1">City</label>
                                 <input class="w-full bg-transparent border-b-2 border-on-surface py-2 focus:ring-0 focus:border-primary placeholder:text-outline-variant font-body-md"
-                                       name="city" placeholder="Chicago" type="text"/>
+                                       name="city" placeholder="Chicago" type="text" value="{{ old('city', $defaultAddress?->city) }}"/>
                             </div>
                             <div>
                                 <label class="block font-label-sm text-label-sm uppercase mb-1">Postal Code</label>
                                 <input class="w-full bg-transparent border-b-2 border-on-surface py-2 focus:ring-0 focus:border-primary placeholder:text-outline-variant font-body-md"
-                                       name="postal_code" placeholder="60601" type="text"/>
+                                       name="postal_code" placeholder="60601" type="text" value="{{ old('postal_code', $defaultAddress?->postcode) }}"/>
                             </div>
                         </div>
                     </section>

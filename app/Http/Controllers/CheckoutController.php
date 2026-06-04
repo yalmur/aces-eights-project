@@ -15,7 +15,12 @@ class CheckoutController extends Controller
 {
     public function index(): View
     {
-        return view('checkout.index', ['title' => 'Checkout']);
+        $defaultAddress = Auth::user()->defaultAddress();
+
+        return view('checkout.index', [
+            'title'          => 'Checkout',
+            'defaultAddress' => $defaultAddress,
+        ]);
     }
 
     public function store(Request $request): RedirectResponse
