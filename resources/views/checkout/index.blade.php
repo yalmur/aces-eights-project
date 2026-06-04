@@ -76,6 +76,23 @@
                     </section>
                 </div>
 
+                {{-- Promo Code --}}
+                <section class="mt-8" x-data="{ applied: false, msg: '' }">
+                  <h3 class="font-label-bold text-label-bold uppercase mb-4 text-primary">Promo Code</h3>
+                  <div class="flex gap-3">
+                    <input name="promo_code" id="promo-code"
+                           class="flex-1 bg-transparent border-b-2 border-on-surface py-2 focus:ring-0 focus:border-primary font-mono text-sm uppercase placeholder:text-outline-variant placeholder:normal-case"
+                           placeholder="Enter code (e.g. SAVE10)" type="text" maxlength="50"/>
+                    <button type="button"
+                            @click="const v=document.getElementById('promo-code').value.trim(); if(v){applied=true;msg=''}else{msg='Enter a code first'}"
+                            class="px-4 py-2 industrial-border font-mono text-xs font-bold uppercase hover:bg-surface-container transition-colors">
+                      APPLY
+                    </button>
+                  </div>
+                  <p x-show="applied" x-cloak class="font-mono text-[10px] text-green-700 mt-2">Code applied — discount calculated at checkout.</p>
+                  <p x-show="msg" x-cloak class="font-mono text-[10px] text-brand-error mt-2" x-text="msg"></p>
+                </section>
+
                 <!-- Section: Payment Method -->
                 <div x-data="{ payment: 'card' }">
                     <section>

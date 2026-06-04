@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\OrderItem;
+use App\Models\Promotion;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -28,11 +29,14 @@ class CheckoutController extends Controller
             'street_address' => 'required_if:order_type,delivery|nullable|string|max:255',
             'city'           => 'required_if:order_type,delivery|nullable|string|max:100',
             'postal_code'    => 'required_if:order_type,delivery|nullable|string|max:20',
+            'promo_code'     => 'nullable|string|max:50',
         ]);
 
         $cartItems   = json_decode($data['cart_items'], true);
         $isDelivery  = $data['order_type'] === 'delivery';
-        $deliveryFee = $isDelivery ? 3.50 : 0;
+        $deliveryFee = $isDelivery
+            ? (\App\Models\DeliveryZone::active()->orderBy('sort_order')->value('fee') ?? 3.50)
+            : 0;
         $user        = Auth::user();
 
         $orderItems = [];
@@ -56,7 +60,20 @@ class CheckoutController extends Controller
             ];
         }
 
-        $total = $subtotal + $deliveryFee;
+        // Apply promo code
+        $discountAmount = 0;
+        $promoCode      = null;
+        $promoModel     = null;
+
+        if (!empty($data['promo_code'])) {
+            $promoModel = Promotion::where('code', strtoupper(trim($data['promo_code'])))->first();
+            if ($promoModel && $promoModel->isValid($subtotal)) {
+                $discountAmount = $promoModel->calculateDiscount($subtotal, $deliveryFee);
+                $promoCode      = $promoModel->code;
+            }
+        }
+
+        $total = max(0, $subtotal + $deliveryFee - $discountAmount);
 
         $order = Order::create([
             'user_id'           => $user->id,
@@ -65,6 +82,8 @@ class CheckoutController extends Controller
             'subtotal'          => $subtotal,
             'delivery_fee'      => $deliveryFee,
             'total'             => $total,
+            'promo_code'        => $promoCode,
+            'discount_amount'   => $discountAmount,
             'customer_name'     => $user->name,
             'customer_email'    => $user->email,
             'delivery_address'  => $data['street_address'] ?? null,
@@ -74,6 +93,10 @@ class CheckoutController extends Controller
 
         foreach ($orderItems as $item) {
             $order->items()->create($item);
+        }
+
+        if ($promoModel) {
+            $promoModel->incrementUses();
         }
 
         try {

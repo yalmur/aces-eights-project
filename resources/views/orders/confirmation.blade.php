@@ -28,6 +28,12 @@
       @endforeach
       <div class="pt-4 space-y-2">
         <div class="flex justify-between font-sans text-sm"><span class="text-on-surface-variant">Subtotal</span><span>£{{ number_format($order->subtotal, 2) }}</span></div>
+        @if($order->discount_amount > 0)
+        <div class="flex justify-between font-sans text-sm">
+          <span class="text-green-700">Promo ({{ $order->promo_code }})</span>
+          <span class="text-green-700">− £{{ number_format($order->discount_amount, 2) }}</span>
+        </div>
+        @endif
         <div class="flex justify-between font-sans text-sm"><span class="text-on-surface-variant">Delivery</span><span>{{ $order->delivery_fee > 0 ? '£' . number_format($order->delivery_fee, 2) : 'FREE' }}</span></div>
         <div class="flex justify-between font-serif text-base font-bold border-t border-outline-variant pt-2">
           <span>Total</span><span class="text-primary">£{{ number_format($order->total, 2) }}</span>

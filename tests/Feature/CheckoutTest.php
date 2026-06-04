@@ -95,6 +95,22 @@ class CheckoutTest extends TestCase
         $response->assertSessionHasErrors(['cart_items']);
     }
 
+    public function test_valid_promo_code_applies_discount(): void
+    {
+        \App\Models\Promotion::factory()->fixed(5)->create(['code' => 'FIVE']);
+        $cartItems = [[
+            'id' => 'margherita', 'name' => 'Margherita', 'category' => 'pizza',
+            'basePrice' => 20.00, 'qty' => 1, 'size' => '12" Standard', 'sizeExtra' => 0,
+            'crust' => '48hr Sourdough', 'crustExtra' => 0, 'toppings' => [],
+            'removedIngredients' => [], 'chips' => [], 'instructions' => '',
+            'lineTotal' => 20.00,
+        ]];
+        $this->actingAs($this->customer)->post('/checkout', [
+            'order_type' => 'collection', 'cart_items' => json_encode($cartItems), 'promo_code' => 'FIVE',
+        ]);
+        $this->assertDatabaseHas('orders', ['promo_code' => 'FIVE', 'discount_amount' => 5.00, 'total' => 15.00]);
+    }
+
     public function test_collection_order_has_no_delivery_fee(): void
     {
         $cartItems = [[
