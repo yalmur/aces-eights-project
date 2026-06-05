@@ -1,3 +1,21 @@
+@php
+  use App\Models\Setting;
+  use Carbon\Carbon;
+  $_sunThu  = Setting::get('opening_sun_thu', '16:00 – 22:45');
+  $_friSat  = Setting::get('opening_fri_sat', '16:00 – 23:15');
+  $_now     = now()->setTimezone('Europe/London');
+  $_dow     = (int) $_now->format('w');
+  $_hours   = in_array($_dow, [5, 6]) ? $_friSat : $_sunThu;
+  $_parts   = preg_split('/\s*[–—-]\s*/', $_hours);
+  $_isOpen  = false;
+  if (count($_parts) >= 2) {
+      try {
+          $_o = Carbon::createFromTimeString(trim($_parts[0]), 'Europe/London')->setDate($_now->year, $_now->month, $_now->day);
+          $_c = Carbon::createFromTimeString(trim($_parts[1]), 'Europe/London')->setDate($_now->year, $_now->month, $_now->day);
+          $_isOpen = $_now->between($_o, $_c);
+      } catch (\Throwable) {}
+  }
+@endphp
 <header class="sticky top-0 z-50 bg-surface border-b-2 border-outline-variant shadow-sm">
   <div class="max-w-container mx-auto px-4 lg:px-16 h-16 lg:h-20 flex items-center">
 
@@ -31,6 +49,13 @@
         <a href="{{ route('party-hall') }}" class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">Party Hall</a>
         <a href="{{ route('about') }}"   class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">About</a>
         <a href="{{ route('contact') }}" class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">Contact</a>
+        @if($_isOpen)
+          <span class="ml-1 font-mono text-[9px] font-bold uppercase bg-green-700 text-white px-2 py-0.5 flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-green-300 animate-pulse inline-block"></span>Open
+          </span>
+        @else
+          <span class="ml-1 font-mono text-[9px] font-bold uppercase bg-surface-container border border-outline-variant text-on-surface-variant px-2 py-0.5">Closed</span>
+        @endif
       </nav>
     </div>
 

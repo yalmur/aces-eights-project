@@ -46,22 +46,22 @@
   },
   "nodes": [
     {
-      "label": "MenuItemController.php",
+      "label": "SocialAuthController.php",
       "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_file": "app/Http/Controllers/SocialAuthController.php",
       "source_location": "L1",
-      "id": "app_http_controllers_admin_menuitemcontroller_php",
+      "id": "app_http_controllers_socialauthcontroller_php",
       "community": 130,
-      "norm_label": "menuitemcontroller.php"
+      "norm_label": "socialauthcontroller.php"
     },
     {
-      "label": "MenuItemController",
+      "label": "SocialAuthController",
       "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L16",
-      "id": "admin_menuitemcontroller_menuitemcontroller",
+      "source_file": "app/Http/Controllers/SocialAuthController.php",
+      "source_location": "L11",
+      "id": "controllers_socialauthcontroller_socialauthcontroller",
       "community": 130,
-      "norm_label": "menuitemcontroller"
+      "norm_label": "socialauthcontroller"
     },
     {
       "label": "Controller",
@@ -73,130 +73,652 @@
       "norm_label": "controller"
     },
     {
-      "label": ".index()",
+      "label": ".redirect()",
       "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L18",
-      "id": "admin_menuitemcontroller_menuitemcontroller_index",
+      "source_file": "app/Http/Controllers/SocialAuthController.php",
+      "source_location": "L13",
+      "id": "controllers_socialauthcontroller_socialauthcontroller_redirect",
       "community": 130,
-      "norm_label": ".index()"
-    },
-    {
-      "label": "Request",
-      "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L18",
-      "id": "request",
-      "community": 130,
-      "norm_label": "request"
-    },
-    {
-      "label": "View",
-      "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L18",
-      "id": "view",
-      "community": 130,
-      "norm_label": "view"
-    },
-    {
-      "label": ".create()",
-      "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L43",
-      "id": "admin_menuitemcontroller_menuitemcontroller_create",
-      "community": 130,
-      "norm_label": ".create()"
-    },
-    {
-      "label": ".store()",
-      "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L53",
-      "id": "admin_menuitemcontroller_menuitemcontroller_store",
-      "community": 130,
-      "norm_label": ".store()"
+      "norm_label": ".redirect()"
     },
     {
       "label": "RedirectResponse",
       "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L53",
+      "source_file": "app/Http/Controllers/SocialAuthController.php",
+      "source_location": "L13",
       "id": "redirectresponse",
       "community": 130,
       "norm_label": "redirectresponse"
     },
     {
-      "label": ".edit()",
+      "label": ".callback()",
       "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L98",
-      "id": "admin_menuitemcontroller_menuitemcontroller_edit",
+      "source_file": "app/Http/Controllers/SocialAuthController.php",
+      "source_location": "L20",
+      "id": "controllers_socialauthcontroller_socialauthcontroller_callback",
       "community": 130,
-      "norm_label": ".edit()"
+      "norm_label": ".callback()"
     },
     {
-      "label": ".update()",
+      "label": "User.php",
       "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L110",
-      "id": "admin_menuitemcontroller_menuitemcontroller_update",
-      "community": 130,
-      "norm_label": ".update()"
+      "source_file": "app/Models/User.php",
+      "source_location": "L1",
+      "id": "app_models_user_php",
+      "community": 2,
+      "norm_label": "user.php"
     },
     {
-      "label": ".destroy()",
+      "label": "User",
       "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L158",
-      "id": "admin_menuitemcontroller_menuitemcontroller_destroy",
-      "community": 130,
-      "norm_label": ".destroy()"
+      "source_file": "app/Models/User.php",
+      "source_location": "L12",
+      "id": "models_user_user",
+      "community": 2,
+      "norm_label": "user"
     },
     {
-      "label": ".toggleAvailability()",
+      "label": "Authenticatable",
       "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L168",
-      "id": "admin_menuitemcontroller_menuitemcontroller_toggleavailability",
-      "community": 130,
-      "norm_label": ".toggleavailability()"
+      "source_file": "",
+      "source_location": "",
+      "id": "authenticatable",
+      "community": 2,
+      "norm_label": "authenticatable"
     },
     {
-      "label": "JsonResponse",
+      "label": "HasFactory",
       "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L168",
-      "id": "jsonresponse",
-      "community": 10,
-      "norm_label": "jsonresponse"
+      "source_file": "",
+      "source_location": "",
+      "id": "hasfactory",
+      "community": 2,
+      "norm_label": "hasfactory"
     },
     {
-      "label": ".syncIngredients()",
+      "label": "Notifiable",
       "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L175",
-      "id": "admin_menuitemcontroller_menuitemcontroller_syncingredients",
-      "community": 130,
-      "norm_label": ".syncingredients()"
+      "source_file": "",
+      "source_location": "",
+      "id": "notifiable",
+      "community": 2,
+      "norm_label": "notifiable"
     },
     {
-      "label": "MenuItem",
+      "label": ".casts()",
       "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L175",
-      "id": "menuitem",
-      "community": 130,
-      "norm_label": "menuitem"
+      "source_file": "app/Models/User.php",
+      "source_location": "L47",
+      "id": "models_user_user_casts",
+      "community": 2,
+      "norm_label": ".casts()"
     },
     {
-      "label": "index.blade.php",
+      "label": ".orders()",
       "file_type": "code",
-      "source_file": "resources/views/admin/menu/index.blade.php",
+      "source_file": "app/Models/User.php",
+      "source_location": "L55",
+      "id": "models_user_user_orders",
+      "community": 2,
+      "norm_label": ".orders()"
+    },
+    {
+      "label": "HasMany",
+      "file_type": "code",
+      "source_file": "app/Models/User.php",
+      "source_location": "L55",
+      "id": "hasmany",
+      "community": 2,
+      "norm_label": "hasmany"
+    },
+    {
+      "label": ".addresses()",
+      "file_type": "code",
+      "source_file": "app/Models/User.php",
+      "source_location": "L60",
+      "id": "models_user_user_addresses",
+      "community": 2,
+      "norm_label": ".addresses()"
+    },
+    {
+      "label": ".defaultAddress()",
+      "file_type": "code",
+      "source_file": "app/Models/User.php",
+      "source_location": "L65",
+      "id": "models_user_user_defaultaddress",
+      "community": 2,
+      "norm_label": ".defaultaddress()"
+    },
+    {
+      "label": "UserAddress",
+      "file_type": "code",
+      "source_file": "app/Models/User.php",
+      "source_location": "L65",
+      "id": "useraddress",
+      "community": 2,
+      "norm_label": "useraddress"
+    },
+    {
+      "label": "composer.json",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L1",
+      "id": "composer_json",
+      "community": 21,
+      "norm_label": "composer.json"
+    },
+    {
+      "label": "$schema",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L2",
+      "id": "webapp_composer_schema",
+      "community": 21,
+      "norm_label": "$schema"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L3",
+      "id": "webapp_composer_name",
+      "community": 21,
+      "norm_label": "name"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L4",
+      "id": "webapp_composer_type",
+      "community": 21,
+      "norm_label": "type"
+    },
+    {
+      "label": "description",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L5",
+      "id": "webapp_composer_description",
+      "community": 21,
+      "norm_label": "description"
+    },
+    {
+      "label": "keywords",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L6",
+      "id": "webapp_composer_keywords",
+      "community": 21,
+      "norm_label": "keywords"
+    },
+    {
+      "label": "license",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L7",
+      "id": "webapp_composer_license",
+      "community": 21,
+      "norm_label": "license"
+    },
+    {
+      "label": "require",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L8",
+      "id": "webapp_composer_require",
+      "community": 32,
+      "norm_label": "require"
+    },
+    {
+      "label": "php",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L9",
+      "id": "webapp_composer_require_php",
+      "community": 32,
+      "norm_label": "php"
+    },
+    {
+      "label": "laravel/framework",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L10",
+      "id": "webapp_composer_require_laravel_framework",
+      "community": 32,
+      "norm_label": "laravel/framework"
+    },
+    {
+      "label": "laravel/socialite",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L11",
+      "id": "webapp_composer_require_laravel_socialite",
+      "community": 32,
+      "norm_label": "laravel/socialite"
+    },
+    {
+      "label": "laravel/tinker",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L12",
+      "id": "webapp_composer_require_laravel_tinker",
+      "community": 32,
+      "norm_label": "laravel/tinker"
+    },
+    {
+      "label": "livewire/livewire",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L13",
+      "id": "webapp_composer_require_livewire_livewire",
+      "community": 32,
+      "norm_label": "livewire/livewire"
+    },
+    {
+      "label": "pusher/pusher-php-server",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L14",
+      "id": "webapp_composer_require_pusher_pusher_php_server",
+      "community": 32,
+      "norm_label": "pusher/pusher-php-server"
+    },
+    {
+      "label": "stripe/stripe-php",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L15",
+      "id": "webapp_composer_require_stripe_stripe_php",
+      "community": 32,
+      "norm_label": "stripe/stripe-php"
+    },
+    {
+      "label": "require-dev",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L17",
+      "id": "webapp_composer_require_dev",
+      "community": 27,
+      "norm_label": "require-dev"
+    },
+    {
+      "label": "fakerphp/faker",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L18",
+      "id": "webapp_composer_require_dev_fakerphp_faker",
+      "community": 27,
+      "norm_label": "fakerphp/faker"
+    },
+    {
+      "label": "laravel/pail",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L19",
+      "id": "webapp_composer_require_dev_laravel_pail",
+      "community": 27,
+      "norm_label": "laravel/pail"
+    },
+    {
+      "label": "laravel/pint",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L20",
+      "id": "webapp_composer_require_dev_laravel_pint",
+      "community": 27,
+      "norm_label": "laravel/pint"
+    },
+    {
+      "label": "laravel/sail",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L21",
+      "id": "webapp_composer_require_dev_laravel_sail",
+      "community": 27,
+      "norm_label": "laravel/sail"
+    },
+    {
+      "label": "mockery/mockery",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L22",
+      "id": "webapp_composer_require_dev_mockery_mockery",
+      "community": 27,
+      "norm_label": "mockery/mockery"
+    },
+    {
+      "label": "nunomaduro/collision",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L23",
+      "id": "webapp_composer_require_dev_nunomaduro_collision",
+      "community": 27,
+      "norm_label": "nunomaduro/collision"
+    },
+    {
+      "label": "phpunit/phpunit",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L24",
+      "id": "webapp_composer_require_dev_phpunit_phpunit",
+      "community": 27,
+      "norm_label": "phpunit/phpunit"
+    },
+    {
+      "label": "autoload",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L26",
+      "id": "webapp_composer_autoload",
+      "community": 37,
+      "norm_label": "autoload"
+    },
+    {
+      "label": "psr-4",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L27",
+      "id": "webapp_composer_autoload_psr_4",
+      "community": 37,
+      "norm_label": "psr-4"
+    },
+    {
+      "label": "App\\\\",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L28",
+      "id": "webapp_composer_psr_4_app",
+      "community": 37,
+      "norm_label": "app\\\\"
+    },
+    {
+      "label": "Database\\\\Factories\\\\",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L29",
+      "id": "webapp_composer_psr_4_database_factories",
+      "community": 37,
+      "norm_label": "database\\\\factories\\\\"
+    },
+    {
+      "label": "Database\\\\Seeders\\\\",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L30",
+      "id": "webapp_composer_psr_4_database_seeders",
+      "community": 37,
+      "norm_label": "database\\\\seeders\\\\"
+    },
+    {
+      "label": "autoload-dev",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L33",
+      "id": "webapp_composer_autoload_dev",
+      "community": 56,
+      "norm_label": "autoload-dev"
+    },
+    {
+      "label": "psr-4",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L34",
+      "id": "webapp_composer_autoload_dev_psr_4",
+      "community": 56,
+      "norm_label": "psr-4"
+    },
+    {
+      "label": "Tests\\\\",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L35",
+      "id": "webapp_composer_psr_4_tests",
+      "community": 56,
+      "norm_label": "tests\\\\"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L38",
+      "id": "webapp_composer_scripts",
+      "community": 22,
+      "norm_label": "scripts"
+    },
+    {
+      "label": "setup",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L39",
+      "id": "webapp_composer_scripts_setup",
+      "community": 22,
+      "norm_label": "setup"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L47",
+      "id": "webapp_composer_scripts_dev",
+      "community": 22,
+      "norm_label": "dev"
+    },
+    {
+      "label": "test",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L51",
+      "id": "webapp_composer_scripts_test",
+      "community": 22,
+      "norm_label": "test"
+    },
+    {
+      "label": "post-autoload-dump",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L55",
+      "id": "webapp_composer_scripts_post_autoload_dump",
+      "community": 22,
+      "norm_label": "post-autoload-dump"
+    },
+    {
+      "label": "post-update-cmd",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L59",
+      "id": "webapp_composer_scripts_post_update_cmd",
+      "community": 22,
+      "norm_label": "post-update-cmd"
+    },
+    {
+      "label": "post-root-package-install",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L62",
+      "id": "webapp_composer_scripts_post_root_package_install",
+      "community": 22,
+      "norm_label": "post-root-package-install"
+    },
+    {
+      "label": "post-create-project-cmd",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L65",
+      "id": "webapp_composer_scripts_post_create_project_cmd",
+      "community": 22,
+      "norm_label": "post-create-project-cmd"
+    },
+    {
+      "label": "pre-package-uninstall",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L70",
+      "id": "webapp_composer_scripts_pre_package_uninstall",
+      "community": 22,
+      "norm_label": "pre-package-uninstall"
+    },
+    {
+      "label": "extra",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L74",
+      "id": "webapp_composer_extra",
+      "community": 57,
+      "norm_label": "extra"
+    },
+    {
+      "label": "laravel",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L75",
+      "id": "webapp_composer_extra_laravel",
+      "community": 57,
+      "norm_label": "laravel"
+    },
+    {
+      "label": "dont-discover",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L76",
+      "id": "webapp_composer_laravel_dont_discover",
+      "community": 57,
+      "norm_label": "dont-discover"
+    },
+    {
+      "label": "config",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L79",
+      "id": "webapp_composer_config",
+      "community": 31,
+      "norm_label": "config"
+    },
+    {
+      "label": "optimize-autoloader",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L80",
+      "id": "webapp_composer_config_optimize_autoloader",
+      "community": 31,
+      "norm_label": "optimize-autoloader"
+    },
+    {
+      "label": "preferred-install",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L81",
+      "id": "webapp_composer_config_preferred_install",
+      "community": 31,
+      "norm_label": "preferred-install"
+    },
+    {
+      "label": "sort-packages",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L82",
+      "id": "webapp_composer_config_sort_packages",
+      "community": 31,
+      "norm_label": "sort-packages"
+    },
+    {
+      "label": "allow-plugins",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L83",
+      "id": "webapp_composer_config_allow_plugins",
+      "community": 31,
+      "norm_label": "allow-plugins"
+    },
+    {
+      "label": "pestphp/pest-plugin",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L84",
+      "id": "webapp_composer_allow_plugins_pestphp_pest_plugin",
+      "community": 31,
+      "norm_label": "pestphp/pest-plugin"
+    },
+    {
+      "label": "php-http/discovery",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L85",
+      "id": "webapp_composer_allow_plugins_php_http_discovery",
+      "community": 31,
+      "norm_label": "php-http/discovery"
+    },
+    {
+      "label": "minimum-stability",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L88",
+      "id": "webapp_composer_minimum_stability",
+      "community": 21,
+      "norm_label": "minimum-stability"
+    },
+    {
+      "label": "prefer-stable",
+      "file_type": "code",
+      "source_file": "composer.json",
+      "source_location": "L89",
+      "id": "webapp_composer_prefer_stable",
+      "community": 21,
+      "norm_label": "prefer-stable"
+    },
+    {
+      "label": "services.php",
+      "file_type": "code",
+      "source_file": "config/services.php",
+      "source_location": "L1",
+      "id": "config_services_php",
+      "community": 77,
+      "norm_label": "services.php"
+    },
+    {
+      "label": "2026_06_05_225045_add_social_ids_to_users_table.php",
+      "file_type": "code",
+      "source_file": "database/migrations/2026_06_05_225045_add_social_ids_to_users_table.php",
+      "source_location": "L1",
+      "id": "database_migrations_2026_06_05_225045_add_social_ids_to_users_table_php",
+      "community": 242,
+      "norm_label": "2026_06_05_225045_add_social_ids_to_users_table.php"
+    },
+    {
+      "label": "up()",
+      "file_type": "code",
+      "source_file": "database/migrations/2026_06_05_225045_add_social_ids_to_users_table.php",
+      "source_location": "L12",
+      "id": "migrations_2026_06_05_225045_add_social_ids_to_users_table_up",
+      "community": 242,
+      "norm_label": "up()"
+    },
+    {
+      "label": "down()",
+      "file_type": "code",
+      "source_file": "database/migrations/2026_06_05_225045_add_social_ids_to_users_table.php",
+      "source_location": "L22",
+      "id": "migrations_2026_06_05_225045_add_social_ids_to_users_table_down",
+      "community": 242,
+      "norm_label": "down()"
+    },
+    {
+      "label": "login.blade.php",
+      "file_type": "code",
+      "source_file": "resources/views/auth/login.blade.php",
       "source_location": null,
-      "id": "resources_views_admin_menu_index_blade_php",
-      "community": 92,
-      "norm_label": "index.blade.php"
+      "id": "resources_views_auth_login_blade_php",
+      "community": 99,
+      "norm_label": "login.blade.php"
+    },
+    {
+      "label": "register.blade.php",
+      "file_type": "code",
+      "source_file": "resources/views/auth/register.blade.php",
+      "source_location": null,
+      "id": "resources_views_auth_register_blade_php",
+      "community": 100,
+      "norm_label": "register.blade.php"
     },
     {
       "label": "web.php",
@@ -206,6 +728,141 @@
       "id": "routes_web_php",
       "community": 121,
       "norm_label": "web.php"
+    },
+    {
+      "label": "MenuItemController.php",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L1",
+      "community": 130,
+      "norm_label": "menuitemcontroller.php",
+      "id": "app_http_controllers_admin_menuitemcontroller_php"
+    },
+    {
+      "label": "MenuItemController",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L16",
+      "community": 130,
+      "norm_label": "menuitemcontroller",
+      "id": "admin_menuitemcontroller_menuitemcontroller"
+    },
+    {
+      "label": ".index()",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L18",
+      "community": 130,
+      "norm_label": ".index()",
+      "id": "admin_menuitemcontroller_menuitemcontroller_index"
+    },
+    {
+      "label": "Request",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L18",
+      "community": 130,
+      "norm_label": "request",
+      "id": "request"
+    },
+    {
+      "label": "View",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L18",
+      "community": 130,
+      "norm_label": "view",
+      "id": "view"
+    },
+    {
+      "label": ".create()",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L43",
+      "community": 130,
+      "norm_label": ".create()",
+      "id": "admin_menuitemcontroller_menuitemcontroller_create"
+    },
+    {
+      "label": ".store()",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L53",
+      "community": 130,
+      "norm_label": ".store()",
+      "id": "admin_menuitemcontroller_menuitemcontroller_store"
+    },
+    {
+      "label": ".edit()",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L98",
+      "community": 130,
+      "norm_label": ".edit()",
+      "id": "admin_menuitemcontroller_menuitemcontroller_edit"
+    },
+    {
+      "label": ".update()",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L110",
+      "community": 130,
+      "norm_label": ".update()",
+      "id": "admin_menuitemcontroller_menuitemcontroller_update"
+    },
+    {
+      "label": ".destroy()",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L158",
+      "community": 130,
+      "norm_label": ".destroy()",
+      "id": "admin_menuitemcontroller_menuitemcontroller_destroy"
+    },
+    {
+      "label": ".toggleAvailability()",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L168",
+      "community": 130,
+      "norm_label": ".toggleavailability()",
+      "id": "admin_menuitemcontroller_menuitemcontroller_toggleavailability"
+    },
+    {
+      "label": "JsonResponse",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L168",
+      "community": 10,
+      "norm_label": "jsonresponse",
+      "id": "jsonresponse"
+    },
+    {
+      "label": ".syncIngredients()",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L175",
+      "community": 130,
+      "norm_label": ".syncingredients()",
+      "id": "admin_menuitemcontroller_menuitemcontroller_syncingredients"
+    },
+    {
+      "label": "MenuItem",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L175",
+      "community": 130,
+      "norm_label": "menuitem",
+      "id": "menuitem"
+    },
+    {
+      "label": "index.blade.php",
+      "file_type": "code",
+      "source_file": "resources/views/admin/menu/index.blade.php",
+      "source_location": null,
+      "community": 92,
+      "norm_label": "index.blade.php",
+      "id": "resources_views_admin_menu_index_blade_php"
     },
     {
       "label": "AllergyController.php",
@@ -473,7 +1130,7 @@
       "file_type": "code",
       "source_file": "app/Models/DeliveryZone.php",
       "source_location": "L1",
-      "community": 2,
+      "community": 10,
       "norm_label": "deliveryzone.php",
       "id": "app_models_deliveryzone_php"
     },
@@ -494,15 +1151,6 @@
       "community": 2,
       "norm_label": "model",
       "id": "model"
-    },
-    {
-      "label": "HasFactory",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "community": 2,
-      "norm_label": "hasfactory",
-      "id": "hasfactory"
     },
     {
       "label": ".scopeActive()",
@@ -991,15 +1639,6 @@
       "id": "models_menuitem_menuitem_baseingredients"
     },
     {
-      "label": "HasMany",
-      "file_type": "code",
-      "source_file": "app/Models/MenuItem.php",
-      "source_location": "L34",
-      "community": 2,
-      "norm_label": "hasmany",
-      "id": "hasmany"
-    },
-    {
       "label": ".allergens()",
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
@@ -1157,7 +1796,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L1",
-      "community": 5,
+      "community": 15,
       "norm_label": "promotiontest.php",
       "id": "tests_feature_promotiontest_php"
     },
@@ -1184,7 +1823,7 @@
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "community": 17,
+      "community": 128,
       "norm_label": "refreshdatabase",
       "id": "refreshdatabase"
     },
@@ -1193,7 +1832,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L14",
-      "community": 5,
+      "community": 15,
       "norm_label": "user",
       "id": "user"
     },
@@ -1202,7 +1841,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L16",
-      "community": 5,
+      "community": 15,
       "norm_label": ".setup()",
       "id": "feature_promotiontest_promotiontest_setup"
     },
@@ -1769,7 +2408,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Account/ReorderTest.php",
       "source_location": "L1",
-      "community": 17,
+      "community": 128,
       "norm_label": "reordertest.php",
       "id": "tests_feature_account_reordertest_php"
     },
@@ -1778,7 +2417,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Account/ReorderTest.php",
       "source_location": "L10",
-      "community": 17,
+      "community": 128,
       "norm_label": "reordertest",
       "id": "account_reordertest_reordertest"
     },
@@ -1787,7 +2426,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Account/ReorderTest.php",
       "source_location": "L14",
-      "community": 17,
+      "community": 128,
       "norm_label": ".test_account_page_shows_reorder_button_for_orders()",
       "id": "account_reordertest_reordertest_test_account_page_shows_reorder_button_for_orders"
     },
@@ -1796,7 +2435,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Account/ReorderTest.php",
       "source_location": "L38",
-      "community": 17,
+      "community": 128,
       "norm_label": ".test_no_reorder_button_when_no_orders()",
       "id": "account_reordertest_reordertest_test_no_reorder_button_when_no_orders"
     },
@@ -2051,15 +2690,6 @@
       "community": 130,
       "norm_label": ".reset()",
       "id": "controllers_passwordresetcontroller_passwordresetcontroller_reset"
-    },
-    {
-      "label": "login.blade.php",
-      "file_type": "code",
-      "source_file": "resources/views/auth/login.blade.php",
-      "source_location": null,
-      "community": 99,
-      "norm_label": "login.blade.php",
-      "id": "resources_views_auth_login_blade_php"
     },
     {
       "label": "PasswordResetTest.php",
@@ -2411,465 +3041,6 @@
       "community": 81,
       "norm_label": "about.blade.php",
       "id": "resources_views_about_blade_php"
-    },
-    {
-      "label": "composer.json",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L1",
-      "community": 21,
-      "norm_label": "composer.json",
-      "id": "composer_json"
-    },
-    {
-      "label": "$schema",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L2",
-      "community": 21,
-      "norm_label": "$schema",
-      "id": "webapp_composer_schema"
-    },
-    {
-      "label": "name",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L3",
-      "community": 21,
-      "norm_label": "name",
-      "id": "webapp_composer_name"
-    },
-    {
-      "label": "type",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L4",
-      "community": 21,
-      "norm_label": "type",
-      "id": "webapp_composer_type"
-    },
-    {
-      "label": "description",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L5",
-      "community": 21,
-      "norm_label": "description",
-      "id": "webapp_composer_description"
-    },
-    {
-      "label": "keywords",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L6",
-      "community": 21,
-      "norm_label": "keywords",
-      "id": "webapp_composer_keywords"
-    },
-    {
-      "label": "license",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L7",
-      "community": 21,
-      "norm_label": "license",
-      "id": "webapp_composer_license"
-    },
-    {
-      "label": "require",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L8",
-      "community": 32,
-      "norm_label": "require",
-      "id": "webapp_composer_require"
-    },
-    {
-      "label": "php",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L9",
-      "community": 32,
-      "norm_label": "php",
-      "id": "webapp_composer_require_php"
-    },
-    {
-      "label": "laravel/framework",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L10",
-      "community": 32,
-      "norm_label": "laravel/framework",
-      "id": "webapp_composer_require_laravel_framework"
-    },
-    {
-      "label": "laravel/tinker",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L11",
-      "community": 32,
-      "norm_label": "laravel/tinker",
-      "id": "webapp_composer_require_laravel_tinker"
-    },
-    {
-      "label": "livewire/livewire",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L12",
-      "community": 32,
-      "norm_label": "livewire/livewire",
-      "id": "webapp_composer_require_livewire_livewire"
-    },
-    {
-      "label": "pusher/pusher-php-server",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L13",
-      "community": 32,
-      "norm_label": "pusher/pusher-php-server",
-      "id": "webapp_composer_require_pusher_pusher_php_server"
-    },
-    {
-      "label": "stripe/stripe-php",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L14",
-      "community": 32,
-      "norm_label": "stripe/stripe-php",
-      "id": "webapp_composer_require_stripe_stripe_php"
-    },
-    {
-      "label": "require-dev",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L16",
-      "community": 27,
-      "norm_label": "require-dev",
-      "id": "webapp_composer_require_dev"
-    },
-    {
-      "label": "fakerphp/faker",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L17",
-      "community": 27,
-      "norm_label": "fakerphp/faker",
-      "id": "webapp_composer_require_dev_fakerphp_faker"
-    },
-    {
-      "label": "laravel/pail",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L18",
-      "community": 27,
-      "norm_label": "laravel/pail",
-      "id": "webapp_composer_require_dev_laravel_pail"
-    },
-    {
-      "label": "laravel/pint",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L19",
-      "community": 27,
-      "norm_label": "laravel/pint",
-      "id": "webapp_composer_require_dev_laravel_pint"
-    },
-    {
-      "label": "laravel/sail",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L20",
-      "community": 27,
-      "norm_label": "laravel/sail",
-      "id": "webapp_composer_require_dev_laravel_sail"
-    },
-    {
-      "label": "mockery/mockery",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L21",
-      "community": 27,
-      "norm_label": "mockery/mockery",
-      "id": "webapp_composer_require_dev_mockery_mockery"
-    },
-    {
-      "label": "nunomaduro/collision",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L22",
-      "community": 27,
-      "norm_label": "nunomaduro/collision",
-      "id": "webapp_composer_require_dev_nunomaduro_collision"
-    },
-    {
-      "label": "phpunit/phpunit",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L23",
-      "community": 27,
-      "norm_label": "phpunit/phpunit",
-      "id": "webapp_composer_require_dev_phpunit_phpunit"
-    },
-    {
-      "label": "autoload",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L25",
-      "community": 37,
-      "norm_label": "autoload",
-      "id": "webapp_composer_autoload"
-    },
-    {
-      "label": "psr-4",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L26",
-      "community": 37,
-      "norm_label": "psr-4",
-      "id": "webapp_composer_autoload_psr_4"
-    },
-    {
-      "label": "App\\\\",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L27",
-      "community": 37,
-      "norm_label": "app\\\\",
-      "id": "webapp_composer_psr_4_app"
-    },
-    {
-      "label": "Database\\\\Factories\\\\",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L28",
-      "community": 37,
-      "norm_label": "database\\\\factories\\\\",
-      "id": "webapp_composer_psr_4_database_factories"
-    },
-    {
-      "label": "Database\\\\Seeders\\\\",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L29",
-      "community": 37,
-      "norm_label": "database\\\\seeders\\\\",
-      "id": "webapp_composer_psr_4_database_seeders"
-    },
-    {
-      "label": "autoload-dev",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L32",
-      "community": 56,
-      "norm_label": "autoload-dev",
-      "id": "webapp_composer_autoload_dev"
-    },
-    {
-      "label": "psr-4",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L33",
-      "community": 56,
-      "norm_label": "psr-4",
-      "id": "webapp_composer_autoload_dev_psr_4"
-    },
-    {
-      "label": "Tests\\\\",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L34",
-      "community": 56,
-      "norm_label": "tests\\\\",
-      "id": "webapp_composer_psr_4_tests"
-    },
-    {
-      "label": "scripts",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L37",
-      "community": 22,
-      "norm_label": "scripts",
-      "id": "webapp_composer_scripts"
-    },
-    {
-      "label": "setup",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L38",
-      "community": 22,
-      "norm_label": "setup",
-      "id": "webapp_composer_scripts_setup"
-    },
-    {
-      "label": "dev",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L46",
-      "community": 22,
-      "norm_label": "dev",
-      "id": "webapp_composer_scripts_dev"
-    },
-    {
-      "label": "test",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L50",
-      "community": 22,
-      "norm_label": "test",
-      "id": "webapp_composer_scripts_test"
-    },
-    {
-      "label": "post-autoload-dump",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L54",
-      "community": 22,
-      "norm_label": "post-autoload-dump",
-      "id": "webapp_composer_scripts_post_autoload_dump"
-    },
-    {
-      "label": "post-update-cmd",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L58",
-      "community": 22,
-      "norm_label": "post-update-cmd",
-      "id": "webapp_composer_scripts_post_update_cmd"
-    },
-    {
-      "label": "post-root-package-install",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L61",
-      "community": 22,
-      "norm_label": "post-root-package-install",
-      "id": "webapp_composer_scripts_post_root_package_install"
-    },
-    {
-      "label": "post-create-project-cmd",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L64",
-      "community": 22,
-      "norm_label": "post-create-project-cmd",
-      "id": "webapp_composer_scripts_post_create_project_cmd"
-    },
-    {
-      "label": "pre-package-uninstall",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L69",
-      "community": 22,
-      "norm_label": "pre-package-uninstall",
-      "id": "webapp_composer_scripts_pre_package_uninstall"
-    },
-    {
-      "label": "extra",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L73",
-      "community": 57,
-      "norm_label": "extra",
-      "id": "webapp_composer_extra"
-    },
-    {
-      "label": "laravel",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L74",
-      "community": 57,
-      "norm_label": "laravel",
-      "id": "webapp_composer_extra_laravel"
-    },
-    {
-      "label": "dont-discover",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L75",
-      "community": 57,
-      "norm_label": "dont-discover",
-      "id": "webapp_composer_laravel_dont_discover"
-    },
-    {
-      "label": "config",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L78",
-      "community": 31,
-      "norm_label": "config",
-      "id": "webapp_composer_config"
-    },
-    {
-      "label": "optimize-autoloader",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L79",
-      "community": 31,
-      "norm_label": "optimize-autoloader",
-      "id": "webapp_composer_config_optimize_autoloader"
-    },
-    {
-      "label": "preferred-install",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L80",
-      "community": 31,
-      "norm_label": "preferred-install",
-      "id": "webapp_composer_config_preferred_install"
-    },
-    {
-      "label": "sort-packages",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L81",
-      "community": 31,
-      "norm_label": "sort-packages",
-      "id": "webapp_composer_config_sort_packages"
-    },
-    {
-      "label": "allow-plugins",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L82",
-      "community": 31,
-      "norm_label": "allow-plugins",
-      "id": "webapp_composer_config_allow_plugins"
-    },
-    {
-      "label": "pestphp/pest-plugin",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L83",
-      "community": 31,
-      "norm_label": "pestphp/pest-plugin",
-      "id": "webapp_composer_allow_plugins_pestphp_pest_plugin"
-    },
-    {
-      "label": "php-http/discovery",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L84",
-      "community": 31,
-      "norm_label": "php-http/discovery",
-      "id": "webapp_composer_allow_plugins_php_http_discovery"
-    },
-    {
-      "label": "minimum-stability",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L87",
-      "community": 21,
-      "norm_label": "minimum-stability",
-      "id": "webapp_composer_minimum_stability"
-    },
-    {
-      "label": "prefer-stable",
-      "file_type": "code",
-      "source_file": "composer.json",
-      "source_location": "L88",
-      "community": 21,
-      "norm_label": "prefer-stable",
-      "id": "webapp_composer_prefer_stable"
     },
     {
       "label": "package.json",
@@ -3272,7 +3443,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/MenuController.php",
       "source_location": "L1",
-      "community": 4,
+      "community": 2,
       "norm_label": "menucontroller.php",
       "id": "app_http_controllers_menucontroller_php"
     },
@@ -3281,7 +3452,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/MenuController.php",
       "source_location": "L10",
-      "community": 4,
+      "community": 2,
       "norm_label": "menucontroller",
       "id": "controllers_menucontroller_menucontroller"
     },
@@ -3290,7 +3461,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/MenuController.php",
       "source_location": "L12",
-      "community": 4,
+      "community": 2,
       "norm_label": ".index()",
       "id": "controllers_menucontroller_menucontroller_index"
     },
@@ -3299,7 +3470,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/MenuController.php",
       "source_location": "L12",
-      "community": 4,
+      "community": 2,
       "norm_label": "view",
       "id": "app_http_controllers_menucontroller_php_view"
     },
@@ -3308,7 +3479,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/MenuController.php",
       "source_location": "L30",
-      "community": 4,
+      "community": 2,
       "norm_label": ".show()",
       "id": "controllers_menucontroller_menucontroller_show"
     },
@@ -3803,7 +3974,7 @@
       "file_type": "code",
       "source_file": "app/Models/Allergen.php",
       "source_location": "L1",
-      "community": 2,
+      "community": 0,
       "norm_label": "allergen.php",
       "id": "app_models_allergen_php"
     },
@@ -4064,7 +4235,7 @@
       "file_type": "code",
       "source_file": "app/Models/Promotion.php",
       "source_location": "L1",
-      "community": 2,
+      "community": 5,
       "norm_label": "promotion.php",
       "id": "app_models_promotion_php"
     },
@@ -4193,96 +4364,6 @@
       "community": 2,
       "norm_label": ".scopeavailable()",
       "id": "models_topping_topping_scopeavailable"
-    },
-    {
-      "label": "User.php",
-      "file_type": "code",
-      "source_file": "app/Models/User.php",
-      "source_location": "L1",
-      "community": 128,
-      "norm_label": "user.php",
-      "id": "app_models_user_php"
-    },
-    {
-      "label": "User",
-      "file_type": "code",
-      "source_file": "app/Models/User.php",
-      "source_location": "L12",
-      "community": 128,
-      "norm_label": "user",
-      "id": "models_user_user"
-    },
-    {
-      "label": "Authenticatable",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "community": 128,
-      "norm_label": "authenticatable",
-      "id": "authenticatable"
-    },
-    {
-      "label": "Notifiable",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "community": 128,
-      "norm_label": "notifiable",
-      "id": "notifiable"
-    },
-    {
-      "label": ".casts()",
-      "file_type": "code",
-      "source_file": "app/Models/User.php",
-      "source_location": "L44",
-      "community": 128,
-      "norm_label": ".casts()",
-      "id": "models_user_user_casts"
-    },
-    {
-      "label": ".orders()",
-      "file_type": "code",
-      "source_file": "app/Models/User.php",
-      "source_location": "L52",
-      "community": 128,
-      "norm_label": ".orders()",
-      "id": "models_user_user_orders"
-    },
-    {
-      "label": "HasMany",
-      "file_type": "code",
-      "source_file": "app/Models/User.php",
-      "source_location": "L52",
-      "community": 128,
-      "norm_label": "hasmany",
-      "id": "app_models_user_php_hasmany"
-    },
-    {
-      "label": ".addresses()",
-      "file_type": "code",
-      "source_file": "app/Models/User.php",
-      "source_location": "L57",
-      "community": 128,
-      "norm_label": ".addresses()",
-      "id": "models_user_user_addresses"
-    },
-    {
-      "label": ".defaultAddress()",
-      "file_type": "code",
-      "source_file": "app/Models/User.php",
-      "source_location": "L62",
-      "community": 128,
-      "norm_label": ".defaultaddress()",
-      "id": "models_user_user_defaultaddress"
-    },
-    {
-      "label": "UserAddress",
-      "file_type": "code",
-      "source_file": "app/Models/User.php",
-      "source_location": "L62",
-      "community": 128,
-      "norm_label": "useraddress",
-      "id": "useraddress"
     },
     {
       "label": "UserAddress.php",
@@ -4526,15 +4607,6 @@
       "community": 76,
       "norm_label": "queue.php",
       "id": "config_queue_php"
-    },
-    {
-      "label": "services.php",
-      "file_type": "code",
-      "source_file": "config/services.php",
-      "source_location": "L1",
-      "community": 77,
-      "norm_label": "services.php",
-      "id": "config_services_php"
     },
     {
       "label": "session.php",
@@ -5651,15 +5723,6 @@
       "community": 98,
       "norm_label": "index.blade.php",
       "id": "resources_views_admin_settings_index_blade_php"
-    },
-    {
-      "label": "register.blade.php",
-      "file_type": "code",
-      "source_file": "resources/views/auth/register.blade.php",
-      "source_location": null,
-      "community": 100,
-      "norm_label": "register.blade.php",
-      "id": "resources_views_auth_register_blade_php"
     },
     {
       "label": "index.blade.php",
@@ -6782,7 +6845,7 @@
       "file_type": "code",
       "source_file": "tests/TestCase.php",
       "source_location": "L1",
-      "community": 25,
+      "community": 241,
       "norm_label": "testcase.php",
       "id": "tests_testcase_php"
     },
@@ -6791,7 +6854,7 @@
       "file_type": "code",
       "source_file": "tests/TestCase.php",
       "source_location": "L7",
-      "community": 25,
+      "community": 241,
       "norm_label": "testcase",
       "id": "tests_testcase_testcase"
     },
@@ -6800,7 +6863,7 @@
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "community": 25,
+      "community": 241,
       "norm_label": "basetestcase",
       "id": "basetestcase"
     },
@@ -7142,7 +7205,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/ExampleTest.php",
       "source_location": "L1",
-      "community": 17,
+      "community": 128,
       "norm_label": "exampletest.php",
       "id": "tests_feature_exampletest_php"
     },
@@ -7151,7 +7214,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/ExampleTest.php",
       "source_location": "L8",
-      "community": 17,
+      "community": 128,
       "norm_label": "exampletest",
       "id": "feature_exampletest_exampletest"
     },
@@ -7160,7 +7223,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/ExampleTest.php",
       "source_location": "L15",
-      "community": 17,
+      "community": 128,
       "norm_label": ".test_the_application_returns_a_successful_response()",
       "id": "feature_exampletest_exampletest_test_the_application_returns_a_successful_response"
     },
@@ -7313,7 +7376,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/RateLimitTest.php",
       "source_location": "L1",
-      "community": 25,
+      "community": 128,
       "norm_label": "ratelimittest.php",
       "id": "tests_feature_ratelimittest_php"
     },
@@ -7322,7 +7385,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/RateLimitTest.php",
       "source_location": "L8",
-      "community": 25,
+      "community": 128,
       "norm_label": "ratelimittest",
       "id": "feature_ratelimittest_ratelimittest"
     },
@@ -7331,7 +7394,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/RateLimitTest.php",
       "source_location": "L12",
-      "community": 25,
+      "community": 128,
       "norm_label": ".test_login_is_throttled_after_5_attempts()",
       "id": "feature_ratelimittest_ratelimittest_test_login_is_throttled_after_5_attempts"
     },
@@ -7340,7 +7403,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/RateLimitTest.php",
       "source_location": "L21",
-      "community": 25,
+      "community": 128,
       "norm_label": ".test_registration_is_throttled_after_3_attempts()",
       "id": "feature_ratelimittest_ratelimittest_test_registration_is_throttled_after_3_attempts"
     },
@@ -7736,7 +7799,7 @@
       "file_type": "code",
       "source_file": "tests/Unit/ExampleTest.php",
       "source_location": "L1",
-      "community": 25,
+      "community": 241,
       "norm_label": "exampletest.php",
       "id": "tests_unit_exampletest_php"
     },
@@ -7745,7 +7808,7 @@
       "file_type": "code",
       "source_file": "tests/Unit/ExampleTest.php",
       "source_location": "L7",
-      "community": 25,
+      "community": 241,
       "norm_label": "exampletest",
       "id": "unit_exampletest_exampletest"
     },
@@ -7754,7 +7817,7 @@
       "file_type": "code",
       "source_file": "tests/Unit/ExampleTest.php",
       "source_location": "L12",
-      "community": 25,
+      "community": 241,
       "norm_label": ".test_that_true_is_true()",
       "id": "unit_exampletest_exampletest_test_that_true_is_true"
     },
@@ -9449,54 +9512,21 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L16",
+      "source_file": "app/Http/Controllers/SocialAuthController.php",
+      "source_location": "L11",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_menuitemcontroller_php",
-      "target": "admin_menuitemcontroller_menuitemcontroller"
+      "source": "app_http_controllers_socialauthcontroller_php",
+      "target": "controllers_socialauthcontroller_socialauthcontroller",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L5",
+      "source_file": "app/Http/Controllers/SocialAuthController.php",
+      "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_menuitemcontroller_php",
-      "target": "controller"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_menuitemcontroller_php",
-      "target": "controllers_controller_controller"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_menuitemcontroller_php",
-      "target": "menuitem"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L10",
-      "weight": 1.0,
-      "source": "app_http_controllers_admin_menuitemcontroller_php",
+      "source": "app_http_controllers_socialauthcontroller_php",
       "target": "redirectresponse",
       "confidence_score": 1.0
     },
@@ -9504,123 +9534,42 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_file": "app/Http/Controllers/SocialAuthController.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_http_controllers_socialauthcontroller_php",
+      "target": "user",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/SocialAuthController.php",
       "source_location": "L11",
       "weight": 1.0,
-      "source": "app_http_controllers_admin_menuitemcontroller_php",
-      "target": "request",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "app_http_controllers_admin_menuitemcontroller_php",
-      "target": "view",
+      "source": "controllers_socialauthcontroller_socialauthcontroller",
+      "target": "controller",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L31",
+      "source_file": "app/Http/Controllers/SocialAuthController.php",
+      "source_location": "L20",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_menuitemcontroller_menuitemcontroller",
-      "target": "admin_menuitemcontroller_menuitemcontroller_create"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L138",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_menuitemcontroller_menuitemcontroller",
-      "target": "admin_menuitemcontroller_menuitemcontroller_destroy"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L82",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_menuitemcontroller_menuitemcontroller",
-      "target": "admin_menuitemcontroller_menuitemcontroller_edit"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_menuitemcontroller_menuitemcontroller",
-      "target": "admin_menuitemcontroller_menuitemcontroller_index"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L41",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_menuitemcontroller_menuitemcontroller",
-      "target": "admin_menuitemcontroller_menuitemcontroller_store"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L148",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_menuitemcontroller_menuitemcontroller",
-      "target": "admin_menuitemcontroller_menuitemcontroller_syncingredients"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L168",
-      "weight": 1.0,
-      "source": "admin_menuitemcontroller_menuitemcontroller",
-      "target": "admin_menuitemcontroller_menuitemcontroller_toggleavailability",
+      "source": "controllers_socialauthcontroller_socialauthcontroller",
+      "target": "controllers_socialauthcontroller_socialauthcontroller_callback",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L94",
+      "source_file": "app/Http/Controllers/SocialAuthController.php",
+      "source_location": "L13",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_menuitemcontroller_menuitemcontroller",
-      "target": "admin_menuitemcontroller_menuitemcontroller_update"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_menuitemcontroller_menuitemcontroller",
-      "target": "controller"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_menuitemcontroller_menuitemcontroller",
-      "target": "controllers_controller_controller"
+      "source": "controllers_socialauthcontroller_socialauthcontroller",
+      "target": "controllers_socialauthcontroller_socialauthcontroller_redirect",
+      "confidence_score": 1.0
     },
     {
       "relation": "inherits",
@@ -9660,6 +9609,16 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "admin_kitchencontroller_kitchencontroller",
+      "target": "controller"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_menuitemcontroller_menuitemcontroller",
       "target": "controller"
     },
     {
@@ -9714,6 +9673,17 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "app_http_controllers_admin_kitchencontroller_php",
+      "target": "controller"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_menuitemcontroller_php",
       "target": "controller"
     },
     {
@@ -9801,6 +9771,1200 @@
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/SocialAuthController.php",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "controllers_socialauthcontroller_socialauthcontroller_callback",
+      "target": "controllers_socialauthcontroller_socialauthcontroller_redirect",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/SocialAuthController.php",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "return_type",
+      "source": "controllers_socialauthcontroller_socialauthcontroller_redirect",
+      "target": "redirectresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L158",
+      "weight": 1.0,
+      "context": "return_type",
+      "confidence_score": 1.0,
+      "source": "admin_menuitemcontroller_menuitemcontroller_destroy",
+      "target": "redirectresponse"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L53",
+      "weight": 1.0,
+      "context": "return_type",
+      "confidence_score": 1.0,
+      "source": "admin_menuitemcontroller_menuitemcontroller_store",
+      "target": "redirectresponse"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L110",
+      "weight": 1.0,
+      "context": "return_type",
+      "confidence_score": 1.0,
+      "source": "admin_menuitemcontroller_menuitemcontroller_update",
+      "target": "redirectresponse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_menuitemcontroller_php",
+      "target": "redirectresponse"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/SocialAuthController.php",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "return_type",
+      "source": "controllers_socialauthcontroller_socialauthcontroller_callback",
+      "target": "redirectresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "app/Http/Controllers/SocialAuthController.php",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "controllers_socialauthcontroller_socialauthcontroller_callback",
+      "target": "models_user_user"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/User.php",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_models_user_php",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/User.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "app_models_user_php",
+      "target": "hasmany",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/User.php",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_models_user_php",
+      "target": "models_user_user"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/User.php",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_models_user_php",
+      "target": "notifiable"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/User.php",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "app_models_user_php",
+      "target": "user",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/User.php",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "models_user_user",
+      "target": "authenticatable"
+    },
+    {
+      "relation": "mixes_in",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/User.php",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "models_user_user",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/User.php",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "models_user_user",
+      "target": "models_user_user_addresses"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/User.php",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "models_user_user",
+      "target": "models_user_user_casts"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/User.php",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "models_user_user",
+      "target": "models_user_user_defaultaddress"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/User.php",
+      "source_location": "L52",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "models_user_user",
+      "target": "models_user_user_orders"
+    },
+    {
+      "relation": "mixes_in",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/User.php",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "models_user_user",
+      "target": "notifiable"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/Allergen.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_models_allergen_php",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/BaseIngredient.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_models_baseingredient_php",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/Category.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_models_category_php",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/DeliveryZone.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_models_deliveryzone_php",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/MenuItem.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_models_menuitem_php",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/Order.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_models_order_php",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/OrderItem.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_models_orderitem_php",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/Promotion.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_models_promotion_php",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/Topping.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_models_topping_php",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/UserAddress.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_models_useraddress_php",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "mixes_in",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/Allergen.php",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "models_allergen_allergen",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "mixes_in",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/BaseIngredient.php",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "models_baseingredient_baseingredient",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "mixes_in",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/Category.php",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "models_category_category",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "mixes_in",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/DeliveryZone.php",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "models_deliveryzone_deliveryzone",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "mixes_in",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/MenuItem.php",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "models_menuitem_menuitem",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "mixes_in",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/Order.php",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "models_order_order",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "mixes_in",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/OrderItem.php",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "models_orderitem_orderitem",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "mixes_in",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/Promotion.php",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "models_promotion_promotion",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "mixes_in",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/Topping.php",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "models_topping_topping",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "mixes_in",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/UserAddress.php",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "models_useraddress_useraddress",
+      "target": "hasfactory"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/User.php",
+      "source_location": "L55",
+      "weight": 1.0,
+      "context": "return_type",
+      "source": "models_user_user_orders",
+      "target": "hasmany",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/MenuItem.php",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_models_menuitem_php",
+      "target": "hasmany"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/MenuItem.php",
+      "source_location": "L34",
+      "weight": 1.0,
+      "context": "return_type",
+      "confidence_score": 1.0,
+      "source": "models_menuitem_menuitem_baseingredients",
+      "target": "hasmany"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/User.php",
+      "source_location": "L60",
+      "weight": 1.0,
+      "context": "return_type",
+      "source": "models_user_user_addresses",
+      "target": "hasmany",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references_constant",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/Models/User.php",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "models_user_user_addresses",
+      "target": "useraddress"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/User.php",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "models_user_user_defaultaddress",
+      "target": "models_user_user_addresses"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Models/User.php",
+      "source_location": "L62",
+      "weight": 1.0,
+      "context": "return_type",
+      "confidence_score": 1.0,
+      "source": "models_user_user_defaultaddress",
+      "target": "useraddress"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Account/AddressController.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_account_addresscontroller_php",
+      "target": "useraddress"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/Feature/Account/AddressTest.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_feature_account_addresstest_php",
+      "target": "useraddress"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "composer_json",
+      "target": "webapp_composer_autoload"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "composer_json",
+      "target": "webapp_composer_autoload_dev"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L78",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "composer_json",
+      "target": "webapp_composer_config"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "composer_json",
+      "target": "webapp_composer_description"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L73",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "composer_json",
+      "target": "webapp_composer_extra"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "composer_json",
+      "target": "webapp_composer_keywords"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "composer_json",
+      "target": "webapp_composer_license"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L87",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "composer_json",
+      "target": "webapp_composer_minimum_stability"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "composer_json",
+      "target": "webapp_composer_name"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L88",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "composer_json",
+      "target": "webapp_composer_prefer_stable"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "composer_json",
+      "target": "webapp_composer_require"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "composer_json",
+      "target": "webapp_composer_require_dev"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "composer_json",
+      "target": "webapp_composer_schema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "composer_json",
+      "target": "webapp_composer_scripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "composer_json",
+      "target": "webapp_composer_type"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_require",
+      "target": "webapp_composer_require_laravel_framework"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "webapp_composer_require",
+      "target": "webapp_composer_require_laravel_socialite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_require",
+      "target": "webapp_composer_require_laravel_tinker"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_require",
+      "target": "webapp_composer_require_livewire_livewire"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_require",
+      "target": "webapp_composer_require_php"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_require",
+      "target": "webapp_composer_require_pusher_pusher_php_server"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_require",
+      "target": "webapp_composer_require_stripe_stripe_php"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_require_dev",
+      "target": "webapp_composer_require_dev_fakerphp_faker"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_require_dev",
+      "target": "webapp_composer_require_dev_laravel_pail"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_require_dev",
+      "target": "webapp_composer_require_dev_laravel_pint"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_require_dev",
+      "target": "webapp_composer_require_dev_laravel_sail"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_require_dev",
+      "target": "webapp_composer_require_dev_mockery_mockery"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_require_dev",
+      "target": "webapp_composer_require_dev_nunomaduro_collision"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_require_dev",
+      "target": "webapp_composer_require_dev_phpunit_phpunit"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_autoload",
+      "target": "webapp_composer_autoload_psr_4"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_autoload_psr_4",
+      "target": "webapp_composer_psr_4_app"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_autoload_psr_4",
+      "target": "webapp_composer_psr_4_database_factories"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_autoload_psr_4",
+      "target": "webapp_composer_psr_4_database_seeders"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_autoload_dev",
+      "target": "webapp_composer_autoload_dev_psr_4"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_autoload_dev_psr_4",
+      "target": "webapp_composer_psr_4_tests"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_scripts",
+      "target": "webapp_composer_scripts_dev"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L54",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_scripts",
+      "target": "webapp_composer_scripts_post_autoload_dump"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_scripts",
+      "target": "webapp_composer_scripts_post_create_project_cmd"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L61",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_scripts",
+      "target": "webapp_composer_scripts_post_root_package_install"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L58",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_scripts",
+      "target": "webapp_composer_scripts_post_update_cmd"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_scripts",
+      "target": "webapp_composer_scripts_pre_package_uninstall"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_scripts",
+      "target": "webapp_composer_scripts_setup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_scripts",
+      "target": "webapp_composer_scripts_test"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L74",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_extra",
+      "target": "webapp_composer_extra_laravel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L75",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_extra_laravel",
+      "target": "webapp_composer_laravel_dont_discover"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_config",
+      "target": "webapp_composer_config_allow_plugins"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L79",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_config",
+      "target": "webapp_composer_config_optimize_autoloader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L80",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_config",
+      "target": "webapp_composer_config_preferred_install"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L81",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_config",
+      "target": "webapp_composer_config_sort_packages"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L83",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_config_allow_plugins",
+      "target": "webapp_composer_allow_plugins_pestphp_pest_plugin"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composer.json",
+      "source_location": "L84",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "webapp_composer_config_allow_plugins",
+      "target": "webapp_composer_allow_plugins_php_http_discovery"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database/migrations/2026_06_05_225045_add_social_ids_to_users_table.php",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "database_migrations_2026_06_05_225045_add_social_ids_to_users_table_php",
+      "target": "migrations_2026_06_05_225045_add_social_ids_to_users_table_down",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database/migrations/2026_06_05_225045_add_social_ids_to_users_table.php",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "database_migrations_2026_06_05_225045_add_social_ids_to_users_table_php",
+      "target": "migrations_2026_06_05_225045_add_social_ids_to_users_table_up",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_menuitemcontroller_php",
+      "target": "admin_menuitemcontroller_menuitemcontroller"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_menuitemcontroller_php",
+      "target": "controllers_controller_controller"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_menuitemcontroller_php",
+      "target": "menuitem"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_menuitemcontroller_php",
+      "target": "request"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_menuitemcontroller_php",
+      "target": "view"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_menuitemcontroller_menuitemcontroller",
+      "target": "admin_menuitemcontroller_menuitemcontroller_create"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L138",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_menuitemcontroller_menuitemcontroller",
+      "target": "admin_menuitemcontroller_menuitemcontroller_destroy"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_menuitemcontroller_menuitemcontroller",
+      "target": "admin_menuitemcontroller_menuitemcontroller_edit"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_menuitemcontroller_menuitemcontroller",
+      "target": "admin_menuitemcontroller_menuitemcontroller_index"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_menuitemcontroller_menuitemcontroller",
+      "target": "admin_menuitemcontroller_menuitemcontroller_store"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L148",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_menuitemcontroller_menuitemcontroller",
+      "target": "admin_menuitemcontroller_menuitemcontroller_syncingredients"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L168",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_menuitemcontroller_menuitemcontroller",
+      "target": "admin_menuitemcontroller_menuitemcontroller_toggleavailability"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L94",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_menuitemcontroller_menuitemcontroller",
+      "target": "admin_menuitemcontroller_menuitemcontroller_update"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_menuitemcontroller_menuitemcontroller",
+      "target": "controllers_controller_controller"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L20",
       "weight": 1.0,
@@ -9815,9 +10979,9 @@
       "source_location": "L18",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "admin_menuitemcontroller_menuitemcontroller_index",
-      "target": "request",
-      "confidence_score": 1.0
+      "target": "request"
     },
     {
       "relation": "references",
@@ -9826,9 +10990,9 @@
       "source_location": "L18",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "admin_menuitemcontroller_menuitemcontroller_index",
-      "target": "view",
-      "confidence_score": 1.0
+      "target": "view"
     },
     {
       "relation": "references",
@@ -9837,9 +11001,9 @@
       "source_location": "L53",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "admin_menuitemcontroller_menuitemcontroller_store",
-      "target": "request",
-      "confidence_score": 1.0
+      "target": "request"
     },
     {
       "relation": "references",
@@ -9848,9 +11012,9 @@
       "source_location": "L110",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "admin_menuitemcontroller_menuitemcontroller_update",
-      "target": "request",
-      "confidence_score": 1.0
+      "target": "request"
     },
     {
       "relation": "references",
@@ -9958,9 +11122,9 @@
       "source_location": "L43",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "admin_menuitemcontroller_menuitemcontroller_create",
-      "target": "view",
-      "confidence_score": 1.0
+      "target": "view"
     },
     {
       "relation": "references",
@@ -9969,9 +11133,9 @@
       "source_location": "L98",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "admin_menuitemcontroller_menuitemcontroller_edit",
-      "target": "view",
-      "confidence_score": 1.0
+      "target": "view"
     },
     {
       "relation": "calls",
@@ -10018,17 +11182,6 @@
       "target": "menuitem"
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L53",
-      "weight": 1.0,
-      "context": "return_type",
-      "source": "admin_menuitemcontroller_menuitemcontroller_store",
-      "target": "redirectresponse",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -10038,28 +11191,6 @@
       "confidence_score": 1.0,
       "source": "admin_menuitemcontroller_menuitemcontroller_update",
       "target": "admin_menuitemcontroller_menuitemcontroller_store"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L158",
-      "weight": 1.0,
-      "context": "return_type",
-      "source": "admin_menuitemcontroller_menuitemcontroller_destroy",
-      "target": "redirectresponse",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L110",
-      "weight": 1.0,
-      "context": "return_type",
-      "source": "admin_menuitemcontroller_menuitemcontroller_update",
-      "target": "redirectresponse",
-      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -10101,9 +11232,9 @@
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L171",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_menuitemcontroller_menuitemcontroller_toggleavailability",
-      "target": "admin_menuitemcontroller_menuitemcontroller_update",
-      "confidence_score": 1.0
+      "target": "admin_menuitemcontroller_menuitemcontroller_update"
     },
     {
       "relation": "calls",
@@ -10145,9 +11276,9 @@
       "source_location": "L168",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "admin_menuitemcontroller_menuitemcontroller_toggleavailability",
-      "target": "jsonresponse",
-      "confidence_score": 1.0
+      "target": "jsonresponse"
     },
     {
       "relation": "calls",
@@ -10156,9 +11287,9 @@
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L170",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_menuitemcontroller_menuitemcontroller_toggleavailability",
-      "target": "menuitem",
-      "confidence_score": 1.0
+      "target": "menuitem"
     },
     {
       "relation": "imports",
@@ -10948,17 +12079,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/Models/DeliveryZone.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_models_deliveryzone_php",
-      "target": "hasfactory"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/DeliveryZone.php",
       "source_location": "L6",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -10996,16 +12116,6 @@
       "weight": 1.0,
       "source": "feature_deliveryzonetest_deliveryzonetest_test_admin_can_update_delivery_zone",
       "target": "models_deliveryzone_deliveryzone"
-    },
-    {
-      "relation": "mixes_in",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/DeliveryZone.php",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "models_deliveryzone_deliveryzone",
-      "target": "hasfactory"
     },
     {
       "relation": "inherits",
@@ -11277,216 +12387,6 @@
       "confidence_score": 1.0,
       "source": "models_useraddress_useraddress",
       "target": "model"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/Allergen.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_models_allergen_php",
-      "target": "hasfactory"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/BaseIngredient.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_models_baseingredient_php",
-      "target": "hasfactory"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/Category.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_models_category_php",
-      "target": "hasfactory"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/MenuItem.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_models_menuitem_php",
-      "target": "hasfactory"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/Order.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_models_order_php",
-      "target": "hasfactory"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/OrderItem.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_models_orderitem_php",
-      "target": "hasfactory"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/Promotion.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_models_promotion_php",
-      "target": "hasfactory"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/Topping.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_models_topping_php",
-      "target": "hasfactory"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/User.php",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_models_user_php",
-      "target": "hasfactory"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/UserAddress.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_models_useraddress_php",
-      "target": "hasfactory"
-    },
-    {
-      "relation": "mixes_in",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/Allergen.php",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "models_allergen_allergen",
-      "target": "hasfactory"
-    },
-    {
-      "relation": "mixes_in",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/BaseIngredient.php",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "models_baseingredient_baseingredient",
-      "target": "hasfactory"
-    },
-    {
-      "relation": "mixes_in",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/Category.php",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "models_category_category",
-      "target": "hasfactory"
-    },
-    {
-      "relation": "mixes_in",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/MenuItem.php",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "models_menuitem_menuitem",
-      "target": "hasfactory"
-    },
-    {
-      "relation": "mixes_in",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/Order.php",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "models_order_order",
-      "target": "hasfactory"
-    },
-    {
-      "relation": "mixes_in",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/OrderItem.php",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "models_orderitem_orderitem",
-      "target": "hasfactory"
-    },
-    {
-      "relation": "mixes_in",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/Promotion.php",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "models_promotion_promotion",
-      "target": "hasfactory"
-    },
-    {
-      "relation": "mixes_in",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/Topping.php",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "models_topping_topping",
-      "target": "hasfactory"
-    },
-    {
-      "relation": "mixes_in",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/User.php",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "models_user_user",
-      "target": "hasfactory"
-    },
-    {
-      "relation": "mixes_in",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/UserAddress.php",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "models_useraddress_useraddress",
-      "target": "hasfactory"
     },
     {
       "relation": "references",
@@ -12208,17 +13108,6 @@
       "target": "belongstomany"
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/MenuItem.php",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_models_menuitem_php",
-      "target": "hasmany"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/Models/MenuItem.php",
@@ -12288,17 +13177,6 @@
       "confidence_score": 1.0,
       "source": "models_menuitem_menuitem_category",
       "target": "belongsto"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/MenuItem.php",
-      "source_location": "L34",
-      "weight": 1.0,
-      "context": "return_type",
-      "confidence_score": 1.0,
-      "source": "models_menuitem_menuitem_baseingredients",
-      "target": "hasmany"
     },
     {
       "relation": "references",
@@ -14439,506 +15317,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "composer_json",
-      "target": "webapp_composer_autoload"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L32",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "composer_json",
-      "target": "webapp_composer_autoload_dev"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L78",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "composer_json",
-      "target": "webapp_composer_config"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "composer_json",
-      "target": "webapp_composer_description"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L73",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "composer_json",
-      "target": "webapp_composer_extra"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "composer_json",
-      "target": "webapp_composer_keywords"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "composer_json",
-      "target": "webapp_composer_license"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L87",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "composer_json",
-      "target": "webapp_composer_minimum_stability"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "composer_json",
-      "target": "webapp_composer_name"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L88",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "composer_json",
-      "target": "webapp_composer_prefer_stable"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "composer_json",
-      "target": "webapp_composer_require"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "composer_json",
-      "target": "webapp_composer_require_dev"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "composer_json",
-      "target": "webapp_composer_schema"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L37",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "composer_json",
-      "target": "webapp_composer_scripts"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "composer_json",
-      "target": "webapp_composer_type"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_require",
-      "target": "webapp_composer_require_laravel_framework"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_require",
-      "target": "webapp_composer_require_laravel_tinker"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_require",
-      "target": "webapp_composer_require_livewire_livewire"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_require",
-      "target": "webapp_composer_require_php"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_require",
-      "target": "webapp_composer_require_pusher_pusher_php_server"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_require",
-      "target": "webapp_composer_require_stripe_stripe_php"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_require_dev",
-      "target": "webapp_composer_require_dev_fakerphp_faker"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_require_dev",
-      "target": "webapp_composer_require_dev_laravel_pail"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_require_dev",
-      "target": "webapp_composer_require_dev_laravel_pint"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_require_dev",
-      "target": "webapp_composer_require_dev_laravel_sail"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_require_dev",
-      "target": "webapp_composer_require_dev_mockery_mockery"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_require_dev",
-      "target": "webapp_composer_require_dev_nunomaduro_collision"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L23",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_require_dev",
-      "target": "webapp_composer_require_dev_phpunit_phpunit"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_autoload",
-      "target": "webapp_composer_autoload_psr_4"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L27",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_autoload_psr_4",
-      "target": "webapp_composer_psr_4_app"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L28",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_autoload_psr_4",
-      "target": "webapp_composer_psr_4_database_factories"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_autoload_psr_4",
-      "target": "webapp_composer_psr_4_database_seeders"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L33",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_autoload_dev",
-      "target": "webapp_composer_autoload_dev_psr_4"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_autoload_dev_psr_4",
-      "target": "webapp_composer_psr_4_tests"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L46",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_scripts",
-      "target": "webapp_composer_scripts_dev"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L54",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_scripts",
-      "target": "webapp_composer_scripts_post_autoload_dump"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L64",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_scripts",
-      "target": "webapp_composer_scripts_post_create_project_cmd"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L61",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_scripts",
-      "target": "webapp_composer_scripts_post_root_package_install"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L58",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_scripts",
-      "target": "webapp_composer_scripts_post_update_cmd"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L69",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_scripts",
-      "target": "webapp_composer_scripts_pre_package_uninstall"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L38",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_scripts",
-      "target": "webapp_composer_scripts_setup"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L50",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_scripts",
-      "target": "webapp_composer_scripts_test"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L74",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_extra",
-      "target": "webapp_composer_extra_laravel"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L75",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_extra_laravel",
-      "target": "webapp_composer_laravel_dont_discover"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L82",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_config",
-      "target": "webapp_composer_config_allow_plugins"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L79",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_config",
-      "target": "webapp_composer_config_optimize_autoloader"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L80",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_config",
-      "target": "webapp_composer_config_preferred_install"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L81",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_config",
-      "target": "webapp_composer_config_sort_packages"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L83",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_config_allow_plugins",
-      "target": "webapp_composer_allow_plugins_pestphp_pest_plugin"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "composer.json",
-      "source_location": "L84",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "webapp_composer_config_allow_plugins",
-      "target": "webapp_composer_allow_plugins_php_http_discovery"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "package.json",
       "source_location": "L20",
       "weight": 1.0,
@@ -15892,17 +16270,6 @@
       "confidence_score": 1.0,
       "source": "app_http_controllers_account_addresscontroller_php",
       "target": "app_http_controllers_account_addresscontroller_php_request"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Account/AddressController.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_http_controllers_account_addresscontroller_php",
-      "target": "useraddress"
     },
     {
       "relation": "method",
@@ -17153,163 +17520,6 @@
       "weight": 1.0,
       "source": "seeders_toppingseeder_toppingseeder_run",
       "target": "models_topping_topping"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/User.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_models_user_php",
-      "target": "app_models_user_php_hasmany"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/User.php",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_models_user_php",
-      "target": "models_user_user"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/User.php",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_models_user_php",
-      "target": "notifiable"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/User.php",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "models_user_user",
-      "target": "authenticatable"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/User.php",
-      "source_location": "L57",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "models_user_user",
-      "target": "models_user_user_addresses"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/User.php",
-      "source_location": "L44",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "models_user_user",
-      "target": "models_user_user_casts"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/User.php",
-      "source_location": "L62",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "models_user_user",
-      "target": "models_user_user_defaultaddress"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/User.php",
-      "source_location": "L52",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "models_user_user",
-      "target": "models_user_user_orders"
-    },
-    {
-      "relation": "mixes_in",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/User.php",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "models_user_user",
-      "target": "notifiable"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/User.php",
-      "source_location": "L52",
-      "weight": 1.0,
-      "context": "return_type",
-      "confidence_score": 1.0,
-      "source": "models_user_user_orders",
-      "target": "app_models_user_php_hasmany"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/User.php",
-      "source_location": "L57",
-      "weight": 1.0,
-      "context": "return_type",
-      "confidence_score": 1.0,
-      "source": "models_user_user_addresses",
-      "target": "app_models_user_php_hasmany"
-    },
-    {
-      "relation": "references_constant",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/Models/User.php",
-      "source_location": "L59",
-      "weight": 1.0,
-      "source": "models_user_user_addresses",
-      "target": "useraddress"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/User.php",
-      "source_location": "L64",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "models_user_user_defaultaddress",
-      "target": "models_user_user_addresses"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Models/User.php",
-      "source_location": "L62",
-      "weight": 1.0,
-      "context": "return_type",
-      "confidence_score": 1.0,
-      "source": "models_user_user_defaultaddress",
-      "target": "useraddress"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/Feature/Account/AddressTest.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tests_feature_account_addresstest_php",
-      "target": "useraddress"
     },
     {
       "relation": "imports",
@@ -21961,5 +22171,5 @@
       "source_file": "docs/superpowers/plans/2026-06-04-plan9-deploy-polish.md"
     }
   ],
-  "built_at_commit": "f34dfba4fa5dd42f19127aac6dd40a74b307aa37"
+  "built_at_commit": "7ff046eee62314a1c05803e530f6484cf0217e3e"
 }

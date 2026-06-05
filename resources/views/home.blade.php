@@ -14,10 +14,19 @@
 <section class="relative w-full h-[600px] border-b-2 border-on-surface bg-surface-container-low flex flex-col md:flex-row items-center" id="story">
 <div class="flex-1 px-gutter py-margin-desktop z-10 flex flex-col justify-center h-full">
 <h2 class="font-display text-display text-on-surface mb-6 uppercase tracking-tighter">Industrial<br/>Italian</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-md border-l-4 border-primary pl-4">Forged in fire, crafted with tradition. Experience pizza built with the raw power of the industrial age and the soul of classic Italian heritage.</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-md border-l-4 border-primary pl-4">{{ $heroText ?: 'Forged in fire, crafted with tradition. Experience pizza built with the raw power of the industrial age and the soul of classic Italian heritage.' }}</p>
+<div class="flex flex-wrap items-center gap-4">
 <a class="bg-primary-container text-on-primary border-b border-[#D4AF37] px-8 py-4 font-label-bold text-label-bold uppercase tracking-wider hover:bg-primary transition-colors w-fit shadow-[inset_0_0_0_1px_rgba(255,255,255,0.2)] inline-block" href="{{ route('menu') }}">
-                    Explore the Ledger
-                </a>
+  Explore the Ledger
+</a>
+@if($isOpenNow)
+  <span class="font-mono text-xs font-bold uppercase bg-green-700 text-white px-3 py-1 flex items-center gap-1.5">
+    <span class="w-2 h-2 rounded-full bg-green-300 animate-pulse inline-block"></span>Open Now
+  </span>
+@else
+  <span class="font-mono text-xs font-bold uppercase bg-surface-container border border-outline-variant text-on-surface-variant px-3 py-1">Closed</span>
+@endif
+</div>
 </div>
 <div class="flex-1 w-full h-full relative border-l-2 border-on-surface hidden md:block">
 <!-- data-alt: A close-up, high-quality photograph of an artisan wood-fired pizza resting on a rustic, industrial metal prep table. The pizza features a perfectly charred, blistered crust, rich oxblood red tomato sauce, and melted mozzarella. The lighting is dramatic and moody, emphasizing the textures of the charred crust and the heavy industrial setting. The overall style reflects an industrial minimal aesthetic with raw materials and high contrast. -->
@@ -31,7 +40,7 @@
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
 <div class="col-span-1 md:col-span-5">
 <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-4 border-b-2 border-on-surface pb-2">THE FOUNDRY</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">Our flagship location operates out of a converted 1920s steel mill. Here, we stoke the fires daily, hammering out dough and assembling ingredients with mechanical precision.</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">{{ $storyText ?: 'Our flagship location operates out of a converted 1920s steel mill. Here, we stoke the fires daily, hammering out dough and assembling ingredients with mechanical precision.' }}</p>
 <ul class="space-y-4 border-t-2 border-on-surface pt-4">
 <li class="flex items-center gap-3 text-on-surface">
 <span class="material-symbols-outlined text-primary-container">location_on</span>
@@ -39,11 +48,11 @@
 </li>
 <li class="flex items-center gap-3 text-on-surface">
 <span class="material-symbols-outlined text-primary-container">schedule</span>
-<span class="font-label-bold text-label-bold uppercase">Sun&#8211;Thu: 16:00&#8211;22:45</span>
+<span class="font-label-bold text-label-bold uppercase">Sun–Thu: {{ $openingSunThu }}</span>
 </li>
 <li class="flex items-center gap-3 text-on-surface">
 <span class="material-symbols-outlined text-primary-container">schedule</span>
-<span class="font-label-bold text-label-bold uppercase">Fri&#8211;Sat: 16:00&#8211;23:15</span>
+<span class="font-label-bold text-label-bold uppercase">Fri–Sat: {{ $openingFriSat }}</span>
 </li>
 </ul>
 </div>

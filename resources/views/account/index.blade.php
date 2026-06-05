@@ -150,7 +150,8 @@
       </div>
     </div>
 
-    {{-- Password Change --}}
+    {{-- Password Change (hidden for social-only accounts) --}}
+    @if($user->password)
     <div class="lg:col-span-2">
       <div class="bg-surface-container-low border border-outline-variant p-6">
         <h2 class="font-serif text-base font-bold text-on-surface uppercase mb-6">Change Password</h2>
@@ -181,6 +182,14 @@
         </form>
       </div>
     </div>
+    @else
+    <div class="lg:col-span-2">
+      <div class="bg-surface-container-low border border-outline-variant p-6">
+        <h2 class="font-serif text-base font-bold text-on-surface uppercase mb-3">Password</h2>
+        <p class="font-sans text-sm text-on-surface-variant">Your account uses social login. No password is set.</p>
+      </div>
+    </div>
+    @endif
 
   </div>
 

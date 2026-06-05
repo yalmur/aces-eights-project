@@ -20,6 +20,10 @@
 </div>
 <div class="space-y-6">
 <div class="group">
+<label class="font-label-bold text-label-bold uppercase text-on-surface-variant block mb-1">Shop Name</label>
+<input class="w-full bg-transparent industrial-border-b border-on-surface-variant py-2 font-body-md focus:border-primary transition-colors" type="text" name="store_name" value="{{ $settings['store_name'] }}"/>
+</div>
+<div class="group">
 <label class="font-label-bold text-label-bold uppercase text-on-surface-variant block mb-1">Workshop Address</label>
 <input class="w-full bg-transparent industrial-border-b border-on-surface-variant py-2 font-body-md focus:border-primary transition-colors" type="text" name="store_address" value="{{ $settings['store_address'] }}"/>
 </div>

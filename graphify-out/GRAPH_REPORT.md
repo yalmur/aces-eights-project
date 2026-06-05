@@ -1,16 +1,16 @@
 # Graph Report - webapp  (2026-06-05)
 
 ## Corpus Check
-- 181 files · ~84,980 words
+- 183 files · ~84,538 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1027 nodes · 1206 edges · 247 communities (235 shown, 12 thin omitted)
-- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 60 edges (avg confidence: 0.81)
+- 1034 nodes · 1220 edges · 248 communities (236 shown, 12 thin omitted)
+- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 61 edges (avg confidence: 0.81)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f34dfba4`
+- Built from commit: `7ff046ee`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -96,10 +96,10 @@
 - **Full Ordering Pipeline: Cart → Checkout → Stripe → Order Schema** — concept_alpine_cart_store, concept_stripe_checkout, concept_order_schema [INFERRED 0.95]
 - **Production Readiness: Rate Limiting + Image Upload + DEPLOY.md** — concept_rate_limiting, concept_image_upload, concept_cpanel_deploy [EXTRACTED 1.00]
 
-## Communities (247 total, 12 thin omitted)
+## Communities (248 total, 12 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.15
+Cohesion: 0.14
 Nodes (8): AllergyController, RedirectResponse, Request, View, BelongsToMany, AllergyAdminTest, Allergen, User
 
 ### Community 1 - "Community 1"
@@ -107,20 +107,20 @@ Cohesion: 0.08
 Nodes (24): 1. Cart Store (`Alpine.store('cart')`), 2. Customisation Drawer, 3. Header Mini Cart, 4. Cart Page (`/cart`), 5. Files Changed / Created, 6. Out of Scope (Plan 2), Behaviour, Behaviour (+16 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.07
-Nodes (18): BelongsTo, HasMany, BelongsTo, HasMany, BelongsTo, BelongsTo, BelongsTo, BelongsToMany (+10 more)
+Cohesion: 0.06
+Nodes (24): View, BelongsTo, HasMany, BelongsTo, HasMany, BelongsTo, BelongsTo, Authenticatable (+16 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.07
 Nodes (14): static, static, static, static, AllergenFactory, CategoryFactory, DeliveryZoneFactory, MenuItemFactory (+6 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.06
-Nodes (25): AccountController, AddressController, PasswordController, DashboardController, KitchenController, View, RedirectResponse, Request (+17 more)
+Cohesion: 0.07
+Nodes (23): AccountController, AddressController, PasswordController, DashboardController, KitchenController, View, RedirectResponse, Request (+15 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.10
-Nodes (7): PromotionController, RedirectResponse, Request, View, PromotionTest, Promotion, User
+Nodes (6): PromotionController, RedirectResponse, Request, View, PromotionTest, Promotion
 
 ### Community 6 - "Community 6"
 Cohesion: 0.09
@@ -155,8 +155,8 @@ Cohesion: 0.25
 Nodes (3): CheckoutTest, MenuItem, User
 
 ### Community 17 - "Community 17"
-Cohesion: 0.12
-Nodes (6): ReorderTest, ExampleTest, OrderEmailTest, PasswordResetTest, RefreshDatabase, TestCase
+Cohesion: 0.13
+Nodes (3): OrderEmailTest, PasswordResetTest, TestCase
 
 ### Community 18 - "Community 18"
 Cohesion: 0.31
@@ -174,10 +174,6 @@ Nodes (9): scripts, dev, post-autoload-dump, post-create-project-cmd, post-root-
 Cohesion: 0.39
 Nodes (4): RedirectResponse, Request, View, PageController
 
-### Community 25 - "Community 25"
-Cohesion: 0.14
-Nodes (5): BaseTestCase, RateLimitTest, RegistrationTest, TestCase, ExampleTest
-
 ### Community 27 - "Community 27"
 Cohesion: 0.25
 Nodes (8): require-dev, fakerphp/faker, laravel/pail, laravel/pint, laravel/sail, mockery/mockery, nunomaduro/collision, phpunit/phpunit
@@ -191,8 +187,8 @@ Cohesion: 0.29
 Nodes (7): pestphp/pest-plugin, php-http/discovery, config, allow-plugins, optimize-autoloader, preferred-install, sort-packages
 
 ### Community 32 - "Community 32"
-Cohesion: 0.29
-Nodes (7): require, laravel/framework, laravel/tinker, livewire/livewire, php, pusher/pusher-php-server, stripe/stripe-php
+Cohesion: 0.25
+Nodes (8): require, laravel/framework, laravel/socialite, laravel/tinker, livewire/livewire, php, pusher/pusher-php-server, stripe/stripe-php
 
 ### Community 34 - "Community 34"
 Cohesion: 0.53
@@ -239,40 +235,44 @@ Cohesion: 0.20
 Nodes (9): Cart & Menu Customisation Implementation Plan, File Map, Task 1: Alpine.js Cart Store, Task 2: Customisation Drawer Component, Task 3: Wire Drawer into App Layout, Task 4: Update Header with Mini Cart, Task 5: Wire Menu + Buttons, Task 6: Build Cart Page (+1 more)
 
 ### Community 128 - "Community 128"
-Cohesion: 0.31
-Nodes (5): HasMany, Authenticatable, User, Notifiable, UserAddress
+Cohesion: 0.21
+Nodes (4): ReorderTest, ExampleTest, RateLimitTest, RefreshDatabase
 
 ### Community 129 - "Community 129"
 Cohesion: 0.22
 Nodes (8): Aces & Eights Pizza — Plan 9: Deploy Prep & Final Polish, File Map, On your LOCAL machine:, Task 1: Menu Item Image Upload, Task 2: Rate Limiting on Auth + Checkout Routes, Task 3: Branded Error Pages, Task 4: Production Deploy Prep, Task 5: Full Test Suite + Git Tag v1.0
 
 ### Community 130 - "Community 130"
-Cohesion: 0.11
-Nodes (11): MenuItemController, OrderController, View, Controller, HomeController, OrderController, PasswordResetController, MenuItem (+3 more)
+Cohesion: 0.10
+Nodes (12): MenuItemController, OrderController, View, Controller, HomeController, OrderController, PasswordResetController, SocialAuthController (+4 more)
+
+### Community 241 - "Community 241"
+Cohesion: 0.16
+Nodes (4): BaseTestCase, MenuTest, TestCase, ExampleTest
 
 ### Community 243 - "Community 243"
 Cohesion: 0.43
 Nodes (4): RedirectResponse, Request, View, PartyHallController
 
 ## Knowledge Gaps
-- **165 isolated node(s):** `self`, `$schema`, `name`, `type`, `description` (+160 more)
+- **166 isolated node(s):** `$schema`, `name`, `type`, `description`, `keywords` (+161 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Controller` connect `Community 4` to `Community 0`, `Community 130`, `Community 5`, `Community 9`, `Community 10`, `Community 23`?**
-  _High betweenness centrality (0.100) - this node is a cross-community bridge._
-- **Why does `UserAddress` connect `Community 128` to `Community 4`, `Community 30`?**
-  _High betweenness centrality (0.044) - this node is a cross-community bridge._
-- **What connects `self`, `$schema`, `name` to the rest of the system?**
-  _167 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `Controller` connect `Community 4` to `Community 0`, `Community 130`, `Community 2`, `Community 5`, `Community 9`, `Community 10`, `Community 23`?**
+  _High betweenness centrality (0.069) - this node is a cross-community bridge._
+- **Why does `Allergen` connect `Community 0` to `Community 130`, `Community 2`, `Community 101`, `Community 8`, `Community 241`?**
+  _High betweenness centrality (0.035) - this node is a cross-community bridge._
+- **What connects `$schema`, `name`, `type` to the rest of the system?**
+  _168 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Community 0` be split into smaller, more focused modules?**
+  _Cohesion score 0.14492753623188406 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.07092198581560284 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05669199298655757 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
   _Cohesion score 0.06620209059233449 - nodes in this community are weakly interconnected._
-- **Should `Community 4` be split into smaller, more focused modules?**
-  _Cohesion score 0.0596078431372549 - nodes in this community are weakly interconnected._
