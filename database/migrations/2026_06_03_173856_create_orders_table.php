@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
-            $table->enum('type', ['delivery', 'collection'])->default('delivery');
+            $table->enum('type', ['delivery', 'collection', 'eat_in'])->default('delivery');
             $table->enum('status', [
                 'pending_payment', 'accepted', 'cooking',
                 'ready', 'out_for_delivery', 'collected', 'delivered', 'cancelled',
@@ -20,7 +20,7 @@ return new class extends Migration
             $table->decimal('delivery_fee', 5, 2)->default(0);
             $table->decimal('total', 8, 2);
             $table->string('customer_name');
-            $table->string('customer_email');
+            $table->string('customer_email')->nullable();
             $table->string('customer_phone')->nullable();
             $table->string('delivery_address')->nullable();
             $table->string('delivery_city')->nullable();
