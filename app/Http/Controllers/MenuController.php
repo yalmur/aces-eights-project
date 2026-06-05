@@ -34,9 +34,18 @@ class MenuController extends Controller
             ->where('is_available', true)
             ->firstOrFail();
 
+        $related = MenuItem::with(['allergens', 'category'])
+            ->where('category_id', $item->category_id)
+            ->where('id', '!=', $item->id)
+            ->where('is_available', true)
+            ->inRandomOrder()
+            ->limit(4)
+            ->get();
+
         return view('menu.show', [
-            'title' => $item->name,
-            'item'  => $item,
+            'title'   => $item->name,
+            'item'    => $item,
+            'related' => $related,
         ]);
     }
 }
