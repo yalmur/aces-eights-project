@@ -595,13 +595,13 @@
     "semantic_hash": "aa90dc2dadb543b07e8dbbc4e203707d"
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\components\\footer.blade.php": {
-    "mtime": 1780671190.4433703,
-    "ast_hash": "5bb2ea0fc3cbbeee610d24288d8ed401",
+    "mtime": 1780689996.476099,
+    "ast_hash": "5bc99dcd417a2ccbfd51b16eccdab8d6",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\components\\header.blade.php": {
-    "mtime": 1780671199.0487218,
-    "ast_hash": "38751c80544c07a8af536e789c489052",
+    "mtime": 1780689984.237799,
+    "ast_hash": "0c4212cbc9b38aef2cbd92043fc61951",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\components\\admin\\sidebar.blade.php": {
@@ -675,8 +675,8 @@
     "semantic_hash": "3c6ce2e6d16444282b24a9aa63885563"
   },
   "C:\\AcesAndEightsPizza\\webapp\\routes\\web.php": {
-    "mtime": 1780679092.248062,
-    "ast_hash": "00d05280cf1be0131504a0333927ee4b",
+    "mtime": 1780689972.1458988,
+    "ast_hash": "c1a7c444066287faaf29ac3651b2d96c",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\TestCase.php": {
@@ -1097,6 +1097,26 @@
   "C:\\AcesAndEightsPizza\\webapp\\database\\migrations\\2026_06_05_193917_add_dietary_flags_to_menu_items_table.php": {
     "mtime": 1780688389.5215096,
     "ast_hash": "fb3f6ac30c21dc9f7acd61faa1ada33c",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\PartyHallController.php": {
+    "mtime": 1780689890.7663605,
+    "ast_hash": "bf215a3a9609243f292f3d973fd376d0",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\app\\Mail\\PartyHallInquiry.php": {
+    "mtime": 1780689896.324135,
+    "ast_hash": "380f50f24f05906bee54e79f1dd694e8",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\party-hall.blade.php": {
+    "mtime": 1780689961.9876015,
+    "ast_hash": "0c0a8e2200e39333bc33c6f028e1f248",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\emails\\party-hall-inquiry.blade.php": {
+    "mtime": 1780689909.4013932,
+    "ast_hash": "01e130d6487129ed5fa8c2a91d8401e0",
     "semantic_hash": ""
   }
 }
