@@ -54,10 +54,36 @@
             </p>
             <div class="flex items-center justify-between">
               <span class="font-mono text-sm font-bold text-primary">£{{ number_format($order->total, 2) }}</span>
-              <a href="{{ route('orders.tracking', $order->id) }}"
-                 class="font-mono text-[10px] text-on-surface-variant hover:text-primary transition-colors underline uppercase">
-                Track →
-              </a>
+              <div class="flex items-center gap-4">
+                <a href="{{ route('orders.tracking', $order->id) }}"
+                   class="font-mono text-[10px] text-on-surface-variant hover:text-primary transition-colors underline uppercase">
+                  Track →
+                </a>
+                @php
+                $reorderItems = $order->items->map(fn($i) => [
+                    'cartId'             => '',
+                    'id'                 => $i->menu_item_id ?? 'unknown',
+                    'name'               => $i->name,
+                    'category'           => 'food',
+                    'basePrice'          => (float) $i->unit_price,
+                    'qty'                => $i->qty,
+                    'size'               => $i->size,
+                    'sizeExtra'          => (float) $i->size_extra,
+                    'crust'              => $i->crust,
+                    'crustExtra'         => (float) $i->crust_extra,
+                    'toppings'           => $i->added_toppings ?? [],
+                    'removedIngredients' => $i->removed_ingredients ?? [],
+                    'chips'              => [],
+                    'instructions'       => $i->instructions,
+                    'lineTotal'          => (float) $i->line_total,
+                ]);
+                @endphp
+                <button type="button"
+                        @click="$store.cart.reorder({{ json_encode($reorderItems) }})"
+                        class="font-mono text-[10px] text-primary hover:underline uppercase">
+                  Reorder →
+                </button>
+              </div>
             </div>
           </div>
           @endforeach

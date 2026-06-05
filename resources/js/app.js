@@ -290,6 +290,12 @@ Alpine.store('cart', {
     this._persist()
   },
 
+  reorder(items) {
+    this.items = items.map(item => ({ ...item, cartId: crypto.randomUUID() }))
+    this._persist()
+    window.location.href = '/cart'
+  },
+
   _persist() {
     localStorage.setItem('a8_cart', JSON.stringify(this.items))
   },
