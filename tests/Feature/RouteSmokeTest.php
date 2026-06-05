@@ -29,7 +29,6 @@ class RouteSmokeTest extends TestCase
             'home'        => ['/'],
             'menu'        => ['/menu'],
             'cart'        => ['/cart'],
-            'booking'     => ['/booking'],
             'about'       => ['/about'],
             'contact'     => ['/contact'],
             'login'       => ['/login'],

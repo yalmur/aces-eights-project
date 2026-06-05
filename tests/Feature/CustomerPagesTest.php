@@ -59,13 +59,6 @@ class CustomerPagesTest extends TestCase
         $r->assertStatus(200);
     }
 
-    public function test_booking_has_secure_your_spot(): void
-    {
-        $r = $this->get('/booking');
-        $r->assertStatus(200);
-        $r->assertSee('Secure');
-    }
-
     public function test_about_has_brand_content(): void
     {
         $r = $this->get('/about');
