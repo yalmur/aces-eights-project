@@ -60,8 +60,8 @@
     "semantic_hash": "25a307335c0719bc9a91b3f7babd186d"
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\HomeController.php": {
-    "mtime": 1780697488.5696242,
-    "ast_hash": "597d13927a1211d4053b573b051869b4",
+    "mtime": 1780700611.3524814,
+    "ast_hash": "d98273a1058785472695093464f18f6f",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\MenuController.php": {
@@ -80,9 +80,9 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\PageController.php": {
-    "mtime": 1780068383.0321853,
-    "ast_hash": "4bb50a5232229652b37bed843bd56eee",
-    "semantic_hash": "4bb50a5232229652b37bed843bd56eee"
+    "mtime": 1780701178.4831102,
+    "ast_hash": "7989582df1d6df47d41789625b4c432e",
+    "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\StripeWebhookController.php": {
     "mtime": 1780524250.78315,
@@ -485,13 +485,13 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\contact.blade.php": {
-    "mtime": 1780679898.6328359,
-    "ast_hash": "8b8f3a2fbb97f4b8f3ab64862a5dd38d",
+    "mtime": 1780701235.8693316,
+    "ast_hash": "d3e6416d1733c034deeb3a0680a10d7c",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\home.blade.php": {
-    "mtime": 1780697483.93017,
-    "ast_hash": "1e6a5ce7d335ca8d9cf24035a69d37b3",
+    "mtime": 1780700638.4421232,
+    "ast_hash": "060bce2cd14ac1488bcf49ba95b5018d",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\our-menu.blade.php": {
@@ -505,8 +505,8 @@
     "semantic_hash": "f9f90b3bab40fd1d366e9b54466deac7"
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\account\\index.blade.php": {
-    "mtime": 1780673388.6161604,
-    "ast_hash": "006ab0b3f09c2fb4661dab516ac7e0f1",
+    "mtime": 1780700587.3872647,
+    "ast_hash": "6d2b26046370be2a3b48f6ae1a0c5ab4",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\admin\\dashboard.blade.php": {
@@ -565,9 +565,9 @@
     "semantic_hash": "f70c499fa5de4413987d0f615c299e7a"
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\admin\\settings\\index.blade.php": {
-    "mtime": 1780545133.8641293,
-    "ast_hash": "3b3c9a04e00f94dee1bd4c26d3dd7c5c",
-    "semantic_hash": "3b3c9a04e00f94dee1bd4c26d3dd7c5c"
+    "mtime": 1780700575.878105,
+    "ast_hash": "abfa42f3bb3911d1cbe4f328b67cb083",
+    "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\auth\\login.blade.php": {
     "mtime": 1780699905.0502453,
@@ -600,8 +600,8 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\components\\header.blade.php": {
-    "mtime": 1780689984.237799,
-    "ast_hash": "0c4212cbc9b38aef2cbd92043fc61951",
+    "mtime": 1780700680.339035,
+    "ast_hash": "9f389032b9068f1ed6a84a3fdefab4e2",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\components\\admin\\sidebar.blade.php": {
@@ -655,9 +655,9 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\orders\\confirmation.blade.php": {
-    "mtime": 1780544915.5860293,
-    "ast_hash": "e662951d42a41d795f53b46b05273078",
-    "semantic_hash": "e662951d42a41d795f53b46b05273078"
+    "mtime": 1780701222.178952,
+    "ast_hash": "a6659cfb0be22fde37cfc76884d7906e",
+    "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\orders\\tracking.blade.php": {
     "mtime": 1780525503.4110322,
@@ -947,6 +947,16 @@
   "C:\\AcesAndEightsPizza\\webapp\\database\\migrations\\2026_06_05_225045_add_social_ids_to_users_table.php": {
     "mtime": 1780699853.230053,
     "ast_hash": "a00e682e0cb5aa8b675571179119b79d",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\app\\Mail\\ContactMessage.php": {
+    "mtime": 1780701157.6156583,
+    "ast_hash": "1a90a00d18dfdff0b9a5c068925a58a8",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\emails\\contact.blade.php": {
+    "mtime": 1780701167.7762053,
+    "ast_hash": "90d346673afd9aa610e45b45a5318190",
     "semantic_hash": ""
   }
 }
