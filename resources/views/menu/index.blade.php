@@ -141,7 +141,8 @@
                         id: '{{ $item->slug }}',
                         name: {{ json_encode($item->name) }},
                         category: '{{ $item->category->slug }}',
-                        basePrice: {{ $item->base_price }}
+                        basePrice: {{ $item->base_price }},
+                        allergens: {{ $item->allergens->where('is_visible', true)->pluck('name') ->toJson() }}
                       })"
                       class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                 <span class="material-symbols-outlined text-white text-[20px]">add</span>

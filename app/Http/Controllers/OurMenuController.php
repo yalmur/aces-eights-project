@@ -9,7 +9,7 @@ class OurMenuController extends Controller
 {
     public function index(): View
     {
-        $categories = Category::with('availableItems')->orderBy('sort_order')->get();
+        $categories = Category::with('availableItems.allergens')->orderBy('sort_order')->get();
 
         $sections = $categories
             ->filter(fn ($cat) => $cat->availableItems->isNotEmpty())
@@ -18,12 +18,13 @@ class OurMenuController extends Controller
                 'heading' => $cat->name,
                 'italian' => $cat->name,
                 'items'   => $cat->availableItems->map(fn ($item) => [
-                    'id'       => $item->slug,
-                    'category' => $cat->slug,
-                    'name'     => $item->name,
-                    'desc'     => $item->description ?? '',
-                    'price'    => number_format((float) $item->base_price, 2),
-                    'basePrice'=> (float) $item->base_price,
+                    'id'        => $item->slug,
+                    'category'  => $cat->slug,
+                    'name'      => $item->name,
+                    'desc'      => $item->description ?? '',
+                    'price'     => number_format((float) $item->base_price, 2),
+                    'basePrice' => (float) $item->base_price,
+                    'allergens' => $item->allergens->where('is_visible', true)->pluck('name')->values()->all(),
                 ])->all(),
             ])
             ->values()

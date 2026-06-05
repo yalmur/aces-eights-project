@@ -6,6 +6,7 @@ use App\Models\DeliveryZone;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Promotion;
+use App\Models\Setting;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -21,9 +22,11 @@ class CheckoutController extends Controller
         $zones          = DeliveryZone::active()->get(['name', 'fee', 'postcodes']);
 
         return view('checkout.index', [
-            'title'          => 'Checkout',
-            'defaultAddress' => $defaultAddress,
-            'zones'          => $zones,
+            'title'            => 'Checkout',
+            'defaultAddress'   => $defaultAddress,
+            'zones'            => $zones,
+            'allergyEnabled'   => Setting::get('allergy_alerts_enabled', '1') === '1',
+            'allergyDisclaimer'=> Setting::get('checkout_disclaimer', 'ACES & EIGHTS PIZZA CO. TAKES FOOD SAFETY SERIOUSLY. Our kitchen handles wheat, dairy, and eggs. Full allergen info available on request.'),
         ]);
     }
 

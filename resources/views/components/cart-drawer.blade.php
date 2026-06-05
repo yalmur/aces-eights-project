@@ -140,6 +140,24 @@
         </div>
       </div>
 
+      {{-- ALLERGEN INFO — shown when item has allergens --}}
+      <div x-show="$store.cart.drawerItem?.allergens?.length > 0" x-cloak>
+        <div class="bg-amber-50 border border-amber-200 px-4 py-3">
+          <p class="font-mono text-[10px] font-bold uppercase text-amber-800 mb-2 flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-sm" style="font-variation-settings:'FILL' 1">warning</span>
+            Allergen Information
+          </p>
+          <p class="font-mono text-[10px] text-amber-700 mb-2">This item contains:</p>
+          <div class="flex flex-wrap gap-1.5">
+            <template x-for="allergen in $store.cart.drawerItem.allergens" :key="allergen">
+              <span class="font-mono text-[10px] font-bold uppercase bg-amber-100 border border-amber-300 text-amber-900 px-2 py-0.5"
+                    x-text="allergen"></span>
+            </template>
+          </div>
+          <p class="font-mono text-[9px] text-amber-700 mt-2">If you have a food allergy, please contact us before ordering.</p>
+        </div>
+      </div>
+
       {{-- KITCHEN NOTES — all items --}}
       <div>
         <h4 class="label-caps text-on-surface-variant mb-4">Kitchen Notes <span class="normal-case font-sans font-normal tracking-normal text-[11px]">(optional)</span></h4>

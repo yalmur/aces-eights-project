@@ -159,6 +159,19 @@
                   <p x-show="!promo.valid && promo.msg" x-cloak class="font-mono text-[10px] text-red-600 mt-2" x-text="promo.msg"></p>
                 </section>
 
+                @if($allergyEnabled)
+                {{-- Allergy Disclaimer --}}
+                <section class="mt-8">
+                    <div class="bg-amber-50 border border-amber-200 p-5 flex gap-4 items-start">
+                        <span class="material-symbols-outlined text-amber-600 text-2xl flex-shrink-0 mt-0.5" style="font-variation-settings:'FILL' 1">warning</span>
+                        <div>
+                            <p class="font-label-bold text-label-bold uppercase mb-2 text-amber-900">Allergy Information</p>
+                            <p class="font-body-sm text-amber-800 leading-relaxed text-xs">{{ $allergyDisclaimer }}</p>
+                        </div>
+                    </div>
+                </section>
+                @endif
+
                 <!-- Section: Payment -->
                 <div>
                     <section>

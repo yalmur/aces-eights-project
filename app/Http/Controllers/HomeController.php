@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
         $featuredItems = MenuItem::where('is_featured', true)
             ->where('is_available', true)
-            ->with('category')
+            ->with('category', 'allergens')
             ->limit(6)
             ->get();
 
