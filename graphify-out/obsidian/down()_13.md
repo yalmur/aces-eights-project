@@ -1,0 +1,17 @@
+---
+source_file: "database/migrations/2026_06_03_225410_create_promotions_table.php"
+type: "code"
+community: "Community 48"
+location: "L32"
+tags:
+  - graphify/code
+  - graphify/EXTRACTED
+  - community/Community_48
+---
+
+# down()
+
+## Connections
+- [[2026_06_03_225410_create_promotions_table.php]] - `contains` [EXTRACTED]
+
+#graphify/code #graphify/EXTRACTED #community/Community_48

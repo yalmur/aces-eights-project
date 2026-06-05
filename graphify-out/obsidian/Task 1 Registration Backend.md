@@ -1,0 +1,17 @@
+---
+source_file: "docs/superpowers/plans/2026-06-03-plan5-ordering-checkout.md"
+type: "document"
+community: "Community 35"
+location: "L60"
+tags:
+  - graphify/document
+  - graphify/EXTRACTED
+  - community/Community_35
+---
+
+# Task 1: Registration Backend
+
+## Connections
+- [[Aces & Eights Pizza — Plan 5 Customer Ordering & Checkout]] - `contains` [EXTRACTED]
+
+#graphify/document #graphify/EXTRACTED #community/Community_35
