@@ -15,16 +15,31 @@ use Illuminate\View\View;
 
 class OrderController extends Controller
 {
-    public function index(): View
+    public function index(Request $request): View
     {
-        $orders = Order::with(['user', 'items'])
+        $statusMap = [
+            'pending'   => ['accepted'],
+            'cooking'   => ['cooking'],
+            'ready'     => ['ready', 'out_for_delivery'],
+            'delivered' => ['delivered', 'collected'],
+        ];
+
+        $tab = $request->query('status', 'all');
+
+        $query = Order::with(['user', 'items'])
             ->whereNotIn('status', ['pending_payment', 'cancelled'])
-            ->latest()
-            ->paginate(20);
+            ->latest();
+
+        if (isset($statusMap[$tab])) {
+            $query->whereIn('status', $statusMap[$tab]);
+        }
+
+        $orders = $query->paginate(20)->withQueryString();
 
         return view('admin.orders.index', [
-            'title'  => 'Online Orders',
-            'orders' => $orders,
+            'title'      => 'Online Orders',
+            'orders'     => $orders,
+            'activeTab'  => $tab,
         ]);
     }
 
