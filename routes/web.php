@@ -100,7 +100,8 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::post('/menu',            [MenuItemController::class, 'store'])->name('menu.store');
     Route::get('/menu/{item}/edit', [MenuItemController::class, 'edit'])->name('menu.edit');
     Route::put('/menu/{item}',      [MenuItemController::class, 'update'])->name('menu.update');
-    Route::delete('/menu/{item}',   [MenuItemController::class, 'destroy'])->name('menu.destroy');
+    Route::delete('/menu/{item}',      [MenuItemController::class, 'destroy'])->name('menu.destroy');
+    Route::patch('/menu/{item}/toggle', [MenuItemController::class, 'toggleAvailability'])->name('menu.toggle');
 
     // Delivery Zones
     Route::get('/delivery',           [DeliveryController::class, 'index'])->name('delivery.index');

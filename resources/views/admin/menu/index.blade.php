@@ -20,19 +20,34 @@
 </header>
 <div class="double-divider mb-8"></div>
 
-{{-- Search & Filters --}}
-<section class="mb-10 space-y-4" x-data="{ category: 'all', search: '' }">
-  <div class="relative w-full">
-    <span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant">search</span>
-    <input x-model="search" class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-[#2B2B2B] border focus:outline-none focus:ring-1 focus:ring-primary font-sans text-sm" placeholder="Search menu items..." type="text"/>
-  </div>
-  <div class="flex flex-wrap gap-2">
-    @foreach(['all'=>'All Items','pizza'=>'Pizzas','starter'=>'Starters','salad'=>'Salads','pasta'=>'Pasta','dessert'=>'Desserts','drink'=>'Drinks'] as $val => $label)
-    <button @click="category = '{{ $val }}'"
-            :class="category === '{{ $val }}' ? 'bg-primary text-white' : 'bg-transparent hover:bg-surface-container text-on-surface'"
-            class="px-5 py-2 rounded-full font-mono text-[10px] font-bold industrial-border transition-colors uppercase">{{ $label }}</button>
-    @endforeach
-  </div>
+{{-- Search & Filters (server-side) --}}
+<section class="mb-10 space-y-4">
+  <form method="GET" action="{{ route('admin.menu.index') }}" class="space-y-4">
+    <div class="flex gap-3">
+      <div class="relative flex-1">
+        <span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant">search</span>
+        <input name="search" value="{{ request('search') }}"
+               class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-[#2B2B2B] border focus:outline-none focus:ring-1 focus:ring-primary font-sans text-sm"
+               placeholder="Search items..." type="text"/>
+      </div>
+      @if(request('search') || request('category'))
+      <a href="{{ route('admin.menu.index') }}"
+         class="px-4 py-2 industrial-border font-mono text-xs font-bold uppercase hover:bg-surface-container self-center">Clear</a>
+      @endif
+    </div>
+    <div class="flex flex-wrap gap-2">
+      <a href="{{ route('admin.menu.index', array_merge(request()->except('category', 'page'), [])) }}"
+         class="px-5 py-2 rounded-full font-mono text-[10px] font-bold industrial-border transition-colors uppercase {{ !request('category') ? 'bg-primary text-white' : 'hover:bg-surface-container text-on-surface' }}">
+        All Items
+      </a>
+      @foreach($categories as $cat)
+      <a href="{{ route('admin.menu.index', array_merge(request()->except('category', 'page'), ['category' => $cat->slug])) }}"
+         class="px-5 py-2 rounded-full font-mono text-[10px] font-bold industrial-border transition-colors uppercase {{ request('category') === $cat->slug ? 'bg-primary text-white' : 'hover:bg-surface-container text-on-surface' }}">
+        {{ $cat->name }}
+      </a>
+      @endforeach
+    </div>
+  </form>
 
   {{-- Table --}}
   <div class="bg-surface industrial-border overflow-hidden">
@@ -65,10 +80,21 @@
             <td class="px-6 py-4 font-sans text-sm">{{ $item->category->name }}</td>
             <td class="px-6 py-4 font-mono text-sm font-bold">{{ $item->formatted_price }}</td>
             <td class="px-6 py-4">
-              <div class="flex justify-center" x-data="{ on: {{ $item->is_available ? 'true' : 'false' }} }">
-                <label class="flex items-center cursor-pointer">
+              <div class="flex justify-center"
+                   x-data="{ on: {{ $item->is_available ? 'true' : 'false' }}, saving: false }">
+                <label class="flex items-center cursor-pointer" :class="saving ? 'opacity-50 pointer-events-none' : ''">
                   <div class="relative">
-                    <input @change="on = $event.target.checked" :checked="on" class="sr-only" type="checkbox"/>
+                    <input @change="
+                      saving = true;
+                      fetch('{{ route('admin.menu.toggle', $item->id) }}', {
+                        method: 'PATCH',
+                        headers: { 'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content }
+                      })
+                      .then(r => r.json())
+                      .then(d => { on = d.available; saving = false; })
+                      .catch(() => saving = false);
+                    "
+                    :checked="on" class="sr-only" type="checkbox"/>
                     <div :class="on ? 'bg-primary' : 'bg-[#2B2B2B]/30'" class="block w-10 h-6 rounded-full transition-colors">
                       <div :class="on ? 'translate-x-4' : 'translate-x-1'" class="absolute top-1 left-0 bg-white w-4 h-4 rounded-full transition-transform"></div>
                     </div>

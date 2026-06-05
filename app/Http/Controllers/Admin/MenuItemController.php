@@ -15,16 +15,28 @@ use Illuminate\View\View;
 
 class MenuItemController extends Controller
 {
-    public function index(): View
+    public function index(Request $request): View
     {
-        $items = MenuItem::with(['category', 'allergens'])
+        $query = MenuItem::with(['category', 'allergens'])
             ->orderBy('category_id')
-            ->orderBy('sort_order')
-            ->paginate(20);
+            ->orderBy('sort_order');
+
+        if ($search = $request->query('search')) {
+            $query->where(fn ($q) => $q->where('name', 'like', "%{$search}%")
+                ->orWhere('description', 'like', "%{$search}%"));
+        }
+
+        if ($categorySlug = $request->query('category')) {
+            $query->whereHas('category', fn ($q) => $q->where('slug', $categorySlug));
+        }
+
+        $items      = $query->paginate(20)->withQueryString();
+        $categories = \App\Models\Category::orderBy('sort_order')->get(['id', 'name', 'slug']);
 
         return view('admin.menu.index', [
-            'title' => 'Menu Management',
-            'items' => $items,
+            'title'      => 'Menu Management',
+            'items'      => $items,
+            'categories' => $categories,
         ]);
     }
 
@@ -151,6 +163,13 @@ class MenuItemController extends Controller
 
         return redirect()->route('admin.menu.index')
             ->with('success', "'{$name}' removed from menu.");
+    }
+
+    public function toggleAvailability(string $item): \Illuminate\Http\JsonResponse
+    {
+        $menuItem = MenuItem::findOrFail($item);
+        $menuItem->update(['is_available' => !$menuItem->is_available]);
+        return response()->json(['available' => $menuItem->is_available]);
     }
 
     private function syncIngredients(MenuItem $item, array $ingredients): void
