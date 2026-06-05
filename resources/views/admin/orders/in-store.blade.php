@@ -61,7 +61,7 @@ function inStoreModal() {
   <div x-show="open"
        x-cloak
        @keydown.escape.window="open = false"
-       class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
+       class="fixed inset-0 z-[70] flex items-center justify-center bg-black/60 p-4">
 
     <div @click.self="open = false" class="absolute inset-0"></div>
     <div class="relative bg-surface border-2 border-outline w-full max-w-2xl max-h-[90vh] overflow-y-auto">
