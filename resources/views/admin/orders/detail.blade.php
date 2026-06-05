@@ -22,32 +22,30 @@
   <div class="lg:col-span-8 flex flex-col gap-10">
 
     {{-- Lifecycle stepper --}}
+    @php
+      $stepMap = $order->isDelivery()
+        ? ['accepted' => 'Accepted', 'cooking' => 'Cooking', 'out_for_delivery' => 'Out for Delivery', 'delivered' => 'Delivered']
+        : ['accepted' => 'Accepted', 'cooking' => 'Cooking', 'ready' => 'Ready', 'collected' => 'Collected'];
+      $stepKeys    = array_keys($stepMap);
+      $stepCurrent = array_search($order->status, $stepKeys);
+      $stepPct     = ($stepCurrent !== false && count($stepMap) > 1)
+          ? (($stepCurrent / (count($stepMap) - 1)) * 100) : 0;
+    @endphp
     <section class="bg-surface-container border-2 border-on-surface p-8 flex flex-col gap-10">
       <h3 class="font-mono text-sm font-bold text-primary uppercase tracking-widest">Order Lifecycle</h3>
       <div class="relative flex items-center justify-between w-full px-4">
         <div class="absolute top-1/2 left-0 w-full h-1 bg-outline-variant -translate-y-1/2 z-0"></div>
-        <div class="absolute top-1/2 left-0 w-1/3 h-1 bg-primary -translate-y-1/2 z-0"></div>
-        @foreach([
-          ['icon'=>'check', 'label'=>'Accepted', 'done'=>true],
-          ['icon'=>'restaurant', 'label'=>'Cooking', 'done'=>true, 'active'=>true],
-          ['icon'=>'local_shipping', 'label'=>'Dispatch', 'done'=>false],
-          ['icon'=>'home', 'label'=>'Delivered', 'done'=>false],
-        ] as $step)
+        <div class="absolute top-1/2 left-0 h-1 bg-primary -translate-y-1/2 z-0" style="width: {{ $stepPct }}%"></div>
+        @foreach($stepMap as $key => $label)
+        @php $done = $stepCurrent !== false && array_search($key, $stepKeys) <= $stepCurrent; @endphp
         <div class="flex flex-col items-center gap-2 z-10">
-          <div class="{{ ($step['done'] ?? false) ? 'bg-primary text-white border-on-surface' : 'bg-surface-container-highest text-on-surface-variant border-outline' }} w-12 h-12 rounded-full border-2 flex items-center justify-center shadow-lg">
-            <span class="material-symbols-outlined text-[24px]">{{ $step['icon'] }}</span>
+          <div class="{{ $done ? 'bg-primary text-white border-on-surface' : 'bg-surface-container-highest text-on-surface-variant border-outline' }} w-12 h-12 rounded-full border-2 flex items-center justify-center shadow-lg">
+            <span class="material-symbols-outlined text-[24px]">{{ $done ? 'check' : 'radio_button_unchecked' }}</span>
           </div>
-          <span class="font-mono text-[10px] {{ ($step['active'] ?? false) ? 'text-primary font-bold' : 'text-on-surface-variant' }} uppercase">{{ $step['label'] }}</span>
+          <span class="font-mono text-[10px] {{ $order->status === $key ? 'text-primary font-bold' : 'text-on-surface-variant' }} uppercase">{{ $label }}</span>
         </div>
         @endforeach
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
-        <button class="bg-primary-container text-on-primary font-mono text-xs font-bold py-4 px-4 border-b-2 border-secondary-fixed active:scale-95 transition-all hover:bg-primary uppercase">ACCEPT ORDER</button>
-        <button class="bg-surface border-2 border-on-surface text-on-surface font-mono text-xs font-bold py-4 px-4 active:scale-95 transition-all hover:bg-surface-container-low uppercase">START COOKING</button>
-        <button class="bg-surface border-2 border-on-surface text-on-surface font-mono text-xs font-bold py-4 px-4 active:scale-95 transition-all hover:bg-surface-container-low uppercase">OUT FOR DELIVERY</button>
-        <button class="bg-brand-error text-white font-mono text-xs font-bold py-4 px-4 active:scale-95 transition-all hover:opacity-90 uppercase">CANCEL ORDER</button>
-      </div>
-
       {{-- Status update form --}}
       <form method="POST" action="{{ route('admin.orders.status', $order->id) }}" class="mt-4 flex gap-3 items-center">
         @csrf
@@ -65,7 +63,7 @@
     <section class="border-2 border-on-surface overflow-hidden">
       <div class="bg-on-surface text-surface px-6 py-4 flex justify-between items-center">
         <h3 class="font-serif text-lg font-bold uppercase">Order Breakdown</h3>
-        <span class="font-mono text-sm font-bold">Items: 3</span>
+        <span class="font-mono text-sm font-bold">Items: {{ $order->items->count() }}</span>
       </div>
       <div class="p-8 flex flex-col gap-6 bg-surface-container-lowest">
         @foreach($order->items as $item)
