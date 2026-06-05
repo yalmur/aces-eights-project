@@ -15,12 +15,15 @@ class MenuItem extends Model
     protected $fillable = [
         'category_id', 'name', 'slug', 'description',
         'base_price', 'image_path', 'is_available', 'is_featured', 'sort_order',
+        'is_vegetarian', 'is_vegan',
     ];
 
     protected $casts = [
-        'base_price'   => 'decimal:2',
-        'is_available' => 'boolean',
-        'is_featured'  => 'boolean',
+        'base_price'    => 'decimal:2',
+        'is_available'  => 'boolean',
+        'is_featured'   => 'boolean',
+        'is_vegetarian' => 'boolean',
+        'is_vegan'      => 'boolean',
     ];
 
     public function category(): BelongsTo

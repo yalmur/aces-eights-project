@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('menu_items', function (Blueprint $table) {
-            //
+            $table->boolean('is_vegetarian')->default(false)->after('is_featured');
+            $table->boolean('is_vegan')->default(false)->after('is_vegetarian');
         });
     }
 
@@ -22,7 +23,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('menu_items', function (Blueprint $table) {
-            //
+            $table->dropColumn(['is_vegetarian', 'is_vegan']);
         });
     }
 };

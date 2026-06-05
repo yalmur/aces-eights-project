@@ -125,9 +125,9 @@
     "semantic_hash": "775037400f34b5d95c5fe71c56b90a91"
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\Admin\\MenuItemController.php": {
-    "mtime": 1780548978.2932103,
-    "ast_hash": "7ada6151a4fe535fae897323be6a2ec4",
-    "semantic_hash": "7ada6151a4fe535fae897323be6a2ec4"
+    "mtime": 1780688597.8045583,
+    "ast_hash": "7f05e09cdbfb50c2a64f6f87ccbc1ba5",
+    "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\Admin\\OrderController.php": {
     "mtime": 1780675728.543686,
@@ -170,9 +170,9 @@
     "semantic_hash": "c2ca7957edd87615f3d75a1c1d9e527e"
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Models\\MenuItem.php": {
-    "mtime": 1780506073.0061388,
-    "ast_hash": "f75e52db54d091533740d166f5f48b51",
-    "semantic_hash": "f75e52db54d091533740d166f5f48b51"
+    "mtime": 1780688407.440614,
+    "ast_hash": "23a80b7a0df273fac4a81a83ab7b1bd8",
+    "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Models\\Order.php": {
     "mtime": 1780527344.2510006,
@@ -530,9 +530,9 @@
     "semantic_hash": "ece74f4c12baf864c74fb84ec70bfb3d"
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\admin\\menu\\edit.blade.php": {
-    "mtime": 1780548994.1936784,
-    "ast_hash": "29b71afd56d9022aaba40befdd3a4d15",
-    "semantic_hash": "29b71afd56d9022aaba40befdd3a4d15"
+    "mtime": 1780688608.9497974,
+    "ast_hash": "b3949248e07b3d08760f48c912816a6c",
+    "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\admin\\menu\\index.blade.php": {
     "mtime": 1780506738.6110795,
@@ -645,8 +645,8 @@
     "semantic_hash": "293bde20ec59496668e16bdbd18a6b95"
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\menu\\index.blade.php": {
-    "mtime": 1780679793.5772524,
-    "ast_hash": "258d36d3267c025821fa3cced74fb991",
+    "mtime": 1780688647.227313,
+    "ast_hash": "4c2d012779a4431662a1e8c907d29e02",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\menu\\show.blade.php": {
@@ -1092,6 +1092,11 @@
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\PromoController.php": {
     "mtime": 1780679087.6624994,
     "ast_hash": "ceba4ba0f594634597e1bf7efafe4616",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\database\\migrations\\2026_06_05_193917_add_dietary_flags_to_menu_items_table.php": {
+    "mtime": 1780688389.5215096,
+    "ast_hash": "fb3f6ac30c21dc9f7acd61faa1ada33c",
     "semantic_hash": ""
   }
 }

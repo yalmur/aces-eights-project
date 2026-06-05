@@ -157,6 +157,20 @@
 <div class="w-11 h-6 bg-industrial-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-heritage-gold"></div>
 </label>
 </div>
+<div class="flex items-center justify-between">
+<span class="font-body-md">Vegetarian</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input name="is_vegetarian" type="checkbox" {{ $item?->is_vegetarian ? 'checked' : '' }} class="sr-only peer"/>
+<div class="w-11 h-6 bg-industrial-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-md">Vegan</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input name="is_vegan" type="checkbox" {{ $item?->is_vegan ? 'checked' : '' }} class="sr-only peer"/>
+<div class="w-11 h-6 bg-industrial-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-700"></div>
+</label>
+</div>
 <div class="double-divider"></div>
 <div class="space-y-4">
 <button class="gold-metallic w-full py-4 text-on-primary font-headline-md text-headline-md industrial-border-thick active:scale-95 transition-transform" type="submit">

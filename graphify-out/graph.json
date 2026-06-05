@@ -46,301 +46,328 @@
   },
   "nodes": [
     {
+      "label": "2026_06_05_193917_add_dietary_flags_to_menu_items_table.php",
+      "file_type": "code",
+      "source_file": "database/migrations/2026_06_05_193917_add_dietary_flags_to_menu_items_table.php",
+      "source_location": "L1",
+      "id": "database_migrations_2026_06_05_193917_add_dietary_flags_to_menu_items_table_php",
+      "community": 26,
+      "norm_label": "2026_06_05_193917_add_dietary_flags_to_menu_items_table.php"
+    },
+    {
+      "label": "up()",
+      "file_type": "code",
+      "source_file": "database/migrations/2026_06_05_193917_add_dietary_flags_to_menu_items_table.php",
+      "source_location": "L12",
+      "id": "migrations_2026_06_05_193917_add_dietary_flags_to_menu_items_table_up",
+      "community": 26,
+      "norm_label": "up()"
+    },
+    {
+      "label": "down()",
+      "file_type": "code",
+      "source_file": "database/migrations/2026_06_05_193917_add_dietary_flags_to_menu_items_table.php",
+      "source_location": "L23",
+      "id": "migrations_2026_06_05_193917_add_dietary_flags_to_menu_items_table_down",
+      "community": 26,
+      "norm_label": "down()"
+    },
+    {
       "label": "CheckoutController.php",
       "file_type": "code",
       "source_file": "app/Http/Controllers/CheckoutController.php",
       "source_location": "L1",
-      "id": "app_http_controllers_checkoutcontroller_php",
       "community": 130,
-      "norm_label": "checkoutcontroller.php"
+      "norm_label": "checkoutcontroller.php",
+      "id": "app_http_controllers_checkoutcontroller_php"
     },
     {
       "label": "CheckoutController",
       "file_type": "code",
       "source_file": "app/Http/Controllers/CheckoutController.php",
       "source_location": "L14",
-      "id": "controllers_checkoutcontroller_checkoutcontroller",
       "community": 130,
-      "norm_label": "checkoutcontroller"
+      "norm_label": "checkoutcontroller",
+      "id": "controllers_checkoutcontroller_checkoutcontroller"
     },
     {
       "label": "Controller",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "controller",
       "community": 130,
-      "norm_label": "controller"
+      "norm_label": "controller",
+      "id": "controller"
     },
     {
       "label": ".index()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/CheckoutController.php",
       "source_location": "L16",
-      "id": "controllers_checkoutcontroller_checkoutcontroller_index",
       "community": 130,
-      "norm_label": ".index()"
+      "norm_label": ".index()",
+      "id": "controllers_checkoutcontroller_checkoutcontroller_index"
     },
     {
       "label": "View",
       "file_type": "code",
       "source_file": "app/Http/Controllers/CheckoutController.php",
       "source_location": "L16",
-      "id": "view",
       "community": 130,
-      "norm_label": "view"
+      "norm_label": "view",
+      "id": "view"
     },
     {
       "label": ".store()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/CheckoutController.php",
       "source_location": "L26",
-      "id": "controllers_checkoutcontroller_checkoutcontroller_store",
       "community": 130,
-      "norm_label": ".store()"
+      "norm_label": ".store()",
+      "id": "controllers_checkoutcontroller_checkoutcontroller_store"
     },
     {
       "label": "Request",
       "file_type": "code",
       "source_file": "app/Http/Controllers/CheckoutController.php",
       "source_location": "L26",
-      "id": "app_http_controllers_checkoutcontroller_php_request",
       "community": 130,
-      "norm_label": "request"
+      "norm_label": "request",
+      "id": "app_http_controllers_checkoutcontroller_php_request"
     },
     {
       "label": "RedirectResponse",
       "file_type": "code",
       "source_file": "app/Http/Controllers/CheckoutController.php",
       "source_location": "L26",
-      "id": "redirectresponse",
       "community": 130,
-      "norm_label": "redirectresponse"
+      "norm_label": "redirectresponse",
+      "id": "redirectresponse"
     },
     {
       "label": "PromoController.php",
       "file_type": "code",
       "source_file": "app/Http/Controllers/PromoController.php",
       "source_location": "L1",
-      "id": "app_http_controllers_promocontroller_php",
       "community": 130,
-      "norm_label": "promocontroller.php"
+      "norm_label": "promocontroller.php",
+      "id": "app_http_controllers_promocontroller_php"
     },
     {
       "label": "PromoController",
       "file_type": "code",
       "source_file": "app/Http/Controllers/PromoController.php",
       "source_location": "L9",
-      "id": "controllers_promocontroller_promocontroller",
       "community": 130,
-      "norm_label": "promocontroller"
+      "norm_label": "promocontroller",
+      "id": "controllers_promocontroller_promocontroller"
     },
     {
       "label": ".check()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/PromoController.php",
       "source_location": "L11",
-      "id": "controllers_promocontroller_promocontroller_check",
       "community": 130,
-      "norm_label": ".check()"
+      "norm_label": ".check()",
+      "id": "controllers_promocontroller_promocontroller_check"
     },
     {
       "label": "Request",
       "file_type": "code",
       "source_file": "app/Http/Controllers/PromoController.php",
       "source_location": "L11",
-      "id": "app_http_controllers_promocontroller_php_request",
       "community": 130,
-      "norm_label": "request"
+      "norm_label": "request",
+      "id": "app_http_controllers_promocontroller_php_request"
     },
     {
       "label": "JsonResponse",
       "file_type": "code",
       "source_file": "app/Http/Controllers/PromoController.php",
       "source_location": "L11",
-      "id": "jsonresponse",
       "community": 130,
-      "norm_label": "jsonresponse"
+      "norm_label": "jsonresponse",
+      "id": "jsonresponse"
     },
     {
       "label": "index.blade.php",
       "file_type": "code",
       "source_file": "resources/views/checkout/index.blade.php",
       "source_location": null,
-      "id": "resources_views_checkout_index_blade_php",
       "community": 103,
-      "norm_label": "index.blade.php"
+      "norm_label": "index.blade.php",
+      "id": "resources_views_checkout_index_blade_php"
     },
     {
       "label": "web.php",
       "file_type": "code",
       "source_file": "routes/web.php",
       "source_location": "L1",
-      "id": "routes_web_php",
       "community": 121,
-      "norm_label": "web.php"
+      "norm_label": "web.php",
+      "id": "routes_web_php"
     },
     {
       "label": "PromotionTest.php",
       "file_type": "code",
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L1",
-      "id": "tests_feature_promotiontest_php",
       "community": 5,
-      "norm_label": "promotiontest.php"
+      "norm_label": "promotiontest.php",
+      "id": "tests_feature_promotiontest_php"
     },
     {
       "label": "PromotionTest",
       "file_type": "code",
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L10",
-      "id": "feature_promotiontest_promotiontest",
       "community": 5,
-      "norm_label": "promotiontest"
+      "norm_label": "promotiontest",
+      "id": "feature_promotiontest_promotiontest"
     },
     {
       "label": "TestCase",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "testcase",
       "community": 17,
-      "norm_label": "testcase"
+      "norm_label": "testcase",
+      "id": "testcase"
     },
     {
       "label": "RefreshDatabase",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "refreshdatabase",
-      "community": 30,
-      "norm_label": "refreshdatabase"
+      "community": 17,
+      "norm_label": "refreshdatabase",
+      "id": "refreshdatabase"
     },
     {
       "label": "User",
       "file_type": "code",
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L14",
-      "id": "user",
       "community": 5,
-      "norm_label": "user"
+      "norm_label": "user",
+      "id": "user"
     },
     {
       "label": ".setUp()",
       "file_type": "code",
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L16",
-      "id": "feature_promotiontest_promotiontest_setup",
       "community": 5,
-      "norm_label": ".setup()"
+      "norm_label": ".setup()",
+      "id": "feature_promotiontest_promotiontest_setup"
     },
     {
       "label": ".test_admin_promotions_page_returns_200()",
       "file_type": "code",
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L22",
-      "id": "feature_promotiontest_promotiontest_test_admin_promotions_page_returns_200",
       "community": 5,
-      "norm_label": ".test_admin_promotions_page_returns_200()"
+      "norm_label": ".test_admin_promotions_page_returns_200()",
+      "id": "feature_promotiontest_promotiontest_test_admin_promotions_page_returns_200"
     },
     {
       "label": ".test_admin_can_create_promotion()",
       "file_type": "code",
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L27",
-      "id": "feature_promotiontest_promotiontest_test_admin_can_create_promotion",
       "community": 5,
-      "norm_label": ".test_admin_can_create_promotion()"
+      "norm_label": ".test_admin_can_create_promotion()",
+      "id": "feature_promotiontest_promotiontest_test_admin_can_create_promotion"
     },
     {
       "label": ".test_promo_code_is_forced_uppercase()",
       "file_type": "code",
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L36",
-      "id": "feature_promotiontest_promotiontest_test_promo_code_is_forced_uppercase",
       "community": 5,
-      "norm_label": ".test_promo_code_is_forced_uppercase()"
+      "norm_label": ".test_promo_code_is_forced_uppercase()",
+      "id": "feature_promotiontest_promotiontest_test_promo_code_is_forced_uppercase"
     },
     {
       "label": ".test_admin_can_update_promotion()",
       "file_type": "code",
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L44",
-      "id": "feature_promotiontest_promotiontest_test_admin_can_update_promotion",
       "community": 5,
-      "norm_label": ".test_admin_can_update_promotion()"
+      "norm_label": ".test_admin_can_update_promotion()",
+      "id": "feature_promotiontest_promotiontest_test_admin_can_update_promotion"
     },
     {
       "label": ".test_admin_can_delete_promotion()",
       "file_type": "code",
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L53",
-      "id": "feature_promotiontest_promotiontest_test_admin_can_delete_promotion",
       "community": 5,
-      "norm_label": ".test_admin_can_delete_promotion()"
+      "norm_label": ".test_admin_can_delete_promotion()",
+      "id": "feature_promotiontest_promotiontest_test_admin_can_delete_promotion"
     },
     {
       "label": ".test_promotion_is_valid_when_conditions_met()",
       "file_type": "code",
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L60",
-      "id": "feature_promotiontest_promotiontest_test_promotion_is_valid_when_conditions_met",
       "community": 5,
-      "norm_label": ".test_promotion_is_valid_when_conditions_met()"
+      "norm_label": ".test_promotion_is_valid_when_conditions_met()",
+      "id": "feature_promotiontest_promotiontest_test_promotion_is_valid_when_conditions_met"
     },
     {
       "label": ".test_promotion_calculates_correct_discount()",
       "file_type": "code",
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L67",
-      "id": "feature_promotiontest_promotiontest_test_promotion_calculates_correct_discount",
       "community": 5,
-      "norm_label": ".test_promotion_calculates_correct_discount()"
+      "norm_label": ".test_promotion_calculates_correct_discount()",
+      "id": "feature_promotiontest_promotiontest_test_promotion_calculates_correct_discount"
     },
     {
       "label": ".test_expired_promotion_is_not_valid()",
       "file_type": "code",
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L77",
-      "id": "feature_promotiontest_promotiontest_test_expired_promotion_is_not_valid",
       "community": 5,
-      "norm_label": ".test_expired_promotion_is_not_valid()"
+      "norm_label": ".test_expired_promotion_is_not_valid()",
+      "id": "feature_promotiontest_promotiontest_test_expired_promotion_is_not_valid"
     },
     {
       "label": ".test_promo_check_endpoint_returns_valid_discount()",
       "file_type": "code",
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L83",
-      "id": "feature_promotiontest_promotiontest_test_promo_check_endpoint_returns_valid_discount",
       "community": 5,
-      "norm_label": ".test_promo_check_endpoint_returns_valid_discount()"
+      "norm_label": ".test_promo_check_endpoint_returns_valid_discount()",
+      "id": "feature_promotiontest_promotiontest_test_promo_check_endpoint_returns_valid_discount"
     },
     {
       "label": ".test_promo_check_endpoint_returns_invalid_for_bad_code()",
       "file_type": "code",
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L92",
-      "id": "feature_promotiontest_promotiontest_test_promo_check_endpoint_returns_invalid_for_bad_code",
       "community": 5,
-      "norm_label": ".test_promo_check_endpoint_returns_invalid_for_bad_code()"
+      "norm_label": ".test_promo_check_endpoint_returns_invalid_for_bad_code()",
+      "id": "feature_promotiontest_promotiontest_test_promo_check_endpoint_returns_invalid_for_bad_code"
     },
     {
       "label": ".test_promo_check_endpoint_returns_invalid_when_min_order_not_met()",
       "file_type": "code",
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L99",
-      "id": "feature_promotiontest_promotiontest_test_promo_check_endpoint_returns_invalid_when_min_order_not_met",
       "community": 5,
-      "norm_label": ".test_promo_check_endpoint_returns_invalid_when_min_order_not_met()"
+      "norm_label": ".test_promo_check_endpoint_returns_invalid_when_min_order_not_met()",
+      "id": "feature_promotiontest_promotiontest_test_promo_check_endpoint_returns_invalid_when_min_order_not_met"
     },
     {
       "label": ".test_promo_check_is_case_insensitive()",
       "file_type": "code",
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L108",
-      "id": "feature_promotiontest_promotiontest_test_promo_check_is_case_insensitive",
       "community": 5,
-      "norm_label": ".test_promo_check_is_case_insensitive()"
+      "norm_label": ".test_promo_check_is_case_insensitive()",
+      "id": "feature_promotiontest_promotiontest_test_promo_check_is_case_insensitive"
     },
     {
       "label": "OrderController.php",
@@ -482,7 +509,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Admin/InStoreOrderTest.php",
       "source_location": "L1",
-      "community": 5,
+      "community": 17,
       "norm_label": "instoreordertest.php",
       "id": "tests_feature_admin_instoreordertest_php"
     },
@@ -491,7 +518,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Admin/InStoreOrderTest.php",
       "source_location": "L11",
-      "community": 5,
+      "community": 15,
       "norm_label": "instoreordertest",
       "id": "admin_instoreordertest_instoreordertest"
     },
@@ -500,7 +527,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Admin/InStoreOrderTest.php",
       "source_location": "L15",
-      "community": 5,
+      "community": 15,
       "norm_label": ".setup()",
       "id": "admin_instoreordertest_instoreordertest_setup"
     },
@@ -509,7 +536,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Admin/InStoreOrderTest.php",
       "source_location": "L21",
-      "community": 5,
+      "community": 15,
       "norm_label": ".admin()",
       "id": "admin_instoreordertest_instoreordertest_admin"
     },
@@ -518,7 +545,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Admin/InStoreOrderTest.php",
       "source_location": "L26",
-      "community": 5,
+      "community": 15,
       "norm_label": ".test_in_store_page_shows_todays_eat_in_orders()",
       "id": "admin_instoreordertest_instoreordertest_test_in_store_page_shows_todays_eat_in_orders"
     },
@@ -527,7 +554,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Admin/InStoreOrderTest.php",
       "source_location": "L42",
-      "community": 5,
+      "community": 15,
       "norm_label": ".test_admin_can_create_eat_in_order()",
       "id": "admin_instoreordertest_instoreordertest_test_admin_can_create_eat_in_order"
     },
@@ -536,7 +563,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Admin/InStoreOrderTest.php",
       "source_location": "L66",
-      "community": 5,
+      "community": 15,
       "norm_label": ".test_create_order_requires_name_and_items()",
       "id": "admin_instoreordertest_instoreordertest_test_create_order_requires_name_and_items"
     },
@@ -1220,7 +1247,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L10",
-      "community": 17,
+      "community": 14,
       "norm_label": "customerpagestest",
       "id": "feature_customerpagestest_customerpagestest"
     },
@@ -1229,7 +1256,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L14",
-      "community": 17,
+      "community": 14,
       "norm_label": ".setup()",
       "id": "feature_customerpagestest_customerpagestest_setup"
     },
@@ -1238,7 +1265,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L20",
-      "community": 17,
+      "community": 14,
       "norm_label": ".test_home_has_industrial_content()",
       "id": "feature_customerpagestest_customerpagestest_test_home_has_industrial_content"
     },
@@ -1247,7 +1274,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L27",
-      "community": 17,
+      "community": 14,
       "norm_label": ".test_menu_has_pizza_category()",
       "id": "feature_customerpagestest_customerpagestest_test_menu_has_pizza_category"
     },
@@ -1256,7 +1283,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L34",
-      "community": 17,
+      "community": 14,
       "norm_label": ".test_menu_show_returns_200()",
       "id": "feature_customerpagestest_customerpagestest_test_menu_show_returns_200"
     },
@@ -1265,7 +1292,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L40",
-      "community": 17,
+      "community": 14,
       "norm_label": ".test_checkout_has_delivery_option()",
       "id": "feature_customerpagestest_customerpagestest_test_checkout_has_delivery_option"
     },
@@ -1274,7 +1301,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L48",
-      "community": 17,
+      "community": 14,
       "norm_label": ".test_tracking_page_returns_200()",
       "id": "feature_customerpagestest_customerpagestest_test_tracking_page_returns_200"
     },
@@ -1283,7 +1310,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L55",
-      "community": 17,
+      "community": 14,
       "norm_label": ".test_confirmation_page_returns_200()",
       "id": "feature_customerpagestest_customerpagestest_test_confirmation_page_returns_200"
     },
@@ -1292,7 +1319,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L62",
-      "community": 17,
+      "community": 14,
       "norm_label": ".test_about_has_brand_content()",
       "id": "feature_customerpagestest_customerpagestest_test_about_has_brand_content"
     },
@@ -1301,7 +1328,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L69",
-      "community": 17,
+      "community": 14,
       "norm_label": ".test_contact_has_real_address()",
       "id": "feature_customerpagestest_customerpagestest_test_contact_has_real_address"
     },
@@ -1310,7 +1337,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L76",
-      "community": 17,
+      "community": 14,
       "norm_label": ".test_login_has_sign_in_heading()",
       "id": "feature_customerpagestest_customerpagestest_test_login_has_sign_in_heading"
     },
@@ -1319,7 +1346,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L83",
-      "community": 17,
+      "community": 14,
       "norm_label": ".test_register_has_create_account_heading()",
       "id": "feature_customerpagestest_customerpagestest_test_register_has_create_account_heading"
     },
@@ -1328,7 +1355,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L90",
-      "community": 17,
+      "community": 14,
       "norm_label": ".test_account_redirects_unauthenticated()",
       "id": "feature_customerpagestest_customerpagestest_test_account_redirects_unauthenticated"
     },
@@ -1346,7 +1373,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/RouteSmokeTest.php",
       "source_location": "L8",
-      "community": 17,
+      "community": 13,
       "norm_label": "routesmoketest",
       "id": "feature_routesmoketest_routesmoketest"
     },
@@ -1355,7 +1382,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/RouteSmokeTest.php",
       "source_location": "L12",
-      "community": 17,
+      "community": 13,
       "norm_label": ".setup()",
       "id": "feature_routesmoketest_routesmoketest_setup"
     },
@@ -1364,7 +1391,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/RouteSmokeTest.php",
       "source_location": "L18",
-      "community": 17,
+      "community": 13,
       "norm_label": ".test_public_routes_return_200()",
       "id": "feature_routesmoketest_routesmoketest_test_public_routes_return_200"
     },
@@ -1373,7 +1400,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/RouteSmokeTest.php",
       "source_location": "L26",
-      "community": 17,
+      "community": 13,
       "norm_label": ".publicrouteprovider()",
       "id": "feature_routesmoketest_routesmoketest_publicrouteprovider"
     },
@@ -1382,7 +1409,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/RouteSmokeTest.php",
       "source_location": "L40",
-      "community": 17,
+      "community": 13,
       "norm_label": ".test_order_confirmation_route_returns_200()",
       "id": "feature_routesmoketest_routesmoketest_test_order_confirmation_route_returns_200"
     },
@@ -1391,7 +1418,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/RouteSmokeTest.php",
       "source_location": "L49",
-      "community": 17,
+      "community": 13,
       "norm_label": ".test_order_tracking_route_returns_200()",
       "id": "feature_routesmoketest_routesmoketest_test_order_tracking_route_returns_200"
     },
@@ -1400,7 +1427,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/RouteSmokeTest.php",
       "source_location": "L58",
-      "community": 17,
+      "community": 13,
       "norm_label": ".test_admin_dashboard_redirects_unauthenticated()",
       "id": "feature_routesmoketest_routesmoketest_test_admin_dashboard_redirects_unauthenticated"
     },
@@ -1409,7 +1436,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/RouteSmokeTest.php",
       "source_location": "L65",
-      "community": 17,
+      "community": 13,
       "norm_label": ".test_account_redirects_unauthenticated()",
       "id": "feature_routesmoketest_routesmoketest_test_account_redirects_unauthenticated"
     },
@@ -1418,7 +1445,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/RouteSmokeTest.php",
       "source_location": "L72",
-      "community": 17,
+      "community": 13,
       "norm_label": ".test_home_page_contains_brand_name()",
       "id": "feature_routesmoketest_routesmoketest_test_home_page_contains_brand_name"
     },
@@ -1427,7 +1454,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/RouteSmokeTest.php",
       "source_location": "L79",
-      "community": 17,
+      "community": 13,
       "norm_label": ".test_header_renders_nav_links()",
       "id": "feature_routesmoketest_routesmoketest_test_header_renders_nav_links"
     },
@@ -1436,7 +1463,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/RouteSmokeTest.php",
       "source_location": "L87",
-      "community": 17,
+      "community": 13,
       "norm_label": ".test_footer_renders_opening_hours()",
       "id": "feature_routesmoketest_routesmoketest_test_footer_renders_opening_hours"
     },
@@ -1445,7 +1472,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/RouteSmokeTest.php",
       "source_location": "L100",
-      "community": 17,
+      "community": 13,
       "norm_label": ".test_admin_routes_return_200_for_admin()",
       "id": "feature_routesmoketest_routesmoketest_test_admin_routes_return_200_for_admin"
     },
@@ -1454,7 +1481,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/RouteSmokeTest.php",
       "source_location": "L110",
-      "community": 17,
+      "community": 13,
       "norm_label": ".adminrouteprovider()",
       "id": "feature_routesmoketest_routesmoketest_adminrouteprovider"
     },
@@ -1463,7 +1490,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/RouteSmokeTest.php",
       "source_location": "L126",
-      "community": 17,
+      "community": 13,
       "norm_label": ".test_admin_order_detail_returns_200_for_admin()",
       "id": "feature_routesmoketest_routesmoketest_test_admin_order_detail_returns_200_for_admin"
     },
@@ -1472,7 +1499,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/RouteSmokeTest.php",
       "source_location": "L136",
-      "community": 17,
+      "community": 13,
       "norm_label": ".test_admin_routes_return_403_for_customer()",
       "id": "feature_routesmoketest_routesmoketest_test_admin_routes_return_403_for_customer"
     },
@@ -5216,7 +5243,7 @@
       "file_type": "code",
       "source_file": "database/seeders/SettingSeeder.php",
       "source_location": "L10",
-      "community": 9,
+      "community": 8,
       "norm_label": ".run()",
       "id": "seeders_settingseeder_settingseeder_run"
     },
@@ -6899,7 +6926,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/ExampleTest.php",
       "source_location": "L1",
-      "community": 30,
+      "community": 17,
       "norm_label": "exampletest.php",
       "id": "tests_feature_exampletest_php"
     },
@@ -6908,7 +6935,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/ExampleTest.php",
       "source_location": "L8",
-      "community": 30,
+      "community": 17,
       "norm_label": "exampletest",
       "id": "feature_exampletest_exampletest"
     },
@@ -6917,7 +6944,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/ExampleTest.php",
       "source_location": "L15",
-      "community": 30,
+      "community": 17,
       "norm_label": ".test_the_application_returns_a_successful_response()",
       "id": "feature_exampletest_exampletest_test_the_application_returns_a_successful_response"
     },
@@ -6998,7 +7025,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/MenuTest.php",
       "source_location": "L1",
-      "community": 242,
+      "community": 25,
       "norm_label": "menutest.php",
       "id": "tests_feature_menutest_php"
     },
@@ -7007,7 +7034,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/MenuTest.php",
       "source_location": "L12",
-      "community": 242,
+      "community": 25,
       "norm_label": "menutest",
       "id": "feature_menutest_menutest"
     },
@@ -7016,7 +7043,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/MenuTest.php",
       "source_location": "L16",
-      "community": 242,
+      "community": 25,
       "norm_label": ".test_category_has_many_menu_items()",
       "id": "feature_menutest_menutest_test_category_has_many_menu_items"
     },
@@ -7025,7 +7052,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/MenuTest.php",
       "source_location": "L24",
-      "community": 242,
+      "community": 25,
       "norm_label": ".test_menu_item_belongs_to_category()",
       "id": "feature_menutest_menutest_test_menu_item_belongs_to_category"
     },
@@ -7034,7 +7061,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/MenuTest.php",
       "source_location": "L31",
-      "community": 242,
+      "community": 25,
       "norm_label": ".test_menu_item_has_formatted_price()",
       "id": "feature_menutest_menutest_test_menu_item_has_formatted_price"
     },
@@ -7043,7 +7070,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/MenuTest.php",
       "source_location": "L38",
-      "community": 242,
+      "community": 25,
       "norm_label": ".test_menu_item_can_have_allergens()",
       "id": "feature_menutest_menutest_test_menu_item_can_have_allergens"
     },
@@ -7052,7 +7079,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/MenuTest.php",
       "source_location": "L48",
-      "community": 242,
+      "community": 25,
       "norm_label": ".test_topping_available_scope()",
       "id": "feature_menutest_menutest_test_topping_available_scope"
     },
@@ -7061,7 +7088,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/MenuTest.php",
       "source_location": "L56",
-      "community": 242,
+      "community": 25,
       "norm_label": ".test_customer_menu_page_returns_200()",
       "id": "feature_menutest_menutest_test_customer_menu_page_returns_200"
     },
@@ -7241,7 +7268,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Account/AddressTest.php",
       "source_location": "L1",
-      "community": 13,
+      "community": 128,
       "norm_label": "addresstest.php",
       "id": "tests_feature_account_addresstest_php"
     },
@@ -7250,7 +7277,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Account/AddressTest.php",
       "source_location": "L10",
-      "community": 13,
+      "community": 128,
       "norm_label": "addresstest",
       "id": "account_addresstest_addresstest"
     },
@@ -7259,7 +7286,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Account/AddressTest.php",
       "source_location": "L14",
-      "community": 13,
+      "community": 128,
       "norm_label": "user",
       "id": "tests_feature_account_addresstest_php_user"
     },
@@ -7268,7 +7295,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Account/AddressTest.php",
       "source_location": "L16",
-      "community": 13,
+      "community": 128,
       "norm_label": ".setup()",
       "id": "account_addresstest_addresstest_setup"
     },
@@ -7277,7 +7304,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Account/AddressTest.php",
       "source_location": "L22",
-      "community": 13,
+      "community": 128,
       "norm_label": ".test_customer_can_add_address()",
       "id": "account_addresstest_addresstest_test_customer_can_add_address"
     },
@@ -7286,7 +7313,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Account/AddressTest.php",
       "source_location": "L31",
-      "community": 13,
+      "community": 128,
       "norm_label": ".test_customer_can_delete_address()",
       "id": "account_addresstest_addresstest_test_customer_can_delete_address"
     },
@@ -7295,7 +7322,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Account/AddressTest.php",
       "source_location": "L38",
-      "community": 13,
+      "community": 128,
       "norm_label": ".test_customer_cannot_delete_other_users_address()",
       "id": "account_addresstest_addresstest_test_customer_cannot_delete_other_users_address"
     },
@@ -7304,7 +7331,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Account/AddressTest.php",
       "source_location": "L46",
-      "community": 13,
+      "community": 128,
       "norm_label": ".test_customer_can_set_default_address()",
       "id": "account_addresstest_addresstest_test_customer_can_set_default_address"
     },
@@ -7376,7 +7403,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Admin/MenuItemTest.php",
       "source_location": "L1",
-      "community": 15,
+      "community": 4,
       "norm_label": "menuitemtest.php",
       "id": "tests_feature_admin_menuitemtest_php"
     },
@@ -7385,7 +7412,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Admin/MenuItemTest.php",
       "source_location": "L12",
-      "community": 15,
+      "community": 4,
       "norm_label": "menuitemtest",
       "id": "admin_menuitemtest_menuitemtest"
     },
@@ -7394,7 +7421,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Admin/MenuItemTest.php",
       "source_location": "L16",
-      "community": 15,
+      "community": 4,
       "norm_label": "user",
       "id": "tests_feature_admin_menuitemtest_php_user"
     },
@@ -7403,7 +7430,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Admin/MenuItemTest.php",
       "source_location": "L18",
-      "community": 15,
+      "community": 4,
       "norm_label": ".setup()",
       "id": "admin_menuitemtest_menuitemtest_setup"
     },
@@ -7412,7 +7439,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Admin/MenuItemTest.php",
       "source_location": "L24",
-      "community": 15,
+      "community": 4,
       "norm_label": ".test_admin_menu_index_returns_200()",
       "id": "admin_menuitemtest_menuitemtest_test_admin_menu_index_returns_200"
     },
@@ -7421,7 +7448,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Admin/MenuItemTest.php",
       "source_location": "L31",
-      "community": 15,
+      "community": 4,
       "norm_label": ".test_admin_menu_index_shows_items_from_db()",
       "id": "admin_menuitemtest_menuitemtest_test_admin_menu_index_shows_items_from_db"
     },
@@ -7430,7 +7457,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Admin/MenuItemTest.php",
       "source_location": "L41",
-      "community": 15,
+      "community": 4,
       "norm_label": ".test_admin_can_create_menu_item()",
       "id": "admin_menuitemtest_menuitemtest_test_admin_can_create_menu_item"
     },
@@ -7439,7 +7466,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Admin/MenuItemTest.php",
       "source_location": "L60",
-      "community": 15,
+      "community": 4,
       "norm_label": ".test_create_menu_item_requires_name_and_price()",
       "id": "admin_menuitemtest_menuitemtest_test_create_menu_item_requires_name_and_price"
     },
@@ -7448,7 +7475,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Admin/MenuItemTest.php",
       "source_location": "L67",
-      "community": 15,
+      "community": 4,
       "norm_label": ".test_admin_can_update_menu_item()",
       "id": "admin_menuitemtest_menuitemtest_test_admin_can_update_menu_item"
     },
@@ -7457,7 +7484,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Admin/MenuItemTest.php",
       "source_location": "L86",
-      "community": 15,
+      "community": 4,
       "norm_label": ".test_admin_can_delete_menu_item()",
       "id": "admin_menuitemtest_menuitemtest_test_admin_can_delete_menu_item"
     },
@@ -7466,7 +7493,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Admin/MenuItemTest.php",
       "source_location": "L96",
-      "community": 15,
+      "community": 4,
       "norm_label": ".test_admin_can_attach_allergens_to_menu_item()",
       "id": "admin_menuitemtest_menuitemtest_test_admin_can_attach_allergens_to_menu_item"
     },
@@ -7475,7 +7502,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Admin/MenuItemTest.php",
       "source_location": "L112",
-      "community": 15,
+      "community": 4,
       "norm_label": ".test_customer_cannot_access_admin_menu()",
       "id": "admin_menuitemtest_menuitemtest_test_customer_cannot_access_admin_menu"
     },
@@ -7484,7 +7511,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/Admin/MenuItemTest.php",
       "source_location": "L121",
-      "community": 15,
+      "community": 4,
       "norm_label": ".test_unauthenticated_user_redirected_from_admin_menu()",
       "id": "admin_menuitemtest_menuitemtest_test_unauthenticated_user_redirected_from_admin_menu"
     },
@@ -9204,6 +9231,26 @@
   ],
   "links": [
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database/migrations/2026_06_05_193917_add_dietary_flags_to_menu_items_table.php",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "database_migrations_2026_06_05_193917_add_dietary_flags_to_menu_items_table_php",
+      "target": "migrations_2026_06_05_193917_add_dietary_flags_to_menu_items_table_down",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database/migrations/2026_06_05_193917_add_dietary_flags_to_menu_items_table.php",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "database_migrations_2026_06_05_193917_add_dietary_flags_to_menu_items_table_php",
+      "target": "migrations_2026_06_05_193917_add_dietary_flags_to_menu_items_table_up",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9231,9 +9278,9 @@
       "source_file": "app/Http/Controllers/CheckoutController.php",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_http_controllers_checkoutcontroller_php",
-      "target": "redirectresponse",
-      "confidence_score": 1.0
+      "target": "redirectresponse"
     },
     {
       "relation": "imports",
@@ -9242,9 +9289,9 @@
       "source_file": "app/Http/Controllers/CheckoutController.php",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_http_controllers_checkoutcontroller_php",
-      "target": "view",
-      "confidence_score": 1.0
+      "target": "view"
     },
     {
       "relation": "inherits",
@@ -9252,9 +9299,9 @@
       "source_file": "app/Http/Controllers/CheckoutController.php",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "controllers_checkoutcontroller_checkoutcontroller",
-      "target": "controller",
-      "confidence_score": 1.0
+      "target": "controller"
     },
     {
       "relation": "method",
@@ -9333,9 +9380,9 @@
       "source_file": "app/Http/Controllers/PromoController.php",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "controllers_promocontroller_promocontroller",
-      "target": "controller",
-      "confidence_score": 1.0
+      "target": "controller"
     },
     {
       "relation": "references",
@@ -9344,9 +9391,9 @@
       "source_location": "L16",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "controllers_checkoutcontroller_checkoutcontroller_index",
-      "target": "view",
-      "confidence_score": 1.0
+      "target": "view"
     },
     {
       "relation": "references",
@@ -9487,9 +9534,9 @@
       "source_location": "L26",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "controllers_checkoutcontroller_checkoutcontroller_store",
-      "target": "redirectresponse",
-      "confidence_score": 1.0
+      "target": "redirectresponse"
     },
     {
       "relation": "references",
@@ -9564,9 +9611,9 @@
       "source_file": "app/Http/Controllers/PromoController.php",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_http_controllers_promocontroller_php",
-      "target": "app_http_controllers_promocontroller_php_request",
-      "confidence_score": 1.0
+      "target": "app_http_controllers_promocontroller_php_request"
     },
     {
       "relation": "contains",
@@ -9574,9 +9621,9 @@
       "source_file": "app/Http/Controllers/PromoController.php",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_http_controllers_promocontroller_php",
-      "target": "controllers_promocontroller_promocontroller",
-      "confidence_score": 1.0
+      "target": "controllers_promocontroller_promocontroller"
     },
     {
       "relation": "imports",
@@ -9585,9 +9632,9 @@
       "source_file": "app/Http/Controllers/PromoController.php",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_http_controllers_promocontroller_php",
-      "target": "jsonresponse",
-      "confidence_score": 1.0
+      "target": "jsonresponse"
     },
     {
       "relation": "method",
@@ -9595,9 +9642,9 @@
       "source_file": "app/Http/Controllers/PromoController.php",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "controllers_promocontroller_promocontroller",
-      "target": "controllers_promocontroller_promocontroller_check",
-      "confidence_score": 1.0
+      "target": "controllers_promocontroller_promocontroller_check"
     },
     {
       "relation": "references",
@@ -9606,9 +9653,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "controllers_promocontroller_promocontroller_check",
-      "target": "app_http_controllers_promocontroller_php_request",
-      "confidence_score": 1.0
+      "target": "app_http_controllers_promocontroller_php_request"
     },
     {
       "relation": "references",
@@ -9617,9 +9664,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "controllers_promocontroller_promocontroller_check",
-      "target": "jsonresponse",
-      "confidence_score": 1.0
+      "target": "jsonresponse"
     },
     {
       "relation": "contains",
@@ -9649,9 +9696,9 @@
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_feature_promotiontest_php",
-      "target": "testcase",
-      "confidence_score": 1.0
+      "target": "testcase"
     },
     {
       "relation": "imports",
@@ -9671,9 +9718,9 @@
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_feature_promotiontest_php",
-      "target": "user",
-      "confidence_score": 1.0
+      "target": "user"
     },
     {
       "relation": "method",
@@ -9741,9 +9788,9 @@
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L92",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "feature_promotiontest_promotiontest",
-      "target": "feature_promotiontest_promotiontest_test_promo_check_endpoint_returns_invalid_for_bad_code",
-      "confidence_score": 1.0
+      "target": "feature_promotiontest_promotiontest_test_promo_check_endpoint_returns_invalid_for_bad_code"
     },
     {
       "relation": "method",
@@ -9751,9 +9798,9 @@
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L99",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "feature_promotiontest_promotiontest",
-      "target": "feature_promotiontest_promotiontest_test_promo_check_endpoint_returns_invalid_when_min_order_not_met",
-      "confidence_score": 1.0
+      "target": "feature_promotiontest_promotiontest_test_promo_check_endpoint_returns_invalid_when_min_order_not_met"
     },
     {
       "relation": "method",
@@ -9761,9 +9808,9 @@
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L83",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "feature_promotiontest_promotiontest",
-      "target": "feature_promotiontest_promotiontest_test_promo_check_endpoint_returns_valid_discount",
-      "confidence_score": 1.0
+      "target": "feature_promotiontest_promotiontest_test_promo_check_endpoint_returns_valid_discount"
     },
     {
       "relation": "method",
@@ -9771,9 +9818,9 @@
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L108",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "feature_promotiontest_promotiontest",
-      "target": "feature_promotiontest_promotiontest_test_promo_check_is_case_insensitive",
-      "confidence_score": 1.0
+      "target": "feature_promotiontest_promotiontest_test_promo_check_is_case_insensitive"
     },
     {
       "relation": "method",
@@ -9821,9 +9868,9 @@
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "feature_promotiontest_promotiontest",
-      "target": "testcase",
-      "confidence_score": 1.0
+      "target": "testcase"
     },
     {
       "relation": "inherits",
@@ -9842,9 +9889,9 @@
       "source_location": "L14",
       "weight": 1.0,
       "context": "field",
+      "confidence_score": 1.0,
       "source": "feature_promotiontest_promotiontest",
-      "target": "user",
-      "confidence_score": 1.0
+      "target": "user"
     },
     {
       "relation": "inherits",
@@ -10389,9 +10436,9 @@
       "source_file": "tests/Feature/PromotionTest.php",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "feature_promotiontest_promotiontest_setup",
-      "target": "user",
-      "confidence_score": 1.0
+      "target": "user"
     },
     {
       "relation": "imports",
@@ -21229,5 +21276,5 @@
       "source_file": "docs/superpowers/plans/2026-06-04-plan9-deploy-polish.md"
     }
   ],
-  "built_at_commit": "5863b539ace38cdd996bf481542ae4665e85bd6a"
+  "built_at_commit": "2c64223fa5224f54ba3f2097edb0a1719c521529"
 }

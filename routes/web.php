@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\PromotionController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\OurMenuController;
 use App\Http\Controllers\PasswordResetController;
+use App\Http\Controllers\PartyHallController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,8 @@ Route::post('/stripe/webhook', [App\Http\Controllers\StripeWebhookController::cl
 Route::post('/promo/check', [App\Http\Controllers\PromoController::class, 'check'])->name('promo.check')->middleware('throttle:20,1');
 Route::get('/orders/{order}/confirmation', [OrderController::class, 'confirmation'])->name('orders.confirmation');
 Route::get('/orders/{order}/tracking', [OrderController::class, 'tracking'])->name('orders.tracking');
+Route::get('/party-hall',  [PartyHallController::class, 'index'])->name('party-hall');
+Route::post('/party-hall', [PartyHallController::class, 'submit'])->name('party-hall.submit')->middleware('throttle:5,1');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::post('/contact', [PageController::class, 'sendContact'])->name('contact.send');

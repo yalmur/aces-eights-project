@@ -17,7 +17,7 @@
 </section>
 
 {{-- Alpine.js category filter + menu grid --}}
-<div x-data="{ active: 'all', view: 'grid', search: '' }"
+<div x-data="{ active: 'all', view: 'grid', search: '', diet: '' }"
      x-init="$store.cart.allToppings = {{ $toppings->map(fn($t) => ['name' => $t->name, 'price' => (float)$t->price])->toJson() }}">
 
     {{-- Search & Filter Bar --}}
@@ -31,6 +31,13 @@
                         :class="{ 'active': active === '{{ $category->slug }}' }"
                         class="chip whitespace-nowrap">{{ $category->name }}</button>
                 @endforeach
+                <div class="w-px h-6 bg-surface-variant self-center mx-1 flex-shrink-0"></div>
+                <button @click="diet = diet === 'vegetarian' ? '' : 'vegetarian'"
+                        :class="{ 'active': diet === 'vegetarian' }"
+                        class="chip whitespace-nowrap">Vegetarian</button>
+                <button @click="diet = diet === 'vegan' ? '' : 'vegan'"
+                        :class="{ 'active': diet === 'vegan' }"
+                        class="chip whitespace-nowrap">Vegan</button>
             </div>
             {{-- Smart Search --}}
             <div class="flex items-center gap-4 w-full md:w-auto">
@@ -90,9 +97,11 @@
     @foreach($categories as $category)
     @php
         $catSearchStr = $category->availableItems->map(fn($i) => strtolower($i->name . ' ' . ($i->description ?? '')))->join(' ||| ');
+        $catHasVeg    = $category->availableItems->where('is_vegetarian', true)->count() > 0;
+        $catHasVegan  = $category->availableItems->where('is_vegan',       true)->count() > 0;
     @endphp
     <section x-data="{ catText: {{ json_encode($catSearchStr) }} }"
-             x-show="search ? catText.split(' ||| ').some(t => t.includes(search.toLowerCase())) : (active === 'all' || active === '{{ $category->slug }}')"
+             x-show="(search ? catText.split(' ||| ').some(t => t.includes(search.toLowerCase())) : (active === 'all' || active === '{{ $category->slug }}')) && (!diet || (diet === 'vegetarian' && {{ $catHasVeg ? 'true' : 'false' }}) || (diet === 'vegan' && {{ $catHasVegan ? 'true' : 'false' }}))"
              class="px-6 md:px-margin-desktop py-12 max-w-container-max mx-auto {{ !$loop->first ? 'border-t border-surface-variant' : '' }}">
 
       <h2 class="menu-section-heading" x-show="active === 'all' || search">{{ $category->name }}</h2>
@@ -100,7 +109,7 @@
       <div :class="view === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : view === 'list' ? 'flex flex-col gap-3' : 'grid grid-cols-2 lg:grid-cols-4 gap-4'">
 
         @foreach($category->availableItems as $item)
-        <div x-show="!search || '{{ strtolower($item->name . ' ' . ($item->description ?? '')) }}'.includes(search.toLowerCase())"
+        <div x-show="(!search || '{{ strtolower($item->name . ' ' . ($item->description ?? '')) }}'.includes(search.toLowerCase())) && (!diet || (diet === 'vegetarian' && {{ $item->is_vegetarian ? 'true' : 'false' }}) || (diet === 'vegan' && {{ $item->is_vegan ? 'true' : 'false' }}))"
              :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'"
              class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 overflow-hidden shadow-sm">
           <div :class="view === 'list' ? 'w-32 h-auto flex-shrink-0' : view === 'compact' ? 'h-40 overflow-hidden' : 'h-64 overflow-hidden'"
@@ -117,6 +126,11 @@
             <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1">{{ $item->description }}</p>
             <div class="flex items-center justify-between mt-auto">
               <div class="flex gap-2 flex-wrap">
+                @if($item->is_vegan)
+                  <span class="font-label-sm text-label-sm px-2 py-1 bg-green-100 text-green-800 border border-green-300 uppercase">Vegan</span>
+                @elseif($item->is_vegetarian)
+                  <span class="font-label-sm text-label-sm px-2 py-1 bg-green-50 text-green-700 border border-green-200 uppercase">Veggie</span>
+                @endif
                 @foreach($item->allergens->take(3) as $allergen)
                   <span class="font-label-sm text-label-sm px-2 py-1 bg-surface-container-high text-on-surface-variant border border-surface-variant uppercase">
                     {{ strtoupper(substr($allergen->name, 0, 5)) }}
