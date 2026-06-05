@@ -8,7 +8,26 @@
     </div>
 
     <form action="{{ route('checkout.store') }}" method="POST"
-          x-data="{ orderType: 'delivery' }"
+          x-data="{
+            orderType: 'delivery',
+            promo: { code: '', loading: false, valid: false, discount: 0, msg: '' },
+            async applyPromo() {
+                const c = this.promo.code.trim();
+                if (!c) { this.promo.msg = 'Enter a code first.'; this.promo.valid = false; return; }
+                this.promo.loading = true; this.promo.msg = ''; this.promo.valid = false; this.promo.discount = 0;
+                try {
+                    const r = await fetch('{{ route('promo.check') }}', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content },
+                        body: JSON.stringify({ code: c, subtotal: $store.cart.subtotal, delivery_fee: this.orderType === 'delivery' ? 3.50 : 0 })
+                    });
+                    const d = await r.json();
+                    if (d.valid) { this.promo.valid = true; this.promo.discount = d.discount; this.promo.msg = d.message; }
+                    else { this.promo.valid = false; this.promo.msg = d.message; }
+                } catch { this.promo.msg = 'Could not apply code. Try again.'; }
+                this.promo.loading = false;
+            }
+          }"
           @submit.prevent="document.getElementById('cart-json').value = JSON.stringify($store.cart.items); document.getElementById('order-type-input').value = orderType; $el.submit()">
         @csrf
         <input type="hidden" name="cart_items" id="cart-json">
@@ -80,20 +99,21 @@
                 </div>
 
                 {{-- Promo Code --}}
-                <section class="mt-8" x-data="{ applied: false, msg: '' }">
+                <section class="mt-8">
                   <h3 class="font-label-bold text-label-bold uppercase mb-4 text-primary">Promo Code</h3>
                   <div class="flex gap-3">
-                    <input name="promo_code" id="promo-code"
+                    <input x-model="promo.code" name="promo_code"
+                           @keydown.enter.prevent="applyPromo()"
                            class="flex-1 bg-transparent border-b-2 border-on-surface py-2 focus:ring-0 focus:border-primary font-mono text-sm uppercase placeholder:text-outline-variant placeholder:normal-case"
                            placeholder="Enter code (e.g. SAVE10)" type="text" maxlength="50"/>
-                    <button type="button"
-                            @click="const v=document.getElementById('promo-code').value.trim(); if(v){applied=true;msg=''}else{msg='Enter a code first'}"
-                            class="px-4 py-2 industrial-border font-mono text-xs font-bold uppercase hover:bg-surface-container transition-colors">
-                      APPLY
+                    <button type="button" @click="applyPromo()" :disabled="promo.loading"
+                            class="px-4 py-2 industrial-border font-mono text-xs font-bold uppercase hover:bg-surface-container transition-colors disabled:opacity-50">
+                      <span x-show="!promo.loading">APPLY</span>
+                      <span x-show="promo.loading" x-cloak>...</span>
                     </button>
                   </div>
-                  <p x-show="applied" x-cloak class="font-mono text-[10px] text-green-700 mt-2">Code applied — discount calculated at checkout.</p>
-                  <p x-show="msg" x-cloak class="font-mono text-[10px] text-brand-error mt-2" x-text="msg"></p>
+                  <p x-show="promo.valid" x-cloak class="font-mono text-[10px] text-green-700 mt-2" x-text="promo.msg"></p>
+                  <p x-show="!promo.valid && promo.msg" x-cloak class="font-mono text-[10px] text-red-600 mt-2" x-text="promo.msg"></p>
                 </section>
 
                 <!-- Section: Payment -->
@@ -151,6 +171,11 @@
                         <div class="flex justify-between text-body-md">
                             <span>Delivery Fee</span>
                             <span x-text="orderType === 'delivery' ? '£3.50' : 'FREE'"></span>
+                        </div>
+                        <div x-show="promo.valid" x-cloak
+                             class="flex justify-between text-body-md text-green-700 font-mono">
+                            <span x-text="promo.code ? 'Discount (' + promo.code + ')' : 'Discount'"></span>
+                            <span x-text="'−£' + promo.discount.toFixed(2)"></span>
                         </div>
                     </div>
                     <div class="flex justify-between items-center border-t-4 border-double border-on-surface pt-4 mb-8">

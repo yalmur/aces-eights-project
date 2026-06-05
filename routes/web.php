@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::post('/stripe/webhook', [App\Http\Controllers\StripeWebhookController::class, 'handle'])->name('stripe.webhook');
+Route::post('/promo/check', [App\Http\Controllers\PromoController::class, 'check'])->name('promo.check')->middleware('throttle:20,1');
 Route::get('/orders/{order}/confirmation', [OrderController::class, 'confirmation'])->name('orders.confirmation');
 Route::get('/orders/{order}/tracking', [OrderController::class, 'tracking'])->name('orders.tracking');
 Route::get('/about', [PageController::class, 'about'])->name('about');

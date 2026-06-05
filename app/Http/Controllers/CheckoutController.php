@@ -131,14 +131,26 @@ class CheckoutController extends Controller
                 ];
             }
 
-            $session = $stripe->checkout->sessions->create([
+            $sessionParams = [
                 'payment_method_types' => ['card'],
                 'line_items'           => $lineItems,
                 'mode'                 => 'payment',
                 'success_url'          => route('orders.confirmation', $order->id) . '?session_id={CHECKOUT_SESSION_ID}',
                 'cancel_url'           => route('checkout'),
                 'metadata'             => ['order_id' => $order->id],
-            ]);
+            ];
+
+            if ($discountAmount > 0) {
+                $coupon = $stripe->coupons->create([
+                    'amount_off' => (int) round($discountAmount * 100),
+                    'currency'   => 'gbp',
+                    'duration'   => 'once',
+                    'name'       => 'Promo: ' . $promoCode,
+                ]);
+                $sessionParams['discounts'] = [['coupon' => $coupon->id]];
+            }
+
+            $session = $stripe->checkout->sessions->create($sessionParams);
 
             $order->update(['stripe_session_id' => $session->id]);
 

@@ -79,4 +79,38 @@ class PromotionTest extends TestCase
         $promo = Promotion::factory()->expired()->create();
         $this->assertFalse($promo->isValid(50.00));
     }
+
+    public function test_promo_check_endpoint_returns_valid_discount(): void
+    {
+        Promotion::factory()->percentage(10)->create(['code' => 'SAVE10']);
+
+        $r = $this->postJson('/promo/check', ['code' => 'SAVE10', 'subtotal' => 30.00, 'delivery_fee' => 3.50]);
+
+        $r->assertOk()->assertJson(['valid' => true, 'discount' => 3.0]);
+    }
+
+    public function test_promo_check_endpoint_returns_invalid_for_bad_code(): void
+    {
+        $r = $this->postJson('/promo/check', ['code' => 'FAKECODE', 'subtotal' => 30.00]);
+
+        $r->assertOk()->assertJson(['valid' => false]);
+    }
+
+    public function test_promo_check_endpoint_returns_invalid_when_min_order_not_met(): void
+    {
+        Promotion::factory()->percentage(10)->create(['code' => 'BIG10', 'min_order_amount' => 50.00]);
+
+        $r = $this->postJson('/promo/check', ['code' => 'BIG10', 'subtotal' => 20.00]);
+
+        $r->assertOk()->assertJson(['valid' => false]);
+    }
+
+    public function test_promo_check_is_case_insensitive(): void
+    {
+        Promotion::factory()->fixed(5)->create(['code' => 'FIVER']);
+
+        $r = $this->postJson('/promo/check', ['code' => 'fiver', 'subtotal' => 20.00]);
+
+        $r->assertOk()->assertJson(['valid' => true]);
+    }
 }
