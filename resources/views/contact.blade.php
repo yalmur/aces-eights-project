@@ -70,21 +70,21 @@
 <span class="material-symbols-outlined mt-1">location_on</span>
 <div>
 <p class="font-label-bold text-label-bold uppercase opacity-70">Headquarters</p>
-<p class="font-body-lg text-body-lg">156 &amp; 158 Fortess Road,<br/>Tufnell Park, London, NW5 2HP</p>
+<p class="font-body-lg text-body-lg">{{ \App\Models\Setting::get('store_address', '156 & 158 Fortess Road, Tufnell Park, London, NW5 2HP') }}</p>
 </div>
 </li>
 <li class="flex items-start gap-4">
 <span class="material-symbols-outlined mt-1">call</span>
 <div>
 <p class="font-label-bold text-label-bold uppercase opacity-70">The Kitchen</p>
-<p class="font-body-lg text-body-lg">+44 020 7485 4033</p>
+<p class="font-body-lg text-body-lg">{{ \App\Models\Setting::get('store_phone', '+44 020 7485 4033') }}</p>
 </div>
 </li>
 <li class="flex items-start gap-4">
 <span class="material-symbols-outlined mt-1">alternate_email</span>
 <div>
 <p class="font-label-bold text-label-bold uppercase opacity-70">Correspondence</p>
-<p class="font-body-lg text-body-lg">nw5pizza@gmail.com</p>
+<p class="font-body-lg text-body-lg">{{ \App\Models\Setting::get('store_email', 'nw5pizza@gmail.com') }}</p>
 </div>
 </li>
 </ul>
@@ -98,11 +98,11 @@
 <div class="space-y-4">
 <div class="flex justify-between items-end border-b border-outline-variant pb-2">
 <span class="font-label-bold text-label-bold uppercase">Sun – Thu</span>
-<span class="font-body-lg text-body-lg">16:00 – 22:45</span>
+<span class="font-body-lg text-body-lg">{{ \App\Models\Setting::get('opening_sun_thu', '16:00 – 22:45') }}</span>
 </div>
 <div class="flex justify-between items-end border-b border-outline-variant pb-2">
 <span class="font-label-bold text-label-bold uppercase text-primary">Fri – Sat</span>
-<span class="font-body-lg text-body-lg font-bold">16:00 – 23:15</span>
+<span class="font-body-lg text-body-lg font-bold">{{ \App\Models\Setting::get('opening_fri_sat', '16:00 – 23:15') }}</span>
 </div>
 </div>
 <p class="mt-4 text-label-sm text-on-surface-variant italic">* Kitchen closes 30 mins before end of service.</p>

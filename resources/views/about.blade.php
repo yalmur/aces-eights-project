@@ -126,28 +126,31 @@
 <span class="material-symbols-outlined text-primary mt-1">location_on</span>
 <div>
 <p class="font-label-bold text-label-bold">Address</p>
-<p class="font-body-lg text-body-lg">156 &amp; 158 Fortess Road, Tufnell Park<br/>London, NW5 2HP</p>
+<p class="font-body-lg text-body-lg">{{ \App\Models\Setting::get('store_address', '156 & 158 Fortess Road, Tufnell Park, London, NW5 2HP') }}</p>
 </div>
 </div>
 <div class="flex items-start gap-4">
 <span class="material-symbols-outlined text-primary mt-1">schedule</span>
 <div>
 <p class="font-label-bold text-label-bold">Opening Hours</p>
-<p class="font-body-lg text-body-lg">Sun–Thu: 16:00–22:45<br/>Fri–Sat: 16:00–23:15</p>
+<p class="font-body-lg text-body-lg">
+    Sun–Thu: {{ \App\Models\Setting::get('opening_sun_thu', '16:00 – 22:45') }}<br/>
+    Fri–Sat: {{ \App\Models\Setting::get('opening_fri_sat', '16:00 – 23:15') }}
+</p>
 </div>
 </div>
 <div class="flex items-start gap-4">
 <span class="material-symbols-outlined text-primary mt-1">call</span>
 <div>
 <p class="font-label-bold text-label-bold">Phone</p>
-<p class="font-body-lg text-body-lg"><a href="tel:+4402074854033" class="hover:text-primary transition-colors">+44 020 7485 4033</a></p>
+<p class="font-body-lg text-body-lg"><a href="tel:{{ preg_replace('/\s+/', '', \App\Models\Setting::get('store_phone', '+44 020 7485 4033')) }}" class="hover:text-primary transition-colors">{{ \App\Models\Setting::get('store_phone', '+44 020 7485 4033') }}</a></p>
 </div>
 </div>
 <div class="flex items-start gap-4">
 <span class="material-symbols-outlined text-primary mt-1">mail</span>
 <div>
 <p class="font-label-bold text-label-bold">Email</p>
-<p class="font-body-lg text-body-lg"><a href="mailto:nw5pizza@gmail.com" class="hover:text-primary transition-colors">nw5pizza@gmail.com</a></p>
+<p class="font-body-lg text-body-lg"><a href="mailto:{{ \App\Models\Setting::get('store_email', 'nw5pizza@gmail.com') }}" class="hover:text-primary transition-colors">{{ \App\Models\Setting::get('store_email', 'nw5pizza@gmail.com') }}</a></p>
 </div>
 </div>
 <a href="https://maps.google.com/?q=156+Fortess+Road+London+NW5+2HP" target="_blank" rel="noopener" class="inline-block w-full md:w-auto bg-primary text-on-primary font-label-bold text-label-bold px-10 py-4 uppercase tracking-widest hover:opacity-90 transition-opacity text-center">
