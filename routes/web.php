@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\DeliveryController;
 use App\Http\Controllers\Admin\PromotionController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\OurMenuController;
+use App\Http\Controllers\PasswordResetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +51,12 @@ Route::post('/login', [App\Http\Controllers\AuthController::class, 'login'])->na
 Route::get('/register', fn () => view('auth.register', ['title' => 'Create Account']))->name('register');
 Route::post('/register', [App\Http\Controllers\AuthController::class, 'register'])->name('register.post')->middleware('throttle:3,1');
 Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
+
+// Password Reset
+Route::get('/forgot-password',        [PasswordResetController::class, 'showForgotForm'])->name('password.request')->middleware('guest');
+Route::post('/forgot-password',       [PasswordResetController::class, 'sendLink'])->name('password.email')->middleware('guest');
+Route::get('/reset-password/{token}', [PasswordResetController::class, 'showResetForm'])->name('password.reset')->middleware('guest');
+Route::post('/reset-password',        [PasswordResetController::class, 'reset'])->name('password.update')->middleware('guest');
 
 /*
 |--------------------------------------------------------------------------

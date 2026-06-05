@@ -45,7 +45,7 @@
     <div class="flex flex-col">
         <div class="flex justify-between items-end mb-1">
             <label class="font-label-bold text-label-bold uppercase text-primary" for="password">Password</label>
-            <a class="font-label-sm text-label-sm text-outline hover:text-primary transition-colors uppercase underline" href="#">Forgot?</a>
+            <a class="font-label-sm text-label-sm text-outline hover:text-primary transition-colors uppercase underline" href="{{ route('password.request') }}">Forgot?</a>
         </div>
         <input
             class="industrial-input bg-transparent border-t-0 border-l-0 border-r-0 border-b-2 border-outline py-2 font-body-md focus:ring-0 placeholder:text-on-surface-variant/40 text-on-surface"
