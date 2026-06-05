@@ -50,7 +50,7 @@
         <p class="font-sans text-sm text-on-surface-variant mt-4">Estimated delivery: <strong>30–45 minutes</strong></p>
       @else
         <p class="font-sans text-sm text-on-surface-variant mb-1">Pick up from:</p>
-        <p class="font-sans text-sm font-bold">156 & 158 Fortess Road, Tufnell Park, London, NW5 2HP</p>
+        <p class="font-sans text-sm font-bold">{{ \App\Models\Setting::get('store_address', '156 & 158 Fortess Road, Tufnell Park, London, NW5 2HP') }}</p>
         <p class="font-sans text-sm text-on-surface-variant mt-4">Estimated ready: <strong>20–30 minutes</strong></p>
       @endif
       <div class="mt-6 p-4 bg-surface border border-outline-variant">

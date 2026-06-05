@@ -109,19 +109,18 @@
 </div>
 </aside>
 </div>
-<!-- Map Placeholder Section -->
+<!-- Map Section -->
 <section class="mt-gutter">
-<div class="relative h-[400px] w-full industrial-border group overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-<div class="absolute inset-0 bg-surface-dim flex flex-col items-center justify-center p-margin-mobile text-center z-10 bg-opacity-40 backdrop-blur-[2px]">
-<div class="p-6 bg-surface border-2 border-primary">
-<span class="material-symbols-outlined text-display text-primary mb-2">map</span>
-<h4 class="font-headline-md text-headline-md text-on-surface mb-2">Find Us in Tufnell Park</h4>
-<p class="font-body-md text-body-md text-on-surface-variant mb-4">Located right between Tufnell Park and Kentish Town stations.</p>
-<a class="font-label-bold text-label-bold text-primary underline hover:no-underline" href="https://maps.google.com/?q=156+Fortess+Road+London+NW5+2HP" target="_blank" rel="noopener">OPEN IN GOOGLE MAPS</a>
-</div>
-</div>
-<div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-60" style="background-image: url('https://placehold.co/600x400/e4e2e1/1b1c1c?text=Pizza+Oven');">
-</div>
+<div class="relative h-[400px] w-full industrial-border overflow-hidden">
+  <iframe
+    src="https://maps.google.com/maps?q=156+Fortess+Road+London+NW5+2HP&output=embed"
+    width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title="Aces &amp; Eights Pizza location map"></iframe>
+  <a href="https://maps.google.com/?q=156+Fortess+Road+London+NW5+2HP" target="_blank" rel="noopener"
+     class="absolute bottom-4 right-4 font-mono text-[10px] font-bold uppercase bg-surface border border-outline px-3 py-1.5 hover:bg-primary hover:text-on-primary transition-colors">
+    Open in Google Maps ↗
+  </a>
 </div>
 </section>
 </main>
