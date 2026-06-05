@@ -27,7 +27,7 @@
         <a href="{{ route('home') }}"     class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">Home</a>
         <a href="{{ route('our-menu') }}" class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">Menu</a>
         <a href="{{ route('menu') }}"     class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">Order Now</a>
-        <a href="{{ route('booking') }}" class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">Book a Table</a>
+        <a href="https://www.acesandeightssaloonbar.com/booking/" target="_blank" rel="noopener" class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">Book a Table</a>
         <a href="{{ route('about') }}"   class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">About</a>
         <a href="{{ route('contact') }}" class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">Contact</a>
       </nav>
@@ -150,7 +150,7 @@
     <a href="{{ route('home') }}"     class="py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary">Home</a>
     <a href="{{ route('our-menu') }}" class="py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary">Menu</a>
     <a href="{{ route('menu') }}"     class="py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary">Order Now</a>
-    <a href="{{ route('booking') }}" class="py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary">Book a Table</a>
+    <a href="https://www.acesandeightssaloonbar.com/booking/" target="_blank" rel="noopener" class="py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary">Book a Table</a>
     <a href="{{ route('about') }}"   class="py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary">About</a>
     <a href="{{ route('contact') }}" class="py-2 font-mono text-xs font-semibold uppercase tracking-widest text-on-surface-variant hover:text-primary">Contact</a>
     <div class="section-divider my-2"></div>

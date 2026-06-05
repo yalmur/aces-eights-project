@@ -12,7 +12,7 @@
     Handcrafted sourdough, fired by tradition, and served within the rugged walls of Tufnell Park. We are more than a pizzeria; we are a workshop of flavor.
 </p>
 <div class="pt-4 flex flex-col sm:flex-row gap-4">
-<a href="{{ route('booking') }}" class="bg-primary text-on-primary font-label-bold text-label-bold px-8 py-4 uppercase tracking-wider border-b-4 border-primary-fixed-dim hover:bg-on-primary-fixed-variant transition-all active:translate-y-1 active:border-b-0 text-center">
+<a href="https://www.acesandeightssaloonbar.com/booking/" target="_blank" rel="noopener" class="bg-primary text-on-primary font-label-bold text-label-bold px-8 py-4 uppercase tracking-wider border-b-4 border-primary-fixed-dim hover:bg-on-primary-fixed-variant transition-all active:translate-y-1 active:border-b-0 text-center">
     Book a Table
 </a>
 <div class="flex items-center gap-2 font-label-bold text-label-bold text-on-surface p-4 border-2 border-outline">
