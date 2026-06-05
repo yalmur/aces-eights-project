@@ -28,7 +28,9 @@
   </div>
 @endif
 
-{{-- Header --}}
+{{-- Header + Table wrapped in shared filter state --}}
+<div x-data="{ status: 'all' }">
+
 <section class="mb-10">
   <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-4">
     <div>
@@ -41,9 +43,9 @@
       </div>
       <p class="font-mono text-xs text-on-surface-variant mt-1 uppercase tracking-widest">{{ now()->format('l, d M Y') }}</p>
     </div>
-    <div x-data="{ status: 'all' }" class="flex gap-1 p-1 industrial-border bg-surface-container">
+    <div class="flex gap-1 p-1 industrial-border bg-surface-container">
       @foreach(['all' => 'All', 'pending' => 'Pending', 'cooking' => 'Cooking', 'ready' => 'Ready', 'delivered' => 'Delivered'] as $val => $label)
-        <button x-on:click="status = '{{ $val }}'"
+        <button @click="status = '{{ $val }}'"
                 :class="status === '{{ $val }}' ? 'bg-primary text-white' : 'hover:bg-surface-variant text-on-surface'"
                 class="px-3 py-1 font-mono text-[10px] font-bold uppercase transition-colors">{{ $label }}</button>
       @endforeach
@@ -89,7 +91,17 @@
       </thead>
       <tbody class="divide-y divide-[#2B2B2B]/10">
         @foreach($orders as $order)
-<tr class="hover:bg-surface-container-low transition-colors">
+@php
+  $filterKey = match($order->status) {
+    'accepted'                    => 'pending',
+    'cooking'                     => 'cooking',
+    'ready', 'out_for_delivery'   => 'ready',
+    'delivered', 'collected'      => 'delivered',
+    default                       => 'other',
+  };
+@endphp
+<tr x-show="status === 'all' || status === '{{ $filterKey }}'"
+    class="hover:bg-surface-container-low transition-colors">
   <td class="px-6 py-4 font-mono text-sm font-bold">ORD-{{ str_pad($order->id, 4, '0', STR_PAD_LEFT) }}</td>
   <td class="px-6 py-4 font-sans text-sm">{{ $order->customer_name }}</td>
   <td class="px-6 py-4 font-sans text-sm text-on-surface-variant">
@@ -128,4 +140,5 @@
   {{ $orders->links() }}
 </div>
 
+</div>{{-- end x-data status filter --}}
 @endsection

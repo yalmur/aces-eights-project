@@ -25,32 +25,38 @@
       <span class="font-mono text-xs font-bold text-[#2B2B2B] uppercase">Today's Orders</span>
       <span class="material-symbols-outlined text-primary">confirmation_number</span>
     </div>
-    <div class="text-5xl font-black font-serif">142</div>
-    <div class="font-mono text-xs text-green-700 font-bold">+12% vs Yesterday</div>
+    <div class="text-5xl font-black font-serif">{{ $todayOrders }}</div>
+    <div class="font-mono text-xs {{ $orderGrowth === null ? 'text-[#2B2B2B]' : ($orderGrowth >= 0 ? 'text-green-700' : 'text-error') }} font-bold">
+      @if($orderGrowth !== null)
+        {{ $orderGrowth >= 0 ? '+' : '' }}{{ $orderGrowth }}% vs Yesterday
+      @else
+        No data for yesterday
+      @endif
+    </div>
   </div>
   <div class="industrial-border p-6 bg-surface-container-low flex flex-col justify-between h-44">
     <div class="flex justify-between items-start gap-2">
-      <span class="font-mono text-xs font-bold text-[#2B2B2B] uppercase">Live Revenue</span>
+      <span class="font-mono text-xs font-bold text-[#2B2B2B] uppercase">Today's Revenue</span>
       <span class="material-symbols-outlined text-primary">payments</span>
     </div>
-    <div class="font-black font-serif text-4xl">£3,240</div>
-    <div class="font-mono text-xs text-[#2B2B2B]">Current Shift Projection</div>
+    <div class="font-black font-serif text-4xl">£{{ number_format($todayRevenue, 2) }}</div>
+    <div class="font-mono text-xs text-[#2B2B2B]">Paid orders today</div>
   </div>
   <div class="industrial-border p-6 bg-surface-container-low flex flex-col justify-between h-44">
     <div class="flex justify-between items-start gap-2">
       <span class="font-mono text-xs font-bold text-[#2B2B2B] uppercase">Active Deliveries</span>
       <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1">local_shipping</span>
     </div>
-    <div class="text-5xl font-black font-serif text-primary">08</div>
-    <div class="font-mono text-xs text-[#2B2B2B]">Avg Delivery: 24 mins</div>
+    <div class="text-5xl font-black font-serif text-primary">{{ str_pad($activeDeliveries, 2, '0', STR_PAD_LEFT) }}</div>
+    <div class="font-mono text-xs text-[#2B2B2B]">Out for delivery now</div>
   </div>
   <div class="industrial-border p-6 bg-primary text-white flex flex-col justify-between h-44 shadow-xl">
     <div class="flex justify-between items-start gap-2">
       <span class="font-mono text-xs font-bold uppercase">Kitchen Load</span>
       <span class="material-symbols-outlined text-[#D4AF37]">potted_plant</span>
     </div>
-    <div class="font-black font-serif text-4xl">HIGH</div>
-    <div class="font-mono text-xs uppercase font-bold text-[#D4AF37]">Slowdown Warning Active</div>
+    <div class="font-black font-serif text-4xl">{{ $kitchenLoad }}</div>
+    <div class="font-mono text-xs uppercase font-bold text-[#D4AF37]">{{ $kitchenQueue }} order{{ $kitchenQueue !== 1 ? 's' : '' }} in queue</div>
   </div>
 </section>
 
@@ -72,91 +78,55 @@
     </div>
     <div class="space-y-4">
 
-      {{-- Order Card 1 --}}
-      <div class="industrial-border overflow-hidden bg-white">
-        <div class="bg-surface-container-highest px-6 py-3 flex flex-wrap justify-between items-center border-b border-[#2B2B2B] gap-2">
+      @forelse($recentOrders as $order)
+      @php
+        $statusProgress = match($order->status) {
+          'accepted'         => 'w-1/5',
+          'cooking'          => 'w-3/5',
+          'ready'            => 'w-full',
+          'out_for_delivery' => 'w-full',
+          default            => 'w-0',
+        };
+        $statusBg = in_array($order->status, ['ready', 'out_for_delivery']) ? 'bg-green-600' : 'bg-primary';
+        $headerBg = in_array($order->status, ['ready', 'out_for_delivery']) ? 'bg-green-100' : 'bg-surface-container-highest';
+        $typeLabel = match($order->type) { 'delivery' => 'Online', 'eat_in' => 'Eat-In', default => 'Collection' };
+      @endphp
+      <div class="industrial-border overflow-hidden bg-white {{ in_array($order->status, ['ready','out_for_delivery']) ? 'border-dashed' : '' }}">
+        <div class="{{ $headerBg }} px-6 py-3 flex flex-wrap justify-between items-center border-b border-[#2B2B2B] gap-2">
           <div class="flex items-center gap-4">
-            <span class="font-mono text-sm font-bold">ORD-7721</span>
-            <span class="bg-primary text-white text-[10px] px-2 py-0.5 font-bold uppercase rounded-full">Online</span>
+            <span class="font-mono text-sm font-bold">ORD-{{ $order->id }}</span>
+            <span class="bg-primary text-white text-[10px] px-2 py-0.5 font-bold uppercase rounded-full">{{ $typeLabel }}</span>
           </div>
-          <span class="font-mono text-xs font-bold text-[#2B2B2B] uppercase">Received 4m ago</span>
+          <span class="font-mono text-xs font-bold text-[#2B2B2B] uppercase">{{ $order->created_at->diffForHumans() }}</span>
         </div>
         <div class="p-6 flex flex-col md:flex-row justify-between gap-6">
           <div class="flex-1">
-            <h4 class="font-serif text-lg font-bold mb-2">James Henderson</h4>
+            <h4 class="font-serif text-lg font-bold mb-2">{{ $order->customer_name }}</h4>
             <ul class="font-sans text-sm space-y-1">
-              <li class="flex justify-between"><span>2x The Meat Lover (Large)</span><span class="font-bold">£34.00</span></li>
-              <li class="flex justify-between"><span>1x Garlic Bread</span><span class="font-bold">£5.50</span></li>
-              <li class="flex justify-between border-t border-dotted border-[#2B2B2B] mt-2 pt-1 font-bold"><span>Total</span><span>£39.50</span></li>
+              @foreach($order->items as $item)
+              <li class="flex justify-between"><span>{{ $item->qty }}x {{ $item->name }}</span><span class="font-bold">£{{ number_format($item->line_total, 2) }}</span></li>
+              @endforeach
+              <li class="flex justify-between border-t border-dotted border-[#2B2B2B] mt-2 pt-1 font-bold"><span>Total</span><span>£{{ number_format($order->total, 2) }}</span></li>
             </ul>
           </div>
-          <div class="w-full md:w-64 shrink-0">
-            <p class="font-mono text-xs uppercase text-[#2B2B2B] mb-3">Status: Accepted</p>
+          <div class="w-full md:w-48 shrink-0">
+            <p class="font-mono text-xs uppercase text-[#2B2B2B] mb-3">{{ $order->status_label }}</p>
             <div class="w-full h-2 bg-surface-container mb-4 industrial-border overflow-hidden">
-              <div class="h-full bg-primary w-1/5"></div>
+              <div class="h-full {{ $statusBg }} {{ $statusProgress }}"></div>
             </div>
-            <button class="w-full gold-button py-2 font-mono text-xs uppercase flex items-center justify-center gap-2">
-              Fire To Oven <span class="material-symbols-outlined text-sm">local_fire_department</span>
-            </button>
+            <a href="{{ route('admin.kitchen.index') }}" class="w-full gold-button py-2 font-mono text-xs uppercase flex items-center justify-center gap-2">
+              Kitchen View <span class="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
           </div>
         </div>
       </div>
-
-      {{-- Order Card 2 --}}
-      <div class="industrial-border overflow-hidden bg-white">
-        <div class="bg-surface-container-highest px-6 py-3 flex flex-wrap justify-between items-center border-b border-[#2B2B2B] gap-2">
-          <div class="flex items-center gap-4">
-            <span class="font-mono text-sm font-bold">ORD-7718</span>
-            <span class="bg-[#2B2B2B] text-white text-[10px] px-2 py-0.5 font-bold uppercase rounded-full">In-Store</span>
-          </div>
-          <span class="font-mono text-xs font-bold text-[#2B2B2B] uppercase">Received 12m ago</span>
-        </div>
-        <div class="p-6 flex flex-col md:flex-row justify-between gap-6">
-          <div class="flex-1">
-            <h4 class="font-serif text-lg font-bold mb-2">Table 04 — Sarah P.</h4>
-            <ul class="font-sans text-sm space-y-1">
-              <li class="flex justify-between"><span>1x Classic Margherita (12")</span><span class="font-bold">£12.50</span></li>
-              <li class="flex justify-between"><span>2x Moretti Draft</span><span class="font-bold">£13.00</span></li>
-              <li class="flex justify-between border-t border-dotted border-[#2B2B2B] mt-2 pt-1 font-bold"><span>Total</span><span>£25.50</span></li>
-            </ul>
-          </div>
-          <div class="w-full md:w-64 shrink-0">
-            <p class="font-mono text-xs uppercase text-[#2B2B2B] mb-3">Status: Cooking</p>
-            <div class="w-full h-2 bg-surface-container mb-4 industrial-border overflow-hidden">
-              <div class="h-full bg-primary w-3/5"></div>
-            </div>
-            <button class="w-full gold-button py-2 font-mono text-xs uppercase flex items-center justify-center gap-2">
-              Mark As Ready <span class="material-symbols-outlined text-sm">check_circle</span>
-            </button>
-          </div>
-        </div>
+      @empty
+      <div class="industrial-border p-12 text-center bg-surface-container-low">
+        <span class="material-symbols-outlined text-4xl text-on-surface-variant mb-4 block">receipt_long</span>
+        <p class="font-mono text-xs uppercase text-on-surface-variant tracking-widest">No active orders right now</p>
+        <a href="{{ route('admin.orders.in-store') }}" class="inline-block mt-4 gold-button px-6 py-2 font-mono text-xs uppercase">Create In-Store Order</a>
       </div>
-
-      {{-- Order Card 3 (Ready) --}}
-      <div class="industrial-border overflow-hidden bg-white/50 border-dashed">
-        <div class="bg-green-100 px-6 py-3 flex flex-wrap justify-between items-center border-b border-[#2B2B2B] gap-2">
-          <div class="flex items-center gap-4 text-green-800">
-            <span class="font-mono text-sm font-bold">ORD-7712</span>
-            <span class="bg-green-800 text-white text-[10px] px-2 py-0.5 font-bold uppercase rounded-full">Online</span>
-          </div>
-          <span class="font-mono text-xs font-bold text-green-800 uppercase">Ready for Pickup</span>
-        </div>
-        <div class="p-6 flex flex-col md:flex-row justify-between gap-6">
-          <div class="flex-1">
-            <h4 class="font-serif text-lg font-bold mb-2">Marco V. (Driver Assigned)</h4>
-            <p class="font-sans text-sm text-[#2B2B2B] italic">"Leave at gate, code 1234."</p>
-          </div>
-          <div class="w-full md:w-64 shrink-0">
-            <p class="font-mono text-xs uppercase text-[#2B2B2B] mb-3">Status: Ready</p>
-            <div class="w-full h-2 bg-surface-container mb-4 industrial-border overflow-hidden">
-              <div class="h-full bg-green-600 w-full"></div>
-            </div>
-            <button class="w-full bg-[#2B2B2B] text-white py-2 font-mono text-xs uppercase flex items-center justify-center gap-2">
-              Handed to Driver <span class="material-symbols-outlined text-sm">moped</span>
-            </button>
-          </div>
-        </div>
-      </div>
+      @endforelse
 
     </div>
   </section>

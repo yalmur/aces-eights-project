@@ -62,62 +62,49 @@
 <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase tracking-widest">The Ledger</h3>
 <div class="h-1 w-24 bg-primary-container mx-auto mt-4"></div>
 </div>
+@if($featuredItems->isNotEmpty())
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-<!-- Card 1 -->
-<div class="border-2 border-on-surface bg-surface flex flex-col group relative">
-<div class="absolute -top-3 -right-3 bg-secondary-container text-on-secondary-container font-label-bold text-label-sm px-3 py-1 rounded-full border border-on-surface z-10">
-                        FEATURED
-                    </div>
+@foreach($featuredItems as $loop_item)
+@php $isFirst = $loop->first; $isSecond = $loop->index === 1; @endphp
+<div class="border-2 border-on-surface bg-surface flex flex-col group relative {{ $isSecond ? 'md:mt-12' : '' }}">
+@if($isFirst)
+<div class="absolute -top-3 -right-3 bg-secondary-container text-on-secondary-container font-label-bold text-label-sm px-3 py-1 rounded-full border border-on-surface z-10">FEATURED</div>
+@endif
 <div class="h-48 border-b-2 border-on-surface overflow-hidden p-1">
-<!-- data-alt: A high-contrast, top-down view of a classic pepperoni pizza sitting on a stark white background. The pizza has a thick, charred crust and deep red pepperoni slices that glisten with oil. Initially presented in greyscale, the image emphasizes the geometric perfection of the round pie and the heavy, utilitarian style of the food presentation. -->
-<img alt="Pepperoni Pizza" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Pizza"/>
+@if($loop_item->image_path)
+<img alt="{{ $loop_item->name }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="{{ asset('storage/' . $loop_item->image_path) }}"/>
+@else
+<img alt="{{ $loop_item->name }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text={{ urlencode($loop_item->category->name ?? 'Item') }}"/>
+@endif
 </div>
 <div class="p-6 flex-1 flex flex-col">
-<h4 class="font-headline-md text-headline-md text-on-surface border-b border-outline-variant pb-2 mb-4">The Foreman</h4>
-<p class="font-body-md text-body-md text-on-surface-variant flex-grow">Double-smoked pepperoni, crushed San Marzano tomatoes, whole milk mozzarella, hot honey drizzle.</p>
+<h4 class="font-headline-md text-headline-md text-on-surface border-b border-outline-variant pb-2 mb-4">{{ $loop_item->name }}</h4>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">{{ $loop_item->description }}</p>
 <div class="mt-6 flex justify-between items-center">
-<span class="font-label-bold text-label-bold text-primary-container">XXIV</span>
-<button class="text-on-surface hover:text-primary transition-colors">
+<span class="font-label-bold text-label-bold text-primary-container">£{{ number_format($loop_item->base_price, 2) }}</span>
+<button class="text-on-surface hover:text-primary transition-colors"
+        @click="$store.cart.openDrawer({ id: {{ json_encode($loop_item->slug) }}, name: {{ json_encode($loop_item->name) }}, category: {{ json_encode($loop_item->category->slug ?? '') }}, basePrice: {{ (float) $loop_item->base_price }} })"
+        aria-label="Add {{ $loop_item->name }} to cart">
 <span class="material-symbols-outlined">add_circle</span>
 </button>
 </div>
 </div>
 </div>
-<!-- Card 2 -->
-<div class="border-2 border-on-surface bg-surface flex flex-col group md:mt-12">
-<div class="h-48 border-b-2 border-on-surface overflow-hidden p-1">
-<!-- data-alt: A minimalist overhead photograph of a classic Margherita pizza on a raw metal tray. The composition highlights the stark contrast between the bright white fresh mozzarella, the deep oxblood red of the tomato sauce, and the vibrant green basil leaves. The lighting is harsh and direct, casting sharp shadows that fit a brutalist, industrial aesthetic. -->
-<img alt="Margherita Pizza" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Pizza"/>
+@endforeach
 </div>
-<div class="p-6 flex-1 flex flex-col">
-<h4 class="font-headline-md text-headline-md text-on-surface border-b border-outline-variant pb-2 mb-4">The Blueprint</h4>
-<p class="font-body-md text-body-md text-on-surface-variant flex-grow">Our foundational pie. Crushed tomatoes, fresh mozzarella, torn basil, extra virgin olive oil, sea salt.</p>
-<div class="mt-6 flex justify-between items-center">
-<span class="font-label-bold text-label-bold text-primary-container">XVIII</span>
-<button class="text-on-surface hover:text-primary transition-colors">
-<span class="material-symbols-outlined">add_circle</span>
-</button>
+<div class="text-center mt-10">
+<a href="{{ route('menu') }}" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-on-surface font-label-bold text-label-bold uppercase tracking-widest hover:bg-on-surface hover:text-surface transition-colors">
+View Full Menu <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
 </div>
+@else
+<div class="text-center py-12 max-w-md mx-auto">
+<p class="font-body-md text-on-surface-variant mb-6">Our kitchen is preparing something special. Check our full menu to see all available items.</p>
+<a href="{{ route('menu') }}" class="inline-flex items-center gap-2 px-8 py-3 bg-primary text-on-primary font-label-bold text-label-bold uppercase tracking-widest hover:brightness-110 transition-all">
+View Full Menu <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
 </div>
-</div>
-<!-- Card 3 -->
-<div class="border-2 border-on-surface bg-surface flex flex-col group">
-<div class="h-48 border-b-2 border-on-surface overflow-hidden p-1">
-<!-- data-alt: A detailed shot of a white-sauce pizza topped with roasted wild mushrooms and truffle oil, set against a dark, textured slate background. The earthy tones of the mushrooms stand out, while the thick, bubbled crust suggests a high-heat firing process. The image conveys a sense of rich, hearty sustenance typical of a hard day's work. -->
-<img alt="Mushroom Pizza" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Pizza"/>
-</div>
-<div class="p-6 flex-1 flex flex-col">
-<h4 class="font-headline-md text-headline-md text-on-surface border-b border-outline-variant pb-2 mb-4">The Ironworker</h4>
-<p class="font-body-md text-body-md text-on-surface-variant flex-grow">Roasted cremini mushrooms, caramelized onions, garlic confit, provolone, white truffle oil.</p>
-<div class="mt-6 flex justify-between items-center">
-<span class="font-label-bold text-label-bold text-primary-container">XXII</span>
-<button class="text-on-surface hover:text-primary transition-colors">
-<span class="material-symbols-outlined">add_circle</span>
-</button>
-</div>
-</div>
-</div>
-</div>
+@endif
 </section>
 <!-- Map Section -->
 <section class="border-b-2 border-on-surface bg-surface h-[500px] relative w-full overflow-hidden">

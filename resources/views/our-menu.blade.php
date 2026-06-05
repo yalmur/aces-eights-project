@@ -60,33 +60,7 @@
 @endpush
 
 @section('content')
-<div class="menu-page min-h-screen" x-data="{
-    modal: null,
-    size: 'medium',
-    crust: 'sourdough',
-    qty: 1,
-    toast: false,
-    toastMsg: '',
-    isPizza: false,
-    get crustExtra() { return this.crust==='gf' ? 2.00 : this.crust==='cauliflower' ? 2.50 : 0; },
-    get basePrice() {
-        if (!this.modal) return 0;
-        const p = parseFloat(this.modal.price);
-        if (!this.isPizza) return p;
-        const adj = { small: -2.50, medium: 0, large: 3.00 };
-        return p + (adj[this.size] || 0);
-    },
-    get total() { return ((this.basePrice + (this.isPizza ? this.crustExtra : 0)) * this.qty).toFixed(2); },
-    open(item, pizza) {
-        this.modal = item; this.isPizza = pizza;
-        this.size = 'medium'; this.crust = 'sourdough'; this.qty = 1;
-    },
-    addToCart() {
-        this.toastMsg = '✓ ' + this.modal.name + ' added to cart';
-        this.modal = null; this.toast = true;
-        setTimeout(() => this.toast = false, 2800);
-    }
-}">
+<div class="menu-page min-h-screen">
 
 <div class="max-w-container-max mx-auto px-6 lg:px-16 py-16">
 
@@ -128,7 +102,7 @@
                 <div class="menu-item-price">£{{ $item['price'] }}</div>
                 {{-- Add button --}}
                 <button class="menu-item-btn"
-                        @click="open({{ json_encode(['name' => $item['name'], 'desc' => $item['desc'], 'price' => $item['price']]) }}, {{ $isPizza ? 'true' : 'false' }})"
+                        @click="$store.cart.openDrawer({ id: {{ json_encode($item['id']) }}, name: {{ json_encode($item['name']) }}, category: {{ json_encode($item['category']) }}, basePrice: {{ $item['basePrice'] }} })"
                         aria-label="Add {{ $item['name'] }}">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                         <path stroke-linecap="square" d="M12 4v16M4 12h16"/>
@@ -158,84 +132,6 @@
     </div>
 </div>
 
-{{-- ── Item Modal ────────────────────────────────────────────────────────── --}}
-<div x-show="modal !== null" x-transition.opacity class="modal-overlay" @click.self="modal = null" style="display:none">
-    <div class="modal-box" @click.stop x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100">
-
-        {{-- Header --}}
-        <div class="modal-header">
-            <div>
-                <p class="font-mono text-[0.6rem] tracking-widest uppercase text-white/60 mb-0.5" x-text="isPizza ? 'Customise your pizza' : 'Add to your order'"></p>
-                <h3 class="font-serif text-lg font-bold text-white" x-text="modal ? modal.name : ''"></h3>
-            </div>
-            <button @click="modal = null" class="text-white/70 hover:text-white transition-colors p-1">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="square" d="M6 18L18 6M6 6l12 12"/></svg>
-            </button>
-        </div>
-
-        <div class="modal-body">
-            {{-- Description --}}
-            <p class="font-sans text-sm italic text-on-surface-variant mb-5" x-text="modal ? modal.desc : ''"></p>
-
-            {{-- Pizza: Size --}}
-            <template x-if="isPizza">
-                <div class="mb-5">
-                    <p class="modal-section-label">Size</p>
-                    <div class="grid grid-cols-3 gap-2">
-                        <button :class="size==='small'  ? 'size-btn active' : 'size-btn'" @click="size='small'">
-                            <div class="text-xs font-bold">Small</div>
-                            <div class="text-[10px] opacity-70">10" · -£2.50</div>
-                        </button>
-                        <button :class="size==='medium' ? 'size-btn active' : 'size-btn'" @click="size='medium'">
-                            <div class="text-xs font-bold">Medium</div>
-                            <div class="text-[10px] opacity-70">12" · base price</div>
-                        </button>
-                        <button :class="size==='large'  ? 'size-btn active' : 'size-btn'" @click="size='large'">
-                            <div class="text-xs font-bold">Large</div>
-                            <div class="text-[10px] opacity-70">14" · +£3.00</div>
-                        </button>
-                    </div>
-                </div>
-            </template>
-
-            {{-- Pizza: Crust --}}
-            <template x-if="isPizza">
-                <div class="mb-5">
-                    <p class="modal-section-label">Crust</p>
-                    <div class="flex flex-wrap gap-2">
-                        <button :class="crust==='sourdough'   ? 'crust-btn active' : 'crust-btn'" @click="crust='sourdough'">48hr Sourdough</button>
-                        <button :class="crust==='gf'          ? 'crust-btn active' : 'crust-btn'" @click="crust='gf'">Gluten-Free <span class="text-[10px] opacity-70">+£2.00</span></button>
-                        <button :class="crust==='cauliflower' ? 'crust-btn active' : 'crust-btn'" @click="crust='cauliflower'">Cauliflower <span class="text-[10px] opacity-70">+£2.50</span></button>
-                    </div>
-                </div>
-            </template>
-
-            {{-- Quantity --}}
-            <div class="mb-5">
-                <p class="modal-section-label">Quantity</p>
-                <div class="flex items-center gap-3">
-                    <button class="qty-btn" @click="if(qty>1) qty--">−</button>
-                    <span class="font-mono text-lg font-bold w-8 text-center text-on-surface" x-text="qty"></span>
-                    <button class="qty-btn" @click="qty++">+</button>
-                </div>
-            </div>
-
-            {{-- Total --}}
-            <div class="flex items-center justify-between py-3 border-t border-outline-variant">
-                <span class="font-mono text-xs uppercase tracking-widest text-on-surface-variant">Total</span>
-                <span class="font-serif text-2xl font-black text-primary" x-text="'£' + total"></span>
-            </div>
-
-            {{-- Add button --}}
-            <button class="modal-add-btn" @click="addToCart()">
-                Add to Cart &nbsp;·&nbsp; <span x-text="'£' + total"></span>
-            </button>
-        </div>
-    </div>
-</div>
-
-{{-- ── Toast ─────────────────────────────────────────────────────────────── --}}
-<div x-show="toast" x-transition.opacity class="toast" x-text="toastMsg" style="display:none"></div>
 
 </div>
 @endsection

@@ -1,16 +1,16 @@
 # Graph Report - webapp  (2026-06-05)
 
 ## Corpus Check
-- 217 files · ~108,105 words
+- 220 files · ~111,356 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1018 nodes · 1189 edges · 247 communities (235 shown, 12 thin omitted)
+- 1018 nodes · 1193 edges · 247 communities (235 shown, 12 thin omitted)
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 57 edges (avg confidence: 0.81)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8df3cf2b`
+- Built from commit: `2cde7e35`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -100,8 +100,8 @@
 ## Communities (247 total, 12 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.05
-Nodes (27): AccountController, AddressController, PasswordController, DashboardController, KitchenController, View, RedirectResponse, Request (+19 more)
+Cohesion: 0.06
+Nodes (23): AccountController, AddressController, PasswordController, View, RedirectResponse, Request, RedirectResponse, Request (+15 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.08
@@ -252,8 +252,8 @@ Cohesion: 0.22
 Nodes (8): Aces & Eights Pizza — Plan 9: Deploy Prep & Final Polish, File Map, On your LOCAL machine:, Task 1: Menu Item Image Upload, Task 2: Rate Limiting on Auth + Checkout Routes, Task 3: Branded Error Pages, Task 4: Production Deploy Prep, Task 5: Full Test Suite + Git Tag v1.0
 
 ### Community 130 - "Community 130"
-Cohesion: 0.13
-Nodes (12): OrderController, Request, Request, Controller, CheckoutController, OrderController, PasswordResetController, PromoController (+4 more)
+Cohesion: 0.10
+Nodes (16): DashboardController, KitchenController, OrderController, View, View, Request, Request, Controller (+8 more)
 
 ### Community 243 - "Community 243"
 Cohesion: 0.43
@@ -268,15 +268,15 @@ Nodes (4): RedirectResponse, Request, View, PartyHallController
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Controller` connect `Community 0` to `Community 130`, `Community 4`, `Community 5`, `Community 9`, `Community 10`, `Community 23`, `Community 30`?**
-  _High betweenness centrality (0.068) - this node is a cross-community bridge._
+  _High betweenness centrality (0.072) - this node is a cross-community bridge._
 - **Why does `Promotion` connect `Community 5` to `Community 2`, `Community 130`?**
-  _High betweenness centrality (0.054) - this node is a cross-community bridge._
-- **Why does `PromotionTest` connect `Community 5` to `Community 17`, `Community 25`?**
-  _High betweenness centrality (0.043) - this node is a cross-community bridge._
+  _High betweenness centrality (0.049) - this node is a cross-community bridge._
+- **Why does `TestCase` connect `Community 25` to `Community 128`, `Community 4`, `Community 101`, `Community 5`, `Community 9`, `Community 10`, `Community 13`, `Community 14`, `Community 16`, `Community 17`, `Community 241`, `Community 20`, `Community 24`, `Community 29`?**
+  _High betweenness centrality (0.040) - this node is a cross-community bridge._
 - **What connects `$schema`, `name`, `type` to the rest of the system?**
   _166 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.05454545454545454 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06382978723404255 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**

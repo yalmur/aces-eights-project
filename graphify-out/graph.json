@@ -46,22 +46,22 @@
   },
   "nodes": [
     {
-      "label": "MenuItemController.php",
+      "label": "DashboardController.php",
       "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
       "source_location": "L1",
-      "id": "app_http_controllers_admin_menuitemcontroller_php",
-      "community": 30,
-      "norm_label": "menuitemcontroller.php"
+      "id": "app_http_controllers_admin_dashboardcontroller_php",
+      "community": 130,
+      "norm_label": "dashboardcontroller.php"
     },
     {
-      "label": "MenuItemController",
+      "label": "DashboardController",
       "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L16",
-      "id": "admin_menuitemcontroller_menuitemcontroller",
-      "community": 30,
-      "norm_label": "menuitemcontroller"
+      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
+      "source_location": "L10",
+      "id": "admin_dashboardcontroller_dashboardcontroller",
+      "community": 130,
+      "norm_label": "dashboardcontroller"
     },
     {
       "label": "Controller",
@@ -75,452 +75,524 @@
     {
       "label": ".index()",
       "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
+      "source_location": "L12",
+      "id": "admin_dashboardcontroller_dashboardcontroller_index",
+      "community": 130,
+      "norm_label": ".index()"
+    },
+    {
+      "label": "View",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
+      "source_location": "L12",
+      "id": "app_http_controllers_admin_dashboardcontroller_php_view",
+      "community": 130,
+      "norm_label": "view"
+    },
+    {
+      "label": "KitchenController.php",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L1",
+      "id": "app_http_controllers_admin_kitchencontroller_php",
+      "community": 130,
+      "norm_label": "kitchencontroller.php"
+    },
+    {
+      "label": "KitchenController",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L9",
+      "id": "admin_kitchencontroller_kitchencontroller",
+      "community": 130,
+      "norm_label": "kitchencontroller"
+    },
+    {
+      "label": ".index()",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L11",
+      "id": "admin_kitchencontroller_kitchencontroller_index",
+      "community": 130,
+      "norm_label": ".index()"
+    },
+    {
+      "label": "View",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L11",
+      "id": "app_http_controllers_admin_kitchencontroller_php_view",
+      "community": 130,
+      "norm_label": "view"
+    },
+    {
+      "label": "MenuItemController.php",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L1",
+      "community": 30,
+      "norm_label": "menuitemcontroller.php",
+      "id": "app_http_controllers_admin_menuitemcontroller_php"
+    },
+    {
+      "label": "MenuItemController",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L16",
+      "community": 30,
+      "norm_label": "menuitemcontroller",
+      "id": "admin_menuitemcontroller_menuitemcontroller"
+    },
+    {
+      "label": ".index()",
+      "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L18",
-      "id": "admin_menuitemcontroller_menuitemcontroller_index",
       "community": 30,
-      "norm_label": ".index()"
+      "norm_label": ".index()",
+      "id": "admin_menuitemcontroller_menuitemcontroller_index"
     },
     {
       "label": "View",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L18",
-      "id": "app_http_controllers_admin_menuitemcontroller_php_view",
       "community": 30,
-      "norm_label": "view"
+      "norm_label": "view",
+      "id": "app_http_controllers_admin_menuitemcontroller_php_view"
     },
     {
       "label": ".create()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L31",
-      "id": "admin_menuitemcontroller_menuitemcontroller_create",
       "community": 30,
-      "norm_label": ".create()"
+      "norm_label": ".create()",
+      "id": "admin_menuitemcontroller_menuitemcontroller_create"
     },
     {
       "label": ".store()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L41",
-      "id": "admin_menuitemcontroller_menuitemcontroller_store",
       "community": 30,
-      "norm_label": ".store()"
+      "norm_label": ".store()",
+      "id": "admin_menuitemcontroller_menuitemcontroller_store"
     },
     {
       "label": "Request",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L41",
-      "id": "app_http_controllers_admin_menuitemcontroller_php_request",
       "community": 30,
-      "norm_label": "request"
+      "norm_label": "request",
+      "id": "app_http_controllers_admin_menuitemcontroller_php_request"
     },
     {
       "label": "RedirectResponse",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L41",
-      "id": "app_http_controllers_admin_menuitemcontroller_php_redirectresponse",
       "community": 30,
-      "norm_label": "redirectresponse"
+      "norm_label": "redirectresponse",
+      "id": "app_http_controllers_admin_menuitemcontroller_php_redirectresponse"
     },
     {
       "label": ".edit()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L86",
-      "id": "admin_menuitemcontroller_menuitemcontroller_edit",
       "community": 30,
-      "norm_label": ".edit()"
+      "norm_label": ".edit()",
+      "id": "admin_menuitemcontroller_menuitemcontroller_edit"
     },
     {
       "label": ".update()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L98",
-      "id": "admin_menuitemcontroller_menuitemcontroller_update",
       "community": 30,
-      "norm_label": ".update()"
+      "norm_label": ".update()",
+      "id": "admin_menuitemcontroller_menuitemcontroller_update"
     },
     {
       "label": ".destroy()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L146",
-      "id": "admin_menuitemcontroller_menuitemcontroller_destroy",
       "community": 30,
-      "norm_label": ".destroy()"
+      "norm_label": ".destroy()",
+      "id": "admin_menuitemcontroller_menuitemcontroller_destroy"
     },
     {
       "label": ".syncIngredients()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L156",
-      "id": "admin_menuitemcontroller_menuitemcontroller_syncingredients",
       "community": 30,
-      "norm_label": ".syncingredients()"
+      "norm_label": ".syncingredients()",
+      "id": "admin_menuitemcontroller_menuitemcontroller_syncingredients"
     },
     {
       "label": "MenuItem",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L156",
-      "id": "menuitem",
       "community": 30,
-      "norm_label": "menuitem"
+      "norm_label": "menuitem",
+      "id": "menuitem"
     },
     {
       "label": "PartyHallController.php",
       "file_type": "code",
       "source_file": "app/Http/Controllers/PartyHallController.php",
       "source_location": "L1",
-      "id": "app_http_controllers_partyhallcontroller_php",
       "community": 243,
-      "norm_label": "partyhallcontroller.php"
+      "norm_label": "partyhallcontroller.php",
+      "id": "app_http_controllers_partyhallcontroller_php"
     },
     {
       "label": "PartyHallController",
       "file_type": "code",
       "source_file": "app/Http/Controllers/PartyHallController.php",
       "source_location": "L12",
-      "id": "controllers_partyhallcontroller_partyhallcontroller",
       "community": 243,
-      "norm_label": "partyhallcontroller"
+      "norm_label": "partyhallcontroller",
+      "id": "controllers_partyhallcontroller_partyhallcontroller"
     },
     {
       "label": ".index()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/PartyHallController.php",
       "source_location": "L14",
-      "id": "controllers_partyhallcontroller_partyhallcontroller_index",
       "community": 243,
-      "norm_label": ".index()"
+      "norm_label": ".index()",
+      "id": "controllers_partyhallcontroller_partyhallcontroller_index"
     },
     {
       "label": "View",
       "file_type": "code",
       "source_file": "app/Http/Controllers/PartyHallController.php",
       "source_location": "L14",
-      "id": "app_http_controllers_partyhallcontroller_php_view",
       "community": 243,
-      "norm_label": "view"
+      "norm_label": "view",
+      "id": "app_http_controllers_partyhallcontroller_php_view"
     },
     {
       "label": ".submit()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/PartyHallController.php",
       "source_location": "L19",
-      "id": "controllers_partyhallcontroller_partyhallcontroller_submit",
       "community": 243,
-      "norm_label": ".submit()"
+      "norm_label": ".submit()",
+      "id": "controllers_partyhallcontroller_partyhallcontroller_submit"
     },
     {
       "label": "Request",
       "file_type": "code",
       "source_file": "app/Http/Controllers/PartyHallController.php",
       "source_location": "L19",
-      "id": "app_http_controllers_partyhallcontroller_php_request",
       "community": 243,
-      "norm_label": "request"
+      "norm_label": "request",
+      "id": "app_http_controllers_partyhallcontroller_php_request"
     },
     {
       "label": "RedirectResponse",
       "file_type": "code",
       "source_file": "app/Http/Controllers/PartyHallController.php",
       "source_location": "L19",
-      "id": "app_http_controllers_partyhallcontroller_php_redirectresponse",
       "community": 243,
-      "norm_label": "redirectresponse"
+      "norm_label": "redirectresponse",
+      "id": "app_http_controllers_partyhallcontroller_php_redirectresponse"
     },
     {
       "label": "PartyHallInquiry.php",
       "file_type": "code",
       "source_file": "app/Mail/PartyHallInquiry.php",
       "source_location": "L1",
-      "id": "app_mail_partyhallinquiry_php",
       "community": 11,
-      "norm_label": "partyhallinquiry.php"
+      "norm_label": "partyhallinquiry.php",
+      "id": "app_mail_partyhallinquiry_php"
     },
     {
       "label": "PartyHallInquiry",
       "file_type": "code",
       "source_file": "app/Mail/PartyHallInquiry.php",
       "source_location": "L11",
-      "id": "mail_partyhallinquiry_partyhallinquiry",
       "community": 11,
-      "norm_label": "partyhallinquiry"
+      "norm_label": "partyhallinquiry",
+      "id": "mail_partyhallinquiry_partyhallinquiry"
     },
     {
       "label": "Mailable",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "mailable",
       "community": 11,
-      "norm_label": "mailable"
+      "norm_label": "mailable",
+      "id": "mailable"
     },
     {
       "label": "Queueable",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "queueable",
       "community": 11,
-      "norm_label": "queueable"
+      "norm_label": "queueable",
+      "id": "queueable"
     },
     {
       "label": "SerializesModels",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "serializesmodels",
       "community": 11,
-      "norm_label": "serializesmodels"
+      "norm_label": "serializesmodels",
+      "id": "serializesmodels"
     },
     {
       "label": ".__construct()",
       "file_type": "code",
       "source_file": "app/Mail/PartyHallInquiry.php",
       "source_location": "L15",
-      "id": "mail_partyhallinquiry_partyhallinquiry_construct",
       "community": 11,
-      "norm_label": ".__construct()"
+      "norm_label": ".__construct()",
+      "id": "mail_partyhallinquiry_partyhallinquiry_construct"
     },
     {
       "label": ".envelope()",
       "file_type": "code",
       "source_file": "app/Mail/PartyHallInquiry.php",
       "source_location": "L17",
-      "id": "mail_partyhallinquiry_partyhallinquiry_envelope",
       "community": 11,
-      "norm_label": ".envelope()"
+      "norm_label": ".envelope()",
+      "id": "mail_partyhallinquiry_partyhallinquiry_envelope"
     },
     {
       "label": "Envelope",
       "file_type": "code",
       "source_file": "app/Mail/PartyHallInquiry.php",
       "source_location": "L17",
-      "id": "envelope",
       "community": 11,
-      "norm_label": "envelope"
+      "norm_label": "envelope",
+      "id": "envelope"
     },
     {
       "label": ".content()",
       "file_type": "code",
       "source_file": "app/Mail/PartyHallInquiry.php",
       "source_location": "L25",
-      "id": "mail_partyhallinquiry_partyhallinquiry_content",
       "community": 11,
-      "norm_label": ".content()"
+      "norm_label": ".content()",
+      "id": "mail_partyhallinquiry_partyhallinquiry_content"
     },
     {
       "label": "Content",
       "file_type": "code",
       "source_file": "app/Mail/PartyHallInquiry.php",
       "source_location": "L25",
-      "id": "content",
       "community": 11,
-      "norm_label": "content"
+      "norm_label": "content",
+      "id": "content"
     },
     {
       "label": "MenuItem.php",
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L1",
-      "id": "app_models_menuitem_php",
       "community": 2,
-      "norm_label": "menuitem.php"
+      "norm_label": "menuitem.php",
+      "id": "app_models_menuitem_php"
     },
     {
       "label": "MenuItem",
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L11",
-      "id": "models_menuitem_menuitem",
       "community": 2,
-      "norm_label": "menuitem"
+      "norm_label": "menuitem",
+      "id": "models_menuitem_menuitem"
     },
     {
       "label": "Model",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "model",
       "community": 2,
-      "norm_label": "model"
+      "norm_label": "model",
+      "id": "model"
     },
     {
       "label": "HasFactory",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "hasfactory",
       "community": 2,
-      "norm_label": "hasfactory"
+      "norm_label": "hasfactory",
+      "id": "hasfactory"
     },
     {
       "label": ".category()",
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L29",
-      "id": "models_menuitem_menuitem_category",
       "community": 30,
-      "norm_label": ".category()"
+      "norm_label": ".category()",
+      "id": "models_menuitem_menuitem_category"
     },
     {
       "label": "BelongsTo",
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L29",
-      "id": "belongsto",
       "community": 30,
-      "norm_label": "belongsto"
+      "norm_label": "belongsto",
+      "id": "belongsto"
     },
     {
       "label": ".baseIngredients()",
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L34",
-      "id": "models_menuitem_menuitem_baseingredients",
       "community": 2,
-      "norm_label": ".baseingredients()"
+      "norm_label": ".baseingredients()",
+      "id": "models_menuitem_menuitem_baseingredients"
     },
     {
       "label": "HasMany",
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L34",
-      "id": "hasmany",
       "community": 2,
-      "norm_label": "hasmany"
+      "norm_label": "hasmany",
+      "id": "hasmany"
     },
     {
       "label": ".allergens()",
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L39",
-      "id": "models_menuitem_menuitem_allergens",
       "community": 2,
-      "norm_label": ".allergens()"
+      "norm_label": ".allergens()",
+      "id": "models_menuitem_menuitem_allergens"
     },
     {
       "label": "BelongsToMany",
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L39",
-      "id": "belongstomany",
       "community": 2,
-      "norm_label": "belongstomany"
+      "norm_label": "belongstomany",
+      "id": "belongstomany"
     },
     {
       "label": ".isPizza()",
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L44",
-      "id": "models_menuitem_menuitem_ispizza",
       "community": 2,
-      "norm_label": ".ispizza()"
+      "norm_label": ".ispizza()",
+      "id": "models_menuitem_menuitem_ispizza"
     },
     {
       "label": ".getFormattedPriceAttribute()",
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L49",
-      "id": "models_menuitem_menuitem_getformattedpriceattribute",
       "community": 2,
-      "norm_label": ".getformattedpriceattribute()"
+      "norm_label": ".getformattedpriceattribute()",
+      "id": "models_menuitem_menuitem_getformattedpriceattribute"
     },
     {
       "label": "2026_06_05_193917_add_dietary_flags_to_menu_items_table.php",
       "file_type": "code",
       "source_file": "database/migrations/2026_06_05_193917_add_dietary_flags_to_menu_items_table.php",
       "source_location": "L1",
-      "id": "database_migrations_2026_06_05_193917_add_dietary_flags_to_menu_items_table_php",
       "community": 26,
-      "norm_label": "2026_06_05_193917_add_dietary_flags_to_menu_items_table.php"
+      "norm_label": "2026_06_05_193917_add_dietary_flags_to_menu_items_table.php",
+      "id": "database_migrations_2026_06_05_193917_add_dietary_flags_to_menu_items_table_php"
     },
     {
       "label": "up()",
       "file_type": "code",
       "source_file": "database/migrations/2026_06_05_193917_add_dietary_flags_to_menu_items_table.php",
       "source_location": "L12",
-      "id": "migrations_2026_06_05_193917_add_dietary_flags_to_menu_items_table_up",
       "community": 26,
-      "norm_label": "up()"
+      "norm_label": "up()",
+      "id": "migrations_2026_06_05_193917_add_dietary_flags_to_menu_items_table_up"
     },
     {
       "label": "down()",
       "file_type": "code",
       "source_file": "database/migrations/2026_06_05_193917_add_dietary_flags_to_menu_items_table.php",
       "source_location": "L23",
-      "id": "migrations_2026_06_05_193917_add_dietary_flags_to_menu_items_table_down",
       "community": 26,
-      "norm_label": "down()"
+      "norm_label": "down()",
+      "id": "migrations_2026_06_05_193917_add_dietary_flags_to_menu_items_table_down"
     },
     {
       "label": "edit.blade.php",
       "file_type": "code",
       "source_file": "resources/views/admin/menu/edit.blade.php",
       "source_location": null,
-      "id": "resources_views_admin_menu_edit_blade_php",
       "community": 91,
-      "norm_label": "edit.blade.php"
+      "norm_label": "edit.blade.php",
+      "id": "resources_views_admin_menu_edit_blade_php"
     },
     {
       "label": "footer.blade.php",
       "file_type": "code",
       "source_file": "resources/views/components/footer.blade.php",
       "source_location": null,
-      "id": "resources_views_components_footer_blade_php",
       "community": 105,
-      "norm_label": "footer.blade.php"
+      "norm_label": "footer.blade.php",
+      "id": "resources_views_components_footer_blade_php"
     },
     {
       "label": "header.blade.php",
       "file_type": "code",
       "source_file": "resources/views/components/header.blade.php",
       "source_location": null,
-      "id": "resources_views_components_header_blade_php",
       "community": 106,
-      "norm_label": "header.blade.php"
+      "norm_label": "header.blade.php",
+      "id": "resources_views_components_header_blade_php"
     },
     {
       "label": "party-hall-inquiry.blade.php",
       "file_type": "code",
       "source_file": "resources/views/emails/party-hall-inquiry.blade.php",
       "source_location": null,
-      "id": "resources_views_emails_party_hall_inquiry_blade_php",
       "community": 244,
-      "norm_label": "party-hall-inquiry.blade.php"
+      "norm_label": "party-hall-inquiry.blade.php",
+      "id": "resources_views_emails_party_hall_inquiry_blade_php"
     },
     {
       "label": "index.blade.php",
       "file_type": "code",
       "source_file": "resources/views/menu/index.blade.php",
       "source_location": null,
-      "id": "resources_views_menu_index_blade_php",
       "community": 115,
-      "norm_label": "index.blade.php"
+      "norm_label": "index.blade.php",
+      "id": "resources_views_menu_index_blade_php"
     },
     {
       "label": "party-hall.blade.php",
       "file_type": "code",
       "source_file": "resources/views/party-hall.blade.php",
       "source_location": null,
-      "id": "resources_views_party_hall_blade_php",
       "community": 246,
-      "norm_label": "party-hall.blade.php"
+      "norm_label": "party-hall.blade.php",
+      "id": "resources_views_party_hall_blade_php"
     },
     {
       "label": "web.php",
       "file_type": "code",
       "source_file": "routes/web.php",
       "source_location": "L1",
-      "id": "routes_web_php",
       "community": 121,
-      "norm_label": "web.php"
+      "norm_label": "web.php",
+      "id": "routes_web_php"
     },
     {
       "label": "CheckoutController.php",
@@ -3232,42 +3304,6 @@
       "id": "admin_allergycontroller_allergycontroller_destroyallergen"
     },
     {
-      "label": "DashboardController.php",
-      "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L1",
-      "community": 0,
-      "norm_label": "dashboardcontroller.php",
-      "id": "app_http_controllers_admin_dashboardcontroller_php"
-    },
-    {
-      "label": "DashboardController",
-      "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L8",
-      "community": 0,
-      "norm_label": "dashboardcontroller",
-      "id": "admin_dashboardcontroller_dashboardcontroller"
-    },
-    {
-      "label": ".index()",
-      "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L10",
-      "community": 0,
-      "norm_label": ".index()",
-      "id": "admin_dashboardcontroller_dashboardcontroller_index"
-    },
-    {
-      "label": "View",
-      "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L10",
-      "community": 0,
-      "norm_label": "view",
-      "id": "app_http_controllers_admin_dashboardcontroller_php_view"
-    },
-    {
       "label": "DeliveryController.php",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/DeliveryController.php",
@@ -3356,42 +3392,6 @@
       "community": 10,
       "norm_label": ".validated()",
       "id": "admin_deliverycontroller_deliverycontroller_validated"
-    },
-    {
-      "label": "KitchenController.php",
-      "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L1",
-      "community": 0,
-      "norm_label": "kitchencontroller.php",
-      "id": "app_http_controllers_admin_kitchencontroller_php"
-    },
-    {
-      "label": "KitchenController",
-      "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L8",
-      "community": 0,
-      "norm_label": "kitchencontroller",
-      "id": "admin_kitchencontroller_kitchencontroller"
-    },
-    {
-      "label": ".index()",
-      "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L10",
-      "community": 0,
-      "norm_label": ".index()",
-      "id": "admin_kitchencontroller_kitchencontroller_index"
-    },
-    {
-      "label": "View",
-      "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L10",
-      "community": 0,
-      "norm_label": "view",
-      "id": "app_http_controllers_admin_kitchencontroller_php_view"
     },
     {
       "label": "PromotionController.php",
@@ -9368,6 +9368,266 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_dashboardcontroller_php",
+      "target": "admin_dashboardcontroller_dashboardcontroller"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_dashboardcontroller_php",
+      "target": "app_http_controllers_admin_dashboardcontroller_php_view"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_http_controllers_admin_dashboardcontroller_php",
+      "target": "controller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_dashboardcontroller_php",
+      "target": "controllers_controller_controller"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_dashboardcontroller_dashboardcontroller",
+      "target": "admin_dashboardcontroller_dashboardcontroller_index"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "admin_dashboardcontroller_dashboardcontroller",
+      "target": "controller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_dashboardcontroller_dashboardcontroller",
+      "target": "controllers_controller_controller"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "admin_kitchencontroller_kitchencontroller",
+      "target": "controller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_menuitemcontroller_menuitemcontroller",
+      "target": "controller"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_ordercontroller_ordercontroller",
+      "target": "controller"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_http_controllers_admin_kitchencontroller_php",
+      "target": "controller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_menuitemcontroller_php",
+      "target": "controller"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_ordercontroller_php",
+      "target": "controller"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/CheckoutController.php",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "controllers_checkoutcontroller_checkoutcontroller",
+      "target": "controller"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/OrderController.php",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "controllers_ordercontroller_ordercontroller",
+      "target": "controller"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/PartyHallController.php",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "controllers_partyhallcontroller_partyhallcontroller",
+      "target": "controller"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/PasswordResetController.php",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "controllers_passwordresetcontroller_passwordresetcontroller",
+      "target": "controller"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/PromoController.php",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "controllers_promocontroller_promocontroller",
+      "target": "controller"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "return_type",
+      "confidence_score": 1.0,
+      "source": "admin_dashboardcontroller_dashboardcontroller_index",
+      "target": "app_http_controllers_admin_dashboardcontroller_php_view"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_kitchencontroller_php",
+      "target": "admin_kitchencontroller_kitchencontroller"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_kitchencontroller_php",
+      "target": "app_http_controllers_admin_kitchencontroller_php_view"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_kitchencontroller_php",
+      "target": "controllers_controller_controller"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_kitchencontroller_kitchencontroller",
+      "target": "admin_kitchencontroller_kitchencontroller_index"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_kitchencontroller_kitchencontroller",
+      "target": "controllers_controller_controller"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "return_type",
+      "confidence_score": 1.0,
+      "source": "admin_kitchencontroller_kitchencontroller_index",
+      "target": "app_http_controllers_admin_kitchencontroller_php_view"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L16",
       "weight": 1.0,
@@ -9415,17 +9675,6 @@
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L5",
       "weight": 1.0,
-      "source": "app_http_controllers_admin_menuitemcontroller_php",
-      "target": "controller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L5",
-      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "app_http_controllers_admin_menuitemcontroller_php",
       "target": "controllers_controller_controller"
@@ -9437,9 +9686,9 @@
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_http_controllers_admin_menuitemcontroller_php",
-      "target": "menuitem",
-      "confidence_score": 1.0
+      "target": "menuitem"
     },
     {
       "relation": "method",
@@ -9517,90 +9766,9 @@
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L16",
       "weight": 1.0,
-      "source": "admin_menuitemcontroller_menuitemcontroller",
-      "target": "controller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L16",
-      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "admin_menuitemcontroller_menuitemcontroller",
       "target": "controllers_controller_controller"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_ordercontroller_ordercontroller",
-      "target": "controller"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_ordercontroller_php",
-      "target": "controller"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/CheckoutController.php",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "controllers_checkoutcontroller_checkoutcontroller",
-      "target": "controller"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/OrderController.php",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "controllers_ordercontroller_ordercontroller",
-      "target": "controller"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/PartyHallController.php",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "controllers_partyhallcontroller_partyhallcontroller",
-      "target": "controller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/PasswordResetController.php",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "controllers_passwordresetcontroller_passwordresetcontroller",
-      "target": "controller"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/PromoController.php",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "controllers_promocontroller_promocontroller",
-      "target": "controller"
     },
     {
       "relation": "references",
@@ -9620,9 +9788,9 @@
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_menuitemcontroller_menuitemcontroller_index",
-      "target": "menuitem",
-      "confidence_score": 1.0
+      "target": "menuitem"
     },
     {
       "relation": "references",
@@ -9708,9 +9876,9 @@
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_menuitemcontroller_menuitemcontroller_store",
-      "target": "menuitem",
-      "confidence_score": 1.0
+      "target": "menuitem"
     },
     {
       "relation": "calls",
@@ -9763,9 +9931,9 @@
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L88",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_menuitemcontroller_menuitemcontroller_edit",
-      "target": "menuitem",
-      "confidence_score": 1.0
+      "target": "menuitem"
     },
     {
       "relation": "calls",
@@ -9807,9 +9975,9 @@
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L100",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_menuitemcontroller_menuitemcontroller_update",
-      "target": "menuitem",
-      "confidence_score": 1.0
+      "target": "menuitem"
     },
     {
       "relation": "calls",
@@ -9818,9 +9986,9 @@
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L148",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_menuitemcontroller_menuitemcontroller_destroy",
-      "target": "menuitem",
-      "confidence_score": 1.0
+      "target": "menuitem"
     },
     {
       "relation": "references",
@@ -9829,9 +9997,9 @@
       "source_location": "L156",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "admin_menuitemcontroller_menuitemcontroller_syncingredients",
-      "target": "menuitem",
-      "confidence_score": 1.0
+      "target": "menuitem"
     },
     {
       "relation": "calls",
@@ -9851,9 +10019,9 @@
       "source_file": "app/Http/Controllers/PartyHallController.php",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_http_controllers_partyhallcontroller_php",
-      "target": "app_http_controllers_partyhallcontroller_php_redirectresponse",
-      "confidence_score": 1.0
+      "target": "app_http_controllers_partyhallcontroller_php_redirectresponse"
     },
     {
       "relation": "imports",
@@ -9862,9 +10030,9 @@
       "source_file": "app/Http/Controllers/PartyHallController.php",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_http_controllers_partyhallcontroller_php",
-      "target": "app_http_controllers_partyhallcontroller_php_request",
-      "confidence_score": 1.0
+      "target": "app_http_controllers_partyhallcontroller_php_request"
     },
     {
       "relation": "imports",
@@ -9873,9 +10041,9 @@
       "source_file": "app/Http/Controllers/PartyHallController.php",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_http_controllers_partyhallcontroller_php",
-      "target": "app_http_controllers_partyhallcontroller_php_view",
-      "confidence_score": 1.0
+      "target": "app_http_controllers_partyhallcontroller_php_view"
     },
     {
       "relation": "contains",
@@ -9883,9 +10051,9 @@
       "source_file": "app/Http/Controllers/PartyHallController.php",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_http_controllers_partyhallcontroller_php",
-      "target": "controllers_partyhallcontroller_partyhallcontroller",
-      "confidence_score": 1.0
+      "target": "controllers_partyhallcontroller_partyhallcontroller"
     },
     {
       "relation": "method",
@@ -9893,9 +10061,9 @@
       "source_file": "app/Http/Controllers/PartyHallController.php",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "controllers_partyhallcontroller_partyhallcontroller",
-      "target": "controllers_partyhallcontroller_partyhallcontroller_index",
-      "confidence_score": 1.0
+      "target": "controllers_partyhallcontroller_partyhallcontroller_index"
     },
     {
       "relation": "method",
@@ -9903,9 +10071,9 @@
       "source_file": "app/Http/Controllers/PartyHallController.php",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "controllers_partyhallcontroller_partyhallcontroller",
-      "target": "controllers_partyhallcontroller_partyhallcontroller_submit",
-      "confidence_score": 1.0
+      "target": "controllers_partyhallcontroller_partyhallcontroller_submit"
     },
     {
       "relation": "references",
@@ -9914,9 +10082,9 @@
       "source_location": "L14",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "controllers_partyhallcontroller_partyhallcontroller_index",
-      "target": "app_http_controllers_partyhallcontroller_php_view",
-      "confidence_score": 1.0
+      "target": "app_http_controllers_partyhallcontroller_php_view"
     },
     {
       "relation": "references",
@@ -9925,9 +10093,9 @@
       "source_location": "L19",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "controllers_partyhallcontroller_partyhallcontroller_submit",
-      "target": "app_http_controllers_partyhallcontroller_php_redirectresponse",
-      "confidence_score": 1.0
+      "target": "app_http_controllers_partyhallcontroller_php_redirectresponse"
     },
     {
       "relation": "references",
@@ -9936,9 +10104,9 @@
       "source_location": "L19",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "controllers_partyhallcontroller_partyhallcontroller_submit",
-      "target": "app_http_controllers_partyhallcontroller_php_request",
-      "confidence_score": 1.0
+      "target": "app_http_controllers_partyhallcontroller_php_request"
     },
     {
       "relation": "imports",
@@ -9947,9 +10115,9 @@
       "source_file": "app/Mail/PartyHallInquiry.php",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_mail_partyhallinquiry_php",
-      "target": "content",
-      "confidence_score": 1.0
+      "target": "content"
     },
     {
       "relation": "imports",
@@ -9958,9 +10126,9 @@
       "source_file": "app/Mail/PartyHallInquiry.php",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_mail_partyhallinquiry_php",
-      "target": "envelope",
-      "confidence_score": 1.0
+      "target": "envelope"
     },
     {
       "relation": "contains",
@@ -9968,9 +10136,9 @@
       "source_file": "app/Mail/PartyHallInquiry.php",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_mail_partyhallinquiry_php",
-      "target": "mail_partyhallinquiry_partyhallinquiry",
-      "confidence_score": 1.0
+      "target": "mail_partyhallinquiry_partyhallinquiry"
     },
     {
       "relation": "imports",
@@ -9979,9 +10147,9 @@
       "source_file": "app/Mail/PartyHallInquiry.php",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_mail_partyhallinquiry_php",
-      "target": "mailable",
-      "confidence_score": 1.0
+      "target": "mailable"
     },
     {
       "relation": "imports",
@@ -9990,9 +10158,9 @@
       "source_file": "app/Mail/PartyHallInquiry.php",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_mail_partyhallinquiry_php",
-      "target": "queueable",
-      "confidence_score": 1.0
+      "target": "queueable"
     },
     {
       "relation": "imports",
@@ -10001,9 +10169,9 @@
       "source_file": "app/Mail/PartyHallInquiry.php",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_mail_partyhallinquiry_php",
-      "target": "serializesmodels",
-      "confidence_score": 1.0
+      "target": "serializesmodels"
     },
     {
       "relation": "method",
@@ -10011,9 +10179,9 @@
       "source_file": "app/Mail/PartyHallInquiry.php",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "mail_partyhallinquiry_partyhallinquiry",
-      "target": "mail_partyhallinquiry_partyhallinquiry_construct",
-      "confidence_score": 1.0
+      "target": "mail_partyhallinquiry_partyhallinquiry_construct"
     },
     {
       "relation": "method",
@@ -10021,9 +10189,9 @@
       "source_file": "app/Mail/PartyHallInquiry.php",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "mail_partyhallinquiry_partyhallinquiry",
-      "target": "mail_partyhallinquiry_partyhallinquiry_content",
-      "confidence_score": 1.0
+      "target": "mail_partyhallinquiry_partyhallinquiry_content"
     },
     {
       "relation": "method",
@@ -10031,9 +10199,9 @@
       "source_file": "app/Mail/PartyHallInquiry.php",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "mail_partyhallinquiry_partyhallinquiry",
-      "target": "mail_partyhallinquiry_partyhallinquiry_envelope",
-      "confidence_score": 1.0
+      "target": "mail_partyhallinquiry_partyhallinquiry_envelope"
     },
     {
       "relation": "inherits",
@@ -10041,9 +10209,9 @@
       "source_file": "app/Mail/PartyHallInquiry.php",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "mail_partyhallinquiry_partyhallinquiry",
-      "target": "mailable",
-      "confidence_score": 1.0
+      "target": "mailable"
     },
     {
       "relation": "mixes_in",
@@ -10051,9 +10219,9 @@
       "source_file": "app/Mail/PartyHallInquiry.php",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "mail_partyhallinquiry_partyhallinquiry",
-      "target": "queueable",
-      "confidence_score": 1.0
+      "target": "queueable"
     },
     {
       "relation": "mixes_in",
@@ -10061,9 +10229,9 @@
       "source_file": "app/Mail/PartyHallInquiry.php",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "mail_partyhallinquiry_partyhallinquiry",
-      "target": "serializesmodels",
-      "confidence_score": 1.0
+      "target": "serializesmodels"
     },
     {
       "relation": "imports",
@@ -10177,9 +10345,9 @@
       "source_location": "L17",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "mail_partyhallinquiry_partyhallinquiry_envelope",
-      "target": "envelope",
-      "confidence_score": 1.0
+      "target": "envelope"
     },
     {
       "relation": "imports",
@@ -10232,9 +10400,9 @@
       "source_location": "L25",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "mail_partyhallinquiry_partyhallinquiry_content",
-      "target": "content",
-      "confidence_score": 1.0
+      "target": "content"
     },
     {
       "relation": "imports",
@@ -10287,9 +10455,9 @@
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_models_menuitem_php",
-      "target": "belongsto",
-      "confidence_score": 1.0
+      "target": "belongsto"
     },
     {
       "relation": "imports",
@@ -10298,9 +10466,9 @@
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_models_menuitem_php",
-      "target": "belongstomany",
-      "confidence_score": 1.0
+      "target": "belongstomany"
     },
     {
       "relation": "imports",
@@ -10320,9 +10488,9 @@
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_models_menuitem_php",
-      "target": "hasmany",
-      "confidence_score": 1.0
+      "target": "hasmany"
     },
     {
       "relation": "imports",
@@ -10842,9 +11010,9 @@
       "source_location": "L29",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "models_menuitem_menuitem_category",
-      "target": "belongsto",
-      "confidence_score": 1.0
+      "target": "belongsto"
     },
     {
       "relation": "references",
@@ -10853,9 +11021,9 @@
       "source_location": "L34",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "models_menuitem_menuitem_baseingredients",
-      "target": "hasmany",
-      "confidence_score": 1.0
+      "target": "hasmany"
     },
     {
       "relation": "references",
@@ -10864,9 +11032,9 @@
       "source_location": "L39",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "models_menuitem_menuitem_allergens",
-      "target": "belongstomany",
-      "confidence_score": 1.0
+      "target": "belongstomany"
     },
     {
       "relation": "contains",
@@ -14443,31 +14611,11 @@
     {
       "relation": "inherits",
       "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_dashboardcontroller_dashboardcontroller",
-      "target": "controllers_controller_controller"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/DeliveryController.php",
       "source_location": "L11",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "admin_deliverycontroller_deliverycontroller",
-      "target": "controllers_controller_controller"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_kitchencontroller_kitchencontroller",
       "target": "controllers_controller_controller"
     },
     {
@@ -14538,33 +14686,11 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_dashboardcontroller_php",
-      "target": "controllers_controller_controller"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/DeliveryController.php",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "app_http_controllers_admin_deliverycontroller_php",
-      "target": "controllers_controller_controller"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_kitchencontroller_php",
       "target": "controllers_controller_controller"
     },
     {
@@ -15418,48 +15544,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_dashboardcontroller_php",
-      "target": "admin_dashboardcontroller_dashboardcontroller"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_dashboardcontroller_php",
-      "target": "app_http_controllers_admin_dashboardcontroller_php_view"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_dashboardcontroller_dashboardcontroller",
-      "target": "admin_dashboardcontroller_dashboardcontroller_index"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L10",
-      "weight": 1.0,
-      "context": "return_type",
-      "confidence_score": 1.0,
-      "source": "admin_dashboardcontroller_dashboardcontroller_index",
-      "target": "app_http_controllers_admin_dashboardcontroller_php_view"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/DeliveryController.php",
       "source_location": "L11",
       "weight": 1.0,
@@ -15692,48 +15776,6 @@
       "weight": 1.0,
       "source": "admin_deliverycontroller_deliverycontroller_destroy",
       "target": "models_deliveryzone_deliveryzone"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_kitchencontroller_php",
-      "target": "admin_kitchencontroller_kitchencontroller"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_kitchencontroller_php",
-      "target": "app_http_controllers_admin_kitchencontroller_php_view"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_kitchencontroller_kitchencontroller",
-      "target": "admin_kitchencontroller_kitchencontroller_index"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L10",
-      "weight": 1.0,
-      "context": "return_type",
-      "confidence_score": 1.0,
-      "source": "admin_kitchencontroller_kitchencontroller_index",
-      "target": "app_http_controllers_admin_kitchencontroller_php_view"
     },
     {
       "relation": "contains",
@@ -21707,5 +21749,5 @@
       "source_file": "docs/superpowers/plans/2026-06-04-plan9-deploy-polish.md"
     }
   ],
-  "built_at_commit": "8df3cf2b7e4b5764612ab53dd6ec3cc816351b69"
+  "built_at_commit": "2cde7e35744929f9faa0d420749a57dbf46d4909"
 }
