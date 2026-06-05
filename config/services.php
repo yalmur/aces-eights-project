@@ -41,4 +41,16 @@ return [
         'webhook_secret' => env('STRIPE_WEBHOOK_SECRET'),
     ],
 
+    'google' => [
+        'client_id'     => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect'      => env('GOOGLE_REDIRECT', '/auth/google/callback'),
+    ],
+
+    'facebook' => [
+        'client_id'     => env('FACEBOOK_APP_ID'),
+        'client_secret' => env('FACEBOOK_APP_SECRET'),
+        'redirect'      => env('FACEBOOK_REDIRECT', '/auth/facebook/callback'),
+    ],
+
 ];

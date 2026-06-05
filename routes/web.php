@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\PromotionController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\OurMenuController;
 use App\Http\Controllers\PasswordResetController;
+use App\Http\Controllers\SocialAuthController;
 use App\Http\Controllers\PartyHallController;
 
 /*
@@ -56,6 +57,8 @@ Route::post('/login', [App\Http\Controllers\AuthController::class, 'login'])->na
 Route::get('/register', fn () => view('auth.register', ['title' => 'Create Account']))->name('register');
 Route::post('/register', [App\Http\Controllers\AuthController::class, 'register'])->name('register.post')->middleware('throttle:3,1');
 Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
+Route::get('/auth/{provider}/redirect',  [SocialAuthController::class, 'redirect'])->name('social.redirect')->middleware('guest');
+Route::get('/auth/{provider}/callback',  [SocialAuthController::class, 'callback'])->name('social.callback');
 
 // Password Reset
 Route::get('/forgot-password',        [PasswordResetController::class, 'showForgotForm'])->name('password.request')->middleware('guest');
