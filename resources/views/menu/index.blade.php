@@ -17,7 +17,7 @@
 </section>
 
 {{-- Alpine.js category filter + menu grid --}}
-<div x-data="{ active: 'all', view: 'grid' }"
+<div x-data="{ active: 'all', view: 'grid', search: '' }"
      x-init="$store.cart.allToppings = {{ $toppings->map(fn($t) => ['name' => $t->name, 'price' => (float)$t->price])->toJson() }}">
 
     {{-- Search & Filter Bar --}}
@@ -36,7 +36,12 @@
             <div class="flex items-center gap-4 w-full md:w-auto">
                 <div class="relative flex-1 md:w-80">
                     <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
-                    <input class="w-full bg-surface-container border border-surface-variant px-10 py-3 font-body-md text-body-md text-on-surface focus:ring-1 focus:ring-primary-container focus:border-primary-container" placeholder="Search our soul..." type="text"/>
+                    <input x-model="search" @keydown.escape="search = ''"
+                           class="w-full bg-surface-container border border-surface-variant px-10 py-3 font-body-md text-body-md text-on-surface focus:ring-1 focus:ring-primary-container focus:border-primary-container" placeholder="Search our soul..." type="text"/>
+                    <button x-show="search" x-cloak @click="search = ''"
+                            class="absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary">
+                        <span class="material-symbols-outlined text-sm">close</span>
+                    </button>
                 </div>
                 <button class="p-3 bg-surface-container border border-surface-variant hover:bg-surface-container-high transition-colors">
                     <span class="material-symbols-outlined text-on-surface">tune</span>
@@ -69,17 +74,34 @@
         </div>
     </section>
 
+    {{-- Search active indicator --}}
+    <div x-show="search" x-cloak
+         class="px-6 md:px-margin-desktop pt-6 max-w-container-max mx-auto flex items-center gap-3">
+        <span class="font-mono text-xs text-on-surface-variant uppercase tracking-widest">
+            Showing results for:
+        </span>
+        <span class="font-mono text-xs font-bold text-primary uppercase tracking-widest" x-text="'&quot;' + search + '&quot;'"></span>
+        <button @click="search = ''" class="font-mono text-[10px] text-on-surface-variant hover:text-primary underline uppercase tracking-widest">
+            Clear
+        </button>
+    </div>
+
     {{-- Dynamic menu sections --}}
     @foreach($categories as $category)
-    <section x-show="active === 'all' || active === '{{ $category->slug }}'"
+    @php
+        $catSearchStr = $category->availableItems->map(fn($i) => strtolower($i->name . ' ' . ($i->description ?? '')))->join(' ||| ');
+    @endphp
+    <section x-data="{ catText: {{ json_encode($catSearchStr) }} }"
+             x-show="search ? catText.split(' ||| ').some(t => t.includes(search.toLowerCase())) : (active === 'all' || active === '{{ $category->slug }}')"
              class="px-6 md:px-margin-desktop py-12 max-w-container-max mx-auto {{ !$loop->first ? 'border-t border-surface-variant' : '' }}">
 
-      <h2 class="menu-section-heading" x-show="active === 'all'">{{ $category->name }}</h2>
+      <h2 class="menu-section-heading" x-show="active === 'all' || search">{{ $category->name }}</h2>
 
       <div :class="view === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : view === 'list' ? 'flex flex-col gap-3' : 'grid grid-cols-2 lg:grid-cols-4 gap-4'">
 
         @foreach($category->availableItems as $item)
-        <div :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'"
+        <div x-show="!search || '{{ strtolower($item->name . ' ' . ($item->description ?? '')) }}'.includes(search.toLowerCase())"
+             :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'"
              class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 overflow-hidden shadow-sm">
           <div :class="view === 'list' ? 'w-32 h-auto flex-shrink-0' : view === 'compact' ? 'h-40 overflow-hidden' : 'h-64 overflow-hidden'"
                class="overflow-hidden">
