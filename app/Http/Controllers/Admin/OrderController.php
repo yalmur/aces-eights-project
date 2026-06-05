@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Events\OrderStatusUpdated;
 use App\Http\Controllers\Controller;
+use App\Mail\OrderStatusUpdate;
 use App\Models\Order;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
 
 class OrderController extends Controller
@@ -49,6 +51,10 @@ class OrderController extends Controller
         $orderModel->update(['status' => $data['status']]);
 
         OrderStatusUpdated::dispatch($orderModel);
+
+        if (!empty($orderModel->customer_email)) {
+            Mail::to($orderModel->customer_email)->queue(new OrderStatusUpdate($orderModel));
+        }
 
         return back()->with('success', "Order #{$orderModel->id} updated to {$orderModel->status_label}.");
     }
