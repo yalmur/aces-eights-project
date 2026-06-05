@@ -2,105 +2,176 @@
 @section('content')
 
 @if(session('success'))
-  <div class="mb-6 p-4 bg-green-50 border border-green-200 text-green-800 font-mono text-xs">{{ session('success') }}</div>
+  <div class="mb-6 p-4 bg-green-50 border border-green-200 text-green-800 font-mono text-xs">
+    {{ session('success') }}
+  </div>
 @endif
 
-{{-- Header --}}
-<section class="mb-8">
-  <h2 class="font-serif text-4xl font-black text-on-surface uppercase tracking-tight">ALLERGY MANAGEMENT</h2>
-  <div class="double-divider text-on-surface-variant mt-2"></div>
-</section>
-
-{{-- Section 1: Global Allergy Alerts + Disclaimer --}}
-<form method="POST" action="{{ route('admin.allergy.settings') }}" class="mb-10">
-  @csrf
-  <section class="bg-surface-container-low border-2 border-on-surface p-6">
-    <div class="flex items-center justify-between mb-4">
-      <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1">campaign</span>
-        <h3 class="font-mono text-xs font-bold uppercase">Global Safety Alerts</h3>
-      </div>
-      <label class="relative inline-flex items-center cursor-pointer">
-        <input name="allergy_alerts_enabled" type="checkbox" value="1" {{ $alertsEnabled ? 'checked' : '' }} class="sr-only peer"/>
-        <div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
-      </label>
-    </div>
-    <p class="font-sans text-sm text-on-surface-variant leading-relaxed mb-6">
-      When enabled, a high-visibility warning banner will appear across the top of the consumer site regarding ingredient cross-contamination and the current allergy protocol.
-    </p>
-    <div>
-      <label class="font-mono text-[10px] uppercase text-on-surface-variant block mb-2">Checkout Disclaimer</label>
-      <textarea name="checkout_disclaimer" rows="5" class="w-full border-2 border-on-surface p-3 font-sans text-sm focus:ring-0 focus:border-primary resize-none">{{ $disclaimer }}</textarea>
-    </div>
-    <div class="flex justify-end mt-4">
-      <button type="submit" class="bg-primary text-on-primary px-6 py-3 font-mono text-xs font-bold uppercase">PUBLISH CHANGES</button>
-    </div>
-  </section>
-</form>
-
-{{-- Section 2: Allergen Library --}}
-<section class="mb-10">
-  <div class="flex items-center justify-between mb-4">
-    <h3 class="font-mono text-xs font-bold uppercase">Allergen Library</h3>
-    <button class="text-primary font-mono text-[10px] font-bold flex items-center gap-1 border-b border-primary uppercase">
-      <span class="material-symbols-outlined text-[18px]">add</span> ADD NEW
-    </button>
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+  <div>
+    <h2 class="font-serif text-4xl font-black text-on-surface uppercase tracking-tight leading-none mb-2">Allergy Management</h2>
+    <p class="font-mono text-xs text-on-surface-variant uppercase tracking-widest">Allergen labels · menu item mappings · checkout warnings</p>
   </div>
-  <div class="grid grid-cols-1 gap-3">
-    @foreach($allergens as $allergen)
-    <div class="bg-surface border border-on-surface flex items-center p-3 justify-between">
+</header>
+
+<div class="industrial-divider mb-8"></div>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+  {{-- ── Allergen List ───────────────────────────────── --}}
+  <section>
+    <h3 class="font-mono text-xs font-bold uppercase border-b border-[#2B2B2B] pb-2 mb-4">Allergen Labels</h3>
+
+    @forelse($allergens as $allergen)
+    <div class="industrial-border p-4 mb-3 flex items-center justify-between gap-4 bg-white">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-primary-container flex items-center justify-center text-on-primary">
-          <span class="material-symbols-outlined">{{ $allergen->icon }}</span>
+        <span class="material-symbols-outlined text-primary text-lg">{{ $allergen->icon }}</span>
+        <div>
+          <p class="font-mono text-sm font-bold">{{ $allergen->name }}</p>
+          <p class="font-mono text-[10px] text-on-surface-variant uppercase">{{ $allergen->is_visible ? 'Visible' : 'Hidden' }}</p>
         </div>
-        <span class="font-mono text-xs font-bold uppercase">{{ $allergen->name }}</span>
       </div>
-      <div class="flex items-center gap-3">
-        <form method="POST" action="{{ route('admin.allergens.toggle', $allergen->id) }}">
+      <div class="flex items-center gap-2 shrink-0">
+        <form action="{{ route('admin.allergens.toggle', $allergen->id) }}" method="POST">
           @csrf @method('PATCH')
-          <button type="submit" class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer" title="{{ $allergen->is_visible ? 'Visible' : 'Hidden' }}" style="{{ $allergen->is_visible ? 'font-variation-settings:\'FILL\' 1' : '' }}">
-            {{ $allergen->is_visible ? 'visibility' : 'visibility_off' }}
+          <button type="submit"
+                  class="px-3 py-1 font-mono text-[10px] font-bold uppercase industrial-border hover:bg-surface-container transition-colors {{ $allergen->is_visible ? 'text-green-700' : 'text-on-surface-variant' }}">
+            {{ $allergen->is_visible ? 'Visible' : 'Hidden' }}
           </button>
         </form>
-        <form method="POST" action="{{ route('admin.allergens.destroy', $allergen->id) }}" onsubmit="return confirm('Delete {{ addslashes($allergen->name) }}?')">
+        <form action="{{ route('admin.allergens.destroy', $allergen->id) }}" method="POST"
+              onsubmit="return confirm('Remove {{ addslashes($allergen->name) }}?')">
           @csrf @method('DELETE')
-          <button type="submit" class="material-symbols-outlined text-brand-error hover:opacity-70 cursor-pointer">delete</button>
+          <button type="submit" class="p-1 hover:text-error transition-colors">
+            <span class="material-symbols-outlined text-sm">delete</span>
+          </button>
         </form>
       </div>
     </div>
-    @endforeach
-  </div>
-</section>
+    @empty
+    <p class="font-mono text-xs text-on-surface-variant py-4 uppercase">No allergens configured yet.</p>
+    @endforelse
 
-{{-- Section 3: Menu Item Mapping --}}
-<section class="mb-10">
-  <h3 class="font-mono text-xs font-bold uppercase mb-4">Menu Item Allergen Mapping</h3>
-  <form method="POST" action="{{ route('admin.allergy.map') }}">
-    @csrf
-    <div class="mb-4">
-      <label class="font-mono text-[10px] uppercase text-on-surface-variant block mb-2">Select Menu Item</label>
-      <select name="menu_item_id" required class="w-full bg-surface border-0 border-b-2 border-on-surface py-3 font-sans text-sm focus:ring-0 focus:border-primary">
-        <option value="">— Choose item —</option>
+    {{-- Add new allergen --}}
+    <div x-data="{ open: false }" class="mt-4">
+      <button @click="open = !open"
+              class="gold-button px-4 py-2 font-mono text-xs font-bold uppercase flex items-center gap-2">
+        <span class="material-symbols-outlined text-sm">add</span> Add Allergen
+      </button>
+      <form x-show="open" x-cloak x-transition
+            action="{{ route('admin.allergens.store') }}" method="POST"
+            class="mt-4 industrial-border p-4 bg-surface-container-low space-y-3">
+        @csrf
+        <div>
+          <label class="font-mono text-[10px] font-bold uppercase block mb-1">Name *</label>
+          <input type="text" name="name" required placeholder="e.g. Gluten"
+                 class="w-full industrial-border p-2 font-mono text-sm bg-white focus:outline-none focus:ring-1 focus:ring-primary">
+        </div>
+        <div>
+          <label class="font-mono text-[10px] font-bold uppercase block mb-1">Material Icon Name</label>
+          <input type="text" name="icon" placeholder="warning" value="warning"
+                 class="w-full industrial-border p-2 font-mono text-sm bg-white focus:outline-none focus:ring-1 focus:ring-primary">
+          <p class="font-mono text-[9px] text-on-surface-variant mt-1">Use any Material Symbols name, e.g. wheat, egg_alt, dairy, no_food</p>
+        </div>
+        <div>
+          <label class="font-mono text-[10px] font-bold uppercase block mb-1">Sort Order</label>
+          <input type="number" name="sort_order" value="0" min="0"
+                 class="w-24 industrial-border p-2 font-mono text-sm bg-white focus:outline-none focus:ring-1 focus:ring-primary">
+        </div>
+        <div class="flex gap-2 pt-1">
+          <button type="submit" class="gold-button px-4 py-2 font-mono text-xs font-bold uppercase">Save</button>
+          <button type="button" @click="open = false"
+                  class="px-4 py-2 font-mono text-xs font-bold uppercase industrial-border hover:bg-surface-container transition-colors">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  {{-- ── Alert Settings ──────────────────────────────── --}}
+  <section>
+    <h3 class="font-mono text-xs font-bold uppercase border-b border-[#2B2B2B] pb-2 mb-4">Checkout Alert Settings</h3>
+    <form action="{{ route('admin.allergy.settings') }}" method="POST" class="space-y-5">
+      @csrf
+      <div class="industrial-border p-4 bg-white flex items-center justify-between gap-4">
+        <div>
+          <p class="font-mono text-sm font-bold">Show Allergy Alerts at Checkout</p>
+          <p class="font-mono text-[10px] text-on-surface-variant mt-1">Displays disclaimer on checkout page</p>
+        </div>
+        <label class="relative inline-flex items-center cursor-pointer shrink-0">
+          <input type="hidden" name="allergy_alerts_enabled" value="0">
+          <input type="checkbox" name="allergy_alerts_enabled" value="1"
+                 class="sr-only peer" {{ $alertsEnabled ? 'checked' : '' }}>
+          <div class="w-11 h-6 bg-surface-container border border-[#2B2B2B] rounded-full relative
+                      peer-checked:bg-primary
+                      after:content-[''] after:absolute after:top-0.5 after:left-[2px]
+                      after:bg-white after:border after:border-[#2B2B2B] after:rounded-full
+                      after:h-5 after:w-5 after:transition-all
+                      peer-checked:after:translate-x-full"></div>
+        </label>
+      </div>
+
+      <div>
+        <label class="font-mono text-xs font-bold uppercase block mb-2">Checkout Disclaimer Text</label>
+        <textarea name="checkout_disclaimer" rows="7"
+                  class="w-full industrial-border p-3 font-mono text-xs bg-white resize-y focus:outline-none focus:ring-1 focus:ring-primary">{{ old('checkout_disclaimer', $disclaimer) }}</textarea>
+        <p class="font-mono text-[10px] text-on-surface-variant mt-1">Displayed to customers at checkout when alerts are enabled.</p>
+      </div>
+
+      <button type="submit" class="gold-button px-6 py-3 font-mono text-xs font-bold uppercase">
+        Save Settings
+      </button>
+    </form>
+  </section>
+
+</div>
+
+{{-- ── Menu Item → Allergen Mapping ────────────────────────────────── --}}
+<section class="mt-12">
+  <h3 class="font-mono text-xs font-bold uppercase border-b border-[#2B2B2B] pb-2 mb-6">Menu Item Allergen Mapping</h3>
+
+  @if($allergens->isEmpty())
+    <p class="font-mono text-xs text-on-surface-variant">Add allergens above before mapping them to menu items.</p>
+  @else
+  <div x-data="{ selected: '' }" class="space-y-4">
+    <div>
+      <label class="font-mono text-xs font-bold uppercase block mb-2">Select Menu Item</label>
+      <select x-model="selected"
+              class="industrial-border p-3 font-mono text-sm bg-white w-full max-w-md focus:outline-none focus:ring-1 focus:ring-primary">
+        <option value="">— choose item —</option>
         @foreach($menuItems as $item)
-          <option value="{{ $item->id }}">{{ $item->category->name }} — {{ $item->name }}</option>
+        <option value="{{ $item->id }}">{{ $item->name }}@if($item->category) ({{ $item->category->name }})@endif</option>
         @endforeach
       </select>
     </div>
-    <div class="mb-4">
-      <p class="font-mono text-[10px] uppercase mb-3 text-on-surface-variant">Allergen Tags:</p>
-      <div class="flex flex-wrap gap-2">
+
+    @foreach($menuItems as $item)
+    <form x-show="selected == '{{ $item->id }}'" x-cloak
+          action="{{ route('admin.allergy.map') }}" method="POST"
+          class="industrial-border p-6 bg-white">
+      @csrf
+      <input type="hidden" name="menu_item_id" value="{{ $item->id }}">
+      <p class="font-serif text-lg font-bold mb-1">{{ $item->name }}</p>
+      <p class="font-mono text-[10px] text-on-surface-variant uppercase mb-4">{{ $item->category->name ?? '—' }}</p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
         @foreach($allergens as $allergen)
-        <label class="flex items-center gap-2 cursor-pointer px-3 py-1.5 border border-outline-variant hover:border-primary transition-colors">
-          <input type="checkbox" name="allergens[]" value="{{ $allergen->id }}" class="w-4 h-4 text-primary border-outline rounded focus:ring-primary">
-          <span class="font-mono text-[10px] uppercase">{{ $allergen->name }}</span>
+        <label class="flex items-center gap-2 cursor-pointer industrial-border p-2 hover:bg-surface-container-low transition-colors">
+          <input type="checkbox" name="allergens[]" value="{{ $allergen->id }}"
+                 {{ $item->allergens->contains($allergen->id) ? 'checked' : '' }}
+                 class="w-4 h-4 accent-primary">
+          <span class="material-symbols-outlined text-sm text-primary">{{ $allergen->icon }}</span>
+          <span class="font-mono text-xs">{{ $allergen->name }}</span>
         </label>
         @endforeach
       </div>
-    </div>
-    <button type="submit" class="w-full border-2 border-on-surface py-3 text-on-surface font-mono text-xs font-bold uppercase hover:bg-surface-container-highest transition-all">
-      SAVE ITEM MAPPING
-    </button>
-  </form>
+
+      <button type="submit" class="gold-button px-6 py-2 font-mono text-xs font-bold uppercase">
+        Save Mapping
+      </button>
+    </form>
+    @endforeach
+  </div>
+  @endif
 </section>
 
 @endsection

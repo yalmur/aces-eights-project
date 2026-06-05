@@ -42,12 +42,18 @@ class DeliveryController extends Controller
             'name'       => 'required|string|max:100',
             'min_km'     => 'required|numeric|min:0',
             'max_km'     => 'required|numeric|min:0',
+            'postcodes'  => 'nullable|string|max:500',
             'fee'        => 'required|numeric|min:0',
             'is_active'  => 'boolean',
             'sort_order' => 'nullable|integer|min:0',
         ]);
         $data['is_active']  = $request->boolean('is_active');
         $data['sort_order'] = $request->input('sort_order', 0);
+        // Normalise: uppercase, strip extra spaces around commas
+        if (!empty($data['postcodes'])) {
+            $parts = array_map('trim', explode(',', strtoupper($data['postcodes'])));
+            $data['postcodes'] = implode(', ', array_filter($parts));
+        }
         return $data;
     }
 }

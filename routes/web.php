@@ -36,6 +36,7 @@ Route::middleware('auth')->group(function () {
 
 Route::post('/stripe/webhook', [App\Http\Controllers\StripeWebhookController::class, 'handle'])->name('stripe.webhook');
 Route::post('/promo/check', [App\Http\Controllers\PromoController::class, 'check'])->name('promo.check')->middleware('throttle:20,1');
+Route::get('/delivery-fee', [CheckoutController::class, 'deliveryFee'])->name('delivery.fee')->middleware('throttle:30,1');
 Route::get('/orders/{order}/confirmation', [OrderController::class, 'confirmation'])->name('orders.confirmation');
 Route::get('/orders/{order}/tracking', [OrderController::class, 'tracking'])->name('orders.tracking');
 Route::get('/party-hall',  [PartyHallController::class, 'index'])->name('party-hall');
@@ -126,6 +127,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/allergy',                       [App\Http\Controllers\Admin\AllergyController::class, 'index'])->name('allergy.index');
     Route::post('/allergy/settings',             [App\Http\Controllers\Admin\AllergyController::class, 'saveSettings'])->name('allergy.settings');
     Route::post('/allergy/map',                  [App\Http\Controllers\Admin\AllergyController::class, 'saveMap'])->name('allergy.map');
+    Route::post('/allergens',                    [App\Http\Controllers\Admin\AllergyController::class, 'storeAllergen'])->name('allergens.store');
     Route::patch('/allergens/{allergen}/toggle', [App\Http\Controllers\Admin\AllergyController::class, 'toggle'])->name('allergens.toggle');
     Route::delete('/allergens/{allergen}',       [App\Http\Controllers\Admin\AllergyController::class, 'destroyAllergen'])->name('allergens.destroy');
 });

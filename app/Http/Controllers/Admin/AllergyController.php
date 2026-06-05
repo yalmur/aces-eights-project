@@ -17,7 +17,7 @@ class AllergyController extends Controller
         return view('admin.allergy.index', [
             'title'         => 'Allergy Management',
             'allergens'     => Allergen::orderBy('sort_order')->get(),
-            'menuItems'     => MenuItem::with('category')->orderBy('name')->get(),
+            'menuItems'     => MenuItem::with('category', 'allergens')->orderBy('name')->get(),
             'alertsEnabled' => \App\Models\Setting::get('allergy_alerts_enabled', '1') === '1',
             'disclaimer'    => \App\Models\Setting::get('checkout_disclaimer',
                 'ACES & EIGHTS PIZZA CO. TAKES FOOD SAFETY SERIOUSLY. Please be advised that our kitchen handles wheat, dairy, and eggs. While we take meticulous steps to prevent cross-contact, we cannot guarantee a 100% allergen-free environment for those with severe sensitivities. By proceeding with your order, you acknowledge these risks. Contact our floor manager for specific ingredient concerns.'
@@ -52,6 +52,24 @@ class AllergyController extends Controller
         $item->allergens()->sync($data['allergens'] ?? []);
 
         return redirect()->route('admin.allergy.index')->with('success', "Allergen mapping saved for '{$item->name}'.");
+    }
+
+    public function storeAllergen(Request $request): RedirectResponse
+    {
+        $data = $request->validate([
+            'name'       => 'required|string|max:60|unique:allergens,name',
+            'icon'       => 'nullable|string|max:60',
+            'sort_order' => 'nullable|integer|min:0',
+        ]);
+
+        Allergen::create([
+            'name'       => $data['name'],
+            'icon'       => $data['icon'] ?? 'warning',
+            'sort_order' => $data['sort_order'] ?? 0,
+            'is_visible' => true,
+        ]);
+
+        return redirect()->route('admin.allergy.index')->with('success', "Allergen '{$data['name']}' added.");
     }
 
     public function toggle(string $allergen): RedirectResponse

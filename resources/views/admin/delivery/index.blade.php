@@ -117,25 +117,65 @@
   <h2 class="font-serif text-xl font-bold text-on-surface mb-4 uppercase">Delivery Zone Fees</h2>
   <div class="flex flex-col gap-3">
     @foreach($zones as $zone)
-    <div class="flex items-center gap-3 border-b border-outline pb-3">
-      <div class="flex-1">
-        <span class="font-mono text-[10px] font-bold text-on-surface uppercase">{{ $zone->name }}</span>
-        <span class="font-mono text-[9px] text-on-surface-variant block">{{ $zone->min_km }}–{{ $zone->max_km }}km</span>
+    <div x-data="{ editing: false }" class="border-b border-outline pb-3 mb-3">
+      <div class="flex items-center justify-between gap-2">
+        <div class="flex-1 min-w-0">
+          <span class="font-mono text-[10px] font-bold text-on-surface uppercase">{{ $zone->name }}</span>
+          <span class="font-mono text-[9px] text-on-surface-variant block">
+            Fee: £{{ $zone->fee }} ·
+            {{ $zone->is_active ? 'Active' : 'Inactive' }}
+            @if($zone->postcodes)
+              · {{ $zone->postcodes }}
+            @else
+              · <span class="text-error">No postcodes set</span>
+            @endif
+          </span>
+        </div>
+        <button @click="editing = !editing" class="font-mono text-[10px] text-primary hover:underline uppercase shrink-0">EDIT</button>
+        <form method="POST" action="{{ route('admin.delivery.destroy', $zone->id) }}" onsubmit="return confirm('Delete {{ addslashes($zone->name) }}?')">
+          @csrf @method('DELETE')
+          <button type="submit" class="font-mono text-[10px] text-brand-error hover:underline uppercase">DEL</button>
+        </form>
       </div>
-      <form method="POST" action="{{ route('admin.delivery.update', $zone->id) }}" class="flex items-center gap-2">
+      <form x-show="editing" x-cloak x-transition
+            method="POST" action="{{ route('admin.delivery.update', $zone->id) }}"
+            class="mt-3 bg-surface-container-low border border-outline p-3 flex flex-col gap-2">
         @csrf @method('PUT')
-        <input type="hidden" name="name" value="{{ $zone->name }}">
-        <input type="hidden" name="min_km" value="{{ $zone->min_km }}">
-        <input type="hidden" name="max_km" value="{{ $zone->max_km }}">
-        <input type="hidden" name="is_active" value="{{ $zone->is_active ? '1' : '0' }}">
-        <span class="font-mono text-[10px] text-on-surface-variant">£</span>
-        <input type="number" name="fee" step="0.01" min="0" value="{{ $zone->fee }}"
-               class="w-16 bg-background border-0 border-b border-outline font-mono text-xs text-center py-1 focus:ring-0 focus:border-primary"/>
-        <button type="submit" class="font-mono text-[10px] text-primary hover:underline uppercase">SAVE</button>
-      </form>
-      <form method="POST" action="{{ route('admin.delivery.destroy', $zone->id) }}" onsubmit="return confirm('Delete?')">
-        @csrf @method('DELETE')
-        <button type="submit" class="font-mono text-[10px] text-brand-error hover:underline uppercase">DEL</button>
+        <input type="text" name="name" value="{{ $zone->name }}" required
+               placeholder="Zone name" class="w-full border-0 border-b border-outline font-mono text-xs py-1 focus:ring-0 bg-transparent">
+        <div class="grid grid-cols-3 gap-2">
+          <div>
+            <label class="font-mono text-[9px] uppercase text-on-surface-variant">From km</label>
+            <input type="number" name="min_km" step="0.1" min="0" value="{{ $zone->min_km }}" required
+                   class="w-full border-0 border-b border-outline font-mono text-xs py-1 focus:ring-0 bg-transparent">
+          </div>
+          <div>
+            <label class="font-mono text-[9px] uppercase text-on-surface-variant">To km</label>
+            <input type="number" name="max_km" step="0.1" min="0" value="{{ $zone->max_km }}" required
+                   class="w-full border-0 border-b border-outline font-mono text-xs py-1 focus:ring-0 bg-transparent">
+          </div>
+          <div>
+            <label class="font-mono text-[9px] uppercase text-on-surface-variant">Fee £</label>
+            <input type="number" name="fee" step="0.01" min="0" value="{{ $zone->fee }}" required
+                   class="w-full border-0 border-b border-outline font-mono text-xs py-1 focus:ring-0 bg-transparent">
+          </div>
+        </div>
+        <div>
+          <label class="font-mono text-[9px] uppercase text-on-surface-variant">Postcode Districts (comma-separated)</label>
+          <input type="text" name="postcodes" value="{{ $zone->postcodes }}"
+                 placeholder="e.g. NW5, N7, N19"
+                 class="w-full border-0 border-b border-outline font-mono text-xs py-1 focus:ring-0 bg-transparent">
+          <span class="font-mono text-[9px] text-on-surface-variant">Customers outside these postcodes cannot order delivery.</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <input type="hidden" name="is_active" value="0">
+          <input type="checkbox" name="is_active" value="1" id="active_{{ $zone->id }}" {{ $zone->is_active ? 'checked' : '' }}>
+          <label for="active_{{ $zone->id }}" class="font-mono text-[10px] uppercase">Active</label>
+        </div>
+        <div class="flex gap-2">
+          <button type="submit" class="font-mono text-[10px] text-on-primary bg-primary px-3 py-1 uppercase hover:bg-primary-container hover:text-on-primary-container transition-colors">SAVE</button>
+          <button type="button" @click="editing = false" class="font-mono text-[10px] uppercase border border-outline px-3 py-1">CANCEL</button>
+        </div>
       </form>
     </div>
     @endforeach
@@ -148,6 +188,9 @@
         <input type="number" name="min_km" placeholder="From km" step="0.1" min="0" required class="border-0 border-b border-outline font-mono text-xs py-1 focus:ring-0">
         <input type="number" name="max_km" placeholder="To km" step="0.1" min="0" required class="border-0 border-b border-outline font-mono text-xs py-1 focus:ring-0">
         <input type="number" name="fee" placeholder="Fee £" step="0.01" min="0" required class="border-0 border-b border-outline font-mono text-xs py-1 focus:ring-0">
+      </div>
+      <div>
+        <input type="text" name="postcodes" placeholder="Postcode districts e.g. NW5, N7" class="w-full border-0 border-b border-outline font-mono text-xs py-1 focus:ring-0">
       </div>
       <input type="hidden" name="is_active" value="1">
       <button type="submit" class="w-full bg-primary text-on-primary py-2 font-mono text-[10px] font-bold uppercase mt-1">ADD ZONE</button>

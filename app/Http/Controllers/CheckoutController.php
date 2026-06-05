@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DeliveryZone;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Promotion;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,11 +18,28 @@ class CheckoutController extends Controller
     public function index(): View
     {
         $defaultAddress = Auth::user()->defaultAddress();
+        $zones          = DeliveryZone::active()->get(['name', 'fee', 'postcodes']);
 
         return view('checkout.index', [
             'title'          => 'Checkout',
             'defaultAddress' => $defaultAddress,
+            'zones'          => $zones,
         ]);
+    }
+
+    public function deliveryFee(Request $request): JsonResponse
+    {
+        $postcode = trim($request->query('postcode', ''));
+        if (!$postcode) {
+            return response()->json(['covered' => false, 'fee' => 0, 'zone' => null, 'message' => 'Enter your postcode']);
+        }
+
+        $zone = DeliveryZone::findByPostcode($postcode);
+        if (!$zone) {
+            return response()->json(['covered' => false, 'fee' => 0, 'zone' => null, 'message' => "Sorry, we don't deliver to {$postcode}. We deliver within 2 miles of NW5 2HP."]);
+        }
+
+        return response()->json(['covered' => true, 'fee' => (float) $zone->fee, 'zone' => $zone->name, 'message' => null]);
     }
 
     public function store(Request $request): RedirectResponse
@@ -37,11 +56,20 @@ class CheckoutController extends Controller
             'promo_code'     => 'nullable|string|max:50',
         ]);
 
-        $cartItems   = json_decode($data['cart_items'], true);
-        $isDelivery  = $data['order_type'] === 'delivery';
-        $deliveryFee = $isDelivery
-            ? (\App\Models\DeliveryZone::active()->orderBy('sort_order')->value('fee') ?? 3.50)
-            : 0;
+        $cartItems  = json_decode($data['cart_items'], true);
+        $isDelivery = $data['order_type'] === 'delivery';
+
+        if ($isDelivery) {
+            $zone = DeliveryZone::findByPostcode($data['postal_code'] ?? '');
+            if (!$zone) {
+                return back()->withInput()->withErrors([
+                    'postal_code' => "Sorry, we don't deliver to that postcode. We cover NW5, N7, N19 and nearby areas within 2 miles of Tufnell Park.",
+                ]);
+            }
+            $deliveryFee = (float) $zone->fee;
+        } else {
+            $deliveryFee = 0;
+        }
         $user        = Auth::user();
 
         $orderItems = [];

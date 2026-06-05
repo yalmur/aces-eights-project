@@ -10,6 +10,33 @@
     <form action="{{ route('checkout.store') }}" method="POST"
           x-data="{
             orderType: 'delivery',
+            deliveryFee: null,
+            zoneName: null,
+            postcodeError: null,
+            postcodeChecking: false,
+            get effectiveDeliveryFee() {
+                if (this.orderType !== 'delivery') return 0;
+                return this.deliveryFee !== null ? this.deliveryFee : 0;
+            },
+            get orderTotal() {
+                const sub = $store.cart.subtotal;
+                const fee = this.effectiveDeliveryFee;
+                const disc = this.promo.valid ? this.promo.discount : 0;
+                return Math.max(0, sub + fee - disc);
+            },
+            async checkPostcode(postcode) {
+                if (this.orderType !== 'delivery') return;
+                const p = postcode.trim();
+                if (!p) { this.deliveryFee = null; this.zoneName = null; this.postcodeError = null; return; }
+                this.postcodeChecking = true; this.postcodeError = null;
+                try {
+                    const r = await fetch('{{ route('delivery.fee') }}?postcode=' + encodeURIComponent(p));
+                    const d = await r.json();
+                    if (d.covered) { this.deliveryFee = d.fee; this.zoneName = d.zone; this.postcodeError = null; }
+                    else { this.deliveryFee = null; this.zoneName = null; this.postcodeError = d.message; }
+                } catch { this.postcodeError = 'Could not check postcode. Try again.'; }
+                this.postcodeChecking = false;
+            },
             promo: { code: '', loading: false, valid: false, discount: 0, msg: '' },
             async applyPromo() {
                 const c = this.promo.code.trim();
@@ -19,7 +46,7 @@
                     const r = await fetch('{{ route('promo.check') }}', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content },
-                        body: JSON.stringify({ code: c, subtotal: $store.cart.subtotal, delivery_fee: this.orderType === 'delivery' ? 3.50 : 0 })
+                        body: JSON.stringify({ code: c, subtotal: $store.cart.subtotal, delivery_fee: this.effectiveDeliveryFee })
                     });
                     const d = await r.json();
                     if (d.valid) { this.promo.valid = true; this.promo.discount = d.discount; this.promo.msg = d.message; }
@@ -28,7 +55,12 @@
                 this.promo.loading = false;
             }
           }"
-          @submit.prevent="document.getElementById('cart-json').value = JSON.stringify($store.cart.items); document.getElementById('order-type-input').value = orderType; $el.submit()">
+          @submit.prevent="
+            if (orderType === 'delivery' && !deliveryFee && deliveryFee !== 0) { postcodeError = 'Please check your postcode before placing your order.'; return; }
+            document.getElementById('cart-json').value = JSON.stringify($store.cart.items);
+            document.getElementById('order-type-input').value = orderType;
+            $el.submit()
+          ">
         @csrf
         <input type="hidden" name="cart_items" id="cart-json">
         <input type="hidden" name="order_type" id="order-type-input" value="delivery">
@@ -77,9 +109,20 @@
                                        name="city" placeholder="Chicago" type="text" value="{{ old('city', $defaultAddress?->city) }}"/>
                             </div>
                             <div>
-                                <label class="block font-label-sm text-label-sm uppercase mb-1">Postal Code</label>
+                                <label class="block font-label-sm text-label-sm uppercase mb-1">Postcode</label>
                                 <input class="w-full bg-transparent border-b-2 border-on-surface py-2 focus:ring-0 focus:border-primary placeholder:text-outline-variant font-body-md"
-                                       name="postal_code" placeholder="60601" type="text" value="{{ old('postal_code', $defaultAddress?->postcode) }}"/>
+                                       :class="postcodeError ? 'border-error' : (zoneName ? 'border-green-600' : '')"
+                                       name="postal_code" placeholder="e.g. NW5 2HP" type="text"
+                                       value="{{ old('postal_code', $defaultAddress?->postcode) }}"
+                                       @blur="checkPostcode($event.target.value)"
+                                       @change="checkPostcode($event.target.value)"/>
+                                <div class="mt-1 min-h-[1.25rem]">
+                                    <p x-show="postcodeChecking" x-cloak class="font-mono text-[10px] text-on-surface-variant">Checking postcode...</p>
+                                    <p x-show="!postcodeChecking && zoneName" x-cloak class="font-mono text-[10px] text-green-700"
+                                       x-text="'✓ ' + zoneName + ' — £' + deliveryFee.toFixed(2) + ' delivery'"></p>
+                                    <p x-show="!postcodeChecking && postcodeError" x-cloak class="font-mono text-[10px] text-error"
+                                       x-text="postcodeError"></p>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -170,7 +213,11 @@
                         </div>
                         <div class="flex justify-between text-body-md">
                             <span>Delivery Fee</span>
-                            <span x-text="orderType === 'delivery' ? '£3.50' : 'FREE'"></span>
+                            <span x-text="orderType !== 'delivery' ? 'FREE' : (deliveryFee !== null ? '£' + deliveryFee.toFixed(2) : '—')"></span>
+                        </div>
+                        <div x-show="orderType === 'delivery' && deliveryFee === null && !postcodeError" x-cloak
+                             class="font-mono text-[10px] text-on-surface-variant italic">
+                            Enter your postcode to see delivery fee
                         </div>
                         <div x-show="promo.valid" x-cloak
                              class="flex justify-between text-body-md text-green-700 font-mono">
@@ -181,7 +228,7 @@
                     <div class="flex justify-between items-center border-t-4 border-double border-on-surface pt-4 mb-8">
                         <span class="font-headline-md text-headline-md uppercase">Total Due</span>
                         <span class="font-headline-md text-headline-md text-primary"
-                              x-text="'£' + $store.cart.total(orderType).toFixed(2)"></span>
+                              x-text="'£' + orderTotal.toFixed(2)"></span>
                     </div>
                     <button type="submit"
                             :disabled="$store.cart.items.length === 0"

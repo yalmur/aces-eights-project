@@ -1,16 +1,16 @@
 # Graph Report - webapp  (2026-06-05)
 
 ## Corpus Check
-- 220 files · ~111,356 words
+- 180 files · ~83,553 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1018 nodes · 1193 edges · 247 communities (235 shown, 12 thin omitted)
+- 1018 nodes · 1196 edges · 247 communities (235 shown, 12 thin omitted)
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 57 edges (avg confidence: 0.81)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `2cde7e35`
+- Built from commit: `03e4df5d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -100,8 +100,8 @@
 ## Communities (247 total, 12 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.06
-Nodes (23): AccountController, AddressController, PasswordController, View, RedirectResponse, Request, RedirectResponse, Request (+15 more)
+Cohesion: 0.07
+Nodes (21): AccountController, AddressController, PasswordController, View, RedirectResponse, Request, RedirectResponse, Request (+13 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.08
@@ -188,8 +188,8 @@ Cohesion: 0.15
 Nodes (19): Brainstorm: Cart & Customisation Design Options, Brainstorm: Kitchen Notes UI, Alpine.js Cart Store ($store.cart), Customisation Drawer (cart-drawer.blade.php), Database Schema (Plan 4), Kitchen Notes Quick-Pick Chips, Laravel Framework, Mini Cart Dropdown (header) (+11 more)
 
 ### Community 30 - "Community 30"
-Cohesion: 0.30
-Nodes (6): MenuItemController, RedirectResponse, Request, View, BelongsTo, MenuItem
+Cohesion: 0.22
+Nodes (8): MenuItemController, RedirectResponse, Request, View, View, BelongsTo, HomeController, MenuItem
 
 ### Community 31 - "Community 31"
 Cohesion: 0.29
@@ -268,15 +268,15 @@ Nodes (4): RedirectResponse, Request, View, PartyHallController
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Controller` connect `Community 0` to `Community 130`, `Community 4`, `Community 5`, `Community 9`, `Community 10`, `Community 23`, `Community 30`?**
-  _High betweenness centrality (0.072) - this node is a cross-community bridge._
+  _High betweenness centrality (0.064) - this node is a cross-community bridge._
 - **Why does `Promotion` connect `Community 5` to `Community 2`, `Community 130`?**
-  _High betweenness centrality (0.049) - this node is a cross-community bridge._
-- **Why does `TestCase` connect `Community 25` to `Community 128`, `Community 4`, `Community 101`, `Community 5`, `Community 9`, `Community 10`, `Community 13`, `Community 14`, `Community 16`, `Community 17`, `Community 241`, `Community 20`, `Community 24`, `Community 29`?**
-  _High betweenness centrality (0.040) - this node is a cross-community bridge._
+  _High betweenness centrality (0.051) - this node is a cross-community bridge._
+- **Why does `PromotionTest` connect `Community 5` to `Community 17`, `Community 25`?**
+  _High betweenness centrality (0.048) - this node is a cross-community bridge._
 - **What connects `$schema`, `name`, `type` to the rest of the system?**
   _166 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.06382978723404255 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07087486157253599 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
