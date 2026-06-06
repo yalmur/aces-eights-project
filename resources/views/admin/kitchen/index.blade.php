@@ -2,8 +2,7 @@
 @section('content')
 
 <div class="flex flex-col h-screen w-full overflow-hidden"
-     x-data="kitchenDashboard()"
-     x-init="init()">
+     x-data="kitchenDashboard()">
 
   {{-- ── TOP BAR ─────────────────────────────────────────────────────────── --}}
   <header class="flex-none h-14 bg-zinc-900 border-b border-zinc-800 flex items-center px-4 gap-3 z-10">
