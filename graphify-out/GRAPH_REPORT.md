@@ -1,16 +1,16 @@
 # Graph Report - webapp  (2026-06-06)
 
 ## Corpus Check
-- 185 files · ~85,031 words
+- 185 files · ~84,986 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1037 nodes · 1236 edges · 247 communities (236 shown, 11 thin omitted)
+- 1037 nodes · 1245 edges · 246 communities (236 shown, 10 thin omitted)
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 61 edges (avg confidence: 0.81)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `613d7fd6`
+- Built from commit: `ce0f6919`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -63,7 +63,6 @@
 - [[_COMMUNITY_Community 241|Community 241]]
 - [[_COMMUNITY_Community 243|Community 243]]
 - [[_COMMUNITY_Community 248|Community 248]]
-- [[_COMMUNITY_Community 249|Community 249]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `TestCase` - 36 edges
@@ -73,8 +72,8 @@
 5. `RouteSmokeTest` - 18 edges
 6. `DeliveryZone` - 17 edges
 7. `Allergen` - 17 edges
-8. `CustomerPagesTest` - 16 edges
-9. `Request` - 15 edges
+8. `Request` - 16 edges
+9. `CustomerPagesTest` - 16 edges
 10. `MenuItemTest` - 14 edges
 
 ## Surprising Connections (you probably didn't know these)
@@ -94,27 +93,27 @@
 - **Full Ordering Pipeline: Cart → Checkout → Stripe → Order Schema** — concept_alpine_cart_store, concept_stripe_checkout, concept_order_schema [INFERRED 0.95]
 - **Production Readiness: Rate Limiting + Image Upload + DEPLOY.md** — concept_rate_limiting, concept_image_upload, concept_cpanel_deploy [EXTRACTED 1.00]
 
-## Communities (247 total, 11 thin omitted)
+## Communities (246 total, 10 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.08
-Nodes (10): AllergyController, MenuItemTest, RedirectResponse, Request, View, BelongsToMany, AllergyAdminTest, Allergen (+2 more)
+Cohesion: 0.14
+Nodes (8): AllergyController, RedirectResponse, Request, View, BelongsToMany, AllergyAdminTest, Allergen, User
 
 ### Community 1 - "Community 1"
 Cohesion: 0.08
 Nodes (24): 1. Cart Store (`Alpine.store('cart')`), 2. Customisation Drawer, 3. Header Mini Cart, 4. Cart Page (`/cart`), 5. Files Changed / Created, 6. Out of Scope (Plan 2), Behaviour, Behaviour (+16 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.24
-Nodes (7): RedirectResponse, Request, View, Request, CheckoutController, PromoController, JsonResponse
+Cohesion: 0.11
+Nodes (13): DeliveryController, RedirectResponse, Request, View, RedirectResponse, Request, View, Request (+5 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.07
 Nodes (14): static, static, static, static, AllergenFactory, CategoryFactory, DeliveryZoneFactory, MenuItemFactory (+6 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.06
-Nodes (25): AccountController, AddressController, PasswordController, DashboardController, KitchenController, View, RedirectResponse, Request (+17 more)
+Cohesion: 0.07
+Nodes (21): AccountController, AddressController, PasswordController, KitchenController, View, RedirectResponse, Request, RedirectResponse (+13 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.08
@@ -137,8 +136,8 @@ Cohesion: 0.13
 Nodes (7): SettingsController, RedirectResponse, Request, View, SettingsTest, Setting, User
 
 ### Community 10 - "Community 10"
-Cohesion: 0.05
-Nodes (27): DeliveryController, RedirectResponse, Request, View, BelongsTo, HasMany, BelongsTo, HasMany (+19 more)
+Cohesion: 0.06
+Nodes (23): View, BelongsTo, HasMany, BelongsTo, HasMany, BelongsTo, BelongsTo, Authenticatable (+15 more)
 
 ### Community 11 - "Community 11"
 Cohesion: 0.11
@@ -149,16 +148,16 @@ Cohesion: 0.11
 Nodes (18): dependencies, alpinejs, devDependencies, autoprefixer, axios, concurrently, laravel-echo, laravel-vite-plugin (+10 more)
 
 ### Community 14 - "Community 14"
-Cohesion: 0.11
-Nodes (3): ReorderTest, CustomerPagesTest, TestCase
+Cohesion: 0.05
+Nodes (6): ReorderTest, CustomerPagesTest, OrderEmailTest, PasswordResetTest, RouteSmokeTest, TestCase
 
 ### Community 16 - "Community 16"
 Cohesion: 0.25
 Nodes (3): CheckoutTest, MenuItem, User
 
 ### Community 17 - "Community 17"
-Cohesion: 0.24
-Nodes (3): ExampleTest, OrderEmailTest, RefreshDatabase
+Cohesion: 0.32
+Nodes (3): ExampleTest, RateLimitTest, RefreshDatabase
 
 ### Community 18 - "Community 18"
 Cohesion: 0.31
@@ -237,12 +236,12 @@ Cohesion: 0.22
 Nodes (8): Aces & Eights Pizza — Plan 9: Deploy Prep & Final Polish, File Map, On your LOCAL machine:, Task 1: Menu Item Image Upload, Task 2: Rate Limiting on Auth + Checkout Routes, Task 3: Branded Error Pages, Task 4: Production Deploy Prep, Task 5: Full Test Suite + Git Tag v1.0
 
 ### Community 130 - "Community 130"
-Cohesion: 0.09
-Nodes (13): MenuItemController, OrderController, BelongsTo, Controller, HomeController, OrderController, PageController, PasswordResetController (+5 more)
+Cohesion: 0.08
+Nodes (15): DashboardController, MenuItemController, OrderController, View, BelongsTo, Controller, HomeController, OrderController (+7 more)
 
 ### Community 241 - "Community 241"
-Cohesion: 0.14
-Nodes (5): BaseTestCase, RateLimitTest, RegistrationTest, TestCase, ExampleTest
+Cohesion: 0.18
+Nodes (4): BaseTestCase, RegistrationTest, TestCase, ExampleTest
 
 ### Community 243 - "Community 243"
 Cohesion: 0.43
@@ -251,22 +250,22 @@ Nodes (4): RedirectResponse, Request, View, PartyHallController
 ## Knowledge Gaps
 - **166 isolated node(s):** `$schema`, `name`, `type`, `description`, `keywords` (+161 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **11 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Controller` connect `Community 4` to `Community 0`, `Community 130`, `Community 2`, `Community 5`, `Community 9`, `Community 10`?**
-  _High betweenness centrality (0.060) - this node is a cross-community bridge._
+  _High betweenness centrality (0.043) - this node is a cross-community bridge._
 - **Why does `TestCase` connect `Community 241` to `Community 0`, `Community 5`, `Community 9`, `Community 13`, `Community 14`, `Community 15`, `Community 16`, `Community 17`, `Community 20`, `Community 248`, `Community 24`, `Community 29`, `Community 30`?**
   _High betweenness centrality (0.036) - this node is a cross-community bridge._
 - **What connects `$schema`, `name`, `type` to the rest of the system?**
   _168 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.08408408408408409 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.14492753623188406 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
+- **Should `Community 2` be split into smaller, more focused modules?**
+  _Cohesion score 0.11494252873563218 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
   _Cohesion score 0.06620209059233449 - nodes in this community are weakly interconnected._
-- **Should `Community 4` be split into smaller, more focused modules?**
-  _Cohesion score 0.0596078431372549 - nodes in this community are weakly interconnected._
