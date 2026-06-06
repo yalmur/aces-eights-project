@@ -46,22 +46,22 @@
   },
   "nodes": [
     {
-      "label": "OrderController.php",
+      "label": "KitchenController.php",
       "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
       "source_location": "L1",
-      "id": "app_http_controllers_admin_ordercontroller_php",
+      "id": "app_http_controllers_admin_kitchencontroller_php",
       "community": 130,
-      "norm_label": "ordercontroller.php"
+      "norm_label": "kitchencontroller.php"
     },
     {
-      "label": "OrderController",
+      "label": "KitchenController",
       "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L16",
-      "id": "admin_ordercontroller_ordercontroller",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L9",
+      "id": "admin_kitchencontroller_kitchencontroller",
       "community": 130,
-      "norm_label": "ordercontroller"
+      "norm_label": "kitchencontroller"
     },
     {
       "label": "Controller",
@@ -75,83 +75,146 @@
     {
       "label": ".index()",
       "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L18",
-      "id": "admin_ordercontroller_ordercontroller_index",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L11",
+      "id": "admin_kitchencontroller_kitchencontroller_index",
       "community": 130,
       "norm_label": ".index()"
+    },
+    {
+      "label": "View",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L11",
+      "id": "view",
+      "community": 130,
+      "norm_label": "view"
+    },
+    {
+      "label": "_card.blade.php",
+      "file_type": "code",
+      "source_file": "resources/views/admin/kitchen/_card.blade.php",
+      "source_location": null,
+      "id": "resources_views_admin_kitchen_card_blade_php",
+      "community": 9,
+      "norm_label": "_card.blade.php"
+    },
+    {
+      "label": "index.blade.php",
+      "file_type": "code",
+      "source_file": "resources/views/admin/kitchen/index.blade.php",
+      "source_location": null,
+      "id": "resources_views_admin_kitchen_index_blade_php",
+      "community": 90,
+      "norm_label": "index.blade.php"
+    },
+    {
+      "label": "admin.kitchen._card",
+      "file_type": "code",
+      "source_file": "resources/views/admin/kitchen/index.blade.php",
+      "source_location": null,
+      "id": "admin_kitchen_card",
+      "community": 90,
+      "norm_label": "admin.kitchen._card"
+    },
+    {
+      "label": "kitchen.blade.php",
+      "file_type": "code",
+      "source_file": "resources/views/layouts/kitchen.blade.php",
+      "source_location": null,
+      "id": "resources_views_layouts_kitchen_blade_php",
+      "community": 25,
+      "norm_label": "kitchen.blade.php"
+    },
+    {
+      "label": "OrderController.php",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L1",
+      "community": 130,
+      "norm_label": "ordercontroller.php",
+      "id": "app_http_controllers_admin_ordercontroller_php"
+    },
+    {
+      "label": "OrderController",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L16",
+      "community": 130,
+      "norm_label": "ordercontroller",
+      "id": "admin_ordercontroller_ordercontroller"
+    },
+    {
+      "label": ".index()",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L18",
+      "community": 130,
+      "norm_label": ".index()",
+      "id": "admin_ordercontroller_ordercontroller_index"
     },
     {
       "label": "Request",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/OrderController.php",
       "source_location": "L18",
-      "id": "request",
       "community": 130,
-      "norm_label": "request"
-    },
-    {
-      "label": "View",
-      "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L18",
-      "id": "view",
-      "community": 130,
-      "norm_label": "view"
+      "norm_label": "request",
+      "id": "request"
     },
     {
       "label": ".inStore()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/OrderController.php",
       "source_location": "L46",
-      "id": "admin_ordercontroller_ordercontroller_instore",
       "community": 130,
-      "norm_label": ".instore()"
+      "norm_label": ".instore()",
+      "id": "admin_ordercontroller_ordercontroller_instore"
     },
     {
       "label": ".storeInStore()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/OrderController.php",
       "source_location": "L68",
-      "id": "admin_ordercontroller_ordercontroller_storeinstore",
       "community": 130,
-      "norm_label": ".storeinstore()"
+      "norm_label": ".storeinstore()",
+      "id": "admin_ordercontroller_ordercontroller_storeinstore"
     },
     {
       "label": "RedirectResponse",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/OrderController.php",
       "source_location": "L68",
-      "id": "redirectresponse",
       "community": 130,
-      "norm_label": "redirectresponse"
+      "norm_label": "redirectresponse",
+      "id": "redirectresponse"
     },
     {
       "label": ".show()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/OrderController.php",
       "source_location": "L123",
-      "id": "admin_ordercontroller_ordercontroller_show",
       "community": 130,
-      "norm_label": ".show()"
+      "norm_label": ".show()",
+      "id": "admin_ordercontroller_ordercontroller_show"
     },
     {
       "label": ".updateStatus()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/OrderController.php",
       "source_location": "L133",
-      "id": "admin_ordercontroller_ordercontroller_updatestatus",
       "community": 11,
-      "norm_label": ".updatestatus()"
+      "norm_label": ".updatestatus()",
+      "id": "admin_ordercontroller_ordercontroller_updatestatus"
     },
     {
       "label": "index.blade.php",
       "file_type": "code",
       "source_file": "resources/views/admin/orders/index.blade.php",
       "source_location": null,
-      "id": "resources_views_admin_orders_index_blade_php",
       "community": 95,
-      "norm_label": "index.blade.php"
+      "norm_label": "index.blade.php",
+      "id": "resources_views_admin_orders_index_blade_php"
     },
     {
       "label": "PageController.php",
@@ -1067,7 +1130,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L43",
-      "community": 130,
+      "community": 10,
       "norm_label": ".create()",
       "id": "admin_menuitemcontroller_menuitemcontroller_create"
     },
@@ -1544,7 +1607,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/OurMenuController.php",
       "source_location": "L1",
-      "community": 4,
+      "community": 130,
       "norm_label": "ourmenucontroller.php",
       "id": "app_http_controllers_ourmenucontroller_php"
     },
@@ -1553,7 +1616,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/OurMenuController.php",
       "source_location": "L8",
-      "community": 4,
+      "community": 130,
       "norm_label": "ourmenucontroller",
       "id": "controllers_ourmenucontroller_ourmenucontroller"
     },
@@ -1562,7 +1625,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/OurMenuController.php",
       "source_location": "L10",
-      "community": 4,
+      "community": 130,
       "norm_label": ".index()",
       "id": "controllers_ourmenucontroller_ourmenucontroller_index"
     },
@@ -1571,7 +1634,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/OurMenuController.php",
       "source_location": "L10",
-      "community": 4,
+      "community": 130,
       "norm_label": "view",
       "id": "app_http_controllers_ourmenucontroller_php_view"
     },
@@ -1583,15 +1646,6 @@
       "community": 87,
       "norm_label": "dashboard.blade.php",
       "id": "resources_views_admin_dashboard_blade_php"
-    },
-    {
-      "label": "index.blade.php",
-      "file_type": "code",
-      "source_file": "resources/views/admin/kitchen/index.blade.php",
-      "source_location": null,
-      "community": 90,
-      "norm_label": "index.blade.php",
-      "id": "resources_views_admin_kitchen_index_blade_php"
     },
     {
       "label": "our-menu.blade.php",
@@ -1607,7 +1661,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
       "source_location": "L1",
-      "community": 130,
+      "community": 4,
       "norm_label": "dashboardcontroller.php",
       "id": "app_http_controllers_admin_dashboardcontroller_php"
     },
@@ -1616,7 +1670,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
       "source_location": "L10",
-      "community": 130,
+      "community": 4,
       "norm_label": "dashboardcontroller",
       "id": "admin_dashboardcontroller_dashboardcontroller"
     },
@@ -1625,7 +1679,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
       "source_location": "L12",
-      "community": 130,
+      "community": 4,
       "norm_label": ".index()",
       "id": "admin_dashboardcontroller_dashboardcontroller_index"
     },
@@ -1634,45 +1688,9 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
       "source_location": "L12",
-      "community": 130,
+      "community": 4,
       "norm_label": "view",
       "id": "app_http_controllers_admin_dashboardcontroller_php_view"
-    },
-    {
-      "label": "KitchenController.php",
-      "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L1",
-      "community": 4,
-      "norm_label": "kitchencontroller.php",
-      "id": "app_http_controllers_admin_kitchencontroller_php"
-    },
-    {
-      "label": "KitchenController",
-      "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L9",
-      "community": 4,
-      "norm_label": "kitchencontroller",
-      "id": "admin_kitchencontroller_kitchencontroller"
-    },
-    {
-      "label": ".index()",
-      "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L11",
-      "community": 4,
-      "norm_label": ".index()",
-      "id": "admin_kitchencontroller_kitchencontroller_index"
-    },
-    {
-      "label": "View",
-      "file_type": "code",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L11",
-      "community": 4,
-      "norm_label": "view",
-      "id": "app_http_controllers_admin_kitchencontroller_php_view"
     },
     {
       "label": "PartyHallController.php",
@@ -1805,7 +1823,7 @@
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L29",
-      "community": 130,
+      "community": 10,
       "norm_label": ".category()",
       "id": "models_menuitem_menuitem_category"
     },
@@ -1814,7 +1832,7 @@
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L29",
-      "community": 130,
+      "community": 10,
       "norm_label": "belongsto",
       "id": "belongsto"
     },
@@ -3551,7 +3569,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/MenuController.php",
       "source_location": "L1",
-      "community": 10,
+      "community": 4,
       "norm_label": "menucontroller.php",
       "id": "app_http_controllers_menucontroller_php"
     },
@@ -3560,7 +3578,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/MenuController.php",
       "source_location": "L10",
-      "community": 10,
+      "community": 4,
       "norm_label": "menucontroller",
       "id": "controllers_menucontroller_menucontroller"
     },
@@ -3569,7 +3587,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/MenuController.php",
       "source_location": "L12",
-      "community": 10,
+      "community": 4,
       "norm_label": ".index()",
       "id": "controllers_menucontroller_menucontroller_index"
     },
@@ -3578,7 +3596,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/MenuController.php",
       "source_location": "L12",
-      "community": 10,
+      "community": 4,
       "norm_label": "view",
       "id": "app_http_controllers_menucontroller_php_view"
     },
@@ -3587,7 +3605,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/MenuController.php",
       "source_location": "L30",
-      "community": 10,
+      "community": 4,
       "norm_label": ".show()",
       "id": "controllers_menucontroller_menucontroller_show"
     },
@@ -3893,7 +3911,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/SettingsController.php",
       "source_location": "L1",
-      "community": 9,
+      "community": 8,
       "norm_label": "settingscontroller.php",
       "id": "app_http_controllers_admin_settingscontroller_php"
     },
@@ -3902,7 +3920,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/SettingsController.php",
       "source_location": "L11",
-      "community": 9,
+      "community": 8,
       "norm_label": "settingscontroller",
       "id": "admin_settingscontroller_settingscontroller"
     },
@@ -3911,7 +3929,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/SettingsController.php",
       "source_location": "L13",
-      "community": 9,
+      "community": 8,
       "norm_label": ".index()",
       "id": "admin_settingscontroller_settingscontroller_index"
     },
@@ -3920,7 +3938,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/SettingsController.php",
       "source_location": "L13",
-      "community": 9,
+      "community": 8,
       "norm_label": "view",
       "id": "app_http_controllers_admin_settingscontroller_php_view"
     },
@@ -3929,7 +3947,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/SettingsController.php",
       "source_location": "L30",
-      "community": 9,
+      "community": 8,
       "norm_label": ".update()",
       "id": "admin_settingscontroller_settingscontroller_update"
     },
@@ -3938,7 +3956,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/SettingsController.php",
       "source_location": "L30",
-      "community": 9,
+      "community": 8,
       "norm_label": "request",
       "id": "app_http_controllers_admin_settingscontroller_php_request"
     },
@@ -3947,7 +3965,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/SettingsController.php",
       "source_location": "L30",
-      "community": 9,
+      "community": 8,
       "norm_label": "redirectresponse",
       "id": "app_http_controllers_admin_settingscontroller_php_redirectresponse"
     },
@@ -4334,7 +4352,7 @@
       "file_type": "code",
       "source_file": "app/Models/Setting.php",
       "source_location": "L1",
-      "community": 9,
+      "community": 8,
       "norm_label": "setting.php",
       "id": "app_models_setting_php"
     },
@@ -4343,7 +4361,7 @@
       "file_type": "code",
       "source_file": "app/Models/Setting.php",
       "source_location": "L8",
-      "community": 9,
+      "community": 8,
       "norm_label": "setting",
       "id": "models_setting_setting"
     },
@@ -4352,7 +4370,7 @@
       "file_type": "code",
       "source_file": "app/Models/Setting.php",
       "source_location": "L12",
-      "community": 9,
+      "community": 8,
       "norm_label": ".get()",
       "id": "models_setting_setting_get"
     },
@@ -4361,7 +4379,7 @@
       "file_type": "code",
       "source_file": "app/Models/Setting.php",
       "source_location": "L19",
-      "community": 9,
+      "community": 8,
       "norm_label": ".set()",
       "id": "models_setting_setting_set"
     },
@@ -4370,7 +4388,7 @@
       "file_type": "code",
       "source_file": "app/Models/Setting.php",
       "source_location": "L25",
-      "community": 9,
+      "community": 8,
       "norm_label": ".setmany()",
       "id": "models_setting_setting_setmany"
     },
@@ -5657,7 +5675,7 @@
       "file_type": "code",
       "source_file": "database/seeders/SettingSeeder.php",
       "source_location": "L10",
-      "community": 9,
+      "community": 8,
       "norm_label": ".run()",
       "id": "seeders_settingseeder_settingseeder_run"
     },
@@ -7502,7 +7520,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/SettingsTest.php",
       "source_location": "L1",
-      "community": 9,
+      "community": 8,
       "norm_label": "settingstest.php",
       "id": "tests_feature_settingstest_php"
     },
@@ -7511,7 +7529,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/SettingsTest.php",
       "source_location": "L10",
-      "community": 9,
+      "community": 8,
       "norm_label": "settingstest",
       "id": "feature_settingstest_settingstest"
     },
@@ -7520,7 +7538,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/SettingsTest.php",
       "source_location": "L14",
-      "community": 9,
+      "community": 8,
       "norm_label": "user",
       "id": "tests_feature_settingstest_php_user"
     },
@@ -7529,7 +7547,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/SettingsTest.php",
       "source_location": "L16",
-      "community": 9,
+      "community": 8,
       "norm_label": ".setup()",
       "id": "feature_settingstest_settingstest_setup"
     },
@@ -7538,7 +7556,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/SettingsTest.php",
       "source_location": "L22",
-      "community": 9,
+      "community": 8,
       "norm_label": ".test_admin_settings_page_returns_200()",
       "id": "feature_settingstest_settingstest_test_admin_settings_page_returns_200"
     },
@@ -7547,7 +7565,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/SettingsTest.php",
       "source_location": "L27",
-      "community": 9,
+      "community": 8,
       "norm_label": ".test_admin_can_save_settings()",
       "id": "feature_settingstest_settingstest_test_admin_can_save_settings"
     },
@@ -7556,7 +7574,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/SettingsTest.php",
       "source_location": "L42",
-      "community": 9,
+      "community": 8,
       "norm_label": ".test_setting_get_returns_default_when_not_set()",
       "id": "feature_settingstest_settingstest_test_setting_get_returns_default_when_not_set"
     },
@@ -7565,7 +7583,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/SettingsTest.php",
       "source_location": "L47",
-      "community": 9,
+      "community": 8,
       "norm_label": ".test_setting_set_persists_value()",
       "id": "feature_settingstest_settingstest_test_setting_set_persists_value"
     },
@@ -9539,147 +9557,74 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L12",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L8",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_ordercontroller_php",
-      "target": "admin_ordercontroller_ordercontroller"
+      "source": "app_http_controllers_admin_kitchencontroller_php",
+      "target": "admin_kitchencontroller_kitchencontroller"
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L6",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_ordercontroller_php",
+      "source": "app_http_controllers_admin_kitchencontroller_php",
       "target": "controller"
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L6",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_ordercontroller_php",
+      "source": "app_http_controllers_admin_kitchencontroller_php",
       "target": "controllers_controller_controller"
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L8",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L7",
       "weight": 1.0,
-      "source": "app_http_controllers_admin_ordercontroller_php",
-      "target": "menuitem",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L11",
-      "weight": 1.0,
-      "source": "app_http_controllers_admin_ordercontroller_php",
-      "target": "redirectresponse",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_ordercontroller_php",
-      "target": "request"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "app_http_controllers_admin_ordercontroller_php",
+      "source": "app_http_controllers_admin_kitchencontroller_php",
       "target": "view",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L14",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "admin_ordercontroller_ordercontroller",
-      "target": "admin_ordercontroller_ordercontroller_index"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L27",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_ordercontroller_ordercontroller",
-      "target": "admin_ordercontroller_ordercontroller_instore"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L32",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_ordercontroller_ordercontroller",
-      "target": "admin_ordercontroller_ordercontroller_show"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L53",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_ordercontroller_ordercontroller",
-      "target": "admin_ordercontroller_ordercontroller_storeinstore"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L42",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_ordercontroller_ordercontroller",
-      "target": "admin_ordercontroller_ordercontroller_updatestatus"
+      "source": "admin_kitchencontroller_kitchencontroller",
+      "target": "admin_kitchencontroller_kitchencontroller_index"
     },
     {
       "relation": "inherits",
       "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L14",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L9",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "admin_ordercontroller_ordercontroller",
+      "source": "admin_kitchencontroller_kitchencontroller",
       "target": "controller"
     },
     {
       "relation": "inherits",
       "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L12",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L8",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "admin_ordercontroller_ordercontroller",
+      "source": "admin_kitchencontroller_kitchencontroller",
       "target": "controllers_controller_controller"
     },
     {
@@ -9715,21 +9660,21 @@
     {
       "relation": "inherits",
       "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_kitchencontroller_kitchencontroller",
-      "target": "controller"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L16",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "admin_menuitemcontroller_menuitemcontroller",
+      "target": "controller"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_ordercontroller_ordercontroller",
       "target": "controller"
     },
     {
@@ -9769,22 +9714,22 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_kitchencontroller_php",
+      "source": "app_http_controllers_admin_menuitemcontroller_php",
       "target": "controller"
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L5",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L6",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_menuitemcontroller_php",
+      "source": "app_http_controllers_admin_ordercontroller_php",
       "target": "controller"
     },
     {
@@ -9880,13 +9825,46 @@
     {
       "relation": "references",
       "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "return_type",
+      "source": "admin_kitchencontroller_kitchencontroller_index",
+      "target": "view",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L43",
+      "weight": 1.0,
+      "context": "return_type",
+      "confidence_score": 1.0,
+      "source": "admin_menuitemcontroller_menuitemcontroller_create",
+      "target": "view"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L98",
+      "weight": 1.0,
+      "context": "return_type",
+      "confidence_score": 1.0,
+      "source": "admin_menuitemcontroller_menuitemcontroller_edit",
+      "target": "view"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L18",
       "weight": 1.0,
-      "context": "parameter_type",
-      "source": "admin_ordercontroller_ordercontroller_index",
-      "target": "request",
-      "confidence_score": 1.0
+      "context": "return_type",
+      "confidence_score": 1.0,
+      "source": "admin_menuitemcontroller_menuitemcontroller_index",
+      "target": "view"
     },
     {
       "relation": "references",
@@ -9895,9 +9873,243 @@
       "source_location": "L18",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "admin_ordercontroller_ordercontroller_index",
-      "target": "view",
-      "confidence_score": 1.0
+      "target": "view"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L46",
+      "weight": 1.0,
+      "context": "return_type",
+      "confidence_score": 1.0,
+      "source": "admin_ordercontroller_ordercontroller_instore",
+      "target": "view"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L123",
+      "weight": 1.0,
+      "context": "return_type",
+      "confidence_score": 1.0,
+      "source": "admin_ordercontroller_ordercontroller_show",
+      "target": "view"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_menuitemcontroller_php",
+      "target": "view"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_ordercontroller_php",
+      "target": "view"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/HomeController.php",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_homecontroller_php",
+      "target": "view"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/PageController.php",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_pagecontroller_php",
+      "target": "view"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/HomeController.php",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "return_type",
+      "confidence_score": 1.0,
+      "source": "controllers_homecontroller_homecontroller_index",
+      "target": "view"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/PageController.php",
+      "source_location": "L14",
+      "weight": 1.0,
+      "context": "return_type",
+      "confidence_score": 1.0,
+      "source": "controllers_pagecontroller_pagecontroller_about",
+      "target": "view"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/PageController.php",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "return_type",
+      "confidence_score": 1.0,
+      "source": "controllers_pagecontroller_pagecontroller_contact",
+      "target": "view"
+    },
+    {
+      "relation": "includes",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "resources/views/admin/kitchen/index.blade.php",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "resources_views_admin_kitchen_index_blade_php",
+      "target": "admin_kitchen_card"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_ordercontroller_php",
+      "target": "admin_ordercontroller_ordercontroller"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_ordercontroller_php",
+      "target": "controllers_controller_controller"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_ordercontroller_php",
+      "target": "menuitem"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_ordercontroller_php",
+      "target": "redirectresponse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_http_controllers_admin_ordercontroller_php",
+      "target": "request"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_ordercontroller_ordercontroller",
+      "target": "admin_ordercontroller_ordercontroller_index"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_ordercontroller_ordercontroller",
+      "target": "admin_ordercontroller_ordercontroller_instore"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_ordercontroller_ordercontroller",
+      "target": "admin_ordercontroller_ordercontroller_show"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_ordercontroller_ordercontroller",
+      "target": "admin_ordercontroller_ordercontroller_storeinstore"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L42",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_ordercontroller_ordercontroller",
+      "target": "admin_ordercontroller_ordercontroller_updatestatus"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_ordercontroller_ordercontroller",
+      "target": "controllers_controller_controller"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/OrderController.php",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "confidence_score": 1.0,
+      "source": "admin_ordercontroller_ordercontroller_index",
+      "target": "request"
     },
     {
       "relation": "references",
@@ -10056,134 +10268,13 @@
     {
       "relation": "references",
       "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L43",
-      "weight": 1.0,
-      "context": "return_type",
-      "confidence_score": 1.0,
-      "source": "admin_menuitemcontroller_menuitemcontroller_create",
-      "target": "view"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L98",
-      "weight": 1.0,
-      "context": "return_type",
-      "confidence_score": 1.0,
-      "source": "admin_menuitemcontroller_menuitemcontroller_edit",
-      "target": "view"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L18",
-      "weight": 1.0,
-      "context": "return_type",
-      "confidence_score": 1.0,
-      "source": "admin_menuitemcontroller_menuitemcontroller_index",
-      "target": "view"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L46",
-      "weight": 1.0,
-      "context": "return_type",
-      "source": "admin_ordercontroller_ordercontroller_instore",
-      "target": "view",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/OrderController.php",
-      "source_location": "L123",
-      "weight": 1.0,
-      "context": "return_type",
-      "source": "admin_ordercontroller_ordercontroller_show",
-      "target": "view",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_menuitemcontroller_php",
-      "target": "view"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/HomeController.php",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_http_controllers_homecontroller_php",
-      "target": "view"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/PageController.php",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_http_controllers_pagecontroller_php",
-      "target": "view"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/HomeController.php",
-      "source_location": "L11",
-      "weight": 1.0,
-      "context": "return_type",
-      "confidence_score": 1.0,
-      "source": "controllers_homecontroller_homecontroller_index",
-      "target": "view"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/PageController.php",
-      "source_location": "L14",
-      "weight": 1.0,
-      "context": "return_type",
-      "confidence_score": 1.0,
-      "source": "controllers_pagecontroller_pagecontroller_about",
-      "target": "view"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/PageController.php",
-      "source_location": "L19",
-      "weight": 1.0,
-      "context": "return_type",
-      "confidence_score": 1.0,
-      "source": "controllers_pagecontroller_pagecontroller_contact",
-      "target": "view"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/OrderController.php",
       "source_location": "L68",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "admin_ordercontroller_ordercontroller_storeinstore",
-      "target": "redirectresponse",
-      "confidence_score": 1.0
+      "target": "redirectresponse"
     },
     {
       "relation": "references",
@@ -10225,9 +10316,9 @@
       "source_location": "L133",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "admin_ordercontroller_ordercontroller_updatestatus",
-      "target": "redirectresponse",
-      "confidence_score": 1.0
+      "target": "redirectresponse"
     },
     {
       "relation": "imports",
@@ -13397,69 +13488,6 @@
       "confidence_score": 1.0,
       "source": "admin_dashboardcontroller_dashboardcontroller_index",
       "target": "app_http_controllers_admin_dashboardcontroller_php_view"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_kitchencontroller_php",
-      "target": "admin_kitchencontroller_kitchencontroller"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_kitchencontroller_php",
-      "target": "app_http_controllers_admin_kitchencontroller_php_view"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_http_controllers_admin_kitchencontroller_php",
-      "target": "controllers_controller_controller"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_kitchencontroller_kitchencontroller",
-      "target": "admin_kitchencontroller_kitchencontroller_index"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "admin_kitchencontroller_kitchencontroller",
-      "target": "controllers_controller_controller"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/KitchenController.php",
-      "source_location": "L10",
-      "weight": 1.0,
-      "context": "return_type",
-      "confidence_score": 1.0,
-      "source": "admin_kitchencontroller_kitchencontroller_index",
-      "target": "app_http_controllers_admin_kitchencontroller_php_view"
     },
     {
       "relation": "imports",
@@ -22464,5 +22492,5 @@
       "source_file": "docs/superpowers/plans/2026-06-04-plan9-deploy-polish.md"
     }
   ],
-  "built_at_commit": "ce0f69192e0554357796e510f3efb5cfbdb68067"
+  "built_at_commit": "96c6da97d59ba7c60f40d7a787e033a0c77ef6fe"
 }
