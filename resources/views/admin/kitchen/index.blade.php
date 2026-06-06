@@ -154,7 +154,7 @@
 function kitchenDashboard(initialMaxId) {
   return {
     mode: 'kitchen',
-    muted: false,
+    muted: localStorage.getItem('kitchen_muted') === 'true',
     clock: '',
     dateStr: '',
     _alert: null,
@@ -175,7 +175,9 @@ function kitchenDashboard(initialMaxId) {
       if (window.Echo) {
         window.Echo.private('admin.orders')
           .listen('.OrderStatusUpdated', (data) => {
-            this.beep();
+            if (data.status === 'accepted') {
+              this.beep();
+            }
             if (!this.muted) {
               window.dispatchEvent(new CustomEvent('kitchen-toast', {
                 detail: 'Order #' + data.order_id + ' → ' + data.status_label
@@ -212,6 +214,7 @@ function kitchenDashboard(initialMaxId) {
 
     muteToggle() {
       this.muted = !this.muted;
+      localStorage.setItem('kitchen_muted', this.muted);
     },
 
     tick() {
