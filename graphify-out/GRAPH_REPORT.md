@@ -1,16 +1,16 @@
 # Graph Report - webapp  (2026-06-06)
 
 ## Corpus Check
-- 211 files · ~101,837 words
+- 212 files · ~101,808 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1042 nodes · 1259 edges · 259 communities (242 shown, 17 thin omitted)
+- 1043 nodes · 1259 edges · 260 communities (243 shown, 17 thin omitted)
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 61 edges (avg confidence: 0.81)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `431ee337`
+- Built from commit: `34335330`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -105,7 +105,7 @@
 - **Full Ordering Pipeline: Cart → Checkout → Stripe → Order Schema** — concept_alpine_cart_store, concept_stripe_checkout, concept_order_schema [INFERRED 0.95]
 - **Production Readiness: Rate Limiting + Image Upload + DEPLOY.md** — concept_rate_limiting, concept_image_upload, concept_cpanel_deploy [EXTRACTED 1.00]
 
-## Communities (259 total, 17 thin omitted)
+## Communities (260 total, 17 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.15
@@ -290,7 +290,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `Controller` connect `Community 241` to `Community 0`, `Community 130`, `Community 2`, `Community 4`, `Community 5`, `Community 101`, `Community 258`, `Community 10`, `Community 248`, `Community 249`, `Community 250`, `Community 251`, `Community 253`, `Community 254`?**
   _High betweenness centrality (0.050) - this node is a cross-community bridge._
 - **Why does `TestCase` connect `Community 247` to `Community 0`, `Community 128`, `Community 5`, `Community 101`, `Community 13`, `Community 14`, `Community 15`, `Community 16`, `Community 17`, `Community 20`, `Community 24`, `Community 29`, `Community 30`, `Community 255`?**
-  _High betweenness centrality (0.043) - this node is a cross-community bridge._
+  _High betweenness centrality (0.045) - this node is a cross-community bridge._
 - **What connects `admin.kitchen._card`, `$schema`, `name` to the rest of the system?**
   _169 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**

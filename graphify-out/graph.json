@@ -46,193 +46,202 @@
   },
   "nodes": [
     {
+      "label": "tinker_input.php",
+      "file_type": "code",
+      "source_file": "tinker_input.php",
+      "source_location": "L1",
+      "id": "tinker_input_php",
+      "community": 259,
+      "norm_label": "tinker_input.php"
+    },
+    {
       "label": "OrderStatusUpdated.php",
       "file_type": "code",
       "source_file": "app/Events/OrderStatusUpdated.php",
       "source_location": "L1",
-      "id": "app_events_orderstatusupdated_php",
       "community": 11,
-      "norm_label": "orderstatusupdated.php"
+      "norm_label": "orderstatusupdated.php",
+      "id": "app_events_orderstatusupdated_php"
     },
     {
       "label": "OrderStatusUpdated",
       "file_type": "code",
       "source_file": "app/Events/OrderStatusUpdated.php",
       "source_location": "L12",
-      "id": "events_orderstatusupdated_orderstatusupdated",
       "community": 11,
-      "norm_label": "orderstatusupdated"
+      "norm_label": "orderstatusupdated",
+      "id": "events_orderstatusupdated_orderstatusupdated"
     },
     {
       "label": "ShouldBroadcastNow",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "shouldbroadcastnow",
       "community": 11,
-      "norm_label": "shouldbroadcastnow"
+      "norm_label": "shouldbroadcastnow",
+      "id": "shouldbroadcastnow"
     },
     {
       "label": "Dispatchable",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "dispatchable",
       "community": 11,
-      "norm_label": "dispatchable"
+      "norm_label": "dispatchable",
+      "id": "dispatchable"
     },
     {
       "label": "InteractsWithSockets",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "interactswithsockets",
       "community": 11,
-      "norm_label": "interactswithsockets"
+      "norm_label": "interactswithsockets",
+      "id": "interactswithsockets"
     },
     {
       "label": "SerializesModels",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "serializesmodels",
       "community": 11,
-      "norm_label": "serializesmodels"
+      "norm_label": "serializesmodels",
+      "id": "serializesmodels"
     },
     {
       "label": ".__construct()",
       "file_type": "code",
       "source_file": "app/Events/OrderStatusUpdated.php",
       "source_location": "L16",
-      "id": "events_orderstatusupdated_orderstatusupdated_construct",
       "community": 11,
-      "norm_label": ".__construct()"
+      "norm_label": ".__construct()",
+      "id": "events_orderstatusupdated_orderstatusupdated_construct"
     },
     {
       "label": ".broadcastOn()",
       "file_type": "code",
       "source_file": "app/Events/OrderStatusUpdated.php",
       "source_location": "L18",
-      "id": "events_orderstatusupdated_orderstatusupdated_broadcaston",
       "community": 11,
-      "norm_label": ".broadcaston()"
+      "norm_label": ".broadcaston()",
+      "id": "events_orderstatusupdated_orderstatusupdated_broadcaston"
     },
     {
       "label": ".broadcastWith()",
       "file_type": "code",
       "source_file": "app/Events/OrderStatusUpdated.php",
       "source_location": "L29",
-      "id": "events_orderstatusupdated_orderstatusupdated_broadcastwith",
       "community": 11,
-      "norm_label": ".broadcastwith()"
+      "norm_label": ".broadcastwith()",
+      "id": "events_orderstatusupdated_orderstatusupdated_broadcastwith"
     },
     {
       "label": ".broadcastAs()",
       "file_type": "code",
       "source_file": "app/Events/OrderStatusUpdated.php",
       "source_location": "L40",
-      "id": "events_orderstatusupdated_orderstatusupdated_broadcastas",
       "community": 11,
-      "norm_label": ".broadcastas()"
+      "norm_label": ".broadcastas()",
+      "id": "events_orderstatusupdated_orderstatusupdated_broadcastas"
     },
     {
       "label": "KitchenController.php",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/KitchenController.php",
       "source_location": "L1",
-      "id": "app_http_controllers_admin_kitchencontroller_php",
       "community": 254,
-      "norm_label": "kitchencontroller.php"
+      "norm_label": "kitchencontroller.php",
+      "id": "app_http_controllers_admin_kitchencontroller_php"
     },
     {
       "label": "KitchenController",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/KitchenController.php",
       "source_location": "L11",
-      "id": "admin_kitchencontroller_kitchencontroller",
       "community": 254,
-      "norm_label": "kitchencontroller"
+      "norm_label": "kitchencontroller",
+      "id": "admin_kitchencontroller_kitchencontroller"
     },
     {
       "label": "Controller",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "controller",
       "community": 253,
-      "norm_label": "controller"
+      "norm_label": "controller",
+      "id": "controller"
     },
     {
       "label": ".index()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/KitchenController.php",
       "source_location": "L13",
-      "id": "admin_kitchencontroller_kitchencontroller_index",
       "community": 254,
-      "norm_label": ".index()"
+      "norm_label": ".index()",
+      "id": "admin_kitchencontroller_kitchencontroller_index"
     },
     {
       "label": "View",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/KitchenController.php",
       "source_location": "L13",
-      "id": "view",
       "community": 130,
-      "norm_label": "view"
+      "norm_label": "view",
+      "id": "view"
     },
     {
       "label": ".poll()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/KitchenController.php",
       "source_location": "L23",
-      "id": "admin_kitchencontroller_kitchencontroller_poll",
       "community": 254,
-      "norm_label": ".poll()"
+      "norm_label": ".poll()",
+      "id": "admin_kitchencontroller_kitchencontroller_poll"
     },
     {
       "label": "Request",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/KitchenController.php",
       "source_location": "L23",
-      "id": "request",
       "community": 257,
-      "norm_label": "request"
+      "norm_label": "request",
+      "id": "request"
     },
     {
       "label": "JsonResponse",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/KitchenController.php",
       "source_location": "L23",
-      "id": "jsonresponse",
       "community": 254,
-      "norm_label": "jsonresponse"
+      "norm_label": "jsonresponse",
+      "id": "jsonresponse"
     },
     {
       "label": "index.blade.php",
       "file_type": "code",
       "source_file": "resources/views/admin/kitchen/index.blade.php",
       "source_location": null,
-      "id": "resources_views_admin_kitchen_index_blade_php",
       "community": 90,
-      "norm_label": "index.blade.php"
+      "norm_label": "index.blade.php",
+      "id": "resources_views_admin_kitchen_index_blade_php"
     },
     {
       "label": "admin.kitchen._card",
       "file_type": "code",
       "source_file": "resources/views/admin/kitchen/index.blade.php",
       "source_location": null,
-      "id": "admin_kitchen_card",
       "community": 90,
-      "norm_label": "admin.kitchen._card"
+      "norm_label": "admin.kitchen._card",
+      "id": "admin_kitchen_card"
     },
     {
       "label": "web.php",
       "file_type": "code",
       "source_file": "routes/web.php",
       "source_location": "L1",
-      "id": "routes_web_php",
       "community": 121,
-      "norm_label": "web.php"
+      "norm_label": "web.php",
+      "id": "routes_web_php"
     },
     {
       "label": "OrderController.php",
@@ -9642,9 +9651,9 @@
       "source_file": "app/Events/OrderStatusUpdated.php",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_events_orderstatusupdated_php",
-      "target": "shouldbroadcastnow",
-      "confidence_score": 1.0
+      "target": "shouldbroadcastnow"
     },
     {
       "relation": "calls",
@@ -9743,9 +9752,9 @@
       "source_file": "app/Events/OrderStatusUpdated.php",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "events_orderstatusupdated_orderstatusupdated",
-      "target": "shouldbroadcastnow",
-      "confidence_score": 1.0
+      "target": "shouldbroadcastnow"
     },
     {
       "relation": "imports",
@@ -9870,9 +9879,9 @@
       "source_file": "app/Http/Controllers/Admin/KitchenController.php",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_http_controllers_admin_kitchencontroller_php",
-      "target": "jsonresponse",
-      "confidence_score": 1.0
+      "target": "jsonresponse"
     },
     {
       "relation": "imports",
@@ -9881,9 +9890,9 @@
       "source_file": "app/Http/Controllers/Admin/KitchenController.php",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_http_controllers_admin_kitchencontroller_php",
-      "target": "request",
-      "confidence_score": 1.0
+      "target": "request"
     },
     {
       "relation": "imports",
@@ -9912,9 +9921,9 @@
       "source_file": "app/Http/Controllers/Admin/KitchenController.php",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_kitchencontroller_kitchencontroller",
-      "target": "admin_kitchencontroller_kitchencontroller_poll",
-      "confidence_score": 1.0
+      "target": "admin_kitchencontroller_kitchencontroller_poll"
     },
     {
       "relation": "inherits",
@@ -10335,9 +10344,9 @@
       "source_location": "L23",
       "weight": 1.0,
       "context": "return_type",
+      "confidence_score": 1.0,
       "source": "admin_kitchencontroller_kitchencontroller_poll",
-      "target": "jsonresponse",
-      "confidence_score": 1.0
+      "target": "jsonresponse"
     },
     {
       "relation": "references",
@@ -10346,9 +10355,9 @@
       "source_location": "L23",
       "weight": 1.0,
       "context": "parameter_type",
+      "confidence_score": 1.0,
       "source": "admin_kitchencontroller_kitchencontroller_poll",
-      "target": "request",
-      "confidence_score": 1.0
+      "target": "request"
     },
     {
       "relation": "references",
@@ -22659,5 +22668,5 @@
       "source_file": "docs/superpowers/plans/2026-06-04-plan9-deploy-polish.md"
     }
   ],
-  "built_at_commit": "431ee3371be0a9e538f0a6c926258e1ba5e8d834"
+  "built_at_commit": "34335330a61b800ea2a90aa50ce2c53673099cc6"
 }
