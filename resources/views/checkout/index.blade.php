@@ -119,7 +119,7 @@
                                 <div class="mt-1 min-h-[1.25rem]">
                                     <p x-show="postcodeChecking" x-cloak class="font-mono text-[10px] text-on-surface-variant">Checking postcode...</p>
                                     <p x-show="!postcodeChecking && zoneName" x-cloak class="font-mono text-[10px] text-green-700"
-                                       x-text="'✓ ' + zoneName + ' — £' + deliveryFee.toFixed(2) + ' delivery'"></p>
+                                       x-text="'✓ ' + zoneName + ' — £' + (deliveryFee ?? 0).toFixed(2) + ' delivery'"></p>
                                     <p x-show="!postcodeChecking && postcodeError" x-cloak class="font-mono text-[10px] text-error"
                                        x-text="postcodeError"></p>
                                 </div>
