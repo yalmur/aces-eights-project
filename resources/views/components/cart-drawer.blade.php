@@ -149,7 +149,7 @@
           </p>
           <p class="font-mono text-[10px] text-amber-700 mb-2">This item contains:</p>
           <div class="flex flex-wrap gap-1.5">
-            <template x-for="allergen in $store.cart.drawerItem.allergens" :key="allergen">
+            <template x-for="allergen in ($store.cart.drawerItem?.allergens ?? [])" :key="allergen">
               <span class="font-mono text-[10px] font-bold uppercase bg-amber-100 border border-amber-300 text-amber-900 px-2 py-0.5"
                     x-text="allergen"></span>
             </template>
