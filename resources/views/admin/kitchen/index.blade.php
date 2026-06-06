@@ -1,8 +1,15 @@
 @extends('layouts.kitchen')
 @section('content')
 
+@php
+  $maxId = max(
+      $preparing->max('id') ?? 0,
+      $ready->max('id')     ?? 0,
+      $dispatched->max('id') ?? 0,
+  );
+@endphp
 <div class="flex flex-col h-screen w-full overflow-hidden"
-     x-data="kitchenDashboard()">
+     x-data="kitchenDashboard({{ $maxId }})">
 
   {{-- ── TOP BAR ─────────────────────────────────────────────────────────── --}}
   <header class="flex-none h-14 bg-zinc-900 border-b border-zinc-800 flex items-center px-4 gap-3 z-10">
@@ -144,13 +151,14 @@
 </div>
 
 <script>
-function kitchenDashboard() {
+function kitchenDashboard(initialMaxId) {
   return {
     mode: 'kitchen',
     muted: false,
     clock: '',
     dateStr: '',
     _audioCtx: null,
+    _latestId: initialMaxId || 0,
 
     init() {
       this.tick();
@@ -163,6 +171,7 @@ function kitchenDashboard() {
         }
       }, { once: true });
 
+      // Real-time via Pusher/Echo
       if (window.Echo) {
         window.Echo.private('admin.orders')
           .listen('.OrderStatusUpdated', (data) => {
@@ -175,6 +184,22 @@ function kitchenDashboard() {
             setTimeout(() => window.location.reload(), 1800);
           });
       }
+
+      // Polling fallback — catches new orders even when Pusher is down/unconfigured
+      setInterval(async () => {
+        try {
+          const res  = await fetch('/admin/kitchen/poll?since=' + this._latestId, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
+          const data = await res.json();
+          if (data.has_new) {
+            this._latestId = data.latest_id;
+            this.beep();
+            if (!this.muted) {
+              window.dispatchEvent(new CustomEvent('kitchen-toast', { detail: 'New order received — reloading…' }));
+            }
+            setTimeout(() => window.location.reload(), 1800);
+          }
+        } catch {}
+      }, 10000);
     },
 
     beep() {

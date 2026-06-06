@@ -126,6 +126,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
     // Kitchen Command
     Route::get('/kitchen', [App\Http\Controllers\Admin\KitchenController::class, 'index'])->name('kitchen.index');
+    Route::get('/kitchen/poll', [App\Http\Controllers\Admin\KitchenController::class, 'poll'])->name('kitchen.poll');
 
     // Allergy Management
     Route::get('/allergy',                       [App\Http\Controllers\Admin\AllergyController::class, 'index'])->name('allergy.index');
