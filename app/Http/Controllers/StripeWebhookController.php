@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\OrderStatusUpdated;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -31,9 +32,13 @@ class StripeWebhookController extends Controller
         }
 
         if ($eventType === 'checkout.session.completed' && $sessionId) {
-            Order::where('stripe_session_id', $sessionId)
+            $order = Order::where('stripe_session_id', $sessionId)
                 ->where('status', 'pending_payment')
-                ->update(['status' => 'accepted']);
+                ->first();
+            if ($order) {
+                $order->update(['status' => 'accepted']);
+                OrderStatusUpdated::dispatch($order);
+            }
         }
 
         return response('OK', 200);

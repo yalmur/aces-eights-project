@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="max-w-container mx-auto px-4 lg:px-16 py-12">
+<div class="max-w-container mx-auto px-4 lg:px-16 py-12" x-data x-init="$store.cart.clear()">
 
   {{-- Success banner --}}
   <div class="bg-green-50 border-2 border-green-600 p-8 mb-10 text-center">

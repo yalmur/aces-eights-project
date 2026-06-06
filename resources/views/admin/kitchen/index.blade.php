@@ -39,7 +39,7 @@
       <button @click="muteToggle"
               :class="muted ? 'text-zinc-600 line-through' : 'text-zinc-300 hover:text-white'"
               class="px-2.5 py-1 bg-zinc-800 hover:bg-zinc-700 text-[11px] font-mono uppercase rounded transition-colors hidden md:block">
-        <span x-text="muted ? 'Alerts Off' : 'Unmute Alerts'"></span>
+        <span x-text="muted ? 'Unmute Alerts' : 'Mute Alerts'"></span>
       </button>
       <a href="{{ route('admin.dashboard') }}"
          class="px-2.5 py-1 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white text-[11px] font-mono uppercase rounded transition-colors hidden sm:block">
@@ -150,20 +150,23 @@ function kitchenDashboard() {
     muted: false,
     clock: '',
     dateStr: '',
+    _audioCtx: null,
 
     init() {
       this.tick();
       setInterval(() => this.tick(), 1000);
 
-      // ── Laravel Echo / Pusher ─────────────────────────────────────────────
-      // The listener below reloads after showing a toast.
-      // To move cards dynamically instead: replace window.location.reload()
-      // with a fetch to an endpoint that returns fresh column HTML, then
-      // swap innerHTML of each column's scroll container.
-      // Event shape: { order_id, status, status_label }
+      // Initialise AudioContext on first user gesture so beep() works immediately after
+      document.addEventListener('click', () => {
+        if (!this._audioCtx) {
+          try { this._audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch {}
+        }
+      }, { once: true });
+
       if (window.Echo) {
         window.Echo.private('admin.orders')
           .listen('.OrderStatusUpdated', (data) => {
+            this.beep();
             if (!this.muted) {
               window.dispatchEvent(new CustomEvent('kitchen-toast', {
                 detail: 'Order #' + data.order_id + ' → ' + data.status_label
@@ -174,7 +177,29 @@ function kitchenDashboard() {
       }
     },
 
+    beep() {
+      if (this.muted) return;
+      try {
+        const ctx = this._audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+        this._audioCtx = ctx;
+        const osc  = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.type = 'sine';
+        osc.frequency.value = 880;
+        gain.gain.setValueAtTime(0.35, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.55);
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + 0.55);
+      } catch {}
+    },
+
     muteToggle() {
+      // Initialise AudioContext here too — this is always a user gesture
+      if (!this._audioCtx) {
+        try { this._audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch {}
+      }
       this.muted = !this.muted;
     },
 

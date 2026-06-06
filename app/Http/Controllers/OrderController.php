@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\OrderStatusUpdated;
 use App\Mail\OrderConfirmation;
 use App\Models\Order;
 use Illuminate\Http\Request;
@@ -17,6 +18,7 @@ class OrderController extends Controller
         // Mark as accepted when arriving from Stripe success — send email once
         if ($request->session_id && $orderModel->status === 'pending_payment') {
             $orderModel->update(['status' => 'accepted']);
+            OrderStatusUpdated::dispatch($orderModel);
             Mail::to($orderModel->customer_email)->queue(new OrderConfirmation($orderModel));
         }
 
