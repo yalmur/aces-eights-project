@@ -157,18 +157,18 @@ function kitchenDashboard(initialMaxId) {
     muted: false,
     clock: '',
     dateStr: '',
-    _audioCtx: null,
+    _alert: null,
     _latestId: initialMaxId || 0,
 
     init() {
       this.tick();
       setInterval(() => this.tick(), 1000);
 
-      // Initialise AudioContext on first user gesture so beep() works immediately after
+      // Pre-load alert MP3; unlock on first click (browser autoplay policy)
+      this._alert = new Audio('/sounds/KitchenAlert.mp3');
+      this._alert.preload = 'auto';
       document.addEventListener('click', () => {
-        if (!this._audioCtx) {
-          try { this._audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch {}
-        }
+        this._alert.play().then(() => { this._alert.pause(); this._alert.currentTime = 0; }).catch(() => {});
       }, { once: true });
 
       // Real-time via Pusher/Echo
@@ -203,28 +203,14 @@ function kitchenDashboard(initialMaxId) {
     },
 
     beep() {
-      if (this.muted) return;
+      if (this.muted || !this._alert) return;
       try {
-        const ctx = this._audioCtx || new (window.AudioContext || window.webkitAudioContext)();
-        this._audioCtx = ctx;
-        const osc  = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        osc.type = 'sine';
-        osc.frequency.value = 880;
-        gain.gain.setValueAtTime(0.35, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.55);
-        osc.start(ctx.currentTime);
-        osc.stop(ctx.currentTime + 0.55);
+        this._alert.currentTime = 0;
+        this._alert.play().catch(() => {});
       } catch {}
     },
 
     muteToggle() {
-      // Initialise AudioContext here too — this is always a user gesture
-      if (!this._audioCtx) {
-        try { this._audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch {}
-      }
       this.muted = !this.muted;
     },
 
