@@ -7,7 +7,7 @@
     <div class="relative h-[400px] w-full overflow-hidden rounded-lg group border border-surface-variant">
         <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent z-10"></div>
         <!-- The Meat Lover Pizza hero image -->
-        <img alt="The Meat Lover Pizza" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://placehold.co/1200x400/2a2a2a/666666?text=Wood+Fired+Pizza"/>
+        <img alt="The Meat Lover Pizza" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://placehold.co/1200x400/2a2a2a/666666?text=Stone+Base+Pizza"/>
         <div class="absolute bottom-12 left-12 z-20">
             <span class="font-label-bold text-label-bold text-secondary-fixed-dim mb-4 block uppercase tracking-widest">House Special</span>
             <h1 class="font-display text-display text-white mb-4" style="text-shadow:0 2px 8px rgba(0,0,0,0.6)">THE MEAT LOVER</h1>

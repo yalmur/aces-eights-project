@@ -29,8 +29,8 @@
 </div>
 </div>
 <div class="flex-1 w-full h-full relative border-l-2 border-on-surface hidden md:block">
-<!-- data-alt: A close-up, high-quality photograph of an artisan wood-fired pizza resting on a rustic, industrial metal prep table. The pizza features a perfectly charred, blistered crust, rich oxblood red tomato sauce, and melted mozzarella. The lighting is dramatic and moody, emphasizing the textures of the charred crust and the heavy industrial setting. The overall style reflects an industrial minimal aesthetic with raw materials and high contrast. -->
-<img alt="Wood-fired pizza" class="w-full h-full object-cover object-center" src="https://placehold.co/800x600/e4e2e1/1b1c1c?text=Wood+Fired+Pizza"/>
+<!-- data-alt: A close-up, high-quality photograph of an artisan stone-base pizza resting on a rustic, industrial metal prep table. The pizza features a perfectly charred, blistered crust, rich oxblood red tomato sauce, and melted mozzarella. The lighting is dramatic and moody, emphasizing the textures of the charred crust and the heavy industrial setting. The overall style reflects an industrial minimal aesthetic with raw materials and high contrast. -->
+<img alt="Stone-base pizza" class="w-full h-full object-cover object-center" src="https://placehold.co/800x600/e4e2e1/1b1c1c?text=Stone+Base+Pizza"/>
 <!-- Overlay for structural depth -->
 <div class="absolute inset-0 border-8 border-surface pointer-events-none mix-blend-overlay opacity-50"></div>
 </div>

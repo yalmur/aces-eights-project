@@ -23,8 +23,8 @@
 </div>
 <div class="md:col-span-5 relative">
 <div class="border-2 border-primary p-2">
-{{-- A cinematic, low-angle shot of a roaring wood-fired pizza oven with glowing orange embers and dancing flames --}}
-<img class="w-full h-[500px] object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700" src="https://placehold.co/800x600/1b1c1c/fcf9f8?text=Wood+Fired+Oven" alt="Wood-fired pizza oven"/>
+{{-- A cinematic, low-angle shot of a roaring stone-base pizza oven with glowing orange embers and dancing flames --}}
+<img class="w-full h-[500px] object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700" src="https://placehold.co/800x600/1b1c1c/fcf9f8?text=Stone+Base+Oven" alt="Stone-base pizza oven"/>
 </div>
 <div class="absolute -bottom-6 -left-6 bg-secondary-container text-on-secondary-container p-6 border-2 border-outline hidden lg:block">
 <p class="font-display text-headline-md leading-none">48H</p>

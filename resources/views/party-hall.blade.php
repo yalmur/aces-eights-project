@@ -53,7 +53,7 @@
       <div class="bg-surface-container-low industrial-border p-8 text-center space-y-4">
         <span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings:'FILL' 1">restaurant</span>
         <h3 class="font-headline-md text-headline-md text-primary">Dedicated Menu</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant">Work with our team to design a bespoke sharing menu — from wood-fired pizzas and sides to desserts and canapés.</p>
+        <p class="font-body-md text-body-md text-on-surface-variant">Work with our team to design a bespoke sharing menu — from stone-base pizzas and sides to desserts and canapés.</p>
       </div>
       <div class="bg-surface-container-low industrial-border p-8 text-center space-y-4">
         <span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings:'FILL' 1">celebration</span>
