@@ -111,6 +111,7 @@ class MenuItemSeeder extends Seeder
                     'slug'         => Str::slug($data['name']),
                     'description'  => $data['desc'],
                     'base_price'   => $data['price'],
+                    'image_path'   => 'menu-items/' . Str::slug($data['name']) . '.jpg',
                     'is_available' => true,
                     'sort_order'   => $sortByCategory[$catSlug]++,
                 ]
