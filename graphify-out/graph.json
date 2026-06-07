@@ -46,13 +46,49 @@
   },
   "nodes": [
     {
+      "label": "MenuItemSeeder.php",
+      "file_type": "code",
+      "source_file": "database/seeders/MenuItemSeeder.php",
+      "source_location": "L1",
+      "id": "database_seeders_menuitemseeder_php",
+      "community": 8,
+      "norm_label": "menuitemseeder.php"
+    },
+    {
+      "label": "MenuItemSeeder",
+      "file_type": "code",
+      "source_file": "database/seeders/MenuItemSeeder.php",
+      "source_location": "L12",
+      "id": "seeders_menuitemseeder_menuitemseeder",
+      "community": 8,
+      "norm_label": "menuitemseeder"
+    },
+    {
+      "label": "Seeder",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "seeder",
+      "community": 8,
+      "norm_label": "seeder"
+    },
+    {
+      "label": ".run()",
+      "file_type": "code",
+      "source_file": "database/seeders/MenuItemSeeder.php",
+      "source_location": "L14",
+      "id": "seeders_menuitemseeder_menuitemseeder_run",
+      "community": 8,
+      "norm_label": ".run()"
+    },
+    {
       "label": "tinker_input.php",
       "file_type": "code",
       "source_file": "tinker_input.php",
       "source_location": "L1",
-      "id": "tinker_input_php",
       "community": 259,
-      "norm_label": "tinker_input.php"
+      "norm_label": "tinker_input.php",
+      "id": "tinker_input_php"
     },
     {
       "label": "OrderStatusUpdated.php",
@@ -149,7 +185,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/KitchenController.php",
       "source_location": "L1",
-      "community": 254,
+      "community": 130,
       "norm_label": "kitchencontroller.php",
       "id": "app_http_controllers_admin_kitchencontroller_php"
     },
@@ -158,7 +194,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/KitchenController.php",
       "source_location": "L11",
-      "community": 254,
+      "community": 130,
       "norm_label": "kitchencontroller",
       "id": "admin_kitchencontroller_kitchencontroller"
     },
@@ -167,7 +203,7 @@
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "community": 253,
+      "community": 130,
       "norm_label": "controller",
       "id": "controller"
     },
@@ -176,7 +212,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/KitchenController.php",
       "source_location": "L13",
-      "community": 254,
+      "community": 130,
       "norm_label": ".index()",
       "id": "admin_kitchencontroller_kitchencontroller_index"
     },
@@ -194,7 +230,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/KitchenController.php",
       "source_location": "L23",
-      "community": 254,
+      "community": 10,
       "norm_label": ".poll()",
       "id": "admin_kitchencontroller_kitchencontroller_poll"
     },
@@ -203,7 +239,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/KitchenController.php",
       "source_location": "L23",
-      "community": 257,
+      "community": 130,
       "norm_label": "request",
       "id": "request"
     },
@@ -212,7 +248,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/KitchenController.php",
       "source_location": "L23",
-      "community": 254,
+      "community": 10,
       "norm_label": "jsonresponse",
       "id": "jsonresponse"
     },
@@ -293,7 +329,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/StripeWebhookController.php",
       "source_location": "L1",
-      "community": 258,
+      "community": 130,
       "norm_label": "stripewebhookcontroller.php",
       "id": "app_http_controllers_stripewebhookcontroller_php"
     },
@@ -302,7 +338,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/StripeWebhookController.php",
       "source_location": "L12",
-      "community": 258,
+      "community": 130,
       "norm_label": "stripewebhookcontroller",
       "id": "controllers_stripewebhookcontroller_stripewebhookcontroller"
     },
@@ -311,7 +347,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/StripeWebhookController.php",
       "source_location": "L14",
-      "community": 258,
+      "community": 130,
       "norm_label": ".handle()",
       "id": "controllers_stripewebhookcontroller_stripewebhookcontroller_handle"
     },
@@ -320,7 +356,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/StripeWebhookController.php",
       "source_location": "L14",
-      "community": 258,
+      "community": 130,
       "norm_label": "request",
       "id": "app_http_controllers_stripewebhookcontroller_php_request"
     },
@@ -329,7 +365,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/StripeWebhookController.php",
       "source_location": "L14",
-      "community": 258,
+      "community": 130,
       "norm_label": "response",
       "id": "response"
     },
@@ -401,7 +437,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/OrderController.php",
       "source_location": "L68",
-      "community": 248,
+      "community": 130,
       "norm_label": ".storeinstore()",
       "id": "admin_ordercontroller_ordercontroller_storeinstore"
     },
@@ -410,7 +446,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/OrderController.php",
       "source_location": "L68",
-      "community": 248,
+      "community": 130,
       "norm_label": "redirectresponse",
       "id": "redirectresponse"
     },
@@ -428,7 +464,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/OrderController.php",
       "source_location": "L133",
-      "community": 11,
+      "community": 130,
       "norm_label": ".updatestatus()",
       "id": "admin_ordercontroller_ordercontroller_updatestatus"
     },
@@ -446,7 +482,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/PageController.php",
       "source_location": "L1",
-      "community": 248,
+      "community": 130,
       "norm_label": "pagecontroller.php",
       "id": "app_http_controllers_pagecontroller_php"
     },
@@ -455,7 +491,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/PageController.php",
       "source_location": "L12",
-      "community": 248,
+      "community": 130,
       "norm_label": "pagecontroller",
       "id": "controllers_pagecontroller_pagecontroller"
     },
@@ -464,7 +500,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/PageController.php",
       "source_location": "L14",
-      "community": 248,
+      "community": 130,
       "norm_label": ".about()",
       "id": "controllers_pagecontroller_pagecontroller_about"
     },
@@ -473,7 +509,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/PageController.php",
       "source_location": "L19",
-      "community": 248,
+      "community": 130,
       "norm_label": ".contact()",
       "id": "controllers_pagecontroller_pagecontroller_contact"
     },
@@ -482,7 +518,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/PageController.php",
       "source_location": "L24",
-      "community": 248,
+      "community": 130,
       "norm_label": ".sendcontact()",
       "id": "controllers_pagecontroller_pagecontroller_sendcontact"
     },
@@ -653,7 +689,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/SocialAuthController.php",
       "source_location": "L1",
-      "community": 248,
+      "community": 130,
       "norm_label": "socialauthcontroller.php",
       "id": "app_http_controllers_socialauthcontroller_php"
     },
@@ -662,7 +698,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/SocialAuthController.php",
       "source_location": "L11",
-      "community": 248,
+      "community": 130,
       "norm_label": "socialauthcontroller",
       "id": "controllers_socialauthcontroller_socialauthcontroller"
     },
@@ -671,7 +707,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/SocialAuthController.php",
       "source_location": "L13",
-      "community": 248,
+      "community": 130,
       "norm_label": ".redirect()",
       "id": "controllers_socialauthcontroller_socialauthcontroller_redirect"
     },
@@ -680,7 +716,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/SocialAuthController.php",
       "source_location": "L20",
-      "community": 248,
+      "community": 130,
       "norm_label": ".callback()",
       "id": "controllers_socialauthcontroller_socialauthcontroller_callback"
     },
@@ -716,7 +752,7 @@
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "community": 10,
+      "community": 2,
       "norm_label": "hasfactory",
       "id": "hasfactory"
     },
@@ -1310,7 +1346,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L1",
-      "community": 251,
+      "community": 130,
       "norm_label": "menuitemcontroller.php",
       "id": "app_http_controllers_admin_menuitemcontroller_php"
     },
@@ -1319,7 +1355,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L16",
-      "community": 251,
+      "community": 130,
       "norm_label": "menuitemcontroller",
       "id": "admin_menuitemcontroller_menuitemcontroller"
     },
@@ -1328,7 +1364,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L18",
-      "community": 251,
+      "community": 130,
       "norm_label": ".index()",
       "id": "admin_menuitemcontroller_menuitemcontroller_index"
     },
@@ -1337,7 +1373,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L43",
-      "community": 4,
+      "community": 128,
       "norm_label": ".create()",
       "id": "admin_menuitemcontroller_menuitemcontroller_create"
     },
@@ -1346,7 +1382,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L53",
-      "community": 251,
+      "community": 130,
       "norm_label": ".store()",
       "id": "admin_menuitemcontroller_menuitemcontroller_store"
     },
@@ -1355,7 +1391,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L98",
-      "community": 251,
+      "community": 130,
       "norm_label": ".edit()",
       "id": "admin_menuitemcontroller_menuitemcontroller_edit"
     },
@@ -1364,7 +1400,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L110",
-      "community": 251,
+      "community": 130,
       "norm_label": ".update()",
       "id": "admin_menuitemcontroller_menuitemcontroller_update"
     },
@@ -1373,7 +1409,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L158",
-      "community": 251,
+      "community": 130,
       "norm_label": ".destroy()",
       "id": "admin_menuitemcontroller_menuitemcontroller_destroy"
     },
@@ -1382,7 +1418,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L168",
-      "community": 251,
+      "community": 130,
       "norm_label": ".toggleavailability()",
       "id": "admin_menuitemcontroller_menuitemcontroller_toggleavailability"
     },
@@ -1391,7 +1427,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L175",
-      "community": 251,
+      "community": 130,
       "norm_label": ".syncingredients()",
       "id": "admin_menuitemcontroller_menuitemcontroller_syncingredients"
     },
@@ -1400,7 +1436,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L175",
-      "community": 251,
+      "community": 130,
       "norm_label": "menuitem",
       "id": "menuitem"
     },
@@ -1607,7 +1643,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/CheckoutController.php",
       "source_location": "L1",
-      "community": 2,
+      "community": 10,
       "norm_label": "checkoutcontroller.php",
       "id": "app_http_controllers_checkoutcontroller_php"
     },
@@ -1616,7 +1652,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/CheckoutController.php",
       "source_location": "L16",
-      "community": 2,
+      "community": 10,
       "norm_label": "checkoutcontroller",
       "id": "controllers_checkoutcontroller_checkoutcontroller"
     },
@@ -1625,7 +1661,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/CheckoutController.php",
       "source_location": "L18",
-      "community": 2,
+      "community": 10,
       "norm_label": ".index()",
       "id": "controllers_checkoutcontroller_checkoutcontroller_index"
     },
@@ -1634,7 +1670,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/CheckoutController.php",
       "source_location": "L18",
-      "community": 2,
+      "community": 10,
       "norm_label": "view",
       "id": "app_http_controllers_checkoutcontroller_php_view"
     },
@@ -1643,7 +1679,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/CheckoutController.php",
       "source_location": "L30",
-      "community": 2,
+      "community": 10,
       "norm_label": ".deliveryfee()",
       "id": "controllers_checkoutcontroller_checkoutcontroller_deliveryfee"
     },
@@ -1652,7 +1688,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/CheckoutController.php",
       "source_location": "L30",
-      "community": 2,
+      "community": 10,
       "norm_label": "request",
       "id": "app_http_controllers_checkoutcontroller_php_request"
     },
@@ -1661,7 +1697,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/CheckoutController.php",
       "source_location": "L45",
-      "community": 2,
+      "community": 10,
       "norm_label": ".store()",
       "id": "controllers_checkoutcontroller_checkoutcontroller_store"
     },
@@ -1670,7 +1706,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/CheckoutController.php",
       "source_location": "L45",
-      "community": 2,
+      "community": 10,
       "norm_label": "redirectresponse",
       "id": "app_http_controllers_checkoutcontroller_php_redirectresponse"
     },
@@ -1697,7 +1733,7 @@
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "community": 10,
+      "community": 2,
       "norm_label": "model",
       "id": "model"
     },
@@ -1805,7 +1841,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/OurMenuController.php",
       "source_location": "L1",
-      "community": 253,
+      "community": 130,
       "norm_label": "ourmenucontroller.php",
       "id": "app_http_controllers_ourmenucontroller_php"
     },
@@ -1814,7 +1850,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/OurMenuController.php",
       "source_location": "L8",
-      "community": 253,
+      "community": 130,
       "norm_label": "ourmenucontroller",
       "id": "controllers_ourmenucontroller_ourmenucontroller"
     },
@@ -1823,7 +1859,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/OurMenuController.php",
       "source_location": "L10",
-      "community": 253,
+      "community": 130,
       "norm_label": ".index()",
       "id": "controllers_ourmenucontroller_ourmenucontroller_index"
     },
@@ -1832,7 +1868,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/OurMenuController.php",
       "source_location": "L10",
-      "community": 253,
+      "community": 130,
       "norm_label": "view",
       "id": "app_http_controllers_ourmenucontroller_php_view"
     },
@@ -1859,7 +1895,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
       "source_location": "L1",
-      "community": 253,
+      "community": 130,
       "norm_label": "dashboardcontroller.php",
       "id": "app_http_controllers_admin_dashboardcontroller_php"
     },
@@ -1868,7 +1904,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
       "source_location": "L10",
-      "community": 253,
+      "community": 130,
       "norm_label": "dashboardcontroller",
       "id": "admin_dashboardcontroller_dashboardcontroller"
     },
@@ -1877,7 +1913,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
       "source_location": "L12",
-      "community": 253,
+      "community": 130,
       "norm_label": ".index()",
       "id": "admin_dashboardcontroller_dashboardcontroller_index"
     },
@@ -1886,7 +1922,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
       "source_location": "L12",
-      "community": 253,
+      "community": 130,
       "norm_label": "view",
       "id": "app_http_controllers_admin_dashboardcontroller_php_view"
     },
@@ -2003,7 +2039,7 @@
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L1",
-      "community": 4,
+      "community": 128,
       "norm_label": "menuitem.php",
       "id": "app_models_menuitem_php"
     },
@@ -2012,7 +2048,7 @@
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L11",
-      "community": 4,
+      "community": 128,
       "norm_label": "menuitem",
       "id": "models_menuitem_menuitem"
     },
@@ -2021,7 +2057,7 @@
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L29",
-      "community": 4,
+      "community": 128,
       "norm_label": ".category()",
       "id": "models_menuitem_menuitem_category"
     },
@@ -2030,7 +2066,7 @@
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L29",
-      "community": 4,
+      "community": 128,
       "norm_label": "belongsto",
       "id": "belongsto"
     },
@@ -2048,7 +2084,7 @@
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L39",
-      "community": 4,
+      "community": 128,
       "norm_label": ".allergens()",
       "id": "models_menuitem_menuitem_allergens"
     },
@@ -2057,7 +2093,7 @@
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L39",
-      "community": 4,
+      "community": 128,
       "norm_label": "belongstomany",
       "id": "belongstomany"
     },
@@ -2066,7 +2102,7 @@
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L44",
-      "community": 4,
+      "community": 128,
       "norm_label": ".ispizza()",
       "id": "models_menuitem_menuitem_ispizza"
     },
@@ -2075,7 +2111,7 @@
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L49",
-      "community": 4,
+      "community": 128,
       "norm_label": ".getformattedpriceattribute()",
       "id": "models_menuitem_menuitem_getformattedpriceattribute"
     },
@@ -2156,7 +2192,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/PromoController.php",
       "source_location": "L1",
-      "community": 254,
+      "community": 10,
       "norm_label": "promocontroller.php",
       "id": "app_http_controllers_promocontroller_php"
     },
@@ -2165,7 +2201,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/PromoController.php",
       "source_location": "L9",
-      "community": 254,
+      "community": 10,
       "norm_label": "promocontroller",
       "id": "controllers_promocontroller_promocontroller"
     },
@@ -2174,7 +2210,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/PromoController.php",
       "source_location": "L11",
-      "community": 254,
+      "community": 10,
       "norm_label": ".check()",
       "id": "controllers_promocontroller_promocontroller_check"
     },
@@ -2183,7 +2219,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/PromoController.php",
       "source_location": "L11",
-      "community": 254,
+      "community": 10,
       "norm_label": "request",
       "id": "app_http_controllers_promocontroller_php_request"
     },
@@ -2219,7 +2255,7 @@
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "community": 17,
+      "community": 247,
       "norm_label": "refreshdatabase",
       "id": "refreshdatabase"
     },
@@ -2930,7 +2966,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/PasswordResetController.php",
       "source_location": "L1",
-      "community": 257,
+      "community": 130,
       "norm_label": "passwordresetcontroller.php",
       "id": "app_http_controllers_passwordresetcontroller_php"
     },
@@ -2939,7 +2975,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/PasswordResetController.php",
       "source_location": "L13",
-      "community": 257,
+      "community": 130,
       "norm_label": "passwordresetcontroller",
       "id": "controllers_passwordresetcontroller_passwordresetcontroller"
     },
@@ -2948,7 +2984,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/PasswordResetController.php",
       "source_location": "L15",
-      "community": 257,
+      "community": 130,
       "norm_label": ".showforgotform()",
       "id": "controllers_passwordresetcontroller_passwordresetcontroller_showforgotform"
     },
@@ -2957,7 +2993,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/PasswordResetController.php",
       "source_location": "L20",
-      "community": 257,
+      "community": 130,
       "norm_label": ".sendlink()",
       "id": "controllers_passwordresetcontroller_passwordresetcontroller_sendlink"
     },
@@ -2966,7 +3002,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/PasswordResetController.php",
       "source_location": "L31",
-      "community": 257,
+      "community": 130,
       "norm_label": ".showresetform()",
       "id": "controllers_passwordresetcontroller_passwordresetcontroller_showresetform"
     },
@@ -2975,7 +3011,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/PasswordResetController.php",
       "source_location": "L40",
-      "community": 257,
+      "community": 130,
       "norm_label": ".reset()",
       "id": "controllers_passwordresetcontroller_passwordresetcontroller_reset"
     },
@@ -2984,7 +3020,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/PasswordResetTest.php",
       "source_location": "L1",
-      "community": 17,
+      "community": 241,
       "norm_label": "passwordresettest.php",
       "id": "tests_feature_passwordresettest_php"
     },
@@ -2993,7 +3029,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/PasswordResetTest.php",
       "source_location": "L13",
-      "community": 17,
+      "community": 241,
       "norm_label": "passwordresettest",
       "id": "feature_passwordresettest_passwordresettest"
     },
@@ -3002,7 +3038,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/PasswordResetTest.php",
       "source_location": "L17",
-      "community": 17,
+      "community": 241,
       "norm_label": ".test_forgot_password_page_renders()",
       "id": "feature_passwordresettest_passwordresettest_test_forgot_password_page_renders"
     },
@@ -3011,7 +3047,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/PasswordResetTest.php",
       "source_location": "L24",
-      "community": 17,
+      "community": 241,
       "norm_label": ".test_reset_link_sent_for_existing_email()",
       "id": "feature_passwordresettest_passwordresettest_test_reset_link_sent_for_existing_email"
     },
@@ -3020,7 +3056,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/PasswordResetTest.php",
       "source_location": "L35",
-      "community": 17,
+      "community": 241,
       "norm_label": ".test_no_error_for_unknown_email()",
       "id": "feature_passwordresettest_passwordresettest_test_no_error_for_unknown_email"
     },
@@ -3029,7 +3065,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/PasswordResetTest.php",
       "source_location": "L41",
-      "community": 17,
+      "community": 241,
       "norm_label": ".test_reset_password_form_renders()",
       "id": "feature_passwordresettest_passwordresettest_test_reset_password_form_renders"
     },
@@ -3038,7 +3074,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/PasswordResetTest.php",
       "source_location": "L51",
-      "community": 17,
+      "community": 241,
       "norm_label": ".test_password_updated_with_valid_token()",
       "id": "feature_passwordresettest_passwordresettest_test_password_updated_with_valid_token"
     },
@@ -3047,7 +3083,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/PasswordResetTest.php",
       "source_location": "L67",
-      "community": 17,
+      "community": 241,
       "norm_label": ".test_invalid_token_rejected()",
       "id": "feature_passwordresettest_passwordresettest_test_invalid_token_rejected"
     },
@@ -3065,7 +3101,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L10",
-      "community": 128,
+      "community": 17,
       "norm_label": "customerpagestest",
       "id": "feature_customerpagestest_customerpagestest"
     },
@@ -3074,7 +3110,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L14",
-      "community": 128,
+      "community": 17,
       "norm_label": ".setup()",
       "id": "feature_customerpagestest_customerpagestest_setup"
     },
@@ -3083,7 +3119,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L20",
-      "community": 128,
+      "community": 17,
       "norm_label": ".test_home_has_industrial_content()",
       "id": "feature_customerpagestest_customerpagestest_test_home_has_industrial_content"
     },
@@ -3092,7 +3128,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L27",
-      "community": 128,
+      "community": 17,
       "norm_label": ".test_menu_has_pizza_category()",
       "id": "feature_customerpagestest_customerpagestest_test_menu_has_pizza_category"
     },
@@ -3101,7 +3137,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L34",
-      "community": 128,
+      "community": 17,
       "norm_label": ".test_menu_show_returns_200()",
       "id": "feature_customerpagestest_customerpagestest_test_menu_show_returns_200"
     },
@@ -3110,7 +3146,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L40",
-      "community": 128,
+      "community": 17,
       "norm_label": ".test_checkout_has_delivery_option()",
       "id": "feature_customerpagestest_customerpagestest_test_checkout_has_delivery_option"
     },
@@ -3119,7 +3155,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L48",
-      "community": 128,
+      "community": 17,
       "norm_label": ".test_tracking_page_returns_200()",
       "id": "feature_customerpagestest_customerpagestest_test_tracking_page_returns_200"
     },
@@ -3128,7 +3164,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L55",
-      "community": 128,
+      "community": 17,
       "norm_label": ".test_confirmation_page_returns_200()",
       "id": "feature_customerpagestest_customerpagestest_test_confirmation_page_returns_200"
     },
@@ -3137,7 +3173,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L62",
-      "community": 128,
+      "community": 17,
       "norm_label": ".test_about_has_brand_content()",
       "id": "feature_customerpagestest_customerpagestest_test_about_has_brand_content"
     },
@@ -3146,7 +3182,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L69",
-      "community": 128,
+      "community": 17,
       "norm_label": ".test_contact_has_real_address()",
       "id": "feature_customerpagestest_customerpagestest_test_contact_has_real_address"
     },
@@ -3155,7 +3191,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L76",
-      "community": 128,
+      "community": 17,
       "norm_label": ".test_login_has_sign_in_heading()",
       "id": "feature_customerpagestest_customerpagestest_test_login_has_sign_in_heading"
     },
@@ -3164,7 +3200,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L83",
-      "community": 128,
+      "community": 17,
       "norm_label": ".test_register_has_create_account_heading()",
       "id": "feature_customerpagestest_customerpagestest_test_register_has_create_account_heading"
     },
@@ -3173,7 +3209,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/CustomerPagesTest.php",
       "source_location": "L90",
-      "community": 128,
+      "community": 17,
       "norm_label": ".test_account_redirects_unauthenticated()",
       "id": "feature_customerpagestest_customerpagestest_test_account_redirects_unauthenticated"
     },
@@ -3641,7 +3677,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Controller.php",
       "source_location": "L1",
-      "community": 241,
+      "community": 130,
       "norm_label": "controller.php",
       "id": "app_http_controllers_controller_php"
     },
@@ -3650,7 +3686,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Controller.php",
       "source_location": "L5",
-      "community": 241,
+      "community": 130,
       "norm_label": "controller",
       "id": "controllers_controller_controller"
     },
@@ -3659,7 +3695,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/MenuController.php",
       "source_location": "L1",
-      "community": 10,
+      "community": 254,
       "norm_label": "menucontroller.php",
       "id": "app_http_controllers_menucontroller_php"
     },
@@ -3668,7 +3704,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/MenuController.php",
       "source_location": "L10",
-      "community": 10,
+      "community": 254,
       "norm_label": "menucontroller",
       "id": "controllers_menucontroller_menucontroller"
     },
@@ -3677,7 +3713,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/MenuController.php",
       "source_location": "L12",
-      "community": 10,
+      "community": 254,
       "norm_label": ".index()",
       "id": "controllers_menucontroller_menucontroller_index"
     },
@@ -3686,7 +3722,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/MenuController.php",
       "source_location": "L12",
-      "community": 10,
+      "community": 254,
       "norm_label": "view",
       "id": "app_http_controllers_menucontroller_php_view"
     },
@@ -3695,7 +3731,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/MenuController.php",
       "source_location": "L30",
-      "community": 10,
+      "community": 254,
       "norm_label": ".show()",
       "id": "controllers_menucontroller_menucontroller_show"
     },
@@ -3704,7 +3740,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/AccountController.php",
       "source_location": "L1",
-      "community": 241,
+      "community": 130,
       "norm_label": "accountcontroller.php",
       "id": "app_http_controllers_account_accountcontroller_php"
     },
@@ -3713,7 +3749,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/AccountController.php",
       "source_location": "L9",
-      "community": 241,
+      "community": 130,
       "norm_label": "accountcontroller",
       "id": "account_accountcontroller_accountcontroller"
     },
@@ -3722,7 +3758,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/AccountController.php",
       "source_location": "L11",
-      "community": 241,
+      "community": 130,
       "norm_label": ".index()",
       "id": "account_accountcontroller_accountcontroller_index"
     },
@@ -3731,7 +3767,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/AccountController.php",
       "source_location": "L11",
-      "community": 241,
+      "community": 130,
       "norm_label": "view",
       "id": "app_http_controllers_account_accountcontroller_php_view"
     },
@@ -3740,7 +3776,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/AddressController.php",
       "source_location": "L1",
-      "community": 4,
+      "community": 248,
       "norm_label": "addresscontroller.php",
       "id": "app_http_controllers_account_addresscontroller_php"
     },
@@ -3749,7 +3785,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/AddressController.php",
       "source_location": "L11",
-      "community": 4,
+      "community": 248,
       "norm_label": "addresscontroller",
       "id": "account_addresscontroller_addresscontroller"
     },
@@ -3758,7 +3794,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/AddressController.php",
       "source_location": "L13",
-      "community": 4,
+      "community": 248,
       "norm_label": ".store()",
       "id": "account_addresscontroller_addresscontroller_store"
     },
@@ -3767,7 +3803,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/AddressController.php",
       "source_location": "L13",
-      "community": 4,
+      "community": 248,
       "norm_label": "request",
       "id": "app_http_controllers_account_addresscontroller_php_request"
     },
@@ -3776,7 +3812,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/AddressController.php",
       "source_location": "L13",
-      "community": 4,
+      "community": 248,
       "norm_label": "redirectresponse",
       "id": "app_http_controllers_account_addresscontroller_php_redirectresponse"
     },
@@ -3785,7 +3821,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/AddressController.php",
       "source_location": "L30",
-      "community": 4,
+      "community": 248,
       "norm_label": ".destroy()",
       "id": "account_addresscontroller_addresscontroller_destroy"
     },
@@ -3794,7 +3830,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/AddressController.php",
       "source_location": "L43",
-      "community": 4,
+      "community": 248,
       "norm_label": ".setdefault()",
       "id": "account_addresscontroller_addresscontroller_setdefault"
     },
@@ -3803,7 +3839,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/PasswordController.php",
       "source_location": "L1",
-      "community": 241,
+      "community": 130,
       "norm_label": "passwordcontroller.php",
       "id": "app_http_controllers_account_passwordcontroller_php"
     },
@@ -3812,7 +3848,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/PasswordController.php",
       "source_location": "L12",
-      "community": 241,
+      "community": 130,
       "norm_label": "passwordcontroller",
       "id": "account_passwordcontroller_passwordcontroller"
     },
@@ -3821,7 +3857,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/PasswordController.php",
       "source_location": "L14",
-      "community": 241,
+      "community": 130,
       "norm_label": ".update()",
       "id": "account_passwordcontroller_passwordcontroller_update"
     },
@@ -3830,7 +3866,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/PasswordController.php",
       "source_location": "L14",
-      "community": 241,
+      "community": 130,
       "norm_label": "request",
       "id": "app_http_controllers_account_passwordcontroller_php_request"
     },
@@ -3839,7 +3875,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/PasswordController.php",
       "source_location": "L14",
-      "community": 241,
+      "community": 130,
       "norm_label": "redirectresponse",
       "id": "app_http_controllers_account_passwordcontroller_php_redirectresponse"
     },
@@ -4109,7 +4145,7 @@
       "file_type": "code",
       "source_file": "app/Models/BaseIngredient.php",
       "source_location": "L1",
-      "community": 10,
+      "community": 2,
       "norm_label": "baseingredient.php",
       "id": "app_models_baseingredient_php"
     },
@@ -4118,7 +4154,7 @@
       "file_type": "code",
       "source_file": "app/Models/BaseIngredient.php",
       "source_location": "L9",
-      "community": 10,
+      "community": 2,
       "norm_label": "baseingredient",
       "id": "models_baseingredient_baseingredient"
     },
@@ -4127,7 +4163,7 @@
       "file_type": "code",
       "source_file": "app/Models/BaseIngredient.php",
       "source_location": "L15",
-      "community": 10,
+      "community": 2,
       "norm_label": ".menuitem()",
       "id": "models_baseingredient_baseingredient_menuitem"
     },
@@ -4136,7 +4172,7 @@
       "file_type": "code",
       "source_file": "app/Models/BaseIngredient.php",
       "source_location": "L15",
-      "community": 10,
+      "community": 2,
       "norm_label": "belongsto",
       "id": "app_models_baseingredient_php_belongsto"
     },
@@ -4145,7 +4181,7 @@
       "file_type": "code",
       "source_file": "app/Models/Category.php",
       "source_location": "L1",
-      "community": 10,
+      "community": 2,
       "norm_label": "category.php",
       "id": "app_models_category_php"
     },
@@ -4154,7 +4190,7 @@
       "file_type": "code",
       "source_file": "app/Models/Category.php",
       "source_location": "L9",
-      "community": 10,
+      "community": 2,
       "norm_label": "category",
       "id": "models_category_category"
     },
@@ -4163,7 +4199,7 @@
       "file_type": "code",
       "source_file": "app/Models/Category.php",
       "source_location": "L15",
-      "community": 10,
+      "community": 2,
       "norm_label": ".menuitems()",
       "id": "models_category_category_menuitems"
     },
@@ -4172,7 +4208,7 @@
       "file_type": "code",
       "source_file": "app/Models/Category.php",
       "source_location": "L15",
-      "community": 10,
+      "community": 2,
       "norm_label": "hasmany",
       "id": "app_models_category_php_hasmany"
     },
@@ -4181,7 +4217,7 @@
       "file_type": "code",
       "source_file": "app/Models/Category.php",
       "source_location": "L20",
-      "community": 10,
+      "community": 2,
       "norm_label": ".availableitems()",
       "id": "models_category_category_availableitems"
     },
@@ -4190,7 +4226,7 @@
       "file_type": "code",
       "source_file": "app/Models/Order.php",
       "source_location": "L1",
-      "community": 10,
+      "community": 15,
       "norm_label": "order.php",
       "id": "app_models_order_php"
     },
@@ -4199,7 +4235,7 @@
       "file_type": "code",
       "source_file": "app/Models/Order.php",
       "source_location": "L10",
-      "community": 10,
+      "community": 15,
       "norm_label": "order",
       "id": "models_order_order"
     },
@@ -4208,7 +4244,7 @@
       "file_type": "code",
       "source_file": "app/Models/Order.php",
       "source_location": "L29",
-      "community": 10,
+      "community": 15,
       "norm_label": ".user()",
       "id": "models_order_order_user"
     },
@@ -4217,7 +4253,7 @@
       "file_type": "code",
       "source_file": "app/Models/Order.php",
       "source_location": "L29",
-      "community": 10,
+      "community": 15,
       "norm_label": "belongsto",
       "id": "app_models_order_php_belongsto"
     },
@@ -4226,7 +4262,7 @@
       "file_type": "code",
       "source_file": "app/Models/Order.php",
       "source_location": "L34",
-      "community": 10,
+      "community": 15,
       "norm_label": ".items()",
       "id": "models_order_order_items"
     },
@@ -4235,7 +4271,7 @@
       "file_type": "code",
       "source_file": "app/Models/Order.php",
       "source_location": "L34",
-      "community": 10,
+      "community": 15,
       "norm_label": "hasmany",
       "id": "app_models_order_php_hasmany"
     },
@@ -4244,7 +4280,7 @@
       "file_type": "code",
       "source_file": "app/Models/Order.php",
       "source_location": "L39",
-      "community": 10,
+      "community": 15,
       "norm_label": ".getstatuslabelattribute()",
       "id": "models_order_order_getstatuslabelattribute"
     },
@@ -4253,7 +4289,7 @@
       "file_type": "code",
       "source_file": "app/Models/Order.php",
       "source_location": "L54",
-      "community": 10,
+      "community": 15,
       "norm_label": ".getstatuscolorattribute()",
       "id": "models_order_order_getstatuscolorattribute"
     },
@@ -4262,7 +4298,7 @@
       "file_type": "code",
       "source_file": "app/Models/Order.php",
       "source_location": "L66",
-      "community": 10,
+      "community": 15,
       "norm_label": ".isdelivery()",
       "id": "models_order_order_isdelivery"
     },
@@ -4271,7 +4307,7 @@
       "file_type": "code",
       "source_file": "app/Models/Order.php",
       "source_location": "L71",
-      "community": 10,
+      "community": 15,
       "norm_label": ".ispaid()",
       "id": "models_order_order_ispaid"
     },
@@ -4280,7 +4316,7 @@
       "file_type": "code",
       "source_file": "app/Models/OrderItem.php",
       "source_location": "L1",
-      "community": 10,
+      "community": 251,
       "norm_label": "orderitem.php",
       "id": "app_models_orderitem_php"
     },
@@ -4289,7 +4325,7 @@
       "file_type": "code",
       "source_file": "app/Models/OrderItem.php",
       "source_location": "L9",
-      "community": 10,
+      "community": 251,
       "norm_label": "orderitem",
       "id": "models_orderitem_orderitem"
     },
@@ -4298,7 +4334,7 @@
       "file_type": "code",
       "source_file": "app/Models/OrderItem.php",
       "source_location": "L28",
-      "community": 10,
+      "community": 251,
       "norm_label": ".order()",
       "id": "models_orderitem_orderitem_order"
     },
@@ -4307,7 +4343,7 @@
       "file_type": "code",
       "source_file": "app/Models/OrderItem.php",
       "source_location": "L28",
-      "community": 10,
+      "community": 251,
       "norm_label": "belongsto",
       "id": "app_models_orderitem_php_belongsto"
     },
@@ -4316,7 +4352,7 @@
       "file_type": "code",
       "source_file": "app/Models/OrderItem.php",
       "source_location": "L33",
-      "community": 10,
+      "community": 251,
       "norm_label": ".menuitem()",
       "id": "models_orderitem_orderitem_menuitem"
     },
@@ -4325,7 +4361,7 @@
       "file_type": "code",
       "source_file": "app/Models/OrderItem.php",
       "source_location": "L38",
-      "community": 10,
+      "community": 251,
       "norm_label": ".getcustomisationsummaryattribute()",
       "id": "models_orderitem_orderitem_getcustomisationsummaryattribute"
     },
@@ -4442,7 +4478,7 @@
       "file_type": "code",
       "source_file": "app/Models/Topping.php",
       "source_location": "L1",
-      "community": 10,
+      "community": 2,
       "norm_label": "topping.php",
       "id": "app_models_topping_php"
     },
@@ -4451,7 +4487,7 @@
       "file_type": "code",
       "source_file": "app/Models/Topping.php",
       "source_location": "L8",
-      "community": 10,
+      "community": 2,
       "norm_label": "topping",
       "id": "models_topping_topping"
     },
@@ -4460,7 +4496,7 @@
       "file_type": "code",
       "source_file": "app/Models/Topping.php",
       "source_location": "L19",
-      "community": 10,
+      "community": 2,
       "norm_label": ".scopeavailable()",
       "id": "models_topping_topping_scopeavailable"
     },
@@ -4469,7 +4505,7 @@
       "file_type": "code",
       "source_file": "app/Models/UserAddress.php",
       "source_location": "L1",
-      "community": 10,
+      "community": 253,
       "norm_label": "useraddress.php",
       "id": "app_models_useraddress_php"
     },
@@ -4478,7 +4514,7 @@
       "file_type": "code",
       "source_file": "app/Models/UserAddress.php",
       "source_location": "L9",
-      "community": 10,
+      "community": 253,
       "norm_label": "useraddress",
       "id": "models_useraddress_useraddress"
     },
@@ -4487,7 +4523,7 @@
       "file_type": "code",
       "source_file": "app/Models/UserAddress.php",
       "source_location": "L17",
-      "community": 10,
+      "community": 253,
       "norm_label": ".user()",
       "id": "models_useraddress_useraddress_user"
     },
@@ -4496,7 +4532,7 @@
       "file_type": "code",
       "source_file": "app/Models/UserAddress.php",
       "source_location": "L17",
-      "community": 10,
+      "community": 253,
       "norm_label": "belongsto",
       "id": "app_models_useraddress_php_belongsto"
     },
@@ -4505,7 +4541,7 @@
       "file_type": "code",
       "source_file": "app/Models/UserAddress.php",
       "source_location": "L22",
-      "community": 10,
+      "community": 253,
       "norm_label": ".scopedefault()",
       "id": "models_useraddress_useraddress_scopedefault"
     },
@@ -4514,7 +4550,7 @@
       "file_type": "code",
       "source_file": "app/Models/UserAddress.php",
       "source_location": "L27",
-      "community": 10,
+      "community": 253,
       "norm_label": ".getfulladdressattribute()",
       "id": "models_useraddress_useraddress_getfulladdressattribute"
     },
@@ -5545,15 +5581,6 @@
       "id": "seeders_adminuserseeder_adminuserseeder"
     },
     {
-      "label": "Seeder",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "community": 8,
-      "norm_label": "seeder",
-      "id": "seeder"
-    },
-    {
       "label": ".run()",
       "file_type": "code",
       "source_file": "database/seeders/AdminUserSeeder.php",
@@ -5669,33 +5696,6 @@
       "community": 8,
       "norm_label": ".run()",
       "id": "seeders_deliveryzoneseeder_deliveryzoneseeder_run"
-    },
-    {
-      "label": "MenuItemSeeder.php",
-      "file_type": "code",
-      "source_file": "database/seeders/MenuItemSeeder.php",
-      "source_location": "L1",
-      "community": 8,
-      "norm_label": "menuitemseeder.php",
-      "id": "database_seeders_menuitemseeder_php"
-    },
-    {
-      "label": "MenuItemSeeder",
-      "file_type": "code",
-      "source_file": "database/seeders/MenuItemSeeder.php",
-      "source_location": "L12",
-      "community": 8,
-      "norm_label": "menuitemseeder",
-      "id": "seeders_menuitemseeder_menuitemseeder"
-    },
-    {
-      "label": ".run()",
-      "file_type": "code",
-      "source_file": "database/seeders/MenuItemSeeder.php",
-      "source_location": "L14",
-      "community": 8,
-      "norm_label": ".run()",
-      "id": "seeders_menuitemseeder_menuitemseeder_run"
     },
     {
       "label": "SettingSeeder.php",
@@ -7286,7 +7286,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/ExampleTest.php",
       "source_location": "L1",
-      "community": 17,
+      "community": 247,
       "norm_label": "exampletest.php",
       "id": "tests_feature_exampletest_php"
     },
@@ -7295,7 +7295,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/ExampleTest.php",
       "source_location": "L8",
-      "community": 17,
+      "community": 247,
       "norm_label": "exampletest",
       "id": "feature_exampletest_exampletest"
     },
@@ -7304,7 +7304,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/ExampleTest.php",
       "source_location": "L15",
-      "community": 17,
+      "community": 247,
       "norm_label": ".test_the_application_returns_a_successful_response()",
       "id": "feature_exampletest_exampletest_test_the_application_returns_a_successful_response"
     },
@@ -7385,7 +7385,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/MenuTest.php",
       "source_location": "L1",
-      "community": 15,
+      "community": 247,
       "norm_label": "menutest.php",
       "id": "tests_feature_menutest_php"
     },
@@ -7394,7 +7394,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/MenuTest.php",
       "source_location": "L12",
-      "community": 15,
+      "community": 0,
       "norm_label": "menutest",
       "id": "feature_menutest_menutest"
     },
@@ -7403,7 +7403,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/MenuTest.php",
       "source_location": "L16",
-      "community": 15,
+      "community": 0,
       "norm_label": ".test_category_has_many_menu_items()",
       "id": "feature_menutest_menutest_test_category_has_many_menu_items"
     },
@@ -7412,7 +7412,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/MenuTest.php",
       "source_location": "L24",
-      "community": 15,
+      "community": 0,
       "norm_label": ".test_menu_item_belongs_to_category()",
       "id": "feature_menutest_menutest_test_menu_item_belongs_to_category"
     },
@@ -7421,7 +7421,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/MenuTest.php",
       "source_location": "L31",
-      "community": 15,
+      "community": 0,
       "norm_label": ".test_menu_item_has_formatted_price()",
       "id": "feature_menutest_menutest_test_menu_item_has_formatted_price"
     },
@@ -7430,7 +7430,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/MenuTest.php",
       "source_location": "L38",
-      "community": 15,
+      "community": 0,
       "norm_label": ".test_menu_item_can_have_allergens()",
       "id": "feature_menutest_menutest_test_menu_item_can_have_allergens"
     },
@@ -7439,7 +7439,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/MenuTest.php",
       "source_location": "L48",
-      "community": 15,
+      "community": 0,
       "norm_label": ".test_topping_available_scope()",
       "id": "feature_menutest_menutest_test_topping_available_scope"
     },
@@ -7448,7 +7448,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/MenuTest.php",
       "source_location": "L56",
-      "community": 15,
+      "community": 0,
       "norm_label": ".test_customer_menu_page_returns_200()",
       "id": "feature_menutest_menutest_test_customer_menu_page_returns_200"
     },
@@ -9590,6 +9590,227 @@
     }
   ],
   "links": [
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/MenuItemSeeder.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "database_seeders_menuitemseeder_php",
+      "target": "menuitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/MenuItemSeeder.php",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "database_seeders_menuitemseeder_php",
+      "target": "seeder"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/MenuItemSeeder.php",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "database_seeders_menuitemseeder_php",
+      "target": "seeders_menuitemseeder_menuitemseeder"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/MenuItemSeeder.php",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seeders_menuitemseeder_menuitemseeder",
+      "target": "seeder"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/MenuItemSeeder.php",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seeders_menuitemseeder_menuitemseeder",
+      "target": "seeders_menuitemseeder_menuitemseeder_run"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/AdminUserSeeder.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "database_seeders_adminuserseeder_php",
+      "target": "seeder"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/AllergenSeeder.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "database_seeders_allergenseeder_php",
+      "target": "seeder"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/CategorySeeder.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "database_seeders_categoryseeder_php",
+      "target": "seeder"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/DatabaseSeeder.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "database_seeders_databaseseeder_php",
+      "target": "seeder"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/DeliveryZoneSeeder.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "database_seeders_deliveryzoneseeder_php",
+      "target": "seeder"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/SettingSeeder.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "database_seeders_settingseeder_php",
+      "target": "seeder"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/ToppingSeeder.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "database_seeders_toppingseeder_php",
+      "target": "seeder"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/AdminUserSeeder.php",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seeders_adminuserseeder_adminuserseeder",
+      "target": "seeder"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/AllergenSeeder.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seeders_allergenseeder_allergenseeder",
+      "target": "seeder"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/CategorySeeder.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seeders_categoryseeder_categoryseeder",
+      "target": "seeder"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/DatabaseSeeder.php",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seeders_databaseseeder_databaseseeder",
+      "target": "seeder"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/DeliveryZoneSeeder.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seeders_deliveryzoneseeder_deliveryzoneseeder",
+      "target": "seeder"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/SettingSeeder.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seeders_settingseeder_settingseeder",
+      "target": "seeder"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/ToppingSeeder.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seeders_toppingseeder_toppingseeder",
+      "target": "seeder"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "database/seeders/MenuItemSeeder.php",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "seeders_menuitemseeder_menuitemseeder_run",
+      "target": "models_allergen_allergen"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "database/seeders/MenuItemSeeder.php",
+      "source_location": "L129",
+      "weight": 1.0,
+      "source": "seeders_menuitemseeder_menuitemseeder_run",
+      "target": "models_baseingredient_baseingredient"
+    },
     {
       "relation": "imports",
       "context": "import",
@@ -17508,17 +17729,6 @@
       "target": "models_allergen_allergen"
     },
     {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "database/seeders/MenuItemSeeder.php",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "seeders_menuitemseeder_menuitemseeder_run",
-      "target": "models_allergen_allergen"
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Models/Allergen.php",
@@ -17559,17 +17769,6 @@
       "confidence_score": 1.0,
       "source": "models_baseingredient_baseingredient",
       "target": "models_baseingredient_baseingredient_menuitem"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "database/seeders/MenuItemSeeder.php",
-      "source_location": "L129",
-      "weight": 1.0,
-      "source": "seeders_menuitemseeder_menuitemseeder_run",
-      "target": "models_baseingredient_baseingredient"
     },
     {
       "relation": "references",
@@ -19041,17 +19240,6 @@
       "target": "migrations_2026_06_04_040236_create_user_addresses_table_up"
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/AdminUserSeeder.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "database_seeders_adminuserseeder_php",
-      "target": "seeder"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "database/seeders/AdminUserSeeder.php",
@@ -19062,16 +19250,6 @@
       "target": "seeders_adminuserseeder_adminuserseeder"
     },
     {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/AdminUserSeeder.php",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seeders_adminuserseeder_adminuserseeder",
-      "target": "seeder"
-    },
-    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "database/seeders/AdminUserSeeder.php",
@@ -19080,153 +19258,6 @@
       "confidence_score": 1.0,
       "source": "seeders_adminuserseeder_adminuserseeder",
       "target": "seeders_adminuserseeder_adminuserseeder_run"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/AllergenSeeder.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "database_seeders_allergenseeder_php",
-      "target": "seeder"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/CategorySeeder.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "database_seeders_categoryseeder_php",
-      "target": "seeder"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/DatabaseSeeder.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "database_seeders_databaseseeder_php",
-      "target": "seeder"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/DeliveryZoneSeeder.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "database_seeders_deliveryzoneseeder_php",
-      "target": "seeder"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/MenuItemSeeder.php",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "database_seeders_menuitemseeder_php",
-      "target": "seeder"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/SettingSeeder.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "database_seeders_settingseeder_php",
-      "target": "seeder"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/ToppingSeeder.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "database_seeders_toppingseeder_php",
-      "target": "seeder"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/AllergenSeeder.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seeders_allergenseeder_allergenseeder",
-      "target": "seeder"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/CategorySeeder.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seeders_categoryseeder_categoryseeder",
-      "target": "seeder"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/DatabaseSeeder.php",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seeders_databaseseeder_databaseseeder",
-      "target": "seeder"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/DeliveryZoneSeeder.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seeders_deliveryzoneseeder_deliveryzoneseeder",
-      "target": "seeder"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/MenuItemSeeder.php",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seeders_menuitemseeder_menuitemseeder",
-      "target": "seeder"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/SettingSeeder.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seeders_settingseeder_settingseeder",
-      "target": "seeder"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/ToppingSeeder.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seeders_toppingseeder_toppingseeder",
-      "target": "seeder"
     },
     {
       "relation": "contains",
@@ -19307,26 +19338,6 @@
       "confidence_score": 1.0,
       "source": "seeders_deliveryzoneseeder_deliveryzoneseeder",
       "target": "seeders_deliveryzoneseeder_deliveryzoneseeder_run"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/MenuItemSeeder.php",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "database_seeders_menuitemseeder_php",
-      "target": "seeders_menuitemseeder_menuitemseeder"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/MenuItemSeeder.php",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seeders_menuitemseeder_menuitemseeder",
-      "target": "seeders_menuitemseeder_menuitemseeder_run"
     },
     {
       "relation": "contains",
@@ -22668,5 +22679,5 @@
       "source_file": "docs/superpowers/plans/2026-06-04-plan9-deploy-polish.md"
     }
   ],
-  "built_at_commit": "34335330a61b800ea2a90aa50ce2c53673099cc6"
+  "built_at_commit": "a187cdb7133a2d5b970b9a7064ba1bc0b7c0ab09"
 }
