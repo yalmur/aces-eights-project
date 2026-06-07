@@ -1,2 +1,6 @@
 *
 !.gitignore
+
+# Seed/default menu item photos shipped with the app (not runtime uploads)
+!menu-items/
+!menu-items/**
