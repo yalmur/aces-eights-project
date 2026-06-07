@@ -30,3 +30,4 @@ composer.phar
 # Graphify temp/cache files
 graphify-out/.graphify_*
 graphify-out/cache/
+.worktrees/
