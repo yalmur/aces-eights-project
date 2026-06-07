@@ -24,7 +24,7 @@
 <div class="md:col-span-5 relative">
 <div class="border-2 border-primary p-2">
 {{-- A cinematic, low-angle shot of a roaring stone-base pizza oven with glowing orange embers and dancing flames --}}
-<img class="w-full h-[500px] object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700" src="https://placehold.co/800x600/1b1c1c/fcf9f8?text=Stone+Base+Oven" alt="Stone-base pizza oven"/>
+<img class="w-full h-[500px] object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700" src="{{ asset('images/site/about-stone-oven.jpg') }}" alt="Stone-base pizza oven"/>
 </div>
 <div class="absolute -bottom-6 -left-6 bg-secondary-container text-on-secondary-container p-6 border-2 border-outline hidden lg:block">
 <p class="font-display text-headline-md leading-none">48H</p>
@@ -52,7 +52,7 @@
 <div class="grid grid-cols-1 gap-8">
 <div class="border-2 border-outline p-4 group overflow-hidden">
 {{-- Interior of a modern industrial pizzeria featuring exposed brick walls, vintage Edison bulb lighting, and heavy iron-framed furniture --}}
-<img class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500" src="https://placehold.co/700x500/e4e2e1/1b1c1c?text=Restaurant+Interior" alt="Restaurant interior"/>
+<img class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500" src="{{ asset('images/site/about-restaurant-interior.jpg') }}" alt="Restaurant interior"/>
 <p class="mt-4 font-label-bold text-label-sm text-on-surface-variant uppercase tracking-tighter italic">The Workshop, Fortess Road</p>
 </div>
 <div class="bg-surface-container-high p-12 border-2 border-outline relative">
@@ -77,7 +77,7 @@
 <div class="md:col-span-8 bg-surface border-2 border-outline p-8 flex flex-col md:flex-row gap-8 items-center group">
 <div class="w-full md:w-1/2 overflow-hidden border border-outline">
 {{-- Close-up macro photography of double-fermented sourdough pizza crust showing intricate air bubbles and a perfectly charred leopard spot pattern --}}
-<img class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Ingredient" alt="Sourdough crust"/>
+<img class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" src="{{ asset('images/site/about-sourdough-crust.jpg') }}" alt="Sourdough crust"/>
 </div>
 <div class="w-full md:w-1/2">
 <h3 class="font-headline-md text-headline-md text-primary mb-2">Double-Fermented Sourdough</h3>
@@ -104,7 +104,7 @@
 <div class="md:col-span-8 bg-surface border-2 border-outline p-8 flex flex-col md:flex-row-reverse gap-8 items-center group">
 <div class="w-full md:w-1/2 overflow-hidden border border-outline">
 {{-- Studio photography of fresh Buffalo Mozzarella being torn by hand, revealing its creamy, fibrous interior --}}
-<img class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" src="https://placehold.co/400x300/e4e2e1/1b1c1c?text=Ingredient" alt="Fior di latte mozzarella"/>
+<img class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" src="{{ asset('images/site/about-mozzarella.jpg') }}" alt="Fior di latte mozzarella"/>
 </div>
 <div class="w-full md:w-1/2 text-right md:text-left">
 <h3 class="font-headline-md text-headline-md text-primary mb-2">Artisan Fior di Latte</h3>
