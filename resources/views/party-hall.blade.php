@@ -36,7 +36,7 @@
     </div>
     <div class="hidden md:block">
       <div class="border-2 border-white/20 p-2">
-        <img src="https://placehold.co/600x440/690008/fcf9f8?text=Party+Hall" alt="Party Hall" class="w-full h-[440px] object-cover opacity-80"/>
+        <img src="{{ asset('images/site/party-hall-event.jpg') }}" alt="Party Hall" class="w-full h-[440px] object-cover opacity-80"/>
       </div>
     </div>
   </div>
