@@ -68,7 +68,7 @@
             <td class="px-6 py-4">
               <div class="flex items-center gap-4">
                 <div class="w-14 h-14 bg-surface-container industrial-border overflow-hidden flex-shrink-0">
-                  <img src="{{ $item->image_path ? asset('storage/'.$item->image_path) : 'https://placehold.co/56x56/e4e2e1/1b1c1c?text=+' }}"
+                  <img src="{{ $item->hasStoredImage() ? asset('storage/'.$item->image_path) : 'https://placehold.co/56x56/e4e2e1/1b1c1c?text=+' }}"
                        alt="{{ $item->name }}" class="w-full h-full object-cover">
                 </div>
                 <div>

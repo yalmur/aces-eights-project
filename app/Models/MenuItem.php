@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\Storage;
 
 class MenuItem extends Model
 {
@@ -17,6 +18,11 @@ class MenuItem extends Model
         'base_price', 'image_path', 'is_available', 'is_featured', 'sort_order',
         'is_vegetarian', 'is_vegan',
     ];
+
+    public function hasStoredImage(): bool
+    {
+        return $this->image_path && Storage::disk('public')->exists($this->image_path);
+    }
 
     protected $casts = [
         'base_price'    => 'decimal:2',

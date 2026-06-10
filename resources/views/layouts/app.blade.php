@@ -17,7 +17,7 @@
 
   <x-header />
 
-  <main class="flex-1">
+  <main class="flex-1" x-data>
     @yield('content')
   </main>
 

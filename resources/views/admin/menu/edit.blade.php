@@ -114,7 +114,7 @@
 <section class="industrial-border p-8 bg-surface-container-lowest">
 <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-6 uppercase tracking-widest">Item Photography</h3>
 {{-- Existing image preview --}}
-@if($item?->image_path)
+@if($item?->hasStoredImage())
 <div class="mb-4 flex items-center gap-4">
   <img src="{{ asset('storage/' . $item->image_path) }}" alt="{{ $item->name }}"
        class="w-20 h-20 object-cover industrial-border">

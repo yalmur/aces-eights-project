@@ -25,10 +25,12 @@ class StripeWebhookController extends Controller
             }
             $eventType = $event->type;
             $sessionId = $event->data->object->id ?? null;
+            $paymentIntentId = $event->data->object->payment_intent ?? null;
         } else {
             $body      = json_decode($payload, true);
             $eventType = $body['type'] ?? '';
             $sessionId = $body['data']['object']['id'] ?? null;
+            $paymentIntentId = $body['data']['object']['payment_intent'] ?? null;
         }
 
         if ($eventType === 'checkout.session.completed' && $sessionId) {
@@ -36,7 +38,7 @@ class StripeWebhookController extends Controller
                 ->where('status', 'pending_payment')
                 ->first();
             if ($order) {
-                $order->update(['status' => 'accepted']);
+                $order->update(['status' => 'accepted', 'stripe_payment_intent_id' => $paymentIntentId]);
                 OrderStatusUpdated::dispatch($order);
             }
         }

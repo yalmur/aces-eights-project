@@ -116,7 +116,7 @@
                class="overflow-hidden">
             <img alt="{{ $item->name }}"
                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                 src="{{ $item->image_path ? asset('storage/' . $item->image_path) : 'https://placehold.co/400x300/e4e2e1/1b1c1c?text=' . urlencode($item->name) }}"/>
+                 src="{{ $item->hasStoredImage() ? asset('storage/' . $item->image_path) : 'https://placehold.co/400x300/e4e2e1/1b1c1c?text=' . urlencode($item->name) }}"/>
           </div>
           <div class="p-6 flex flex-col flex-1">
             <div class="flex justify-between items-start mb-2">

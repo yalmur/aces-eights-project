@@ -1,8 +1,5 @@
-import Alpine from 'alpinejs'
 import Echo from 'laravel-echo'
 import Pusher from 'pusher-js'
-
-window.Alpine = Alpine
 
 // Initialise Pusher Echo when credentials are available
 if (import.meta.env.VITE_PUSHER_APP_KEY && import.meta.env.VITE_PUSHER_APP_KEY !== 'your_pusher_app_key') {
@@ -16,7 +13,7 @@ if (import.meta.env.VITE_PUSHER_APP_KEY && import.meta.env.VITE_PUSHER_APP_KEY !
     })
 }
 
-Alpine.store('cart', {
+const cartStore = {
   items: (() => { try { return JSON.parse(localStorage.getItem('a8_cart') || '[]') } catch { return [] } })(),
   drawerOpen: false,
   drawerItem: null,
@@ -299,12 +296,13 @@ Alpine.store('cart', {
   _persist() {
     localStorage.setItem('a8_cart', JSON.stringify(this.items))
   },
-})
+}
 
-Alpine.store('adminNav', {
+const adminNavStore = {
   open: false,
   toggle() { this.open = !this.open },
   close() { this.open = false },
-})
+}
 
-Alpine.start()
+Alpine.store('cart', cartStore)
+Alpine.store('adminNav', adminNavStore)

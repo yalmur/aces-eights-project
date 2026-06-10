@@ -4,7 +4,7 @@
 @php
   $allergens    = $item->allergens->where('is_visible', true);
   $ingredients  = $item->baseIngredients;
-  $imageUrl     = $item->image_path
+  $imageUrl     = $item->hasStoredImage()
       ? asset('storage/' . $item->image_path)
       : 'https://placehold.co/800x450/e4e2e1/1b1c1c?text=' . urlencode($item->name);
   $allergenList = $allergens->pluck('name')->values()->toJson();
@@ -117,7 +117,7 @@
           @php $relAllergens = $rel->allergens->where('is_visible', true)->pluck('name')->values()->toJson(); @endphp
           <div class="flex gap-3 items-center border border-outline-variant p-3 hover:border-on-surface transition-colors">
             <div class="w-16 h-16 flex-shrink-0 overflow-hidden bg-surface-container">
-              <img src="{{ $rel->image_path ? asset('storage/'.$rel->image_path) : 'https://placehold.co/64x64/e4e2e1/1b1c1c?text=+' }}"
+              <img src="{{ $rel->hasStoredImage() ? asset('storage/'.$rel->image_path) : 'https://placehold.co/64x64/e4e2e1/1b1c1c?text=+' }}"
                    alt="{{ $rel->name }}" class="w-full h-full object-cover">
             </div>
             <div class="flex-1 min-w-0">
