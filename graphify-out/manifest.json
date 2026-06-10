@@ -85,8 +85,8 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\StripeWebhookController.php": {
-    "mtime": 1780707257.1224759,
-    "ast_hash": "bce901e351e452ccc46a6cc4720858e8",
+    "mtime": 1781134066.1634264,
+    "ast_hash": "0faa2f807f3f08b59c0535e40e85c91c",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\Account\\AccountController.php": {
@@ -170,8 +170,8 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Models\\MenuItem.php": {
-    "mtime": 1780688407.440614,
-    "ast_hash": "23a80b7a0df273fac4a81a83ab7b1bd8",
+    "mtime": 1781134066.1689143,
+    "ast_hash": "7de0b81da411dd8eb8425e0cc44f2731",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Models\\Order.php": {
@@ -450,9 +450,9 @@
     "semantic_hash": "e486ba07cec6308517eec444e11afeb9"
   },
   "C:\\AcesAndEightsPizza\\webapp\\database\\seeders\\MenuItemSeeder.php": {
-    "mtime": 1780506360.1877508,
-    "ast_hash": "2ccaf959a2f5e2eeca1d3708d6ea21b5",
-    "semantic_hash": "2ccaf959a2f5e2eeca1d3708d6ea21b5"
+    "mtime": 1781134098.2722824,
+    "ast_hash": "559d07e3a61e69d2b65074eb2af91657",
+    "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\database\\seeders\\SettingSeeder.php": {
     "mtime": 1780527337.409234,
@@ -470,8 +470,8 @@
     "semantic_hash": "d8eda274115af5fd2aaa8230af329ef7"
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\js\\app.js": {
-    "mtime": 1780673372.848467,
-    "ast_hash": "e05cee8486ddb8de927db817cfd70d99",
+    "mtime": 1781134066.170929,
+    "ast_hash": "ef413f5a41b9f9d1c1fcdce101e3add3",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\js\\bootstrap.js": {
@@ -480,8 +480,8 @@
     "semantic_hash": "78f909acc19aea4717eddca5a87c1ba3"
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\about.blade.php": {
-    "mtime": 1780741408.5385475,
-    "ast_hash": "5d60cd5e76c3699abea2b6ca830ad22b",
+    "mtime": 1781134098.4289997,
+    "ast_hash": "780cefa019df70623fc5a575088ddc11",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\contact.blade.php": {
@@ -490,8 +490,8 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\home.blade.php": {
-    "mtime": 1780741400.8399537,
-    "ast_hash": "af73aedbe9e22253ba62038735310563",
+    "mtime": 1781134098.4289997,
+    "ast_hash": "d262db66237d5cdb8327e3230e1971e3",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\our-menu.blade.php": {
@@ -530,13 +530,13 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\admin\\menu\\edit.blade.php": {
-    "mtime": 1780688608.9497974,
-    "ast_hash": "b3949248e07b3d08760f48c912816a6c",
+    "mtime": 1781134066.172986,
+    "ast_hash": "6f971073624b80b068e69736fda9e81b",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\admin\\menu\\index.blade.php": {
-    "mtime": 1780697669.5666318,
-    "ast_hash": "2a7f8ad28eb335e1e0315e8a4630b077",
+    "mtime": 1781134066.172986,
+    "ast_hash": "bedc9f0b4520b14eea53908d92dd8360",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\admin\\orders\\detail.blade.php": {
@@ -635,9 +635,9 @@
     "semantic_hash": "67e713c5b1c37b9893089d6d5575430a"
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\layouts\\app.blade.php": {
-    "mtime": 1780412137.9189663,
-    "ast_hash": "1eb6b849c5cab5bb1c618fdd7986df28",
-    "semantic_hash": "1eb6b849c5cab5bb1c618fdd7986df28"
+    "mtime": 1781134066.176726,
+    "ast_hash": "66c2badda6a5aa26c15762be1659e977",
+    "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\layouts\\guest.blade.php": {
     "mtime": 1780336835.374394,
@@ -645,13 +645,13 @@
     "semantic_hash": "293bde20ec59496668e16bdbd18a6b95"
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\menu\\index.blade.php": {
-    "mtime": 1780741421.793903,
-    "ast_hash": "92aaea00f5680618875c3e9c88326379",
+    "mtime": 1781134098.431015,
+    "ast_hash": "0f632832aeb522f6ced18cc4fdb6a765",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\menu\\show.blade.php": {
-    "mtime": 1780698338.122409,
-    "ast_hash": "6eb6c3c8943ecf4c727515e1e63de07d",
+    "mtime": 1781134066.1812117,
+    "ast_hash": "5dbe1cb1a20e8223260b5b30de319a1f",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\orders\\confirmation.blade.php": {
@@ -925,8 +925,8 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\party-hall.blade.php": {
-    "mtime": 1780741414.9260492,
-    "ast_hash": "8be692cae551ffd0853900a4fa5b18b7",
+    "mtime": 1781134098.4330332,
+    "ast_hash": "e487c993806771d9dbd56836a85b0280",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\emails\\party-hall-inquiry.blade.php": {
@@ -975,8 +975,8 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\storage\\framework\\views\\4d0967a34221fb93f1b4bea4050bb662.php": {
-    "mtime": 1780851874.5993927,
-    "ast_hash": "ebf3e1d11e01c7e75861daaa49651333",
+    "mtime": 1781128449.3956904,
+    "ast_hash": "52b83d782e695e35f5b6a2effe8fca17",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\storage\\framework\\views\\50dd6b697b461a26f765c8c0de80c44e.php": {
@@ -1000,8 +1000,8 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\storage\\framework\\views\\7826f0865d2eec40cf16ba97a92c0777.php": {
-    "mtime": 1780741401.7450883,
-    "ast_hash": "4cc081b008555e563cef5c681e10c2e3",
+    "mtime": 1781128436.345561,
+    "ast_hash": "badb3d07c997c499ce28d1b33f1b5d20",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\storage\\framework\\views\\848bb536b5b2b75c99cdc1cebf462570.php": {
@@ -1040,7 +1040,7 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\storage\\framework\\views\\fd07446ba3abaf14333d6dee8ae2145a.php": {
-    "mtime": 1780706203.69074,
+    "mtime": 1781134053.0037072,
     "ast_hash": "37d4e53dcf1f6c84df8bc7bae5c35212",
     "semantic_hash": ""
   },
@@ -1110,8 +1110,8 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\storage\\framework\\views\\4563a0748e38abfdf6687fe6eed9a626.php": {
-    "mtime": 1780739493.9439526,
-    "ast_hash": "d65c4c2d9a055f9a637a3825a21a710c",
+    "mtime": 1781132380.9584737,
+    "ast_hash": "2e488f13570be2a40a594ab804a863ca",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\storage\\framework\\views\\5219c42080940557c31171f00a690e35.php": {
@@ -1157,6 +1157,446 @@
   "C:\\AcesAndEightsPizza\\webapp\\AGENTS.md": {
     "mtime": 1780855158.1782575,
     "ast_hash": "388459d0fc5bdc52ad5048903929b6ad",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\framework\\views\\550652f52a5cca24fb08a3a8a4ed0d4e.php": {
+    "mtime": 1781134021.8870237,
+    "ast_hash": "bcc45ee658c22f1db48dcecd32fc0d4f",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\framework\\views\\5b2879b49c581cdd5f25b2cc456ca3c6.php": {
+    "mtime": 1781132402.0983803,
+    "ast_hash": "c0a4471b67e641852765d877d8a50640",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\framework\\views\\66f2a1664075f603d9b2c3be5477d85f.php": {
+    "mtime": 1781134021.7550576,
+    "ast_hash": "97b6950422b7623b6b023d89c87c83c9",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\framework\\views\\6b6a1aafc440771c45ba422955b50e11.php": {
+    "mtime": 1781134010.095067,
+    "ast_hash": "ce22c4d01d81a3c74446d47642fb44a5",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\framework\\views\\97d92821a6f0248cc04d3d5efa745cfd.php": {
+    "mtime": 1781134018.2170742,
+    "ast_hash": "23464cec487a18346fe7d446b466e787",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\framework\\views\\9f4ccab53ad34c71570828ccbce8115f.php": {
+    "mtime": 1781134016.6592395,
+    "ast_hash": "fc621d3cdd913266010cdef99abe5f4c",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\framework\\views\\ae8b3e67d5297f7e36cf41ed43a50c46.php": {
+    "mtime": 1781134003.9569845,
+    "ast_hash": "a0be69bfdbb7f45c25caa466c6ba9559",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\framework\\views\\b87486badd1bf2f80f09675bf1e46ba3.php": {
+    "mtime": 1781132556.833034,
+    "ast_hash": "7e827eb64d35195528e3f9ad8b4359d0",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\StripeWebhookTest.php": {
+    "mtime": 1781128824.2458448,
+    "ast_hash": "6718702be3fe68600d7717f6bbb3026a",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\public\\images\\site\\about-mozzarella.jpg": {
+    "mtime": 1781134098.3175118,
+    "ast_hash": "ab3179ab0ae6c17ad602a0192145575f",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\public\\images\\site\\about-restaurant-interior.jpg": {
+    "mtime": 1781134098.327525,
+    "ast_hash": "bd6348642cfd52ea94c952ed555a8291",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\public\\images\\site\\about-sourdough-crust.jpg": {
+    "mtime": 1781134098.3524666,
+    "ast_hash": "40a8389966ede0115ca5ae9a781a0a70",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\public\\images\\site\\about-stone-oven.jpg": {
+    "mtime": 1781134098.3726666,
+    "ast_hash": "2915735a399551ab14bbc2ca47e6ace1",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\public\\images\\site\\home-hero-pizza.jpg": {
+    "mtime": 1781134098.388409,
+    "ast_hash": "4f5f204c651771916531f580edbece8e",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\public\\images\\site\\home-restaurant-interior.jpg": {
+    "mtime": 1781134098.394208,
+    "ast_hash": "e97f669399eb33ad60945bae7784bdb3",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\public\\images\\site\\menu-meat-lover-hero.jpg": {
+    "mtime": 1781134098.4100766,
+    "ast_hash": "db2c13da96c9cea3814f5741e25131b2",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\public\\images\\site\\party-hall-event.jpg": {
+    "mtime": 1781134098.4223962,
+    "ast_hash": "140b6b4025b25544a88521af8d653334",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\aces.jpg": {
+    "mtime": 1781134098.4363098,
+    "ast_hash": "5eaff8f2609c84944d28759548b0d518",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\antipasto-italiano.jpg": {
+    "mtime": 1781134098.438358,
+    "ast_hash": "50e8cd4fe3ac1cb820e45b5011711a90",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\apple-and-frangipane-cake.jpg": {
+    "mtime": 1781134098.4433384,
+    "ast_hash": "87db7b249bfcc70b14c216ac243a0b62",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\basket-of-bread.jpg": {
+    "mtime": 1781134098.4441948,
+    "ast_hash": "923dbbe9647d8b7b3e495f7ae61aa4eb",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\bresaola.jpg": {
+    "mtime": 1781134098.4441948,
+    "ast_hash": "8039db3dbf69ee16766b865a0b12c0c9",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\burrata.jpg": {
+    "mtime": 1781134098.447943,
+    "ast_hash": "a4fa6dba4898e5b40888ee7aaf0f44e9",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\cannelloni-spinach-ricotta.jpg": {
+    "mtime": 1781134098.451833,
+    "ast_hash": "99aabd98f6353193067d95eb8ecc6e09",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\caprese.jpg": {
+    "mtime": 1781134098.4538498,
+    "ast_hash": "e3a936968875b2fa1245295662814f80",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\caprino.jpg": {
+    "mtime": 1781134098.4582498,
+    "ast_hash": "e06aa6f8bb37b82c75879c476449724c",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\chicken-avocado-salad.jpg": {
+    "mtime": 1781134098.4599893,
+    "ast_hash": "93bb148a1c6e1977e6b8c74fab73bcde",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\coca-cola-zero.jpg": {
+    "mtime": 1781134098.4599893,
+    "ast_hash": "a1b7a4a9b58d37944644b5f8991cd759",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\coca-cola.jpg": {
+    "mtime": 1781134098.4626653,
+    "ast_hash": "a1b7a4a9b58d37944644b5f8991cd759",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\delizia-limone.jpg": {
+    "mtime": 1781134098.4655957,
+    "ast_hash": "7f7bb598c08ed7e1cffd21008ab3f0e8",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\diet-coca-cola.jpg": {
+    "mtime": 1781134098.4676108,
+    "ast_hash": "c6f593e606e38681d07e089327caecbf",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\eights.jpg": {
+    "mtime": 1781134098.4723687,
+    "ast_hash": "50095b7e26f785cee4aa50d2f76525b1",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\ferrari.jpg": {
+    "mtime": 1781134098.4761007,
+    "ast_hash": "5b3e4fc799bd56d897a2bed539df3b9e",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\feta-and-avocado-salad.jpg": {
+    "mtime": 1781134098.4781222,
+    "ast_hash": "c90dd87b21a1df118cf2acca11c97c77",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\garlic-bread-pizza.jpg": {
+    "mtime": 1781134098.4814222,
+    "ast_hash": "0c952559d5c932d5a045463536a44b70",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\garlic-bread.jpg": {
+    "mtime": 1781134098.484482,
+    "ast_hash": "ffd93e875dea0b8b65a87a8bf5adb3ed",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\gluten-free-tiramisu.jpg": {
+    "mtime": 1781134098.484482,
+    "ast_hash": "21c9b2f57e546305d8f64abdca9ebc39",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\greek-feta-salad.jpg": {
+    "mtime": 1781134098.4865017,
+    "ast_hash": "319ec9a0693a8051e1669265af4eeeef",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\hawaii.jpg": {
+    "mtime": 1781134098.4918172,
+    "ast_hash": "fe94d46ee7632c3bb4d92cd6e93bfda9",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\honey-mushroom.jpg": {
+    "mtime": 1781134098.492836,
+    "ast_hash": "eed7a18744ab3ab88b4b4e1eb77f629c",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\ice-cream-500g.jpg": {
+    "mtime": 1781134098.492836,
+    "ast_hash": "6dd4327634eebdf80131f63e5ab362e8",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\il-bacio.jpg": {
+    "mtime": 1781134098.492836,
+    "ast_hash": "d5d46be42f3cb208dd30a213726ad1ee",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\insalata-cesare.jpg": {
+    "mtime": 1781134098.492836,
+    "ast_hash": "2984e70ac07dc046383819a36ed6d3bf",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\insalata-di-carciofi.jpg": {
+    "mtime": 1781134098.5013027,
+    "ast_hash": "ebb67333a96ad2bb98c99a4e996d008b",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\insalata-mediterranea.jpg": {
+    "mtime": 1781134098.5033188,
+    "ast_hash": "0625ccbec630bd6485a7c10f7a0da9d9",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\insalata-mista.jpg": {
+    "mtime": 1781134098.5058703,
+    "ast_hash": "f5e32e98fa69d4842554d3cc771e0c41",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\insalata-verde.jpg": {
+    "mtime": 1781134098.5086691,
+    "ast_hash": "bd558f3419af88a851ebdd911756b706",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\italian-tuna-salad.jpg": {
+    "mtime": 1781134098.509835,
+    "ast_hash": "8a82b3091f73f9de8127333f5c069379",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\lasagna.jpg": {
+    "mtime": 1781134098.5148675,
+    "ast_hash": "33b74457768999e3fe6b6f5dd190a0d0",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\lemon-tart.jpg": {
+    "mtime": 1781134098.5159297,
+    "ast_hash": "4f4cd85db01b88842c266e008de16cc4",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\margherita.jpg": {
+    "mtime": 1781134098.517975,
+    "ast_hash": "f3e7a3f0c63b3954be388e877a8a7985",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\meat-lover.jpg": {
+    "mtime": 1781134098.517975,
+    "ast_hash": "27659a28e8c58265f5dfddb12b1378e7",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\mediterranean-feta-salad.jpg": {
+    "mtime": 1781134098.5224223,
+    "ast_hash": "aa17a7737d8f8c10405a61d0902dc147",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\mediterranean-tuna-salad.jpg": {
+    "mtime": 1781134098.5263755,
+    "ast_hash": "1e7c1bfde676a447d06539f7b92850f1",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\melanzane-parmigiana.jpg": {
+    "mtime": 1781134098.5288684,
+    "ast_hash": "b3319d2b27c32c8d546a9a7946159ee7",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\milk-chocolate-profiteroles.jpg": {
+    "mtime": 1781134098.532081,
+    "ast_hash": "397a6a546bc55f510c3e3ef6742d4ed5",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\napoli.jpg": {
+    "mtime": 1781134098.5344532,
+    "ast_hash": "ca92c732d8ca2b76c756cb400e3bc413",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\neapolitan-baba.jpg": {
+    "mtime": 1781134098.539277,
+    "ast_hash": "f17d1c6ee87ec06da6bce286dea18612",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\olives.jpg": {
+    "mtime": 1781134098.5430188,
+    "ast_hash": "a03c2baed3bab356f324b40412adc518",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\pancetta.jpg": {
+    "mtime": 1781134098.5462656,
+    "ast_hash": "be708ea10bce2502d743c1f385603d46",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\piccante.jpg": {
+    "mtime": 1781134098.5496125,
+    "ast_hash": "0edced934ee55b78582cdecb947eeb15",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\punta-luzzi.jpg": {
+    "mtime": 1781134098.55062,
+    "ast_hash": "482b94b3b9cecf3243d0e7ce264b1769",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\quattro-formaggi.jpg": {
+    "mtime": 1781134098.55062,
+    "ast_hash": "21e688d09ff4ffb713ef798b5104c87f",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\quattro-stagioni.jpg": {
+    "mtime": 1781134098.5568357,
+    "ast_hash": "9354f31a9e95a35efe107f9f78bfc184",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\ricotta-and-pistachio-cake.jpg": {
+    "mtime": 1781134098.5593631,
+    "ast_hash": "5f498846aa35a8d045b4995f3a5f5f6c",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\roasted-beetroot-and-feta-salad.jpg": {
+    "mtime": 1781134098.5593631,
+    "ast_hash": "bc418b13639cb3cabb203c9e64101eb3",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\rucola-e-parmigiana.jpg": {
+    "mtime": 1781134098.5593631,
+    "ast_hash": "6510eaaa2f32caed27103393f9602bc9",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\salted-caramel-cheesecake.jpg": {
+    "mtime": 1781134098.567202,
+    "ast_hash": "f2491b24fc0909a9021dd0129fcc5587",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\san-pellegrino-lemon.jpg": {
+    "mtime": 1781134098.570123,
+    "ast_hash": "261fce8d6edcfaf0edd678c5ff30972e",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\san-pellegrino-orange.jpg": {
+    "mtime": 1781134098.573211,
+    "ast_hash": "b437211673bf67d2fd22e29f57163578",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\saporita.jpg": {
+    "mtime": 1781134098.5770257,
+    "ast_hash": "b6d9448bf9aac59d2f1428e565c359cf",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\sicilian-cannoli.jpg": {
+    "mtime": 1781134098.5793817,
+    "ast_hash": "0849727d719907cf680e1c40d0bcf041",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\sicilian-pistachio-mousse.jpg": {
+    "mtime": 1781134098.5816061,
+    "ast_hash": "0ba76c6f93d0d2fcdd848cfb54e25f78",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\sicilian-tuna-salad.jpg": {
+    "mtime": 1781134098.5869584,
+    "ast_hash": "75e6b5b7746090ae6380c2e2a15b4fbb",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\squash.jpg": {
+    "mtime": 1781134098.5900483,
+    "ast_hash": "35be4ecca84ef8403e38ff4419ff8551",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\strawberry-cheesecake.jpg": {
+    "mtime": 1781134098.5915825,
+    "ast_hash": "037454cd087a4b9e3b35d0264f105538",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\tiramisu.jpg": {
+    "mtime": 1781134098.594771,
+    "ast_hash": "21c9b2f57e546305d8f64abdca9ebc39",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\tomarchio-lemon-tangerine-tea.jpg": {
+    "mtime": 1781134098.598636,
+    "ast_hash": "6ad2be4928bf1cc6dee61d024603f05b",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\tomarchio-peach-melon-tea.jpg": {
+    "mtime": 1781134098.6012094,
+    "ast_hash": "72d7494ee2f4a61dcd7dd2729d0eeb80",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\torta-della-nonna.jpg": {
+    "mtime": 1781134098.6047032,
+    "ast_hash": "bffc28148389b9b935fe343a7d4223d9",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\tricolore.jpg": {
+    "mtime": 1781134098.6068838,
+    "ast_hash": "0625ccbec630bd6485a7c10f7a0da9d9",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\tuna-and-mozzarella.jpg": {
+    "mtime": 1781134098.6092405,
+    "ast_hash": "1be6e1b09f6934a29db09131519f9549",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\tuna-caesar.jpg": {
+    "mtime": 1781134098.6119099,
+    "ast_hash": "8b3e0a82592c4fc7178cee180168cb98",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\vegan-pizza.jpg": {
+    "mtime": 1781134098.614236,
+    "ast_hash": "ea5690887e8c238c362a6fc126348711",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\vegetariana.jpg": {
+    "mtime": 1781134098.6169777,
+    "ast_hash": "390dff2a31949c82ade31d831c349b2a",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\veggie.jpg": {
+    "mtime": 1781134098.619912,
+    "ast_hash": "94023f0aef56535da41c7c03db6a679c",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\watermelon-and-feta-salad.jpg": {
+    "mtime": 1781134098.6242347,
+    "ast_hash": "9a1e77240d8bccdb44941809314545d3",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\storage\\app\\public\\menu-items\\zuegg-juice.jpg": {
+    "mtime": 1781134098.626536,
+    "ast_hash": "036a146fa3d77b7d96da6c1209c0c66d",
     "semantic_hash": ""
   }
 }

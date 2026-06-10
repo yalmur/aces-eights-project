@@ -46,31 +46,103 @@
   },
   "nodes": [
     {
+      "label": "MenuItemSeeder.php",
+      "file_type": "code",
+      "source_file": "database/seeders/MenuItemSeeder.php",
+      "source_location": "L1",
+      "id": "database_seeders_menuitemseeder_php",
+      "community": 8,
+      "norm_label": "menuitemseeder.php"
+    },
+    {
+      "label": "MenuItemSeeder",
+      "file_type": "code",
+      "source_file": "database/seeders/MenuItemSeeder.php",
+      "source_location": "L12",
+      "id": "seeders_menuitemseeder_menuitemseeder",
+      "community": 8,
+      "norm_label": "menuitemseeder"
+    },
+    {
+      "label": "Seeder",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "seeder",
+      "community": 8,
+      "norm_label": "seeder"
+    },
+    {
+      "label": ".run()",
+      "file_type": "code",
+      "source_file": "database/seeders/MenuItemSeeder.php",
+      "source_location": "L14",
+      "id": "seeders_menuitemseeder_menuitemseeder_run",
+      "community": 8,
+      "norm_label": ".run()"
+    },
+    {
+      "label": "about.blade.php",
+      "file_type": "code",
+      "source_file": "resources/views/about.blade.php",
+      "source_location": null,
+      "id": "resources_views_about_blade_php",
+      "community": 81,
+      "norm_label": "about.blade.php"
+    },
+    {
+      "label": "home.blade.php",
+      "file_type": "code",
+      "source_file": "resources/views/home.blade.php",
+      "source_location": null,
+      "id": "resources_views_home_blade_php",
+      "community": 83,
+      "norm_label": "home.blade.php"
+    },
+    {
+      "label": "index.blade.php",
+      "file_type": "code",
+      "source_file": "resources/views/menu/index.blade.php",
+      "source_location": null,
+      "id": "resources_views_menu_index_blade_php",
+      "community": 115,
+      "norm_label": "index.blade.php"
+    },
+    {
+      "label": "party-hall.blade.php",
+      "file_type": "code",
+      "source_file": "resources/views/party-hall.blade.php",
+      "source_location": null,
+      "id": "resources_views_party_hall_blade_php",
+      "community": 246,
+      "norm_label": "party-hall.blade.php"
+    },
+    {
       "label": "AGENTS.md",
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L1",
-      "id": "agents_md",
       "community": 14,
-      "norm_label": "agents.md"
+      "norm_label": "agents.md",
+      "id": "agents_md"
     },
     {
       "label": "Aces & Eights Pizza \u2014 Codex Instructions",
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L1",
-      "id": "webapp_agents_aces_eights_pizza_codex_instructions",
       "community": 14,
-      "norm_label": "aces & eights pizza \u2014 codex instructions"
+      "norm_label": "aces & eights pizza \u2014 codex instructions",
+      "id": "webapp_agents_aces_eights_pizza_codex_instructions"
     },
     {
       "label": "graphify Knowledge Graph",
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L3",
-      "id": "webapp_agents_graphify_knowledge_graph",
       "community": 14,
-      "norm_label": "graphify knowledge graph"
+      "norm_label": "graphify knowledge graph",
+      "id": "webapp_agents_graphify_knowledge_graph"
     },
     {
       "label": "tinker_input.php",
@@ -320,7 +392,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/StripeWebhookController.php",
       "source_location": "L1",
-      "community": 241,
+      "community": 130,
       "norm_label": "stripewebhookcontroller.php",
       "id": "app_http_controllers_stripewebhookcontroller_php"
     },
@@ -329,7 +401,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/StripeWebhookController.php",
       "source_location": "L12",
-      "community": 241,
+      "community": 130,
       "norm_label": "stripewebhookcontroller",
       "id": "controllers_stripewebhookcontroller_stripewebhookcontroller"
     },
@@ -338,7 +410,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/StripeWebhookController.php",
       "source_location": "L14",
-      "community": 241,
+      "community": 130,
       "norm_label": ".handle()",
       "id": "controllers_stripewebhookcontroller_stripewebhookcontroller_handle"
     },
@@ -347,7 +419,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/StripeWebhookController.php",
       "source_location": "L14",
-      "community": 241,
+      "community": 130,
       "norm_label": "request",
       "id": "app_http_controllers_stripewebhookcontroller_php_request"
     },
@@ -356,7 +428,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/StripeWebhookController.php",
       "source_location": "L14",
-      "community": 241,
+      "community": 130,
       "norm_label": "response",
       "id": "response"
     },
@@ -667,15 +739,6 @@
       "id": "resources_views_components_header_blade_php"
     },
     {
-      "label": "home.blade.php",
-      "file_type": "code",
-      "source_file": "resources/views/home.blade.php",
-      "source_location": null,
-      "community": 83,
-      "norm_label": "home.blade.php",
-      "id": "resources_views_home_blade_php"
-    },
-    {
       "label": "SocialAuthController.php",
       "file_type": "code",
       "source_file": "app/Http/Controllers/SocialAuthController.php",
@@ -716,7 +779,7 @@
       "file_type": "code",
       "source_file": "app/Models/User.php",
       "source_location": "L1",
-      "community": 10,
+      "community": 241,
       "norm_label": "user.php",
       "id": "app_models_user_php"
     },
@@ -725,7 +788,7 @@
       "file_type": "code",
       "source_file": "app/Models/User.php",
       "source_location": "L12",
-      "community": 10,
+      "community": 241,
       "norm_label": "user",
       "id": "models_user_user"
     },
@@ -734,7 +797,7 @@
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "community": 10,
+      "community": 241,
       "norm_label": "authenticatable",
       "id": "authenticatable"
     },
@@ -752,7 +815,7 @@
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "community": 10,
+      "community": 241,
       "norm_label": "notifiable",
       "id": "notifiable"
     },
@@ -761,7 +824,7 @@
       "file_type": "code",
       "source_file": "app/Models/User.php",
       "source_location": "L47",
-      "community": 10,
+      "community": 241,
       "norm_label": ".casts()",
       "id": "models_user_user_casts"
     },
@@ -770,7 +833,7 @@
       "file_type": "code",
       "source_file": "app/Models/User.php",
       "source_location": "L55",
-      "community": 10,
+      "community": 241,
       "norm_label": ".orders()",
       "id": "models_user_user_orders"
     },
@@ -779,7 +842,7 @@
       "file_type": "code",
       "source_file": "app/Models/User.php",
       "source_location": "L55",
-      "community": 10,
+      "community": 241,
       "norm_label": "hasmany",
       "id": "hasmany"
     },
@@ -788,7 +851,7 @@
       "file_type": "code",
       "source_file": "app/Models/User.php",
       "source_location": "L60",
-      "community": 10,
+      "community": 241,
       "norm_label": ".addresses()",
       "id": "models_user_user_addresses"
     },
@@ -797,7 +860,7 @@
       "file_type": "code",
       "source_file": "app/Models/User.php",
       "source_location": "L65",
-      "community": 10,
+      "community": 241,
       "norm_label": ".defaultaddress()",
       "id": "models_user_user_defaultaddress"
     },
@@ -806,7 +869,7 @@
       "file_type": "code",
       "source_file": "app/Models/User.php",
       "source_location": "L65",
-      "community": 10,
+      "community": 241,
       "norm_label": "useraddress",
       "id": "useraddress"
     },
@@ -1364,7 +1427,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/MenuItemController.php",
       "source_location": "L43",
-      "community": 130,
+      "community": 10,
       "norm_label": ".create()",
       "id": "admin_menuitemcontroller_menuitemcontroller_create"
     },
@@ -1832,7 +1895,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/OurMenuController.php",
       "source_location": "L1",
-      "community": 241,
+      "community": 130,
       "norm_label": "ourmenucontroller.php",
       "id": "app_http_controllers_ourmenucontroller_php"
     },
@@ -1841,7 +1904,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/OurMenuController.php",
       "source_location": "L8",
-      "community": 241,
+      "community": 130,
       "norm_label": "ourmenucontroller",
       "id": "controllers_ourmenucontroller_ourmenucontroller"
     },
@@ -1850,7 +1913,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/OurMenuController.php",
       "source_location": "L10",
-      "community": 241,
+      "community": 130,
       "norm_label": ".index()",
       "id": "controllers_ourmenucontroller_ourmenucontroller_index"
     },
@@ -1859,7 +1922,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/OurMenuController.php",
       "source_location": "L10",
-      "community": 241,
+      "community": 130,
       "norm_label": "view",
       "id": "app_http_controllers_ourmenucontroller_php_view"
     },
@@ -1886,7 +1949,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
       "source_location": "L1",
-      "community": 241,
+      "community": 130,
       "norm_label": "dashboardcontroller.php",
       "id": "app_http_controllers_admin_dashboardcontroller_php"
     },
@@ -1895,7 +1958,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
       "source_location": "L10",
-      "community": 241,
+      "community": 130,
       "norm_label": "dashboardcontroller",
       "id": "admin_dashboardcontroller_dashboardcontroller"
     },
@@ -1904,7 +1967,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
       "source_location": "L12",
-      "community": 241,
+      "community": 130,
       "norm_label": ".index()",
       "id": "admin_dashboardcontroller_dashboardcontroller_index"
     },
@@ -1913,7 +1976,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
       "source_location": "L12",
-      "community": 241,
+      "community": 130,
       "norm_label": "view",
       "id": "app_http_controllers_admin_dashboardcontroller_php_view"
     },
@@ -2048,7 +2111,7 @@
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L29",
-      "community": 130,
+      "community": 10,
       "norm_label": ".category()",
       "id": "models_menuitem_menuitem_category"
     },
@@ -2066,7 +2129,7 @@
       "file_type": "code",
       "source_file": "app/Models/MenuItem.php",
       "source_location": "L34",
-      "community": 10,
+      "community": 241,
       "norm_label": ".baseingredients()",
       "id": "models_menuitem_menuitem_baseingredients"
     },
@@ -2159,24 +2222,6 @@
       "community": 244,
       "norm_label": "party-hall-inquiry.blade.php",
       "id": "resources_views_emails_party_hall_inquiry_blade_php"
-    },
-    {
-      "label": "index.blade.php",
-      "file_type": "code",
-      "source_file": "resources/views/menu/index.blade.php",
-      "source_location": null,
-      "community": 115,
-      "norm_label": "index.blade.php",
-      "id": "resources_views_menu_index_blade_php"
-    },
-    {
-      "label": "party-hall.blade.php",
-      "file_type": "code",
-      "source_file": "resources/views/party-hall.blade.php",
-      "source_location": null,
-      "community": 246,
-      "norm_label": "party-hall.blade.php",
-      "id": "resources_views_party_hall_blade_php"
     },
     {
       "label": "PromoController.php",
@@ -3349,15 +3394,6 @@
       "id": "feature_routesmoketest_routesmoketest_test_admin_routes_return_403_for_customer"
     },
     {
-      "label": "about.blade.php",
-      "file_type": "code",
-      "source_file": "resources/views/about.blade.php",
-      "source_location": null,
-      "community": 81,
-      "norm_label": "about.blade.php",
-      "id": "resources_views_about_blade_php"
-    },
-    {
       "label": "package.json",
       "file_type": "code",
       "source_file": "package.json",
@@ -3569,7 +3605,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/AuthController.php",
       "source_location": "L1",
-      "community": 241,
+      "community": 128,
       "norm_label": "authcontroller.php",
       "id": "app_http_controllers_authcontroller_php"
     },
@@ -3578,7 +3614,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/AuthController.php",
       "source_location": "L9",
-      "community": 241,
+      "community": 128,
       "norm_label": "authcontroller",
       "id": "controllers_authcontroller_authcontroller"
     },
@@ -3587,7 +3623,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/AuthController.php",
       "source_location": "L11",
-      "community": 241,
+      "community": 128,
       "norm_label": ".login()",
       "id": "controllers_authcontroller_authcontroller_login"
     },
@@ -3596,7 +3632,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/AuthController.php",
       "source_location": "L11",
-      "community": 241,
+      "community": 128,
       "norm_label": "request",
       "id": "app_http_controllers_authcontroller_php_request"
     },
@@ -3605,7 +3641,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/AuthController.php",
       "source_location": "L11",
-      "community": 241,
+      "community": 128,
       "norm_label": "redirectresponse",
       "id": "app_http_controllers_authcontroller_php_redirectresponse"
     },
@@ -3614,7 +3650,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/AuthController.php",
       "source_location": "L33",
-      "community": 241,
+      "community": 128,
       "norm_label": ".logout()",
       "id": "controllers_authcontroller_authcontroller_logout"
     },
@@ -3623,7 +3659,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/AuthController.php",
       "source_location": "L42",
-      "community": 241,
+      "community": 128,
       "norm_label": ".register()",
       "id": "controllers_authcontroller_authcontroller_register"
     },
@@ -3632,7 +3668,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/CartController.php",
       "source_location": "L1",
-      "community": 241,
+      "community": 248,
       "norm_label": "cartcontroller.php",
       "id": "app_http_controllers_cartcontroller_php"
     },
@@ -3641,7 +3677,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/CartController.php",
       "source_location": "L7",
-      "community": 241,
+      "community": 248,
       "norm_label": "cartcontroller",
       "id": "controllers_cartcontroller_cartcontroller"
     },
@@ -3650,7 +3686,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/CartController.php",
       "source_location": "L9",
-      "community": 241,
+      "community": 248,
       "norm_label": ".index()",
       "id": "controllers_cartcontroller_cartcontroller_index"
     },
@@ -3659,7 +3695,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/CartController.php",
       "source_location": "L9",
-      "community": 241,
+      "community": 248,
       "norm_label": "view",
       "id": "app_http_controllers_cartcontroller_php_view"
     },
@@ -3668,7 +3704,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Controller.php",
       "source_location": "L1",
-      "community": 241,
+      "community": 130,
       "norm_label": "controller.php",
       "id": "app_http_controllers_controller_php"
     },
@@ -3677,7 +3713,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Controller.php",
       "source_location": "L5",
-      "community": 241,
+      "community": 130,
       "norm_label": "controller",
       "id": "controllers_controller_controller"
     },
@@ -3686,7 +3722,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/MenuController.php",
       "source_location": "L1",
-      "community": 241,
+      "community": 10,
       "norm_label": "menucontroller.php",
       "id": "app_http_controllers_menucontroller_php"
     },
@@ -3695,7 +3731,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/MenuController.php",
       "source_location": "L10",
-      "community": 241,
+      "community": 10,
       "norm_label": "menucontroller",
       "id": "controllers_menucontroller_menucontroller"
     },
@@ -3704,7 +3740,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/MenuController.php",
       "source_location": "L12",
-      "community": 241,
+      "community": 10,
       "norm_label": ".index()",
       "id": "controllers_menucontroller_menucontroller_index"
     },
@@ -3713,7 +3749,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/MenuController.php",
       "source_location": "L12",
-      "community": 241,
+      "community": 10,
       "norm_label": "view",
       "id": "app_http_controllers_menucontroller_php_view"
     },
@@ -3722,7 +3758,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/MenuController.php",
       "source_location": "L30",
-      "community": 241,
+      "community": 10,
       "norm_label": ".show()",
       "id": "controllers_menucontroller_menucontroller_show"
     },
@@ -3731,7 +3767,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/AccountController.php",
       "source_location": "L1",
-      "community": 241,
+      "community": 130,
       "norm_label": "accountcontroller.php",
       "id": "app_http_controllers_account_accountcontroller_php"
     },
@@ -3740,7 +3776,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/AccountController.php",
       "source_location": "L9",
-      "community": 241,
+      "community": 130,
       "norm_label": "accountcontroller",
       "id": "account_accountcontroller_accountcontroller"
     },
@@ -3749,7 +3785,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/AccountController.php",
       "source_location": "L11",
-      "community": 241,
+      "community": 130,
       "norm_label": ".index()",
       "id": "account_accountcontroller_accountcontroller_index"
     },
@@ -3758,7 +3794,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/AccountController.php",
       "source_location": "L11",
-      "community": 241,
+      "community": 130,
       "norm_label": "view",
       "id": "app_http_controllers_account_accountcontroller_php_view"
     },
@@ -3830,7 +3866,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/PasswordController.php",
       "source_location": "L1",
-      "community": 241,
+      "community": 130,
       "norm_label": "passwordcontroller.php",
       "id": "app_http_controllers_account_passwordcontroller_php"
     },
@@ -3839,7 +3875,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/PasswordController.php",
       "source_location": "L12",
-      "community": 241,
+      "community": 130,
       "norm_label": "passwordcontroller",
       "id": "account_passwordcontroller_passwordcontroller"
     },
@@ -3848,7 +3884,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/PasswordController.php",
       "source_location": "L14",
-      "community": 241,
+      "community": 130,
       "norm_label": ".update()",
       "id": "account_passwordcontroller_passwordcontroller_update"
     },
@@ -3857,7 +3893,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/PasswordController.php",
       "source_location": "L14",
-      "community": 241,
+      "community": 130,
       "norm_label": "request",
       "id": "app_http_controllers_account_passwordcontroller_php_request"
     },
@@ -3866,7 +3902,7 @@
       "file_type": "code",
       "source_file": "app/Http/Controllers/Account/PasswordController.php",
       "source_location": "L14",
-      "community": 241,
+      "community": 130,
       "norm_label": "redirectresponse",
       "id": "app_http_controllers_account_passwordcontroller_php_redirectresponse"
     },
@@ -5572,15 +5608,6 @@
       "id": "seeders_adminuserseeder_adminuserseeder"
     },
     {
-      "label": "Seeder",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "community": 8,
-      "norm_label": "seeder",
-      "id": "seeder"
-    },
-    {
       "label": ".run()",
       "file_type": "code",
       "source_file": "database/seeders/AdminUserSeeder.php",
@@ -5696,33 +5723,6 @@
       "community": 8,
       "norm_label": ".run()",
       "id": "seeders_deliveryzoneseeder_deliveryzoneseeder_run"
-    },
-    {
-      "label": "MenuItemSeeder.php",
-      "file_type": "code",
-      "source_file": "database/seeders/MenuItemSeeder.php",
-      "source_location": "L1",
-      "community": 8,
-      "norm_label": "menuitemseeder.php",
-      "id": "database_seeders_menuitemseeder_php"
-    },
-    {
-      "label": "MenuItemSeeder",
-      "file_type": "code",
-      "source_file": "database/seeders/MenuItemSeeder.php",
-      "source_location": "L12",
-      "community": 8,
-      "norm_label": "menuitemseeder",
-      "id": "seeders_menuitemseeder_menuitemseeder"
-    },
-    {
-      "label": ".run()",
-      "file_type": "code",
-      "source_file": "database/seeders/MenuItemSeeder.php",
-      "source_location": "L14",
-      "community": 10,
-      "norm_label": ".run()",
-      "id": "seeders_menuitemseeder_menuitemseeder_run"
     },
     {
       "label": "SettingSeeder.php",
@@ -7466,7 +7466,7 @@
       "file_type": "code",
       "source_file": "tests/Feature/MenuTest.php",
       "source_location": "L48",
-      "community": 10,
+      "community": 15,
       "norm_label": ".test_topping_available_scope()",
       "id": "feature_menutest_menutest_test_topping_available_scope"
     },
@@ -9618,14 +9618,235 @@
   ],
   "links": [
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/MenuItemSeeder.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "database_seeders_menuitemseeder_php",
+      "target": "menuitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/MenuItemSeeder.php",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "database_seeders_menuitemseeder_php",
+      "target": "seeder"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/MenuItemSeeder.php",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "database_seeders_menuitemseeder_php",
+      "target": "seeders_menuitemseeder_menuitemseeder"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/MenuItemSeeder.php",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seeders_menuitemseeder_menuitemseeder",
+      "target": "seeder"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/MenuItemSeeder.php",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seeders_menuitemseeder_menuitemseeder",
+      "target": "seeders_menuitemseeder_menuitemseeder_run"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/AdminUserSeeder.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "database_seeders_adminuserseeder_php",
+      "target": "seeder"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/AllergenSeeder.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "database_seeders_allergenseeder_php",
+      "target": "seeder"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/CategorySeeder.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "database_seeders_categoryseeder_php",
+      "target": "seeder"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/DatabaseSeeder.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "database_seeders_databaseseeder_php",
+      "target": "seeder"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/DeliveryZoneSeeder.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "database_seeders_deliveryzoneseeder_php",
+      "target": "seeder"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/SettingSeeder.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "database_seeders_settingseeder_php",
+      "target": "seeder"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/ToppingSeeder.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "database_seeders_toppingseeder_php",
+      "target": "seeder"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/AdminUserSeeder.php",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seeders_adminuserseeder_adminuserseeder",
+      "target": "seeder"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/AllergenSeeder.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seeders_allergenseeder_allergenseeder",
+      "target": "seeder"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/CategorySeeder.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seeders_categoryseeder_categoryseeder",
+      "target": "seeder"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/DatabaseSeeder.php",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seeders_databaseseeder_databaseseeder",
+      "target": "seeder"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/DeliveryZoneSeeder.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seeders_deliveryzoneseeder_deliveryzoneseeder",
+      "target": "seeder"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/SettingSeeder.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seeders_settingseeder_settingseeder",
+      "target": "seeder"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/ToppingSeeder.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seeders_toppingseeder_toppingseeder",
+      "target": "seeder"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "database/seeders/MenuItemSeeder.php",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "seeders_menuitemseeder_menuitemseeder_run",
+      "target": "models_allergen_allergen"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "database/seeders/MenuItemSeeder.php",
+      "source_location": "L129",
+      "weight": 1.0,
+      "source": "seeders_menuitemseeder_menuitemseeder_run",
+      "target": "models_baseingredient_baseingredient"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "AGENTS.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "agents_md",
-      "target": "webapp_agents_aces_eights_pizza_codex_instructions",
-      "confidence_score": 1.0
+      "target": "webapp_agents_aces_eights_pizza_codex_instructions"
     },
     {
       "relation": "contains",
@@ -9633,9 +9854,9 @@
       "source_file": "AGENTS.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "webapp_agents_aces_eights_pizza_codex_instructions",
-      "target": "webapp_agents_graphify_knowledge_graph",
-      "confidence_score": 1.0
+      "target": "webapp_agents_graphify_knowledge_graph"
     },
     {
       "relation": "imports",
@@ -17555,17 +17776,6 @@
       "target": "models_allergen_allergen"
     },
     {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "database/seeders/MenuItemSeeder.php",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "seeders_menuitemseeder_menuitemseeder_run",
-      "target": "models_allergen_allergen"
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Models/Allergen.php",
@@ -17606,17 +17816,6 @@
       "confidence_score": 1.0,
       "source": "models_baseingredient_baseingredient",
       "target": "models_baseingredient_baseingredient_menuitem"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "database/seeders/MenuItemSeeder.php",
-      "source_location": "L129",
-      "weight": 1.0,
-      "source": "seeders_menuitemseeder_menuitemseeder_run",
-      "target": "models_baseingredient_baseingredient"
     },
     {
       "relation": "references",
@@ -19088,17 +19287,6 @@
       "target": "migrations_2026_06_04_040236_create_user_addresses_table_up"
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/AdminUserSeeder.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "database_seeders_adminuserseeder_php",
-      "target": "seeder"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "database/seeders/AdminUserSeeder.php",
@@ -19109,16 +19297,6 @@
       "target": "seeders_adminuserseeder_adminuserseeder"
     },
     {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/AdminUserSeeder.php",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seeders_adminuserseeder_adminuserseeder",
-      "target": "seeder"
-    },
-    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "database/seeders/AdminUserSeeder.php",
@@ -19127,153 +19305,6 @@
       "confidence_score": 1.0,
       "source": "seeders_adminuserseeder_adminuserseeder",
       "target": "seeders_adminuserseeder_adminuserseeder_run"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/AllergenSeeder.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "database_seeders_allergenseeder_php",
-      "target": "seeder"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/CategorySeeder.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "database_seeders_categoryseeder_php",
-      "target": "seeder"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/DatabaseSeeder.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "database_seeders_databaseseeder_php",
-      "target": "seeder"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/DeliveryZoneSeeder.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "database_seeders_deliveryzoneseeder_php",
-      "target": "seeder"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/MenuItemSeeder.php",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "database_seeders_menuitemseeder_php",
-      "target": "seeder"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/SettingSeeder.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "database_seeders_settingseeder_php",
-      "target": "seeder"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/ToppingSeeder.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "database_seeders_toppingseeder_php",
-      "target": "seeder"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/AllergenSeeder.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seeders_allergenseeder_allergenseeder",
-      "target": "seeder"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/CategorySeeder.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seeders_categoryseeder_categoryseeder",
-      "target": "seeder"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/DatabaseSeeder.php",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seeders_databaseseeder_databaseseeder",
-      "target": "seeder"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/DeliveryZoneSeeder.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seeders_deliveryzoneseeder_deliveryzoneseeder",
-      "target": "seeder"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/MenuItemSeeder.php",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seeders_menuitemseeder_menuitemseeder",
-      "target": "seeder"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/SettingSeeder.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seeders_settingseeder_settingseeder",
-      "target": "seeder"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/ToppingSeeder.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seeders_toppingseeder_toppingseeder",
-      "target": "seeder"
     },
     {
       "relation": "contains",
@@ -19354,26 +19385,6 @@
       "confidence_score": 1.0,
       "source": "seeders_deliveryzoneseeder_deliveryzoneseeder",
       "target": "seeders_deliveryzoneseeder_deliveryzoneseeder_run"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/MenuItemSeeder.php",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "database_seeders_menuitemseeder_php",
-      "target": "seeders_menuitemseeder_menuitemseeder"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/MenuItemSeeder.php",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "seeders_menuitemseeder_menuitemseeder",
-      "target": "seeders_menuitemseeder_menuitemseeder_run"
     },
     {
       "relation": "contains",
@@ -22715,5 +22726,5 @@
       "source_file": "docs/superpowers/plans/2026-06-04-plan9-deploy-polish.md"
     }
   ],
-  "built_at_commit": "eb1c2bd1d417a9d62b5ea6d62891466f8023fe6a"
+  "built_at_commit": "18cfe78370f76b37b18dbd74d2cf800c585c65b9"
 }
