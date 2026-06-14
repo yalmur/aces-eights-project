@@ -42,6 +42,8 @@ class CheckoutTest extends TestCase
 
     public function test_post_checkout_creates_order(): void
     {
+        \App\Models\DeliveryZone::factory()->create(['postcodes' => 'NW5,N7,N19', 'is_active' => true]);
+
         $cartItems = [[
             'id'                 => 'margherita',
             'name'               => 'Margherita',
