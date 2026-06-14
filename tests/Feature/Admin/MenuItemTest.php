@@ -3,6 +3,7 @@
 namespace Tests\Feature\Admin;
 
 use App\Models\Allergen;
+use App\Models\BaseIngredient;
 use App\Models\Category;
 use App\Models\MenuItem;
 use App\Models\User;
@@ -80,6 +81,58 @@ class MenuItemTest extends TestCase
             'id'         => $item->id,
             'name'       => 'Updated Name',
             'base_price' => 15.00,
+        ]);
+    }
+
+    public function test_create_form_defaults_is_available_checkbox_to_checked(): void
+    {
+        $response = $this->actingAs($this->admin)->get('/admin/menu/create');
+
+        $response->assertSee('name="is_available" type="checkbox" value="1" checked', false);
+    }
+
+    public function test_edit_form_reflects_unavailable_item_as_unchecked(): void
+    {
+        $item = MenuItem::factory()->create(['is_available' => false]);
+
+        $response = $this->actingAs($this->admin)->get("/admin/menu/{$item->id}/edit");
+
+        $response->assertDontSee('name="is_available" type="checkbox" value="1" checked', false);
+    }
+
+    public function test_update_validation_errors_are_displayed_on_edit_form(): void
+    {
+        $item = MenuItem::factory()->create();
+
+        $response = $this->actingAs($this->admin)->from("/admin/menu/{$item->id}/edit")
+            ->put("/admin/menu/{$item->id}", [
+                'name'        => '',
+                'category_id' => $item->category_id,
+                'base_price'  => '15.00',
+            ]);
+
+        $response->assertSessionHasErrors(['name']);
+
+        $follow = $this->actingAs($this->admin)->get("/admin/menu/{$item->id}/edit");
+        $follow->assertSee('The name field is required.');
+    }
+
+    public function test_updating_menu_item_without_ingredients_field_preserves_base_ingredients(): void
+    {
+        $item = MenuItem::factory()->create(['name' => 'Old Name', 'base_price' => 12.00]);
+        BaseIngredient::create(['menu_item_id' => $item->id, 'name' => 'Tomato Sauce', 'sort_order' => 1]);
+
+        $response = $this->actingAs($this->admin)->put("/admin/menu/{$item->id}", [
+            'name'         => 'Updated Name',
+            'category_id'  => $item->category_id,
+            'base_price'   => '15.00',
+            'is_available' => '1',
+        ]);
+
+        $response->assertSessionHasNoErrors();
+        $this->assertDatabaseHas('base_ingredients', [
+            'menu_item_id' => $item->id,
+            'name'         => 'Tomato Sauce',
         ]);
     }
 

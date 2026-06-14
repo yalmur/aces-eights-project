@@ -14,6 +14,11 @@
       enctype="multipart/form-data">
   @csrf
   @if($item) @method('PUT') @endif
+@if($errors->any())
+<div class="lg:col-span-12 p-4 bg-brand-error/10 border border-brand-error font-mono text-xs text-brand-error">
+  @foreach($errors->all() as $e)<p>{{ $e }}</p>@endforeach
+</div>
+@endif
 <!-- Left Column: Primary Details -->
 <div class="lg:col-span-7 space-y-12">
 <!-- Section 1: Basic Info -->
@@ -146,28 +151,32 @@
 <div class="flex items-center justify-between">
 <span class="font-body-md">Visible on Menu</span>
 <label class="relative inline-flex items-center cursor-pointer">
-<input name="is_available" type="checkbox" {{ $item?->is_available ? 'checked' : 'checked' }} class="sr-only peer"/>
+<input type="hidden" name="is_available" value="0">
+<input name="is_available" type="checkbox" value="1" {{ old('is_available', $item?->is_available ?? true) ? 'checked' : '' }} class="sr-only peer"/>
 <div class="w-11 h-6 bg-industrial-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-oxblood-red"></div>
 </label>
 </div>
 <div class="flex items-center justify-between">
 <span class="font-body-md">Featured Item</span>
 <label class="relative inline-flex items-center cursor-pointer">
-<input name="is_featured" type="checkbox" {{ $item?->is_featured ? 'checked' : '' }} class="sr-only peer"/>
+<input type="hidden" name="is_featured" value="0">
+<input name="is_featured" type="checkbox" value="1" {{ old('is_featured', $item?->is_featured) ? 'checked' : '' }} class="sr-only peer"/>
 <div class="w-11 h-6 bg-industrial-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-heritage-gold"></div>
 </label>
 </div>
 <div class="flex items-center justify-between">
 <span class="font-body-md">Vegetarian</span>
 <label class="relative inline-flex items-center cursor-pointer">
-<input name="is_vegetarian" type="checkbox" {{ $item?->is_vegetarian ? 'checked' : '' }} class="sr-only peer"/>
+<input type="hidden" name="is_vegetarian" value="0">
+<input name="is_vegetarian" type="checkbox" value="1" {{ old('is_vegetarian', $item?->is_vegetarian) ? 'checked' : '' }} class="sr-only peer"/>
 <div class="w-11 h-6 bg-industrial-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
 </label>
 </div>
 <div class="flex items-center justify-between">
 <span class="font-body-md">Vegan</span>
 <label class="relative inline-flex items-center cursor-pointer">
-<input name="is_vegan" type="checkbox" {{ $item?->is_vegan ? 'checked' : '' }} class="sr-only peer"/>
+<input type="hidden" name="is_vegan" value="0">
+<input name="is_vegan" type="checkbox" value="1" {{ old('is_vegan', $item?->is_vegan) ? 'checked' : '' }} class="sr-only peer"/>
 <div class="w-11 h-6 bg-industrial-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-700"></div>
 </label>
 </div>

@@ -89,7 +89,9 @@ class MenuItemController extends Controller
         ]);
 
         $item->allergens()->sync($data['allergens'] ?? []);
-        $this->syncIngredients($item, $data['ingredients'] ?? []);
+        if ($request->has('ingredients')) {
+            $this->syncIngredients($item, $data['ingredients'] ?? []);
+        }
 
         return redirect()->route('admin.menu.index')
             ->with('success', "'{$item->name}' added to menu.");
@@ -149,7 +151,9 @@ class MenuItemController extends Controller
         ]);
 
         $menuItem->allergens()->sync($data['allergens'] ?? []);
-        $this->syncIngredients($menuItem, $data['ingredients'] ?? []);
+        if ($request->has('ingredients')) {
+            $this->syncIngredients($menuItem, $data['ingredients'] ?? []);
+        }
 
         return redirect()->route('admin.menu.index')
             ->with('success', "'{$menuItem->name}' updated.");
