@@ -160,8 +160,11 @@
 </div>
 <div class="h-[400px] lg:h-auto min-h-[500px] border-l-0 lg:border-l-2 border-primary relative grayscale">
 <div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
-{{-- Location map placeholder --}}
-<img alt="Location Map" class="w-full h-full object-cover" src="https://placehold.co/600x400/e4e2e1/1b1c1c?text=Photo"/>
+<iframe
+  src="https://maps.google.com/maps?q=156+Fortess+Road+London+NW5+2HP&output=embed"
+  class="w-full h-full" style="border:0;" allowfullscreen loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+  title="Aces &amp; Eights Pizza location map"></iframe>
 <div class="absolute inset-0 flex items-center justify-center">
 <div class="bg-primary text-on-primary p-4 rounded-full shadow-xl">
 <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
