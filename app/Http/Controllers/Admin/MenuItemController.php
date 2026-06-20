@@ -171,6 +171,9 @@ class MenuItemController extends Controller
     {
         $menuItem = MenuItem::findOrFail($item);
         $name = $menuItem->name;
+        if ($menuItem->image_path) {
+            Storage::disk('public')->delete($menuItem->image_path);
+        }
         $menuItem->delete();
 
         return redirect()->route('admin.menu.index')

@@ -8,6 +8,8 @@ use App\Models\Category;
 use App\Models\MenuItem;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
 class MenuItemTest extends TestCase
@@ -203,5 +205,17 @@ class MenuItemTest extends TestCase
 
         $response->assertSessionHasNoErrors();
         $this->assertDatabaseHas('menu_items', ['id' => $item->id, 'base_price' => 14.00]);
+    }
+
+    public function test_deleting_menu_item_with_image_removes_file_from_storage(): void
+    {
+        Storage::fake('public');
+        Storage::disk('public')->put('menu/pizza.jpg', 'fake');
+        $item = MenuItem::factory()->create(['image_path' => 'menu/pizza.jpg']);
+
+        $this->actingAs($this->admin)->delete("/admin/menu/{$item->id}");
+
+        Storage::disk('public')->assertMissing('menu/pizza.jpg');
+        $this->assertDatabaseMissing('menu_items', ['id' => $item->id]);
     }
 }
