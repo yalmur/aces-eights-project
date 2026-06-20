@@ -31,8 +31,11 @@ class SettingsTest extends TestCase
             'store_address'   => '1 Test Street, London',
             'store_phone'     => '+44 123 456 7890',
             'store_email'     => 'test@test.com',
-            'opening_sun_thu' => '17:00 – 22:00',
-            'opening_fri_sat' => '17:00 – 23:00',
+            'opening_sun_thu'          => '17:00 – 22:00',
+            'opening_fri_sat'          => '17:00 – 23:00',
+            'size_large_extra'         => '4.00',
+            'crust_gluten_free_extra'  => '2.00',
+            'crust_cauliflower_extra'  => '2.50',
         ]);
         $response->assertRedirect('/admin/settings');
         $this->assertDatabaseHas('settings', ['key' => 'store_name', 'value' => 'Test Pizza']);

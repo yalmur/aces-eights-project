@@ -18,8 +18,22 @@ use Stripe\StripeClient;
 
 class CheckoutController extends Controller
 {
-    private const SIZE_EXTRAS  = ['12" Standard' => 0.0, '15" Large' => 4.0];
-    private const CRUST_EXTRAS = ['48hr Sourdough' => 0.0, 'Gluten-Free' => 2.0, 'Cauliflower' => 2.5];
+    private static function sizeExtras(): array
+    {
+        return [
+            '12" Standard' => 0.0,
+            '15" Large'    => (float) Setting::get('size_large_extra', '4.00'),
+        ];
+    }
+
+    private static function crustExtras(): array
+    {
+        return [
+            '48hr Sourdough' => 0.0,
+            'Gluten-Free'    => (float) Setting::get('crust_gluten_free_extra', '2.00'),
+            'Cauliflower'    => (float) Setting::get('crust_cauliflower_extra', '2.50'),
+        ];
+    }
 
     public function index(): View
     {
@@ -97,8 +111,8 @@ class CheckoutController extends Controller
             }
 
             $qty        = min(20, max(1, (int) ($ci['qty'] ?? 1)));
-            $sizeExtra  = self::SIZE_EXTRAS[$ci['size'] ?? '']  ?? 0.0;
-            $crustExtra = self::CRUST_EXTRAS[$ci['crust'] ?? ''] ?? 0.0;
+            $sizeExtra  = self::sizeExtras()[$ci['size'] ?? '']  ?? 0.0;
+            $crustExtra = self::crustExtras()[$ci['crust'] ?? ''] ?? 0.0;
 
             $toppings      = [];
             $toppingsExtra = 0.0;
@@ -198,12 +212,18 @@ class CheckoutController extends Controller
             ];
 
             if ($discountAmount > 0) {
-                $coupon = $stripe->coupons->create([
-                    'amount_off' => (int) round($discountAmount * 100),
-                    'currency'   => 'gbp',
-                    'duration'   => 'once',
-                    'name'       => 'Promo: ' . $promoCode,
-                ]);
+                $couponId = 'promo-' . strtolower($promoCode) . '-' . (int) round($discountAmount * 100);
+                try {
+                    $coupon = $stripe->coupons->retrieve($couponId);
+                } catch (\Stripe\Exception\InvalidRequestException) {
+                    $coupon = $stripe->coupons->create([
+                        'id'         => $couponId,
+                        'amount_off' => (int) round($discountAmount * 100),
+                        'currency'   => 'gbp',
+                        'duration'   => 'once',
+                        'name'       => 'Promo: ' . $promoCode,
+                    ]);
+                }
                 $sessionParams['discounts'] = [['coupon' => $coupon->id]];
             }
 

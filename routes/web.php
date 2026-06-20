@@ -128,6 +128,10 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/kitchen', [App\Http\Controllers\Admin\KitchenController::class, 'index'])->name('kitchen.index');
     Route::get('/kitchen/poll', [App\Http\Controllers\Admin\KitchenController::class, 'poll'])->name('kitchen.poll');
 
+    // Party Hall Inquiries
+    Route::get('/party-hall', [App\Http\Controllers\Admin\PartyHallController::class, 'index'])->name('party-hall.index');
+    Route::patch('/party-hall/{inquiry}', [App\Http\Controllers\Admin\PartyHallController::class, 'update'])->name('party-hall.update');
+
     // Allergy Management
     Route::get('/allergy',                       [App\Http\Controllers\Admin\AllergyController::class, 'index'])->name('allergy.index');
     Route::post('/allergy/settings',             [App\Http\Controllers\Admin\AllergyController::class, 'saveSettings'])->name('allergy.settings');

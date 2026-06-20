@@ -21,8 +21,11 @@ class SettingsController extends Controller
                 'store_email'     => Setting::get('store_email',     'nw5pizza@gmail.com'),
                 'opening_sun_thu' => Setting::get('opening_sun_thu', '16:00 – 22:45'),
                 'opening_fri_sat' => Setting::get('opening_fri_sat', '16:00 – 23:15'),
-                'hero_text'       => Setting::get('hero_text',       ''),
-                'story_text'      => Setting::get('story_text',      ''),
+                'hero_text'              => Setting::get('hero_text',              ''),
+                'story_text'             => Setting::get('story_text',             ''),
+                'size_large_extra'       => Setting::get('size_large_extra',       '4.00'),
+                'crust_gluten_free_extra'=> Setting::get('crust_gluten_free_extra','2.00'),
+                'crust_cauliflower_extra'=> Setting::get('crust_cauliflower_extra','2.50'),
             ],
         ]);
     }
@@ -36,8 +39,11 @@ class SettingsController extends Controller
             'store_email'     => 'required|email|max:100',
             'opening_sun_thu' => 'required|string|max:50',
             'opening_fri_sat' => 'required|string|max:50',
-            'hero_text'       => 'nullable|string|max:500',
-            'story_text'      => 'nullable|string|max:1000',
+            'hero_text'               => 'nullable|string|max:500',
+            'story_text'              => 'nullable|string|max:1000',
+            'size_large_extra'        => 'required|numeric|min:0|max:50',
+            'crust_gluten_free_extra' => 'required|numeric|min:0|max:50',
+            'crust_cauliflower_extra' => 'required|numeric|min:0|max:50',
         ]);
 
         Setting::setMany($data);

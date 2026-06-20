@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\PartyHallInquiry;
+use App\Models\PartyHallInquiry as PartyHallInquiryModel;
 use App\Models\Setting;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -27,6 +28,8 @@ class PartyHallController extends Controller
             'event_type' => 'required|string|max:60',
             'message'    => 'nullable|string|max:1000',
         ]);
+
+        PartyHallInquiryModel::create($data);
 
         $adminEmail = Setting::get('store_email', 'nw5pizza@gmail.com');
         Mail::to($adminEmail)->queue(new PartyHallInquiry($data));

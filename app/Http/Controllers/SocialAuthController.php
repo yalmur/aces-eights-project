@@ -33,16 +33,15 @@ class SocialAuthController extends Controller
 
         $idField = $provider . '_id';
 
-        $user = User::where($idField, $social->getId())
-            ->orWhere('email', $social->getEmail())
-            ->first();
+        $user = User::where($idField, $social->getId())->first();
 
-        if ($user) {
-            $user->update([
-                $idField => $social->getId(),
-                'avatar' => $user->avatar ?? $social->getAvatar(),
-            ]);
-        } else {
+        if (!$user) {
+            if (User::where('email', $social->getEmail())->exists()) {
+                return redirect()->route('login')->withErrors([
+                    'email' => 'An account with this email already exists. Please sign in with your password.',
+                ]);
+            }
+
             $user = User::create([
                 'name'     => $social->getName() ?? $social->getNickname() ?? 'User',
                 'email'    => $social->getEmail(),
@@ -51,6 +50,10 @@ class SocialAuthController extends Controller
                 'password' => null,
             ]);
             $user->forceFill(['role' => 'customer'])->save();
+        } else {
+            $user->update([
+                'avatar' => $user->avatar ?? $social->getAvatar(),
+            ]);
         }
 
         Auth::login($user, remember: true);
