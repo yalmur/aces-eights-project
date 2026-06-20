@@ -11,69 +11,108 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative w-full min-h-[600px] lg:min-h-[700px] flex items-center justify-start overflow-hidden border-b-4 border-on-surface" id="story">
+<style>
+  @keyframes float-ember {
+    0% { transform: translate(0, 0) scale(1); opacity: 0; }
+    20% { opacity: 0.8; }
+    80% { opacity: 0.6; }
+    100% { transform: translate(-50px, -200px) scale(0.3); opacity: 0; }
+  }
+  .ember {
+    position: absolute;
+    border-radius: 50%;
+    background: #ff5722;
+    box-shadow: 0 0 10px #ff5722, 0 0 20px #ff5722;
+    animation: float-ember linear infinite;
+  }
+  @keyframes fade-slide-up {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes pulse-ring {
+    0%, 100% { box-shadow: 0 0 40px rgba(255, 87, 34, 0.1); transform: scale(1); }
+    50% { box-shadow: 0 0 80px rgba(255, 87, 34, 0.3); transform: scale(1.05); }
+  }
+  .animate-reveal { animation: fade-slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
   
-  {{-- Full-width Parallax Background --}}
-  <div class="absolute inset-0 w-full h-full bg-surface-container-highest">
-    <img alt="Stone-base pizza" class="w-full h-full object-cover object-center transform scale-105" src="{{ asset('images/site/home-hero-pizza.jpg') }}"/>
-    {{-- Dynamic gradients for depth and text readability --}}
-    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+  .pizza-spinner {
+    clip-path: circle(48% at 50% 50%);
+    animation: spin-slow 45s linear infinite;
+  }
+  .pizza-ring {
+    animation: pulse-ring 4s ease-in-out infinite;
+  }
+</style>
+
+<section class="relative w-full min-h-[600px] lg:min-h-[700px] bg-[#121212] flex items-center overflow-hidden border-b-4 border-on-surface" id="story">
+  
+  {{-- Floating Fire Embers --}}
+  <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="ember w-2 h-2 left-1/4 top-3/4" style="animation-duration: 4s; animation-delay: 0s;"></div>
+    <div class="ember w-3 h-3 left-1/2 top-[90%]" style="animation-duration: 5s; animation-delay: 1s;"></div>
+    <div class="ember w-1.5 h-1.5 left-3/4 top-2/3" style="animation-duration: 3s; animation-delay: 2s;"></div>
+    <div class="ember w-2.5 h-2.5 left-[60%] top-[80%]" style="animation-duration: 6s; animation-delay: 0.5s;"></div>
+    <div class="ember w-4 h-4 left-1/3 top-[85%]" style="animation-duration: 4.5s; animation-delay: 1.5s;"></div>
+    <div class="ember w-1 h-1 left-[80%] top-[95%]" style="animation-duration: 3.5s; animation-delay: 0.8s;"></div>
+    <div class="ember w-2 h-2 left-[15%] top-[70%]" style="animation-duration: 5.5s; animation-delay: 2.5s;"></div>
   </div>
 
-  {{-- Content Container --}}
-  <div class="relative z-10 w-full max-w-container mx-auto px-6 lg:px-12 py-16">
+  {{-- Heat/Glow Gradient Background --}}
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(139,0,0,0.15),transparent_60%)] z-0"></div>
+
+  <div class="relative z-10 w-full max-w-container mx-auto px-6 lg:px-12 py-16 flex flex-col md:flex-row items-center gap-12">
     
-    {{-- Floating 3D Glassmorphism Card --}}
-    <div class="w-full max-w-xl bg-surface/80 backdrop-blur-xl border border-white/10 p-8 lg:p-12 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] transform transition-transform duration-700 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.8)]">
-      
-      {{-- Badge --}}
-      <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-primary/20 border border-primary/30 backdrop-blur-sm shadow-inner">
-        <span class="font-mono text-[11px] font-bold text-primary-container uppercase tracking-widest shadow-sm">Premium Quality</span>
+    {{-- Left: Staggered Animated Typography --}}
+    <div class="flex-1 w-full max-w-xl text-left">
+      <div class="inline-block px-4 py-1 mb-6 rounded-full border border-primary/50 bg-primary/10 animate-reveal">
+        <span class="font-mono text-xs font-bold text-primary uppercase tracking-widest">Premium Quality</span>
       </div>
 
-      {{-- 3D Typography Effect --}}
-      <h2 class="font-display text-5xl lg:text-7xl text-white mb-6 uppercase tracking-tighter leading-[0.9] drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)]">
-        Industrial<br/>
-        <span class="text-primary-container drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Italian</span>
+      <h2 class="font-display text-5xl lg:text-7xl text-white mb-6 uppercase tracking-tighter leading-[0.9] drop-shadow-lg">
+        <div class="animate-reveal delay-100">Industrial</div>
+        <div class="text-primary-container animate-reveal delay-200">Italian</div>
       </h2>
       
-      <p class="font-body-lg text-lg text-gray-300 mb-10 max-w-md leading-relaxed drop-shadow-md">
+      <p class="font-body-lg text-lg text-gray-300 mb-10 max-w-md leading-relaxed animate-reveal delay-300">
         {{ $heroText ?: 'Forged in fire, crafted with tradition. Experience pizza built with the raw power of the industrial age and the soul of classic Italian heritage.' }}
       </p>
       
-      {{-- CTA Buttons --}}
-      <div class="flex flex-wrap items-center gap-6">
-        
-        {{-- Modern 3D Button --}}
+      <div class="flex flex-wrap items-center gap-6 animate-reveal delay-400">
         <a class="relative group inline-block" href="{{ route('menu') }}">
-          {{-- Shadow / Depth Layer --}}
-          <div class="absolute inset-0 bg-black rounded-xl"></div>
-          {{-- Face Layer --}}
-          <div class="relative bg-primary text-white border-2 border-black px-8 py-4 rounded-xl font-label-bold text-sm uppercase tracking-widest transform -translate-y-2 transition-transform duration-150 group-hover:-translate-y-1.5 group-active:translate-y-0 flex items-center gap-3">
+          <div class="absolute inset-0 bg-primary-container translate-y-1.5 rounded-lg transition-transform duration-200 group-hover:translate-y-2"></div>
+          <div class="relative bg-primary text-white border border-primary-container px-8 py-4 rounded-lg font-label-bold text-sm uppercase tracking-wider transition-transform duration-200 group-hover:translate-y-0.5 active:translate-y-1.5 flex items-center gap-2">
             Explore the Ledger
-            <span class="material-symbols-outlined text-base">local_pizza</span>
+            <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1.5">arrow_forward</span>
           </div>
         </a>
         
-        {{-- Status Indicator --}}
         @if($isOpenNow)
-          <div class="relative group">
-            <div class="absolute inset-0 bg-green-900 rounded-xl"></div>
-            <span class="relative font-mono text-xs font-bold uppercase bg-green-700 text-white px-5 py-3.5 rounded-xl border-2 border-green-900 flex items-center gap-2 transform -translate-y-1.5 transition-transform duration-150">
-              <span class="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.8)]"></span>
-              Open Now
-            </span>
-          </div>
+          <span class="font-mono text-xs font-bold uppercase text-white px-4 py-3 flex items-center gap-2 bg-transparent border border-green-500 rounded-lg shadow-[0_0_15px_rgba(74,222,128,0.15)]">
+            <span class="w-2 h-2 rounded-full bg-green-500 animate-[ping_1.5s_cubic-bezier(0,0,0.2,1)_infinite]"></span>
+            Open Now
+          </span>
         @else
-          <div class="relative group">
-            <div class="absolute inset-0 bg-gray-900 rounded-xl"></div>
-            <span class="relative font-mono text-xs font-bold uppercase bg-surface-container text-on-surface-variant px-5 py-3.5 rounded-xl border-2 border-gray-900 flex items-center transform -translate-y-1.5 transition-transform duration-150">
-              Closed
-            </span>
-          </div>
+          <span class="font-mono text-xs font-bold uppercase text-on-surface-variant px-4 py-3 border border-outline-variant rounded-lg bg-surface/50">Closed</span>
         @endif
+      </div>
+    </div>
 
+    {{-- Right: Visual Effect Spinning Pizza --}}
+    <div class="flex-1 w-full relative flex items-center justify-center animate-reveal delay-300 hidden md:flex min-h-[400px]">
+      {{-- Glowing pulsating ring behind the pizza --}}
+      <div class="absolute w-[380px] lg:w-[450px] h-[380px] lg:h-[450px] rounded-full border border-[#ff5722]/30 pizza-ring"></div>
+      
+      {{-- The Spinning Pizza Image (masked into a circle) --}}
+      <div class="w-[360px] lg:w-[420px] h-[360px] lg:h-[420px] relative z-10 pizza-spinner shadow-2xl">
+        <img alt="Stone-base pizza" class="w-full h-full object-cover object-center scale-110" src="{{ asset('images/site/home-hero-pizza.jpg') }}"/>
       </div>
     </div>
   </div>
