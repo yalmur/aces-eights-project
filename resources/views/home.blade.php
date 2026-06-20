@@ -11,109 +11,119 @@
 
 @section('content')
 <!-- Hero Section -->
+<!-- Hero Section -->
 <style>
-  @keyframes float-ember {
-    0% { transform: translate(0, 0) scale(1); opacity: 0; }
-    20% { opacity: 0.8; }
-    80% { opacity: 0.6; }
-    100% { transform: translate(-50px, -200px) scale(0.3); opacity: 0; }
-  }
-  .ember {
-    position: absolute;
-    border-radius: 50%;
-    background: #ff5722;
-    box-shadow: 0 0 10px #ff5722, 0 0 20px #ff5722;
-    animation: float-ember linear infinite;
-  }
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Oswald:wght@500;700&display=swap');
+  
+  .font-script { font-family: 'Great Vibes', cursive; }
+  .font-oswald { font-family: 'Oswald', sans-serif; }
+  .font-anton { font-family: 'Anton', sans-serif; }
+
+  /* Fade and slide up animations */
   @keyframes fade-slide-up {
     0% { opacity: 0; transform: translateY(30px); }
     100% { opacity: 1; transform: translateY(0); }
   }
-  @keyframes spin-slow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+  .animate-entrance {
+    opacity: 0;
+    animation: fade-slide-up 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   }
-  @keyframes pulse-ring {
-    0%, 100% { box-shadow: 0 0 40px rgba(255, 87, 34, 0.1); transform: scale(1); }
-    50% { box-shadow: 0 0 80px rgba(255, 87, 34, 0.3); transform: scale(1.05); }
-  }
-  .animate-reveal { animation: fade-slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
-  .delay-100 { animation-delay: 100ms; }
-  .delay-200 { animation-delay: 200ms; }
-  .delay-300 { animation-delay: 300ms; }
-  .delay-400 { animation-delay: 400ms; }
   
-  .pizza-spinner {
-    clip-path: circle(48% at 50% 50%);
-    animation: spin-slow 45s linear infinite;
+  /* Subtle text glow animation for script */
+  @keyframes pulse-glow {
+    0%, 100% { text-shadow: 0 4px 15px rgba(0,0,0,0.9), 0 0 10px rgba(212,175,55,0.4); }
+    50% { text-shadow: 0 4px 15px rgba(0,0,0,0.9), 0 0 25px rgba(212,175,55,0.8); }
   }
-  .pizza-ring {
-    animation: pulse-ring 4s ease-in-out infinite;
+  .animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
+
+  /* Magma & Fire Text Effect (Matches the image exactly) */
+  @keyframes magma-flow {
+    0% { background-position: 0% 50%; filter: drop-shadow(0 0 15px rgba(255, 60, 0, 0.6)); }
+    50% { background-position: 100% 50%; filter: drop-shadow(0 0 35px rgba(255, 120, 0, 0.9)); }
+    100% { background-position: 0% 50%; filter: drop-shadow(0 0 15px rgba(255, 60, 0, 0.6)); }
   }
+  .text-magma-fire {
+    font-family: 'Impact', 'Anton', sans-serif;
+    /* Create a cracked rock look with glowing lava underneath */
+    background: 
+      repeating-linear-gradient(45deg, transparent, transparent 12px, rgba(20,20,20,0.9) 12px, rgba(20,20,20,0.9) 15px),
+      repeating-linear-gradient(-45deg, transparent, transparent 18px, rgba(20,20,20,0.9) 18px, rgba(20,20,20,0.9) 20px),
+      linear-gradient(90deg, #111 0%, #330c00 20%, #ff4400 40%, #ffcc00 50%, #ff4400 60%, #330c00 80%, #111 100%);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    
+    /* The bright golden/orange edge glow from the image */
+    -webkit-text-stroke: 2px rgba(255, 180, 0, 0.9);
+    
+    animation: magma-flow 5s ease-in-out infinite;
+    letter-spacing: -0.02em;
+  }
+
+  /* Metallic button gradients */
+  .btn-metallic-red {
+    background: linear-gradient(to bottom, #ff4b4b 0%, #aa0000 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 5px 15px rgba(0,0,0,0.5);
+    border: 1px solid #7a0000;
+  }
+  .btn-metallic-red:hover { background: linear-gradient(to bottom, #ff6b6b 0%, #cc0000 100%); }
+  
+  .btn-metallic-gold {
+    background: linear-gradient(to bottom, #f3d47f 0%, #a67c00 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 0 5px 15px rgba(0,0,0,0.5);
+    border: 1px solid #6b5000;
+  }
+  .btn-metallic-gold:hover { background: linear-gradient(to bottom, #ffe89f 0%, #c49600 100%); }
 </style>
 
-<section class="relative w-full min-h-[600px] lg:min-h-[700px] bg-[#121212] flex items-center overflow-hidden border-b-4 border-on-surface" id="story">
+<section class="relative w-full min-h-screen flex items-center justify-center border-b-4 border-on-surface pt-24 pb-16" id="story">
   
-  {{-- Floating Fire Embers --}}
-  <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
-    <div class="ember w-2 h-2 left-1/4 top-3/4" style="animation-duration: 4s; animation-delay: 0s;"></div>
-    <div class="ember w-3 h-3 left-1/2 top-[90%]" style="animation-duration: 5s; animation-delay: 1s;"></div>
-    <div class="ember w-1.5 h-1.5 left-3/4 top-2/3" style="animation-duration: 3s; animation-delay: 2s;"></div>
-    <div class="ember w-2.5 h-2.5 left-[60%] top-[80%]" style="animation-duration: 6s; animation-delay: 0.5s;"></div>
-    <div class="ember w-4 h-4 left-1/3 top-[85%]" style="animation-duration: 4.5s; animation-delay: 1.5s;"></div>
-    <div class="ember w-1 h-1 left-[80%] top-[95%]" style="animation-duration: 3.5s; animation-delay: 0.8s;"></div>
-    <div class="ember w-2 h-2 left-[15%] top-[70%]" style="animation-duration: 5.5s; animation-delay: 2.5s;"></div>
+  {{-- Video Background --}}
+  <div class="absolute inset-0 w-full h-full bg-black z-0">
+    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover saturate-[1.5] contrast-[1.1] brightness-[1.1]" poster="{{ asset('images/site/home-hero-pizza.jpg') }}">
+      <source src="{{ asset('videos/hero-pizza.mp4') }}" type="video/mp4">
+    </video>
+    {{-- Dark vignette to make the golden text pop --}}
+    <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80"></div>
+    <div class="absolute inset-0 bg-black/40"></div>
   </div>
 
-  {{-- Heat/Glow Gradient Background --}}
-  <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(139,0,0,0.15),transparent_60%)] z-0"></div>
-
-  <div class="relative z-10 w-full max-w-container mx-auto px-6 lg:px-12 py-16 flex flex-col md:flex-row items-center gap-12">
+  {{-- Content Container --}}
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
     
-    {{-- Left: Staggered Animated Typography --}}
-    <div class="flex-1 w-full max-w-xl text-left">
-      <div class="inline-block px-4 py-1 mb-6 rounded-full border border-primary/50 bg-primary/10 animate-reveal">
-        <span class="font-mono text-xs font-bold text-primary uppercase tracking-widest">Premium Quality</span>
-      </div>
-
-      <h2 class="font-display text-5xl lg:text-7xl text-white mb-6 uppercase tracking-tighter leading-[0.9] drop-shadow-lg">
-        <div class="animate-reveal delay-100">Industrial</div>
-        <div class="text-primary-container animate-reveal delay-200">Italian</div>
+    {{-- Massive Boxed Headline (Matches Badge Style) --}}
+    <div class="border-[3px] border-[#d4af37]/80 px-8 sm:px-12 py-6 sm:py-8 mb-8 shadow-[0_5px_15px_rgba(0,0,0,0.5)] bg-black/50 backdrop-blur-sm w-full max-w-5xl mx-auto">
+      <h2 class="font-oswald text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#f2e3c6] tracking-[0.15em] leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] uppercase">
+        BORN IN FIRE. <br class="hidden sm:block"/> BUILT FOR FLAVOR.
       </h2>
-      
-      <p class="font-body-lg text-lg text-gray-300 mb-10 max-w-md leading-relaxed animate-reveal delay-300">
-        {{ $heroText ?: 'Forged in fire, crafted with tradition. Experience pizza built with the raw power of the industrial age and the soul of classic Italian heritage.' }}
-      </p>
-      
-      <div class="flex flex-wrap items-center gap-6 animate-reveal delay-400">
-        <a class="relative group inline-block" href="{{ route('menu') }}">
-          <div class="absolute inset-0 bg-primary-container translate-y-1.5 rounded-lg transition-transform duration-200 group-hover:translate-y-2"></div>
-          <div class="relative bg-primary text-white border border-primary-container px-8 py-4 rounded-lg font-label-bold text-sm uppercase tracking-wider transition-transform duration-200 group-hover:translate-y-0.5 active:translate-y-1.5 flex items-center gap-2">
-            Explore the Ledger
-            <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1.5">arrow_forward</span>
-          </div>
-        </a>
-        
-        @if($isOpenNow)
-          <span class="font-mono text-xs font-bold uppercase text-white px-4 py-3 flex items-center gap-2 bg-transparent border border-green-500 rounded-lg shadow-[0_0_15px_rgba(74,222,128,0.15)]">
-            <span class="w-2 h-2 rounded-full bg-green-500 animate-[ping_1.5s_cubic-bezier(0,0,0.2,1)_infinite]"></span>
-            Open Now
-          </span>
-        @else
-          <span class="font-mono text-xs font-bold uppercase text-on-surface-variant px-4 py-3 border border-outline-variant rounded-lg bg-surface/50">Closed</span>
-        @endif
-      </div>
     </div>
 
-    {{-- Right: Visual Effect Spinning Pizza --}}
-    <div class="flex-1 w-full relative flex items-center justify-center animate-reveal delay-300 hidden md:flex min-h-[400px]">
-      {{-- Glowing pulsating ring behind the pizza --}}
-      <div class="absolute w-[380px] lg:w-[450px] h-[380px] lg:h-[450px] rounded-full border border-[#ff5722]/30 pizza-ring"></div>
+    {{-- Top Framed Badge --}}
+    <div class="border-[3px] border-[#d4af37]/80 px-8 py-3 mb-8 shadow-[0_5px_15px_rgba(0,0,0,0.5)] bg-black/50 backdrop-blur-sm">
+      <h1 class="font-oswald text-xl md:text-2xl lg:text-3xl font-bold text-[#f2e3c6] tracking-[0.15em] drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
+        ACES & EIGHTS PIZZA — EST. 2012
+      </h1>
+    </div>
+
+    {{-- Elegant Cursive Sub-Headline --}}
+    <h3 class="font-script text-4xl sm:text-5xl md:text-6xl lg:text-[80px] leading-[1.1] text-transparent bg-clip-text bg-gradient-to-b from-[#ffe082] to-[#cba052] drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)] animate-pulse-glow mb-12 px-4" style="-webkit-text-stroke: 1px rgba(0,0,0,0.5);">
+      Forged in the Fire of Tradition,<br/>
+      Crafted with Industrial Flavor
+    </h3>
+    
+    {{-- CTA Buttons --}}
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-6 w-full px-4">
       
-      {{-- The Spinning Pizza Image (masked into a circle) --}}
-      <div class="w-[360px] lg:w-[420px] h-[360px] lg:h-[420px] relative z-10 pizza-spinner shadow-2xl">
-        <img alt="Stone-base pizza" class="w-full h-full object-cover object-center scale-110" src="{{ asset('images/site/home-hero-pizza.jpg') }}"/>
-      </div>
+      {{-- Red Metallic CTA --}}
+      <a href="{{ route('menu') }}" class="btn-metallic-red text-white px-10 py-4 rounded-md font-oswald text-xl lg:text-2xl tracking-wider transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center gap-3">
+        <span class="text-2xl drop-shadow-md">🔥</span> <span class="font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">ORDER NOW</span>
+      </a>
+      
+      {{-- Gold Metallic CTA --}}
+      <a href="{{ route('our-menu') }}" class="btn-metallic-gold text-black px-10 py-4 rounded-md font-oswald text-xl lg:text-2xl tracking-wider transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center gap-3">
+        <span class="font-bold drop-shadow-[0_1px_2px_rgba(255,255,255,0.6)]">VIEW OUR MENU</span>
+      </a>
     </div>
   </div>
 </section>
