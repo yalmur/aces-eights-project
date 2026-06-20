@@ -218,7 +218,8 @@ class CheckoutController extends Controller
             return redirect($session->url, 303);
 
         } catch (\Exception $e) {
-            return redirect()->route('orders.confirmation', $order->id);
+            $order->delete();
+            return back()->withInput()->withErrors(['cart_items' => 'Payment could not be initialised. Please try again.']);
         }
     }
 }

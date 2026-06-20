@@ -130,6 +130,26 @@ class CheckoutTest extends TestCase
         $this->assertDatabaseMissing('order_items', ['unit_price' => 0.01]);
     }
 
+    public function test_stripe_failure_deletes_order_and_redirects_with_error(): void
+    {
+        $cartItems = [[
+            'id' => 'margherita', 'name' => 'Margherita', 'category' => 'pizza',
+            'basePrice' => 12.00, 'qty' => 1, 'size' => '12" Standard', 'sizeExtra' => 0,
+            'crust' => '48hr Sourdough', 'crustExtra' => 0, 'toppings' => [],
+            'removedIngredients' => [], 'chips' => [], 'instructions' => '',
+            'lineTotal' => 12.00,
+        ]];
+
+        // No Stripe secret → StripeClient will throw
+        config(['services.stripe.secret' => null]);
+
+        $this->actingAs($this->customer)->post('/checkout', [
+            'order_type' => 'collection', 'cart_items' => json_encode($cartItems),
+        ])->assertSessionHasErrors(['cart_items']);
+
+        $this->assertDatabaseMissing('orders', ['user_id' => $this->customer->id]);
+    }
+
     public function test_collection_order_has_no_delivery_fee(): void
     {
         $cartItems = [[
