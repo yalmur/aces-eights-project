@@ -22,30 +22,9 @@ class PartyHallTest extends TestCase
         'message'    => 'Looking forward to it.',
     ];
 
-    public function test_party_hall_page_loads(): void
+    public function test_party_hall_redirects_to_external_hire_page(): void
     {
-        $this->get('/party-hall')->assertStatus(200);
-    }
-
-    public function test_inquiry_stored_in_db(): void
-    {
-        Mail::fake();
-        $this->post('/party-hall', $this->validData)->assertRedirect('/party-hall');
-        $this->assertDatabaseHas('party_hall_inquiries', ['email' => 'john@example.com', 'status' => 'new']);
-    }
-
-    public function test_inquiry_requires_future_date(): void
-    {
-        Mail::fake();
-        $this->post('/party-hall', array_merge($this->validData, ['event_date' => '2020-01-01']))
-            ->assertSessionHasErrors('event_date');
-    }
-
-    public function test_inquiry_requires_minimum_guests(): void
-    {
-        Mail::fake();
-        $this->post('/party-hall', array_merge($this->validData, ['guests' => 10]))
-            ->assertSessionHasErrors('guests');
+        $this->get('/party-hall')->assertRedirect('https://www.acesandeightssaloonbar.com/hire/');
     }
 
     public function test_admin_can_view_inquiries(): void
