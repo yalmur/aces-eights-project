@@ -6,21 +6,21 @@
 </style>
 @endpush
 @section('content')
-<div class="max-w-container-max mx-auto">
-
-{{-- Masthead --}}
-<div class="menu-masthead text-center px-6 md:px-margin-desktop pt-12">
-    <p class="font-mono text-[0.65rem] tracking-[0.3em] uppercase text-on-surface-variant mb-4">
-        156 &amp; 158 Fortess Road &middot; Tufnell Park &middot; London, NW5 2HP
-    </p>
-    <div class="menu-masthead-rule"></div>
-    <h1 class="font-serif font-black uppercase tracking-[0.18em] text-4xl lg:text-5xl text-on-surface my-4">
-        Aces &amp; Eights Pizza
-    </h1>
-    <div class="menu-masthead-rule"></div>
-    <p class="font-mono text-[0.65rem] tracking-[0.3em] uppercase text-on-surface-variant mt-4">
-        Est. 2010 &nbsp;&middot;&nbsp; Authentic Italian Takeaway
-    </p>
+{{-- Masthead — same container structure as our-menu --}}
+<div class="max-w-container-max mx-auto px-6 lg:px-16 pt-20">
+    <div class="menu-masthead text-center">
+        <p class="font-mono text-[0.65rem] tracking-[0.3em] uppercase text-on-surface-variant mb-4">
+            156 &amp; 158 Fortess Road &middot; Tufnell Park &middot; London, NW5 2HP
+        </p>
+        <div class="menu-masthead-rule"></div>
+        <h1 class="font-serif font-black uppercase tracking-[0.18em] text-4xl lg:text-5xl text-on-surface my-4">
+            Aces &amp; Eights Pizza
+        </h1>
+        <div class="menu-masthead-rule"></div>
+        <p class="font-mono text-[0.65rem] tracking-[0.3em] uppercase text-on-surface-variant mt-4">
+            Est. 2010 &nbsp;&middot;&nbsp; Authentic Italian Takeaway
+        </p>
+    </div>
 </div>
 
 {{-- Alpine.js category filter + menu grid --}}
@@ -164,8 +164,6 @@
     @endforeach
 
 </div>{{-- end x-data --}}
-
-</div>{{-- end max-w-container-max --}}
 
 @once
 <script>
