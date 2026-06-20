@@ -560,8 +560,8 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\home.blade.php": {
-    "mtime": 1781926973.8202956,
-    "ast_hash": "78cf37d99c1622865b6240e678b6975f",
+    "mtime": 1781931820.869191,
+    "ast_hash": "0c70f23ebae0dbc909c2f888164ebab1",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\our-menu.blade.php": {
@@ -1042,6 +1042,11 @@
   "C:\\AcesAndEightsPizza\\webapp\\public\\sounds\\KitchenAlert.mp3": {
     "mtime": 1780559776.0,
     "ast_hash": "9b0d2135226fc39bf33b38f5a7cd7b3c",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\public\\videos\\hero-pizza.mp4": {
+    "mtime": 1781928276.0552363,
+    "ast_hash": "b492208cc97521c4cfc1eca80a8742c9",
     "semantic_hash": ""
   }
 }
