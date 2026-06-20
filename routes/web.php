@@ -40,8 +40,7 @@ Route::post('/promo/check', [App\Http\Controllers\PromoController::class, 'check
 Route::get('/delivery-fee', [CheckoutController::class, 'deliveryFee'])->name('delivery.fee')->middleware('throttle:30,1');
 Route::get('/orders/{order}/confirmation', [OrderController::class, 'confirmation'])->name('orders.confirmation');
 Route::get('/orders/{order}/tracking', [OrderController::class, 'tracking'])->name('orders.tracking');
-Route::get('/party-hall',  [PartyHallController::class, 'index'])->name('party-hall');
-Route::post('/party-hall', [PartyHallController::class, 'submit'])->name('party-hall.submit')->middleware('throttle:5,1');
+Route::get('/party-hall', fn () => redirect()->away('https://www.acesandeightssaloonbar.com/hire/'))->name('party-hall');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::post('/contact', [PageController::class, 'sendContact'])->name('contact.send');
