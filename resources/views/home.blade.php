@@ -11,29 +11,72 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative w-full h-[600px] border-b-2 border-on-surface bg-surface-container-low flex flex-col md:flex-row items-center" id="story">
-<div class="flex-1 px-gutter py-margin-desktop z-10 flex flex-col justify-center h-full">
-<h2 class="font-display text-display text-on-surface mb-6 uppercase tracking-tighter">Industrial<br/>Italian</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-md border-l-4 border-primary pl-4">{{ $heroText ?: 'Forged in fire, crafted with tradition. Experience pizza built with the raw power of the industrial age and the soul of classic Italian heritage.' }}</p>
-<div class="flex flex-wrap items-center gap-4">
-<a class="bg-primary-container text-on-primary border-b border-[#D4AF37] px-8 py-4 font-label-bold text-label-bold uppercase tracking-wider hover:bg-primary transition-colors w-fit shadow-[inset_0_0_0_1px_rgba(255,255,255,0.2)] inline-block" href="{{ route('menu') }}">
-  Explore the Ledger
-</a>
-@if($isOpenNow)
-  <span class="font-mono text-xs font-bold uppercase bg-green-700 text-white px-3 py-1 flex items-center gap-1.5">
-    <span class="w-2 h-2 rounded-full bg-green-300 animate-pulse inline-block"></span>Open Now
-  </span>
-@else
-  <span class="font-mono text-xs font-bold uppercase bg-surface-container border border-outline-variant text-on-surface-variant px-3 py-1">Closed</span>
-@endif
-</div>
-</div>
-<div class="flex-1 w-full h-full relative border-l-2 border-on-surface hidden md:block">
-<!-- data-alt: A close-up, high-quality photograph of an artisan stone-base pizza resting on a rustic, industrial metal prep table. The pizza features a perfectly charred, blistered crust, rich oxblood red tomato sauce, and melted mozzarella. The lighting is dramatic and moody, emphasizing the textures of the charred crust and the heavy industrial setting. The overall style reflects an industrial minimal aesthetic with raw materials and high contrast. -->
-<img alt="Stone-base pizza" class="w-full h-full object-cover object-center" src="{{ asset('images/site/home-hero-pizza.jpg') }}"/>
-<!-- Overlay for structural depth -->
-<div class="absolute inset-0 border-8 border-surface pointer-events-none mix-blend-overlay opacity-50"></div>
-</div>
+<section class="relative w-full min-h-[600px] lg:min-h-[700px] flex items-center justify-start overflow-hidden border-b-4 border-on-surface" id="story">
+  
+  {{-- Full-width Parallax Background --}}
+  <div class="absolute inset-0 w-full h-full bg-surface-container-highest">
+    <img alt="Stone-base pizza" class="w-full h-full object-cover object-center transform scale-105" src="{{ asset('images/site/home-hero-pizza.jpg') }}"/>
+    {{-- Dynamic gradients for depth and text readability --}}
+    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+  </div>
+
+  {{-- Content Container --}}
+  <div class="relative z-10 w-full max-w-container mx-auto px-6 lg:px-12 py-16">
+    
+    {{-- Floating 3D Glassmorphism Card --}}
+    <div class="w-full max-w-xl bg-surface/80 backdrop-blur-xl border border-white/10 p-8 lg:p-12 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] transform transition-transform duration-700 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.8)]">
+      
+      {{-- Badge --}}
+      <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-primary/20 border border-primary/30 backdrop-blur-sm shadow-inner">
+        <span class="font-mono text-[11px] font-bold text-primary-container uppercase tracking-widest shadow-sm">Premium Quality</span>
+      </div>
+
+      {{-- 3D Typography Effect --}}
+      <h2 class="font-display text-5xl lg:text-7xl text-white mb-6 uppercase tracking-tighter leading-[0.9] drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)]">
+        Industrial<br/>
+        <span class="text-primary-container drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Italian</span>
+      </h2>
+      
+      <p class="font-body-lg text-lg text-gray-300 mb-10 max-w-md leading-relaxed drop-shadow-md">
+        {{ $heroText ?: 'Forged in fire, crafted with tradition. Experience pizza built with the raw power of the industrial age and the soul of classic Italian heritage.' }}
+      </p>
+      
+      {{-- CTA Buttons --}}
+      <div class="flex flex-wrap items-center gap-6">
+        
+        {{-- Modern 3D Button --}}
+        <a class="relative group inline-block" href="{{ route('menu') }}">
+          {{-- Shadow / Depth Layer --}}
+          <div class="absolute inset-0 bg-black rounded-xl"></div>
+          {{-- Face Layer --}}
+          <div class="relative bg-primary text-white border-2 border-black px-8 py-4 rounded-xl font-label-bold text-sm uppercase tracking-widest transform -translate-y-2 transition-transform duration-150 group-hover:-translate-y-1.5 group-active:translate-y-0 flex items-center gap-3">
+            Explore the Ledger
+            <span class="material-symbols-outlined text-base">local_pizza</span>
+          </div>
+        </a>
+        
+        {{-- Status Indicator --}}
+        @if($isOpenNow)
+          <div class="relative group">
+            <div class="absolute inset-0 bg-green-900 rounded-xl"></div>
+            <span class="relative font-mono text-xs font-bold uppercase bg-green-700 text-white px-5 py-3.5 rounded-xl border-2 border-green-900 flex items-center gap-2 transform -translate-y-1.5 transition-transform duration-150">
+              <span class="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.8)]"></span>
+              Open Now
+            </span>
+          </div>
+        @else
+          <div class="relative group">
+            <div class="absolute inset-0 bg-gray-900 rounded-xl"></div>
+            <span class="relative font-mono text-xs font-bold uppercase bg-surface-container text-on-surface-variant px-5 py-3.5 rounded-xl border-2 border-gray-900 flex items-center transform -translate-y-1.5 transition-transform duration-150">
+              Closed
+            </span>
+          </div>
+        @endif
+
+      </div>
+    </div>
+  </div>
 </section>
 <!-- Base of Operations (Locations/About) -->
 <section class="py-margin-desktop px-margin-mobile md:px-margin-desktop border-b-4 border-double border-on-surface" id="locations">
