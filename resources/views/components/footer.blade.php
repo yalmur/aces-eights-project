@@ -49,7 +49,7 @@
       <nav class="flex gap-4">
         <a href="{{ route('menu') }}"    class="label-caps text-[10px] text-[#e0bfbc] hover:text-white transition-colors">Order</a>
         <a href="https://www.acesandeightssaloonbar.com/booking/" target="_blank" rel="noopener" class="label-caps text-[10px] text-[#e0bfbc] hover:text-white transition-colors">Book a Table</a>
-        <a href="{{ route('party-hall') }}" class="label-caps text-[10px] text-[#e0bfbc] hover:text-white transition-colors">Party Hall</a>
+        <a href="https://www.acesandeightssaloonbar.com/hire/" target="_blank" rel="noopener" class="label-caps text-[10px] text-[#e0bfbc] hover:text-white transition-colors">Venue & Private Hire</a>
         <a href="{{ route('contact') }}" class="label-caps text-[10px] text-[#e0bfbc] hover:text-white transition-colors">Contact</a>
       </nav>
     </div>
