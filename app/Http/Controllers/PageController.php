@@ -45,7 +45,7 @@ class PageController extends Controller
         Mail::to($to)->queue(new ContactMessage(
             senderName:  $data['name'],
             senderEmail: $data['email'],
-            subject:     $data['subject'],
+            messageSubject: $data['subject'],
             body:        $data['message'],
         ));
 

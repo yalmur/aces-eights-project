@@ -44,6 +44,12 @@ class StripeWebhookController extends Controller
             }
         }
 
+        if ($eventType === 'checkout.session.expired' && $sessionId) {
+            Order::where('stripe_session_id', $sessionId)
+                ->where('status', 'pending_payment')
+                ->update(['status' => 'cancelled']);
+        }
+
         return response('OK', 200);
     }
 }
