@@ -33,7 +33,7 @@
       <div>
         <label class="font-mono text-[10px] uppercase text-on-surface-variant block mb-1">Discount Type *</label>
         <select name="type" required class="w-full industrial-border-b font-sans text-sm py-2 focus:outline-none focus:border-primary">
-          @foreach(['percentage' => 'Percentage (%)', 'fixed_amount' => 'Fixed Amount (£)', 'free_delivery' => 'Free Delivery'] as $val => $lbl)
+          @foreach(['percentage' => 'Percentage (%)', 'fixed_amount' => 'Fixed Amount (£)', 'free_delivery' => 'Free Delivery', 'buy_one_get_one' => 'Buy 1 Get 1 Free', 'multi_buy' => '3 for 2 (Multi-Buy)'] as $val => $lbl)
             <option value="{{ $val }}" {{ old('type', $promo?->type) === $val ? 'selected' : '' }}>{{ $lbl }}</option>
           @endforeach
         </select>

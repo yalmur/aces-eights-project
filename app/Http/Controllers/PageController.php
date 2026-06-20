@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactMessage;
+use App\Models\Promotion;
 use App\Models\Setting;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -14,6 +15,12 @@ class PageController extends Controller
     public function about(): View
     {
         return view('about', ['title' => 'About Us']);
+    }
+
+    public function deals(): View
+    {
+        $deals = Promotion::active()->orderBy('created_at', 'desc')->get();
+        return view('deals', ['title' => 'Deals & Offers', 'deals' => $deals]);
     }
 
     public function contact(): View

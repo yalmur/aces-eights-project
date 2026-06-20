@@ -40,20 +40,24 @@ class Promotion extends Model
     public function calculateDiscount(float $subtotal, float $deliveryFee): float
     {
         return match($this->type) {
-            'percentage'    => round($subtotal * ($this->value / 100), 2),
-            'fixed_amount'  => min((float)$this->value, $subtotal),
-            'free_delivery' => $deliveryFee,
-            default         => 0,
+            'percentage'      => round($subtotal * ($this->value / 100), 2),
+            'fixed_amount'    => min((float)$this->value, $subtotal),
+            'free_delivery'   => $deliveryFee,
+            'buy_one_get_one' => round($subtotal / 2, 2),
+            'multi_buy'       => round($subtotal / 3, 2), // 3 for 2: discount = 1/3 of subtotal
+            default           => 0,
         };
     }
 
     public function getTypeLabelAttribute(): string
     {
         return match($this->type) {
-            'percentage'    => "{$this->value}% off",
-            'fixed_amount'  => "£{$this->value} off",
-            'free_delivery' => 'Free delivery',
-            default         => $this->type,
+            'percentage'      => ((float)$this->value) . '% off',
+            'fixed_amount'    => "£{$this->value} off",
+            'free_delivery'   => 'Free delivery',
+            'buy_one_get_one' => 'Buy 1 Get 1 Free',
+            'multi_buy'       => '3 for 2',
+            default           => $this->type,
         };
     }
 

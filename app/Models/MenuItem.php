@@ -47,6 +47,11 @@ class MenuItem extends Model
         return $this->belongsToMany(Allergen::class);
     }
 
+    public function relatedItems(): BelongsToMany
+    {
+        return $this->belongsToMany(MenuItem::class, 'menu_item_related', 'menu_item_id', 'related_menu_item_id');
+    }
+
     public function isPizza(): bool
     {
         return $this->category?->slug === 'pizza';

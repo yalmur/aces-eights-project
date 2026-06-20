@@ -85,6 +85,12 @@
                                     class="flex-1 py-3 border-2 font-label-bold text-label-bold uppercase tracking-wider transition-colors">
                                 Collection
                             </button>
+                            <button type="button"
+                                    @click="orderType = 'eat_in'"
+                                    :class="orderType === 'eat_in' ? 'bg-primary text-on-primary border-primary' : 'bg-surface text-on-surface border-on-surface'"
+                                    class="flex-1 py-3 border-2 font-label-bold text-label-bold uppercase tracking-wider transition-colors">
+                                Eat In
+                            </button>
                         </div>
                     </section>
 
@@ -128,7 +134,7 @@
                     </section>
 
                     <!-- Section: Collection Info -->
-                    <section x-show="orderType === 'collection'" style="display: none;">
+                    <section x-show="orderType === 'collection'" x-cloak>
                         <div class="flex items-center justify-between mb-6 mt-8">
                             <h3 class="font-label-bold text-label-bold uppercase text-primary">Collection Info</h3>
                             <span class="material-symbols-outlined text-outline">storefront</span>
@@ -137,6 +143,18 @@
                             <p class="font-label-bold text-label-bold uppercase mb-1">Aces &amp; Eights Pizza</p>
                             <p class="font-body-md text-on-surface-variant">156 &amp; 158 Fortess Road, Tufnell Park, London, NW5 2HP</p>
                             <p class="font-body-md text-on-surface-variant mt-2">Ready in approximately <span class="text-primary font-label-bold">20–25 minutes</span></p>
+                        </div>
+                    </section>
+
+                    <!-- Section: Eat In Info -->
+                    <section x-show="orderType === 'eat_in'" x-cloak>
+                        <div class="flex items-center justify-between mb-6 mt-8">
+                            <h3 class="font-label-bold text-label-bold uppercase text-primary">Eat In Info</h3>
+                            <span class="material-symbols-outlined text-outline">restaurant</span>
+                        </div>
+                        <div class="bg-surface-container-low border-2 border-on-surface p-6">
+                            <p class="font-label-bold text-label-bold uppercase mb-1">Order for your table</p>
+                            <p class="font-body-md text-on-surface-variant">Please include your table number in the notes field below, or let a staff member know your order number when you sit down.</p>
                         </div>
                     </section>
                 </div>
@@ -171,6 +189,16 @@
                     </div>
                 </section>
                 @endif
+
+                <!-- Section: Order Notes -->
+                <section class="mt-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-label-bold text-label-bold uppercase text-primary">Order Notes (Optional)</h3>
+                        <span class="material-symbols-outlined text-outline">edit_note</span>
+                    </div>
+                    <textarea class="w-full bg-transparent border-b-2 border-on-surface py-2 focus:ring-0 focus:border-primary placeholder:text-outline-variant font-body-md resize-y min-h-[60px]"
+                              name="notes" placeholder="e.g. Table 42, ring doorbell, allergy info..."></textarea>
+                </section>
 
                 <!-- Section: Payment -->
                 <div>

@@ -47,6 +47,7 @@ class MenuItemController extends Controller
             'item'       => null,
             'categories' => Category::orderBy('sort_order')->get(),
             'allergens'  => Allergen::orderBy('sort_order')->get(),
+            'allItems'   => MenuItem::orderBy('name')->get(),
         ]);
     }
 
@@ -65,6 +66,8 @@ class MenuItemController extends Controller
             'allergens.*'   => 'exists:allergens,id',
             'ingredients'   => 'nullable|array',
             'ingredients.*' => 'string|max:100',
+            'related_items' => 'nullable|array',
+            'related_items.*'=> 'exists:menu_items,id',
             'image'         => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
 
@@ -89,6 +92,7 @@ class MenuItemController extends Controller
         ]);
 
         $item->allergens()->sync($data['allergens'] ?? []);
+        $item->relatedItems()->sync($data['related_items'] ?? []);
         if ($request->has('ingredients')) {
             $this->syncIngredients($item, $data['ingredients'] ?? []);
         }
@@ -99,13 +103,14 @@ class MenuItemController extends Controller
 
     public function edit(string $item): View
     {
-        $menuItem = MenuItem::with(['allergens', 'baseIngredients'])->findOrFail($item);
+        $menuItem = MenuItem::with(['allergens', 'baseIngredients', 'relatedItems'])->findOrFail($item);
 
         return view('admin.menu.edit', [
             'title'      => 'Edit: ' . $menuItem->name,
             'item'       => $menuItem,
             'categories' => Category::orderBy('sort_order')->get(),
             'allergens'  => Allergen::orderBy('sort_order')->get(),
+            'allItems'   => MenuItem::where('id', '!=', $menuItem->id)->orderBy('name')->get(),
         ]);
     }
 
@@ -126,6 +131,8 @@ class MenuItemController extends Controller
             'allergens.*'   => 'exists:allergens,id',
             'ingredients'   => 'nullable|array',
             'ingredients.*' => 'string|max:100',
+            'related_items' => 'nullable|array',
+            'related_items.*'=> 'exists:menu_items,id',
             'image'         => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
 
@@ -151,6 +158,7 @@ class MenuItemController extends Controller
         ]);
 
         $menuItem->allergens()->sync($data['allergens'] ?? []);
+        $menuItem->relatedItems()->sync($data['related_items'] ?? []);
         if ($request->has('ingredients')) {
             $this->syncIngredients($menuItem, $data['ingredients'] ?? []);
         }

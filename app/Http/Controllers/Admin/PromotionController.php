@@ -55,7 +55,7 @@ class PromotionController extends Controller
         $data = $request->validate([
             'code'             => 'required|string|max:50|unique:promotions,code' . ($excludeId ? ",{$excludeId}" : ''),
             'name'             => 'required|string|max:255',
-            'type'             => 'required|in:percentage,fixed_amount,free_delivery',
+            'type'             => 'required|in:percentage,fixed_amount,free_delivery,buy_one_get_one,multi_buy',
             'value'            => 'required|numeric|min:0',
             'min_order_amount' => 'nullable|numeric|min:0',
             'max_uses'         => 'nullable|integer|min:1',

@@ -69,47 +69,111 @@
 @endforeach
 </div>
 </section>
-<!-- Section 3: Upselling & Customization -->
+<!-- Section 3: Base Ingredients -->
 <section class="industrial-border p-8 bg-surface-container-lowest">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md flex items-center gap-3">
+<span class="material-symbols-outlined">lunch_dining</span> Base Ingredients
+</h3>
+</div>
+<div x-data="{
+  ingredients: {{ json_encode(old('ingredients', $item?->baseIngredients?->pluck('name')->toArray() ?? [])) }},
+  newIngredient: '',
+  add() {
+    let val = this.newIngredient.trim();
+    if (val && !this.ingredients.includes(val)) {
+      this.ingredients.push(val);
+      this.newIngredient = '';
+    }
+  },
+  remove(i) { this.ingredients.splice(i, 1); }
+}">
+  <div class="flex gap-3 mb-4">
+    <input x-model="newIngredient"
+           @keydown.enter.prevent="add()"
+           class="flex-1 bg-transparent border-t-0 border-x-0 border-b-2 border-industrial-gray py-2 font-body-md text-body-md focus:ring-0 px-0"
+           placeholder="e.g. Mozzarella, San Marzano Tomatoes..." type="text"/>
+    <button @click="add()" type="button"
+            class="px-4 py-2 industrial-border font-mono text-[10px] font-bold uppercase hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-1">
+      <span class="material-symbols-outlined text-sm">add</span> Add
+    </button>
+  </div>
+  <div class="space-y-2">
+    <template x-for="(ing, i) in ingredients" :key="i">
+      <div class="flex items-center justify-between p-3 border border-surface-variant bg-surface group">
+        <input type="hidden" :name="'ingredients['+i+']'" :value="ing" />
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-surface-variant flex items-center justify-center rounded">
+            <span class="material-symbols-outlined text-on-surface-variant text-sm">drag_indicator</span>
+          </div>
+          <span class="font-body-md text-body-md" x-text="ing"></span>
+        </div>
+        <button @click="remove(i)" type="button"
+                class="text-on-surface-variant hover:text-brand-error transition-colors opacity-0 group-hover:opacity-100">
+          <span class="material-symbols-outlined text-sm">close</span>
+        </button>
+      </div>
+    </template>
+    <p x-show="ingredients.length === 0" class="text-xs text-on-surface-variant py-4 text-center font-mono">
+      No ingredients added. Customers will see this as "no listed ingredients".
+    </p>
+  </div>
+</div>
+</section>
+
+<!-- Section 3.5: Upselling & Sides -->
+<section class="industrial-border p-8 bg-surface-container-lowest mt-12">
 <div class="flex justify-between items-center mb-6">
 <h3 class="font-headline-md text-headline-md flex items-center gap-3">
 <span class="material-symbols-outlined">add_shopping_cart</span> Upselling &amp; Sides
 </h3>
-<button class="text-oxblood-red font-label-caps text-label-caps flex items-center gap-1 hover:underline" type="button">
-<span class="material-symbols-outlined text-sm">add</span> Add Related
-</button>
 </div>
-<div class="space-y-4">
-<div class="flex items-center justify-between p-4 border border-surface-variant bg-surface">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 bg-surface-variant flex items-center justify-center">
-<span class="material-symbols-outlined text-on-surface-variant">lunch_dining</span>
-</div>
-<div>
-<p class="font-label-bold text-label-bold">Truffle Garlic Knots</p>
-<p class="text-xs text-on-surface-variant">Recommended Side</p>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<span class="font-label-bold">+$6.00</span>
-<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-error">delete</span>
-</div>
-</div>
-<div class="flex items-center justify-between p-4 border border-surface-variant bg-surface">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 bg-surface-variant flex items-center justify-center">
-<span class="material-symbols-outlined text-on-surface-variant">local_drink</span>
-</div>
-<div>
-<p class="font-label-bold text-label-bold">Aces Reserve Peroni</p>
-<p class="text-xs text-on-surface-variant">Drink Pairing</p>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<span class="font-label-bold">+$8.50</span>
-<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-error">delete</span>
-</div>
-</div>
+<div x-data="{
+  related: {{ json_encode(old('related_items', $item?->relatedItems?->pluck('id')->toArray() ?? [])) }},
+  allItems: {{ json_encode($allItems->map(fn($i) => ['id' => $i->id, 'name' => $i->name, 'price' => $i->base_price])->toArray()) }},
+  selectedId: '',
+  add() {
+    if (this.selectedId && !this.related.includes(parseInt(this.selectedId))) {
+      this.related.push(parseInt(this.selectedId));
+      this.selectedId = '';
+    }
+  },
+  remove(i) { this.related.splice(i, 1); },
+  getItem(id) { return this.allItems.find(i => i.id === id) || {}; }
+}">
+  <div class="flex gap-3 mb-4">
+    <select x-model="selectedId" class="flex-1 bg-transparent border-t-0 border-x-0 border-b-2 border-industrial-gray py-2 font-body-md text-body-md focus:ring-0 px-0">
+      <option value="">-- Select an item to recommend --</option>
+      <template x-for="opt in allItems" :key="opt.id">
+        <option :value="opt.id" x-text="opt.name + ' (+£' + opt.price + ')'" :disabled="related.includes(opt.id)"></option>
+      </template>
+    </select>
+    <button @click="add()" type="button" class="px-4 py-2 industrial-border font-mono text-[10px] font-bold uppercase hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-1">
+      <span class="material-symbols-outlined text-sm">add</span> Add
+    </button>
+  </div>
+  <div class="space-y-2">
+    <template x-for="(relId, i) in related" :key="relId">
+      <div class="flex items-center justify-between p-3 border border-surface-variant bg-surface group">
+        <input type="hidden" :name="'related_items['+i+']'" :value="relId" />
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-surface-variant flex items-center justify-center rounded">
+            <span class="material-symbols-outlined text-on-surface-variant text-sm">fastfood</span>
+          </div>
+          <div>
+            <p class="font-label-bold text-label-bold" x-text="getItem(relId).name"></p>
+            <p class="text-xs text-on-surface-variant" x-text="'+£' + getItem(relId).price"></p>
+          </div>
+        </div>
+        <button @click="remove(i)" type="button" class="text-on-surface-variant hover:text-brand-error transition-colors opacity-0 group-hover:opacity-100 p-2">
+          <span class="material-symbols-outlined text-sm">delete</span>
+        </button>
+      </div>
+    </template>
+    <p x-show="related.length === 0" class="text-xs text-on-surface-variant py-4 text-center font-mono">
+      No upselling items added.
+    </p>
+  </div>
 </div>
 </section>
 </div>

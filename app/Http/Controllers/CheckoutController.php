@@ -68,7 +68,7 @@ class CheckoutController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $data = $request->validate([
-            'order_type'     => 'required|in:delivery,collection',
+            'order_type'     => 'required|in:delivery,collection,eat_in',
             'cart_items'     => ['required', 'json', function ($attr, $val, $fail) {
                 $items = json_decode($val, true);
                 if (empty($items)) $fail('Your cart is empty.');
@@ -77,6 +77,7 @@ class CheckoutController extends Controller
             'city'           => 'required_if:order_type,delivery|nullable|string|max:100',
             'postal_code'    => 'required_if:order_type,delivery|nullable|string|max:20',
             'promo_code'     => 'nullable|string|max:50',
+            'notes'          => 'nullable|string|max:500',
         ]);
 
         $cartItems  = json_decode($data['cart_items'], true);
@@ -178,6 +179,7 @@ class CheckoutController extends Controller
                 'delivery_address'  => $data['street_address'] ?? null,
                 'delivery_city'     => $data['city'] ?? null,
                 'delivery_postcode' => $data['postal_code'] ?? null,
+                'notes'             => $data['notes'] ?? null,
             ]);
 
             foreach ($orderItems as $item) {

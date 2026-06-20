@@ -41,6 +41,7 @@ Route::get('/orders/{order}/confirmation', [OrderController::class, 'confirmatio
 Route::get('/orders/{order}/tracking', [OrderController::class, 'tracking'])->name('orders.tracking');
 Route::get('/party-hall', fn () => redirect()->away('https://www.acesandeightssaloonbar.com/hire/'))->name('party-hall');
 Route::get('/about', [PageController::class, 'about'])->name('about');
+Route::get('/deals', [PageController::class, 'deals'])->name('deals');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::post('/contact', [PageController::class, 'sendContact'])->name('contact.send');
 

@@ -117,14 +117,17 @@ View Full Menu <span class="material-symbols-outlined text-base">arrow_forward</
 </section>
 <!-- Map Section -->
 <section class="border-b-2 border-on-surface bg-surface h-[500px] relative w-full overflow-hidden">
-<!-- Placeholder for interactive map, using a styled div to represent the industrial cartography feel -->
-<div class="absolute inset-0 bg-[#e5e3df] flex items-center justify-center opacity-80" data-location="Tufnell Park, London">
-<div class="w-full h-full border-4 border-on-surface opacity-20 pointer-events-none absolute inset-0 mix-blend-multiply" style="background-image: repeating-linear-gradient(45deg, #1b1c1c 25%, transparent 25%, transparent 75%, #1b1c1c 75%, #1b1c1c), repeating-linear-gradient(45deg, #1b1c1c 25%, #e5e3df 25%, #e5e3df 75%, #1b1c1c 75%, #1b1c1c); background-position: 0 0, 10px 10px; background-size: 20px 20px;"></div>
-<div class="text-center z-10 p-8 border-2 border-on-surface bg-surface shadow-[4px_4px_0px_#1b1c1c]">
-<span class="material-symbols-outlined text-display text-primary-container mb-2">location_on</span>
-<h4 class="font-headline-md text-headline-md text-on-surface uppercase tracking-widest">Locate Us</h4>
-<p class="font-label-bold text-label-bold text-on-surface-variant mt-2">156 &amp; 158 Fortess Road, Tufnell Park</p>
-</div>
+<iframe
+  src="https://maps.google.com/maps?q=156+Fortess+Road+London+NW5+2HP&output=embed"
+  class="w-full h-full grayscale hover:grayscale-0 transition-all duration-700" style="border:0;" allowfullscreen loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+  title="Aces &amp; Eights Pizza location map"></iframe>
+<div class="absolute bottom-6 right-6 bg-primary text-on-primary p-4 shadow-xl flex items-center gap-3 border border-[#D4AF37] pointer-events-none">
+  <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+  <div>
+    <p class="font-label-bold text-label-bold uppercase tracking-widest text-sm">Locate Us</p>
+    <p class="font-mono text-[10px] text-on-primary-container">156 &amp; 158 Fortess Road, Tufnell Park</p>
+  </div>
 </div>
 </section>
 @endsection

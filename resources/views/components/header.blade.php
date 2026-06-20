@@ -29,32 +29,33 @@
         </svg>
       </button>
       {{-- Logo — desktop only --}}
-      <a href="{{ route('home') }}" class="hidden lg:block">
-        <img src="{{ asset('images/logo.jpg') }}" alt="Aces & Eights Pizza" class="h-14 w-auto rounded">
+      <a href="{{ route('home') }}" class="hidden lg:block flex-shrink-0">
+        <img src="{{ asset('images/logo.jpg') }}" alt="Aces & Eights Pizza" class="h-14 w-auto rounded flex-shrink-0">
       </a>
     </div>
 
     {{-- CENTRE: logo (mobile) | nav (desktop) --}}
-    <div class="flex items-center justify-center">
+    <div class="flex items-center justify-center flex-shrink min-w-0 px-2">
       {{-- Logo centred — mobile only --}}
-      <a href="{{ route('home') }}" class="lg:hidden">
-        <img src="{{ asset('images/logo.jpg') }}" alt="Aces & Eights Pizza" class="h-10 w-auto rounded">
+      <a href="{{ route('home') }}" class="lg:hidden flex-shrink-0">
+        <img src="{{ asset('images/logo.jpg') }}" alt="Aces & Eights Pizza" class="h-10 w-auto rounded flex-shrink-0">
       </a>
       {{-- Nav — desktop only --}}
-      <nav class="hidden lg:flex items-center gap-1">
-        <a href="{{ route('home') }}"     class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">Home</a>
-        <a href="{{ route('our-menu') }}" class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">Menu</a>
-        <a href="{{ route('menu') }}"     class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">Order Now</a>
-        <a href="https://www.acesandeightssaloonbar.com/booking/" target="_blank" rel="noopener" class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">Book a Table</a>
-        <a href="https://www.acesandeightssaloonbar.com/hire/" target="_blank" rel="noopener" class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">Venue & Private Hire</a>
-        <a href="{{ route('about') }}"   class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">About</a>
-        <a href="{{ route('contact') }}" class="px-4 py-2 font-serif text-sm font-bold uppercase tracking-[0.12em] text-on-surface-variant hover:text-primary transition-colors">Contact</a>
+      <nav class="hidden lg:flex items-center gap-0.5 xl:gap-2 overflow-hidden">
+        <a href="{{ route('home') }}"     class="px-2 py-2 font-serif text-[15px] font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Home</a>
+        <a href="{{ route('our-menu') }}" class="px-2 py-2 font-serif text-[15px] font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Menu</a>
+        <a href="{{ route('menu') }}"     class="px-2 py-2 font-serif text-[15px] font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Order Now</a>
+        <a href="{{ route('deals') }}"    class="px-2 py-2 font-serif text-[15px] font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Deals</a>
+        <a href="https://www.acesandeightssaloonbar.com/booking/" target="_blank" rel="noopener" class="px-2 py-2 font-serif text-[15px] font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Book Table</a>
+        <a href="https://www.acesandeightssaloonbar.com/hire/" target="_blank" rel="noopener" class="px-2 py-2 font-serif text-[15px] font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Venue Hire</a>
+        <a href="{{ route('about') }}"    class="px-2 py-2 font-serif text-[15px] font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">About</a>
+        <a href="{{ route('contact') }}"  class="px-2 py-2 font-serif text-[15px] font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Contact</a>
         @if($_isOpen)
-          <span class="ml-1 font-mono text-[9px] font-bold uppercase bg-green-700 text-white px-2 py-0.5 flex items-center gap-1">
+          <span class="ml-1 font-mono text-[10px] font-bold uppercase bg-green-700 text-white px-2 py-0.5 flex items-center gap-1 flex-shrink-0">
             <span class="w-1.5 h-1.5 rounded-full bg-green-300 animate-pulse inline-block"></span>Open
           </span>
         @else
-          <span class="ml-1 font-mono text-[9px] font-bold uppercase bg-surface-container border border-outline-variant text-on-surface-variant px-2 py-0.5">Closed</span>
+          <span class="ml-1 font-mono text-[10px] font-bold uppercase bg-surface-container border border-outline-variant text-on-surface-variant px-2 py-0.5 flex-shrink-0">Closed</span>
         @endif
       </nav>
     </div>
