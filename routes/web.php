@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store')->middleware('throttle:10,1');
 });
 
-Route::post('/stripe/webhook', [App\Http\Controllers\StripeWebhookController::class, 'handle'])->name('stripe.webhook');
+Route::post('/stripe/webhook', [App\Http\Controllers\StripeWebhookController::class, 'handle'])->name('stripe.webhook')->middleware('throttle:60,1');
 Route::post('/promo/check', [App\Http\Controllers\PromoController::class, 'check'])->name('promo.check')->middleware('throttle:20,1');
 Route::get('/delivery-fee', [CheckoutController::class, 'deliveryFee'])->name('delivery.fee')->middleware('throttle:30,1');
 Route::get('/orders/{order}/confirmation', [OrderController::class, 'confirmation'])->name('orders.confirmation');
@@ -58,7 +58,7 @@ Route::get('/register', fn () => view('auth.register', ['title' => 'Create Accou
 Route::post('/register', [App\Http\Controllers\AuthController::class, 'register'])->name('register.post')->middleware('throttle:3,1');
 Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 Route::get('/auth/{provider}/redirect',  [SocialAuthController::class, 'redirect'])->name('social.redirect')->middleware('guest');
-Route::get('/auth/{provider}/callback',  [SocialAuthController::class, 'callback'])->name('social.callback');
+Route::get('/auth/{provider}/callback',  [SocialAuthController::class, 'callback'])->name('social.callback')->middleware('guest');
 
 // Password Reset
 Route::get('/forgot-password',        [PasswordResetController::class, 'showForgotForm'])->name('password.request')->middleware('guest');

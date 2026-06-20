@@ -47,16 +47,26 @@ class CustomerPagesTest extends TestCase
 
     public function test_tracking_page_returns_200(): void
     {
-        $order = Order::factory()->create();
-        $r = $this->get('/orders/' . $order->id . '/tracking');
+        $user  = User::factory()->create();
+        $order = Order::factory()->create(['user_id' => $user->id]);
+        $r = $this->actingAs($user)->get('/orders/' . $order->id . '/tracking');
         $r->assertStatus(200);
     }
 
     public function test_confirmation_page_returns_200(): void
     {
-        $order = Order::factory()->create();
-        $r = $this->get('/orders/' . $order->id . '/confirmation');
+        $user  = User::factory()->create();
+        $order = Order::factory()->create(['user_id' => $user->id]);
+        $r = $this->actingAs($user)->get('/orders/' . $order->id . '/confirmation');
         $r->assertStatus(200);
+    }
+
+    public function test_tracking_page_forbids_other_user(): void
+    {
+        $owner = User::factory()->create();
+        $other = User::factory()->create();
+        $order = Order::factory()->create(['user_id' => $owner->id]);
+        $this->actingAs($other)->get('/orders/' . $order->id . '/tracking')->assertStatus(403);
     }
 
     public function test_about_has_brand_content(): void

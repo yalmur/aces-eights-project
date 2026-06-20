@@ -19,7 +19,7 @@ class OrderEmailTest extends TestCase
 
         $order = Order::factory()->pendingPayment()->create();
 
-        $this->get(route('orders.confirmation', $order->id) . '?session_id=cs_test_fake');
+        $this->actingAs($order->user)->get(route('orders.confirmation', $order->id) . '?session_id=cs_test_fake');
 
         Mail::assertQueued(OrderConfirmation::class, function ($mail) use ($order) {
             return $mail->order->id === $order->id

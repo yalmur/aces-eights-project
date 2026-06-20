@@ -14,6 +14,10 @@ class SocialAuthController extends Controller
     {
         abort_unless(in_array($provider, ['google', 'facebook']), 404);
 
+        if (!config("services.{$provider}.client_id")) {
+            return redirect()->route('login')->withErrors(['email' => 'Social login is not available.']);
+        }
+
         return Socialite::driver($provider)->redirect();
     }
 
@@ -46,6 +50,7 @@ class SocialAuthController extends Controller
                 'avatar'   => $social->getAvatar(),
                 'password' => null,
             ]);
+            $user->forceFill(['role' => 'customer'])->save();
         }
 
         Auth::login($user, remember: true);

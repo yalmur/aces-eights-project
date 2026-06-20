@@ -29,7 +29,7 @@ class PartyHallController extends Controller
         ]);
 
         $adminEmail = Setting::get('store_email', 'nw5pizza@gmail.com');
-        Mail::to($adminEmail)->send(new PartyHallInquiry($data));
+        Mail::to($adminEmail)->queue(new PartyHallInquiry($data));
 
         return redirect()->route('party-hall')
             ->with('success', 'Inquiry sent! We\'ll be in touch within 24 hours.');

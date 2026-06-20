@@ -104,17 +104,15 @@ class MenuItemTest extends TestCase
     {
         $item = MenuItem::factory()->create();
 
-        $response = $this->actingAs($this->admin)->from("/admin/menu/{$item->id}/edit")
+        $this->actingAs($this->admin)
+            ->followingRedirects()
+            ->from("/admin/menu/{$item->id}/edit")
             ->put("/admin/menu/{$item->id}", [
                 'name'        => '',
                 'category_id' => $item->category_id,
                 'base_price'  => '15.00',
-            ]);
-
-        $response->assertSessionHasErrors(['name']);
-
-        $follow = $this->actingAs($this->admin)->get("/admin/menu/{$item->id}/edit");
-        $follow->assertSee('The name field is required.');
+            ])
+            ->assertSee('The name field is required.');
     }
 
     public function test_updating_menu_item_without_ingredients_field_preserves_base_ingredients(): void

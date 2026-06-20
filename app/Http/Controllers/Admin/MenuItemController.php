@@ -53,7 +53,7 @@ class MenuItemController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $data = $request->validate([
-            'name'          => 'required|string|max:255',
+            'name'          => 'required|string|max:255|unique:menu_items,name',
             'category_id'   => 'required|exists:categories,id',
             'description'   => 'nullable|string',
             'base_price'    => 'required|numeric|min:0',

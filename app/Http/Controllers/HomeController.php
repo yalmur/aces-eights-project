@@ -40,6 +40,9 @@ class HomeController extends Controller
             if (count($parts) < 2) return false;
             $open    = \Carbon\Carbon::createFromTimeString(trim($parts[0]), 'Europe/London')->setDate($now->year, $now->month, $now->day);
             $close   = \Carbon\Carbon::createFromTimeString(trim($parts[1]), 'Europe/London')->setDate($now->year, $now->month, $now->day);
+            if ($close->lt($open)) {
+                $close->addDay();
+            }
             return $now->between($open, $close);
         } catch (\Throwable) {
             return false;

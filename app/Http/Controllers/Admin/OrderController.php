@@ -81,8 +81,11 @@ class OrderController extends Controller
         $subtotal = 0;
         $orderItems = [];
 
+        $menuItemIds = collect($data['items'])->pluck('menu_item_id');
+        $menuItemMap = MenuItem::whereIn('id', $menuItemIds)->get()->keyBy('id');
+
         foreach ($data['items'] as $line) {
-            $menuItem  = MenuItem::findOrFail($line['menu_item_id']);
+            $menuItem  = $menuItemMap->get($line['menu_item_id']) ?? abort(422, 'Menu item not found');
             $lineTotal = $menuItem->base_price * $line['qty'];
             $subtotal += $lineTotal;
             $orderItems[] = [

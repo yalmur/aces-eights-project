@@ -41,7 +41,7 @@ class RouteSmokeTest extends TestCase
     {
         $order = \App\Models\Order::factory()->create();
 
-        $response = $this->get('/orders/' . $order->id . '/confirmation');
+        $response = $this->actingAs($order->user)->get('/orders/' . $order->id . '/confirmation');
 
         $response->assertStatus(200);
     }
@@ -50,7 +50,7 @@ class RouteSmokeTest extends TestCase
     {
         $order = \App\Models\Order::factory()->create();
 
-        $response = $this->get('/orders/' . $order->id . '/tracking');
+        $response = $this->actingAs($order->user)->get('/orders/' . $order->id . '/tracking');
 
         $response->assertStatus(200);
     }

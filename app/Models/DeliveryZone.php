@@ -45,7 +45,8 @@ class DeliveryZone extends Model
     public static function findByPostcode(string $postcode): ?self
     {
         $district = self::extractDistrict($postcode);
-        return self::active()->get()->first(function ($zone) use ($district) {
+        $zones    = \Illuminate\Support\Facades\Cache::remember('delivery_zones_active', 300, fn () => self::active()->get());
+        return $zones->first(function ($zone) use ($district) {
             if (!$zone->postcodes) return false;
             $covered = array_map('trim', explode(',', strtoupper($zone->postcodes)));
             return in_array($district, $covered, true);

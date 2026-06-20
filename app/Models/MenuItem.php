@@ -49,7 +49,7 @@ class MenuItem extends Model
 
     public function isPizza(): bool
     {
-        return $this->category->slug === 'pizza';
+        return $this->category?->slug === 'pizza';
     }
 
     public function getFormattedPriceAttribute(): string

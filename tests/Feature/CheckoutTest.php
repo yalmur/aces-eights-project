@@ -102,15 +102,32 @@ class CheckoutTest extends TestCase
         \App\Models\Promotion::factory()->fixed(5)->create(['code' => 'FIVE']);
         $cartItems = [[
             'id' => 'margherita', 'name' => 'Margherita', 'category' => 'pizza',
-            'basePrice' => 20.00, 'qty' => 1, 'size' => '12" Standard', 'sizeExtra' => 0,
+            'basePrice' => 99.00, 'qty' => 1, 'size' => '12" Standard', 'sizeExtra' => 0,
             'crust' => '48hr Sourdough', 'crustExtra' => 0, 'toppings' => [],
             'removedIngredients' => [], 'chips' => [], 'instructions' => '',
-            'lineTotal' => 20.00,
+            'lineTotal' => 99.00,
         ]];
         $this->actingAs($this->customer)->post('/checkout', [
             'order_type' => 'collection', 'cart_items' => json_encode($cartItems), 'promo_code' => 'FIVE',
         ]);
-        $this->assertDatabaseHas('orders', ['promo_code' => 'FIVE', 'discount_amount' => 5.00, 'total' => 15.00]);
+        // DB price is 12.00 regardless of client-sent basePrice=99
+        $this->assertDatabaseHas('orders', ['promo_code' => 'FIVE', 'discount_amount' => 5.00, 'total' => 7.00]);
+    }
+
+    public function test_client_cannot_manipulate_item_price(): void
+    {
+        $cartItems = [[
+            'id' => 'margherita', 'name' => 'Margherita', 'category' => 'pizza',
+            'basePrice' => 0.01, 'qty' => 1, 'size' => '12" Standard', 'sizeExtra' => 0,
+            'crust' => '48hr Sourdough', 'crustExtra' => 0, 'toppings' => [],
+            'removedIngredients' => [], 'chips' => [], 'instructions' => '',
+            'lineTotal' => 0.01,
+        ]];
+        $this->actingAs($this->customer)->post('/checkout', [
+            'order_type' => 'collection', 'cart_items' => json_encode($cartItems),
+        ]);
+        $this->assertDatabaseHas('order_items', ['name' => 'Margherita', 'unit_price' => 12.00, 'line_total' => 12.00]);
+        $this->assertDatabaseMissing('order_items', ['unit_price' => 0.01]);
     }
 
     public function test_collection_order_has_no_delivery_fee(): void

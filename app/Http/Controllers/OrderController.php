@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\OrderStatusUpdated;
 use App\Mail\OrderConfirmation;
 use App\Models\Order;
 use Illuminate\Http\Request;
@@ -15,10 +14,12 @@ class OrderController extends Controller
     {
         $orderModel = Order::with('items')->findOrFail($order);
 
-        // Mark as accepted when arriving from Stripe success — send email once
-        if ($request->session_id && $orderModel->status === 'pending_payment') {
-            $orderModel->update(['status' => 'accepted']);
-            OrderStatusUpdated::dispatch($orderModel);
+        if ($orderModel->user_id && $orderModel->user_id !== $request->user()?->id) {
+            abort(403);
+        }
+
+        // Fallback for when Stripe redirect arrives before the webhook fires.
+        if ($request->query('session_id') && $orderModel->status === 'pending_payment' && $orderModel->customer_email) {
             Mail::to($orderModel->customer_email)->queue(new OrderConfirmation($orderModel));
         }
 
@@ -28,9 +29,13 @@ class OrderController extends Controller
         ]);
     }
 
-    public function tracking(string $order): View
+    public function tracking(Request $request, string $order): View
     {
         $orderModel = Order::with('items')->findOrFail($order);
+
+        if ($orderModel->user_id && $orderModel->user_id !== $request->user()?->id) {
+            abort(403);
+        }
 
         return view('orders.tracking', [
             'title' => 'Track Order #' . $orderModel->id,

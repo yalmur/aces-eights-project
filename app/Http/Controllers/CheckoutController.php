@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\DeliveryZone;
+use App\Models\MenuItem;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Promotion;
 use App\Models\Setting;
+use App\Models\Topping;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -16,6 +18,9 @@ use Stripe\StripeClient;
 
 class CheckoutController extends Controller
 {
+    private const SIZE_EXTRAS  = ['12" Standard' => 0.0, '15" Large' => 4.0];
+    private const CRUST_EXTRAS = ['48hr Sourdough' => 0.0, 'Gluten-Free' => 2.0, 'Cauliflower' => 2.5];
+
     public function index(): View
     {
         $defaultAddress = Auth::user()->defaultAddress();
@@ -75,21 +80,46 @@ class CheckoutController extends Controller
         }
         $user        = Auth::user();
 
+        $slugs         = array_column($cartItems, 'id');
+        $menuItems     = MenuItem::whereIn('slug', $slugs)->where('is_available', true)->get()->keyBy('slug');
+        $toppingNames  = collect($cartItems)->flatMap(fn($ci) => array_column($ci['toppings'] ?? [], 'name'))->unique()->values();
+        $toppingPrices = $toppingNames->isNotEmpty()
+            ? Topping::whereIn('name', $toppingNames)->get()->pluck('price', 'name')
+            : collect();
+
         $orderItems = [];
         $subtotal   = 0;
 
         foreach ($cartItems as $ci) {
-            $lineTotal   = (float) ($ci['lineTotal'] ?? 0);
-            $subtotal   += $lineTotal;
+            $menuItem = $menuItems[$ci['id'] ?? ''] ?? null;
+            if (!$menuItem) {
+                return back()->withInput()->withErrors(['cart_items' => 'One or more items are unavailable.']);
+            }
+
+            $qty        = max(1, (int) ($ci['qty'] ?? 1));
+            $sizeExtra  = self::SIZE_EXTRAS[$ci['size'] ?? '']  ?? 0.0;
+            $crustExtra = self::CRUST_EXTRAS[$ci['crust'] ?? ''] ?? 0.0;
+
+            $toppings      = [];
+            $toppingsExtra = 0.0;
+            foreach ($ci['toppings'] ?? [] as $t) {
+                $price = (float) ($toppingPrices[$t['name']] ?? 0);
+                $toppingsExtra += $price;
+                $toppings[] = ['name' => $t['name'], 'price' => $price];
+            }
+
+            $lineTotal  = ((float) $menuItem->base_price + $sizeExtra + $crustExtra + $toppingsExtra) * $qty;
+            $subtotal  += $lineTotal;
+
             $orderItems[] = [
-                'name'                => $ci['name'],
-                'qty'                 => max(1, (int) ($ci['qty'] ?? 1)),
-                'unit_price'          => (float) ($ci['basePrice'] ?? 0),
+                'name'                => $menuItem->name,
+                'qty'                 => $qty,
+                'unit_price'          => (float) $menuItem->base_price,
                 'size'                => $ci['size'] ?? null,
                 'crust'               => $ci['crust'] ?? null,
-                'size_extra'          => (float) ($ci['sizeExtra'] ?? 0),
-                'crust_extra'         => (float) ($ci['crustExtra'] ?? 0),
-                'added_toppings'      => $ci['toppings'] ?? [],
+                'size_extra'          => $sizeExtra,
+                'crust_extra'         => $crustExtra,
+                'added_toppings'      => $toppings,
                 'removed_ingredients' => $ci['removedIngredients'] ?? [],
                 'instructions'        => $ci['instructions'] ?? null,
                 'line_total'          => $lineTotal,
