@@ -123,6 +123,27 @@
 </div>
 </div>
 </section>
+<!-- Section: Pricing Upcharges -->
+<section class="lg:col-span-4 bg-surface-container-low industrial-border p-8 h-fit">
+<h3 class="font-headline-md uppercase tracking-tight flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="price_change">price_change</span>
+                    Pricing Upcharges
+                </h3>
+<div class="space-y-4">
+<div>
+<label class="font-label-bold text-label-bold uppercase text-on-surface-variant block mb-1">Large Size Extra (£)</label>
+<input class="w-full bg-transparent industrial-border-b border-on-surface-variant py-2 font-body-md focus:border-primary transition-colors" type="number" step="0.01" min="0" max="50" name="size_large_extra" value="{{ $settings['size_large_extra'] }}"/>
+</div>
+<div>
+<label class="font-label-bold text-label-bold uppercase text-on-surface-variant block mb-1">Gluten-Free Crust Extra (£)</label>
+<input class="w-full bg-transparent industrial-border-b border-on-surface-variant py-2 font-body-md focus:border-primary transition-colors" type="number" step="0.01" min="0" max="50" name="crust_gluten_free_extra" value="{{ $settings['crust_gluten_free_extra'] }}"/>
+</div>
+<div>
+<label class="font-label-bold text-label-bold uppercase text-on-surface-variant block mb-1">Cauliflower Crust Extra (£)</label>
+<input class="w-full bg-transparent industrial-border-b border-on-surface-variant py-2 font-body-md focus:border-primary transition-colors" type="number" step="0.01" min="0" max="50" name="crust_cauliflower_extra" value="{{ $settings['crust_cauliflower_extra'] }}"/>
+</div>
+</div>
+</section>
 <!-- Section 4: System Settings (Payment) -->
 <section class="lg:col-span-4 bg-surface-container industrial-border p-8 h-fit">
 <h3 class="font-headline-md uppercase tracking-tight flex items-center gap-2 mb-6">
