@@ -70,6 +70,6 @@ class Order extends Model
 
     public function isPaid(): bool
     {
-        return $this->status !== 'pending_payment';
+        return in_array($this->status, ['accepted', 'cooking', 'ready', 'out_for_delivery', 'collected', 'delivered']);
     }
 }

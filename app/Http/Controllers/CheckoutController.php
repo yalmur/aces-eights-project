@@ -13,6 +13,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use Stripe\StripeClient;
 
@@ -98,7 +99,7 @@ class CheckoutController extends Controller
         $menuItems     = MenuItem::whereIn('slug', $slugs)->where('is_available', true)->get()->keyBy('slug');
         $toppingNames  = collect($cartItems)->flatMap(fn($ci) => array_column($ci['toppings'] ?? [], 'name'))->unique()->values();
         $toppingPrices = $toppingNames->isNotEmpty()
-            ? Topping::whereIn('name', $toppingNames)->get()->pluck('price', 'name')
+            ? Topping::whereIn('name', $toppingNames)->where('is_available', true)->get()->pluck('price', 'name')
             : collect();
 
         $orderItems = [];
@@ -140,42 +141,49 @@ class CheckoutController extends Controller
             ];
         }
 
-        // Apply promo code
+        // Apply promo atomically — lockForUpdate prevents concurrent overuse of max_uses
         $discountAmount = 0;
         $promoCode      = null;
         $promoModel     = null;
 
         if (!empty($data['promo_code'])) {
-            $promoModel = Promotion::where('code', strtoupper(trim($data['promo_code'])))->first();
-            if ($promoModel && $promoModel->isValid($subtotal)) {
-                $discountAmount = $promoModel->calculateDiscount($subtotal, $deliveryFee);
-                $promoCode      = $promoModel->code;
-            }
+            DB::transaction(function () use (&$discountAmount, &$promoCode, &$promoModel, $data, $subtotal, $deliveryFee) {
+                $promoModel = Promotion::where('code', strtoupper(trim($data['promo_code'])))
+                    ->lockForUpdate()->first();
+                if ($promoModel && $promoModel->isValid($subtotal)) {
+                    $discountAmount = $promoModel->calculateDiscount($subtotal, $deliveryFee);
+                    $promoCode      = $promoModel->code;
+                    $promoModel->incrementUses();
+                } else {
+                    $promoModel = null;
+                }
+            });
         }
 
         $total = max(0, $subtotal + $deliveryFee - $discountAmount);
 
-        $order = Order::create([
-            'user_id'           => $user->id,
-            'type'              => $data['order_type'],
-            'status'            => 'pending_payment',
-            'subtotal'          => $subtotal,
-            'delivery_fee'      => $deliveryFee,
-            'total'             => $total,
-            'promo_code'        => $promoCode,
-            'discount_amount'   => $discountAmount,
-            'customer_name'     => $user->name,
-            'customer_email'    => $user->email,
-            'delivery_address'  => $data['street_address'] ?? null,
-            'delivery_city'     => $data['city'] ?? null,
-            'delivery_postcode' => $data['postal_code'] ?? null,
-        ]);
-
-        foreach ($orderItems as $item) {
-            $order->items()->create($item);
-        }
-
+        $order = null;
         try {
+            $order = Order::create([
+                'user_id'           => $user->id,
+                'type'              => $data['order_type'],
+                'status'            => 'pending_payment',
+                'subtotal'          => $subtotal,
+                'delivery_fee'      => $deliveryFee,
+                'total'             => $total,
+                'promo_code'        => $promoCode,
+                'discount_amount'   => $discountAmount,
+                'customer_name'     => $user->name,
+                'customer_email'    => $user->email,
+                'delivery_address'  => $data['street_address'] ?? null,
+                'delivery_city'     => $data['city'] ?? null,
+                'delivery_postcode' => $data['postal_code'] ?? null,
+            ]);
+
+            foreach ($orderItems as $item) {
+                $order->items()->create($item);
+            }
+
             $stripe    = new StripeClient(config('services.stripe.secret'));
             $lineItems = [];
 
@@ -231,14 +239,11 @@ class CheckoutController extends Controller
 
             $order->update(['stripe_session_id' => $session->id]);
 
-            if ($promoModel) {
-                $promoModel->incrementUses();
-            }
-
             return redirect($session->url, 303);
 
         } catch (\Exception $e) {
-            $order->delete();
+            if ($order) $order->delete();
+            if ($promoModel) $promoModel->decrement('current_uses');
             return back()->withInput()->withErrors(['cart_items' => 'Payment could not be initialised. Please try again.']);
         }
     }

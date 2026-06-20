@@ -30,6 +30,9 @@ class PageController extends Controller
             'message' => 'required|string|max:2000',
         ]);
 
+        $data['name']    = str_replace(["\r", "\n"], '', $data['name']);
+        $data['subject'] = str_replace(["\r", "\n"], '', $data['subject']);
+
         $to = Setting::get('store_email', 'nw5pizza@gmail.com');
 
         Mail::to($to)->queue(new ContactMessage(
