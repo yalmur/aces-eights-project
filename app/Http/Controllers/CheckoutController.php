@@ -96,7 +96,7 @@ class CheckoutController extends Controller
                 return back()->withInput()->withErrors(['cart_items' => 'One or more items are unavailable.']);
             }
 
-            $qty        = max(1, (int) ($ci['qty'] ?? 1));
+            $qty        = min(20, max(1, (int) ($ci['qty'] ?? 1)));
             $sizeExtra  = self::SIZE_EXTRAS[$ci['size'] ?? '']  ?? 0.0;
             $crustExtra = self::CRUST_EXTRAS[$ci['crust'] ?? ''] ?? 0.0;
 
@@ -161,10 +161,6 @@ class CheckoutController extends Controller
             $order->items()->create($item);
         }
 
-        if ($promoModel) {
-            $promoModel->incrementUses();
-        }
-
         try {
             $stripe    = new StripeClient(config('services.stripe.secret'));
             $lineItems = [];
@@ -214,6 +210,10 @@ class CheckoutController extends Controller
             $session = $stripe->checkout->sessions->create($sessionParams);
 
             $order->update(['stripe_session_id' => $session->id]);
+
+            if ($promoModel) {
+                $promoModel->incrementUses();
+            }
 
             return redirect($session->url, 303);
 
