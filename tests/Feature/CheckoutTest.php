@@ -170,4 +170,26 @@ class CheckoutTest extends TestCase
             'delivery_fee' => 0,
         ]);
     }
+
+    public function test_unavailable_topping_rejected_at_checkout(): void
+    {
+        \App\Models\Topping::factory()->create(['name' => 'Pepperoni', 'is_available' => false]);
+
+        $cartItems = [[
+            'id' => 'margherita', 'name' => 'Margherita', 'category' => 'pizza',
+            'basePrice' => 12.00, 'qty' => 1, 'size' => '12" Standard', 'sizeExtra' => 0,
+            'crust' => '48hr Sourdough', 'crustExtra' => 0,
+            'toppings' => [['name' => 'Pepperoni']],
+            'removedIngredients' => [], 'chips' => [], 'instructions' => '',
+            'lineTotal' => 12.00,
+        ]];
+
+        $response = $this->actingAs($this->customer)->post('/checkout', [
+            'order_type' => 'collection',
+            'cart_items' => json_encode($cartItems),
+        ]);
+
+        $response->assertSessionHasErrors(['cart_items']);
+        $this->assertDatabaseMissing('orders', ['user_id' => $this->customer->id]);
+    }
 }

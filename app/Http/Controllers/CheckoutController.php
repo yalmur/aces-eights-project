@@ -119,7 +119,10 @@ class CheckoutController extends Controller
             $toppings      = [];
             $toppingsExtra = 0.0;
             foreach ($ci['toppings'] ?? [] as $t) {
-                $price = (float) ($toppingPrices[$t['name']] ?? 0);
+                if (!isset($toppingPrices[$t['name']])) {
+                    return back()->withInput()->withErrors(['cart_items' => 'One or more toppings are currently unavailable.']);
+                }
+                $price = (float) $toppingPrices[$t['name']];
                 $toppingsExtra += $price;
                 $toppings[] = ['name' => $t['name'], 'price' => $price];
             }

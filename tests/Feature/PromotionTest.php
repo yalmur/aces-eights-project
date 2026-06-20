@@ -113,4 +113,16 @@ class PromotionTest extends TestCase
 
         $r->assertOk()->assertJson(['valid' => true]);
     }
+
+    public function test_bogo_calculates_half_subtotal_as_discount(): void
+    {
+        $promo = Promotion::factory()->create(['type' => 'buy_one_get_one', 'value' => 0]);
+        $this->assertEquals(12.50, $promo->calculateDiscount(25.00, 3.50));
+    }
+
+    public function test_multi_buy_calculates_one_third_subtotal_as_discount(): void
+    {
+        $promo = Promotion::factory()->create(['type' => 'multi_buy', 'value' => 0]);
+        $this->assertEquals(round(25.00 / 3, 2), $promo->calculateDiscount(25.00, 3.50));
+    }
 }

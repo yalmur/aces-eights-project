@@ -1,20 +1,27 @@
 @extends('layouts.app')
+@push('head')
+<style>
+.menu-masthead { border-bottom: 4px double #690008; padding-bottom: 2rem; margin-bottom: 3rem; }
+.menu-masthead-rule { width:100%; height:1px; background:linear-gradient(90deg,transparent,#690008 20%,#690008 80%,transparent); margin:0.75rem 0; }
+</style>
+@endpush
 @section('content')
 <div class="max-w-container-max mx-auto">
 
-{{-- Hero Section --}}
-<section class="px-6 md:px-margin-desktop mb-12 max-w-container-max mx-auto pt-8">
-    <div class="relative h-[400px] w-full overflow-hidden rounded-lg group border border-surface-variant">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent z-10"></div>
-        <!-- The Meat Lover Pizza hero image -->
-        <img alt="The Meat Lover Pizza" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="{{ asset('images/site/menu-meat-lover-hero.jpg') }}"/>
-        <div class="absolute bottom-12 left-12 z-20">
-            <span class="font-label-bold text-label-bold text-secondary-fixed-dim mb-4 block uppercase tracking-widest">House Special</span>
-            <h1 class="font-display text-display text-white mb-4" style="text-shadow:0 2px 8px rgba(0,0,0,0.6)">THE MEAT LOVER</h1>
-            <p class="font-body-lg text-body-lg text-white/75 max-w-xl">Double-fermented sourdough, San Marzano tomato, spicy salami, smoked pancetta, and fennel sausage.</p>
-        </div>
-    </div>
-</section>
+{{-- Masthead --}}
+<div class="menu-masthead text-center px-6 md:px-margin-desktop pt-12">
+    <p class="font-mono text-[0.65rem] tracking-[0.3em] uppercase text-on-surface-variant mb-4">
+        156 &amp; 158 Fortess Road &middot; Tufnell Park &middot; London, NW5 2HP
+    </p>
+    <div class="menu-masthead-rule"></div>
+    <h1 class="font-serif font-black uppercase tracking-[0.18em] text-4xl lg:text-5xl text-on-surface my-4">
+        Aces &amp; Eights Pizza
+    </h1>
+    <div class="menu-masthead-rule"></div>
+    <p class="font-mono text-[0.65rem] tracking-[0.3em] uppercase text-on-surface-variant mt-4">
+        Est. 2010 &nbsp;&middot;&nbsp; Authentic Italian Takeaway
+    </p>
+</div>
 
 {{-- Alpine.js category filter + menu grid --}}
 <div x-data="{ active: 'all', view: 'grid', search: '', diet: '' }"

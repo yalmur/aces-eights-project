@@ -175,4 +175,33 @@ class MenuItemTest extends TestCase
 
         $response->assertRedirect('/login');
     }
+
+    public function test_admin_cannot_update_menu_item_to_duplicate_name(): void
+    {
+        MenuItem::factory()->create(['name' => 'Margherita']);
+        $item2 = MenuItem::factory()->create(['name' => 'Pepperoni']);
+
+        $response = $this->actingAs($this->admin)->put("/admin/menu/{$item2->id}", [
+            'name'        => 'Margherita',
+            'category_id' => $item2->category_id,
+            'base_price'  => '12.00',
+        ]);
+
+        $response->assertSessionHasErrors(['name']);
+        $this->assertDatabaseHas('menu_items', ['id' => $item2->id, 'name' => 'Pepperoni']);
+    }
+
+    public function test_admin_can_update_menu_item_keeping_same_name(): void
+    {
+        $item = MenuItem::factory()->create(['name' => 'Margherita', 'base_price' => 12.00]);
+
+        $response = $this->actingAs($this->admin)->put("/admin/menu/{$item->id}", [
+            'name'        => 'Margherita',
+            'category_id' => $item->category_id,
+            'base_price'  => '14.00',
+        ]);
+
+        $response->assertSessionHasNoErrors();
+        $this->assertDatabaseHas('menu_items', ['id' => $item->id, 'base_price' => 14.00]);
+    }
 }

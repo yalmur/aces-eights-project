@@ -119,7 +119,7 @@ class MenuItemController extends Controller
         $menuItem = MenuItem::findOrFail($item);
 
         $data = $request->validate([
-            'name'          => 'required|string|max:255',
+            'name'          => 'required|string|max:255|unique:menu_items,name,' . $menuItem->id,
             'category_id'   => 'required|exists:categories,id',
             'description'   => 'nullable|string',
             'base_price'    => 'required|numeric|min:0',

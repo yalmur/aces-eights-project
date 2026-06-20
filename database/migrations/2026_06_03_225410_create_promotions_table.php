@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('code')->unique();
             $table->string('name');
-            $table->enum('type', ['percentage', 'fixed_amount', 'free_delivery']);
+            $table->enum('type', ['percentage', 'fixed_amount', 'free_delivery', 'buy_one_get_one', 'multi_buy']);
             $table->decimal('value', 8, 2)->default(0);
             $table->decimal('min_order_amount', 8, 2)->nullable();
             $table->unsignedInteger('max_uses')->nullable();

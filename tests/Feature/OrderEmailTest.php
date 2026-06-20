@@ -13,7 +13,7 @@ class OrderEmailTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_confirmation_email_queued_after_payment(): void
+    public function test_confirmation_page_does_not_queue_email_on_load(): void
     {
         Mail::fake();
 
@@ -21,10 +21,8 @@ class OrderEmailTest extends TestCase
 
         $this->actingAs($order->user)->get(route('orders.confirmation', $order->id) . '?session_id=cs_test_fake');
 
-        Mail::assertQueued(OrderConfirmation::class, function ($mail) use ($order) {
-            return $mail->order->id === $order->id
-                && $mail->hasTo($order->customer_email);
-        });
+        // Webhook is responsible for the email; page load must not duplicate it
+        Mail::assertNothingQueued();
     }
 
     public function test_confirmation_email_not_sent_twice(): void
