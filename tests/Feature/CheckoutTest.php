@@ -192,4 +192,177 @@ class CheckoutTest extends TestCase
         $response->assertSessionHasErrors(['cart_items']);
         $this->assertDatabaseMissing('orders', ['user_id' => $this->customer->id]);
     }
+
+    public function test_large_size_adds_size_extra_to_line_total(): void
+    {
+        $pizza = MenuItem::factory()->create([
+            'category_id' => \App\Models\Category::factory()->create(['slug' => 'pizza2', 'name' => 'Pizza2'])->id,
+            'name'        => 'Pepperoni Special',
+            'slug'        => 'pepperoni-special',
+            'base_price'  => 12.00,
+        ]);
+
+        $cartItems = [[
+            'id'                 => 'pepperoni-special',
+            'name'               => 'Pepperoni Special',
+            'category'           => 'pizza',
+            'basePrice'          => 12.00,
+            'qty'                => 1,
+            'size'               => '15" Large',
+            'sizeExtra'          => 4.00,
+            'crust'              => '48hr Sourdough',
+            'crustExtra'         => 0,
+            'toppings'           => [],
+            'removedIngredients' => [],
+            'chips'              => [],
+            'instructions'       => '',
+            'lineTotal'          => 16.00,
+        ]];
+
+        $this->actingAs($this->customer)->post('/checkout', [
+            'order_type' => 'collection',
+            'cart_items' => json_encode($cartItems),
+        ]);
+
+        $this->assertDatabaseHas('order_items', [
+            'size'       => '15" Large',
+            'size_extra' => 4.00,
+            'line_total' => 16.00,
+        ]);
+    }
+
+    public function test_gluten_free_crust_adds_crust_extra_to_line_total(): void
+    {
+        $pizza = MenuItem::factory()->create([
+            'category_id' => \App\Models\Category::factory()->create(['slug' => 'pizza3', 'name' => 'Pizza3'])->id,
+            'name'        => 'BBQ Chicken',
+            'slug'        => 'bbq-chicken',
+            'base_price'  => 12.00,
+        ]);
+
+        $cartItems = [[
+            'id'                 => 'bbq-chicken',
+            'name'               => 'BBQ Chicken',
+            'category'           => 'pizza',
+            'basePrice'          => 12.00,
+            'qty'                => 1,
+            'size'               => '12" Standard',
+            'sizeExtra'          => 0,
+            'crust'              => 'Gluten-Free',
+            'crustExtra'         => 2.00,
+            'toppings'           => [],
+            'removedIngredients' => [],
+            'chips'              => [],
+            'instructions'       => '',
+            'lineTotal'          => 14.00,
+        ]];
+
+        $this->actingAs($this->customer)->post('/checkout', [
+            'order_type' => 'collection',
+            'cart_items' => json_encode($cartItems),
+        ]);
+
+        $this->assertDatabaseHas('order_items', [
+            'crust'      => 'Gluten-Free',
+            'crust_extra' => 2.00,
+            'line_total' => 14.00,
+        ]);
+    }
+
+    public function test_topping_price_adds_to_line_total(): void
+    {
+        $pizza = MenuItem::factory()->create([
+            'category_id' => \App\Models\Category::factory()->create(['slug' => 'pizza4', 'name' => 'Pizza4'])->id,
+            'name'        => 'Veggie Supreme',
+            'slug'        => 'veggie-supreme',
+            'base_price'  => 12.00,
+        ]);
+        \App\Models\Topping::factory()->create(['name' => 'Pepperoni', 'price' => 1.50, 'is_available' => true]);
+
+        $cartItems = [[
+            'id'                 => 'veggie-supreme',
+            'name'               => 'Veggie Supreme',
+            'category'           => 'pizza',
+            'basePrice'          => 12.00,
+            'qty'                => 1,
+            'size'               => '12" Standard',
+            'sizeExtra'          => 0,
+            'crust'              => '48hr Sourdough',
+            'crustExtra'         => 0,
+            'toppings'           => [['name' => 'Pepperoni']],
+            'removedIngredients' => [],
+            'chips'              => [],
+            'instructions'       => '',
+            'lineTotal'          => 13.50,
+        ]];
+
+        $this->actingAs($this->customer)->post('/checkout', [
+            'order_type' => 'collection',
+            'cart_items' => json_encode($cartItems),
+        ]);
+
+        $this->assertDatabaseHas('order_items', [
+            'line_total' => 13.50,
+        ]);
+    }
+
+    public function test_out_of_zone_delivery_is_rejected(): void
+    {
+        // No DeliveryZone created — every postcode is out of zone
+        $cartItems = [[
+            'id'                 => 'margherita',
+            'name'               => 'Margherita',
+            'category'           => 'pizza',
+            'basePrice'          => 12.00,
+            'qty'                => 1,
+            'size'               => '12" Standard',
+            'sizeExtra'          => 0,
+            'crust'              => '48hr Sourdough',
+            'crustExtra'         => 0,
+            'toppings'           => [],
+            'removedIngredients' => [],
+            'chips'              => [],
+            'instructions'       => '',
+            'lineTotal'          => 12.00,
+        ]];
+
+        $response = $this->actingAs($this->customer)->post('/checkout', [
+            'order_type'     => 'delivery',
+            'street_address' => '99 Nowhere Lane',
+            'city'           => 'London',
+            'postal_code'    => 'ZZ99 9ZZ',
+            'cart_items'     => json_encode($cartItems),
+        ]);
+
+        $response->assertSessionHasErrors('postal_code');
+        $this->assertDatabaseMissing('orders', ['user_id' => $this->customer->id]);
+    }
+
+    public function test_unavailable_menu_item_rejected_at_checkout(): void
+    {
+        $cartItems = [[
+            'id'                 => 'nonexistent-slug',
+            'name'               => 'Ghost Pizza',
+            'category'           => 'pizza',
+            'basePrice'          => 12.00,
+            'qty'                => 1,
+            'size'               => '12" Standard',
+            'sizeExtra'          => 0,
+            'crust'              => '48hr Sourdough',
+            'crustExtra'         => 0,
+            'toppings'           => [],
+            'removedIngredients' => [],
+            'chips'              => [],
+            'instructions'       => '',
+            'lineTotal'          => 12.00,
+        ]];
+
+        $response = $this->actingAs($this->customer)->post('/checkout', [
+            'order_type' => 'collection',
+            'cart_items' => json_encode($cartItems),
+        ]);
+
+        $response->assertSessionHasErrors('cart_items');
+        $this->assertDatabaseMissing('orders', ['user_id' => $this->customer->id]);
+    }
 }
