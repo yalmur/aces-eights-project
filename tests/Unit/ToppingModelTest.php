@@ -1,0 +1,59 @@
+<?php
+
+namespace Tests\Unit;
+
+use App\Models\Topping;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
+
+class ToppingModelTest extends TestCase
+{
+    use RefreshDatabase;
+
+    // -------------------------------------------------------------------------
+    // Topping::scopeAvailable()
+    // -------------------------------------------------------------------------
+
+    public function test_scope_available_returns_only_available_toppings(): void
+    {
+        Topping::factory()->create(['name' => 'Cheese', 'is_available' => true, 'sort_order' => 1]);
+        Topping::factory()->create(['name' => 'Mushroom', 'is_available' => true, 'sort_order' => 2]);
+        Topping::factory()->create(['name' => 'Olives', 'is_available' => false, 'sort_order' => 3]);
+
+        $result = Topping::available()->get();
+
+        $this->assertCount(2, $result);
+    }
+
+    public function test_scope_available_orders_by_sort_order(): void
+    {
+        Topping::factory()->create(['sort_order' => 3, 'is_available' => true]);
+        Topping::factory()->create(['sort_order' => 1, 'is_available' => true]);
+        Topping::factory()->create(['sort_order' => 2, 'is_available' => true]);
+
+        $result = Topping::available()->get();
+
+        $this->assertSame([1, 2, 3], $result->pluck('sort_order')->all());
+    }
+
+    public function test_scope_available_returns_empty_when_all_unavailable(): void
+    {
+        Topping::factory()->create(['is_available' => false]);
+        Topping::factory()->create(['is_available' => false]);
+
+        $result = Topping::available()->get();
+
+        $this->assertCount(0, $result);
+    }
+
+    public function test_scope_available_excludes_unavailable_topping(): void
+    {
+        $available = Topping::factory()->create(['name' => 'Peppers', 'is_available' => true, 'sort_order' => 1]);
+        Topping::factory()->create(['name' => 'Anchovies', 'is_available' => false, 'sort_order' => 2]);
+
+        $result = Topping::available()->get();
+
+        $this->assertTrue($result->contains('name', 'Peppers'));
+        $this->assertFalse($result->contains('name', 'Anchovies'));
+    }
+}
