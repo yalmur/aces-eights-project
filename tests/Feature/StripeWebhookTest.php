@@ -84,4 +84,70 @@ class StripeWebhookTest extends TestCase
 
         $this->assertSame('pending_payment', $order->fresh()->status);
     }
+
+    public function test_missing_webhook_secret_returns_500(): void
+    {
+        config(['services.stripe.webhook_secret' => null]);
+
+        $response = $this->call('POST', '/stripe/webhook', [], [], [], [
+            'CONTENT_TYPE' => 'application/json',
+        ], json_encode(['type' => 'checkout.session.completed']));
+
+        $response->assertStatus(500);
+    }
+
+    public function test_invalid_signature_returns_400(): void
+    {
+        config(['services.stripe.webhook_secret' => 'whsec_testsecret']);
+
+        $response = $this->call('POST', '/stripe/webhook', [], [], [], [
+            'CONTENT_TYPE'          => 'application/json',
+            'HTTP_STRIPE-SIGNATURE' => 't=123,v1=badsig',
+        ], json_encode(['type' => 'checkout.session.completed']));
+
+        $response->assertStatus(400);
+    }
+
+    public function test_completed_event_on_already_accepted_order_is_idempotent(): void
+    {
+        $secret = 'whsec_testsecret';
+        config(['services.stripe.webhook_secret' => $secret]);
+
+        $order = Order::factory()->create([
+            'status'            => 'accepted',
+            'stripe_session_id' => 'cs_test_already',
+            'customer_email'    => 'test@example.com',
+        ]);
+
+        $this->signedWebhookCall($secret, [
+            'type' => 'checkout.session.completed',
+            'data' => ['object' => ['id' => 'cs_test_already', 'payment_intent' => 'pi_test_999']],
+        ])->assertStatus(200);
+
+        $this->assertSame('accepted', $order->fresh()->status);
+    }
+
+    public function test_completed_event_with_unmatched_session_id_returns_200_and_no_db_change(): void
+    {
+        $secret = 'whsec_testsecret';
+        config(['services.stripe.webhook_secret' => $secret]);
+
+        $this->signedWebhookCall($secret, [
+            'type' => 'checkout.session.completed',
+            'data' => ['object' => ['id' => 'cs_test_ghost', 'payment_intent' => 'pi_test_000']],
+        ])->assertStatus(200);
+
+        $this->assertDatabaseMissing('orders', ['stripe_session_id' => 'cs_test_ghost']);
+    }
+
+    public function test_unknown_event_type_returns_200(): void
+    {
+        $secret = 'whsec_testsecret';
+        config(['services.stripe.webhook_secret' => $secret]);
+
+        $this->signedWebhookCall($secret, [
+            'type' => 'payment_intent.succeeded',
+            'data' => ['object' => ['id' => 'pi_test_xyz']],
+        ])->assertStatus(200);
+    }
 }
