@@ -29,7 +29,7 @@ class OrderControllerTest extends TestCase
         $user = User::factory()->create();
 
         $this->actingAs($user)
-            ->get('/orders/nonexistent-uuid/confirmation')
+            ->get('/orders/99999/confirmation')
             ->assertStatus(404);
     }
 
