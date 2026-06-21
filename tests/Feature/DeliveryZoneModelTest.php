@@ -141,4 +141,39 @@ class DeliveryZoneModelTest extends TestCase
 
         $this->assertSame(['NW5', 'N7'], $zone->postcode_list);
     }
+
+    // -------------------------------------------------------------------------
+    // extractDistrict — normalization edge cases
+    // -------------------------------------------------------------------------
+
+    public function test_extract_district_handles_multiple_internal_spaces(): void
+    {
+        $this->assertSame('NW5', DeliveryZone::extractDistrict('NW5  2HP'));
+    }
+
+    public function test_extract_district_handles_tab_whitespace(): void
+    {
+        $this->assertSame('NW5', DeliveryZone::extractDistrict("NW5\t2HP"));
+    }
+
+    public function test_extract_district_is_idempotent_for_already_clean_input(): void
+    {
+        $this->assertSame('EC1A', DeliveryZone::extractDistrict('EC1A 1BB'));
+    }
+
+    // -------------------------------------------------------------------------
+    // getPostcodeListAttribute — edge cases
+    // -------------------------------------------------------------------------
+
+    public function test_postcode_list_filters_empty_segments_from_double_commas(): void
+    {
+        $zone = DeliveryZone::factory()->make(['postcodes' => 'NW5,,N7']);
+        $this->assertEqualsCanonicalizing(['NW5', 'N7'], $zone->postcode_list);
+    }
+
+    public function test_postcode_list_handles_single_district_with_no_comma(): void
+    {
+        $zone = DeliveryZone::factory()->make(['postcodes' => 'NW5']);
+        $this->assertSame(['NW5'], $zone->postcode_list);
+    }
 }
