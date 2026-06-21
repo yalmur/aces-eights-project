@@ -14,11 +14,13 @@ class AllergyAdminTest extends TestCase
     use RefreshDatabase;
 
     private User $admin;
+    private User $customer;
 
     protected function setUp(): void
     {
         parent::setUp();
-        $this->admin = User::factory()->create(['role' => 'admin']);
+        $this->admin    = User::factory()->create(['role' => 'admin']);
+        $this->customer = User::factory()->create();
     }
 
     public function test_allergy_page_returns_200_with_db_allergens(): void
@@ -65,5 +67,84 @@ class AllergyAdminTest extends TestCase
             'checkout_disclaimer'    => 'Custom disclaimer text.',
         ]);
         $this->assertDatabaseHas('settings', ['key' => 'checkout_disclaimer', 'value' => 'Custom disclaimer text.']);
+    }
+
+    public function test_guest_redirected_from_admin_allergy_index(): void
+    {
+        $response = $this->get('/admin/allergy');
+        $response->assertRedirect();
+    }
+
+    public function test_non_admin_forbidden_from_admin_allergy_index(): void
+    {
+        $response = $this->actingAs($this->customer)->get('/admin/allergy');
+        $response->assertForbidden();
+    }
+
+    public function test_guest_redirected_from_store_allergen(): void
+    {
+        $response = $this->post('/admin/allergens', ['name' => 'Soy']);
+        $response->assertRedirect();
+    }
+
+    public function test_non_admin_forbidden_from_store_allergen(): void
+    {
+        $response = $this->actingAs($this->customer)->post('/admin/allergens', ['name' => 'Soy']);
+        $response->assertForbidden();
+    }
+
+    public function test_admin_can_create_allergen(): void
+    {
+        $response = $this->actingAs($this->admin)->post('/admin/allergens', [
+            'name'       => 'Soy',
+            'icon'       => 'eco',
+            'sort_order' => 5,
+        ]);
+        $this->assertDatabaseHas('allergens', [
+            'name'       => 'Soy',
+            'icon'       => 'eco',
+            'sort_order' => 5,
+            'is_visible' => true,
+        ]);
+        $response->assertRedirect();
+    }
+
+    public function test_store_allergen_rejects_duplicate_name(): void
+    {
+        Allergen::factory()->create(['name' => 'Soy']);
+        $response = $this->actingAs($this->admin)->post('/admin/allergens', ['name' => 'Soy']);
+        $response->assertSessionHasErrors('name');
+    }
+
+    public function test_store_allergen_uses_default_icon_when_omitted(): void
+    {
+        $this->actingAs($this->admin)->post('/admin/allergens', ['name' => 'Mustard']);
+        $this->assertDatabaseHas('allergens', ['name' => 'Mustard', 'icon' => 'warning']);
+    }
+
+    public function test_store_allergen_defaults_sort_order_to_zero(): void
+    {
+        $this->actingAs($this->admin)->post('/admin/allergens', ['name' => 'Celery']);
+        $this->assertDatabaseHas('allergens', ['name' => 'Celery', 'sort_order' => 0]);
+    }
+
+    public function test_save_map_clears_previous_allergens_on_sync(): void
+    {
+        $cat   = Category::factory()->create(['slug' => 'pizza']);
+        $item  = MenuItem::factory()->create(['category_id' => $cat->id]);
+        $gluten = Allergen::factory()->create(['name' => 'Gluten']);
+        $dairy  = Allergen::factory()->create(['name' => 'Dairy']);
+        $nuts   = Allergen::factory()->create(['name' => 'Nuts']);
+
+        $item->allergens()->attach([$gluten->id, $dairy->id]);
+
+        $this->actingAs($this->admin)->post('/admin/allergy/map', [
+            'menu_item_id' => $item->id,
+            'allergens'    => [$nuts->id],
+        ]);
+
+        $this->assertDatabaseMissing('allergen_menu_item', ['menu_item_id' => $item->id, 'allergen_id' => $gluten->id]);
+        $this->assertDatabaseMissing('allergen_menu_item', ['menu_item_id' => $item->id, 'allergen_id' => $dairy->id]);
+        $this->assertDatabaseHas('allergen_menu_item', ['menu_item_id' => $item->id, 'allergen_id' => $nuts->id]);
     }
 }
