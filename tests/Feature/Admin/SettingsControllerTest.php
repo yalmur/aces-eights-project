@@ -93,6 +93,67 @@ class SettingsControllerTest extends TestCase
             ->assertSessionHasErrors('store_email');
     }
 
+    // ── Test 8 ───────────────────────────────────────────────────────────────
+
+    public function test_settings_page_guest_redirected_to_login(): void
+    {
+        $this->get('/admin/settings')
+            ->assertRedirect('/login');
+    }
+
+    // ── Test 9 ───────────────────────────────────────────────────────────────
+
+    public function test_settings_update_guest_redirected_to_login(): void
+    {
+        $this->post('/admin/settings', $this->validPayload())
+            ->assertRedirect('/login');
+    }
+
+    // ── Test 10 ──────────────────────────────────────────────────────────────
+
+    public function test_settings_page_passes_settings_key_to_view(): void
+    {
+        $this->actingAs($this->admin)
+            ->get('/admin/settings')
+            ->assertStatus(200)
+            ->assertViewHas('settings')
+            ->assertViewHas('settings.store_name');
+    }
+
+    // ── Test 11 ──────────────────────────────────────────────────────────────
+
+    public function test_settings_update_persists_all_submitted_fields(): void
+    {
+        $this->actingAs($this->admin)
+            ->post('/admin/settings', $this->validPayload());
+
+        $this->assertDatabaseHas('settings', ['key' => 'store_address', 'value' => '1 Test St, London']);
+        $this->assertDatabaseHas('settings', ['key' => 'store_phone',   'value' => '01234 567890']);
+        $this->assertDatabaseHas('settings', ['key' => 'store_email',   'value' => 'test@example.com']);
+    }
+
+    // ── Test 12 ──────────────────────────────────────────────────────────────
+
+    public function test_settings_update_rejects_non_numeric_size_extra(): void
+    {
+        $payload = array_merge($this->validPayload(), ['size_large_extra' => 'abc']);
+
+        $this->actingAs($this->admin)
+            ->post('/admin/settings', $payload)
+            ->assertSessionHasErrors('size_large_extra');
+    }
+
+    // ── Test 13 ──────────────────────────────────────────────────────────────
+
+    public function test_settings_update_rejects_non_numeric_crust_extra(): void
+    {
+        $payload = array_merge($this->validPayload(), ['crust_gluten_free_extra' => 'not-a-number']);
+
+        $this->actingAs($this->admin)
+            ->post('/admin/settings', $payload)
+            ->assertSessionHasErrors('crust_gluten_free_extra');
+    }
+
     // ── Helpers ──────────────────────────────────────────────────────────────
 
     private function validPayload(): array
