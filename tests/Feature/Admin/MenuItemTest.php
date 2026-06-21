@@ -249,4 +249,78 @@ class MenuItemTest extends TestCase
             'slug' => 'triple-cheese-mushroom',
         ]);
     }
+
+    public function test_toggle_availability_sets_item_unavailable(): void
+    {
+        $item = MenuItem::factory()->create(['is_available' => true]);
+
+        $response = $this->actingAs($this->admin)->patch("/admin/menu/{$item->id}/toggle");
+
+        $response->assertStatus(200);
+        $response->assertJson(['available' => false]);
+        $this->assertDatabaseHas('menu_items', ['id' => $item->id, 'is_available' => false]);
+    }
+
+    public function test_toggle_availability_sets_item_available(): void
+    {
+        $item = MenuItem::factory()->create(['is_available' => false]);
+
+        $response = $this->actingAs($this->admin)->patch("/admin/menu/{$item->id}/toggle");
+
+        $response->assertStatus(200);
+        $response->assertJson(['available' => true]);
+        $this->assertDatabaseHas('menu_items', ['id' => $item->id, 'is_available' => true]);
+    }
+
+    public function test_update_syncs_allergens_replacing_old_ones(): void
+    {
+        $allergenA = Allergen::factory()->create(['name' => 'Gluten']);
+        $allergenB = Allergen::factory()->create(['name' => 'Dairy']);
+        $item = MenuItem::factory()->create();
+        $item->allergens()->attach($allergenA->id);
+
+        $response = $this->actingAs($this->admin)->put("/admin/menu/{$item->id}", [
+            'name'        => $item->name,
+            'category_id' => $item->category_id,
+            'base_price'  => $item->base_price,
+            'allergens'   => [$allergenB->id],
+        ]);
+
+        $response->assertSessionHasNoErrors();
+        $this->assertTrue($item->fresh()->allergens->contains($allergenB->id));
+        $this->assertFalse($item->fresh()->allergens->contains($allergenA->id));
+    }
+
+    public function test_update_with_new_image_deletes_old_image_and_stores_new(): void
+    {
+        Storage::fake('public');
+        Storage::disk('public')->put('menu/old.jpg', 'old');
+        $item = MenuItem::factory()->create(['image_path' => 'menu/old.jpg']);
+        $newImage = UploadedFile::fake()->image('new.jpg');
+
+        $response = $this->actingAs($this->admin)->put("/admin/menu/{$item->id}", [
+            'name'        => $item->name,
+            'category_id' => $item->category_id,
+            'base_price'  => $item->base_price,
+            'image'       => $newImage,
+        ]);
+
+        $response->assertSessionHasNoErrors();
+        Storage::disk('public')->assertMissing('menu/old.jpg');
+        $this->assertNotNull($item->fresh()->image_path);
+        $this->assertNotEquals('menu/old.jpg', $item->fresh()->image_path);
+    }
+
+    public function test_index_search_filters_items_by_name(): void
+    {
+        $category = Category::factory()->create();
+        MenuItem::factory()->create(['name' => 'Margherita Special', 'category_id' => $category->id]);
+        MenuItem::factory()->create(['name' => 'Calzone Delight', 'category_id' => $category->id]);
+
+        $response = $this->actingAs($this->admin)->get('/admin/menu?search=Calzone');
+
+        $response->assertStatus(200);
+        $response->assertSee('Calzone Delight');
+        $response->assertDontSee('Margherita Special');
+    }
 }
