@@ -85,4 +85,43 @@ class OrderControllerTest extends TestCase
             ->assertStatus(200)
             ->assertViewHas('order', $order->fresh());
     }
+
+    public function test_tracking_returns_404_for_unknown_order(): void
+    {
+        $user = User::factory()->create();
+
+        $this->actingAs($user)
+            ->get('/orders/99999/tracking')
+            ->assertStatus(404);
+    }
+
+    public function test_confirmation_blocks_guest_accessing_owned_order(): void
+    {
+        $user  = User::factory()->create();
+        $order = Order::factory()->create(['user_id' => $user->id]);
+
+        $this->get(route('orders.confirmation', $order))
+            ->assertStatus(403);
+    }
+
+    public function test_tracking_blocks_guest_accessing_owned_order(): void
+    {
+        $user  = User::factory()->create();
+        $order = Order::factory()->create(['user_id' => $user->id]);
+
+        $this->get(route('orders.tracking', $order))
+            ->assertStatus(403);
+    }
+
+    public function test_confirmation_passes_items_to_view(): void
+    {
+        $user  = User::factory()->create();
+        $order = Order::factory()->create(['user_id' => $user->id]);
+
+        $this->actingAs($user)
+            ->get(route('orders.confirmation', $order))
+            ->assertStatus(200)
+            ->assertViewHas('order')
+            ->assertViewHas('title');
+    }
 }
