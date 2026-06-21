@@ -379,9 +379,9 @@ class CheckoutTest extends TestCase
     public function test_checkout_is_rate_limited(): void
     {
         Cache::flush();
-        $response = null;
+        $this->actingAs($this->customer);
         for ($i = 0; $i <= 10; $i++) {
-            $response = $this->actingAs($this->customer)->post('/checkout');
+            $response = $this->post('/checkout');
         }
         $response->assertStatus(429);
     }
