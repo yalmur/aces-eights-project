@@ -218,4 +218,35 @@ class MenuItemTest extends TestCase
         Storage::disk('public')->assertMissing('menu/pizza.jpg');
         $this->assertDatabaseMissing('menu_items', ['id' => $item->id]);
     }
+
+    public function test_update_regenerates_slug_when_name_changes(): void
+    {
+        $item = MenuItem::factory()->create(['name' => 'Old Pizza', 'slug' => 'old-pizza']);
+
+        $this->actingAs($this->admin)->put("/admin/menu/{$item->id}", [
+            'name'        => 'New Signature Pizza',
+            'category_id' => $item->category_id,
+            'base_price'  => $item->base_price,
+        ]);
+
+        $this->assertDatabaseHas('menu_items', [
+            'id'   => $item->id,
+            'slug' => 'new-signature-pizza',
+        ]);
+    }
+
+    public function test_store_slug_strips_special_characters_from_name(): void
+    {
+        $category = Category::factory()->create();
+
+        $this->actingAs($this->admin)->post('/admin/menu', [
+            'name'        => 'Triple-Cheese & Mushroom!',
+            'category_id' => $category->id,
+            'base_price'  => '13.00',
+        ]);
+
+        $this->assertDatabaseHas('menu_items', [
+            'slug' => 'triple-cheese-mushroom',
+        ]);
+    }
 }
