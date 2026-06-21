@@ -1,0 +1,92 @@
+﻿diff --git a/tests/Feature/PromoControllerTest.php b/tests/Feature/PromoControllerTest.php
+new file mode 100644
+index 0000000..127fcbf
+--- /dev/null
++++ b/tests/Feature/PromoControllerTest.php
+@@ -0,0 +1,86 @@
++<?php
++
++namespace Tests\Feature;
++
++use App\Models\Promotion;
++use Illuminate\Foundation\Testing\RefreshDatabase;
++use Tests\TestCase;
++
++class PromoControllerTest extends TestCase
++{
++    use RefreshDatabase;
++
++    // 1. Valid fixed promo returns discount
++    public function test_valid_fixed_promo_returns_discount(): void
++    {
++        Promotion::factory()->fixed(5)->create(['code' => 'SAVE5']);
++
++        $response = $this->postJson('/promo/check', ['code' => 'SAVE5', 'subtotal' => 20.00]);
++
++        $response->assertOk()->assertJson(['valid' => true, 'discount' => 5.00]);
++    }
++
++    // 2. Valid percentage promo returns correct discount
++    public function test_valid_percentage_promo_returns_discount(): void
++    {
++        Promotion::factory()->percentage(10)->create(['code' => 'TEN']);
++
++        $response = $this->postJson('/promo/check', ['code' => 'TEN', 'subtotal' => 50.00]);
++
++        $response->assertOk()->assertJson(['valid' => true, 'discount' => 5.00]);
++    }
++
++    // 3. Unknown code returns valid:false
++    public function test_invalid_code_returns_valid_false(): void
++    {
++        $response = $this->postJson('/promo/check', ['code' => 'NOSUCHCODE', 'subtotal' => 30.00]);
++
++        $response->assertOk()->assertJson(['valid' => false]);
++    }
++
++    // 4. Expired promo returns valid:false
++    public function test_expired_promo_returns_valid_false(): void
++    {
++        Promotion::factory()->expired()->create(['code' => 'OLDCODE']);
++
++        $response = $this->postJson('/promo/check', ['code' => 'OLDCODE', 'subtotal' => 30.00]);
++
++        $response->assertOk()->assertJson(['valid' => false]);
++    }
++
++    // 5. Subtotal below minimum order returns valid:false
++    public function test_subtotal_below_minimum_returns_valid_false(): void
++    {
++        Promotion::factory()->fixed(5)->create(['code' => 'MINORD', 'min_order_amount' => 25.00]);
++
++        $response = $this->postJson('/promo/check', ['code' => 'MINORD', 'subtotal' => 10.00]);
++
++        $response->assertOk()->assertJson(['valid' => false]);
++    }
++
++    // 6. Missing code field returns 422
++    public function test_validation_fails_without_code(): void
++    {
++        $response = $this->postJson('/promo/check', ['subtotal' => 20.00]);
++
++        $response->assertStatus(422)->assertJsonValidationErrors(['code']);
++    }
++
++    // 7. Missing subtotal field returns 422
++    public function test_validation_fails_without_subtotal(): void
++    {
++        $response = $this->postJson('/promo/check', ['code' => 'SAVE5']);
++
++        $response->assertStatus(422)->assertJsonValidationErrors(['subtotal']);
++    }
++
++    // 8. Code lookup is case-insensitive
++    public function test_code_lookup_is_case_insensitive(): void
++    {
++        Promotion::factory()->fixed(5)->create(['code' => 'SAVE5']);
++
++        $response = $this->postJson('/promo/check', ['code' => 'save5', 'subtotal' => 20.00]);
++
++        $response->assertOk()->assertJson(['valid' => true, 'discount' => 5.00]);
++    }
++}

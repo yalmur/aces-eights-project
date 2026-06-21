@@ -55,8 +55,8 @@
     "semantic_hash": "a846a615eb5bbaad3669cceef4e203bb"
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\CheckoutController.php": {
-    "mtime": 1781926210.7482698,
-    "ast_hash": "214593728019516b9cc12a095bd1b4c0",
+    "mtime": 1781934372.1397882,
+    "ast_hash": "40dac70dc2ccfe775743bb62a1050f66",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\Controller.php": {
@@ -75,8 +75,8 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\OrderController.php": {
-    "mtime": 1781915097.4667487,
-    "ast_hash": "130fa19c608875f3399ee10e308973a7",
+    "mtime": 1781934339.1832948,
+    "ast_hash": "bcdf252307f3617c2fa56d8de153e041",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\OurMenuController.php": {
@@ -85,8 +85,8 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\PageController.php": {
-    "mtime": 1781925471.023985,
-    "ast_hash": "0e5fd8b72449a6bad6007dcb2cd0ac14",
+    "mtime": 1781936648.3874683,
+    "ast_hash": "2ac266406de79b05e72fd797adc75808",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\PasswordResetController.php": {
@@ -105,8 +105,8 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\StripeWebhookController.php": {
-    "mtime": 1781880389.807663,
-    "ast_hash": "f39715b2e2b0f2c9342bf40443ac571b",
+    "mtime": 1781936689.2329147,
+    "ast_hash": "6d660ce167db211d9d04c617d54dbdf1",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\Account\\AccountController.php": {
@@ -145,8 +145,8 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\Admin\\MenuItemController.php": {
-    "mtime": 1781926108.0948825,
-    "ast_hash": "bdb87e7d24ffdd110fc861ee1ddc4072",
+    "mtime": 1781937304.933448,
+    "ast_hash": "48804b79d11de26aa54bd446439e2cbc",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\Admin\\OrderController.php": {
@@ -170,8 +170,8 @@
     "semantic_hash": "1dcab79e51387e089a129837d04032d8"
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Mail\\ContactMessage.php": {
-    "mtime": 1780701156.0,
-    "ast_hash": "1a90a00d18dfdff0b9a5c068925a58a8",
+    "mtime": 1781936639.3649828,
+    "ast_hash": "e85566418f0441c1aac6e420346d9d0c",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Mail\\OrderConfirmation.php": {
@@ -218,11 +218,6 @@
     "mtime": 1780508380.0,
     "ast_hash": "8cdb6b3af379201af79d3bcca4a429f0",
     "semantic_hash": "8cdb6b3af379201af79d3bcca4a429f0"
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\app\\Models\\PartyHallInquiry.php": {
-    "mtime": 1781921270.9741504,
-    "ast_hash": "06b5f76c6607eeccc40c0895b68948b9",
-    "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Models\\Promotion.php": {
     "mtime": 1781926025.3263526,
@@ -430,9 +425,9 @@
     "semantic_hash": "443e7debd6d96a58344c6fc81b64cf25"
   },
   "C:\\AcesAndEightsPizza\\webapp\\database\\migrations\\2026_06_03_225410_create_promotions_table.php": {
-    "mtime": 1780527260.0,
-    "ast_hash": "54f1bdfccc9af637bf7392c1f5d96744",
-    "semantic_hash": "54f1bdfccc9af637bf7392c1f5d96744"
+    "mtime": 1781934319.0171478,
+    "ast_hash": "83b4363d7540cff35f67f046eb9765d3",
+    "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\database\\migrations\\2026_06_03_225412_add_promo_cols_to_orders_table.php": {
     "mtime": 1780527260.0,
@@ -745,8 +740,8 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\menu\\index.blade.php": {
-    "mtime": 1781134098.0,
-    "ast_hash": "0f632832aeb522f6ced18cc4fdb6a765",
+    "mtime": 1781935894.0178866,
+    "ast_hash": "1fc38c04af9ee3d7c01445894efb1d57",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\menu\\show.blade.php": {
@@ -794,9 +789,19 @@
     "ast_hash": "e7ea661031f1d23f279403cbc4aa1b4a",
     "semantic_hash": "e7ea661031f1d23f279403cbc4aa1b4a"
   },
+  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\CartControllerTest.php": {
+    "mtime": 1782034453.4989917,
+    "ast_hash": "82f77a2b922f09c173005adf499d55a9",
+    "semantic_hash": ""
+  },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\CheckoutTest.php": {
-    "mtime": 1781915446.3501914,
-    "ast_hash": "1eba07e5799c9f564b8c1ec64126745e",
+    "mtime": 1781934249.1295888,
+    "ast_hash": "f3c080a3bef998e71527562761a12158",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\ContactFormTest.php": {
+    "mtime": 1781936565.5522006,
+    "ast_hash": "44d93f3a5ada7042c2c67c2f78f9adf3",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\CustomerPagesTest.php": {
@@ -807,6 +812,16 @@
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\DealsPageTest.php": {
     "mtime": 1781925875.4010093,
     "ast_hash": "a36b48ea521e8801398582f2ecf1eaf8",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\DeliveryFeeTest.php": {
+    "mtime": 1782046090.4656203,
+    "ast_hash": "b50c494282554aee11d49097c3fae8ca",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\DeliveryZoneModelTest.php": {
+    "mtime": 1781938030.3744552,
+    "ast_hash": "42593a54046ab3ab3dda37d99283202f",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\DeliveryZoneTest.php": {
@@ -824,14 +839,29 @@
     "ast_hash": "6647b0b36fec9b867e461c37c6e0e4ca",
     "semantic_hash": "6647b0b36fec9b867e461c37c6e0e4ca"
   },
+  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\MenuShowTest.php": {
+    "mtime": 1782046462.2806077,
+    "ast_hash": "5e5c75025213f516dc08fd26339d9791",
+    "semantic_hash": ""
+  },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\MenuTest.php": {
     "mtime": 1780506198.0,
     "ast_hash": "82289d7d636a484a99685d5ff04c0805",
     "semantic_hash": "82289d7d636a484a99685d5ff04c0805"
   },
+  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\OrderControllerTest.php": {
+    "mtime": 1782034740.0194106,
+    "ast_hash": "89cbc0f2b57906097c9430fc96602753",
+    "semantic_hash": ""
+  },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\OrderEmailTest.php": {
-    "mtime": 1781915149.3575852,
-    "ast_hash": "c9bc4118d7b228265124a6c6798f8fdc",
+    "mtime": 1781934209.6933365,
+    "ast_hash": "25b2f50f8bc5007b18a67cba3ab83748",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\OurMenuAndHomeControllerTest.php": {
+    "mtime": 1781938580.198182,
+    "ast_hash": "ba6941d0ffdceda703df610eb4e13dfe",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\PartyHallTest.php": {
@@ -844,9 +874,14 @@
     "ast_hash": "5f37fc01e069c97d35732e76a3411b46",
     "semantic_hash": ""
   },
+  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\PromoControllerTest.php": {
+    "mtime": 1782034160.2355244,
+    "ast_hash": "a9663859033955c9ab1dbb611853b04f",
+    "semantic_hash": ""
+  },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\PromotionTest.php": {
-    "mtime": 1780679192.0,
-    "ast_hash": "aa2cf973b412b655d45f3698e101def2",
+    "mtime": 1781934274.924578,
+    "ast_hash": "93c981f9af342344da7c7853acb4d703",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\RateLimitTest.php": {
@@ -875,8 +910,8 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\StripeWebhookTest.php": {
-    "mtime": 1781914640.7843523,
-    "ast_hash": "8450b5718e9352b89bc434ad71caf0d1",
+    "mtime": 1781936602.9726174,
+    "ast_hash": "15c101626cea636ce521cf19fe3e5c47",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\Account\\AddressTest.php": {
@@ -895,19 +930,44 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\Admin\\InStoreOrderTest.php": {
-    "mtime": 1780675700.0,
-    "ast_hash": "f99b37c26fdf239562a6b64f4f4a6ff6",
+    "mtime": 1781937409.7467296,
+    "ast_hash": "0c3209fc53f17248325e5030d1adc299",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\Admin\\KitchenPollTest.php": {
+    "mtime": 1781936670.3366423,
+    "ast_hash": "88c9478168ef6872945bf15f65b48c01",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\Admin\\MenuItemTest.php": {
-    "mtime": 1781914918.4447546,
-    "ast_hash": "a16db0898169241338aea4d58403c75b",
+    "mtime": 1781937287.14825,
+    "ast_hash": "fc61bce5bf117a83b8116248795a8319",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\Admin\\OrderStatusTest.php": {
+    "mtime": 1781936570.6732602,
+    "ast_hash": "505d81154daed301edd429029e16227e",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\Admin\\SettingsControllerTest.php": {
+    "mtime": 1782045759.634311,
+    "ast_hash": "edcadad16ba0715d40232219715c5dad",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Unit\\ExampleTest.php": {
     "mtime": 1773482040.0,
     "ast_hash": "3f679e9508c834f0ad95943455fcd836",
     "semantic_hash": "3f679e9508c834f0ad95943455fcd836"
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\tests\\Unit\\MenuItemModelTest.php": {
+    "mtime": 1781938844.7519772,
+    "ast_hash": "45c664d888da46a5578c8b981ca5d923",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\tests\\Unit\\OrderModelTest.php": {
+    "mtime": 1781938282.3392959,
+    "ast_hash": "b8ea08b63e45065e37bf26426ed99f5e",
+    "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\AGENTS.md": {
     "mtime": 1780855158.0,
@@ -948,6 +1008,46 @@
     "mtime": 1780410496.0,
     "ast_hash": "3a41bf2357ed459bafc78ef66d82d010",
     "semantic_hash": "3a41bf2357ed459bafc78ef66d82d010"
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\progress.md": {
+    "mtime": 1782046393.230355,
+    "ast_hash": "ee2bf957b0d19d09ad274045588d1646",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\sprint2-plan.md": {
+    "mtime": 1782033730.5821743,
+    "ast_hash": "dc6877aa33deb4d7450a380f8cd9c8ed",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\sprint3-plan.md": {
+    "mtime": 1782045643.1350577,
+    "ast_hash": "a660970bc639e7309c7412fe64aa5181",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\sprint3-task1-report.md": {
+    "mtime": 1782045867.1327312,
+    "ast_hash": "ef72a1170d278d47f3068c5152bc1871",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\sprint3-task2-report.md": {
+    "mtime": 1782046170.7102978,
+    "ast_hash": "4beb2142519f7d1ea44d69923b2b73d3",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\task1-report.md": {
+    "mtime": 1782033983.6745408,
+    "ast_hash": "75ee0ddb3ca8b1e920890d7d12c8d3d9",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\task2-report.md": {
+    "mtime": 1782034273.0061724,
+    "ast_hash": "317adb11c4b8d093168ba55f0f734691",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\task3-report.md": {
+    "mtime": 1782034517.1191702,
+    "ast_hash": "ee0ae5ae7c17b5a54a3f7684349758d1",
+    "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\docs\\superpowers\\plans\\2026-06-02-plan-cart-customisation.md": {
     "mtime": 1780411634.0,

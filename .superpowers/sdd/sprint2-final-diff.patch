@@ -1,0 +1,261 @@
+﻿diff --git a/.env.example b/.env.example
+index 0cac95a..a79a0ac 100644
+--- a/.env.example
++++ b/.env.example
+@@ -1,14 +1,14 @@
+ APP_NAME=Laravel
+ APP_ENV=local
+ APP_KEY=
+-APP_DEBUG=true
++APP_DEBUG=false
+ APP_URL=http://localhost
+ 
+ APP_LOCALE=en
+ APP_FALLBACK_LOCALE=en
+ APP_FAKER_LOCALE=en_US
+ 
+ APP_MAINTENANCE_DRIVER=file
+ # APP_MAINTENANCE_STORE=database
+ 
+ # PHP_CLI_SERVER_WORKERS=4
+@@ -22,21 +22,21 @@ LOG_LEVEL=debug
+ 
+ DB_CONNECTION=sqlite
+ # DB_HOST=127.0.0.1
+ # DB_PORT=3306
+ # DB_DATABASE=laravel
+ # DB_USERNAME=root
+ # DB_PASSWORD=
+ 
+ SESSION_DRIVER=database
+ SESSION_LIFETIME=120
+-SESSION_ENCRYPT=false
++SESSION_ENCRYPT=true
+ SESSION_PATH=/
+ SESSION_DOMAIN=null
+ 
+ BROADCAST_CONNECTION=log
+ FILESYSTEM_DISK=local
+ QUEUE_CONNECTION=database
+ 
+ CACHE_STORE=database
+ # CACHE_PREFIX=
+ 
+diff --git a/tests/Feature/CartControllerTest.php b/tests/Feature/CartControllerTest.php
+new file mode 100644
+index 0000000..a942dad
+--- /dev/null
++++ b/tests/Feature/CartControllerTest.php
+@@ -0,0 +1,26 @@
++<?php
++
++namespace Tests\Feature;
++
++use Illuminate\Foundation\Testing\RefreshDatabase;
++use Tests\TestCase;
++
++class CartControllerTest extends TestCase
++{
++    use RefreshDatabase;
++
++    public function test_cart_page_is_accessible_to_guests(): void
++    {
++        $response = $this->get('/cart');
++
++        $response->assertStatus(200);
++    }
++
++    public function test_cart_page_has_correct_title(): void
++    {
++        $response = $this->get('/cart');
++
++        $response->assertStatus(200);
++        $response->assertSee('Your Order');
++    }
++}
+diff --git a/tests/Feature/OrderControllerTest.php b/tests/Feature/OrderControllerTest.php
+new file mode 100644
+index 0000000..b249375
+--- /dev/null
++++ b/tests/Feature/OrderControllerTest.php
+@@ -0,0 +1,88 @@
++<?php
++
++namespace Tests\Feature;
++
++use App\Models\Order;
++use App\Models\User;
++use Illuminate\Foundation\Testing\RefreshDatabase;
++use Tests\TestCase;
++
++class OrderControllerTest extends TestCase
++{
++    use RefreshDatabase;
++
++    // ─── Confirmation ───────────────────────────────────────────────────────
++
++    public function test_confirmation_shows_order_details(): void
++    {
++        $user  = User::factory()->create();
++        $order = Order::factory()->create(['user_id' => $user->id]);
++
++        $this->actingAs($user)
++            ->get(route('orders.confirmation', $order))
++            ->assertStatus(200)
++            ->assertViewHas('order', $order->fresh());
++    }
++
++    public function test_confirmation_returns_404_for_unknown_order(): void
++    {
++        $user = User::factory()->create();
++
++        $this->actingAs($user)
++            ->get('/orders/nonexistent-uuid/confirmation')
++            ->assertStatus(404);
++    }
++
++    public function test_confirmation_returns_403_for_wrong_user(): void
++    {
++        $ownerUser   = User::factory()->create();
++        $requestUser = User::factory()->create();
++        $order       = Order::factory()->create(['user_id' => $ownerUser->id]);
++
++        $this->actingAs($requestUser)
++            ->get(route('orders.confirmation', $order))
++            ->assertStatus(403);
++    }
++
++    public function test_confirmation_allows_guest_order_without_auth(): void
++    {
++        $order = Order::factory()->create(['user_id' => null]);
++
++        $this->get(route('orders.confirmation', $order))
++            ->assertStatus(200)
++            ->assertViewHas('order', $order->fresh());
++    }
++
++    // ─── Tracking ───────────────────────────────────────────────────────────
++
++    public function test_tracking_shows_order_details(): void
++    {
++        $user  = User::factory()->create();
++        $order = Order::factory()->create(['user_id' => $user->id]);
++
++        $this->actingAs($user)
++            ->get(route('orders.tracking', $order))
++            ->assertStatus(200)
++            ->assertViewHas('order', $order->fresh());
++    }
++
++    public function test_tracking_returns_403_for_wrong_user(): void
++    {
++        $ownerUser   = User::factory()->create();
++        $requestUser = User::factory()->create();
++        $order       = Order::factory()->create(['user_id' => $ownerUser->id]);
++
++        $this->actingAs($requestUser)
++            ->get(route('orders.tracking', $order))
++            ->assertStatus(403);
++    }
++
++    public function test_tracking_allows_guest_order_without_auth(): void
++    {
++        $order = Order::factory()->create(['user_id' => null]);
++
++        $this->get(route('orders.tracking', $order))
++            ->assertStatus(200)
++            ->assertViewHas('order', $order->fresh());
++    }
++}
+diff --git a/tests/Feature/PromoControllerTest.php b/tests/Feature/PromoControllerTest.php
+new file mode 100644
+index 0000000..127fcbf
+--- /dev/null
++++ b/tests/Feature/PromoControllerTest.php
+@@ -0,0 +1,86 @@
++<?php
++
++namespace Tests\Feature;
++
++use App\Models\Promotion;
++use Illuminate\Foundation\Testing\RefreshDatabase;
++use Tests\TestCase;
++
++class PromoControllerTest extends TestCase
++{
++    use RefreshDatabase;
++
++    // 1. Valid fixed promo returns discount
++    public function test_valid_fixed_promo_returns_discount(): void
++    {
++        Promotion::factory()->fixed(5)->create(['code' => 'SAVE5']);
++
++        $response = $this->postJson('/promo/check', ['code' => 'SAVE5', 'subtotal' => 20.00]);
++
++        $response->assertOk()->assertJson(['valid' => true, 'discount' => 5.00]);
++    }
++
++    // 2. Valid percentage promo returns correct discount
++    public function test_valid_percentage_promo_returns_discount(): void
++    {
++        Promotion::factory()->percentage(10)->create(['code' => 'TEN']);
++
++        $response = $this->postJson('/promo/check', ['code' => 'TEN', 'subtotal' => 50.00]);
++
++        $response->assertOk()->assertJson(['valid' => true, 'discount' => 5.00]);
++    }
++
++    // 3. Unknown code returns valid:false
++    public function test_invalid_code_returns_valid_false(): void
++    {
++        $response = $this->postJson('/promo/check', ['code' => 'NOSUCHCODE', 'subtotal' => 30.00]);
++
++        $response->assertOk()->assertJson(['valid' => false]);
++    }
++
++    // 4. Expired promo returns valid:false
++    public function test_expired_promo_returns_valid_false(): void
++    {
++        Promotion::factory()->expired()->create(['code' => 'OLDCODE']);
++
++        $response = $this->postJson('/promo/check', ['code' => 'OLDCODE', 'subtotal' => 30.00]);
++
++        $response->assertOk()->assertJson(['valid' => false]);
++    }
++
++    // 5. Subtotal below minimum order returns valid:false
++    public function test_subtotal_below_minimum_returns_valid_false(): void
++    {
++        Promotion::factory()->fixed(5)->create(['code' => 'MINORD', 'min_order_amount' => 25.00]);
++
++        $response = $this->postJson('/promo/check', ['code' => 'MINORD', 'subtotal' => 10.00]);
++
++        $response->assertOk()->assertJson(['valid' => false]);
++    }
++
++    // 6. Missing code field returns 422
++    public function test_validation_fails_without_code(): void
++    {
++        $response = $this->postJson('/promo/check', ['subtotal' => 20.00]);
++
++        $response->assertStatus(422)->assertJsonValidationErrors(['code']);
++    }
++
++    // 7. Missing subtotal field returns 422
++    public function test_validation_fails_without_subtotal(): void
++    {
++        $response = $this->postJson('/promo/check', ['code' => 'SAVE5']);
++
++        $response->assertStatus(422)->assertJsonValidationErrors(['subtotal']);
++    }
++
++    // 8. Code lookup is case-insensitive
++    public function test_code_lookup_is_case_insensitive(): void
++    {
++        Promotion::factory()->fixed(5)->create(['code' => 'SAVE5']);
++
++        $response = $this->postJson('/promo/check', ['code' => 'save5', 'subtotal' => 20.00]);
++
++        $response->assertOk()->assertJson(['valid' => true, 'discount' => 5.00]);
++    }
++}
