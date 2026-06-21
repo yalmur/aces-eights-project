@@ -1,0 +1,88 @@
+<?php
+
+namespace Tests\Feature;
+
+use App\Models\Order;
+use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
+
+class OrderControllerTest extends TestCase
+{
+    use RefreshDatabase;
+
+    // ─── Confirmation ───────────────────────────────────────────────────────
+
+    public function test_confirmation_shows_order_details(): void
+    {
+        $user  = User::factory()->create();
+        $order = Order::factory()->create(['user_id' => $user->id]);
+
+        $this->actingAs($user)
+            ->get(route('orders.confirmation', $order))
+            ->assertStatus(200)
+            ->assertViewHas('order', $order->fresh());
+    }
+
+    public function test_confirmation_returns_404_for_unknown_order(): void
+    {
+        $user = User::factory()->create();
+
+        $this->actingAs($user)
+            ->get('/orders/nonexistent-uuid/confirmation')
+            ->assertStatus(404);
+    }
+
+    public function test_confirmation_returns_403_for_wrong_user(): void
+    {
+        $ownerUser   = User::factory()->create();
+        $requestUser = User::factory()->create();
+        $order       = Order::factory()->create(['user_id' => $ownerUser->id]);
+
+        $this->actingAs($requestUser)
+            ->get(route('orders.confirmation', $order))
+            ->assertStatus(403);
+    }
+
+    public function test_confirmation_allows_guest_order_without_auth(): void
+    {
+        $order = Order::factory()->create(['user_id' => null]);
+
+        $this->get(route('orders.confirmation', $order))
+            ->assertStatus(200)
+            ->assertViewHas('order', $order->fresh());
+    }
+
+    // ─── Tracking ───────────────────────────────────────────────────────────
+
+    public function test_tracking_shows_order_details(): void
+    {
+        $user  = User::factory()->create();
+        $order = Order::factory()->create(['user_id' => $user->id]);
+
+        $this->actingAs($user)
+            ->get(route('orders.tracking', $order))
+            ->assertStatus(200)
+            ->assertViewHas('order', $order->fresh());
+    }
+
+    public function test_tracking_returns_403_for_wrong_user(): void
+    {
+        $ownerUser   = User::factory()->create();
+        $requestUser = User::factory()->create();
+        $order       = Order::factory()->create(['user_id' => $ownerUser->id]);
+
+        $this->actingAs($requestUser)
+            ->get(route('orders.tracking', $order))
+            ->assertStatus(403);
+    }
+
+    public function test_tracking_allows_guest_order_without_auth(): void
+    {
+        $order = Order::factory()->create(['user_id' => null]);
+
+        $this->get(route('orders.tracking', $order))
+            ->assertStatus(200)
+            ->assertViewHas('order', $order->fresh());
+    }
+}
