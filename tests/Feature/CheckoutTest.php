@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\MenuItem;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Cache;
 use Tests\TestCase;
 
 class CheckoutTest extends TestCase
@@ -367,5 +368,41 @@ class CheckoutTest extends TestCase
 
         $response->assertSessionHasErrors('cart_items');
         $this->assertDatabaseMissing('orders', ['user_id' => $this->customer->id]);
+    }
+
+    public function test_checkout_requires_authentication(): void
+    {
+        $response = $this->post('/checkout');
+        $response->assertRedirect('/login');
+    }
+
+    public function test_checkout_is_rate_limited(): void
+    {
+        Cache::flush();
+        $response = null;
+        for ($i = 0; $i <= 10; $i++) {
+            $response = $this->actingAs($this->customer)->post('/checkout');
+        }
+        $response->assertStatus(429);
+    }
+
+    public function test_delivery_fee_rate_limit(): void
+    {
+        Cache::flush();
+        $response = null;
+        for ($i = 0; $i <= 30; $i++) {
+            $response = $this->get('/delivery-fee');
+        }
+        $response->assertStatus(429);
+    }
+
+    public function test_promo_check_rate_limit(): void
+    {
+        Cache::flush();
+        $response = null;
+        for ($i = 0; $i <= 20; $i++) {
+            $response = $this->post('/promo/check', ['code' => 'TEST']);
+        }
+        $response->assertStatus(429);
     }
 }
