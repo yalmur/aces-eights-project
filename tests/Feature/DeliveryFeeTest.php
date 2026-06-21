@@ -94,4 +94,99 @@ class DeliveryFeeTest extends TestCase
                      'zone'    => 'Zone A',
                  ]);
     }
+
+    public function test_inactive_zone_not_returned(): void
+    {
+        DeliveryZone::factory()->create([
+            'postcodes' => 'NW5',
+            'fee'       => 2.50,
+            'is_active' => false,
+        ]);
+
+        $response = $this->getJson('/delivery-fee?postcode=NW5');
+
+        $response->assertOk()
+                 ->assertJson(['covered' => false]);
+    }
+
+    public function test_lowercase_postcode_matches_zone(): void
+    {
+        DeliveryZone::factory()->create([
+            'name'      => 'Zone A',
+            'postcodes' => 'NW5',
+            'fee'       => 2.50,
+            'is_active' => true,
+        ]);
+
+        $response = $this->getJson('/delivery-fee?postcode=nw5');
+
+        $response->assertOk()
+                 ->assertJson([
+                     'covered' => true,
+                     'fee'     => 2.5,
+                     'zone'    => 'Zone A',
+                 ]);
+    }
+
+    public function test_full_postcode_lowercase_matches_zone(): void
+    {
+        DeliveryZone::factory()->create([
+            'name'      => 'Zone A',
+            'postcodes' => 'NW5',
+            'fee'       => 2.50,
+            'is_active' => true,
+        ]);
+
+        $response = $this->getJson('/delivery-fee?postcode=nw5+2hp');
+
+        $response->assertOk()
+                 ->assertJson([
+                     'covered' => true,
+                     'fee'     => 2.5,
+                 ]);
+    }
+
+    public function test_returns_correct_zone_when_multiple_zones_exist(): void
+    {
+        DeliveryZone::factory()->create([
+            'name'      => 'Zone A',
+            'postcodes' => 'NW5',
+            'fee'       => 2.50,
+            'is_active' => true,
+        ]);
+
+        DeliveryZone::factory()->create([
+            'name'      => 'Zone B',
+            'postcodes' => 'N7',
+            'fee'       => 3.00,
+            'is_active' => true,
+        ]);
+
+        $response = $this->getJson('/delivery-fee?postcode=N7');
+
+        $response->assertOk()
+                 ->assertJson([
+                     'covered' => true,
+                     'fee'     => 3.0,
+                     'zone'    => 'Zone B',
+                 ]);
+    }
+
+    public function test_covered_zone_with_zero_fee(): void
+    {
+        DeliveryZone::factory()->create([
+            'name'      => 'Free Zone',
+            'postcodes' => 'NW5',
+            'fee'       => 0.00,
+            'is_active' => true,
+        ]);
+
+        $response = $this->getJson('/delivery-fee?postcode=NW5');
+
+        $response->assertOk()
+                 ->assertJson([
+                     'covered' => true,
+                     'fee'     => 0,
+                 ]);
+    }
 }
