@@ -225,9 +225,10 @@ class CheckoutTest extends TestCase
         ]);
 
         $this->assertDatabaseHas('order_items', [
-            'size'       => '15" Large',
-            'size_extra' => 4.00,
-            'line_total' => 16.00,
+            'menu_item_id' => $pizza->id,
+            'size'         => '15" Large',
+            'size_extra'   => 4.00,
+            'line_total'   => 16.00,
         ]);
     }
 
@@ -263,9 +264,10 @@ class CheckoutTest extends TestCase
         ]);
 
         $this->assertDatabaseHas('order_items', [
-            'crust'      => 'Gluten-Free',
-            'crust_extra' => 2.00,
-            'line_total' => 14.00,
+            'menu_item_id' => $pizza->id,
+            'crust'        => 'Gluten-Free',
+            'crust_extra'  => 2.00,
+            'line_total'   => 14.00,
         ]);
     }
 
@@ -302,7 +304,8 @@ class CheckoutTest extends TestCase
         ]);
 
         $this->assertDatabaseHas('order_items', [
-            'line_total' => 13.50,
+            'menu_item_id' => $pizza->id,
+            'line_total'   => 13.50,
         ]);
     }
 

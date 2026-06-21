@@ -131,6 +131,7 @@ class CheckoutController extends Controller
             $subtotal  += $lineTotal;
 
             $orderItems[] = [
+                'menu_item_id'        => $menuItem->id,
                 'name'                => $menuItem->name,
                 'qty'                 => $qty,
                 'unit_price'          => (float) $menuItem->base_price,
