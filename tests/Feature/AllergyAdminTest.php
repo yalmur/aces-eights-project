@@ -20,7 +20,7 @@ class AllergyAdminTest extends TestCase
     {
         parent::setUp();
         $this->admin    = User::factory()->create(['role' => 'admin']);
-        $this->customer = User::factory()->create();
+        $this->customer = User::factory()->create(['role' => 'customer']);
     }
 
     public function test_allergy_page_returns_200_with_db_allergens(): void
@@ -72,7 +72,7 @@ class AllergyAdminTest extends TestCase
     public function test_guest_redirected_from_admin_allergy_index(): void
     {
         $response = $this->get('/admin/allergy');
-        $response->assertRedirect();
+        $response->assertRedirect(route('login'));
     }
 
     public function test_non_admin_forbidden_from_admin_allergy_index(): void
@@ -84,7 +84,7 @@ class AllergyAdminTest extends TestCase
     public function test_guest_redirected_from_store_allergen(): void
     {
         $response = $this->post('/admin/allergens', ['name' => 'Soy']);
-        $response->assertRedirect();
+        $response->assertRedirect(route('login'));
     }
 
     public function test_non_admin_forbidden_from_store_allergen(): void
@@ -106,7 +106,7 @@ class AllergyAdminTest extends TestCase
             'sort_order' => 5,
             'is_visible' => true,
         ]);
-        $response->assertRedirect();
+        $response->assertRedirect(route('admin.allergy.index'));
     }
 
     public function test_store_allergen_rejects_duplicate_name(): void
