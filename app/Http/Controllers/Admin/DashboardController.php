@@ -11,13 +11,13 @@ class DashboardController extends Controller
 {
     public function index(): View
     {
-        $todayOrders = Order::whereDate('created_at', today())
+        $todayStats = Order::whereDate('created_at', today())
             ->whereNotIn('status', ['pending_payment', 'cancelled'])
-            ->count();
+            ->selectRaw('COUNT(*) as order_count, COALESCE(SUM(total), 0) as revenue')
+            ->first();
 
-        $todayRevenue = Order::whereDate('created_at', today())
-            ->whereNotIn('status', ['pending_payment', 'cancelled'])
-            ->sum('total');
+        $todayOrders  = (int) $todayStats->order_count;
+        $todayRevenue = (float) $todayStats->revenue;
 
         $yesterdayOrders = Order::whereDate('created_at', today()->subDay())
             ->whereNotIn('status', ['pending_payment', 'cancelled'])
