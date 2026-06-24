@@ -5,20 +5,22 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\MenuItem;
 use App\Models\Topping;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\View\View;
 
 class MenuController extends Controller
 {
     public function index(): View
     {
-        $categories = Category::with([
-            'availableItems.allergens',
-            'availableItems.baseIngredients',
-        ])
-        ->orderBy('sort_order')
-        ->get();
-
-        $toppings = Topping::available()->get();
+        [$categories, $toppings] = Cache::remember('public.menu.index', 300, fn () => [
+            Category::with([
+                'availableItems.allergens',
+                'availableItems.baseIngredients',
+            ])
+            ->orderBy('sort_order')
+            ->get(),
+            Topping::available()->get(),
+        ]);
 
         return view('menu.index', [
             'title'      => 'Order Now',

@@ -4,17 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\MenuItem;
 use App\Models\Setting;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\View\View;
 
 class HomeController extends Controller
 {
     public function index(): View
     {
-        $featuredItems = MenuItem::where('is_featured', true)
-            ->where('is_available', true)
-            ->with('category', 'allergens')
-            ->limit(6)
-            ->get();
+        $featuredItems = Cache::remember('public.home.featured', 300, fn () =>
+            MenuItem::where('is_featured', true)
+                ->where('is_available', true)
+                ->with('category', 'allergens')
+                ->limit(6)
+                ->get()
+        );
 
         $openingSunThu = Setting::get('opening_sun_thu', '16:00 – 22:45');
         $openingFriSat = Setting::get('opening_fri_sat', '16:00 – 23:15');

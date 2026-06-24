@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\MenuItem;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
@@ -97,6 +98,8 @@ class MenuItemController extends Controller
             $this->syncIngredients($item, $data['ingredients'] ?? []);
         }
 
+        $this->clearMenuCache();
+
         return redirect()->route('admin.menu.index')
             ->with('success', "'{$item->name}' added to menu.");
     }
@@ -163,6 +166,8 @@ class MenuItemController extends Controller
             $this->syncIngredients($menuItem, $data['ingredients'] ?? []);
         }
 
+        $this->clearMenuCache();
+
         return redirect()->route('admin.menu.index')
             ->with('success', "'{$menuItem->name}' updated.");
     }
@@ -176,6 +181,8 @@ class MenuItemController extends Controller
         }
         $menuItem->delete();
 
+        $this->clearMenuCache();
+
         return redirect()->route('admin.menu.index')
             ->with('success', "'{$name}' removed from menu.");
     }
@@ -184,7 +191,15 @@ class MenuItemController extends Controller
     {
         $menuItem = MenuItem::findOrFail($item);
         $menuItem->update(['is_available' => !$menuItem->is_available]);
+        $this->clearMenuCache();
         return response()->json(['available' => $menuItem->is_available]);
+    }
+
+    private function clearMenuCache(): void
+    {
+        Cache::forget('public.our-menu.sections');
+        Cache::forget('public.home.featured');
+        Cache::forget('public.menu.index');
     }
 
     private function syncIngredients(MenuItem $item, array $ingredients): void
