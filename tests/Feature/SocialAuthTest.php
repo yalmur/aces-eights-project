@@ -56,4 +56,26 @@ class SocialAuthTest extends TestCase
     {
         $this->get('/auth/twitter/redirect')->assertStatus(404);
     }
+
+    public function test_callback_exception_redirects_to_login_with_error(): void
+    {
+        Socialite::shouldReceive('driver->user')
+            ->andThrow(new \Exception('OAuth failed'));
+
+        $this->get('/auth/google/callback')
+            ->assertRedirect('/login');
+    }
+
+    public function test_redirect_without_configured_client_id_redirects_to_login(): void
+    {
+        config(['services.google.client_id' => null]);
+
+        $this->get('/auth/google/redirect')
+            ->assertRedirect('/login');
+    }
+
+    public function test_callback_with_invalid_provider_returns_404(): void
+    {
+        $this->get('/auth/twitter/callback')->assertStatus(404);
+    }
 }
