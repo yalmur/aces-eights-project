@@ -3,7 +3,9 @@
 namespace Tests\Feature;
 
 use App\Models\Category;
+use App\Models\DeliveryZone;
 use App\Models\MenuItem;
+use App\Models\Promotion;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Cache;
@@ -404,5 +406,120 @@ class CheckoutTest extends TestCase
             $response = $this->post('/promo/check', ['code' => 'TEST']);
         }
         $response->assertStatus(429);
+    }
+
+    // -----------------------------------------------------------------------
+    // Helper
+    // -----------------------------------------------------------------------
+
+    private function cartItem(string $slug, string $name, float $price, int $qty = 1): array
+    {
+        return [
+            'id'                 => $slug,
+            'name'               => $name,
+            'category'           => 'pizza',
+            'basePrice'          => $price,
+            'qty'                => $qty,
+            'size'               => '12" Standard',
+            'sizeExtra'          => 0,
+            'crust'              => '48hr Sourdough',
+            'crustExtra'         => 0,
+            'toppings'           => [],
+            'removedIngredients' => [],
+            'chips'              => [],
+            'instructions'       => '',
+            'lineTotal'          => $price * $qty,
+        ];
+    }
+
+    // -----------------------------------------------------------------------
+    // Sprint 7 Task 3 — multi-item & delivery validation tests
+    // -----------------------------------------------------------------------
+
+    public function test_multi_item_order_total_is_sum_of_all_line_totals(): void
+    {
+        $cat2   = Category::factory()->create(['slug' => 'pizza2', 'name' => 'Pizza 2']);
+        $pizza2 = MenuItem::factory()->create([
+            'category_id' => $cat2->id,
+            'name'        => 'Four Seasons',
+            'slug'        => 'four-seasons',
+            'base_price'  => 14.00,
+        ]);
+
+        $cartItems = [
+            $this->cartItem('margherita',   'Margherita',   12.00),
+            $this->cartItem('four-seasons', 'Four Seasons', 14.00),
+        ];
+
+        $this->actingAs($this->customer)->post('/checkout', [
+            'order_type' => 'collection',
+            'cart_items' => json_encode($cartItems),
+        ]);
+
+        $this->assertDatabaseHas('orders', ['subtotal' => 26.00, 'total' => 26.00]);
+        $this->assertDatabaseCount('order_items', 2);
+    }
+
+    public function test_delivery_requires_street_address(): void
+    {
+        DeliveryZone::factory()->create(['postcodes' => 'NW5,N7,N19', 'is_active' => true]);
+
+        $this->actingAs($this->customer)->post('/checkout', [
+            'order_type'  => 'delivery',
+            'postal_code' => 'NW5 2HP',
+            'city'        => 'London',
+            'cart_items'  => json_encode([$this->cartItem('margherita', 'Margherita', 12.00)]),
+        ])
+        ->assertSessionHasErrors('street_address');
+
+        $this->assertDatabaseMissing('orders', ['user_id' => $this->customer->id]);
+    }
+
+    public function test_delivery_requires_postal_code(): void
+    {
+        $this->actingAs($this->customer)->post('/checkout', [
+            'order_type'     => 'delivery',
+            'street_address' => '10 Test Street',
+            'city'           => 'London',
+            'cart_items'     => json_encode([$this->cartItem('margherita', 'Margherita', 12.00)]),
+        ])
+        ->assertSessionHasErrors('postal_code');
+
+        $this->assertDatabaseMissing('orders', ['user_id' => $this->customer->id]);
+    }
+
+    public function test_quantity_greater_than_one_multiplies_line_total(): void
+    {
+        $cartItems = [$this->cartItem('margherita', 'Margherita', 12.00, 3)];
+
+        $this->actingAs($this->customer)->post('/checkout', [
+            'order_type' => 'collection',
+            'cart_items' => json_encode($cartItems),
+        ]);
+
+        $this->assertDatabaseHas('order_items', ['qty' => 3, 'line_total' => 36.00]);
+    }
+
+    public function test_free_delivery_promo_reduces_total_to_subtotal(): void
+    {
+        DeliveryZone::factory()->create(['postcodes' => 'NW5,N7,N19', 'is_active' => true, 'fee' => 3.50]);
+        Promotion::factory()->freeDelivery()->create(['code' => 'SHIPFREE']);
+
+        $cartItems = [$this->cartItem('margherita', 'Margherita', 12.00)];
+
+        $this->actingAs($this->customer)->post('/checkout', [
+            'order_type'     => 'delivery',
+            'street_address' => '10 Test Street',
+            'city'           => 'London',
+            'postal_code'    => 'NW5 2HP',
+            'promo_code'     => 'SHIPFREE',
+            'cart_items'     => json_encode($cartItems),
+        ]);
+
+        $this->assertDatabaseHas('orders', [
+            'delivery_fee'    => 3.50,
+            'discount_amount' => 3.50,
+            'total'           => 12.00,
+        ]);
     }
 }
