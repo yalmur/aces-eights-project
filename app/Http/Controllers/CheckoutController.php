@@ -106,6 +106,9 @@ class CheckoutController extends Controller
         $orderItems = [];
         $subtotal   = 0;
 
+        $sizeExtrasMap  = self::sizeExtras();
+        $crustExtrasMap = self::crustExtras();
+
         foreach ($cartItems as $ci) {
             $menuItem = $menuItems[$ci['id'] ?? ''] ?? null;
             if (!$menuItem) {
@@ -113,8 +116,8 @@ class CheckoutController extends Controller
             }
 
             $qty        = min(20, max(1, (int) ($ci['qty'] ?? 1)));
-            $sizeExtra  = self::sizeExtras()[$ci['size'] ?? '']  ?? 0.0;
-            $crustExtra = self::crustExtras()[$ci['crust'] ?? ''] ?? 0.0;
+            $sizeExtra  = $sizeExtrasMap[$ci['size'] ?? '']  ?? 0.0;
+            $crustExtra = $crustExtrasMap[$ci['crust'] ?? ''] ?? 0.0;
 
             $toppings      = [];
             $toppingsExtra = 0.0;
