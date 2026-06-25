@@ -128,6 +128,44 @@ class AllergyAdminTest extends TestCase
         $this->assertDatabaseHas('allergens', ['name' => 'Celery', 'sort_order' => 0]);
     }
 
+    public function test_admin_can_disable_allergy_alerts(): void
+    {
+        $this->actingAs($this->admin)->post('/admin/allergy/settings', [
+            'checkout_disclaimer' => 'Some text.',
+            // allergy_alerts_enabled deliberately omitted → boolean(false) → '0'
+        ]);
+
+        $this->assertDatabaseHas('settings', ['key' => 'allergy_alerts_enabled', 'value' => '0']);
+    }
+
+    public function test_save_map_with_no_allergens_clears_all_existing_mappings(): void
+    {
+        $cat    = Category::factory()->create(['slug' => 'pasta']);
+        $item   = MenuItem::factory()->create(['category_id' => $cat->id]);
+        $gluten = Allergen::factory()->create(['name' => 'GlutenB']);
+
+        $item->allergens()->attach($gluten->id);
+
+        $this->actingAs($this->admin)->post('/admin/allergy/map', [
+            'menu_item_id' => $item->id,
+            // no 'allergens' key — controller passes [] to sync()
+        ]);
+
+        $this->assertDatabaseMissing('allergen_menu_item', [
+            'menu_item_id' => $item->id,
+            'allergen_id'  => $gluten->id,
+        ]);
+    }
+
+    public function test_admin_can_toggle_allergen_visibility_back_on(): void
+    {
+        $allergen = Allergen::factory()->create(['is_visible' => false]);
+
+        $this->actingAs($this->admin)->patch("/admin/allergens/{$allergen->id}/toggle");
+
+        $this->assertDatabaseHas('allergens', ['id' => $allergen->id, 'is_visible' => true]);
+    }
+
     public function test_save_map_clears_previous_allergens_on_sync(): void
     {
         $cat   = Category::factory()->create(['slug' => 'pizza']);
