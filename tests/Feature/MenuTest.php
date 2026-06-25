@@ -61,4 +61,41 @@ class MenuTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function test_menu_index_passes_categories_to_view(): void
+    {
+        \Illuminate\Support\Facades\Cache::flush();
+        $cat = Category::factory()->create(['name' => 'Pizzas', 'sort_order' => 1]);
+        MenuItem::factory()->create(['category_id' => $cat->id, 'is_available' => true]);
+
+        $response = $this->get('/menu');
+
+        $response->assertViewHas('categories', fn ($cats) => $cats->contains('name', 'Pizzas'));
+    }
+
+    public function test_menu_index_passes_available_toppings_to_view(): void
+    {
+        \Illuminate\Support\Facades\Cache::flush();
+        Topping::factory()->create(['name' => 'Olives', 'is_available' => true]);
+        Topping::factory()->create(['name' => 'Anchovy', 'is_available' => false]);
+
+        $response = $this->get('/menu');
+
+        $toppings = $response->viewData('toppings');
+        $this->assertTrue($toppings->contains('name', 'Olives'));
+        $this->assertFalse($toppings->contains('name', 'Anchovy'));
+    }
+
+    public function test_menu_index_categories_ordered_by_sort_order(): void
+    {
+        \Illuminate\Support\Facades\Cache::flush();
+        $c2 = Category::factory()->create(['name' => 'Sides',  'sort_order' => 2]);
+        $c1 = Category::factory()->create(['name' => 'Pizzas', 'sort_order' => 1]);
+        MenuItem::factory()->create(['category_id' => $c1->id, 'is_available' => true]);
+        MenuItem::factory()->create(['category_id' => $c2->id, 'is_available' => true]);
+
+        $names = $this->get('/menu')->viewData('categories')->pluck('name')->all();
+
+        $this->assertSame(['Pizzas', 'Sides'], $names);
+    }
 }
