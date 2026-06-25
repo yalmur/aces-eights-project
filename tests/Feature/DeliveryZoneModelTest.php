@@ -176,4 +176,41 @@ class DeliveryZoneModelTest extends TestCase
         $zone = DeliveryZone::factory()->make(['postcodes' => 'NW5']);
         $this->assertSame(['NW5'], $zone->postcode_list);
     }
+
+    // -------------------------------------------------------------------------
+    // DeliveryZone::scopeActive()
+    // -------------------------------------------------------------------------
+
+    public function test_scope_active_returns_only_active_zones(): void
+    {
+        Cache::flush();
+        DeliveryZone::factory()->create(['is_active' => true,  'name' => 'Active Zone']);
+        DeliveryZone::factory()->create(['is_active' => false, 'name' => 'Inactive Zone']);
+
+        $result = DeliveryZone::active()->get();
+
+        $this->assertCount(1, $result);
+        $this->assertSame('Active Zone', $result->first()->name);
+    }
+
+    public function test_scope_active_excludes_all_when_all_inactive(): void
+    {
+        Cache::flush();
+        DeliveryZone::factory()->create(['is_active' => false]);
+        DeliveryZone::factory()->create(['is_active' => false]);
+
+        $this->assertCount(0, DeliveryZone::active()->get());
+    }
+
+    public function test_scope_active_orders_by_sort_order(): void
+    {
+        Cache::flush();
+        DeliveryZone::factory()->create(['is_active' => true, 'name' => 'Third',  'sort_order' => 3]);
+        DeliveryZone::factory()->create(['is_active' => true, 'name' => 'First',  'sort_order' => 1]);
+        DeliveryZone::factory()->create(['is_active' => true, 'name' => 'Second', 'sort_order' => 2]);
+
+        $result = DeliveryZone::active()->pluck('name')->all();
+
+        $this->assertSame(['First', 'Second', 'Third'], $result);
+    }
 }
