@@ -351,4 +351,75 @@ class MenuItemTest extends TestCase
         $response->assertSee('Spicy Pizza');
         $response->assertDontSee('Spicy Wedges');
     }
+
+    public function test_store_saves_base_ingredients_from_ingredients_field(): void
+    {
+        $category = Category::factory()->create();
+
+        $this->actingAs($this->admin)->post('/admin/menu', [
+            'name'        => 'Ingredient Pizza',
+            'category_id' => $category->id,
+            'base_price'  => '12.00',
+            'ingredients' => ['Tomato Sauce', 'Mozzarella', 'Basil'],
+        ]);
+
+        $item = MenuItem::where('name', 'Ingredient Pizza')->first();
+        $this->assertNotNull($item);
+        $this->assertDatabaseHas('base_ingredients', ['menu_item_id' => $item->id, 'name' => 'Tomato Sauce', 'sort_order' => 1]);
+        $this->assertDatabaseHas('base_ingredients', ['menu_item_id' => $item->id, 'name' => 'Mozzarella',   'sort_order' => 2]);
+        $this->assertDatabaseHas('base_ingredients', ['menu_item_id' => $item->id, 'name' => 'Basil',        'sort_order' => 3]);
+    }
+
+    public function test_update_replaces_base_ingredients_when_ingredients_field_sent(): void
+    {
+        $item = MenuItem::factory()->create();
+        BaseIngredient::create(['menu_item_id' => $item->id, 'name' => 'Old Sauce', 'sort_order' => 1]);
+
+        $this->actingAs($this->admin)->put("/admin/menu/{$item->id}", [
+            'name'        => $item->name,
+            'category_id' => $item->category_id,
+            'base_price'  => $item->base_price,
+            'ingredients' => ['New Sauce', 'New Cheese'],
+        ]);
+
+        $this->assertDatabaseMissing('base_ingredients', ['menu_item_id' => $item->id, 'name' => 'Old Sauce']);
+        $this->assertDatabaseHas('base_ingredients',    ['menu_item_id' => $item->id, 'name' => 'New Sauce', 'sort_order' => 1]);
+        $this->assertDatabaseHas('base_ingredients',    ['menu_item_id' => $item->id, 'name' => 'New Cheese', 'sort_order' => 2]);
+    }
+
+    public function test_store_sets_is_vegetarian_and_is_vegan_flags(): void
+    {
+        $category = Category::factory()->create();
+
+        $this->actingAs($this->admin)->post('/admin/menu', [
+            'name'          => 'Vegan Delight',
+            'category_id'   => $category->id,
+            'base_price'    => '11.00',
+            'is_vegetarian' => '1',
+            'is_vegan'      => '1',
+        ]);
+
+        $this->assertDatabaseHas('menu_items', [
+            'name'          => 'Vegan Delight',
+            'is_vegetarian' => true,
+            'is_vegan'      => true,
+        ]);
+    }
+
+    public function test_store_syncs_related_items_via_pivot(): void
+    {
+        $category = Category::factory()->create();
+        $related  = MenuItem::factory()->create(['category_id' => $category->id]);
+
+        $this->actingAs($this->admin)->post('/admin/menu', [
+            'name'          => 'Main Pizza',
+            'category_id'   => $category->id,
+            'base_price'    => '13.00',
+            'related_items' => [$related->id],
+        ]);
+
+        $main = MenuItem::where('name', 'Main Pizza')->first();
+        $this->assertNotNull($main);
+        $this->assertTrue($main->relatedItems->contains('id', $related->id));
+    }
 }
