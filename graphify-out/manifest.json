@@ -795,8 +795,8 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\AllergyAdminTest.php": {
-    "mtime": 1782378458.3322337,
-    "ast_hash": "e1fc5b91b3a9fe3f135652da62c0a53f",
+    "mtime": 1782402621.6049378,
+    "ast_hash": "6f7c8f00d383f242a822de1357cb6fed",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\AuthTest.php": {
@@ -1024,6 +1024,11 @@
     "ast_hash": "3e4eebfdd323d4612660ee0cb43cee37",
     "semantic_hash": ""
   },
+  "C:\\AcesAndEightsPizza\\webapp\\tests\\Unit\\BaseIngredientModelTest.php": {
+    "mtime": 1782402174.476352,
+    "ast_hash": "e5641b9c56f9b03a00923b99e57f0ab9",
+    "semantic_hash": ""
+  },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Unit\\CategoryModelTest.php": {
     "mtime": 1782051607.9360206,
     "ast_hash": "be7ca2cee826c9bf0366d89122952188",
@@ -1060,8 +1065,8 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Unit\\ToppingModelTest.php": {
-    "mtime": 1782051419.6283164,
-    "ast_hash": "1e286f25647f18e30392b3cca0b48d0c",
+    "mtime": 1782403322.122185,
+    "ast_hash": "45c563174b7b71caf8bc29625f262774",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Unit\\UserAddressModelTest.php": {
@@ -1147,6 +1152,11 @@
   "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\sprint3-task3-report.md": {
     "mtime": 1782046530.9177012,
     "ast_hash": "9778135c446a0d8fb76e54bfc2e9f389",
+    "semantic_hash": ""
+  },
+  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\task-1-brief.md": {
+    "mtime": 1782403291.1107337,
+    "ast_hash": "547bec531576612c7e88bbe014fca080",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\task1-report.md": {
