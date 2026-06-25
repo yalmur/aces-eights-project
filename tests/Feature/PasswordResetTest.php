@@ -77,4 +77,41 @@ class PasswordResetTest extends TestCase
 
         $r->assertSessionHasErrors('email');
     }
+
+    public function test_reset_rejects_password_shorter_than_8_chars(): void
+    {
+        $user  = User::factory()->create();
+        $token = Password::createToken($user);
+
+        $r = $this->post('/reset-password', [
+            'token'                 => $token,
+            'email'                 => $user->email,
+            'password'              => 'short',
+            'password_confirmation' => 'short',
+        ]);
+
+        $r->assertSessionHasErrors('password');
+        $this->assertFalse(Hash::check('short', $user->fresh()->password));
+    }
+
+    public function test_reset_rejects_password_confirmation_mismatch(): void
+    {
+        $user  = User::factory()->create();
+        $token = Password::createToken($user);
+
+        $r = $this->post('/reset-password', [
+            'token'                 => $token,
+            'email'                 => $user->email,
+            'password'              => 'newpassword99',
+            'password_confirmation' => 'different99',
+        ]);
+
+        $r->assertSessionHasErrors('password');
+    }
+
+    public function test_reset_requires_all_fields(): void
+    {
+        $this->post('/reset-password', [])
+             ->assertSessionHasErrors(['token', 'email', 'password']);
+    }
 }
