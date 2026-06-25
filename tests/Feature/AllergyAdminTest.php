@@ -270,4 +270,73 @@ class AllergyAdminTest extends TestCase
             ->post('/admin/allergy/map', ['menu_item_id' => $item->id, 'allergens' => []])
             ->assertStatus(403);
     }
+
+    // -------------------------------------------------------------------------
+    // 404 paths
+    // -------------------------------------------------------------------------
+
+    public function test_toggle_returns_404_for_nonexistent_allergen(): void
+    {
+        $this->actingAs($this->admin)
+            ->patch('/admin/allergens/99999/toggle')
+            ->assertStatus(404);
+    }
+
+    public function test_destroy_returns_404_for_nonexistent_allergen(): void
+    {
+        $this->actingAs($this->admin)
+            ->delete('/admin/allergens/99999')
+            ->assertStatus(404);
+    }
+
+    // -------------------------------------------------------------------------
+    // saveMap validation
+    // -------------------------------------------------------------------------
+
+    public function test_save_map_fails_for_nonexistent_menu_item(): void
+    {
+        $this->actingAs($this->admin)
+            ->post('/admin/allergy/map', ['menu_item_id' => 99999])
+            ->assertSessionHasErrors('menu_item_id');
+    }
+
+    // -------------------------------------------------------------------------
+    // storeAllergen validation edges
+    // -------------------------------------------------------------------------
+
+    public function test_store_allergen_rejects_name_exceeding_60_chars(): void
+    {
+        $this->actingAs($this->admin)
+            ->post('/admin/allergens', ['name' => str_repeat('x', 61)])
+            ->assertSessionHasErrors('name');
+    }
+
+    public function test_store_allergen_rejects_negative_sort_order(): void
+    {
+        $this->actingAs($this->admin)
+            ->post('/admin/allergens', ['name' => 'Nuts', 'sort_order' => -1])
+            ->assertSessionHasErrors('sort_order');
+    }
+
+    // -------------------------------------------------------------------------
+    // Flash message content
+    // -------------------------------------------------------------------------
+
+    public function test_destroy_flash_contains_allergen_name(): void
+    {
+        $allergen = \App\Models\Allergen::factory()->create(['name' => 'Peanuts']);
+
+        $this->actingAs($this->admin)
+            ->delete("/admin/allergens/{$allergen->id}")
+            ->assertSessionHas('success', fn ($msg) => str_contains($msg, 'Peanuts'));
+    }
+
+    public function test_toggle_flash_reflects_new_visibility_state(): void
+    {
+        $allergen = \App\Models\Allergen::factory()->create(['is_visible' => true]);
+
+        $this->actingAs($this->admin)
+            ->patch("/admin/allergens/{$allergen->id}/toggle")
+            ->assertSessionHas('success', fn ($msg) => str_contains($msg, 'now hidden'));
+    }
 }
