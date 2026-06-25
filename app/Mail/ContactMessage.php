@@ -29,6 +29,9 @@ class ContactMessage extends Mailable
 
     public function content(): Content
     {
-        return new Content(view: 'emails.contact');
+        return new Content(
+            view: 'emails.contact',
+            with: ['subject' => $this->messageSubject],
+        );
     }
 }
