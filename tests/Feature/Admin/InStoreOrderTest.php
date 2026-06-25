@@ -148,4 +148,42 @@ class InStoreOrderTest extends TestCase
 
         $r->assertRedirect('/login');
     }
+
+    public function test_in_store_page_excludes_yesterdays_orders(): void
+    {
+        $admin = $this->admin();
+        Order::factory()->create([
+            'type'           => 'eat_in',
+            'status'         => 'cooking',
+            'customer_name'  => 'Yesterday Customer',
+            'customer_email' => null,
+            'created_at'     => now()->subDay(),
+        ]);
+
+        $r = $this->actingAs($admin)->get(route('admin.orders.in-store'));
+
+        $r->assertStatus(200);
+        $r->assertDontSee('Yesterday Customer');
+    }
+
+    public function test_store_in_store_aggregates_total_for_multiple_items(): void
+    {
+        $admin = $this->admin();
+        $items = MenuItem::where('is_available', true)->take(2)->get();
+        $this->assertGreaterThanOrEqual(2, $items->count(), 'Seed needs at least 2 available items');
+
+        $this->actingAs($admin)->post(route('admin.orders.in-store.store'), [
+            'customer_name' => 'Multi Item Customer',
+            'order_type'    => 'eat_in',
+            'items'         => [
+                ['menu_item_id' => $items[0]->id, 'qty' => 1],
+                ['menu_item_id' => $items[1]->id, 'qty' => 2],
+            ],
+        ]);
+
+        $expected = $items[0]->base_price * 1 + $items[1]->base_price * 2;
+        $order    = Order::where('customer_name', 'Multi Item Customer')->first();
+        $this->assertNotNull($order);
+        $this->assertEquals($expected, $order->total);
+    }
 }
