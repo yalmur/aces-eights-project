@@ -457,4 +457,23 @@ class MenuItemTest extends TestCase
 
         $this->assertDatabaseHas('menu_items', ['name' => 'Featured Special', 'is_featured' => true]);
     }
+
+    public function test_update_sets_is_vegetarian_and_is_vegan_flags(): void
+    {
+        $item = MenuItem::factory()->create(['is_vegetarian' => false, 'is_vegan' => false]);
+
+        $this->actingAs($this->admin)->put("/admin/menu/{$item->id}", [
+            'name'          => $item->name,
+            'category_id'   => $item->category_id,
+            'base_price'    => $item->base_price,
+            'is_vegetarian' => '1',
+            'is_vegan'      => '1',
+        ]);
+
+        $this->assertDatabaseHas('menu_items', [
+            'id'            => $item->id,
+            'is_vegetarian' => true,
+            'is_vegan'      => true,
+        ]);
+    }
 }

@@ -224,4 +224,29 @@ class OurMenuAndHomeControllerTest extends TestCase
         $response->assertOk();
         $this->assertIsBool($response->viewData('isOpenNow'));
     }
+
+    public function test_our_menu_sections_cache_populates_on_first_request(): void
+    {
+        $this->assertFalse(Cache::has('public.our-menu.sections'));
+
+        $category = Category::factory()->create(['sort_order' => 1]);
+        MenuItem::factory()->create(['category_id' => $category->id, 'is_available' => true]);
+
+        $this->get('/our-menu')->assertOk();
+
+        $this->assertTrue(Cache::has('public.our-menu.sections'));
+    }
+
+    public function test_our_menu_serves_cached_sections_on_second_request(): void
+    {
+        $category = Category::factory()->create(['name' => 'Originals', 'sort_order' => 1]);
+        MenuItem::factory()->create(['category_id' => $category->id, 'is_available' => true, 'name' => 'Cached Pizza']);
+
+        $this->get('/our-menu')->assertOk(); // warm cache
+
+        // Delete the item from DB — cached response should still show it
+        MenuItem::where('name', 'Cached Pizza')->delete();
+
+        $this->get('/our-menu')->assertOk()->assertSee('Cached Pizza');
+    }
 }
