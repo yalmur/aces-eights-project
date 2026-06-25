@@ -3,10 +3,13 @@
 namespace Tests\Unit;
 
 use App\Models\OrderItem;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class OrderItemModelTest extends TestCase
 {
+    use RefreshDatabase;
+
     // -------------------------------------------------------------------------
     // OrderItem::customisationSummary (getCustomisationSummaryAttribute)
     // -------------------------------------------------------------------------
@@ -125,5 +128,52 @@ class OrderItemModelTest extends TestCase
         ]);
 
         $this->assertSame('No extras', $item->customisationSummary);
+    }
+
+    public function test_unit_price_cast_to_decimal(): void
+    {
+        $item = OrderItem::factory()->create(['unit_price' => 9.5]);
+
+        $this->assertSame('9.50', (string) $item->fresh()->unit_price);
+    }
+
+    public function test_line_total_cast_to_decimal(): void
+    {
+        $item = OrderItem::factory()->create(['line_total' => 19.1]);
+
+        $this->assertSame('19.10', (string) $item->fresh()->line_total);
+    }
+
+    public function test_added_toppings_cast_to_array(): void
+    {
+        $toppings = [['name' => 'Jalapeños', 'price' => 1.5]];
+        $item     = OrderItem::factory()->create(['added_toppings' => $toppings]);
+
+        $this->assertIsArray($item->fresh()->added_toppings);
+        $this->assertSame('Jalapeños', $item->fresh()->added_toppings[0]['name']);
+    }
+
+    public function test_removed_ingredients_cast_to_array(): void
+    {
+        $item = OrderItem::factory()->create(['removed_ingredients' => ['Olives']]);
+
+        $this->assertIsArray($item->fresh()->removed_ingredients);
+        $this->assertContains('Olives', $item->fresh()->removed_ingredients);
+    }
+
+    public function test_order_relationship_returns_parent_order(): void
+    {
+        $order = \App\Models\Order::factory()->create();
+        $item  = OrderItem::factory()->create(['order_id' => $order->id]);
+
+        $this->assertSame($order->id, $item->order->id);
+    }
+
+    public function test_menu_item_relationship_returns_linked_menu_item(): void
+    {
+        $menuItem = \App\Models\MenuItem::factory()->create();
+        $item     = OrderItem::factory()->create(['menu_item_id' => $menuItem->id]);
+
+        $this->assertSame($menuItem->id, $item->menuItem->id);
     }
 }

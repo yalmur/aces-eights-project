@@ -213,4 +213,25 @@ class DeliveryZoneModelTest extends TestCase
 
         $this->assertSame(['First', 'Second', 'Third'], $result);
     }
+
+    public function test_fee_cast_to_decimal(): void
+    {
+        $zone = DeliveryZone::factory()->create(['fee' => 3.5]);
+
+        $this->assertSame('3.50', (string) $zone->fresh()->fee);
+    }
+
+    public function test_min_km_cast_to_decimal(): void
+    {
+        $zone = DeliveryZone::factory()->create(['min_km' => 1.0]);
+
+        $this->assertSame('1.00', (string) $zone->fresh()->min_km);
+    }
+
+    public function test_is_active_cast_to_boolean(): void
+    {
+        $zone = DeliveryZone::factory()->create(['is_active' => 1]);
+
+        $this->assertTrue($zone->fresh()->is_active);
+    }
 }

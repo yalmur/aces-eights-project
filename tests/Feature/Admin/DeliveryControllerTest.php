@@ -128,6 +128,30 @@ class DeliveryControllerTest extends TestCase
         $this->assertDatabaseHas('delivery_zones', ['id' => $zone->id, 'is_active' => false]);
     }
 
+    public function test_update_returns_404_for_nonexistent_zone(): void
+    {
+        $this->actingAs($this->admin)
+            ->put('/admin/delivery/99999', $this->validPayload())
+            ->assertStatus(404);
+    }
+
+    public function test_destroy_returns_404_for_nonexistent_zone(): void
+    {
+        $this->actingAs($this->admin)
+            ->delete('/admin/delivery/99999')
+            ->assertStatus(404);
+    }
+
+    public function test_update_flash_contains_zone_name(): void
+    {
+        $zone    = DeliveryZone::factory()->create();
+        $payload = array_merge($this->validPayload(), ['name' => 'North Zone']);
+
+        $this->actingAs($this->admin)
+            ->put('/admin/delivery/' . $zone->id, $payload)
+            ->assertSessionHas('success', fn ($msg) => str_contains($msg, 'North Zone'));
+    }
+
     private function validPayload(): array
     {
         return [
