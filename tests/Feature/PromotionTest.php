@@ -125,4 +125,65 @@ class PromotionTest extends TestCase
         $promo = Promotion::factory()->create(['type' => 'multi_buy', 'value' => 0]);
         $this->assertEquals(round(25.00 / 3, 2), $promo->calculateDiscount(25.00, 3.50));
     }
+
+    // ── type_label accessor ──────────────────────────────────────────────────
+
+    public function test_type_label_for_fixed_amount(): void
+    {
+        $promo = Promotion::factory()->fixed(5)->create();
+        $this->assertSame('£5.00 off', $promo->type_label);
+    }
+
+    public function test_type_label_for_free_delivery(): void
+    {
+        $promo = Promotion::factory()->freeDelivery()->create();
+        $this->assertSame('Free delivery', $promo->type_label);
+    }
+
+    public function test_type_label_for_buy_one_get_one(): void
+    {
+        $promo = Promotion::factory()->create(['type' => 'buy_one_get_one', 'value' => 0]);
+        $this->assertSame('Buy 1 Get 1 Free', $promo->type_label);
+    }
+
+    public function test_type_label_for_multi_buy(): void
+    {
+        $promo = Promotion::factory()->create(['type' => 'multi_buy', 'value' => 0]);
+        $this->assertSame('3 for 2', $promo->type_label);
+    }
+
+    // ── incrementUses ────────────────────────────────────────────────────────
+
+    public function test_increment_uses_adds_one(): void
+    {
+        $promo = Promotion::factory()->create(['current_uses' => 3]);
+        $promo->incrementUses();
+        $this->assertSame(4, $promo->fresh()->current_uses);
+    }
+
+    // ── scopeActive ──────────────────────────────────────────────────────────
+
+    public function test_scope_active_excludes_expired_promotion(): void
+    {
+        Promotion::factory()->expired()->create(['is_active' => true]);
+        $this->assertCount(0, Promotion::active()->get());
+    }
+
+    public function test_scope_active_excludes_exhausted_max_uses(): void
+    {
+        Promotion::factory()->create(['is_active' => true, 'max_uses' => 5, 'current_uses' => 5]);
+        $this->assertCount(0, Promotion::active()->get());
+    }
+
+    public function test_scope_active_includes_promo_with_remaining_uses(): void
+    {
+        Promotion::factory()->create(['is_active' => true, 'max_uses' => 5, 'current_uses' => 3]);
+        $this->assertCount(1, Promotion::active()->get());
+    }
+
+    public function test_scope_active_includes_promo_with_null_max_uses(): void
+    {
+        Promotion::factory()->create(['is_active' => true, 'max_uses' => null]);
+        $this->assertCount(1, Promotion::active()->get());
+    }
 }
