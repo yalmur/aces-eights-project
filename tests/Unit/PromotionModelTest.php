@@ -4,10 +4,13 @@ namespace Tests\Unit;
 
 use App\Models\Promotion;
 use Carbon\Carbon;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class PromotionModelTest extends TestCase
 {
+    use RefreshDatabase;
+
     // -------------------------------------------------------------------------
     // Promotion::isValid()
     // -------------------------------------------------------------------------
@@ -228,5 +231,69 @@ class PromotionModelTest extends TestCase
         $promo = new Promotion(['type' => 'mystery', 'value' => '0.00']);
 
         $this->assertSame('mystery', $promo->typeLabel);
+    }
+
+    // -------------------------------------------------------------------------
+    // Promotion::incrementUses()
+    // -------------------------------------------------------------------------
+
+    public function test_increment_uses_increases_current_uses_by_one(): void
+    {
+        $promo = Promotion::factory()->create(['current_uses' => 3]);
+
+        $promo->incrementUses();
+
+        $this->assertDatabaseHas('promotions', ['id' => $promo->id, 'current_uses' => 4]);
+    }
+
+    // -------------------------------------------------------------------------
+    // Promotion::scopeActive()
+    // -------------------------------------------------------------------------
+
+    public function test_scope_active_returns_active_non_expired_promotions(): void
+    {
+        $promo = Promotion::factory()->create(['is_active' => true, 'expires_at' => null, 'max_uses' => null]);
+
+        $this->assertCount(1, Promotion::active()->get());
+        $this->assertSame($promo->id, Promotion::active()->first()->id);
+    }
+
+    public function test_scope_active_excludes_inactive_promotions(): void
+    {
+        Promotion::factory()->create(['is_active' => false]);
+
+        $this->assertCount(0, Promotion::active()->get());
+    }
+
+    public function test_scope_active_excludes_expired_promotions(): void
+    {
+        Promotion::factory()->create([
+            'is_active'  => true,
+            'expires_at' => now()->subDay(),
+        ]);
+
+        $this->assertCount(0, Promotion::active()->get());
+    }
+
+    public function test_scope_active_excludes_maxed_out_promotions(): void
+    {
+        Promotion::factory()->create([
+            'is_active'    => true,
+            'max_uses'     => 5,
+            'current_uses' => 5,
+        ]);
+
+        $this->assertCount(0, Promotion::active()->get());
+    }
+
+    public function test_scope_active_includes_promotions_not_yet_at_max_uses(): void
+    {
+        Promotion::factory()->create([
+            'is_active'    => true,
+            'max_uses'     => 5,
+            'current_uses' => 4,
+        ]);
+
+        $this->assertCount(1, Promotion::active()->get());
     }
 }
