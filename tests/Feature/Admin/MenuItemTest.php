@@ -323,4 +323,32 @@ class MenuItemTest extends TestCase
         $response->assertSee('Calzone Delight');
         $response->assertDontSee('Margherita Special');
     }
+
+    public function test_index_category_filter_shows_only_items_in_that_category(): void
+    {
+        $pizzaCat = Category::factory()->create(['slug' => 'pizza', 'name' => 'Pizza']);
+        $sidesCat = Category::factory()->create(['slug' => 'sides', 'name' => 'Sides']);
+        MenuItem::factory()->create(['name' => 'Margherita',  'category_id' => $pizzaCat->id]);
+        MenuItem::factory()->create(['name' => 'Garlic Bread', 'category_id' => $sidesCat->id]);
+
+        $response = $this->actingAs($this->admin)->get('/admin/menu?category=pizza');
+
+        $response->assertStatus(200);
+        $response->assertSee('Margherita');
+        $response->assertDontSee('Garlic Bread');
+    }
+
+    public function test_index_category_filter_combined_with_search(): void
+    {
+        $pizzaCat = Category::factory()->create(['slug' => 'pizza', 'name' => 'Pizza']);
+        $sidesCat = Category::factory()->create(['slug' => 'sides', 'name' => 'Sides']);
+        MenuItem::factory()->create(['name' => 'Spicy Pizza',  'category_id' => $pizzaCat->id]);
+        MenuItem::factory()->create(['name' => 'Spicy Wedges', 'category_id' => $sidesCat->id]);
+
+        $response = $this->actingAs($this->admin)->get('/admin/menu?category=pizza&search=Spicy');
+
+        $response->assertStatus(200);
+        $response->assertSee('Spicy Pizza');
+        $response->assertDontSee('Spicy Wedges');
+    }
 }
