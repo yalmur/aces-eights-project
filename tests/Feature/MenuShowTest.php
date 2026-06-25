@@ -66,4 +66,30 @@ class MenuShowTest extends TestCase
             ->assertViewHas('related', fn ($related) => $related->contains('id', $itemB->id))
             ->assertViewHas('related', fn ($related) => ! $related->contains('id', $itemA->id));
     }
+
+    public function test_show_passes_item_and_title_to_view(): void
+    {
+        $category = Category::factory()->create();
+        $item = MenuItem::factory()->create([
+            'category_id'  => $category->id,
+            'name'         => 'Truffle Deluxe',
+            'is_available' => true,
+        ]);
+
+        $this->get('/menu/' . $item->slug)
+            ->assertViewHas('item', fn ($i) => $i->id === $item->id)
+            ->assertViewHas('title', 'Truffle Deluxe');
+    }
+
+    public function test_show_related_excludes_unavailable_items(): void
+    {
+        $category = Category::factory()->create();
+        $main = MenuItem::factory()->create(['category_id' => $category->id, 'is_available' => true]);
+        $available   = MenuItem::factory()->create(['category_id' => $category->id, 'is_available' => true]);
+        $unavailable = MenuItem::factory()->create(['category_id' => $category->id, 'is_available' => false]);
+
+        $this->get('/menu/' . $main->slug)
+            ->assertViewHas('related', fn ($r) =>  $r->contains('id', $available->id))
+            ->assertViewHas('related', fn ($r) => !$r->contains('id', $unavailable->id));
+    }
 }
