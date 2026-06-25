@@ -77,4 +77,32 @@ class MenuCacheTest extends TestCase
 
         $this->assertFalse(Cache::has('public.menu.index'));
     }
+
+    public function test_update_invalidates_our_menu_sections_cache(): void
+    {
+        $item = MenuItem::factory()->create(['category_id' => $this->category->id]);
+
+        $this->get('/our-menu')->assertOk();
+        $this->assertTrue(Cache::has('public.our-menu.sections'));
+
+        $this->actingAs($this->admin)->put("/admin/menu/{$item->id}", [
+            'name'        => 'Updated Name',
+            'category_id' => $this->category->id,
+            'base_price'  => '14.00',
+        ]);
+
+        $this->assertFalse(Cache::has('public.our-menu.sections'));
+    }
+
+    public function test_destroy_invalidates_home_featured_cache(): void
+    {
+        $item = MenuItem::factory()->create(['category_id' => $this->category->id, 'is_featured' => true]);
+
+        $this->get('/')->assertOk();
+        $this->assertTrue(Cache::has('public.home.featured'));
+
+        $this->actingAs($this->admin)->delete("/admin/menu/{$item->id}");
+
+        $this->assertFalse(Cache::has('public.home.featured'));
+    }
 }
