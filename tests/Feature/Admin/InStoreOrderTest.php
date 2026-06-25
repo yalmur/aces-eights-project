@@ -186,4 +186,48 @@ class InStoreOrderTest extends TestCase
         $this->assertNotNull($order);
         $this->assertEquals($expected, $order->total);
     }
+
+    public function test_invalid_order_type_fails_validation(): void
+    {
+        $admin = $this->admin();
+        $item  = MenuItem::where('is_available', true)->first();
+
+        $this->actingAs($admin)->post(route('admin.orders.in-store.store'), [
+            'customer_name' => 'Test Customer',
+            'order_type'    => 'delivery',
+            'items'         => [['menu_item_id' => $item->id, 'qty' => 1]],
+        ])->assertSessionHasErrors('order_type');
+    }
+
+    public function test_nonexistent_menu_item_id_fails_validation(): void
+    {
+        $admin = $this->admin();
+
+        $this->actingAs($admin)->post(route('admin.orders.in-store.store'), [
+            'customer_name' => 'Test Customer',
+            'order_type'    => 'eat_in',
+            'items'         => [['menu_item_id' => 99999, 'qty' => 1]],
+        ])->assertSessionHasErrors('items.0.menu_item_id');
+    }
+
+    public function test_non_admin_cannot_post_to_in_store_store(): void
+    {
+        $customer = User::factory()->create(['role' => 'customer']);
+        $item     = MenuItem::where('is_available', true)->first();
+
+        $this->actingAs($customer)->post(route('admin.orders.in-store.store'), [
+            'customer_name' => 'Test',
+            'order_type'    => 'eat_in',
+            'items'         => [['menu_item_id' => $item->id, 'qty' => 1]],
+        ])->assertStatus(403);
+    }
+
+    public function test_guest_cannot_post_to_in_store_store(): void
+    {
+        $this->post(route('admin.orders.in-store.store'), [
+            'customer_name' => 'Test',
+            'order_type'    => 'eat_in',
+            'items'         => [['menu_item_id' => 1, 'qty' => 1]],
+        ])->assertRedirect('/login');
+    }
 }
