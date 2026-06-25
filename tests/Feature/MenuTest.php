@@ -98,4 +98,46 @@ class MenuTest extends TestCase
 
         $this->assertSame(['Pizzas', 'Sides'], $names);
     }
+
+    public function test_menu_index_cache_populates_on_first_request(): void
+    {
+        \Illuminate\Support\Facades\Cache::flush();
+        $this->assertFalse(\Illuminate\Support\Facades\Cache::has('public.menu.index'));
+
+        $this->get('/menu')->assertOk();
+
+        $this->assertTrue(\Illuminate\Support\Facades\Cache::has('public.menu.index'));
+    }
+
+    public function test_menu_index_cache_contains_both_categories_and_toppings(): void
+    {
+        \Illuminate\Support\Facades\Cache::flush();
+        $cat = Category::factory()->create(['name' => 'Cached Cat', 'sort_order' => 1]);
+        MenuItem::factory()->create(['category_id' => $cat->id, 'is_available' => true]);
+        Topping::factory()->create(['name' => 'Cached Topping', 'is_available' => true]);
+
+        $this->get('/menu')->assertOk();
+
+        [$categories, $toppings] = \Illuminate\Support\Facades\Cache::get('public.menu.index');
+        $this->assertTrue($categories->contains('name', 'Cached Cat'));
+        $this->assertTrue($toppings->contains('name', 'Cached Topping'));
+    }
+
+    public function test_menu_index_second_request_serves_from_cache_not_db(): void
+    {
+        \Illuminate\Support\Facades\Cache::flush();
+        $cat = Category::factory()->create(['name' => 'Original Name', 'sort_order' => 1]);
+        MenuItem::factory()->create(['category_id' => $cat->id, 'is_available' => true]);
+
+        $this->get('/menu')->assertOk(); // warm cache
+
+        // Rename in DB directly — no Eloquent events, so cache stays stale
+        \Illuminate\Support\Facades\DB::table('categories')
+            ->where('id', $cat->id)
+            ->update(['name' => 'Changed Name']);
+
+        $categories = $this->get('/menu')->viewData('categories');
+        $this->assertTrue($categories->contains('name', 'Original Name'));
+        $this->assertFalse($categories->contains('name', 'Changed Name'));
+    }
 }
