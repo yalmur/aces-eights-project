@@ -133,4 +133,92 @@ class DashboardTest extends TestCase
             ->get('/admin')
             ->assertViewHas('orderGrowth', -50);
     }
+
+    // --- activeDeliveries stat ---
+
+    public function test_active_deliveries_counts_out_for_delivery_orders(): void
+    {
+        Order::factory()->create(['status' => 'out_for_delivery']);
+        Order::factory()->create(['status' => 'out_for_delivery']);
+        Order::factory()->create(['status' => 'cooking']); // should not count
+
+        $this->actingAs($this->admin)
+            ->get('/admin')
+            ->assertViewHas('activeDeliveries', 2);
+    }
+
+    public function test_active_deliveries_is_zero_when_no_deliveries_out(): void
+    {
+        Order::factory()->create(['status' => 'accepted']);
+
+        $this->actingAs($this->admin)
+            ->get('/admin')
+            ->assertViewHas('activeDeliveries', 0);
+    }
+
+    // --- todayRevenue stat ---
+
+    public function test_today_revenue_sums_non_excluded_order_totals(): void
+    {
+        Order::factory()->create(['status' => 'accepted',  'total' => 25.00, 'created_at' => today()]);
+        Order::factory()->create(['status' => 'delivered', 'total' => 15.00, 'created_at' => today()]);
+
+        $this->actingAs($this->admin)
+            ->get('/admin')
+            ->assertViewHas('todayRevenue', 40.0);
+    }
+
+    public function test_today_revenue_excludes_pending_payment_orders(): void
+    {
+        Order::factory()->create(['status' => 'accepted',        'total' => 20.00, 'created_at' => today()]);
+        Order::factory()->create(['status' => 'pending_payment', 'total' => 99.00, 'created_at' => today()]);
+
+        $this->actingAs($this->admin)
+            ->get('/admin')
+            ->assertViewHas('todayRevenue', 20.0);
+    }
+
+    public function test_today_revenue_is_zero_when_no_orders_today(): void
+    {
+        $this->actingAs($this->admin)
+            ->get('/admin')
+            ->assertViewHas('todayRevenue', 0.0);
+    }
+
+    // --- recentOrders stat ---
+
+    public function test_recent_orders_excludes_pending_payment_and_cancelled(): void
+    {
+        $visible = Order::factory()->create(['status' => 'accepted']);
+        Order::factory()->create(['status' => 'pending_payment']);
+        Order::factory()->create(['status' => 'cancelled']);
+
+        $response = $this->actingAs($this->admin)->get('/admin');
+
+        $orders = $response->viewData('recentOrders');
+        $this->assertTrue($orders->contains('id', $visible->id));
+        $this->assertCount(1, $orders);
+    }
+
+    public function test_recent_orders_excludes_delivered_and_collected(): void
+    {
+        $visible = Order::factory()->create(['status' => 'cooking']);
+        Order::factory()->create(['status' => 'delivered']);
+        Order::factory()->create(['status' => 'collected']);
+
+        $response = $this->actingAs($this->admin)->get('/admin');
+
+        $orders = $response->viewData('recentOrders');
+        $this->assertTrue($orders->contains('id', $visible->id));
+        $this->assertCount(1, $orders);
+    }
+
+    public function test_recent_orders_limited_to_five(): void
+    {
+        Order::factory()->count(8)->create(['status' => 'accepted']);
+
+        $response = $this->actingAs($this->admin)->get('/admin');
+
+        $this->assertCount(5, $response->viewData('recentOrders'));
+    }
 }
