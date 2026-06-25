@@ -57,4 +57,34 @@ class CategoryModelTest extends TestCase
 
         $this->assertCount(3, $result);
     }
+
+    public function test_menu_items_relationship_includes_unavailable_items(): void
+    {
+        $category    = Category::factory()->create();
+        $available   = MenuItem::factory()->create(['category_id' => $category->id, 'is_available' => true]);
+        $unavailable = MenuItem::factory()->create(['category_id' => $category->id, 'is_available' => false]);
+
+        $ids = $category->menuItems()->pluck('id')->toArray();
+
+        $this->assertContains($available->id, $ids);
+        $this->assertContains($unavailable->id, $ids);
+    }
+
+    public function test_menu_items_relationship_orders_by_sort_order(): void
+    {
+        $category = Category::factory()->create();
+        $second   = MenuItem::factory()->create(['category_id' => $category->id, 'sort_order' => 2]);
+        $first    = MenuItem::factory()->create(['category_id' => $category->id, 'sort_order' => 1]);
+
+        $ids = $category->menuItems()->pluck('id')->toArray();
+
+        $this->assertSame([$first->id, $second->id], $ids);
+    }
+
+    public function test_slug_is_stored_correctly(): void
+    {
+        $category = Category::factory()->create(['slug' => 'hot-dogs']);
+
+        $this->assertSame('hot-dogs', $category->fresh()->slug);
+    }
 }
