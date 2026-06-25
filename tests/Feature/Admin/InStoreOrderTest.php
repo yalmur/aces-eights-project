@@ -2,10 +2,12 @@
 
 namespace Tests\Feature\Admin;
 
+use App\Events\OrderStatusUpdated;
 use App\Models\MenuItem;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Event;
 use Tests\TestCase;
 
 class InStoreOrderTest extends TestCase
@@ -229,5 +231,44 @@ class InStoreOrderTest extends TestCase
             'order_type'    => 'eat_in',
             'items'         => [['menu_item_id' => 1, 'qty' => 1]],
         ])->assertRedirect('/login');
+    }
+
+    public function test_store_in_store_dispatches_order_status_updated_event(): void
+    {
+        Event::fake();
+        $admin = $this->admin();
+        $item  = MenuItem::where('is_available', true)->first();
+
+        $this->actingAs($admin)->post(route('admin.orders.in-store.store'), [
+            'customer_name' => 'Event Test',
+            'order_type'    => 'eat_in',
+            'items'         => [['menu_item_id' => $item->id, 'qty' => 1]],
+        ]);
+
+        Event::assertDispatched(OrderStatusUpdated::class);
+    }
+
+    public function test_store_in_store_flash_includes_order_id(): void
+    {
+        $admin = $this->admin();
+        $item  = MenuItem::where('is_available', true)->first();
+
+        $this->actingAs($admin)->post(route('admin.orders.in-store.store'), [
+            'customer_name' => 'Flash Test',
+            'order_type'    => 'eat_in',
+            'items'         => [['menu_item_id' => $item->id, 'qty' => 1]],
+        ])->assertSessionHas('success', fn ($msg) => str_contains($msg, '#'));
+    }
+
+    public function test_store_in_store_flash_includes_customer_name(): void
+    {
+        $admin = $this->admin();
+        $item  = MenuItem::where('is_available', true)->first();
+
+        $this->actingAs($admin)->post(route('admin.orders.in-store.store'), [
+            'customer_name' => 'Unique Customer XYZ',
+            'order_type'    => 'eat_in',
+            'items'         => [['menu_item_id' => $item->id, 'qty' => 1]],
+        ])->assertSessionHas('success', fn ($msg) => str_contains($msg, 'Unique Customer XYZ'));
     }
 }
