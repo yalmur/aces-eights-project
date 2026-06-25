@@ -92,4 +92,44 @@ class MenuShowTest extends TestCase
             ->assertViewHas('related', fn ($r) =>  $r->contains('id', $available->id))
             ->assertViewHas('related', fn ($r) => !$r->contains('id', $unavailable->id));
     }
+
+    public function test_show_related_items_capped_at_four(): void
+    {
+        $category = Category::factory()->create();
+        $main     = MenuItem::factory()->create(['category_id' => $category->id, 'is_available' => true]);
+        MenuItem::factory()->count(6)->create(['category_id' => $category->id, 'is_available' => true]);
+
+        $related = $this->get('/menu/' . $main->slug)->viewData('related');
+
+        $this->assertLessThanOrEqual(4, $related->count());
+    }
+
+    public function test_show_eager_loads_allergens_on_item(): void
+    {
+        $category = Category::factory()->create();
+        $item     = MenuItem::factory()->create(['category_id' => $category->id, 'is_available' => true]);
+        $allergen = \App\Models\Allergen::factory()->create(['name' => 'Sesame']);
+        $item->allergens()->attach($allergen);
+
+        $viewItem = $this->get('/menu/' . $item->slug)->viewData('item');
+
+        $this->assertTrue($viewItem->relationLoaded('allergens'));
+        $this->assertTrue($viewItem->allergens->contains('name', 'Sesame'));
+    }
+
+    public function test_show_eager_loads_base_ingredients_on_item(): void
+    {
+        $category = Category::factory()->create();
+        $item     = MenuItem::factory()->create(['category_id' => $category->id, 'is_available' => true]);
+        \App\Models\BaseIngredient::create([
+            'menu_item_id' => $item->id,
+            'name'         => 'Tomato Sauce',
+            'sort_order'   => 1,
+        ]);
+
+        $viewItem = $this->get('/menu/' . $item->slug)->viewData('item');
+
+        $this->assertTrue($viewItem->relationLoaded('baseIngredients'));
+        $this->assertTrue($viewItem->baseIngredients->contains('name', 'Tomato Sauce'));
+    }
 }
