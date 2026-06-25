@@ -185,4 +185,89 @@ class AllergyAdminTest extends TestCase
         $this->assertDatabaseMissing('allergen_menu_item', ['menu_item_id' => $item->id, 'allergen_id' => $dairy->id]);
         $this->assertDatabaseHas('allergen_menu_item', ['menu_item_id' => $item->id, 'allergen_id' => $nuts->id]);
     }
+
+    // -------------------------------------------------------------------------
+    // Auth guards — toggle
+    // -------------------------------------------------------------------------
+
+    public function test_guest_redirected_from_toggle_allergen(): void
+    {
+        $allergen = \App\Models\Allergen::factory()->create();
+
+        $this->patch("/admin/allergens/{$allergen->id}/toggle")
+            ->assertRedirect('/login');
+    }
+
+    public function test_non_admin_cannot_toggle_allergen(): void
+    {
+        $customer = User::factory()->create(['role' => 'customer']);
+        $allergen = \App\Models\Allergen::factory()->create();
+
+        $this->actingAs($customer)
+            ->patch("/admin/allergens/{$allergen->id}/toggle")
+            ->assertStatus(403);
+    }
+
+    // -------------------------------------------------------------------------
+    // Auth guards — destroyAllergen
+    // -------------------------------------------------------------------------
+
+    public function test_guest_redirected_from_destroy_allergen(): void
+    {
+        $allergen = \App\Models\Allergen::factory()->create();
+
+        $this->delete("/admin/allergens/{$allergen->id}")
+            ->assertRedirect('/login');
+    }
+
+    public function test_non_admin_cannot_destroy_allergen(): void
+    {
+        $customer = User::factory()->create(['role' => 'customer']);
+        $allergen = \App\Models\Allergen::factory()->create();
+
+        $this->actingAs($customer)
+            ->delete("/admin/allergens/{$allergen->id}")
+            ->assertStatus(403);
+    }
+
+    // -------------------------------------------------------------------------
+    // Auth guards — saveSettings
+    // -------------------------------------------------------------------------
+
+    public function test_guest_redirected_from_save_allergy_settings(): void
+    {
+        $this->post('/admin/allergy/settings', ['allergy_alerts_enabled' => true])
+            ->assertRedirect('/login');
+    }
+
+    public function test_non_admin_cannot_save_allergy_settings(): void
+    {
+        $customer = User::factory()->create(['role' => 'customer']);
+
+        $this->actingAs($customer)
+            ->post('/admin/allergy/settings', ['allergy_alerts_enabled' => true])
+            ->assertStatus(403);
+    }
+
+    // -------------------------------------------------------------------------
+    // Auth guards — saveMap
+    // -------------------------------------------------------------------------
+
+    public function test_guest_redirected_from_save_allergy_map(): void
+    {
+        $item = \App\Models\MenuItem::factory()->create();
+
+        $this->post('/admin/allergy/map', ['menu_item_id' => $item->id, 'allergens' => []])
+            ->assertRedirect('/login');
+    }
+
+    public function test_non_admin_cannot_save_allergy_map(): void
+    {
+        $customer = User::factory()->create(['role' => 'customer']);
+        $item     = \App\Models\MenuItem::factory()->create();
+
+        $this->actingAs($customer)
+            ->post('/admin/allergy/map', ['menu_item_id' => $item->id, 'allergens' => []])
+            ->assertStatus(403);
+    }
 }
