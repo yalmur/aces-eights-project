@@ -578,4 +578,54 @@ class CheckoutTest extends TestCase
 
         $this->assertDatabaseHas('order_items', ['name' => 'Margherita', 'qty' => 1, 'line_total' => 12.00]);
     }
+
+    public function test_applied_promo_increments_current_uses(): void
+    {
+        $promo = Promotion::factory()->fixed(5)->create(['code' => 'INCREMENT', 'current_uses' => 0]);
+
+        $cartItems = [$this->cartItem('margherita', 'Margherita', 12.00)];
+
+        $this->actingAs($this->customer)->post('/checkout', [
+            'order_type' => 'collection',
+            'cart_items' => json_encode($cartItems),
+            'promo_code' => 'INCREMENT',
+        ]);
+
+        $this->assertSame(1, $promo->fresh()->current_uses);
+    }
+
+    public function test_invalid_promo_below_min_order_does_not_increment_uses(): void
+    {
+        $promo = Promotion::factory()->fixed(5)->create([
+            'code'             => 'BIGORDER',
+            'current_uses'     => 0,
+            'min_order_amount' => 50.00,
+        ]);
+
+        $cartItems = [$this->cartItem('margherita', 'Margherita', 12.00)];
+
+        $this->actingAs($this->customer)->post('/checkout', [
+            'order_type' => 'collection',
+            'cart_items' => json_encode($cartItems),
+            'promo_code' => 'BIGORDER',
+        ]);
+
+        $this->assertSame(0, $promo->fresh()->current_uses);
+    }
+
+    public function test_notes_field_stored_on_order(): void
+    {
+        $cartItems = [$this->cartItem('margherita', 'Margherita', 12.00)];
+
+        $this->actingAs($this->customer)->post('/checkout', [
+            'order_type' => 'collection',
+            'cart_items' => json_encode($cartItems),
+            'notes'      => 'Please ring the doorbell twice.',
+        ]);
+
+        $this->assertDatabaseHas('orders', [
+            'user_id' => $this->customer->id,
+            'notes'   => 'Please ring the doorbell twice.',
+        ]);
+    }
 }
