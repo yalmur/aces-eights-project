@@ -43,7 +43,7 @@ Route::get('/party-hall', fn () => redirect()->away('https://www.acesandeightssa
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/deals', [PageController::class, 'deals'])->name('deals');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
-Route::post('/contact', [PageController::class, 'sendContact'])->name('contact.send');
+Route::post('/contact', [PageController::class, 'sendContact'])->name('contact.send')->middleware('throttle:5,5');
 
 /*
 |--------------------------------------------------------------------------
@@ -61,7 +61,7 @@ Route::get('/auth/{provider}/callback',  [SocialAuthController::class, 'callback
 
 // Password Reset
 Route::get('/forgot-password',        [PasswordResetController::class, 'showForgotForm'])->name('password.request')->middleware('guest');
-Route::post('/forgot-password',       [PasswordResetController::class, 'sendLink'])->name('password.email')->middleware('guest');
+Route::post('/forgot-password',       [PasswordResetController::class, 'sendLink'])->name('password.email')->middleware(['guest', 'throttle:3,5']);
 Route::get('/reset-password/{token}', [PasswordResetController::class, 'showResetForm'])->name('password.reset')->middleware('guest');
 Route::post('/reset-password',        [PasswordResetController::class, 'reset'])->name('password.update')->middleware('guest');
 

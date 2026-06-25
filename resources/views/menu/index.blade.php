@@ -169,11 +169,11 @@
 <script>
   document.addEventListener('alpine:init', () => {
     // Overwrite hardcoded base ingredients with DB data
-    Alpine.store('cart').baseIngredients = {!! $categories->flatMap(function($cat) {
+    Alpine.store('cart').baseIngredients = @json($categories->flatMap(function($cat) {
       return $cat->availableItems->filter(fn($i) => $i->category->slug === 'pizza')->mapWithKeys(fn($item) => [
         $item->slug => $item->baseIngredients->pluck('name')->values()
       ]);
-    })->toJson() !!};
+    })->all());
   });
 </script>
 @endonce

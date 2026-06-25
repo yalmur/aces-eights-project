@@ -2,14 +2,12 @@
 @section('content')
 
 @php
-$menuItemsJson = json_encode($menuItems->map(function ($m) {
-    return [
-        'id'       => $m->id,
-        'name'     => $m->name,
-        'price'    => (float) $m->base_price,
-        'category' => $m->category ? $m->category->name : '',
-    ];
-}));
+$menuItemsData = $menuItems->map(fn ($m) => [
+    'id'       => $m->id,
+    'name'     => $m->name,
+    'price'    => (float) $m->base_price,
+    'category' => $m->category ? $m->category->name : '',
+]);
 @endphp
 
 <script>
@@ -18,7 +16,7 @@ function inStoreModal() {
         open: false,
         orderItems: [],
         search: '',
-        menuItems: {!! $menuItemsJson !!},
+        menuItems: @json($menuItemsData),
         get filteredMenuItems() {
             if (!this.search) return [];
             const q = this.search.toLowerCase();
