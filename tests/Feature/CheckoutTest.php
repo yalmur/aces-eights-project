@@ -43,6 +43,38 @@ class CheckoutTest extends TestCase
         $response->assertStatus(200);
     }
 
+    public function test_checkout_page_passes_default_address_to_view(): void
+    {
+        $address = \App\Models\UserAddress::factory()->create([
+            'user_id'    => $this->customer->id,
+            'is_default' => true,
+        ]);
+
+        $this->actingAs($this->customer)->get('/checkout')
+            ->assertViewHas('defaultAddress', fn ($a) => $a?->id === $address->id);
+    }
+
+    public function test_checkout_page_passes_active_delivery_zones_to_view(): void
+    {
+        Cache::flush();
+        \App\Models\DeliveryZone::factory()->create(['name' => 'Zone A', 'is_active' => true]);
+        \App\Models\DeliveryZone::factory()->create(['name' => 'Zone B', 'is_active' => false]);
+
+        $zones = $this->actingAs($this->customer)->get('/checkout')->viewData('zones');
+        $this->assertTrue($zones->contains('name', 'Zone A'));
+        $this->assertFalse($zones->contains('name', 'Zone B'));
+    }
+
+    public function test_checkout_page_passes_allergy_settings_to_view(): void
+    {
+        \App\Models\Setting::set('allergy_alerts_enabled', '1');
+        \App\Models\Setting::set('checkout_disclaimer', 'Custom disclaimer.');
+
+        $this->actingAs($this->customer)->get('/checkout')
+            ->assertViewHas('allergyEnabled', true)
+            ->assertViewHas('allergyDisclaimer', 'Custom disclaimer.');
+    }
+
     public function test_post_checkout_creates_order(): void
     {
         \App\Models\DeliveryZone::factory()->create(['postcodes' => 'NW5,N7,N19', 'is_active' => true]);
@@ -521,5 +553,29 @@ class CheckoutTest extends TestCase
             'discount_amount' => 3.50,
             'total'           => 12.00,
         ]);
+    }
+
+    public function test_qty_above_20_is_capped_to_20(): void
+    {
+        $cartItems = [$this->cartItem('margherita', 'Margherita', 12.00, 99)];
+
+        $this->actingAs($this->customer)->post('/checkout', [
+            'order_type' => 'collection',
+            'cart_items' => json_encode($cartItems),
+        ]);
+
+        $this->assertDatabaseHas('order_items', ['name' => 'Margherita', 'qty' => 20, 'line_total' => 240.00]);
+    }
+
+    public function test_qty_below_1_defaults_to_1(): void
+    {
+        $cartItems = [$this->cartItem('margherita', 'Margherita', 12.00, 0)];
+
+        $this->actingAs($this->customer)->post('/checkout', [
+            'order_type' => 'collection',
+            'cart_items' => json_encode($cartItems),
+        ]);
+
+        $this->assertDatabaseHas('order_items', ['name' => 'Margherita', 'qty' => 1, 'line_total' => 12.00]);
     }
 }
