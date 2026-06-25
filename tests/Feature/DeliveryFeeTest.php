@@ -189,4 +189,18 @@ class DeliveryFeeTest extends TestCase
                      'fee'     => 0,
                  ]);
     }
+
+    public function test_covered_response_has_null_message(): void
+    {
+        DeliveryZone::factory()->create([
+            'name'      => 'Zone A',
+            'postcodes' => 'NW5',
+            'fee'       => 2.50,
+            'is_active' => true,
+        ]);
+
+        $this->getJson('/delivery-fee?postcode=NW5')
+             ->assertOk()
+             ->assertJson(['covered' => true, 'message' => null]);
+    }
 }

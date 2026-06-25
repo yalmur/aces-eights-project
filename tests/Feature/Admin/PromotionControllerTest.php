@@ -172,4 +172,19 @@ class PromotionControllerTest extends TestCase
 
         $this->assertDatabaseHas('promotions', ['code' => 'INACTIVE', 'is_active' => false]);
     }
+
+    public function test_update_rejects_expires_at_in_the_past(): void
+    {
+        $promo = Promotion::factory()->create(['code' => 'EXISTCODE']);
+
+        $this->actingAs($this->admin)
+            ->put("/admin/promotions/{$promo->id}", [
+                'code'       => 'EXISTCODE',
+                'name'       => 'Test',
+                'type'       => 'percentage',
+                'value'      => 10,
+                'expires_at' => now()->subDay()->toDateString(),
+            ])
+            ->assertSessionHasErrors('expires_at');
+    }
 }

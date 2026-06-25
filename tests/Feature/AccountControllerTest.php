@@ -152,4 +152,13 @@ class AccountControllerTest extends TestCase
             'password_confirmation' => 'newpassword',
         ])->assertRedirect(route('login'));
     }
+
+    public function test_account_passes_user_to_view(): void
+    {
+        $user = User::factory()->create();
+
+        $this->actingAs($user)
+            ->get(route('account'))
+            ->assertViewHas('user', fn ($u) => $u->id === $user->id);
+    }
 }
