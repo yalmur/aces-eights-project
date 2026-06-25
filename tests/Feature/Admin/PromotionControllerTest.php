@@ -187,4 +187,53 @@ class PromotionControllerTest extends TestCase
             ])
             ->assertSessionHasErrors('expires_at');
     }
+
+    public function test_edit_returns_404_for_nonexistent_promotion(): void
+    {
+        $this->actingAs($this->admin)
+            ->get('/admin/promotions/99999/edit')
+            ->assertStatus(404);
+    }
+
+    public function test_update_returns_404_for_nonexistent_promotion(): void
+    {
+        $this->actingAs($this->admin)
+            ->put('/admin/promotions/99999', [
+                'name'  => 'X',
+                'code'  => 'X',
+                'type'  => 'fixed_amount',
+                'value' => 5,
+            ])
+            ->assertStatus(404);
+    }
+
+    public function test_destroy_returns_404_for_nonexistent_promotion(): void
+    {
+        $this->actingAs($this->admin)
+            ->delete('/admin/promotions/99999')
+            ->assertStatus(404);
+    }
+
+    public function test_destroy_flash_contains_promotion_code(): void
+    {
+        $promo = Promotion::factory()->create(['code' => 'SUMMER20']);
+
+        $this->actingAs($this->admin)
+            ->delete("/admin/promotions/{$promo->id}")
+            ->assertSessionHas('success', fn ($msg) => str_contains($msg, 'SUMMER20'));
+    }
+
+    public function test_update_rejects_invalid_type(): void
+    {
+        $promo = Promotion::factory()->create();
+
+        $this->actingAs($this->admin)
+            ->put("/admin/promotions/{$promo->id}", [
+                'name'  => 'Bad Type',
+                'code'  => 'BADTYPE',
+                'type'  => 'invalid_type',
+                'value' => 5,
+            ])
+            ->assertSessionHasErrors('type');
+    }
 }
