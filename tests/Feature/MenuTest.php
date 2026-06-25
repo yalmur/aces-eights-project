@@ -140,4 +140,39 @@ class MenuTest extends TestCase
         $this->assertTrue($categories->contains('name', 'Original Name'));
         $this->assertFalse($categories->contains('name', 'Changed Name'));
     }
+
+    public function test_has_stored_image_returns_false_when_image_path_null(): void
+    {
+        $item = MenuItem::factory()->make(['image_path' => null]);
+        $this->assertFalse($item->hasStoredImage());
+    }
+
+    public function test_has_stored_image_returns_false_when_file_absent_from_disk(): void
+    {
+        \Illuminate\Support\Facades\Storage::fake('public');
+        $item = MenuItem::factory()->create(['image_path' => 'menu/missing.jpg']);
+        $this->assertFalse($item->hasStoredImage());
+    }
+
+    public function test_has_stored_image_returns_true_when_file_exists_on_disk(): void
+    {
+        \Illuminate\Support\Facades\Storage::fake('public');
+        \Illuminate\Support\Facades\Storage::disk('public')->put('menu/pizza.jpg', 'fake');
+        $item = MenuItem::factory()->create(['image_path' => 'menu/pizza.jpg']);
+        $this->assertTrue($item->hasStoredImage());
+    }
+
+    public function test_is_pizza_returns_true_for_pizza_category_slug(): void
+    {
+        $category = Category::factory()->create(['slug' => 'pizza']);
+        $item     = MenuItem::factory()->create(['category_id' => $category->id]);
+        $this->assertTrue($item->isPizza());
+    }
+
+    public function test_is_pizza_returns_false_for_non_pizza_category_slug(): void
+    {
+        $category = Category::factory()->create(['slug' => 'sides']);
+        $item     = MenuItem::factory()->create(['category_id' => $category->id]);
+        $this->assertFalse($item->isPizza());
+    }
 }
