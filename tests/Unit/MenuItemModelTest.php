@@ -150,4 +150,34 @@ class MenuItemModelTest extends TestCase
         $item->update(['is_vegan' => false]);
         $this->assertFalse($item->fresh()->is_vegan);
     }
+
+    public function test_is_featured_cast_to_boolean(): void
+    {
+        $item = MenuItem::factory()->create(['is_featured' => 1]);
+
+        $this->assertTrue($item->fresh()->is_featured);
+    }
+
+    public function test_is_available_cast_to_boolean(): void
+    {
+        $item = MenuItem::factory()->create(['is_available' => 0]);
+
+        $this->assertFalse($item->fresh()->is_available);
+    }
+
+    public function test_base_price_cast_to_decimal(): void
+    {
+        $item = MenuItem::factory()->create(['base_price' => 9.5]);
+
+        $this->assertSame('9.50', (string) $item->fresh()->base_price);
+    }
+
+    public function test_allergens_relationship_returns_attached_allergen(): void
+    {
+        $item     = MenuItem::factory()->create();
+        $allergen = \App\Models\Allergen::factory()->create();
+        $item->allergens()->attach($allergen);
+
+        $this->assertTrue($item->allergens()->where('allergen_id', $allergen->id)->exists());
+    }
 }

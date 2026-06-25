@@ -120,4 +120,11 @@ class OrderStatusTest extends TestCase
             ->patch("/admin/orders/{$order->id}/status", ['status' => 'cooking'])
             ->assertSessionHas('success');
     }
+
+    public function test_update_status_returns_404_for_nonexistent_order(): void
+    {
+        $this->actingAs($this->admin)
+            ->patch('/admin/orders/99999/status', ['status' => 'cooking'])
+            ->assertStatus(404);
+    }
 }

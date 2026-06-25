@@ -56,4 +56,28 @@ class UserModelTest extends TestCase
 
         $this->assertSame([$newer->id, $older->id], $ids);
     }
+
+    public function test_addresses_relationship_sorts_default_first(): void
+    {
+        $user       = User::factory()->create();
+        $nonDefault = UserAddress::factory()->create(['user_id' => $user->id, 'is_default' => false]);
+        $default    = UserAddress::factory()->create(['user_id' => $user->id, 'is_default' => true]);
+
+        $first = $user->addresses()->first();
+
+        $this->assertSame($default->id, $first->id);
+    }
+
+    public function test_social_fields_are_fillable(): void
+    {
+        $user = User::factory()->create([
+            'google_id'   => 'g-123',
+            'facebook_id' => 'f-456',
+            'avatar'      => 'https://example.com/avatar.jpg',
+        ]);
+
+        $this->assertSame('g-123',  $user->fresh()->google_id);
+        $this->assertSame('f-456',  $user->fresh()->facebook_id);
+        $this->assertSame('https://example.com/avatar.jpg', $user->fresh()->avatar);
+    }
 }
