@@ -97,4 +97,57 @@ class MenuItemModelTest extends TestCase
 
         $this->assertTrue($item->hasStoredImage());
     }
+
+    // -------------------------------------------------------------------------
+    // MenuItem::baseIngredients()
+    // -------------------------------------------------------------------------
+
+    public function test_base_ingredients_returns_ordered_by_sort_order(): void
+    {
+        $item = MenuItem::factory()->create();
+        \App\Models\BaseIngredient::create(['menu_item_id' => $item->id, 'name' => 'Cheese', 'sort_order' => 2]);
+        \App\Models\BaseIngredient::create(['menu_item_id' => $item->id, 'name' => 'Sauce',  'sort_order' => 1]);
+
+        $names = $item->baseIngredients()->pluck('name')->all();
+
+        $this->assertSame(['Sauce', 'Cheese'], $names);
+    }
+
+    // -------------------------------------------------------------------------
+    // MenuItem::relatedItems()
+    // -------------------------------------------------------------------------
+
+    public function test_related_items_returns_linked_items_via_pivot(): void
+    {
+        $category = Category::factory()->create();
+        $main     = MenuItem::factory()->create(['category_id' => $category->id]);
+        $related  = MenuItem::factory()->create(['category_id' => $category->id]);
+
+        $main->relatedItems()->attach($related->id);
+
+        $this->assertCount(1, $main->relatedItems);
+        $this->assertSame($related->id, $main->relatedItems->first()->id);
+    }
+
+    // -------------------------------------------------------------------------
+    // is_vegetarian / is_vegan boolean casts
+    // -------------------------------------------------------------------------
+
+    public function test_is_vegetarian_cast_is_boolean(): void
+    {
+        $item = MenuItem::factory()->create(['is_vegetarian' => true]);
+        $this->assertTrue($item->fresh()->is_vegetarian);
+
+        $item->update(['is_vegetarian' => false]);
+        $this->assertFalse($item->fresh()->is_vegetarian);
+    }
+
+    public function test_is_vegan_cast_is_boolean(): void
+    {
+        $item = MenuItem::factory()->create(['is_vegan' => true]);
+        $this->assertTrue($item->fresh()->is_vegan);
+
+        $item->update(['is_vegan' => false]);
+        $this->assertFalse($item->fresh()->is_vegan);
+    }
 }
