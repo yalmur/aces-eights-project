@@ -60,4 +60,29 @@ class RegistrationTest extends TestCase
 
         $response->assertSessionHasErrors(['password']);
     }
+
+    public function test_registration_rejects_password_shorter_than_8_chars(): void
+    {
+        $response = $this->post(route('register.post'), [
+            'name'                  => 'Test User',
+            'email'                 => 'test@example.com',
+            'password'              => 'short',
+            'password_confirmation' => 'short',
+        ]);
+
+        $response->assertSessionHasErrors(['password']);
+        $this->assertGuest();
+    }
+
+    public function test_registration_rejects_name_exceeding_max_length(): void
+    {
+        $response = $this->post(route('register.post'), [
+            'name'                  => str_repeat('a', 256),
+            'email'                 => 'test@example.com',
+            'password'              => 'password123',
+            'password_confirmation' => 'password123',
+        ]);
+
+        $response->assertSessionHasErrors(['name']);
+    }
 }

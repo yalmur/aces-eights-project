@@ -80,4 +80,20 @@ class AuthTest extends TestCase
 
         $this->assertGuest();
     }
+
+    public function test_login_with_remember_flag_authenticates_user(): void
+    {
+        $user = User::factory()->create([
+            'email'    => 'remember@example.com',
+            'password' => bcrypt('password123'),
+        ]);
+
+        $this->post('/login', [
+            'email'    => 'remember@example.com',
+            'password' => 'password123',
+            'remember' => '1',
+        ])->assertRedirect('/');
+
+        $this->assertAuthenticatedAs($user);
+    }
 }
