@@ -150,4 +150,48 @@ class StripeWebhookTest extends TestCase
             'data' => ['object' => ['id' => 'pi_test_xyz']],
         ])->assertStatus(200);
     }
+
+    public function test_completed_event_queues_order_confirmation_email(): void
+    {
+        \Illuminate\Support\Facades\Mail::fake();
+        $secret = 'whsec_testsecret';
+        config(['services.stripe.webhook_secret' => $secret]);
+
+        $order = Order::factory()->pendingPayment()->create([
+            'stripe_session_id' => 'cs_test_mail',
+            'customer_email'    => 'customer@example.com',
+        ]);
+
+        $this->signedWebhookCall($secret, [
+            'type' => 'checkout.session.completed',
+            'data' => ['object' => ['id' => 'cs_test_mail', 'payment_intent' => 'pi_mail_test']],
+        ])->assertStatus(200);
+
+        \Illuminate\Support\Facades\Mail::assertQueued(
+            \App\Mail\OrderConfirmation::class,
+            fn ($mail) => $mail->hasTo('customer@example.com')
+        );
+    }
+
+    public function test_completed_event_dispatches_order_status_updated_event(): void
+    {
+        \Illuminate\Support\Facades\Event::fake([\App\Events\OrderStatusUpdated::class]);
+        $secret = 'whsec_testsecret';
+        config(['services.stripe.webhook_secret' => $secret]);
+
+        $order = Order::factory()->pendingPayment()->create([
+            'stripe_session_id' => 'cs_test_event',
+            'customer_email'    => 'ev@example.com',
+        ]);
+
+        $this->signedWebhookCall($secret, [
+            'type' => 'checkout.session.completed',
+            'data' => ['object' => ['id' => 'cs_test_event', 'payment_intent' => 'pi_ev']],
+        ])->assertStatus(200);
+
+        \Illuminate\Support\Facades\Event::assertDispatched(
+            \App\Events\OrderStatusUpdated::class,
+            fn ($e) => $e->order->id === $order->id
+        );
+    }
 }
