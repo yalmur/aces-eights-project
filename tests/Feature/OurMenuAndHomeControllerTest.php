@@ -237,6 +237,40 @@ class OurMenuAndHomeControllerTest extends TestCase
         $this->assertTrue(Cache::has('public.our-menu.sections'));
     }
 
+    public function test_home_featured_cache_populates_on_first_request(): void
+    {
+        $this->assertFalse(Cache::has('public.home.featured'));
+
+        $category = Category::factory()->create();
+        MenuItem::factory()->create([
+            'category_id' => $category->id,
+            'is_featured' => true,
+            'is_available' => true,
+        ]);
+
+        $this->get('/')->assertOk();
+
+        $this->assertTrue(Cache::has('public.home.featured'));
+    }
+
+    public function test_home_featured_cache_serves_stale_on_second_request(): void
+    {
+        $category = Category::factory()->create();
+        $item = MenuItem::factory()->create([
+            'category_id' => $category->id,
+            'name'         => 'Cached Featured',
+            'is_featured'  => true,
+            'is_available' => true,
+        ]);
+
+        $this->get('/')->assertOk(); // warm cache
+
+        // Delete from DB — cached view should still show item name
+        $item->delete();
+
+        $this->get('/')->assertOk()->assertSee('Cached Featured');
+    }
+
     public function test_our_menu_serves_cached_sections_on_second_request(): void
     {
         $category = Category::factory()->create(['name' => 'Originals', 'sort_order' => 1]);

@@ -458,6 +458,20 @@ class MenuItemTest extends TestCase
         $this->assertDatabaseHas('menu_items', ['name' => 'Featured Special', 'is_featured' => true]);
     }
 
+    public function test_store_assigns_incremented_sort_order(): void
+    {
+        $category = Category::factory()->create();
+        MenuItem::factory()->create(['category_id' => $category->id, 'sort_order' => 5]);
+
+        $this->actingAs($this->admin)->post('/admin/menu', [
+            'name'        => 'New Item',
+            'category_id' => $category->id,
+            'base_price'  => '10.00',
+        ]);
+
+        $this->assertDatabaseHas('menu_items', ['name' => 'New Item', 'sort_order' => 6]);
+    }
+
     public function test_update_sets_is_vegetarian_and_is_vegan_flags(): void
     {
         $item = MenuItem::factory()->create(['is_vegetarian' => false, 'is_vegan' => false]);
