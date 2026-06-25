@@ -182,4 +182,46 @@ class OurMenuAndHomeControllerTest extends TestCase
         $response->assertStatus(200);
         $response->assertViewHas('heroText', 'Grand Opening');
     }
+
+    public function test_home_page_passes_story_text_from_settings(): void
+    {
+        Setting::set('story_text', 'Born in the heart of London.');
+
+        $this->get('/')
+            ->assertOk()
+            ->assertViewHas('storyText', 'Born in the heart of London.');
+    }
+
+    public function test_home_page_passes_opening_hours_sun_thu_from_settings(): void
+    {
+        Setting::set('opening_sun_thu', '17:00 – 22:00');
+
+        $this->get('/')
+            ->assertOk()
+            ->assertViewHas('openingSunThu', '17:00 – 22:00');
+    }
+
+    public function test_home_page_passes_opening_hours_fri_sat_from_settings(): void
+    {
+        Setting::set('opening_fri_sat', '17:00 – 23:30');
+
+        $this->get('/')
+            ->assertOk()
+            ->assertViewHas('openingFriSat', '17:00 – 23:30');
+    }
+
+    public function test_home_page_uses_default_opening_hours_when_setting_absent(): void
+    {
+        $this->get('/')
+            ->assertOk()
+            ->assertViewHas('openingSunThu', '16:00 – 22:45')
+            ->assertViewHas('openingFriSat', '16:00 – 23:15');
+    }
+
+    public function test_home_page_passes_is_open_now_as_boolean(): void
+    {
+        $response = $this->get('/');
+        $response->assertOk();
+        $this->assertIsBool($response->viewData('isOpenNow'));
+    }
 }
