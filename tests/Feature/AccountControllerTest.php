@@ -161,4 +161,27 @@ class AccountControllerTest extends TestCase
             ->get(route('account'))
             ->assertViewHas('user', fn ($u) => $u->id === $user->id);
     }
+
+    public function test_account_paginates_orders_at_10_per_page(): void
+    {
+        $user = User::factory()->create();
+        Order::factory()->count(11)->create(['user_id' => $user->id]);
+
+        $response = $this->actingAs($user)->get(route('account'));
+
+        $orders = $response->viewData('orders');
+        $this->assertSame(11, $orders->total());
+        $this->assertCount(10, $orders->items());
+    }
+
+    public function test_account_addresses_ordered_default_first(): void
+    {
+        $user        = User::factory()->create();
+        $nonDefault  = \App\Models\UserAddress::factory()->create(['user_id' => $user->id, 'is_default' => false]);
+        $default     = \App\Models\UserAddress::factory()->create(['user_id' => $user->id, 'is_default' => true]);
+
+        $addresses = $this->actingAs($user)->get(route('account'))->viewData('addresses');
+
+        $this->assertSame($default->id, $addresses->first()->id);
+    }
 }
