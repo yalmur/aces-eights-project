@@ -113,4 +113,63 @@ class PromotionControllerTest extends TestCase
 
         $this->assertDatabaseMissing('promotions', ['id' => $promo->id]);
     }
+
+    public function test_store_rejects_expires_at_in_the_past(): void
+    {
+        $this->actingAs($this->admin)
+            ->post('/admin/promotions', [
+                'code'       => 'PASTCODE',
+                'name'       => 'Past Promo',
+                'type'       => 'percentage',
+                'value'      => 10,
+                'expires_at' => now()->subDay()->toDateString(),
+            ])
+            ->assertSessionHasErrors('expires_at');
+
+        $this->assertDatabaseMissing('promotions', ['code' => 'PASTCODE']);
+    }
+
+    public function test_store_rejects_invalid_type(): void
+    {
+        $this->actingAs($this->admin)
+            ->post('/admin/promotions', [
+                'code'  => 'BADTYPE',
+                'name'  => 'Bad Type',
+                'type'  => 'half_price',
+                'value' => 0,
+            ])
+            ->assertSessionHasErrors('type');
+
+        $this->assertDatabaseMissing('promotions', ['code' => 'BADTYPE']);
+    }
+
+    public function test_update_allows_promotion_to_keep_its_own_code(): void
+    {
+        $promo = Promotion::factory()->create(['code' => 'MYCODE', 'name' => 'Original']);
+
+        $this->actingAs($this->admin)
+            ->put("/admin/promotions/{$promo->id}", [
+                'code'  => 'MYCODE',
+                'name'  => 'Updated Name',
+                'type'  => 'percentage',
+                'value' => 10,
+            ])
+            ->assertSessionHasNoErrors()
+            ->assertRedirect(route('admin.promotions.index'));
+
+        $this->assertDatabaseHas('promotions', ['id' => $promo->id, 'name' => 'Updated Name']);
+    }
+
+    public function test_store_sets_is_active_false_when_checkbox_omitted(): void
+    {
+        $this->actingAs($this->admin)->post('/admin/promotions', [
+            'code'  => 'INACTIVE',
+            'name'  => 'Inactive Promo',
+            'type'  => 'fixed_amount',
+            'value' => 5,
+            // is_active not sent — boolean(false) → false
+        ]);
+
+        $this->assertDatabaseHas('promotions', ['code' => 'INACTIVE', 'is_active' => false]);
+    }
 }
