@@ -1,23 +1,22 @@
 # Graph Report - webapp  (2026-06-25)
 
 ## Corpus Check
-- 234 files · ~534,035 words
+- 241 files · ~538,588 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 69781 nodes · 85327 edges · 9187 communities (3630 shown, 5557 thin omitted)
+- 69894 nodes · 85487 edges · 9173 communities (3625 shown, 5548 thin omitted)
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 4272 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5f486d58`
+- Built from commit: `7bd386da`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - [[_COMMUNITY_Community 0|Community 0]]
 - [[_COMMUNITY_Community 1|Community 1]]
-- [[_COMMUNITY_Community 3|Community 3]]
 - [[_COMMUNITY_Community 4|Community 4]]
 - [[_COMMUNITY_Community 5|Community 5]]
 - [[_COMMUNITY_Community 6|Community 6]]
@@ -60,7 +59,6 @@
 - [[_COMMUNITY_Community 127|Community 127]]
 - [[_COMMUNITY_Community 128|Community 128]]
 - [[_COMMUNITY_Community 129|Community 129]]
-- [[_COMMUNITY_Community 130|Community 130]]
 - [[_COMMUNITY_Community 241|Community 241]]
 - [[_COMMUNITY_Community 243|Community 243]]
 - [[_COMMUNITY_Community 247|Community 247]]
@@ -208,6 +206,7 @@
 - [[_COMMUNITY_Community 396|Community 396]]
 - [[_COMMUNITY_Community 397|Community 397]]
 - [[_COMMUNITY_Community 398|Community 398]]
+- [[_COMMUNITY_Community 399|Community 399]]
 - [[_COMMUNITY_Community 400|Community 400]]
 - [[_COMMUNITY_Community 401|Community 401]]
 - [[_COMMUNITY_Community 402|Community 402]]
@@ -306,7 +305,6 @@
 - [[_COMMUNITY_Community 496|Community 496]]
 - [[_COMMUNITY_Community 497|Community 497]]
 - [[_COMMUNITY_Community 498|Community 498]]
-- [[_COMMUNITY_Community 499|Community 499]]
 - [[_COMMUNITY_Community 500|Community 500]]
 - [[_COMMUNITY_Community 501|Community 501]]
 - [[_COMMUNITY_Community 502|Community 502]]
@@ -495,6 +493,7 @@
 - [[_COMMUNITY_Community 692|Community 692]]
 - [[_COMMUNITY_Community 693|Community 693]]
 - [[_COMMUNITY_Community 694|Community 694]]
+- [[_COMMUNITY_Community 695|Community 695]]
 - [[_COMMUNITY_Community 696|Community 696]]
 - [[_COMMUNITY_Community 697|Community 697]]
 - [[_COMMUNITY_Community 700|Community 700]]
@@ -671,6 +670,7 @@
 - [[_COMMUNITY_Community 880|Community 880]]
 - [[_COMMUNITY_Community 881|Community 881]]
 - [[_COMMUNITY_Community 882|Community 882]]
+- [[_COMMUNITY_Community 883|Community 883]]
 - [[_COMMUNITY_Community 884|Community 884]]
 - [[_COMMUNITY_Community 885|Community 885]]
 - [[_COMMUNITY_Community 886|Community 886]]
@@ -680,7 +680,6 @@
 - [[_COMMUNITY_Community 891|Community 891]]
 - [[_COMMUNITY_Community 892|Community 892]]
 - [[_COMMUNITY_Community 893|Community 893]]
-- [[_COMMUNITY_Community 894|Community 894]]
 - [[_COMMUNITY_Community 895|Community 895]]
 - [[_COMMUNITY_Community 896|Community 896]]
 - [[_COMMUNITY_Community 897|Community 897]]
@@ -748,7 +747,6 @@
 - [[_COMMUNITY_Community 959|Community 959]]
 - [[_COMMUNITY_Community 960|Community 960]]
 - [[_COMMUNITY_Community 961|Community 961]]
-- [[_COMMUNITY_Community 962|Community 962]]
 - [[_COMMUNITY_Community 963|Community 963]]
 - [[_COMMUNITY_Community 964|Community 964]]
 - [[_COMMUNITY_Community 965|Community 965]]
@@ -777,13 +775,11 @@
 - [[_COMMUNITY_Community 990|Community 990]]
 - [[_COMMUNITY_Community 991|Community 991]]
 - [[_COMMUNITY_Community 993|Community 993]]
-- [[_COMMUNITY_Community 994|Community 994]]
 - [[_COMMUNITY_Community 995|Community 995]]
 - [[_COMMUNITY_Community 996|Community 996]]
 - [[_COMMUNITY_Community 997|Community 997]]
 - [[_COMMUNITY_Community 998|Community 998]]
 - [[_COMMUNITY_Community 999|Community 999]]
-- [[_COMMUNITY_Community 1000|Community 1000]]
 - [[_COMMUNITY_Community 1001|Community 1001]]
 - [[_COMMUNITY_Community 1002|Community 1002]]
 - [[_COMMUNITY_Community 1003|Community 1003]]
@@ -802,7 +798,6 @@
 - [[_COMMUNITY_Community 1016|Community 1016]]
 - [[_COMMUNITY_Community 1017|Community 1017]]
 - [[_COMMUNITY_Community 1018|Community 1018]]
-- [[_COMMUNITY_Community 1019|Community 1019]]
 - [[_COMMUNITY_Community 1020|Community 1020]]
 - [[_COMMUNITY_Community 1021|Community 1021]]
 - [[_COMMUNITY_Community 1022|Community 1022]]
@@ -810,7 +805,6 @@
 - [[_COMMUNITY_Community 1024|Community 1024]]
 - [[_COMMUNITY_Community 1025|Community 1025]]
 - [[_COMMUNITY_Community 1026|Community 1026]]
-- [[_COMMUNITY_Community 1028|Community 1028]]
 - [[_COMMUNITY_Community 1029|Community 1029]]
 - [[_COMMUNITY_Community 1030|Community 1030]]
 - [[_COMMUNITY_Community 1031|Community 1031]]
@@ -824,15 +818,16 @@
 - [[_COMMUNITY_Community 1039|Community 1039]]
 - [[_COMMUNITY_Community 1040|Community 1040]]
 - [[_COMMUNITY_Community 1041|Community 1041]]
-- [[_COMMUNITY_Community 1042|Community 1042]]
 - [[_COMMUNITY_Community 1043|Community 1043]]
 - [[_COMMUNITY_Community 1044|Community 1044]]
 - [[_COMMUNITY_Community 1045|Community 1045]]
+- [[_COMMUNITY_Community 1046|Community 1046]]
 - [[_COMMUNITY_Community 1047|Community 1047]]
 - [[_COMMUNITY_Community 1048|Community 1048]]
 - [[_COMMUNITY_Community 1049|Community 1049]]
 - [[_COMMUNITY_Community 1050|Community 1050]]
 - [[_COMMUNITY_Community 1051|Community 1051]]
+- [[_COMMUNITY_Community 1052|Community 1052]]
 - [[_COMMUNITY_Community 1053|Community 1053]]
 - [[_COMMUNITY_Community 1054|Community 1054]]
 - [[_COMMUNITY_Community 1055|Community 1055]]
@@ -856,7 +851,6 @@
 - [[_COMMUNITY_Community 1077|Community 1077]]
 - [[_COMMUNITY_Community 1078|Community 1078]]
 - [[_COMMUNITY_Community 1079|Community 1079]]
-- [[_COMMUNITY_Community 1081|Community 1081]]
 - [[_COMMUNITY_Community 1082|Community 1082]]
 - [[_COMMUNITY_Community 1083|Community 1083]]
 - [[_COMMUNITY_Community 1084|Community 1084]]
@@ -910,7 +904,6 @@
 - [[_COMMUNITY_Community 1138|Community 1138]]
 - [[_COMMUNITY_Community 1140|Community 1140]]
 - [[_COMMUNITY_Community 1141|Community 1141]]
-- [[_COMMUNITY_Community 1142|Community 1142]]
 - [[_COMMUNITY_Community 1143|Community 1143]]
 - [[_COMMUNITY_Community 1144|Community 1144]]
 - [[_COMMUNITY_Community 1145|Community 1145]]
@@ -963,7 +956,6 @@
 - [[_COMMUNITY_Community 1198|Community 1198]]
 - [[_COMMUNITY_Community 1199|Community 1199]]
 - [[_COMMUNITY_Community 1200|Community 1200]]
-- [[_COMMUNITY_Community 1201|Community 1201]]
 - [[_COMMUNITY_Community 1202|Community 1202]]
 - [[_COMMUNITY_Community 1203|Community 1203]]
 - [[_COMMUNITY_Community 1204|Community 1204]]
@@ -1044,9 +1036,7 @@
 - [[_COMMUNITY_Community 1285|Community 1285]]
 - [[_COMMUNITY_Community 1286|Community 1286]]
 - [[_COMMUNITY_Community 1287|Community 1287]]
-- [[_COMMUNITY_Community 1288|Community 1288]]
 - [[_COMMUNITY_Community 1289|Community 1289]]
-- [[_COMMUNITY_Community 1290|Community 1290]]
 - [[_COMMUNITY_Community 1291|Community 1291]]
 - [[_COMMUNITY_Community 1293|Community 1293]]
 - [[_COMMUNITY_Community 1294|Community 1294]]
@@ -1069,7 +1059,6 @@
 - [[_COMMUNITY_Community 1311|Community 1311]]
 - [[_COMMUNITY_Community 1312|Community 1312]]
 - [[_COMMUNITY_Community 1313|Community 1313]]
-- [[_COMMUNITY_Community 1314|Community 1314]]
 - [[_COMMUNITY_Community 1315|Community 1315]]
 - [[_COMMUNITY_Community 1316|Community 1316]]
 - [[_COMMUNITY_Community 1317|Community 1317]]
@@ -1083,6 +1072,7 @@
 - [[_COMMUNITY_Community 1325|Community 1325]]
 - [[_COMMUNITY_Community 1326|Community 1326]]
 - [[_COMMUNITY_Community 1327|Community 1327]]
+- [[_COMMUNITY_Community 1329|Community 1329]]
 - [[_COMMUNITY_Community 1330|Community 1330]]
 - [[_COMMUNITY_Community 1331|Community 1331]]
 - [[_COMMUNITY_Community 1332|Community 1332]]
@@ -1123,9 +1113,9 @@
 - [[_COMMUNITY_Community 1369|Community 1369]]
 - [[_COMMUNITY_Community 1370|Community 1370]]
 - [[_COMMUNITY_Community 1371|Community 1371]]
+- [[_COMMUNITY_Community 1372|Community 1372]]
 - [[_COMMUNITY_Community 1373|Community 1373]]
 - [[_COMMUNITY_Community 1375|Community 1375]]
-- [[_COMMUNITY_Community 1376|Community 1376]]
 - [[_COMMUNITY_Community 1378|Community 1378]]
 - [[_COMMUNITY_Community 1379|Community 1379]]
 - [[_COMMUNITY_Community 1380|Community 1380]]
@@ -1195,6 +1185,7 @@
 - [[_COMMUNITY_Community 1458|Community 1458]]
 - [[_COMMUNITY_Community 1459|Community 1459]]
 - [[_COMMUNITY_Community 1460|Community 1460]]
+- [[_COMMUNITY_Community 1461|Community 1461]]
 - [[_COMMUNITY_Community 1463|Community 1463]]
 - [[_COMMUNITY_Community 1464|Community 1464]]
 - [[_COMMUNITY_Community 1465|Community 1465]]
@@ -1216,7 +1207,6 @@
 - [[_COMMUNITY_Community 1483|Community 1483]]
 - [[_COMMUNITY_Community 1484|Community 1484]]
 - [[_COMMUNITY_Community 1485|Community 1485]]
-- [[_COMMUNITY_Community 1486|Community 1486]]
 - [[_COMMUNITY_Community 1487|Community 1487]]
 - [[_COMMUNITY_Community 1488|Community 1488]]
 - [[_COMMUNITY_Community 1489|Community 1489]]
@@ -1230,6 +1220,7 @@
 - [[_COMMUNITY_Community 1497|Community 1497]]
 - [[_COMMUNITY_Community 1498|Community 1498]]
 - [[_COMMUNITY_Community 1499|Community 1499]]
+- [[_COMMUNITY_Community 1500|Community 1500]]
 - [[_COMMUNITY_Community 1501|Community 1501]]
 - [[_COMMUNITY_Community 1502|Community 1502]]
 - [[_COMMUNITY_Community 1503|Community 1503]]
@@ -1239,7 +1230,6 @@
 - [[_COMMUNITY_Community 1507|Community 1507]]
 - [[_COMMUNITY_Community 1508|Community 1508]]
 - [[_COMMUNITY_Community 1509|Community 1509]]
-- [[_COMMUNITY_Community 1510|Community 1510]]
 - [[_COMMUNITY_Community 1511|Community 1511]]
 - [[_COMMUNITY_Community 1512|Community 1512]]
 - [[_COMMUNITY_Community 1514|Community 1514]]
@@ -1249,7 +1239,6 @@
 - [[_COMMUNITY_Community 1518|Community 1518]]
 - [[_COMMUNITY_Community 1519|Community 1519]]
 - [[_COMMUNITY_Community 1520|Community 1520]]
-- [[_COMMUNITY_Community 1521|Community 1521]]
 - [[_COMMUNITY_Community 1522|Community 1522]]
 - [[_COMMUNITY_Community 1523|Community 1523]]
 - [[_COMMUNITY_Community 1525|Community 1525]]
@@ -1323,7 +1312,6 @@
 - [[_COMMUNITY_Community 1604|Community 1604]]
 - [[_COMMUNITY_Community 1605|Community 1605]]
 - [[_COMMUNITY_Community 1606|Community 1606]]
-- [[_COMMUNITY_Community 1608|Community 1608]]
 - [[_COMMUNITY_Community 1609|Community 1609]]
 - [[_COMMUNITY_Community 1610|Community 1610]]
 - [[_COMMUNITY_Community 1614|Community 1614]]
@@ -1335,6 +1323,7 @@
 - [[_COMMUNITY_Community 1621|Community 1621]]
 - [[_COMMUNITY_Community 1622|Community 1622]]
 - [[_COMMUNITY_Community 1623|Community 1623]]
+- [[_COMMUNITY_Community 1624|Community 1624]]
 - [[_COMMUNITY_Community 1625|Community 1625]]
 - [[_COMMUNITY_Community 1626|Community 1626]]
 - [[_COMMUNITY_Community 1627|Community 1627]]
@@ -1344,12 +1333,10 @@
 - [[_COMMUNITY_Community 1631|Community 1631]]
 - [[_COMMUNITY_Community 1632|Community 1632]]
 - [[_COMMUNITY_Community 1633|Community 1633]]
-- [[_COMMUNITY_Community 1634|Community 1634]]
 - [[_COMMUNITY_Community 1635|Community 1635]]
 - [[_COMMUNITY_Community 1636|Community 1636]]
 - [[_COMMUNITY_Community 1637|Community 1637]]
 - [[_COMMUNITY_Community 1638|Community 1638]]
-- [[_COMMUNITY_Community 1639|Community 1639]]
 - [[_COMMUNITY_Community 1640|Community 1640]]
 - [[_COMMUNITY_Community 1642|Community 1642]]
 - [[_COMMUNITY_Community 1643|Community 1643]]
@@ -1383,7 +1370,6 @@
 - [[_COMMUNITY_Community 1675|Community 1675]]
 - [[_COMMUNITY_Community 1676|Community 1676]]
 - [[_COMMUNITY_Community 1677|Community 1677]]
-- [[_COMMUNITY_Community 1678|Community 1678]]
 - [[_COMMUNITY_Community 1679|Community 1679]]
 - [[_COMMUNITY_Community 1680|Community 1680]]
 - [[_COMMUNITY_Community 1681|Community 1681]]
@@ -1416,6 +1402,7 @@
 - [[_COMMUNITY_Community 1712|Community 1712]]
 - [[_COMMUNITY_Community 1713|Community 1713]]
 - [[_COMMUNITY_Community 1714|Community 1714]]
+- [[_COMMUNITY_Community 1715|Community 1715]]
 - [[_COMMUNITY_Community 1716|Community 1716]]
 - [[_COMMUNITY_Community 1718|Community 1718]]
 - [[_COMMUNITY_Community 1719|Community 1719]]
@@ -1424,7 +1411,6 @@
 - [[_COMMUNITY_Community 1722|Community 1722]]
 - [[_COMMUNITY_Community 1723|Community 1723]]
 - [[_COMMUNITY_Community 1724|Community 1724]]
-- [[_COMMUNITY_Community 1725|Community 1725]]
 - [[_COMMUNITY_Community 1726|Community 1726]]
 - [[_COMMUNITY_Community 1727|Community 1727]]
 - [[_COMMUNITY_Community 1728|Community 1728]]
@@ -1432,6 +1418,7 @@
 - [[_COMMUNITY_Community 1730|Community 1730]]
 - [[_COMMUNITY_Community 1731|Community 1731]]
 - [[_COMMUNITY_Community 1732|Community 1732]]
+- [[_COMMUNITY_Community 1733|Community 1733]]
 - [[_COMMUNITY_Community 1734|Community 1734]]
 - [[_COMMUNITY_Community 1735|Community 1735]]
 - [[_COMMUNITY_Community 1736|Community 1736]]
@@ -1470,7 +1457,6 @@
 - [[_COMMUNITY_Community 1771|Community 1771]]
 - [[_COMMUNITY_Community 1772|Community 1772]]
 - [[_COMMUNITY_Community 1774|Community 1774]]
-- [[_COMMUNITY_Community 1776|Community 1776]]
 - [[_COMMUNITY_Community 1777|Community 1777]]
 - [[_COMMUNITY_Community 1778|Community 1778]]
 - [[_COMMUNITY_Community 1779|Community 1779]]
@@ -1526,6 +1512,7 @@
 - [[_COMMUNITY_Community 1832|Community 1832]]
 - [[_COMMUNITY_Community 1834|Community 1834]]
 - [[_COMMUNITY_Community 1835|Community 1835]]
+- [[_COMMUNITY_Community 1836|Community 1836]]
 - [[_COMMUNITY_Community 1837|Community 1837]]
 - [[_COMMUNITY_Community 1838|Community 1838]]
 - [[_COMMUNITY_Community 1839|Community 1839]]
@@ -1562,10 +1549,12 @@
 - [[_COMMUNITY_Community 1874|Community 1874]]
 - [[_COMMUNITY_Community 1875|Community 1875]]
 - [[_COMMUNITY_Community 1876|Community 1876]]
+- [[_COMMUNITY_Community 1877|Community 1877]]
 - [[_COMMUNITY_Community 1878|Community 1878]]
 - [[_COMMUNITY_Community 1879|Community 1879]]
 - [[_COMMUNITY_Community 1880|Community 1880]]
 - [[_COMMUNITY_Community 1881|Community 1881]]
+- [[_COMMUNITY_Community 1882|Community 1882]]
 - [[_COMMUNITY_Community 1883|Community 1883]]
 - [[_COMMUNITY_Community 1884|Community 1884]]
 - [[_COMMUNITY_Community 1885|Community 1885]]
@@ -1616,6 +1605,7 @@
 - [[_COMMUNITY_Community 1936|Community 1936]]
 - [[_COMMUNITY_Community 1937|Community 1937]]
 - [[_COMMUNITY_Community 1938|Community 1938]]
+- [[_COMMUNITY_Community 1939|Community 1939]]
 - [[_COMMUNITY_Community 1940|Community 1940]]
 - [[_COMMUNITY_Community 1941|Community 1941]]
 - [[_COMMUNITY_Community 1942|Community 1942]]
@@ -1627,6 +1617,7 @@
 - [[_COMMUNITY_Community 1948|Community 1948]]
 - [[_COMMUNITY_Community 1949|Community 1949]]
 - [[_COMMUNITY_Community 1950|Community 1950]]
+- [[_COMMUNITY_Community 1951|Community 1951]]
 - [[_COMMUNITY_Community 1952|Community 1952]]
 - [[_COMMUNITY_Community 1953|Community 1953]]
 - [[_COMMUNITY_Community 1954|Community 1954]]
@@ -1701,6 +1692,7 @@
 - [[_COMMUNITY_Community 2028|Community 2028]]
 - [[_COMMUNITY_Community 2029|Community 2029]]
 - [[_COMMUNITY_Community 2030|Community 2030]]
+- [[_COMMUNITY_Community 2031|Community 2031]]
 - [[_COMMUNITY_Community 2032|Community 2032]]
 - [[_COMMUNITY_Community 2033|Community 2033]]
 - [[_COMMUNITY_Community 2034|Community 2034]]
@@ -1722,7 +1714,6 @@
 - [[_COMMUNITY_Community 2052|Community 2052]]
 - [[_COMMUNITY_Community 2053|Community 2053]]
 - [[_COMMUNITY_Community 2054|Community 2054]]
-- [[_COMMUNITY_Community 2055|Community 2055]]
 - [[_COMMUNITY_Community 2056|Community 2056]]
 - [[_COMMUNITY_Community 2057|Community 2057]]
 - [[_COMMUNITY_Community 2058|Community 2058]]
@@ -1737,10 +1728,8 @@
 - [[_COMMUNITY_Community 2068|Community 2068]]
 - [[_COMMUNITY_Community 2069|Community 2069]]
 - [[_COMMUNITY_Community 2070|Community 2070]]
-- [[_COMMUNITY_Community 2071|Community 2071]]
 - [[_COMMUNITY_Community 2072|Community 2072]]
 - [[_COMMUNITY_Community 2073|Community 2073]]
-- [[_COMMUNITY_Community 2074|Community 2074]]
 - [[_COMMUNITY_Community 2075|Community 2075]]
 - [[_COMMUNITY_Community 2077|Community 2077]]
 - [[_COMMUNITY_Community 2078|Community 2078]]
@@ -1773,7 +1762,6 @@
 - [[_COMMUNITY_Community 2109|Community 2109]]
 - [[_COMMUNITY_Community 2110|Community 2110]]
 - [[_COMMUNITY_Community 2111|Community 2111]]
-- [[_COMMUNITY_Community 2113|Community 2113]]
 - [[_COMMUNITY_Community 2115|Community 2115]]
 - [[_COMMUNITY_Community 2116|Community 2116]]
 - [[_COMMUNITY_Community 2117|Community 2117]]
@@ -1893,7 +1881,6 @@
 - [[_COMMUNITY_Community 2243|Community 2243]]
 - [[_COMMUNITY_Community 2244|Community 2244]]
 - [[_COMMUNITY_Community 2245|Community 2245]]
-- [[_COMMUNITY_Community 2246|Community 2246]]
 - [[_COMMUNITY_Community 2247|Community 2247]]
 - [[_COMMUNITY_Community 2248|Community 2248]]
 - [[_COMMUNITY_Community 2249|Community 2249]]
@@ -1919,6 +1906,7 @@
 - [[_COMMUNITY_Community 2271|Community 2271]]
 - [[_COMMUNITY_Community 2272|Community 2272]]
 - [[_COMMUNITY_Community 2273|Community 2273]]
+- [[_COMMUNITY_Community 2274|Community 2274]]
 - [[_COMMUNITY_Community 2275|Community 2275]]
 - [[_COMMUNITY_Community 2276|Community 2276]]
 - [[_COMMUNITY_Community 2277|Community 2277]]
@@ -1936,7 +1924,6 @@
 - [[_COMMUNITY_Community 2292|Community 2292]]
 - [[_COMMUNITY_Community 2293|Community 2293]]
 - [[_COMMUNITY_Community 2294|Community 2294]]
-- [[_COMMUNITY_Community 2295|Community 2295]]
 - [[_COMMUNITY_Community 2296|Community 2296]]
 - [[_COMMUNITY_Community 2297|Community 2297]]
 - [[_COMMUNITY_Community 2298|Community 2298]]
@@ -1992,7 +1979,6 @@
 - [[_COMMUNITY_Community 2348|Community 2348]]
 - [[_COMMUNITY_Community 2349|Community 2349]]
 - [[_COMMUNITY_Community 2350|Community 2350]]
-- [[_COMMUNITY_Community 2351|Community 2351]]
 - [[_COMMUNITY_Community 2352|Community 2352]]
 - [[_COMMUNITY_Community 2353|Community 2353]]
 - [[_COMMUNITY_Community 2354|Community 2354]]
@@ -2014,7 +2000,6 @@
 - [[_COMMUNITY_Community 2372|Community 2372]]
 - [[_COMMUNITY_Community 2373|Community 2373]]
 - [[_COMMUNITY_Community 2374|Community 2374]]
-- [[_COMMUNITY_Community 2375|Community 2375]]
 - [[_COMMUNITY_Community 2376|Community 2376]]
 - [[_COMMUNITY_Community 2377|Community 2377]]
 - [[_COMMUNITY_Community 2378|Community 2378]]
@@ -2023,7 +2008,6 @@
 - [[_COMMUNITY_Community 2381|Community 2381]]
 - [[_COMMUNITY_Community 2382|Community 2382]]
 - [[_COMMUNITY_Community 2383|Community 2383]]
-- [[_COMMUNITY_Community 2384|Community 2384]]
 - [[_COMMUNITY_Community 2385|Community 2385]]
 - [[_COMMUNITY_Community 2386|Community 2386]]
 - [[_COMMUNITY_Community 2387|Community 2387]]
@@ -2042,6 +2026,7 @@
 - [[_COMMUNITY_Community 2400|Community 2400]]
 - [[_COMMUNITY_Community 2401|Community 2401]]
 - [[_COMMUNITY_Community 2402|Community 2402]]
+- [[_COMMUNITY_Community 2403|Community 2403]]
 - [[_COMMUNITY_Community 2404|Community 2404]]
 - [[_COMMUNITY_Community 2405|Community 2405]]
 - [[_COMMUNITY_Community 2406|Community 2406]]
@@ -2234,6 +2219,7 @@
 - [[_COMMUNITY_Community 2605|Community 2605]]
 - [[_COMMUNITY_Community 2606|Community 2606]]
 - [[_COMMUNITY_Community 2607|Community 2607]]
+- [[_COMMUNITY_Community 2608|Community 2608]]
 - [[_COMMUNITY_Community 2609|Community 2609]]
 - [[_COMMUNITY_Community 2610|Community 2610]]
 - [[_COMMUNITY_Community 2611|Community 2611]]
@@ -2344,7 +2330,6 @@
 - [[_COMMUNITY_Community 2722|Community 2722]]
 - [[_COMMUNITY_Community 2723|Community 2723]]
 - [[_COMMUNITY_Community 2724|Community 2724]]
-- [[_COMMUNITY_Community 2725|Community 2725]]
 - [[_COMMUNITY_Community 2726|Community 2726]]
 - [[_COMMUNITY_Community 2727|Community 2727]]
 - [[_COMMUNITY_Community 2728|Community 2728]]
@@ -2364,6 +2349,7 @@
 - [[_COMMUNITY_Community 2746|Community 2746]]
 - [[_COMMUNITY_Community 2747|Community 2747]]
 - [[_COMMUNITY_Community 2748|Community 2748]]
+- [[_COMMUNITY_Community 2749|Community 2749]]
 - [[_COMMUNITY_Community 2750|Community 2750]]
 - [[_COMMUNITY_Community 2751|Community 2751]]
 - [[_COMMUNITY_Community 2752|Community 2752]]
@@ -2440,7 +2426,6 @@
 - [[_COMMUNITY_Community 2828|Community 2828]]
 - [[_COMMUNITY_Community 2829|Community 2829]]
 - [[_COMMUNITY_Community 2830|Community 2830]]
-- [[_COMMUNITY_Community 2831|Community 2831]]
 - [[_COMMUNITY_Community 2832|Community 2832]]
 - [[_COMMUNITY_Community 2833|Community 2833]]
 - [[_COMMUNITY_Community 2834|Community 2834]]
@@ -2473,7 +2458,6 @@
 - [[_COMMUNITY_Community 2861|Community 2861]]
 - [[_COMMUNITY_Community 2862|Community 2862]]
 - [[_COMMUNITY_Community 2863|Community 2863]]
-- [[_COMMUNITY_Community 2864|Community 2864]]
 - [[_COMMUNITY_Community 2865|Community 2865]]
 - [[_COMMUNITY_Community 2866|Community 2866]]
 - [[_COMMUNITY_Community 2867|Community 2867]]
@@ -2646,7 +2630,6 @@
 - [[_COMMUNITY_Community 3044|Community 3044]]
 - [[_COMMUNITY_Community 3045|Community 3045]]
 - [[_COMMUNITY_Community 3046|Community 3046]]
-- [[_COMMUNITY_Community 3047|Community 3047]]
 - [[_COMMUNITY_Community 3049|Community 3049]]
 - [[_COMMUNITY_Community 3051|Community 3051]]
 - [[_COMMUNITY_Community 3052|Community 3052]]
@@ -2774,7 +2757,6 @@
 - [[_COMMUNITY_Community 3179|Community 3179]]
 - [[_COMMUNITY_Community 3180|Community 3180]]
 - [[_COMMUNITY_Community 3181|Community 3181]]
-- [[_COMMUNITY_Community 3182|Community 3182]]
 - [[_COMMUNITY_Community 3183|Community 3183]]
 - [[_COMMUNITY_Community 3184|Community 3184]]
 - [[_COMMUNITY_Community 3185|Community 3185]]
@@ -2992,7 +2974,6 @@
 - [[_COMMUNITY_Community 3404|Community 3404]]
 - [[_COMMUNITY_Community 3405|Community 3405]]
 - [[_COMMUNITY_Community 3406|Community 3406]]
-- [[_COMMUNITY_Community 3407|Community 3407]]
 - [[_COMMUNITY_Community 3408|Community 3408]]
 - [[_COMMUNITY_Community 3409|Community 3409]]
 - [[_COMMUNITY_Community 3410|Community 3410]]
@@ -3039,6 +3020,7 @@
 - [[_COMMUNITY_Community 3456|Community 3456]]
 - [[_COMMUNITY_Community 3457|Community 3457]]
 - [[_COMMUNITY_Community 3458|Community 3458]]
+- [[_COMMUNITY_Community 3459|Community 3459]]
 - [[_COMMUNITY_Community 3460|Community 3460]]
 - [[_COMMUNITY_Community 3461|Community 3461]]
 - [[_COMMUNITY_Community 3462|Community 3462]]
@@ -3129,12 +3111,11 @@
 - [[_COMMUNITY_Community 3550|Community 3550]]
 - [[_COMMUNITY_Community 3551|Community 3551]]
 - [[_COMMUNITY_Community 3552|Community 3552]]
-- [[_COMMUNITY_Community 3553|Community 3553]]
 - [[_COMMUNITY_Community 3554|Community 3554]]
 - [[_COMMUNITY_Community 3555|Community 3555]]
 - [[_COMMUNITY_Community 3556|Community 3556]]
+- [[_COMMUNITY_Community 3559|Community 3559]]
 - [[_COMMUNITY_Community 3560|Community 3560]]
-- [[_COMMUNITY_Community 3561|Community 3561]]
 - [[_COMMUNITY_Community 3563|Community 3563]]
 - [[_COMMUNITY_Community 3564|Community 3564]]
 - [[_COMMUNITY_Community 3565|Community 3565]]
@@ -3219,6 +3200,7 @@
 - [[_COMMUNITY_Community 3650|Community 3650]]
 - [[_COMMUNITY_Community 3651|Community 3651]]
 - [[_COMMUNITY_Community 3652|Community 3652]]
+- [[_COMMUNITY_Community 3653|Community 3653]]
 - [[_COMMUNITY_Community 3654|Community 3654]]
 - [[_COMMUNITY_Community 3655|Community 3655]]
 - [[_COMMUNITY_Community 3656|Community 3656]]
@@ -3714,6 +3696,7 @@
 - [[_COMMUNITY_Community 4179|Community 4179]]
 - [[_COMMUNITY_Community 4180|Community 4180]]
 - [[_COMMUNITY_Community 4181|Community 4181]]
+- [[_COMMUNITY_Community 4182|Community 4182]]
 - [[_COMMUNITY_Community 4184|Community 4184]]
 - [[_COMMUNITY_Community 4185|Community 4185]]
 - [[_COMMUNITY_Community 4186|Community 4186]]
@@ -4154,7 +4137,6 @@
 - [[_COMMUNITY_Community 4659|Community 4659]]
 - [[_COMMUNITY_Community 4660|Community 4660]]
 - [[_COMMUNITY_Community 4661|Community 4661]]
-- [[_COMMUNITY_Community 4662|Community 4662]]
 - [[_COMMUNITY_Community 4663|Community 4663]]
 - [[_COMMUNITY_Community 4664|Community 4664]]
 - [[_COMMUNITY_Community 4665|Community 4665]]
@@ -5444,6 +5426,7 @@
 - [[_COMMUNITY_Community 6208|Community 6208]]
 - [[_COMMUNITY_Community 6209|Community 6209]]
 - [[_COMMUNITY_Community 6210|Community 6210]]
+- [[_COMMUNITY_Community 6211|Community 6211]]
 - [[_COMMUNITY_Community 6212|Community 6212]]
 - [[_COMMUNITY_Community 6213|Community 6213]]
 - [[_COMMUNITY_Community 6214|Community 6214]]
@@ -5452,7 +5435,6 @@
 - [[_COMMUNITY_Community 6217|Community 6217]]
 - [[_COMMUNITY_Community 6218|Community 6218]]
 - [[_COMMUNITY_Community 6219|Community 6219]]
-- [[_COMMUNITY_Community 6220|Community 6220]]
 - [[_COMMUNITY_Community 6221|Community 6221]]
 - [[_COMMUNITY_Community 6222|Community 6222]]
 - [[_COMMUNITY_Community 6223|Community 6223]]
@@ -5864,15 +5846,11 @@
 - [[_COMMUNITY_Community 6728|Community 6728]]
 - [[_COMMUNITY_Community 6729|Community 6729]]
 - [[_COMMUNITY_Community 6730|Community 6730]]
+- [[_COMMUNITY_Community 6744|Community 6744]]
 - [[_COMMUNITY_Community 6745|Community 6745]]
 - [[_COMMUNITY_Community 6753|Community 6753]]
-- [[_COMMUNITY_Community 6754|Community 6754]]
-- [[_COMMUNITY_Community 6755|Community 6755]]
 - [[_COMMUNITY_Community 6756|Community 6756]]
-- [[_COMMUNITY_Community 6757|Community 6757]]
-- [[_COMMUNITY_Community 6758|Community 6758]]
 - [[_COMMUNITY_Community 6759|Community 6759]]
-- [[_COMMUNITY_Community 6760|Community 6760]]
 - [[_COMMUNITY_Community 6772|Community 6772]]
 - [[_COMMUNITY_Community 6773|Community 6773]]
 - [[_COMMUNITY_Community 6774|Community 6774]]
@@ -6235,7 +6213,6 @@
 - [[_COMMUNITY_Community 7219|Community 7219]]
 - [[_COMMUNITY_Community 7220|Community 7220]]
 - [[_COMMUNITY_Community 7221|Community 7221]]
-- [[_COMMUNITY_Community 7222|Community 7222]]
 - [[_COMMUNITY_Community 7223|Community 7223]]
 - [[_COMMUNITY_Community 7224|Community 7224]]
 - [[_COMMUNITY_Community 7225|Community 7225]]
@@ -6393,10 +6370,8 @@
 - [[_COMMUNITY_Community 7537|Community 7537]]
 - [[_COMMUNITY_Community 9084|Community 9084]]
 - [[_COMMUNITY_Community 9085|Community 9085]]
-- [[_COMMUNITY_Community 9088|Community 9088]]
 - [[_COMMUNITY_Community 9089|Community 9089]]
 - [[_COMMUNITY_Community 9091|Community 9091]]
-- [[_COMMUNITY_Community 9092|Community 9092]]
 - [[_COMMUNITY_Community 9093|Community 9093]]
 - [[_COMMUNITY_Community 9094|Community 9094]]
 - [[_COMMUNITY_Community 9095|Community 9095]]
@@ -6406,29 +6381,22 @@
 - [[_COMMUNITY_Community 9100|Community 9100]]
 - [[_COMMUNITY_Community 9101|Community 9101]]
 - [[_COMMUNITY_Community 9102|Community 9102]]
-- [[_COMMUNITY_Community 9103|Community 9103]]
 - [[_COMMUNITY_Community 9104|Community 9104]]
 - [[_COMMUNITY_Community 9105|Community 9105]]
 - [[_COMMUNITY_Community 9106|Community 9106]]
 - [[_COMMUNITY_Community 9107|Community 9107]]
 - [[_COMMUNITY_Community 9109|Community 9109]]
+- [[_COMMUNITY_Community 9110|Community 9110]]
+- [[_COMMUNITY_Community 9111|Community 9111]]
 - [[_COMMUNITY_Community 9113|Community 9113]]
-- [[_COMMUNITY_Community 9115|Community 9115]]
-- [[_COMMUNITY_Community 9117|Community 9117]]
-- [[_COMMUNITY_Community 9118|Community 9118]]
-- [[_COMMUNITY_Community 9120|Community 9120]]
-- [[_COMMUNITY_Community 9121|Community 9121]]
-- [[_COMMUNITY_Community 9122|Community 9122]]
-- [[_COMMUNITY_Community 9123|Community 9123]]
-- [[_COMMUNITY_Community 9124|Community 9124]]
+- [[_COMMUNITY_Community 9119|Community 9119]]
 - [[_COMMUNITY_Community 9125|Community 9125]]
-- [[_COMMUNITY_Community 9126|Community 9126]]
-- [[_COMMUNITY_Community 9130|Community 9130]]
-- [[_COMMUNITY_Community 9131|Community 9131]]
 - [[_COMMUNITY_Community 9135|Community 9135]]
-- [[_COMMUNITY_Community 9136|Community 9136]]
 - [[_COMMUNITY_Community 9137|Community 9137]]
+- [[_COMMUNITY_Community 9138|Community 9138]]
 - [[_COMMUNITY_Community 9140|Community 9140]]
+- [[_COMMUNITY_Community 9143|Community 9143]]
+- [[_COMMUNITY_Community 9145|Community 9145]]
 - [[_COMMUNITY_Community 9148|Community 9148]]
 - [[_COMMUNITY_Community 9150|Community 9150]]
 - [[_COMMUNITY_Community 9151|Community 9151]]
@@ -6436,18 +6404,30 @@
 - [[_COMMUNITY_Community 9154|Community 9154]]
 - [[_COMMUNITY_Community 9157|Community 9157]]
 - [[_COMMUNITY_Community 9161|Community 9161]]
+- [[_COMMUNITY_Community 9164|Community 9164]]
+- [[_COMMUNITY_Community 9165|Community 9165]]
+- [[_COMMUNITY_Community 9168|Community 9168]]
 - [[_COMMUNITY_Community 9169|Community 9169]]
 - [[_COMMUNITY_Community 9170|Community 9170]]
+- [[_COMMUNITY_Community 9171|Community 9171]]
 - [[_COMMUNITY_Community 9172|Community 9172]]
 - [[_COMMUNITY_Community 9173|Community 9173]]
 - [[_COMMUNITY_Community 9177|Community 9177]]
+- [[_COMMUNITY_Community 9180|Community 9180]]
 - [[_COMMUNITY_Community 9183|Community 9183]]
 - [[_COMMUNITY_Community 9185|Community 9185]]
-- [[_COMMUNITY_Community 9186|Community 9186]]
+- [[_COMMUNITY_Community 9189|Community 9189]]
 - [[_COMMUNITY_Community 9191|Community 9191]]
+- [[_COMMUNITY_Community 9192|Community 9192]]
+- [[_COMMUNITY_Community 9193|Community 9193]]
+- [[_COMMUNITY_Community 9194|Community 9194]]
 - [[_COMMUNITY_Community 9195|Community 9195]]
+- [[_COMMUNITY_Community 9196|Community 9196]]
 - [[_COMMUNITY_Community 9197|Community 9197]]
+- [[_COMMUNITY_Community 9198|Community 9198]]
 - [[_COMMUNITY_Community 9199|Community 9199]]
+- [[_COMMUNITY_Community 9200|Community 9200]]
+- [[_COMMUNITY_Community 9201|Community 9201]]
 - [[_COMMUNITY_Community 9203|Community 9203]]
 - [[_COMMUNITY_Community 9204|Community 9204]]
 - [[_COMMUNITY_Community 9205|Community 9205]]
@@ -6471,19 +6451,19 @@
   .superpowers/brainstorm/1893-1780409492/content/kitchen-notes.html → docs/superpowers/specs/2026-06-02-cart-customisation-design.md
 - `Plan 2: Cart & Menu Customisation` --references--> `Laravel Framework`  [EXTRACTED]
   docs/superpowers/plans/2026-06-02-plan-cart-customisation.md → README.md
-- `fromJson()` --calls--> `json_decode()`  [INFERRED]
-  vendor/laravel/framework/src/Illuminate/Collections/Traits/EnumeratesValues.php → vendor/guzzlehttp/guzzle/src/functions.php
-- `_uploadErrored()` --calls--> `json_decode()`  [INFERRED]
-  vendor/livewire/livewire/src/Features/SupportFileUploads/WithFileUploads.php → vendor/guzzlehttp/guzzle/src/functions.php
-- `castAsJson()` --calls--> `json_encode()`  [INFERRED]
-  vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithDatabase.php → vendor/guzzlehttp/guzzle/src/functions.php
+- `CheckoutTest` --inherits--> `TestCase`  [EXTRACTED]
+  CheckoutTest.php → tests/TestCase.php
+- `PromotionTest` --inherits--> `TestCase`  [EXTRACTED]
+  PromotionTest.php → tests/TestCase.php
+- `PromotionTest` --references--> `User`  [EXTRACTED]
+  PromotionTest.php → tests/Feature/Admin/InStoreOrderTest.php
 
 ## Hyperedges (group relationships)
 - **Alpine.js Cart Frontend: Store + Drawer + Mini-Cart** — concept_alpine_cart_store, concept_customisation_drawer, concept_mini_cart_dropdown [EXTRACTED 1.00]
 - **Full Ordering Pipeline: Cart → Checkout → Stripe → Order Schema** — concept_alpine_cart_store, concept_stripe_checkout, concept_order_schema [INFERRED 0.95]
 - **Production Readiness: Rate Limiting + Image Upload + DEPLOY.md** — concept_rate_limiting, concept_image_upload, concept_cpanel_deploy [EXTRACTED 1.00]
 
-## Communities (9187 total, 5557 thin omitted)
+## Communities (9173 total, 5548 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.0
@@ -6493,13 +6473,9 @@ Nodes (494): 10.10.0 - 2023-03-16, 10.11.0 - 2023-03-23, 10.12.0 - 2023-03-30, 1
 Cohesion: 0.07
 Nodes (27): 1. Cart Store (`Alpine.store('cart')`), 2. Customisation Drawer, 3. Header Mini Cart, 4. Cart Page (`/cart`), 5. Files Changed / Created, 6. Out of Scope (Plan 2), Behaviour, Behaviour (+19 more)
 
-### Community 4 - "Community 4"
-Cohesion: 0.03
-Nodes (15): Issue, Reader, LinkStub, AbstractFileExtractor, public_path(), Mix, Vite, CustomCssFile (+7 more)
-
 ### Community 5 - "Community 5"
-Cohesion: 0.04
-Nodes (8): PublicKey, ASN1, extractPoint(), MSBLOB, SCP, String_, Xml, Text
+Cohesion: 0.14
+Nodes (32): a(), an(), cn(), d(), di(), e(), en(), f() (+24 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.09
@@ -6508,6 +6484,10 @@ Nodes (11): addToCart(), adminNavStore, cartStore, clear(), closeDrawer(), deliv
 ### Community 7 - "Community 7"
 Cohesion: 0.08
 Nodes (24): Aces & Eights Pizza — cPanel Deployment Guide, code:bash (ssh user@yourserver.com), code:bash (php artisan storage:link   # creates public/storage symlink), code:bash (rm -rf ~/public_html), code:bash (cd ~/webapp), code:bash (cp .env.production.example .env), code:bash (# On your LOCAL machine:), code:bash (php artisan migrate --force) (+16 more)
+
+### Community 8 - "Community 8"
+Cohesion: 0.02
+Nodes (17): LocalFilesystemAdapter, MountManager, SymbolicLinkEncountered, UnableToCheckDirectoryExistence, UnableToCheckExistence, UnableToCheckFileExistence, UnableToCopyFile, UnableToCreateDirectory (+9 more)
 
 ### Community 11 - "Community 11"
 Cohesion: 0.08
@@ -6519,15 +6499,15 @@ Nodes (18): dependencies, alpinejs, devDependencies, autoprefixer, axios, concur
 
 ### Community 13 - "Community 13"
 Cohesion: 0.01
-Nodes (43): Requirements, Text, Text, Text, Ean, VarCloner, DateComparator, NumberComparator (+35 more)
+Nodes (52): Requirements, Text, Text, Text, Ean, VarCloner, DateComparator, NumberComparator (+44 more)
 
 ### Community 14 - "Community 14"
 Cohesion: 0.5
 Nodes (3): Aces & Eights Pizza — Codex Instructions, code:block1 (/graphify query "<question>"          # BFS — broad context), graphify Knowledge Graph
 
 ### Community 15 - "Community 15"
-Cohesion: 0.02
-Nodes (18): LogBroadcaster, RedisBroadcaster, HasInDatabase, NotSoftDeletedInDatabase, SoftDeletedInDatabase, JsonFileDumper, StreamedJsonResponse, Utils (+10 more)
+Cohesion: 0.03
+Nodes (15): LogBroadcaster, HasInDatabase, SoftDeletedInDatabase, RegisterControllerArgumentLocatorsPass, JsonFileDumper, Checksum, AmqpHandler, StreamedJsonResponse (+7 more)
 
 ### Community 18 - "Community 18"
 Cohesion: 0.31
@@ -6539,55 +6519,63 @@ Nodes (3): Aces & Eights Pizza — Claude Code Instructions, code:block1 (/graph
 
 ### Community 20 - "Community 20"
 Cohesion: 0.01
-Nodes (36): Arr, addLoop(), getLastLoop(), PhpRedisConnector, PredisConnector, SqsConnector, DatabaseInspectionCommand, Middleware (+28 more)
+Nodes (30): Arr, getGlobalScope(), getGlobalScopes(), addLoop(), getLastLoop(), ForkDriver, PredisConnector, SqsConnector (+22 more)
 
 ### Community 21 - "Community 21"
-Cohesion: 0.17
-Nodes (11): description, extra, laravel, keywords, dont-discover, license, minimum-stability, name (+3 more)
+Cohesion: 0.04
+Nodes (44): autoload, autoload-dev, psr-4, psr-4, description, extra, laravel, keywords (+36 more)
+
+### Community 22 - "Community 22"
+Cohesion: 0.07
+Nodes (4): MenuItemController, MenuItemTest, MenuItem, MenuItem
 
 ### Community 24 - "Community 24"
 Cohesion: 0.01
 Nodes (157): az_Cyrl, bs_Cyrl, en_150, en_AG, en_AI, en_AT, en_AU, en_BB (+149 more)
 
+### Community 27 - "Community 27"
+Cohesion: 0.06
+Nodes (3): LoggerDataCollector, HtmlErrorRenderer, DebugLoggerConfigurator
+
 ### Community 28 - "Community 28"
-Cohesion: 0.14
-Nodes (32): a(), an(), cn(), d(), di(), e(), en(), f() (+24 more)
+Cohesion: 0.05
+Nodes (5): AllergyAdminTest, OurMenuAndHomeControllerTest, Allergen, User, AllergenModelTest
+
+### Community 30 - "Community 30"
+Cohesion: 0.02
+Nodes (3): HostRecord, UriString, Uri
 
 ### Community 31 - "Community 31"
-Cohesion: 0.09
-Nodes (10): Request, SocialAuthTest, StripeWebhookTest, pestphp/pest-plugin, php-http/discovery, config, allow-plugins, optimize-autoloader (+2 more)
-
-### Community 32 - "Community 32"
-Cohesion: 0.11
-Nodes (3): InlineFragmentRenderer, HttpCache, SubRequestHandler
+Cohesion: 0.14
+Nodes (8): StripeWebhookTest, pestphp/pest-plugin, php-http/discovery, config, allow-plugins, optimize-autoloader, preferred-install, sort-packages
 
 ### Community 34 - "Community 34"
-Cohesion: 0.06
-Nodes (3): PublicKeyLoader, RSA, Agent
+Cohesion: 0.04
+Nodes (10): CombGenerator, DceSecurityGenerator, DefaultTimeGenerator, RandomNodeProvider, UuidV6, BinaryUtil, Ulid, UuidV1 (+2 more)
 
 ### Community 35 - "Community 35"
 Cohesion: 0.22
 Nodes (8): Aces & Eights Pizza — Plan 5: Customer Ordering & Checkout, code:block1 (orders          id, user_id(nullable FK), type, status, subt), code:php (<?php), code:bash (& "C:\xampp\php\php.exe" artisan route:list --path=stripe), code:bash (git add app/Http/Controllers/StripeWebhookController.php), File Map, Schema additions, Task 6: Stripe Webhook Controller
 
 ### Community 36 - "Community 36"
-Cohesion: 0.02
-Nodes (24): BroadcastServiceProvider, CacheServiceProvider, ConcurrencyServiceProvider, ContextServiceProvider, CookieServiceProvider, DatabaseServiceProvider, EventServiceProvider, HashServiceProvider (+16 more)
+Cohesion: 0.01
+Nodes (35): BroadcastServiceProvider, BusServiceProvider, CacheServiceProvider, ConcurrencyServiceProvider, OptimizeClearCommand, OptimizeCommand, ReloadCommand, ContextServiceProvider (+27 more)
 
 ### Community 37 - "Community 37"
-Cohesion: 0.12
-Nodes (6): ApiInstallCommand, phpBinary(), requireComposerPackages(), Listener, artisan_binary(), php_binary()
+Cohesion: 0.07
+Nodes (8): a(), h(), o(), r(), ts, Un(), W, x()
 
 ### Community 55 - "Community 55"
 Cohesion: 0.67
 Nodes (3): Admin Auth Infrastructure, Admin Layout with Alpine.js Drawer, Plan 3: Admin Frontend
 
-### Community 56 - "Community 56"
-Cohesion: 0.09
-Nodes (3): CheckoutTest, MenuItem, User
+### Community 57 - "Community 57"
+Cohesion: 0.02
+Nodes (26): Writer, FileManipulationCommand, findAvailableModels(), TestSuiteBuilder, EnumMakeCommand, InterfaceMakeCommand, LangPublishCommand, PruneCommand (+18 more)
 
 ### Community 69 - "Community 69"
-Cohesion: 0.02
-Nodes (21): Json, JsonMatches, JobQueued, JobQueueing, JobRetryRequested, Cloud, JWK, JsonFileLoader (+13 more)
+Cohesion: 0.03
+Nodes (12): JsonMatches, JobQueued, JobQueueing, JobRetryRequested, Cloud, JsonFileLoader, json_decode(), IsJson (+4 more)
 
 ### Community 79 - "Community 79"
 Cohesion: 0.03
@@ -6614,32 +6602,32 @@ Cohesion: 0.06
 Nodes (31): Cart & Menu Customisation Implementation Plan, code:js (import Alpine from 'alpinejs'), code:blade ({{-- RIGHT: cart + auth (both breakpoints) --}}), code:blade ({{-- RIGHT: mini-cart + auth --}}), code:bash (npm run build), code:js (Alpine.store('cart').openDrawer({ id: 'classic-margherita', ), code:bash (git add resources/views/components/header.blade.php), code:blade ({{-- Classic Margherita --}}) (+23 more)
 
 ### Community 128 - "Community 128"
-Cohesion: 0.07
-Nodes (18): data_fill(), data_forget(), data_has(), data_set(), value(), when(), all(), except() (+10 more)
+Cohesion: 0.04
+Nodes (58): data_fill(), data_forget(), data_get(), data_has(), data_set(), value(), when(), all() (+50 more)
 
 ### Community 129 - "Community 129"
 Cohesion: 0.04
 Nodes (46): Aces & Eights Pizza — Plan 9: Deploy Prep & Final Polish, code:php (<?php), code:bash (git add app/Http/Controllers/Admin/MenuItemController.php re), code:php (<?php), code:php (Route::post('/login', [App\Http\Controllers\AuthController::), code:php (Route::post('/register', [App\Http\Controllers\AuthControlle), code:php (Route::post('/checkout', [CheckoutController::class, 'store'), code:bash (& "C:\xampp\php\php.exe" artisan test tests/Feature/RateLimi) (+38 more)
 
-### Community 130 - "Community 130"
-Cohesion: 0.1
-Nodes (22): at(), br(), ci(), fi(), gt(), hi(), In(), kt() (+14 more)
-
-### Community 241 - "Community 241"
-Cohesion: 0.04
-Nodes (4): MockeryTestCase, ProviderTestCase, NamePrettifier, OrderModelTest
-
 ### Community 247 - "Community 247"
 Cohesion: 0.03
 Nodes (98): allFailingRequired(), anyFailingRequired(), checkDateTimeOrder(), compare(), compareDates(), convertValuesToBoolean(), convertValuesToNull(), extractDistinctValues() (+90 more)
 
+### Community 248 - "Community 248"
+Cohesion: 0.09
+Nodes (3): ClearCommand, LengthAwarePaginator, UrlWindow
+
 ### Community 250 - "Community 250"
 Cohesion: 0.02
-Nodes (28): DumpCompletionCommand, buildDockerCompose(), composePath(), configurePhpUnit(), installDevContainer(), prepareInstallation(), runCommands(), BroadcastingInstallCommand (+20 more)
+Nodes (26): DumpCompletionCommand, buildDockerCompose(), composePath(), configurePhpUnit(), installDevContainer(), prepareInstallation(), runCommands(), BroadcastingInstallCommand (+18 more)
 
 ### Community 253 - "Community 253"
+Cohesion: 0.08
+Nodes (21): checkParams(), checkPlatform(), displayHelp(), ErrorHandler, getHomeDir(), getIniMessage(), getOptValue(), getPlatformIssues() (+13 more)
+
+### Community 258 - "Community 258"
 Cohesion: 0.02
-Nodes (21): Writer, CacheWarmerAggregate, TestSuiteBuilder, ClassNotFoundErrorEnhancer, DirectoryExists, NativeFileSessionHandler, AttributeDirectoryLoader, DirectoryLoader (+13 more)
+Nodes (5): ASN1, Builder, Encoder, QueryString, Urn
 
 ### Community 266 - "Community 266"
 Cohesion: 0.02
@@ -6658,20 +6646,16 @@ Cohesion: 0.03
 Nodes (4): Arrays, Reflection, Type, Validators
 
 ### Community 272 - "Community 272"
-Cohesion: 0.06
+Cohesion: 0.05
 Nodes (5): DeliveryControllerTest, DeliveryFeeTest, DeliveryZoneModelTest, DeliveryZone, self
 
 ### Community 273 - "Community 273"
 Cohesion: 0.05
-Nodes (27): c(), dn(), eo(), fn(), fr(), ft(), gn(), gr() (+19 more)
+Nodes (40): bt(), c(), de(), dn(), dt(), eo(), fn(), fr() (+32 more)
 
 ### Community 274 - "Community 274"
 Cohesion: 0.02
 Nodes (84): 1.0.0 (2011-07-06), 1.0.0-RC1 (2011-07-01), 1.0.1 (2011-08-25), 1.0.2 (2011-10-24), 1.10.0 (2014-06-04), 1.11.0 (2014-09-30), 1.12.0 (2014-12-29), 1.13.0 (2015-03-05) (+76 more)
-
-### Community 275 - "Community 275"
-Cohesion: 0.09
-Nodes (4): MountManager, UnableToCheckDirectoryExistence, UnableToCheckFileExistence, UnableToMountFilesystem
 
 ### Community 279 - "Community 279"
 Cohesion: 0.05
@@ -6699,19 +6683,15 @@ Nodes (69): [0.10.0](https://github.com/brick/math/releases/tag/0.10.0) - 2022-0
 
 ### Community 298 - "Community 298"
 Cohesion: 0.05
-Nodes (48): average(), avg(), each(), eachSpread(), ensure(), every(), firstWhere(), forPage() (+40 more)
+Nodes (49): average(), avg(), each(), eachSpread(), ensure(), every(), firstWhere(), forPage() (+41 more)
 
 ### Community 299 - "Community 299"
-Cohesion: 0.08
-Nodes (3): EndpointResolver, HandleRequests, SupportScriptsAndAssets
-
-### Community 300 - "Community 300"
 Cohesion: 0.06
-Nodes (41): data_get(), BaseAuthorize, SupportEvents, assertDispatched(), assertDispatchedTo(), assertNotDispatched(), dispatch(), fireEvent() (+33 more)
+Nodes (9): S3CleanupCommand, GenerateSignedUploadUrlFacade, FileUploadConfiguration, FileUploadController, GenerateSignedUploadUrl, cleanupOldUploads(), _finishUpload(), _startUpload() (+1 more)
 
 ### Community 302 - "Community 302"
 Cohesion: 0.05
-Nodes (8): SetCookie, DataCollector, AddConsoleCommandPass, Extension, trigger_deprecation(), DefaultGenerator, CompiledUrlGenerator, Image
+Nodes (9): SetCookie, DataCollector, AddConsoleCommandPass, Extension, trigger_deprecation(), DefaultGenerator, CompiledUrlGenerator, CsvFileLoader (+1 more)
 
 ### Community 304 - "Community 304"
 Cohesion: 0.04
@@ -6719,22 +6699,18 @@ Nodes (20): batch(), batching(), withFakeBatch(), CarbonImmutable, fromName(), l
 
 ### Community 305 - "Community 305"
 Cohesion: 0.04
-Nodes (3): LayoutCommand, Finder, resource_path()
-
-### Community 306 - "Community 306"
-Cohesion: 0.05
-Nodes (4): FilesystemAdapter, MiddlewareNameResolver, throw_if(), SupportWireModelingNestedComponents
+Nodes (3): GeneratorCommand, Finder, resource_path()
 
 ### Community 310 - "Community 310"
-Cohesion: 0.13
-Nodes (22): _(), ae(), b(), bi(), bn(), dr(), ee(), ir() (+14 more)
+Cohesion: 0.08
+Nodes (3): CheckoutTest, MenuItem, User
 
 ### Community 312 - "Community 312"
 Cohesion: 0.05
 Nodes (46): replaceAcceptedIf(), replaceAfter(), replaceAfterOrEqual(), replaceBefore(), replaceBeforeOrEqual(), replaceBetween(), replaceDateEquals(), replaceDeclinedIf() (+38 more)
 
 ### Community 315 - "Community 315"
-Cohesion: 0.05
+Cohesion: 0.04
 Nodes (5): PromotionControllerTest, DealsPageTest, PromoControllerTest, PromotionTest, Promotion
 
 ### Community 316 - "Community 316"
@@ -6746,16 +6722,12 @@ Cohesion: 0.04
 Nodes (6): SyntaxErrorException, StringHandler, EntryParser, Lexer, Parser, TokenStream
 
 ### Community 321 - "Community 321"
-Cohesion: 0.06
-Nodes (39): FactoryImmutable, hasFormat(), hasFormatWithModifiers(), getGenericMacros(), getWeekendDays(), setWeekendDays(), getClock(), getFactory() (+31 more)
+Cohesion: 0.05
+Nodes (40): FactoryImmutable, MacroExtension, hasFormat(), hasFormatWithModifiers(), getGenericMacros(), getWeekendDays(), setWeekendDays(), getClock() (+32 more)
 
 ### Community 322 - "Community 322"
-Cohesion: 0.06
-Nodes (5): GuidStringCodec, Fields, Fields, Fields, UuidV4
-
-### Community 327 - "Community 327"
-Cohesion: 0.06
-Nodes (5): BinaryUtil, Ulid, UuidV1, UuidV6, UuidV7
+Cohesion: 0.04
+Nodes (6): GuidStringCodec, Fields, Fields, Uuid, Fields, UuidV4
 
 ### Community 330 - "Community 330"
 Cohesion: 0.04
@@ -6765,17 +6737,21 @@ Nodes (12): EmailAutolinkParser, UrlAutolinkParser, DelimiterParser, BangParser,
 Cohesion: 0.03
 Nodes (57): 2.0.0, 2.0.1, 2.1.0, 2.1.1, 2.1.2, 2.1.3, 2.2.0, 2.2.1 (+49 more)
 
+### Community 333 - "Community 333"
+Cohesion: 0.05
+Nodes (5): ConversionFailed, Converter, Converter, Internet, FeatureDetection
+
 ### Community 335 - "Community 335"
 Cohesion: 0.07
-Nodes (55): at(), between(), cron(), daily(), dailyAt(), days(), daysOfMonth(), everyFifteenMinutes() (+47 more)
-
-### Community 337 - "Community 337"
-Cohesion: 0.07
-Nodes (6): DiffOnlyOutputBuilder, StreamOutput, StrictUnifiedDiffOutputBuilder, UnifiedDiffOutputBuilder, DefaultPrinter, FileFactory
+Nodes (56): at(), between(), cron(), daily(), dailyAt(), days(), daysOfMonth(), everyFifteenMinutes() (+48 more)
 
 ### Community 341 - "Community 341"
 Cohesion: 0.04
 Nodes (12): AttributesExtension, AutolinkExtension, CommonMarkCoreExtension, DefaultAttributesExtension, DisallowedRawHtmlExtension, EmbedExtension, ExternalLinkExtension, FootnoteExtension (+4 more)
+
+### Community 342 - "Community 342"
+Cohesion: 0.21
+Nodes (4): OrderStatusUpdated, InteractsWithSockets, ShouldBroadcast, ShouldBroadcastNow
 
 ### Community 343 - "Community 343"
 Cohesion: 0.07
@@ -6786,64 +6762,56 @@ Cohesion: 0.05
 Nodes (4): CodeCoverage, CodeUnit, CodeUnitCollection, Mapper
 
 ### Community 349 - "Community 349"
-Cohesion: 0.08
-Nodes (21): checkParams(), checkPlatform(), displayHelp(), ErrorHandler, getHomeDir(), getIniMessage(), getOptValue(), getPlatformIssues() (+13 more)
+Cohesion: 0.04
+Nodes (10): ClearCompiledCommand, UpCommand, FileBasedMaintenanceMode, RotatingFileHandler, RequireLoader, DefaultJobRunner, JobRunner, FileProfilerStorage (+2 more)
 
 ### Community 350 - "Community 350"
 Cohesion: 0.08
 Nodes (50): addHasWhere(), addWhereCountQuery(), canUseExistsForExistenceCheck(), doesntHave(), doesntHaveMorph(), getBelongsToRelation(), getRelationHashedColumn(), getRelationWithoutConstraints() (+42 more)
 
 ### Community 351 - "Community 351"
-Cohesion: 0.06
-Nodes (7): MailMakeCommand, NotificationMakeCommand, ServeCommand, MigrateMakeCommand, TableGuesser, CommandBuilder, windows_os()
+Cohesion: 0.07
+Nodes (5): MailMakeCommand, NotificationMakeCommand, ServeCommand, CommandBuilder, windows_os()
 
 ### Community 352 - "Community 352"
 Cohesion: 0.09
 Nodes (37): $(), A(), Ae(), B(), Be(), c(), $e(), ee() (+29 more)
 
 ### Community 353 - "Community 353"
-Cohesion: 0.08
-Nodes (51): __(), abort(), abort_if(), action(), app(), asset(), auth(), back() (+43 more)
+Cohesion: 0.04
+Nodes (66): dispatchSync(), PailCommand, DumpCommand, StorageLinkCommand, StorageUnlinkCommand, __(), abort(), abort_if() (+58 more)
 
 ### Community 355 - "Community 355"
 Cohesion: 0.05
 Nodes (3): BaseUri, UriInfo, UriResolver
 
 ### Community 357 - "Community 357"
-Cohesion: 0.05
-Nodes (3): Middleware, AuthenticateSession, RedirectIfAuthenticated
+Cohesion: 0.04
+Nodes (4): Middleware, AuthenticateSession, RedirectIfAuthenticated, ValidateCsrfToken
 
 ### Community 360 - "Community 360"
 Cohesion: 0.04
-Nodes (7): BlockContinue, HeadingParser, ListBlockParser, ThematicBreakParser, EmbedParser, DescriptionListContinueParser, DescriptionTermContinueParser
-
-### Community 362 - "Community 362"
-Cohesion: 0.1
-Nodes (3): LocalFilesystemAdapter, SymbolicLinkEncountered, UnableToReadFile
+Nodes (8): BlockContinue, HeadingParser, HtmlBlockParser, ListBlockParser, ThematicBreakParser, DescriptionContinueParser, DescriptionTermContinueParser, FootnoteParser
 
 ### Community 366 - "Community 366"
 Cohesion: 0.06
 Nodes (3): Protocol, ProtocolNode, ProtocolWrapper
 
 ### Community 369 - "Community 369"
-Cohesion: 0.07
-Nodes (4): EmailVerificationRequest, Version, Random, PuTTY
+Cohesion: 0.06
+Nodes (5): EmailVerificationRequest, Version, Random, PuTTY, NotPwnedVerifier
 
 ### Community 370 - "Community 370"
 Cohesion: 0.05
 Nodes (47): dealerdirect/phpcodesniffer-composer-installer, authors, autoload, autoload-dev, psr-4, psr-4, dev-main, dev-master (+39 more)
 
 ### Community 375 - "Community 375"
-Cohesion: 0.05
-Nodes (11): LoginAuthenticator, PlainAuthenticator, XOAuth2Authenticator, DkimSigner, XliffFileDumper, Base64Encoder, HmacSha1Signature, RsaSha1Signature (+3 more)
+Cohesion: 0.04
+Nodes (13): LoginAuthenticator, PlainAuthenticator, XOAuth2Authenticator, DkimSigner, XliffFileDumper, Base64Encoder, MessageSent, ChromePHPHandler (+5 more)
 
 ### Community 376 - "Community 376"
 Cohesion: 0.05
-Nodes (6): FencedCodeParser, HeadingStartParser, HtmlBlockParser, EscapableParser, LinkRenderer, RegexHelper
-
-### Community 378 - "Community 378"
-Cohesion: 0.06
-Nodes (9): a(), h(), o(), r(), ts, Un(), W, x() (+1 more)
+Nodes (8): FencedCodeParser, HeadingStartParser, AutolinkParser, EscapableParser, LinkRenderer, LinkParserHelper, RegexHelper, UrlEncoder
 
 ### Community 379 - "Community 379"
 Cohesion: 0.09
@@ -6861,10 +6829,6 @@ Nodes (47): authors, autoload, files, psr-4, dev-master, config, sort-packages, 
 Cohesion: 0.04
 Nodes (5): ClassStub, CutStub, ExceptionCaster, RedisCaster, ReflectionCaster
 
-### Community 384 - "Community 384"
-Cohesion: 0.08
-Nodes (4): CacheManager, File, SupportCssModules, SupportJsModules
-
 ### Community 385 - "Community 385"
 Cohesion: 0.04
 Nodes (47): require, brick/math, composer-runtime-api, doctrine/inflector, dragonmantank/cron-expression, egulias/email-validator, ext-ctype, ext-filter (+39 more)
@@ -6878,8 +6842,8 @@ Cohesion: 0.04
 Nodes (45): [2.0.0] - 2017-07-11 [YANKED], [2.0.1] - 2017-08-03, [3.0.0] - 2018-02-01, [3.0.1] - 2018-06-10, [3.0.2] - 2019-02-04, [4.0.0] - 2020-02-07, [4.0.1] - 2020-05-08, [4.0.2] - 2020-06-30 (+37 more)
 
 ### Community 393 - "Community 393"
-Cohesion: 0.09
-Nodes (3): c(), s(), us
+Cohesion: 0.07
+Nodes (4): c(), Rt, s(), us
 
 ### Community 394 - "Community 394"
 Cohesion: 0.04
@@ -6894,8 +6858,8 @@ Cohesion: 0.04
 Nodes (44): authors, autoload, psr-4, conflict, async-aws/core, async-aws/s3, aws/aws-sdk-php, guzzlehttp/guzzle (+36 more)
 
 ### Community 401 - "Community 401"
-Cohesion: 0.09
-Nodes (5): _(), d(), k(), kn, Rt
+Cohesion: 0.07
+Nodes (4): gs, kn, n(), rn
 
 ### Community 402 - "Community 402"
 Cohesion: 0.04
@@ -6934,8 +6898,12 @@ Cohesion: 0.05
 Nodes (42): [2.0.0] - 23.06.2018, [2.0.1] - 08.07.2018, [3.0.0] - 05.05.2020, [3.0.0] - 2020-01-21, [3.0.1] - 09.05.2020, [3.0.1] - 2020-06-26, [3.0.2] - 2020-09-28, [3.0.2] - 27.06.2020 (+34 more)
 
 ### Community 418 - "Community 418"
-Cohesion: 0.05
-Nodes (6): CombGenerator, DceSecurityGenerator, DefaultTimeGenerator, RandomNodeProvider, UuidV6, Uuid
+Cohesion: 0.06
+Nodes (3): PublicKeyLoader, RSA, Agent
+
+### Community 420 - "Community 420"
+Cohesion: 0.08
+Nodes (4): ManualUpdate, bin(), info(), Sudo
 
 ### Community 422 - "Community 422"
 Cohesion: 0.05
@@ -6958,12 +6926,12 @@ Cohesion: 0.05
 Nodes (41): Socialite, authors, autoload, autoload-dev, psr-4, psr-4, dev-master, config (+33 more)
 
 ### Community 433 - "Community 433"
-Cohesion: 0.04
-Nodes (4): JWK, JWT, FacebookProvider, GoogleProvider
+Cohesion: 0.05
+Nodes (3): JWK, JWT, FacebookProvider
 
 ### Community 435 - "Community 435"
 Cohesion: 0.05
-Nodes (9): BlockQuoteStartParser, BlockStart, FencedCodeStartParser, HtmlBlockStartParser, IndentedCodeStartParser, SkipLinesStartingWithLettersParser, ThematicBreakStartParser, DescriptionStartParser (+1 more)
+Nodes (10): BlockQuoteStartParser, BlockStart, FencedCodeStartParser, HtmlBlockStartParser, IndentedCodeStartParser, SkipLinesStartingWithLettersParser, ThematicBreakStartParser, EmbedStartParser (+2 more)
 
 ### Community 436 - "Community 436"
 Cohesion: 0.05
@@ -6972,6 +6940,10 @@ Nodes (5): Caster, SplCaster, XmlReaderCaster, AbstractCloner, Presenter
 ### Community 438 - "Community 438"
 Cohesion: 0.05
 Nodes (40): authors, autoload, psr-4, dev-master, config, sort-packages, description, extra (+32 more)
+
+### Community 442 - "Community 442"
+Cohesion: 0.05
+Nodes (3): LazyUuidFromString, BinaryUtils, UuidFactory
 
 ### Community 446 - "Community 446"
 Cohesion: 0.05
@@ -6982,16 +6954,12 @@ Cohesion: 0.13
 Nodes (37): addTimestampsToAttachment(), attach(), attachNew(), attachOrFail(), attachUsingCustomClass(), baseAttachRecord(), castAttributes(), castKey() (+29 more)
 
 ### Community 453 - "Community 453"
-Cohesion: 0.08
-Nodes (5): g(), Ji, on, rn, st
+Cohesion: 0.1
+Nodes (7): _(), d(), g(), Ji, k(), on, st
 
 ### Community 454 - "Community 454"
 Cohesion: 0.05
 Nodes (39): authors, autoload, psr-4, dev-master, config, sort-packages, description, extra (+31 more)
-
-### Community 456 - "Community 456"
-Cohesion: 0.07
-Nodes (3): InitialRender, SubsequentRender, Testable
 
 ### Community 458 - "Community 458"
 Cohesion: 0.05
@@ -7005,10 +6973,6 @@ Nodes (39): phpstan/extension-installer, authors, autoload, classmap, psr-4, dev
 Cohesion: 0.05
 Nodes (39): CHANGELOG, v2.0.0, v2.10.0, v2.11.0, v2.12.0, v2.12.1, v2.13.0, v2.14.0 (+31 more)
 
-### Community 462 - "Community 462"
-Cohesion: 0.08
-Nodes (8): AttributeCommand, FormCommand, StubsCommand, ProcessDriver, base_path(), EnsureRelativePaths, ScheduleWorkCommand, WhoopsHandler
-
 ### Community 463 - "Community 463"
 Cohesion: 0.04
 Nodes (113): addCastAttributesToArray(), addDateAttributesToArray(), addMutatedAttributesToArray(), asDate(), asDateTime(), asDecimal(), asJson(), asTimestamp() (+105 more)
@@ -7017,9 +6981,9 @@ Nodes (113): addCastAttributesToArray(), addDateAttributesToArray(), addMutatedA
 Cohesion: 0.06
 Nodes (4): DH, EC, PrivateKey, PrivateKey
 
-### Community 470 - "Community 470"
-Cohesion: 0.06
-Nodes (3): ShowCommand, WhereamiCommand, CodeFormatter
+### Community 469 - "Community 469"
+Cohesion: 0.07
+Nodes (7): Factory, Utils, throw_unless(), guessResourceCollection(), resolveResourceCollectionFromAttribute(), resolveResourceFromAttribute(), toResourceCollection()
 
 ### Community 472 - "Community 472"
 Cohesion: 0.06
@@ -7042,8 +7006,8 @@ Cohesion: 0.05
 Nodes (37): pestphp/pest-plugin, block-insecure, autoload, autoload-dev, psr-4, files, psr-4, dev-main (+29 more)
 
 ### Community 482 - "Community 482"
-Cohesion: 0.04
-Nodes (10): ClearCompiledCommand, UpCommand, FileBasedMaintenanceMode, RequireLoader, DefaultJobRunner, JobRunner, FileProfilerStorage, Coverage (+2 more)
+Cohesion: 0.11
+Nodes (33): au(), bu(), cu(), du(), eu(), fu(), gi(), io() (+25 more)
 
 ### Community 485 - "Community 485"
 Cohesion: 0.07
@@ -7122,12 +7086,8 @@ Cohesion: 0.06
 Nodes (33): authors, autoload, psr-4, dev-master, config, sort-packages, description, extra (+25 more)
 
 ### Community 518 - "Community 518"
-Cohesion: 0.09
-Nodes (3): now(), DatePoint, MockClock
-
-### Community 525 - "Community 525"
-Cohesion: 0.08
-Nodes (3): File, UploadedFile, MimeTypes
+Cohesion: 0.05
+Nodes (9): Clock, now(), DatePoint, MockClock, NativeClock, now(), mockTime(), restoreClockAfterTest() (+1 more)
 
 ### Community 530 - "Community 530"
 Cohesion: 0.06
@@ -7137,10 +7097,6 @@ Nodes (33): pestphp/pest-plugin, block-insecure, authors, autoload, autoload-dev
 Cohesion: 0.06
 Nodes (33): authors, autoload, autoload-dev, psr-4, psr-4, config, sort-packages, description (+25 more)
 
-### Community 532 - "Community 532"
-Cohesion: 0.11
-Nodes (33): au(), bu(), cu(), du(), eu(), fu(), gi(), io() (+25 more)
-
 ### Community 533 - "Community 533"
 Cohesion: 0.08
 Nodes (6): MonotonicClock, Timer, Benchmark, HRTime, SystemStopWatch, SystemStopWatchWithOffset
@@ -7148,14 +7104,6 @@ Nodes (6): MonotonicClock, Timer, Benchmark, HRTime, SystemStopWatch, SystemStop
 ### Community 535 - "Community 535"
 Cohesion: 0.06
 Nodes (32): authors, autoload, classmap, autoload-dev, classmap, dev-main, config, optimize-autoloader (+24 more)
-
-### Community 539 - "Community 539"
-Cohesion: 0.03
-Nodes (11): MenuItemController, MenuItemTest, AllergyAdminTest, MenuShowTest, OurMenuAndHomeControllerTest, MenuItem, Allergen, MenuItem (+3 more)
-
-### Community 542 - "Community 542"
-Cohesion: 0.08
-Nodes (3): TreeHelper, TreeNode, TreeStyle
 
 ### Community 544 - "Community 544"
 Cohesion: 0.06
@@ -7181,13 +7129,9 @@ Nodes (31): Accessing User Information, Bitbucket, code:shell ($ composer requir
 Cohesion: 0.06
 Nodes (31): 1.0.0 - 2016-02-04, [2.0.0] - 2016-11-19, [2.0.1] - 2017-02-18, [3.0.0] - 2017-03-03, [3.0.1] - 2017-03-12, [3.0.2] - 2017-03-12, [3.0.3] - 2017-08-03, [4.0.0] - 2020-02-07 (+23 more)
 
-### Community 557 - "Community 557"
-Cohesion: 0.1
-Nodes (3): ConversionFailed, Converter, FeatureDetection
-
 ### Community 559 - "Community 559"
 Cohesion: 0.15
-Nodes (27): addError(), checkRuleMatchesProperty(), clearValidation(), errorBagExcept(), filterCollectionDataDownToSpecificKeys(), getDataForValidation(), getErrorBag(), getMessages() (+19 more)
+Nodes (26): addError(), checkRuleMatchesProperty(), clearValidation(), errorBagExcept(), getDataForValidation(), getErrorBag(), getMessages(), getModelAttributeRuleKeysToShorten() (+18 more)
 
 ### Community 561 - "Community 561"
 Cohesion: 0.06
@@ -7196,6 +7140,10 @@ Nodes (4): __construct(), constructTimezoneFromDateTime(), make(), rawCreateFrom
 ### Community 562 - "Community 562"
 Cohesion: 0.06
 Nodes (31): authors, autoload, psr-4, dev-master, config, sort-packages, description, extra (+23 more)
+
+### Community 563 - "Community 563"
+Cohesion: 0.07
+Nodes (3): Template, TemplateCanNotBeExpanded, VariableBag
 
 ### Community 565 - "Community 565"
 Cohesion: 0.06
@@ -7295,11 +7243,15 @@ Nodes (16): deleteJson(), from(), fromRoute(), getJson(), json(), optionsJson(),
 
 ### Community 620 - "Community 620"
 Cohesion: 0.07
-Nodes (8): clearRecursiveCallValue(), withoutRecursion(), append_config(), blank(), filled(), once(), transform(), Onceable
+Nodes (9): clearRecursiveCallValue(), withoutRecursion(), append_config(), blank(), filled(), once(), trait_uses_recursive(), transform() (+1 more)
 
 ### Community 623 - "Community 623"
 Cohesion: 0.07
 Nodes (28): authors, autoload, classmap, autoload-dev, classmap, dev-main, config, optimize-autoloader (+20 more)
+
+### Community 625 - "Community 625"
+Cohesion: 0.06
+Nodes (7): InstalledVersions, ApiInstallCommand, phpBinary(), requireComposerPackages(), Listener, artisan_binary(), php_binary()
 
 ### Community 628 - "Community 628"
 Cohesion: 0.09
@@ -7316,10 +7268,6 @@ Nodes (29): code:php ($request = new GuzzleHttp\Psr7\Request('GET', 'http://exam
 ### Community 634 - "Community 634"
 Cohesion: 0.07
 Nodes (28): authors, autoload, exclude-from-classmap, files, psr-4, conflict, symfony/translation-contracts, description (+20 more)
-
-### Community 636 - "Community 636"
-Cohesion: 0.04
-Nodes (10): FileManipulationCommand, findAvailableModels(), EnumMakeCommand, GeneratorCommand, InterfaceMakeCommand, PruneCommand, ScopeMakeCommand, TraitMakeCommand (+2 more)
 
 ### Community 637 - "Community 637"
 Cohesion: 0.12
@@ -7405,9 +7353,17 @@ Nodes (26): authors, autoload, files, psr-4, dev-master, config, sort-packages, 
 Cohesion: 0.09
 Nodes (3): ProcessForker, SignalHandler, DependencyChecker
 
+### Community 674 - "Community 674"
+Cohesion: 0.07
+Nodes (4): CurrentWord, ContextAwareSource, HistorySource, SuggestionResult
+
 ### Community 677 - "Community 677"
 Cohesion: 0.07
 Nodes (26): composer/package-versions-deprecated, dealerdirect/phpcodesniffer-composer-installer, authors, autoload, autoload-dev, psr-4, psr-4, config (+18 more)
+
+### Community 678 - "Community 678"
+Cohesion: 0.12
+Nodes (20): at(), br(), ci(), fi(), hi(), In(), mu(), n() (+12 more)
 
 ### Community 681 - "Community 681"
 Cohesion: 0.07
@@ -7444,10 +7400,6 @@ Nodes (25): authors, autoload, classmap, dev-main, config, optimize-autoloader, 
 ### Community 701 - "Community 701"
 Cohesion: 0.11
 Nodes (3): AbstractDumper, esc(), HtmlDumper
-
-### Community 702 - "Community 702"
-Cohesion: 0.14
-Nodes (3): CallQueuedHandler, class_uses_recursive(), trait_uses_recursive()
 
 ### Community 704 - "Community 704"
 Cohesion: 0.08
@@ -7493,21 +7445,9 @@ Nodes (26): AppendStream, BufferStream, CachingStream, code:shell (composer requ
 Cohesion: 0.08
 Nodes (25): autoload, autoload-dev, psr-4, psr-4, dev-master, config, preferred-install, description (+17 more)
 
-### Community 730 - "Community 730"
-Cohesion: 0.08
-Nodes (3): SmtpTransport, AbstractStream, SendmailTransport
-
-### Community 731 - "Community 731"
-Cohesion: 0.11
-Nodes (9): static, static, static, static, MenuItemFactory, OrderFactory, PromotionFactory, UserFactory (+1 more)
-
 ### Community 732 - "Community 732"
 Cohesion: 0.13
 Nodes (17): getClockSeqHiAndReserved(), getClockSeqHiAndReservedHex(), getClockSeqLow(), getClockSeqLowHex(), getDateTime(), getFieldsHex(), getNode(), getNodeHex() (+9 more)
-
-### Community 735 - "Community 735"
-Cohesion: 0.03
-Nodes (21): BelongsTo, HasMany, BelongsTo, HasMany, BelongsTo, BelongsTo, BelongsTo, PendingHasThroughRelationship (+13 more)
 
 ### Community 740 - "Community 740"
 Cohesion: 0.08
@@ -7518,8 +7458,8 @@ Cohesion: 0.08
 Nodes (24): authors, autoload, psr-4, dev-master, config, sort-packages, description, extra (+16 more)
 
 ### Community 744 - "Community 744"
-Cohesion: 0.07
-Nodes (11): Topping, Seeder, AdminUserSeeder, AllergenSeeder, CategorySeeder, DatabaseSeeder, DeliveryZoneSeeder, MenuItemSeeder (+3 more)
+Cohesion: 0.11
+Nodes (9): Seeder, AdminUserSeeder, AllergenSeeder, CategorySeeder, DatabaseSeeder, DeliveryZoneSeeder, MenuItemSeeder, SettingSeeder (+1 more)
 
 ### Community 746 - "Community 746"
 Cohesion: 0.08
@@ -7537,9 +7477,17 @@ Nodes (24): authors, autoload, autoload-dev, psr-4, psr-4, dev-master, descripti
 Cohesion: 0.08
 Nodes (24): authors, autoload, psr-4, dev-master, config, sort-packages, description, extra (+16 more)
 
+### Community 752 - "Community 752"
+Cohesion: 0.09
+Nodes (8): AttributeCommand, FormCommand, LayoutCommand, StubsCommand, ProcessDriver, base_path(), EnsureRelativePaths, ScheduleWorkCommand
+
 ### Community 754 - "Community 754"
 Cohesion: 0.08
 Nodes (24): authors, autoload-dev, files, psr-4, dev-master, conflict, tightenco/collect, description (+16 more)
+
+### Community 758 - "Community 758"
+Cohesion: 0.08
+Nodes (6): AddressTest, AddressControllerTest, UserAddress, User, UserAddressModelTest, UserAddress
 
 ### Community 760 - "Community 760"
 Cohesion: 0.08
@@ -7577,6 +7525,18 @@ Nodes (23): authors, autoload, classmap, dev-main, config, optimize-autoloader, 
 Cohesion: 0.15
 Nodes (3): validateTimezone(), SystemNodeProvider, Constant
 
+### Community 780 - "Community 780"
+Cohesion: 0.02
+Nodes (18): Reader, CacheWarmerAggregate, LinkStub, Debug, DebugClassLoader, AbstractFileExtractor, CustomCssFile, ObjectLoader (+10 more)
+
+### Community 781 - "Community 781"
+Cohesion: 0.15
+Nodes (20): ar(), be(), ct(), fe(), ge(), he(), ie(), je() (+12 more)
+
+### Community 786 - "Community 786"
+Cohesion: 0.12
+Nodes (3): AbstractSessionListener, AbstractSessionHandler, SessionUtils
+
 ### Community 789 - "Community 789"
 Cohesion: 0.08
 Nodes (23): Batch, Cache, code:php (// Before:), headers event has been removed, Inflection, Iterator, Log, Metadata streams (+15 more)
@@ -7586,8 +7546,8 @@ Cohesion: 0.08
 Nodes (24): require-dev, psr/cache, symfony/browser-kit, symfony/clock, symfony/config, symfony/console, symfony/css-selector, symfony/dependency-injection (+16 more)
 
 ### Community 793 - "Community 793"
-Cohesion: 0.14
-Nodes (3): AdjacentTextMerger, InlineParserEngine, ReplaceUnpairedQuotesListener
+Cohesion: 0.1
+Nodes (4): AdjacentTextMerger, CloseBracketParser, InlineParserEngine, ReplaceUnpairedQuotesListener
 
 ### Community 795 - "Community 795"
 Cohesion: 0.08
@@ -7599,7 +7559,7 @@ Nodes (23): authors, autoload, files, psr-4, description, extra, thanks, homepag
 
 ### Community 798 - "Community 798"
 Cohesion: 0.08
-Nodes (23): 1.0.0 - 2015-05-19, [1.2.1] - 2015-11-02, [1.2.2] - 2016-01-22, 2.0.0 - 2021-06-30, 2.10.0 - 2026-05-19, 2.10.4 - 2026-05-29, 2.1.1 - 2022-03-20, 2.3.0 - 2022-06-09 (+15 more)
+Nodes (23): 1.0.0 - 2015-05-19, [1.2.1] - 2015-11-02, [1.2.2] - 2016-01-22, [1.2.3] - 2016-02-18, 2.0.0 - 2021-06-30, 2.10.0 - 2026-05-19, 2.1.1 - 2022-03-20, 2.4.0 - 2022-06-20 (+15 more)
 
 ### Community 800 - "Community 800"
 Cohesion: 0.08
@@ -7611,7 +7571,7 @@ Nodes (23): authors, autoload, classmap, dev-main, config, optimize-autoloader, 
 
 ### Community 811 - "Community 811"
 Cohesion: 0.09
-Nodes (22): [2.0.0] - 2021-07-24, [2.0.0-beta3] - 2021-07-03, [2.0.0-rc1] - 2021-07-10, [2.0.1] - 2021-07-31, [2.0.3] - 2022-02-13, [2.1.3] - 2022-02-26, [2.3.3] - 2022-06-07, [2.3.5] - 2022-07-29 (+14 more)
+Nodes (22): [2.0.0] - 2021-07-24, [2.0.0-beta3] - 2021-07-03, [2.0.0-rc1] - 2021-07-10, [2.0.1] - 2021-07-31, [2.0.3] - 2022-02-13, [2.1.3] - 2022-02-26, [2.3.2] - 2022-06-03, [2.3.3] - 2022-06-07 (+14 more)
 
 ### Community 812 - "Community 812"
 Cohesion: 0.09
@@ -7643,7 +7603,7 @@ Nodes (22): authors, autoload, psr-4, description, homepage, keywords, license, 
 
 ### Community 826 - "Community 826"
 Cohesion: 0.09
-Nodes (22): [11.5.12] - 2025-03-07, [11.5.30] - 2025-08-10, [11.5.34] - 2025-08-20, [11.5.36] - 2025-09-03, [11.5.39] - 2025-09-14, [11.5.40] - 2025-09-23, [11.5.41] - 2025-09-24, [11.5.42] - 2025-09-28 (+14 more)
+Nodes (22): [11.5.10] - 2025-02-25, [11.5.12] - 2025-03-07, [11.5.34] - 2025-08-20, [11.5.36] - 2025-09-03, [11.5.40] - 2025-09-23, [11.5.41] - 2025-09-24, [11.5.42] - 2025-09-28, [11.5.46] - 2025-12-06 (+14 more)
 
 ### Community 827 - "Community 827"
 Cohesion: 0.09
@@ -7713,9 +7673,9 @@ Nodes (21): authors, autoload, files, psr-4, description, extra, thanks, homepag
 Cohesion: 0.09
 Nodes (21): authors, autoload, classmap, files, psr-4, description, extra, thanks (+13 more)
 
-### Community 865 - "Community 865"
-Cohesion: 0.15
-Nodes (4): ServeFile, abort_unless(), FilePreviewController, FileUploadController
+### Community 870 - "Community 870"
+Cohesion: 0.06
+Nodes (6): RawMessage, DiffOnlyOutputBuilder, StreamOutput, UnifiedDiffOutputBuilder, DefaultPrinter, FileFactory
 
 ### Community 875 - "Community 875"
 Cohesion: 0.09
@@ -7732,6 +7692,10 @@ Nodes (21): authors, autoload, exclude-from-classmap, psr-4, bin, conflict, symf
 ### Community 878 - "Community 878"
 Cohesion: 0.1
 Nodes (3): DeleteBracketPairAction, InsertQuoteAction, BracketPair
+
+### Community 883 - "Community 883"
+Cohesion: 0.13
+Nodes (11): allOnConnection(), allOnQueue(), appendToChain(), chain(), dispatchNextJobInChain(), onConnection(), onGroup(), onQueue() (+3 more)
 
 ### Community 885 - "Community 885"
 Cohesion: 0.18
@@ -7753,9 +7717,9 @@ Nodes (12): dotPath(), ensureSorted(), has(), prop(), where(), whereAll(), where
 Cohesion: 0.1
 Nodes (20): authors, autoload, psr-4, dev-main, description, extra, branch-alias, thanks (+12 more)
 
-### Community 894 - "Community 894"
-Cohesion: 0.23
-Nodes (4): LoadConfiguration, markConfigCached(), setUpWithCachedConfig(), tearDownWithCachedConfig()
+### Community 899 - "Community 899"
+Cohesion: 0.12
+Nodes (3): b(), Lt, p()
 
 ### Community 900 - "Community 900"
 Cohesion: 0.1
@@ -7773,29 +7737,29 @@ Nodes (20): [2.0.0] - 2020-02-07, [2.0.1] - 2020-06-15, [2.0.2] - 2020-06-26, [2
 Cohesion: 0.1
 Nodes (20): authors, autoload, files, psr-4, description, extra, thanks, homepage (+12 more)
 
+### Community 910 - "Community 910"
+Cohesion: 0.09
+Nodes (3): ResultCacheHandler, ResultCacheId, TestSuiteSorter
+
 ### Community 916 - "Community 916"
 Cohesion: 0.1
 Nodes (20): authors, autoload, exclude-from-classmap, psr-4, dev-main, description, extra, branch-alias (+12 more)
 
 ### Community 922 - "Community 922"
-Cohesion: 0.24
-Nodes (6): beforeApplicationDestroyed(), callBeforeApplicationDestroyedCallbacks(), setUpTheTestEnvironment(), setUpTraits(), tearDownTheTestEnvironment(), ValidateCsrfToken
+Cohesion: 0.11
+Nodes (3): CustomerPagesTest, User, Notifiable
 
 ### Community 924 - "Community 924"
 Cohesion: 0.1
 Nodes (4): CurlCaster, GdCaster, OpenSSLCaster, ResourceCaster
-
-### Community 926 - "Community 926"
-Cohesion: 0.13
-Nodes (3): MockTrait, EvalLoader, ExecutionLoopClosure
 
 ### Community 927 - "Community 927"
 Cohesion: 0.14
 Nodes (13): delete(), fromAttributes(), fromRawAttributes(), getCreatedAtColumn(), getDeleteQuery(), getOtherKey(), getRelatedKey(), getTable() (+5 more)
 
 ### Community 928 - "Community 928"
-Cohesion: 0.16
-Nodes (5): Clock, now(), mockTime(), restoreClockAfterTest(), saveClockBeforeTest()
+Cohesion: 0.11
+Nodes (3): CacheManager, SupportCssModules, SupportJsModules
 
 ### Community 929 - "Community 929"
 Cohesion: 0.18
@@ -7809,13 +7773,13 @@ Nodes (19): authors, autoload, psr-4, dev-master, config, sort-packages, descrip
 Cohesion: 0.1
 Nodes (19): [1.0.0] - 2012-07-17, [1.0.1] - 2015-08-12, [1.1.0] - 2017-01-20, [2.0.0] - 2017-12-21, [3.0.0] - 2021-01-01, [3.0.1] - 2021-08-13, [3.0.2] - 2022-10-27, [3.0.3] - 2024-07-08 (+11 more)
 
+### Community 940 - "Community 940"
+Cohesion: 0.16
+Nodes (19): _(), ae(), b(), bi(), bn(), dr(), ee(), ir() (+11 more)
+
 ### Community 942 - "Community 942"
 Cohesion: 0.12
 Nodes (3): Lang, ResetPassword, VerifyEmail
-
-### Community 949 - "Community 949"
-Cohesion: 0.14
-Nodes (3): b(), Ki, l()
 
 ### Community 951 - "Community 951"
 Cohesion: 0.1
@@ -7869,10 +7833,6 @@ Nodes (19): require-dev, cebe/markdown, commonmark/cmark, commonmark/commonmark.
 Cohesion: 0.13
 Nodes (15): code:blade (@foreach($items as $item)), code:blade (<p>Showing {{ $items->firstItem() }}–{{ $items->lastItem() }), code:blade (@if(session('success'))), code:blade (<form class="grid grid-cols-1 lg:grid-cols-12 gap-gutter"), code:blade (<input ... value="{{ old('name', $item?->name) }}" name="nam), code:blade (<select name="category_id" ...>), code:blade (<input ... name="base_price" value="{{ old('base_price', $it), code:blade (<textarea name="description" ...>{{ old('description', $item) (+7 more)
 
-### Community 994 - "Community 994"
-Cohesion: 0.04
-Nodes (6): Builder, XmlConfigurationFileFinder, GenerateConfigurationCommand, ComposerScripts, TestResult, PendingProcess
-
 ### Community 996 - "Community 996"
 Cohesion: 0.16
 Nodes (11): forceDelete(), forceDeleteQuietly(), forceDestroy(), getDeletedAtColumn(), getQualifiedDeletedAtColumn(), initializeSoftDeletes(), performDeleteOnModel(), restore() (+3 more)
@@ -7880,6 +7840,10 @@ Nodes (11): forceDelete(), forceDeleteQuietly(), forceDestroy(), getDeletedAtCol
 ### Community 1001 - "Community 1001"
 Cohesion: 0.11
 Nodes (19): conflict, symfony/browser-kit, symfony/cache, symfony/config, symfony/console, symfony/dependency-injection, symfony/doctrine-bridge, symfony/flex (+11 more)
+
+### Community 1002 - "Community 1002"
+Cohesion: 0.11
+Nodes (9): static, static, static, static, MenuItemFactory, OrderFactory, PromotionFactory, UserFactory (+1 more)
 
 ### Community 1005 - "Community 1005"
 Cohesion: 0.11
@@ -7889,17 +7853,17 @@ Nodes (18): authors, autoload, classmap, dev-master, description, extra, branch-
 Cohesion: 0.11
 Nodes (18): authors, autoload, autoload-dev, psr-4, psr-4, config, preferred-install, description (+10 more)
 
-### Community 1028 - "Community 1028"
-Cohesion: 0.06
-Nodes (9): S3CleanupCommand, GenerateSignedUploadUrlFacade, FileUploadConfiguration, GenerateSignedUploadUrl, SupportFileUploads, cleanupOldUploads(), _finishUpload(), _startUpload() (+1 more)
-
-### Community 1031 - "Community 1031"
-Cohesion: 0.14
-Nodes (3): InvalidVisibilityProvided, PortableVisibilityGuard, PortableVisibilityConverter
+### Community 1020 - "Community 1020"
+Cohesion: 0.07
+Nodes (3): fo, Q, Y
 
 ### Community 1033 - "Community 1033"
 Cohesion: 0.11
 Nodes (17): Backers, Carbon, Carbon for enterprise, code:php (<?php), code:block2 ($ composer require nesbot/carbon), code:json ({), code:php (<?php), code:php (<?php) (+9 more)
+
+### Community 1034 - "Community 1034"
+Cohesion: 0.14
+Nodes (3): InvalidVisibilityProvided, PortableVisibilityGuard, PortableVisibilityConverter
 
 ### Community 1035 - "Community 1035"
 Cohesion: 0.11
@@ -7921,6 +7885,10 @@ Nodes (17): assertDatabaseCount(), assertDatabaseEmpty(), assertDatabaseHas(), a
 Cohesion: 0.11
 Nodes (3): Merger, FilterDirectoryCollection, IniSettingCollection
 
+### Community 1041 - "Community 1041"
+Cohesion: 0.02
+Nodes (24): PasswordChangeTest, ReorderTest, BaseTestCase, ListTestsAsTextCommand, CartControllerTest, ExampleTest, ImageUploadTest, MenuShowTest (+16 more)
+
 ### Community 1044 - "Community 1044"
 Cohesion: 0.11
 Nodes (17): authors, autoload, files, dev-main, description, extra, branch-alias, thanks (+9 more)
@@ -7930,12 +7898,24 @@ Cohesion: 0.11
 Nodes (17): code:block1 (composer require sebastian/diff), code:block2 (composer require --dev sebastian/diff), code:php (<?php), code:diff (--- Original), code:php (<?php), code:php (<?php), code:php (<?php), code:php (use SebastianBergmann\Diff\Parser;) (+9 more)
 
 ### Community 1049 - "Community 1049"
-Cohesion: 0.08
-Nodes (4): ManualUpdate, bin(), info(), Sudo
+Cohesion: 0.12
+Nodes (3): CallQueuedHandler, class_uses_recursive(), SupportQueryString
+
+### Community 1052 - "Community 1052"
+Cohesion: 0.07
+Nodes (7): beforeApplicationDestroyed(), callBeforeApplicationDestroyedCallbacks(), setUpTheTestEnvironment(), setUpTraits(), tearDownTheTestEnvironment(), JsonApiResource, HandleCors
+
+### Community 1053 - "Community 1053"
+Cohesion: 0.11
+Nodes (4): Builder, XmlConfigurationFileFinder, GenerateConfigurationCommand, ComposerScripts
 
 ### Community 1054 - "Community 1054"
 Cohesion: 0.11
 Nodes (17): authors, autoload, psr-4, dev-master, description, extra, branch-alias, homepage (+9 more)
+
+### Community 1055 - "Community 1055"
+Cohesion: 0.08
+Nodes (3): TreeHelper, TreeNode, TreeStyle
 
 ### Community 1057 - "Community 1057"
 Cohesion: 0.11
@@ -7952,10 +7932,6 @@ Nodes (17): authors, description, keywords, license, name, require, require-dev,
 ### Community 1068 - "Community 1068"
 Cohesion: 0.11
 Nodes (17): dependencies, alpinejs, shiki, tailwindcss, tippy.js, tw-animate-css, devDependencies, @tailwindcss/vite (+9 more)
-
-### Community 1069 - "Community 1069"
-Cohesion: 0.13
-Nodes (11): allOnConnection(), allOnQueue(), appendToChain(), chain(), dispatchNextJobInChain(), onConnection(), onGroup(), onQueue() (+3 more)
 
 ### Community 1070 - "Community 1070"
 Cohesion: 0.11
@@ -7993,14 +7969,6 @@ Nodes (17): call(), createTestRequest(), createTestResponse(), delete(), extract
 Cohesion: 0.12
 Nodes (17): require, ext-mbstring, illuminate/collections, illuminate/contracts, illuminate/macroable, illuminate/support, illuminate/view, laravel/prompts (+9 more)
 
-### Community 1097 - "Community 1097"
-Cohesion: 0.15
-Nodes (4): compileBreak(), compileContinue(), compileForeach(), compileForelse()
-
-### Community 1100 - "Community 1100"
-Cohesion: 0.15
-Nodes (20): ar(), be(), ct(), fe(), ge(), he(), ie(), je() (+12 more)
-
 ### Community 1106 - "Community 1106"
 Cohesion: 0.12
 Nodes (16): authors, autoload, exclude-from-classmap, psr-4, description, homepage, keywords, license (+8 more)
@@ -8025,10 +7993,6 @@ Nodes (16): About, Acknowledgements, Author, Basic Usage, code:bash (composer re
 Cohesion: 0.12
 Nodes (16): 1.0, 2.0, 3.0, Additional Thanks, Branches, code:sh (composer install), code:sh (composer global require php:^8.1 squizlabs/php_codesniffer f), Contributing (+8 more)
 
-### Community 1127 - "Community 1127"
-Cohesion: 0.06
-Nodes (8): Factory, Utils, throw_unless(), Synth, guessResourceCollection(), resolveResourceCollectionFromAttribute(), resolveResourceFromAttribute(), toResourceCollection()
-
 ### Community 1131 - "Community 1131"
 Cohesion: 0.12
 Nodes (16): code:php (// Before:), code:php (// Before:), code:php (// Before: automatically converted to //example.com/foo.), code:php (Query::build(['enabled' => true, 'disabled' => false]);), code:php (Query::build(['enabled' => true, 'disabled' => false], PHP_Q), Deprecated URI Methods Removed, Final Stream and Decorator Classes, Header Validation (+8 more)
@@ -8041,6 +8005,10 @@ Nodes (9): assertHeader(), assertValue(), getHeader(), getHeaderLine(), normaliz
 Cohesion: 0.15
 Nodes (7): __call(), __callStatic(), __get(), __isset(), __set(), __unset(), ObjectHelpers
 
+### Community 1140 - "Community 1140"
+Cohesion: 0.14
+Nodes (15): assertDontSee(), assertDontSeeHtml(), assertDontSeeText(), assertNotSet(), assertNotSetStrict(), assertReturned(), assertSee(), assertSeeHtml() (+7 more)
+
 ### Community 1150 - "Community 1150"
 Cohesion: 0.18
 Nodes (7): fillableFromArray(), getFillable(), getGuarded(), isFillable(), isGuardableColumn(), isGuarded(), totallyGuarded()
@@ -8050,8 +8018,8 @@ Cohesion: 0.24
 Nodes (12): freshTimestamp(), freshTimestampString(), getCreatedAtColumn(), getQualifiedCreatedAtColumn(), getQualifiedUpdatedAtColumn(), getUpdatedAtColumn(), setCreatedAt(), setUpdatedAt() (+4 more)
 
 ### Community 1153 - "Community 1153"
-Cohesion: 0.08
-Nodes (16): IslandCompiler, encodeFragmentMetadata(), getIslands(), injectLazyDirective(), islandAlreadyRendered(), islandIsMounting(), mountIfNeedsMounting(), regenerateIslandCacheFiles() (+8 more)
+Cohesion: 0.07
+Nodes (17): IslandCompiler, encodeFragmentMetadata(), getIslands(), injectLazyDirective(), islandAlreadyRendered(), islandIsMounting(), mountIfNeedsMounting(), regenerateIslandCacheFiles() (+9 more)
 
 ### Community 1154 - "Community 1154"
 Cohesion: 0.24
@@ -8089,6 +8057,10 @@ Nodes (4): RouteServiceProvider, markRoutesCached(), setUpWithCachedRoutes(), te
 Cohesion: 0.13
 Nodes (14): [1.0.0] - 2020-08-12, [1.0.1] - 2020-09-28, [2.0.0] - 2023-02-03, [2.0.1] - 2024-03-02, [3.0.0] - 2024-02-02, [3.0.1] - 2024-03-02, [3.0.2] - 2024-07-03, Changed (+6 more)
 
+### Community 1211 - "Community 1211"
+Cohesion: 0.03
+Nodes (10): OrderShowTest, AccountControllerTest, AuthTest, BroadcastingTest, DeliveryZoneTest, OrderControllerTest, PartyHallTest, User (+2 more)
+
 ### Community 1213 - "Community 1213"
 Cohesion: 0.2
 Nodes (10): extendSection(), getSection(), getSections(), hasSection(), inject(), sectionMissing(), startSection(), stopSection() (+2 more)
@@ -8121,6 +8093,10 @@ Nodes (14): authors, autoload, autoload-dev, psr-4, files, description, license,
 Cohesion: 0.13
 Nodes (15): Client, code:php (// 3.0), code:php ($request = $client->createRequest('POST', '/');), code:php (// 3.0), code:php (// Standard redirects with a default of a max of 5 redirects), EntityBody, General changes, Headers (+7 more)
 
+### Community 1241 - "Community 1241"
+Cohesion: 0.1
+Nodes (4): InlineFragmentRenderer, IpUtils, SubRequestHandler, IpsRequestMatcher
+
 ### Community 1242 - "Community 1242"
 Cohesion: 0.13
 Nodes (14): authors, autoload, psr-4, dev-master, description, extra, branch-alias, homepage (+6 more)
@@ -8140,14 +8116,6 @@ Nodes (8): assertDeleted(), assertFailed(), assertFailedWith(), assertNotDeleted
 ### Community 1272 - "Community 1272"
 Cohesion: 0.25
 Nodes (14): delete(), deleteAsync(), get(), getAsync(), head(), headAsync(), patch(), patchAsync() (+6 more)
-
-### Community 1279 - "Community 1279"
-Cohesion: 0.05
-Nodes (10): CramMd5Authenticator, EnvironmentDecryptCommand, InvokeSerializedClosureCommand, MessageSent, __construct(), getBytes(), serialize(), unserialize() (+2 more)
-
-### Community 1293 - "Community 1293"
-Cohesion: 0.05
-Nodes (15): configurePrompts(), getPromptValidatorInstance(), multiselectFallback(), promptUntilValid(), selectFallback(), validatePrompt(), validationAttributes(), validationMessages() (+7 more)
 
 ### Community 1300 - "Community 1300"
 Cohesion: 0.14
@@ -8169,21 +8137,21 @@ Nodes (12): authors, config, sort-packages, description, homepage, keywords, lic
 Cohesion: 0.36
 Nodes (13): bootBroadcastsEvents(), broadcastAfterCommit(), broadcastConnection(), broadcastCreated(), broadcastDeleted(), broadcastIfBroadcastChannelsExistForEvent(), broadcastOn(), broadcastQueue() (+5 more)
 
+### Community 1322 - "Community 1322"
+Cohesion: 0.12
+Nodes (4): OtherDeviceLogout, Registered, Verified, Notification
+
 ### Community 1330 - "Community 1330"
 Cohesion: 0.14
 Nodes (14): code:php (assertThat("", emptyString());), code:php (assertThat(null, isEmptyOrNullString());), code:php (assertThat("", nullOrEmptyString());), code:php (assertThat("foo", isNonEmptyString());), code:php (assertThat("foo", nonEmptyString());), code:php (assertThat("Foo", equalToIgnoringCase("foo"));), code:php (assertThat(" Foo ", equalToIgnoringWhiteSpace("Foo"));), code:php (assertThat("foobarbaz", matchesPattern('/(foo)(bar)(baz)/'))) (+6 more)
-
-### Community 1338 - "Community 1338"
-Cohesion: 0.09
-Nodes (3): EnvironmentEncryptCommand, KeyGenerateCommand, Encrypter
 
 ### Community 1339 - "Community 1339"
 Cohesion: 0.16
 Nodes (3): cookie(), withCookie(), withoutCookie()
 
-### Community 1344 - "Community 1344"
-Cohesion: 0.01
-Nodes (45): AddressTest, PasswordChangeTest, ReorderTest, DashboardTest, InStoreOrderTest, OrderIndexTest, OrderShowTest, BaseTestCase (+37 more)
+### Community 1358 - "Community 1358"
+Cohesion: 0.23
+Nodes (4): LoadConfiguration, markConfigCached(), setUpWithCachedConfig(), tearDownWithCachedConfig()
 
 ### Community 1361 - "Community 1361"
 Cohesion: 0.31
@@ -8201,10 +8169,6 @@ Nodes (13): authors, autoload, psr-4, dev-master, description, extra, branch-ali
 Cohesion: 0.14
 Nodes (13): ArgumentOutOfRangeException, DeprecatedException, DirectoryNotFoundException, FileNotFoundException, InvalidArgumentException, InvalidStateException, IOException, MemberAccessException (+5 more)
 
-### Community 1371 - "Community 1371"
-Cohesion: 0.05
-Nodes (5): InstalledVersions, ComponentHookRegistry, LivewireServiceProvider, SupportPagination, stream()
-
 ### Community 1379 - "Community 1379"
 Cohesion: 0.14
 Nodes (13): authors, autoload, classmap, description, license, name, require, ext-dom (+5 more)
@@ -8217,6 +8181,10 @@ Nodes (12): authors, config, sort-packages, description, homepage, keywords, lic
 Cohesion: 0.14
 Nodes (14): require-dev, nikic/php-parser, psr/log, symfony/config, symfony/console, symfony/dependency-injection, symfony/finder, symfony/http-client-contracts (+6 more)
 
+### Community 1382 - "Community 1382"
+Cohesion: 0.04
+Nodes (12): Bind, broadcastVia(), PendingBroadcast, enum_value(), getDictionaryKey(), DatabaseManager, Storage, ArrayRule (+4 more)
+
 ### Community 1384 - "Community 1384"
 Cohesion: 0.14
 Nodes (14): scripts, dev:analyze, dev:analyze:phpstan, dev:bench, dev:build:clean, dev:lint, dev:lint:fix, dev:lint:style (+6 more)
@@ -8228,6 +8196,10 @@ Nodes (14): scripts-descriptions, dev:analyze, dev:analyze:phpstan, dev:bench, d
 ### Community 1391 - "Community 1391"
 Cohesion: 0.27
 Nodes (12): calculateTranslationStatus(), extractLocaleFromFilePath(), extractTranslationKeys(), findTranslationFiles(), findTransUnitMismatches(), isTranslationCompleted(), printTable(), printTitle() (+4 more)
+
+### Community 1392 - "Community 1392"
+Cohesion: 0.3
+Nodes (9): addClassEvent(), addEventListener(), addViewEvent(), buildClassEventCallback(), classEventMethodForPrefix(), composer(), composers(), creator() (+1 more)
 
 ### Community 1395 - "Community 1395"
 Cohesion: 0.15
@@ -8258,8 +8230,8 @@ Cohesion: 0.18
 Nodes (11): code:bash (& "C:\xampp\php\php.exe" artisan migrate), code:bash (git add database/migrations/), code:bash (cd C:\AcesAndEightsPizza\webapp), code:php (<?php), code:php (<?php), code:php (<?php), code:php (<?php), code:php (<?php) (+3 more)
 
 ### Community 1411 - "Community 1411"
-Cohesion: 0.11
-Nodes (5): PailCommand, ClearCommand, storage_path(), EnsurePcntlIsAvailable, SupportChecksumErrorDebugging
+Cohesion: 0.01
+Nodes (50): BatchFactory, PendingClosureDispatch, Closure, ifRedisAvailable(), setUpRedis(), tearDownRedis(), SyncDriver, PredisConnection (+42 more)
 
 ### Community 1420 - "Community 1420"
 Cohesion: 0.15
@@ -8272,6 +8244,14 @@ Nodes (6): c(), h(), o(), p(), r(), v()
 ### Community 1431 - "Community 1431"
 Cohesion: 0.15
 Nodes (12): authors, description, homepage, keywords, license, name, provide, psr/log-implementation (+4 more)
+
+### Community 1444 - "Community 1444"
+Cohesion: 0.03
+Nodes (6): Engine, ASN1, extractPoint(), MSBLOB, SCP, String_
+
+### Community 1450 - "Community 1450"
+Cohesion: 0.04
+Nodes (6): FrontendAssets, EndpointResolver, HandleRequests, SupportAutoInjectedAssets, SupportFileUploads, SupportScriptsAndAssets
 
 ### Community 1452 - "Community 1452"
 Cohesion: 0.15
@@ -8305,6 +8285,10 @@ Nodes (7): Base32, Base32Hex, Base64, Base64DotSlash, Base64DotSlashOrdered, Enc
 Cohesion: 0.17
 Nodes (11): authors, description, homepage, keywords, license, minimum-stability, name, repositories (+3 more)
 
+### Community 1500 - "Community 1500"
+Cohesion: 0.06
+Nodes (14): AuthServiceProvider, DatabaseUserProvider, check(), guest(), User, Authenticatable, actingAs(), assertAuthenticated() (+6 more)
+
 ### Community 1502 - "Community 1502"
 Cohesion: 0.17
 Nodes (11): [1.0.0] - 2021-05-31, [1.0.1] - 2021-05-31, [1.1.0] - 2021-06-19, [1.1.1] - 2021-08-14, [1.2.0] - 2022-12-11, Change Log, Changed, Changed (+3 more)
@@ -8321,10 +8305,6 @@ Nodes (12): require-dev, psr/log, symfony/config, symfony/dependency-injection, 
 Cohesion: 0.17
 Nodes (11): [5.0.1] - 2020-02-19, [5.1.4] - 2022-04-03, [6.0.0] - 2023-02-03, [6.0.1] - 2023-04-11, [7.2.1] - 2025-05-21, Changed, Changes in sebastianbergmann/environment, Fixed (+3 more)
 
-### Community 1549 - "Community 1549"
-Cohesion: 0.18
-Nodes (3): DumpCommand, database_path(), MigrateCommand
-
 ### Community 1557 - "Community 1557"
 Cohesion: 0.17
 Nodes (11): 2.0.0 / 2015-04-01, 2.1.0 / 2015-05-20, 2.2.0 / 2015-06-22, 3.0.0 / 2015-07-22, 4.0.0 / 2016-07-17, 5.0.0 / 2017-06-26, 6.0.0 / 2022-01-24, 6.1.0 / 2022-03-23 (+3 more)
@@ -8332,10 +8312,6 @@ Nodes (11): 2.0.0 / 2015-04-01, 2.1.0 / 2015-05-20, 2.2.0 / 2015-06-22, 3.0.0 / 
 ### Community 1558 - "Community 1558"
 Cohesion: 0.17
 Nodes (11): authors, bin, description, homepage, keywords, license, name, prefer-stable (+3 more)
-
-### Community 1567 - "Community 1567"
-Cohesion: 0.07
-Nodes (6): EmbedStartParser, AutolinkParser, CloseBracketParser, ReferenceParser, LinkParserHelper, UrlEncoder
 
 ### Community 1577 - "Community 1577"
 Cohesion: 0.17
@@ -8369,14 +8345,6 @@ Nodes (3): dumpTimezone(), serialize(), serializeUsing()
 Cohesion: 0.18
 Nodes (10): code:sh (composer require paragonie/constant_time_encoding), code:php (use ParagonIE\ConstantTime\Encoding;), code:block3 (1VilPkeVqirlPifk5scbzcTTbMT2clp+Zkyv9VFFasE=), code:php (use ParagonIE\ConstantTime\Base64;), code:block5 (1VilPkeVqirlPifk5scbzcTTbMT2clp+Zkyv9VFFasE=), Constant-Time Encoding, How to Install, How to Use (+2 more)
 
-### Community 1619 - "Community 1619"
-Cohesion: 0.09
-Nodes (4): csrf_field(), csrf_token(), FrontendAssets, SupportAutoInjectedAssets
-
-### Community 1633 - "Community 1633"
-Cohesion: 0.44
-Nodes (7): decode(), expand(), inject(), isNamed(), parseExpression(), replaceList(), separator()
-
 ### Community 1640 - "Community 1640"
 Cohesion: 0.18
 Nodes (10): code:block1 (composer require sebastian/exporter), code:block2 (composer require --dev sebastian/exporter), code:php (<?php), code:php (<?php), code:php (<?php), code:php (<?php), Data Types, Installation (+2 more)
@@ -8388,6 +8356,10 @@ Nodes (11): Array, code:php (assertThat(['name'=> 'foobar'], hasKeyValuePair('na
 ### Community 1652 - "Community 1652"
 Cohesion: 0.18
 Nodes (11): code:php (class Foo {), code:php ($foo = new Foo;), code:php (assertThat($foo, is(not(identicalTo($foo2))));), code:php (assertThat($foo, anInstanceOf(Foo::class));), code:php (assertThat(null, is(nullValue()));), code:php (assertThat("", notNullValue());), code:php (assertThat($foo, is(not(sameInstance($foo2))));), code:php (assertThat(1, typeOf("integer"));) (+3 more)
+
+### Community 1661 - "Community 1661"
+Cohesion: 0.38
+Nodes (8): configurePrompts(), getPromptValidatorInstance(), multiselectFallback(), promptUntilValid(), selectFallback(), validatePrompt(), validationAttributes(), validationMessages()
 
 ### Community 1667 - "Community 1667"
 Cohesion: 0.18
@@ -8401,10 +8373,6 @@ Nodes (5): c(), l(), o(), s(), u()
 Cohesion: 0.18
 Nodes (10): Assertions, Constraints, and Expectations, Assertions, Constraints, and Expectations, Deprecations, Hard Deprecations, Miscellaneous, Running Tests, Soft Deprecations, Test Double API (+2 more)
 
-### Community 1703 - "Community 1703"
-Cohesion: 0.03
-Nodes (16): Bind, broadcastVia(), PendingBroadcast, enum_value(), getDictionaryKey(), ModelNotFoundException, QueuedClosure, Storage (+8 more)
-
 ### Community 1708 - "Community 1708"
 Cohesion: 0.22
 Nodes (4): description(), name(), skip(), withoutOverlapping()
@@ -8412,10 +8380,6 @@ Nodes (4): description(), name(), skip(), withoutOverlapping()
 ### Community 1710 - "Community 1710"
 Cohesion: 0.18
 Nodes (11): additionalProperties, properties, required, type, type, type, deprecated, message (+3 more)
-
-### Community 1732 - "Community 1732"
-Cohesion: 0.27
-Nodes (8): actingAs(), assertAuthenticated(), assertCredentials(), assertGuest(), assertInvalidCredentials(), be(), hasCredentials(), isAuthenticated()
 
 ### Community 1735 - "Community 1735"
 Cohesion: 0.22
@@ -8440,6 +8404,10 @@ Nodes (8): getAuthIdentifier(), getAuthIdentifierForBroadcasting(), getAuthIdent
 ### Community 1759 - "Community 1759"
 Cohesion: 0.2
 Nodes (10): code:php (use App\Models\Promotion;), code:php ($cartItems   = json_decode($data['cart_items'], true);), code:php ($data = $request->validate([), code:php (foreach ($orderItems as $item) {), code:blade ({{-- Promo Code --}}), code:php (public function test_valid_promo_code_applies_discount(): vo), code:blade (@if($order->discount_amount > 0)), code:bash (& "C:\xampp\php\php.exe" artisan test tests/Feature/Checkout) (+2 more)
+
+### Community 1764 - "Community 1764"
+Cohesion: 0.44
+Nodes (7): decode(), expand(), inject(), isNamed(), parseExpression(), replaceList(), separator()
 
 ### Community 1766 - "Community 1766"
 Cohesion: 0.27
@@ -8478,8 +8446,8 @@ Cohesion: 0.24
 Nodes (10): applyInverseRelationToCollection(), applyInverseRelationToModel(), chaperone(), getInverseRelationship(), getPossibleInverseRelations(), guessInverseRelation(), inverse(), withoutChaperone() (+2 more)
 
 ### Community 1791 - "Community 1791"
-Cohesion: 0.2
-Nodes (9): [2.2.0] - 2018-06-05, [3.0.0] - 2020-03-25, Added, Added, Change Log, Changed, Changed, Fixed (+1 more)
+Cohesion: 0.33
+Nodes (5): [2.2.0] - 2018-06-05, Added, Change Log, Changed, Fixed
 
 ### Community 1799 - "Community 1799"
 Cohesion: 0.2
@@ -8492,6 +8460,10 @@ Nodes (5): doConvertToPHPValue(), getCarbonClassName(), getMaximumPrecision(), g
 ### Community 1815 - "Community 1815"
 Cohesion: 0.15
 Nodes (12): 1. `test_update_regenerates_slug_when_name_changes`, 2. `test_store_slug_strips_special_characters_from_name`, After, Before, Commit Details, Notes, Status, Summary (+4 more)
+
+### Community 1818 - "Community 1818"
+Cohesion: 0.06
+Nodes (6): CramMd5Authenticator, Uuid, Miscellaneous, Uuid, CachingFileAnalyser, getFingerprint()
 
 ### Community 1820 - "Community 1820"
 Cohesion: 0.2
@@ -8517,10 +8489,6 @@ Nodes (9): [2.0.0] - 10.05.2020, [2.0.1] - 27.06.2020, [2.0.2] - 20.07.2021, [2.
 Cohesion: 0.2
 Nodes (9): code:php (use PharIo\Manifest\ManifestLoader;), code:shell (object(PharIo\Manifest\Manifest)#14 (6) {), code:php ($bundled = new \PharIo\Manifest\BundledComponentCollection()), code:xml (<?xml version="1.0" encoding="UTF-8"?>), Create via API, Installation, Manifest, Read from `manifest.xml` (+1 more)
 
-### Community 1866 - "Community 1866"
-Cohesion: 0.3
-Nodes (9): addClassEvent(), addEventListener(), addViewEvent(), buildClassEventCallback(), classEventMethodForPrefix(), composer(), composers(), creator() (+1 more)
-
 ### Community 1868 - "Community 1868"
 Cohesion: 0.2
 Nodes (9): authors, conflict, phpunit/phpunit, description, homepage, keywords, license, name (+1 more)
@@ -8537,10 +8505,6 @@ Nodes (9): Additional URI Methods, Cross-Origin Detection, For Enterprise, `Guzz
 Cohesion: 0.22
 Nodes (3): check_digit(), Company, Person
 
-### Community 1902 - "Community 1902"
-Cohesion: 0.22
-Nodes (9): scripts, dev, post-autoload-dump, post-create-project-cmd, post-root-package-install, post-update-cmd, pre-package-uninstall, setup (+1 more)
-
 ### Community 1930 - "Community 1930"
 Cohesion: 0.38
 Nodes (9): alert(), critical(), debug(), emergency(), error(), info(), log(), notice() (+1 more)
@@ -8548,10 +8512,6 @@ Nodes (9): alert(), critical(), debug(), emergency(), error(), info(), log(), no
 ### Community 1937 - "Community 1937"
 Cohesion: 0.2
 Nodes (9): code:php (require_once '/path/to/stripe-php/init.php';), code:php (// set up your tweaked Curl client), Custom Request Timeouts, Dependencies, Documentation, Manual Installation, Requirements, Stripe PHP bindings (+1 more)
-
-### Community 1947 - "Community 1947"
-Cohesion: 0.01
-Nodes (29): BelongsToMany, BelongsToMany, PendingClosureDispatch, Closure, SyncDriver, Callback, Event, BelongsToManyRelationship (+21 more)
 
 ### Community 1948 - "Community 1948"
 Cohesion: 0.38
@@ -8597,14 +8557,6 @@ Nodes (9): code:bash (& "C:\xampp\php\php.exe" artisan make:model Category), cod
 Cohesion: 0.22
 Nodes (9): code:php (<?php), code:bash (& "C:\xampp\php\php.exe" artisan test tests/Feature/Registra), code:php (public function register(Request $request): RedirectResponse), code:php (Route::get('/register', fn () => view('auth.register', ['tit), code:php (Route::post('/register', [App\Http\Controllers\AuthControlle), code:blade (<form action="{{ route('register.post') }}" method="POST" cl), code:bash (& "C:\xampp\php\php.exe" artisan test tests/Feature/Registra), code:bash (git add app/Http/Controllers/AuthController.php routes/web.p) (+1 more)
 
-### Community 1991 - "Community 1991"
-Cohesion: 0.06
-Nodes (11): guessResource(), guessResourceName(), resolveResourceFromAttribute(), toResource(), ChannelMakeCommand, ModelMakeCommand, PruneFailedJobsCommand, BroadcastableModelEventOccurred (+3 more)
-
-### Community 1992 - "Community 1992"
-Cohesion: 0.08
-Nodes (3): ProcessHandler, UnixPipes, DumpServer
-
 ### Community 1993 - "Community 1993"
 Cohesion: 0.17
 Nodes (11): After, Before, Commit SHA, Concerns, Covered Relationships, Full Suite Status, Implementation Details, Status (+3 more)
@@ -8619,7 +8571,7 @@ Nodes (9): code:php (<?php), code:php (// Promotions), code:php (// Promotions),
 
 ### Community 2008 - "Community 2008"
 Cohesion: 0.02
-Nodes (84): AccountController, AddressController, PasswordController, AllergyController, DashboardController, DeliveryController, KitchenController, OrderController (+76 more)
+Nodes (70): AccountController, AddressController, PasswordController, AllergyController, DashboardController, DeliveryController, KitchenController, OrderController (+62 more)
 
 ### Community 2016 - "Community 2016"
 Cohesion: 0.22
@@ -8645,10 +8597,6 @@ Nodes (8): code:php, Contributing, Contributing code and documentation, Debuggin
 Cohesion: 0.22
 Nodes (8): 1.0.0 - 2015-05-12, 1.0.1 - 2015-06-24, 2.0.1 - 2023-08-03, 2.4.1 - 2026-05-20, Changed, Changed, CHANGELOG, Fixed
 
-### Community 2096 - "Community 2096"
-Cohesion: 0.36
-Nodes (4): createApplication(), execute(), forEachProcess(), getExitCode()
-
 ### Community 2101 - "Community 2101"
 Cohesion: 0.22
 Nodes (9): $defs, routeDefinition, routeImport, additionalProperties, required, type, additionalProperties, required (+1 more)
@@ -8661,10 +8609,6 @@ Nodes (13): Precognition, FoundationServiceProvider, getValidationFactory(), val
 Cohesion: 0.22
 Nodes (8): [1.0.0] - 2019-06-06, [1.1.0] - 2019-06-07, [3.1.0] - 2022-08-29, [5.1.1] - 2025-03-18, Added, Added, ChangeLog, Fixed
 
-### Community 2149 - "Community 2149"
-Cohesion: 0.09
-Nodes (3): Uuid, Miscellaneous, Uuid
-
 ### Community 2152 - "Community 2152"
 Cohesion: 0.22
 Nodes (8): code:bash (composer require ramsey/uuid), Contributing, Coordinated Disclosure, Copyright and License, Documentation, Installation, ramsey/uuid for Enterprise, Upgrading to Version 4
@@ -8673,11 +8617,7 @@ Nodes (8): code:bash (composer require ramsey/uuid), Contributing, Coordinated D
 Cohesion: 0.2
 Nodes (9): code:php ([), code:php (public function deliveryFee(Request $request): JsonResponse), Context, Global Constraints, Sprint 3 Plan — Settings, DeliveryFee, MenuShow, Success criteria, Task 1 — Admin SettingsController tests, Task 2 — CheckoutController deliveryFee tests (+1 more)
 
-### Community 2156 - "Community 2156"
-Cohesion: 0.32
-Nodes (8): bt(), de(), dt(), it(), mt(), ot(), rt(), ve()
-
-### Community 2169 - "Community 2169"
+### Community 2164 - "Community 2164"
 Cohesion: 0.5
 Nodes (7): authorize(), authorizeForUser(), authorizeResource(), normalizeGuessedAbilityName(), parseAbilityAndArguments(), resourceAbilityMap(), resourceMethodsWithoutModels()
 
@@ -8709,10 +8649,6 @@ Nodes (7): authors, description, keywords, license, minimum-stability, name, pre
 Cohesion: 0.25
 Nodes (8): require-dev, brianium/paratest, larastan/larastan, laravel/framework, laravel/pint, orchestra/testbench-core, pestphp/pest, sebastian/environment
 
-### Community 2211 - "Community 2211"
-Cohesion: 0.25
-Nodes (8): require, laravel/framework, laravel/socialite, laravel/tinker, livewire/livewire, php, pusher/pusher-php-server, stripe/stripe-php
-
 ### Community 2214 - "Community 2214"
 Cohesion: 0.25
 Nodes (8): scripts, pathological, phpcbf, phpcs, phpstan, phpunit, psalm, test
@@ -8724,6 +8660,10 @@ Nodes (7): call(), callSilent(), callSilently(), context(), createInputFromArgum
 ### Community 2221 - "Community 2221"
 Cohesion: 0.22
 Nodes (8): Commit, Concerns, Key findings from MUST READ phase, Sprint 3 Task 1 Report — AdminSettingsController Tests, Status: DONE, TDD notes, Tests, What was done
+
+### Community 2223 - "Community 2223"
+Cohesion: 0.52
+Nodes (6): expects(), __phpunit_getInvocationHandler(), __phpunit_hasMatchers(), __phpunit_state(), __phpunit_unsetInvocationMocker(), __phpunit_verify()
 
 ### Community 2224 - "Community 2224"
 Cohesion: 0.39
@@ -8737,21 +8677,13 @@ Nodes (8): suggest, dragonmantank/cron-expression, ext-pcntl, guzzlehttp/guzzle,
 Cohesion: 0.25
 Nodes (7): code:PHP (use Illuminate\Database\Capsule\Manager as Capsule;), code:PHP ($users = Capsule::table('users')->where('votes', '>', 100)->), code:PHP ($results = Capsule::select('select * from users where id = ?), code:PHP (Capsule::schema()->create('users', function ($table) {), code:PHP (class User extends Illuminate\Database\Eloquent\Model {}), Illuminate Database, Usage Instructions
 
-### Community 2246 - "Community 2246"
-Cohesion: 0.25
-Nodes (8): require-dev, fakerphp/faker, laravel/pail, laravel/pint, laravel/sail, mockery/mockery, nunomaduro/collision, phpunit/phpunit
-
 ### Community 2254 - "Community 2254"
-Cohesion: 0.08
-Nodes (5): BatchesTableCommand, ConfigMakeCommand, FailedTableCommand, SessionTableCommand, join_paths()
+Cohesion: 0.05
+Nodes (7): BatchesTableCommand, ConfigMakeCommand, FailedTableCommand, MigrationGeneratorCommand, SessionTableCommand, join_paths(), Frame
 
 ### Community 2270 - "Community 2270"
 Cohesion: 0.25
 Nodes (7): About Flysystem, Enjoy, Getting Started, League\Flysystem, Officially supported adapters, Security, Third party Adapters
-
-### Community 2273 - "Community 2273"
-Cohesion: 0.54
-Nodes (7): bootTestDatabase(), ensureSchemaIsUpToDate(), ensureTestDatabaseExists(), switchToDatabase(), testDatabase(), usingDatabase(), whenNotUsingInMemoryDatabase()
 
 ### Community 2276 - "Community 2276"
 Cohesion: 0.25
@@ -8777,10 +8709,6 @@ Nodes (8): require, php, psr/log, symfony/deprecation-contracts, symfony/error-h
 Cohesion: 0.25
 Nodes (7): 1.0.0 - 2016-05-18, 1.0.1 - 2016-08-06, Added, Changelog, Deprecated, Fixed, Removed
 
-### Community 2338 - "Community 2338"
-Cohesion: 0.02
-Nodes (29): BatchFactory, RedisConnector, PauseCommand, ResumeCommand, IsEqual, IsEqualCanonicalizing, IsEqualIgnoringCase, IsEqualWithDelta (+21 more)
-
 ### Community 2357 - "Community 2357"
 Cohesion: 0.25
 Nodes (7): code:php (<?php), CORS for PHP (using the Symfony HttpFoundation), Example: using the library, Installation, License, Options, Usage
@@ -8792,10 +8720,6 @@ Nodes (7): [📢 Commands](https://github.com/bobthecow/psysh/wiki/Commands), [�
 ### Community 2381 - "Community 2381"
 Cohesion: 0.46
 Nodes (7): assignExpressionToParameters(), whereAlpha(), whereAlphaNumeric(), whereIn(), whereNumber(), whereUlid(), whereUuid()
-
-### Community 2384 - "Community 2384"
-Cohesion: 0.38
-Nodes (7): isValidFileInstance(), shouldBlockPhpUpload(), validateExtensions(), validateFile(), validateImage(), validateMimes(), validateMimetypes()
 
 ### Community 2390 - "Community 2390"
 Cohesion: 0.25
@@ -8833,10 +8757,6 @@ Nodes (7): captainhook/plugin-composer, dealerdirect/phpcodesniffer-composer-ins
 Cohesion: 0.29
 Nodes (7): autoload-dev, psr-4, App\\, Tests\\, Tests\\FakeProgram\\, Tests\\Printer\\, Tests\\Unit\\
 
-### Community 2539 - "Community 2539"
-Cohesion: 0.01
-Nodes (37): Request, Request, Response, MapQueryParameter, MapQueryString, MapRequestPayload, MapUploadedFile, ErrorDumpCommand (+29 more)
-
 ### Community 2540 - "Community 2540"
 Cohesion: 0.29
 Nodes (7): require, ext-mbstring, league/config, php, psr/event-dispatcher, symfony/deprecation-contracts, symfony/polyfill-php80
@@ -8865,17 +8785,17 @@ Nodes (7): Commit, File Created, Notes, Status: DONE, Task 2 Report — PromoCon
 Cohesion: 0.25
 Nodes (8): code:bash (& "C:\xampp\php\php.exe" artisan make:model Order), code:php (<?php), code:php (<?php), code:php (use Illuminate\Database\Eloquent\Relations\HasMany;), code:php (public function orders(): HasMany), code:php (<?php), code:bash (git add app/Models/Order.php app/Models/OrderItem.php app/Mo), Task 3: Order + OrderItem Models
 
-### Community 2590 - "Community 2590"
-Cohesion: 0.52
-Nodes (6): expects(), __phpunit_getInvocationHandler(), __phpunit_hasMatchers(), __phpunit_state(), __phpunit_unsetInvocationMocker(), __phpunit_verify()
-
 ### Community 2604 - "Community 2604"
 Cohesion: 0.25
 Nodes (7): code:bash (git add config/broadcasting.php routes/channels.php bootstra), code:php (<?php), code:php (<?php), code:ini (PUSHER_APP_ID=your_pusher_app_id), code:ini (PUSHER_APP_ID=), code:bash (& "C:\xampp\php\php.exe" artisan config:clear), Task 2: Broadcasting Configuration
 
-### Community 2619 - "Community 2619"
-Cohesion: 0.6
-Nodes (5): compareKeys(), getParentKey(), getRelatedKeyFrom(), is(), isNot()
+### Community 2608 - "Community 2608"
+Cohesion: 0.36
+Nodes (4): createApplication(), execute(), forEachProcess(), getExitCode()
+
+### Community 2631 - "Community 2631"
+Cohesion: 0.54
+Nodes (7): bootTestDatabase(), ensureSchemaIsUpToDate(), ensureTestDatabaseExists(), switchToDatabase(), testDatabase(), usingDatabase(), whenNotUsingInMemoryDatabase()
 
 ### Community 2634 - "Community 2634"
 Cohesion: 0.29
@@ -8893,10 +8813,6 @@ Nodes (8): code:php (protected $fillable = [), code:php (<?php), code:php (<?php
 Cohesion: 0.29
 Nodes (3): mock(), namedMock(), spy()
 
-### Community 2726 - "Community 2726"
-Cohesion: 0.62
-Nodes (6): assertErrorMatchesRuleOrMessage(), assertHasErrors(), assertHasNoErrors(), errors(), failedRules(), makeErrorAssertion()
-
 ### Community 2732 - "Community 2732"
 Cohesion: 0.29
 Nodes (6): code:block1 (composer require phpunit/php-code-coverage), code:block2 (composer require --dev phpunit/php-code-coverage), code:php (<?php declare(strict_types=1);), Installation, phpunit/php-code-coverage, Usage
@@ -8904,10 +8820,6 @@ Nodes (6): code:block1 (composer require phpunit/php-code-coverage), code:block2
 ### Community 2733 - "Community 2733"
 Cohesion: 0.29
 Nodes (4): code:php (<?php), code:php (use PhpParser\Node;), code:php (use PhpParser\PrettyPrinter;), code:php (<?php)
-
-### Community 2734 - "Community 2734"
-Cohesion: 0.43
-Nodes (5): addMockeryExpectationsToAssertionCount(), checkMockeryExceptions(), closeMockery(), mockeryAssertPostConditions(), purgeMockeryContainer()
 
 ### Community 2744 - "Community 2744"
 Cohesion: 0.29
@@ -8920,6 +8832,10 @@ Nodes (7): `GuzzleHttp\Psr7\Uri::composeComponents`, `GuzzleHttp\Psr7\Uri::fromP
 ### Community 2753 - "Community 2753"
 Cohesion: 0.22
 Nodes (8): Global Constraints, Project Context, SDD Plan — Session 2 (2026-06-21 PM), Task 10: Topping model scopeAvailable unit tests, Task 11: Category model availableItems relationship unit tests, Task 12: Admin MenuItemController slug auto-generation feature tests, Task 9: DeliveryZone postcode normalization edge-case tests, Tasks
+
+### Community 2754 - "Community 2754"
+Cohesion: 0.43
+Nodes (5): addMockeryExpectationsToAssertionCount(), checkMockeryExceptions(), closeMockery(), mockeryAssertPostConditions(), purgeMockeryContainer()
 
 ### Community 2758 - "Community 2758"
 Cohesion: 0.29
@@ -8945,6 +8861,10 @@ Nodes (6): code:php (use staabm\SideEffectsDetector\SideEffectsDetector;), code:
 Cohesion: 0.29
 Nodes (6): Code of Conduct, Contributing, Introduction, License, Official Documentation, Security Vulnerabilities
 
+### Community 2809 - "Community 2809"
+Cohesion: 0.01
+Nodes (56): Request, Request, Response, BackedEnumValueResolver, DateTimeValueResolver, DefaultValueResolver, NotTaggedControllerValueResolver, RequestAttributeValueResolver (+48 more)
+
 ### Community 2825 - "Community 2825"
 Cohesion: 0.52
 Nodes (4): assertDumpEquals(), assertDumpMatchesFormat(), getDump(), prepareExpectation()
@@ -8956,10 +8876,6 @@ Nodes (6): Code of Conduct, Contributing, Introduction, License, Official Docume
 ### Community 2844 - "Community 2844"
 Cohesion: 0.52
 Nodes (6): isoWeek(), isoWeeksInYear(), isoWeekYear(), week(), weeksInYear(), weekYear()
-
-### Community 2864 - "Community 2864"
-Cohesion: 0.38
-Nodes (3): handleExceptions(), handleValidationExceptions(), withoutExceptionHandling()
 
 ### Community 2865 - "Community 2865"
 Cohesion: 0.29
@@ -8989,6 +8905,10 @@ Nodes (7): code:php (<?php), code:bash (& "C:\xampp\php\php.exe" artisan test te
 Cohesion: 0.33
 Nodes (6): composer/package-versions-deprecated, phpstan/extension-installer, config, allow-plugins, process-timeout, sort-packages
 
+### Community 2917 - "Community 2917"
+Cohesion: 0.53
+Nodes (4): afterPromptingForMissingArguments(), interact(), promptForMissingArguments(), promptForMissingArgumentsUsing()
+
 ### Community 2926 - "Community 2926"
 Cohesion: 0.33
 Nodes (6): [2.0.0-beta1] - 2021-06-20, Added, Changed, Deprecated, Fixed, Removed
@@ -8998,8 +8918,8 @@ Cohesion: 0.33
 Nodes (6): support, docs, forum, issues, rss, source
 
 ### Community 2932 - "Community 2932"
-Cohesion: 0.53
-Nodes (4): afterPromptingForMissingArguments(), interact(), promptForMissingArguments(), promptForMissingArgumentsUsing()
+Cohesion: 0.38
+Nodes (7): isValidFileInstance(), shouldBlockPhpUpload(), validateExtensions(), validateFile(), validateImage(), validateMimes(), validateMimetypes()
 
 ### Community 2935 - "Community 2935"
 Cohesion: 0.33
@@ -9016,6 +8936,10 @@ Nodes (7): Commit Details, Notes, Status, Task 9 Report: DeliveryZone Normalizat
 ### Community 2969 - "Community 2969"
 Cohesion: 0.29
 Nodes (7): code:bash (cd C:\AcesAndEightsPizza\webapp), code:php (<?php), code:php (<?php), code:php (<?php), code:bash (& "C:\xampp\php\php.exe" artisan migrate), code:bash (git add database/migrations/), Task 1: Migrations
+
+### Community 3001 - "Community 3001"
+Cohesion: 0.38
+Nodes (3): handleExceptions(), handleValidationExceptions(), withoutExceptionHandling()
 
 ### Community 3035 - "Community 3035"
 Cohesion: 0.33
@@ -9068,10 +8992,6 @@ Nodes (3): highlighter, result, textarea
 ### Community 3176 - "Community 3176"
 Cohesion: 0.6
 Nodes (5): alreadyInParameters(), resolveClassMethodDependencies(), resolveMethodDependencies(), spliceIntoParameters(), transformDependency()
-
-### Community 3180 - "Community 3180"
-Cohesion: 0.6
-Nodes (3): blade(), component(), view()
 
 ### Community 3218 - "Community 3218"
 Cohesion: 0.47
@@ -9193,6 +9113,10 @@ Nodes (5): autoload, files, psr-4, Illuminate\\, Illuminate\\Support\\
 Cohesion: 0.4
 Nodes (4): code:block1 (composer require sebastian/global-state), code:block2 (composer require --dev sebastian/global-state), Installation, sebastian/global-state
 
+### Community 3560 - "Community 3560"
+Cohesion: 0.83
+Nodes (3): wrapJsonFieldAndPath(), wrapJsonPath(), wrapJsonPathSegment()
+
 ### Community 3564 - "Community 3564"
 Cohesion: 0.4
 Nodes (5): 7.0.0-beta1 - 2019-12-30, Added, Changed, Fixed, Removed
@@ -9283,7 +9207,7 @@ Nodes (6): code:bash (& "C:\xampp\php\php.exe" artisan test), code:bash (& "C:\x
 
 ### Community 3903 - "Community 3903"
 Cohesion: 0.6
-Nodes (3): getLocale(), getPluralizationRule(), trans()
+Nodes (4): guessResource(), guessResourceName(), resolveResourceFromAttribute(), toResource()
 
 ### Community 3920 - "Community 3920"
 Cohesion: 0.4
@@ -9340,6 +9264,10 @@ Nodes (4): [2.5.0] - 2024-07-22, Added, Changed, Fixed
 ### Community 4113 - "Community 4113"
 Cohesion: 0.5
 Nodes (3): dev, dev-package-names, packages
+
+### Community 4114 - "Community 4114"
+Cohesion: 0.05
+Nodes (6): EnvironmentDecryptCommand, EnvironmentEncryptCommand, InvokeSerializedClosureCommand, Encrypter, ServerBag, SentMessage
 
 ### Community 4116 - "Community 4116"
 Cohesion: 0.83
@@ -9424,10 +9352,6 @@ Nodes (4): [3.3.3] - 2024-08-10, Added, Changed, Fixed
 ### Community 4171 - "Community 4171"
 Cohesion: 0.5
 Nodes (3): code:bash (composer require dragonmantank/cron-expression), code:php (<?php), code:block3 (*   *   *   *   *)
-
-### Community 4215 - "Community 4215"
-Cohesion: 0.4
-Nodes (5): autoload, psr-4, App\\, Database\\Factories\\, Database\\Seeders\\
 
 ### Community 4357 - "Community 4357"
 Cohesion: 0.5
@@ -9548,6 +9472,10 @@ Nodes (4): 12.0.0 - 2023-08-18, code:diff (// if using StripeClient), Other chan
 ### Community 4747 - "Community 4747"
 Cohesion: 0.5
 Nodes (4): 9.0.0 - 2022-08-02, Added, ⚠️ Changed, ⚠️ Removed
+
+### Community 4790 - "Community 4790"
+Cohesion: 0.02
+Nodes (38): BelongsToMany, BelongsTo, HasMany, BelongsTo, HasMany, BelongsTo, BelongsTo, BelongsTo (+30 more)
 
 ### Community 4811 - "Community 4811"
 Cohesion: 0.5
@@ -9929,25 +9857,37 @@ Nodes (3): support, issues, source
 Cohesion: 0.67
 Nodes (3): [2.1.0] - 2020-06-01, Added, Changed
 
-### Community 6745 - "Community 6745"
+### Community 6437 - "Community 6437"
 Cohesion: 0.6
-Nodes (3): ifRedisAvailable(), setUpRedis(), tearDownRedis()
+Nodes (3): getLocale(), getPluralizationRule(), trans()
 
 ### Community 7144 - "Community 7144"
 Cohesion: 0.33
 Nodes (5): Part A: Security Hardening (.env.example), Part B: CartController Tests, Results, Status, Task 3 Report: Security Hardening & CartController Tests
 
-### Community 7161 - "Community 7161"
+### Community 7153 - "Community 7153"
 Cohesion: 0.6
-Nodes (3): collectResource(), collects(), jsonOptions()
+Nodes (4): __construct(), getBytes(), serialize(), unserialize()
+
+### Community 7161 - "Community 7161"
+Cohesion: 0.09
+Nodes (7): ChannelMakeCommand, ModelMakeCommand, PruneFailedJobsCommand, collectResource(), collects(), jsonOptions(), class_basename()
 
 ### Community 7168 - "Community 7168"
 Cohesion: 0.4
 Nodes (5): code:blade (@extends('layouts.admin')), code:blade (@extends('layouts.admin')), code:bash (npm run build), code:bash (git add resources/views/admin/dashboard.blade.php), Task 3: Admin Dashboard
 
+### Community 7169 - "Community 7169"
+Cohesion: 0.1
+Nodes (4): MockClass, MockTrait, EvalLoader, ExecutionLoopClosure
+
 ### Community 7204 - "Community 7204"
 Cohesion: 0.4
 Nodes (5): code:php (/**), code:bash (& "C:\xampp\php\php.exe" artisan test tests/Feature/RouteSmo), code:bash (npm run build), code:bash (git add .), Task 10: Route Smoke Tests + Final Verification
+
+### Community 7211 - "Community 7211"
+Cohesion: 0.83
+Nodes (3): faker(), makeFaker(), setUpFaker()
 
 ### Community 7214 - "Community 7214"
 Cohesion: 0.4
@@ -9956,10 +9896,6 @@ Nodes (5): code:php (<?php), code:php (// Menu), code:php (// Menu), code:bash (
 ### Community 7217 - "Community 7217"
 Cohesion: 0.4
 Nodes (5): code:php (<?php), code:bash (& "C:\xampp\php\php.exe" artisan test), code:bash (npm run build), code:bash (git add tests/Feature/Admin/MenuItemTest.php), Task 9: Admin MenuItemController Tests + Full Suite
-
-### Community 7222 - "Community 7222"
-Cohesion: 0.83
-Nodes (3): wrapJsonFieldAndPath(), wrapJsonPath(), wrapJsonPathSegment()
 
 ### Community 7223 - "Community 7223"
 Cohesion: 0.4
@@ -9989,17 +9925,17 @@ Nodes (3): code:blade (@extends('layouts.admin')), code:bash (git add resources/
 Cohesion: 0.67
 Nodes (3): code:php (<?php), code:bash (git add app/Events/OrderStatusUpdated.php), Task 3: OrderStatusUpdated Event
 
-### Community 9117 - "Community 9117"
-Cohesion: 0.67
-Nodes (3): autoload-dev, psr-4, Tests\\
-
 ### Community 9140 - "Community 9140"
 Cohesion: 0.5
 Nodes (3): Concerns, Task 1 Report — OrderController Feature Tests, Tests written
 
 ### Community 9148 - "Community 9148"
-Cohesion: 0.02
-Nodes (33): QueuedCommand, Content, Dispatchable, Envelope, MessageEvent, Authenticated, CurrentDeviceLogout, Login (+25 more)
+Cohesion: 0.04
+Nodes (21): Content, Dispatchable, Envelope, Authenticated, CurrentDeviceLogout, Login, Logout, NotificationFailed (+13 more)
+
+### Community 9168 - "Community 9168"
+Cohesion: 0.5
+Nodes (4): [3.0.0] - 2020-03-25, Added, Changed, Fixed
 
 ### Community 9185 - "Community 9185"
 Cohesion: 0.5
@@ -10012,17 +9948,17 @@ Nodes (3): scripts, phpstan, test
 ## Knowledge Gaps
 - **7590 isolated node(s):** `$schema`, `name`, `type`, `description`, `keywords` (+7585 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **5557 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **5548 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Arr` connect `Community 20` to `Community 512`, `Community 516`, `Community 8`, `Community 10`, `Community 524`, `Community 1037`, `Community 13`, `Community 15`, `Community 527`, `Community 1041`, `Community 1039`, `Community 1556`, `Community 533`, `Community 536`, `Community 545`, `Community 36`, `Community 1573`, `Community 548`, `Community 2085`, `Community 1064`, `Community 1578`, `Community 1069`, `Community 4655`, `Community 1071`, `Community 1072`, `Community 1073`, `Community 559`, `Community 567`, `Community 1591`, `Community 2113`, `Community 69`, `Community 588`, `Community 589`, `Community 4181`, `Community 601`, `Community 614`, `Community 615`, `Community 3176`, `Community 1643`, `Community 620`, `Community 622`, `Community 1151`, `Community 1152`, `Community 128`, `Community 1668`, `Community 1185`, `Community 1188`, `Community 2726`, `Community 1703`, `Community 2727`, `Community 1704`, `Community 2222`, `Community 1208`, `Community 703`, `Community 1731`, `Community 3275`, `Community 1740`, `Community 727`, `Community 728`, `Community 729`, `Community 734`, `Community 1247`, `Community 1248`, `Community 2273`, `Community 1764`, `Community 741`, `Community 1258`, `Community 1263`, `Community 752`, `Community 1264`, `Community 1266`, `Community 1779`, `Community 1265`, `Community 1777`, `Community 751`, `Community 247`, `Community 254`, `Community 257`, `Community 260`, `Community 1798`, `Community 262`, `Community 264`, `Community 267`, `Community 779`, `Community 1305`, `Community 286`, `Community 289`, `Community 2339`, `Community 292`, `Community 2851`, `Community 808`, `Community 1320`, `Community 298`, `Community 1321`, `Community 300`, `Community 301`, `Community 813`, `Community 303`, `Community 306`, `Community 309`, `Community 312`, `Community 830`, `Community 833`, `Community 328`, `Community 329`, `Community 336`, `Community 338`, `Community 343`, `Community 857`, `Community 346`, `Community 347`, `Community 1882`, `Community 1372`, `Community 354`, `Community 356`, `Community 357`, `Community 358`, `Community 359`, `Community 873`, `Community 363`, `Community 1389`, `Community 368`, `Community 881`, `Community 2932`, `Community 885`, `Community 887`, `Community 888`, `Community 1918`, `Community 398`, `Community 911`, `Community 912`, `Community 913`, `Community 914`, `Community 403`, `Community 407`, `Community 1945`, `Community 1947`, `Community 416`, `Community 929`, `Community 932`, `Community 934`, `Community 1958`, `Community 426`, `Community 939`, `Community 429`, `Community 1455`, `Community 433`, `Community 434`, `Community 1461`, `Community 439`, `Community 3000`, `Community 440`, `Community 1465`, `Community 443`, `Community 447`, `Community 964`, `Community 461`, `Community 462`, `Community 463`, `Community 1487`, `Community 468`, `Community 3033`, `Community 1504`, `Community 481`, `Community 3042`, `Community 483`, `Community 3562`, `Community 2539`, `Community 1010`, `Community 1523`, `Community 2555`, `Community 1533`?**
+- **Why does `Closure` connect `Community 1411` to `Community 2`, `Community 521`, `Community 10`, `Community 1037`, `Community 529`, `Community 1556`, `Community 20`, `Community 532`, `Community 533`, `Community 536`, `Community 1562`, `Community 1051`, `Community 1052`, `Community 30`, `Community 546`, `Community 549`, `Community 1576`, `Community 561`, `Community 563`, `Community 567`, `Community 1081`, `Community 2619`, `Community 4668`, `Community 574`, `Community 581`, `Community 582`, `Community 3653`, `Community 1097`, `Community 1100`, `Community 2125`, `Community 79`, `Community 595`, `Community 1621`, `Community 4181`, `Community 1627`, `Community 101`, `Community 615`, `Community 6759`, `Community 617`, `Community 620`, `Community 621`, `Community 1132`, `Community 2157`, `Community 2156`, `Community 625`, `Community 3189`, `Community 4215`, `Community 2169`, `Community 636`, `Community 3712`, `Community 2178`, `Community 663`, `Community 1183`, `Community 2725`, `Community 1702`, `Community 2726`, `Community 2730`, `Community 2226`, `Community 4790`, `Community 694`, `Community 1214`, `Community 703`, `Community 2752`, `Community 2238`, `Community 3275`, `Community 725`, `Community 731`, `Community 2268`, `Community 733`, `Community 1248`, `Community 737`, `Community 745`, `Community 1774`, `Community 1268`, `Community 759`, `Community 2809`, `Community 1786`, `Community 763`, `Community 1274`, `Community 249`, `Community 1280`, `Community 258`, `Community 1285`, `Community 262`, `Community 1293`, `Community 1298`, `Community 280`, `Community 1305`, `Community 284`, `Community 1310`, `Community 289`, `Community 802`, `Community 2339`, `Community 803`, `Community 293`, `Community 806`, `Community 807`, `Community 295`, `Community 1321`, `Community 298`, `Community 810`, `Community 813`, `Community 303`, `Community 304`, `Community 2866`, `Community 2359`, `Community 314`, `Community 316`, `Community 321`, `Community 834`, `Community 1347`, `Community 2371`, `Community 2375`, `Community 329`, `Community 1866`, `Community 843`, `Community 331`, `Community 1358`, `Community 2383`, `Community 336`, `Community 2382`, `Community 3410`, `Community 1362`, `Community 852`, `Community 847`, `Community 342`, `Community 343`, `Community 344`, `Community 857`, `Community 346`, `Community 347`, `Community 350`, `Community 1375`, `Community 2917`, `Community 357`, `Community 359`, `Community 872`, `Community 362`, `Community 363`, `Community 364`, `Community 2413`, `Community 876`, `Community 1392`, `Community 883`, `Community 5492`, `Community 1400`, `Community 377`, `Community 890`, `Community 891`, `Community 382`, `Community 387`, `Community 389`, `Community 902`, `Community 907`, `Community 9100`, `Community 909`, `Community 398`, `Community 1933`, `Community 9102`, `Community 1421`, `Community 3474`, `Community 403`, `Community 9109`, `Community 408`, `Community 1432`, `Community 410`, `Community 933`, `Community 934`, `Community 9125`, `Community 1455`, `Community 434`, `Community 949`, `Community 1465`, `Community 3001`, `Community 443`, `Community 9148`, `Community 1469`, `Community 9145`, `Community 968`, `Community 9164`, `Community 9165`, `Community 9171`, `Community 980`, `Community 983`, `Community 2008`, `Community 1495`, `Community 1498`, `Community 1500`, `Community 1501`, `Community 4574`, `Community 991`, `Community 1510`, `Community 998`, `Community 1512`, `Community 504`, `Community 3047`, `Community 1519`, `Community 1009`, `Community 501`, `Community 502`, `Community 1015`, `Community 1526`?**
+  _High betweenness centrality (0.052) - this node is a cross-community bridge._
+- **Why does `Arr` connect `Community 20` to `Community 512`, `Community 516`, `Community 1031`, `Community 524`, `Community 1037`, `Community 2062`, `Community 527`, `Community 15`, `Community 1039`, `Community 13`, `Community 1556`, `Community 532`, `Community 533`, `Community 4119`, `Community 536`, `Community 2070`, `Community 539`, `Community 1052`, `Community 545`, `Community 36`, `Community 1573`, `Community 548`, `Community 1572`, `Community 1064`, `Community 1578`, `Community 4655`, `Community 1072`, `Community 1073`, `Community 559`, `Community 1075`, `Community 567`, `Community 1591`, `Community 3140`, `Community 69`, `Community 2631`, `Community 588`, `Community 589`, `Community 1621`, `Community 601`, `Community 614`, `Community 615`, `Community 3176`, `Community 1643`, `Community 620`, `Community 622`, `Community 1140`, `Community 636`, `Community 1151`, `Community 128`, `Community 1668`, `Community 2708`, `Community 1185`, `Community 2211`, `Community 1188`, `Community 2222`, `Community 1208`, `Community 703`, `Community 751`, `Community 1740`, `Community 727`, `Community 728`, `Community 729`, `Community 734`, `Community 735`, `Community 1247`, `Community 1248`, `Community 741`, `Community 1258`, `Community 1263`, `Community 752`, `Community 1264`, `Community 1266`, `Community 1779`, `Community 1776`, `Community 1265`, `Community 1777`, `Community 2295`, `Community 247`, `Community 2809`, `Community 1784`, `Community 763`, `Community 254`, `Community 257`, `Community 1795`, `Community 1798`, `Community 262`, `Community 264`, `Community 267`, `Community 275`, `Community 1305`, `Community 6429`, `Community 286`, `Community 289`, `Community 2338`, `Community 2339`, `Community 292`, `Community 2851`, `Community 2853`, `Community 808`, `Community 1320`, `Community 298`, `Community 301`, `Community 1326`, `Community 303`, `Community 2864`, `Community 1329`, `Community 306`, `Community 813`, `Community 309`, `Community 312`, `Community 3900`, `Community 830`, `Community 833`, `Community 328`, `Community 329`, `Community 336`, `Community 338`, `Community 2899`, `Community 343`, `Community 857`, `Community 346`, `Community 347`, `Community 354`, `Community 356`, `Community 357`, `Community 2917`, `Community 1382`, `Community 358`, `Community 873`, `Community 359`, `Community 363`, `Community 362`, `Community 1389`, `Community 1904`, `Community 368`, `Community 883`, `Community 885`, `Community 887`, `Community 888`, `Community 1918`, `Community 386`, `Community 398`, `Community 911`, `Community 912`, `Community 913`, `Community 914`, `Community 403`, `Community 1945`, `Community 416`, `Community 929`, `Community 932`, `Community 934`, `Community 1958`, `Community 426`, `Community 939`, `Community 429`, `Community 1455`, `Community 433`, `Community 434`, `Community 439`, `Community 440`, `Community 1465`, `Community 443`, `Community 447`, `Community 962`, `Community 964`, `Community 461`, `Community 463`, `Community 468`, `Community 3033`, `Community 1504`, `Community 481`, `Community 483`, `Community 3562`, `Community 2555`, `Community 1533`?**
   _High betweenness centrality (0.040) - this node is a cross-community bridge._
-- **Why does `OutputFormatter` connect `Community 287` to `Community 642`, `Community 931`, `Community 457`, `Community 3024`, `Community 592`, `Community 1940`, `Community 436`, `Community 470`, `Community 280`, `Community 441`, `Community 379`, `Community 509`, `Community 1598`, `Community 255`?**
-  _High betweenness centrality (0.027) - this node is a cross-community bridge._
-- **Why does `Closure` connect `Community 1947` to `Community 512`, `Community 2`, `Community 516`, `Community 1030`, `Community 521`, `Community 10`, `Community 1548`, `Community 1037`, `Community 15`, `Community 1556`, `Community 20`, `Community 533`, `Community 1047`, `Community 536`, `Community 2072`, `Community 1562`, `Community 22`, `Community 1051`, `Community 30`, `Community 1058`, `Community 546`, `Community 36`, `Community 37`, `Community 550`, `Community 3107`, `Community 549`, `Community 1576`, `Community 1069`, `Community 7213`, `Community 4655`, `Community 7216`, `Community 561`, `Community 567`, `Community 1592`, `Community 7225`, `Community 1081`, `Community 2107`, `Community 574`, `Community 581`, `Community 582`, `Community 79`, `Community 595`, `Community 1624`, `Community 6744`, `Community 1627`, `Community 101`, `Community 614`, `Community 615`, `Community 617`, `Community 1132`, `Community 621`, `Community 620`, `Community 2157`, `Community 2164`, `Community 3712`, `Community 3203`, `Community 655`, `Community 663`, `Community 1183`, `Community 1185`, `Community 2213`, `Community 2726`, `Community 1703`, `Community 1702`, `Community 2730`, `Community 2223`, `Community 1201`, `Community 2226`, `Community 4790`, `Community 694`, `Community 4795`, `Community 2749`, `Community 1214`, `Community 703`, `Community 2238`, `Community 725`, `Community 2268`, `Community 1245`, `Community 733`, `Community 1248`, `Community 737`, `Community 2274`, `Community 745`, `Community 1774`, `Community 752`, `Community 1268`, `Community 2295`, `Community 759`, `Community 1273`, `Community 1786`, `Community 1274`, `Community 249`, `Community 1280`, `Community 258`, `Community 1284`, `Community 1285`, `Community 262`, `Community 1288`, `Community 780`, `Community 1293`, `Community 280`, `Community 1305`, `Community 284`, `Community 3357`, `Community 289`, `Community 2338`, `Community 802`, `Community 2339`, `Community 2341`, `Community 806`, `Community 807`, `Community 803`, `Community 295`, `Community 298`, `Community 1322`, `Community 810`, `Community 813`, `Community 293`, `Community 303`, `Community 2864`, `Community 1329`, `Community 306`, `Community 304`, `Community 309`, `Community 2359`, `Community 321`, `Community 3906`, `Community 1347`, `Community 2371`, `Community 834`, `Community 328`, `Community 329`, `Community 1866`, `Community 843`, `Community 331`, `Community 2382`, `Community 2383`, `Community 336`, `Community 1358`, `Community 1362`, `Community 847`, `Community 343`, `Community 344`, `Community 857`, `Community 346`, `Community 347`, `Community 2391`, `Community 350`, `Community 1375`, `Community 354`, `Community 357`, `Community 358`, `Community 359`, `Community 364`, `Community 2413`, `Community 876`, `Community 880`, `Community 881`, `Community 1392`, `Community 5491`, `Community 2932`, `Community 1400`, `Community 888`, `Community 377`, `Community 890`, `Community 891`, `Community 893`, `Community 894`, `Community 1918`, `Community 895`, `Community 9084`, `Community 382`, `Community 387`, `Community 389`, `Community 902`, `Community 3463`, `Community 907`, `Community 909`, `Community 398`, `Community 1933`, `Community 1421`, `Community 9109`, `Community 407`, `Community 408`, `Community 1432`, `Community 410`, `Community 420`, `Community 933`, `Community 934`, `Community 427`, `Community 1455`, `Community 9136`, `Community 434`, `Community 440`, `Community 1465`, `Community 443`, `Community 9148`, `Community 1469`, `Community 968`, `Community 462`, `Community 1488`, `Community 980`, `Community 3540`, `Community 983`, `Community 1495`, `Community 2008`, `Community 991`, `Community 481`, `Community 994`, `Community 998`, `Community 504`, `Community 2539`, `Community 1009`, `Community 7154`, `Community 7153`, `Community 1523`, `Community 501`, `Community 502`, `Community 1015`, `Community 1526`, `Community 7166`?**
-  _High betweenness centrality (0.026) - this node is a cross-community bridge._
+- **Why does `OutputFormatter` connect `Community 287` to `Community 642`, `Community 931`, `Community 457`, `Community 592`, `Community 1105`, `Community 3409`, `Community 1619`, `Community 436`, `Community 470`, `Community 280`, `Community 441`, `Community 379`, `Community 509`, `Community 255`?**
+  _High betweenness centrality (0.028) - this node is a cross-community bridge._
 - **Are the 445 inferred relationships involving `Arr` (e.g. with `.shouldLogin()` and `.raw()`) actually correct?**
   _`Arr` has 445 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `$schema`, `name`, `type` to the rest of the system?**
