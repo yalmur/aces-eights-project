@@ -141,6 +141,64 @@ class OrderModelTest extends TestCase
     }
 
     // -------------------------------------------------------------------------
+    // Order::statusColor (attribute)
+    // -------------------------------------------------------------------------
+
+    public function test_status_color_for_pending_payment(): void
+    {
+        $order = new Order(['status' => 'pending_payment']);
+        $this->assertSame('text-on-surface-variant', $order->status_color);
+    }
+
+    public function test_status_color_for_accepted(): void
+    {
+        $order = new Order(['status' => 'accepted']);
+        $this->assertSame('text-primary', $order->status_color);
+    }
+
+    public function test_status_color_for_cooking(): void
+    {
+        $order = new Order(['status' => 'cooking']);
+        $this->assertSame('text-primary', $order->status_color);
+    }
+
+    public function test_status_color_for_ready(): void
+    {
+        $order = new Order(['status' => 'ready']);
+        $this->assertSame('text-green-700', $order->status_color);
+    }
+
+    public function test_status_color_for_out_for_delivery(): void
+    {
+        $order = new Order(['status' => 'out_for_delivery']);
+        $this->assertSame('text-green-700', $order->status_color);
+    }
+
+    public function test_status_color_for_delivered(): void
+    {
+        $order = new Order(['status' => 'delivered']);
+        $this->assertSame('text-[#2B2B2B]', $order->status_color);
+    }
+
+    public function test_status_color_for_collected(): void
+    {
+        $order = new Order(['status' => 'collected']);
+        $this->assertSame('text-[#2B2B2B]', $order->status_color);
+    }
+
+    public function test_status_color_for_cancelled(): void
+    {
+        $order = new Order(['status' => 'cancelled']);
+        $this->assertSame('text-brand-error', $order->status_color);
+    }
+
+    public function test_status_color_for_unknown_status_uses_default(): void
+    {
+        $order = new Order(['status' => 'mystery']);
+        $this->assertSame('text-on-surface', $order->status_color);
+    }
+
+    // -------------------------------------------------------------------------
     // OrderItem::customisationSummary (attribute)
     // -------------------------------------------------------------------------
 
