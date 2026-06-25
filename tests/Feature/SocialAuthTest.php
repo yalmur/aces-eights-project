@@ -78,4 +78,27 @@ class SocialAuthTest extends TestCase
     {
         $this->get('/auth/twitter/callback')->assertStatus(404);
     }
+
+    public function test_new_facebook_user_created_on_first_login(): void
+    {
+        $this->mockSocialiteUser('fb-123', 'newfb@example.com');
+        $this->get('/auth/facebook/callback')->assertRedirect('/');
+        $this->assertDatabaseHas('users', ['email' => 'newfb@example.com', 'facebook_id' => 'fb-123']);
+    }
+
+    public function test_existing_facebook_user_logged_in_by_facebook_id(): void
+    {
+        User::factory()->create(['email' => 'fbexist@example.com', 'facebook_id' => 'fb-456']);
+        $this->mockSocialiteUser('fb-456', 'fbexist@example.com');
+        $this->get('/auth/facebook/callback')->assertRedirect('/');
+        $this->assertAuthenticatedAs(User::where('facebook_id', 'fb-456')->first());
+    }
+
+    public function test_facebook_email_collision_with_password_account_rejected(): void
+    {
+        User::factory()->create(['email' => 'fbtaken@example.com', 'facebook_id' => null]);
+        $this->mockSocialiteUser('fb-789', 'fbtaken@example.com');
+        $this->get('/auth/facebook/callback')->assertRedirect('/login');
+        $this->assertDatabaseMissing('users', ['facebook_id' => 'fb-789']);
+    }
 }
