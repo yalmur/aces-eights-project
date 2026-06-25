@@ -87,4 +87,47 @@ class ContactFormTest extends TestCase
 
         Mail::assertQueued(ContactMessage::class);
     }
+
+    public function test_contact_email_queued_to_store_email_setting(): void
+    {
+        Mail::fake();
+        \App\Models\Setting::set('store_email', 'store@example.com');
+
+        $this->post('/contact', [
+            'name'    => 'Jane',
+            'email'   => 'jane@example.com',
+            'subject' => 'Question',
+            'message' => 'Hello there',
+        ]);
+
+        Mail::assertQueued(ContactMessage::class, fn ($mail) => $mail->hasTo('store@example.com'));
+    }
+
+    public function test_contact_form_rejects_overlong_name(): void
+    {
+        Mail::fake();
+
+        $this->post('/contact', [
+            'name'    => str_repeat('a', 101),
+            'email'   => 'john@example.com',
+            'subject' => 'Test',
+            'message' => 'Test message',
+        ])->assertSessionHasErrors(['name']);
+
+        Mail::assertNothingQueued();
+    }
+
+    public function test_contact_form_rejects_overlong_subject(): void
+    {
+        Mail::fake();
+
+        $this->post('/contact', [
+            'name'    => 'John',
+            'email'   => 'john@example.com',
+            'subject' => str_repeat('s', 151),
+            'message' => 'Test message',
+        ])->assertSessionHasErrors(['subject']);
+
+        Mail::assertNothingQueued();
+    }
 }
