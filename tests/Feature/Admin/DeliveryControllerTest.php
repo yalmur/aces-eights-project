@@ -92,6 +92,42 @@ class DeliveryControllerTest extends TestCase
         $this->assertDatabaseHas('delivery_zones', ['postcodes' => 'SW1A 1AA, EC1A 1BB']);
     }
 
+    public function test_update_validates_required_fields(): void
+    {
+        $zone = DeliveryZone::factory()->create();
+
+        $this->actingAs($this->admin)
+            ->put('/admin/delivery/' . $zone->id, [])
+            ->assertSessionHasErrors(['name', 'min_km', 'max_km', 'fee']);
+    }
+
+    public function test_update_normalizes_postcodes_to_uppercase(): void
+    {
+        $zone = DeliveryZone::factory()->create();
+
+        $this->actingAs($this->admin)
+            ->put('/admin/delivery/' . $zone->id, array_merge($this->validPayload(), [
+                'postcodes' => 'sw1a 1aa, nw5 2hp',
+            ]));
+
+        $this->assertDatabaseHas('delivery_zones', [
+            'id'        => $zone->id,
+            'postcodes' => 'SW1A 1AA, NW5 2HP',
+        ]);
+    }
+
+    public function test_update_sets_is_active_false_when_omitted(): void
+    {
+        $zone    = DeliveryZone::factory()->create(['is_active' => true]);
+        $payload = $this->validPayload();
+        unset($payload['is_active']);
+
+        $this->actingAs($this->admin)
+            ->put('/admin/delivery/' . $zone->id, $payload);
+
+        $this->assertDatabaseHas('delivery_zones', ['id' => $zone->id, 'is_active' => false]);
+    }
+
     private function validPayload(): array
     {
         return [
