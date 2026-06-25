@@ -56,4 +56,30 @@ class ToppingModelTest extends TestCase
         $this->assertTrue($result->contains('name', 'Peppers'));
         $this->assertFalse($result->contains('name', 'Anchovies'));
     }
+
+    public function test_price_is_cast_to_decimal(): void
+    {
+        $topping = Topping::factory()->create(['price' => 5.5]);
+
+        $this->assertSame('5.50', (string) $topping->fresh()->price);
+    }
+
+    public function test_is_available_cast_to_boolean(): void
+    {
+        $topping = Topping::factory()->create(['is_available' => 1]);
+
+        $this->assertTrue($topping->fresh()->is_available);
+    }
+
+    public function test_topping_can_be_created_via_mass_assignment(): void
+    {
+        $topping = Topping::create([
+            'name'         => 'Jalapenos',
+            'price'        => 1.50,
+            'is_available' => true,
+            'sort_order'   => 3,
+        ]);
+
+        $this->assertDatabaseHas('toppings', ['name' => 'Jalapenos', 'sort_order' => 3]);
+    }
 }
