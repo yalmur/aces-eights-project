@@ -422,4 +422,39 @@ class MenuItemTest extends TestCase
         $this->assertNotNull($main);
         $this->assertTrue($main->relatedItems->contains('id', $related->id));
     }
+
+    public function test_update_replaces_related_items_via_pivot(): void
+    {
+        $category = Category::factory()->create();
+        $item     = MenuItem::factory()->create(['category_id' => $category->id]);
+        $oldRel   = MenuItem::factory()->create(['category_id' => $category->id]);
+        $newRel   = MenuItem::factory()->create(['category_id' => $category->id]);
+
+        $item->relatedItems()->attach($oldRel->id);
+
+        $this->actingAs($this->admin)->put("/admin/menu/{$item->id}", [
+            'name'          => $item->name,
+            'category_id'   => $item->category_id,
+            'base_price'    => $item->base_price,
+            'related_items' => [$newRel->id],
+        ]);
+
+        $item->load('relatedItems');
+        $this->assertFalse($item->relatedItems->contains('id', $oldRel->id));
+        $this->assertTrue($item->relatedItems->contains('id', $newRel->id));
+    }
+
+    public function test_store_sets_is_featured_flag(): void
+    {
+        $category = Category::factory()->create();
+
+        $this->actingAs($this->admin)->post('/admin/menu', [
+            'name'        => 'Featured Special',
+            'category_id' => $category->id,
+            'base_price'  => '14.00',
+            'is_featured' => '1',
+        ]);
+
+        $this->assertDatabaseHas('menu_items', ['name' => 'Featured Special', 'is_featured' => true]);
+    }
 }
