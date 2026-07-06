@@ -143,6 +143,164 @@
 @endif
 </section>
 
+<!-- Section 3.5: Sizes -->
+<section class="industrial-border p-8 bg-surface-container-lowest mt-12"
+  x-data="{
+    sizes: {{ json_encode(
+      old('sizes', $sizes->map(fn($s) => [
+        'name'             => $s->name,
+        'price_adjustment' => (float) $s->price_adjustment,
+        'is_default'       => $s->is_default,
+        'is_available'     => $s->is_available,
+      ])->toArray()) ?? []
+    ) }},
+    newName: '',
+    newPrice: '0.00',
+    add() {
+      let n = this.newName.trim();
+      if (!n) return;
+      this.sizes.push({ name: n, price_adjustment: parseFloat(this.newPrice) || 0, is_default: this.sizes.length === 0, is_available: true });
+      this.newName = ''; this.newPrice = '0.00';
+    },
+    remove(i) { this.sizes.splice(i, 1); },
+    setDefault(i) { this.sizes.forEach((s, j) => s.is_default = (j === i)); }
+  }">
+  <h3 class="font-headline-md text-headline-md mb-2 flex items-center gap-3">
+    <span class="material-symbols-outlined">straighten</span> Sizes
+  </h3>
+  <p class="font-mono text-[10px] text-on-surface-variant uppercase mb-6">Per-item size options. First added is base price (£0 adj). Mark one as default.</p>
+  <div class="flex gap-3 mb-4 flex-wrap">
+    <input x-model="newName"
+           @keydown.enter.prevent="add()"
+           class="flex-1 min-w-[140px] bg-transparent border-t-0 border-x-0 border-b-2 border-industrial-gray py-2 font-body-md text-body-md focus:ring-0 px-0"
+           placeholder='e.g. 12" Standard' type="text"/>
+    <div class="flex items-center gap-2">
+      <span class="font-mono text-xs text-on-surface-variant">+£</span>
+      <input x-model="newPrice" step="0.01" min="0"
+             class="w-24 bg-transparent border-t-0 border-x-0 border-b-2 border-industrial-gray py-2 font-body-md text-body-md focus:ring-0 px-0"
+             placeholder="0.00" type="number"/>
+    </div>
+    <button @click="add()" type="button"
+            class="px-4 py-2 industrial-border font-mono text-[10px] font-bold uppercase hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-1">
+      <span class="material-symbols-outlined text-sm">add</span> Add Size
+    </button>
+  </div>
+  <div class="space-y-2">
+    <template x-for="(size, i) in sizes" :key="i">
+      <div class="flex items-center justify-between p-3 border border-surface-variant bg-surface group gap-4">
+        <input type="hidden" :name="'sizes['+i+'][name]'" :value="size.name" />
+        <input type="hidden" :name="'sizes['+i+'][price_adjustment]'" :value="size.price_adjustment" />
+        <input type="hidden" :name="'sizes['+i+'][is_default]'" :value="size.is_default ? 1 : 0" />
+        <input type="hidden" :name="'sizes['+i+'][is_available]'" :value="size.is_available ? 1 : 0" />
+        <div class="flex items-center gap-3 flex-1 min-w-0">
+          <span class="material-symbols-outlined text-on-surface-variant text-sm flex-shrink-0">straighten</span>
+          <span class="font-body-md text-body-md truncate" x-text="size.name"></span>
+          <span class="font-mono text-xs text-on-surface-variant flex-shrink-0" x-text="size.price_adjustment > 0 ? '+£' + size.price_adjustment.toFixed(2) : 'base'"></span>
+        </div>
+        <div class="flex items-center gap-3 flex-shrink-0">
+          <button @click="setDefault(i)" type="button"
+                  :class="size.is_default ? 'text-heritage-gold' : 'text-on-surface-variant hover:text-heritage-gold'"
+                  class="transition-colors text-xs font-mono uppercase flex items-center gap-1">
+            <span class="material-symbols-outlined text-sm" x-text="size.is_default ? 'star' : 'star_outline'"></span>
+            <span x-text="size.is_default ? 'Default' : 'Set default'"></span>
+          </button>
+          <button @click="size.is_available = !size.is_available" type="button"
+                  :class="size.is_available ? 'text-green-600' : 'text-industrial-gray'"
+                  class="transition-colors font-mono text-xs uppercase flex items-center gap-1">
+            <span class="material-symbols-outlined text-sm" x-text="size.is_available ? 'visibility' : 'visibility_off'"></span>
+          </button>
+          <button @click="remove(i)" type="button"
+                  class="text-on-surface-variant hover:text-brand-error transition-colors opacity-0 group-hover:opacity-100">
+            <span class="material-symbols-outlined text-sm">close</span>
+          </button>
+        </div>
+      </div>
+    </template>
+    <p x-show="sizes.length === 0" class="text-xs text-on-surface-variant py-4 text-center font-mono">
+      No sizes added. Customers will not see size options for this item.
+    </p>
+  </div>
+</section>
+
+<!-- Section 3.6: Crusts -->
+<section class="industrial-border p-8 bg-surface-container-lowest mt-12"
+  x-data="{
+    crusts: {{ json_encode(
+      old('crusts', $crusts->map(fn($c) => [
+        'name'             => $c->name,
+        'price_adjustment' => (float) $c->price_adjustment,
+        'is_default'       => $c->is_default,
+        'is_available'     => $c->is_available,
+      ])->toArray()) ?? []
+    ) }},
+    newName: '',
+    newPrice: '0.00',
+    add() {
+      let n = this.newName.trim();
+      if (!n) return;
+      this.crusts.push({ name: n, price_adjustment: parseFloat(this.newPrice) || 0, is_default: this.crusts.length === 0, is_available: true });
+      this.newName = ''; this.newPrice = '0.00';
+    },
+    remove(i) { this.crusts.splice(i, 1); },
+    setDefault(i) { this.crusts.forEach((c, j) => c.is_default = (j === i)); }
+  }">
+  <h3 class="font-headline-md text-headline-md mb-2 flex items-center gap-3">
+    <span class="material-symbols-outlined">circle</span> Crusts
+  </h3>
+  <p class="font-mono text-[10px] text-on-surface-variant uppercase mb-6">Per-item crust options. Set price surcharge and mark one as default.</p>
+  <div class="flex gap-3 mb-4 flex-wrap">
+    <input x-model="newName"
+           @keydown.enter.prevent="add()"
+           class="flex-1 min-w-[140px] bg-transparent border-t-0 border-x-0 border-b-2 border-industrial-gray py-2 font-body-md text-body-md focus:ring-0 px-0"
+           placeholder="e.g. 48hr Sourdough" type="text"/>
+    <div class="flex items-center gap-2">
+      <span class="font-mono text-xs text-on-surface-variant">+£</span>
+      <input x-model="newPrice" step="0.01" min="0"
+             class="w-24 bg-transparent border-t-0 border-x-0 border-b-2 border-industrial-gray py-2 font-body-md text-body-md focus:ring-0 px-0"
+             placeholder="0.00" type="number"/>
+    </div>
+    <button @click="add()" type="button"
+            class="px-4 py-2 industrial-border font-mono text-[10px] font-bold uppercase hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-1">
+      <span class="material-symbols-outlined text-sm">add</span> Add Crust
+    </button>
+  </div>
+  <div class="space-y-2">
+    <template x-for="(crust, i) in crusts" :key="i">
+      <div class="flex items-center justify-between p-3 border border-surface-variant bg-surface group gap-4">
+        <input type="hidden" :name="'crusts['+i+'][name]'" :value="crust.name" />
+        <input type="hidden" :name="'crusts['+i+'][price_adjustment]'" :value="crust.price_adjustment" />
+        <input type="hidden" :name="'crusts['+i+'][is_default]'" :value="crust.is_default ? 1 : 0" />
+        <input type="hidden" :name="'crusts['+i+'][is_available]'" :value="crust.is_available ? 1 : 0" />
+        <div class="flex items-center gap-3 flex-1 min-w-0">
+          <span class="material-symbols-outlined text-on-surface-variant text-sm flex-shrink-0">circle</span>
+          <span class="font-body-md text-body-md truncate" x-text="crust.name"></span>
+          <span class="font-mono text-xs text-on-surface-variant flex-shrink-0" x-text="crust.price_adjustment > 0 ? '+£' + crust.price_adjustment.toFixed(2) : 'base'"></span>
+        </div>
+        <div class="flex items-center gap-3 flex-shrink-0">
+          <button @click="setDefault(i)" type="button"
+                  :class="crust.is_default ? 'text-heritage-gold' : 'text-on-surface-variant hover:text-heritage-gold'"
+                  class="transition-colors text-xs font-mono uppercase flex items-center gap-1">
+            <span class="material-symbols-outlined text-sm" x-text="crust.is_default ? 'star' : 'star_outline'"></span>
+            <span x-text="crust.is_default ? 'Default' : 'Set default'"></span>
+          </button>
+          <button @click="crust.is_available = !crust.is_available" type="button"
+                  :class="crust.is_available ? 'text-green-600' : 'text-industrial-gray'"
+                  class="transition-colors font-mono text-xs uppercase flex items-center gap-1">
+            <span class="material-symbols-outlined text-sm" x-text="crust.is_available ? 'visibility' : 'visibility_off'"></span>
+          </button>
+          <button @click="remove(i)" type="button"
+                  class="text-on-surface-variant hover:text-brand-error transition-colors opacity-0 group-hover:opacity-100">
+            <span class="material-symbols-outlined text-sm">close</span>
+          </button>
+        </div>
+      </div>
+    </template>
+    <p x-show="crusts.length === 0" class="text-xs text-on-surface-variant py-4 text-center font-mono">
+      No crusts added. Customers will not see crust options for this item.
+    </p>
+  </div>
+</section>
+
 <!-- Section 3.5: Upselling & Sides -->
 <section class="industrial-border p-8 bg-surface-container-lowest mt-12">
 <div class="flex justify-between items-center mb-6">

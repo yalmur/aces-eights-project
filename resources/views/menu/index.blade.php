@@ -175,7 +175,9 @@
                         ingredients: {{ $item->baseIngredients->pluck('name')->values()->toJson() }},
                         relatedItems: {{ json_encode($item->relatedItemsPayload()) }},
                         isCustomizable: {{ json_encode($item->is_customizable) }},
-                        availableToppings: {{ json_encode($item->toppingsPayload()) }}
+                        availableToppings: {{ json_encode($item->toppingsPayload()) }},
+                        sizes: {{ json_encode($item->sizesPayload()) }},
+                        crusts: {{ json_encode($item->crustsPayload()) }}
                       })"
                       class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                 <span class="material-symbols-outlined text-white text-[20px]">add</span>

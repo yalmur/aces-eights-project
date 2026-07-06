@@ -7,6 +7,8 @@ use App\Models\Allergen;
 use App\Models\BaseIngredient;
 use App\Models\Category;
 use App\Models\MenuItem;
+use App\Models\MenuItemCrust;
+use App\Models\MenuItemSize;
 use App\Models\Topping;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -51,30 +53,42 @@ class MenuItemController extends Controller
             'allergens'  => Allergen::orderBy('sort_order')->get(),
             'allItems'   => MenuItem::orderBy('name')->get(),
             'toppings'   => Topping::orderBy('sort_order')->get(),
+            'sizes'      => collect(),
+            'crusts'     => collect(),
         ]);
     }
 
     public function store(Request $request): RedirectResponse
     {
         $data = $request->validate([
-            'name'          => 'required|string|max:255|unique:menu_items,name',
-            'category_id'   => 'required|exists:categories,id',
-            'description'   => 'nullable|string',
-            'base_price'    => 'required|numeric|min:0',
-            'is_available'   => 'boolean',
-            'is_featured'    => 'boolean',
-            'is_vegetarian'  => 'boolean',
-            'is_vegan'       => 'boolean',
-            'is_customizable'=> 'boolean',
-            'allergens'     => 'nullable|array',
-            'allergens.*'   => 'exists:allergens,id',
-            'ingredients'   => 'nullable|array',
-            'ingredients.*' => 'string|max:100',
-            'related_items' => 'nullable|array',
-            'related_items.*'=> 'exists:menu_items,id',
-            'toppings'      => 'nullable|array',
-            'toppings.*'    => 'exists:toppings,id',
-            'image'         => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'name'              => 'required|string|max:255|unique:menu_items,name',
+            'category_id'       => 'required|exists:categories,id',
+            'description'       => 'nullable|string',
+            'base_price'        => 'required|numeric|min:0',
+            'is_available'      => 'boolean',
+            'is_featured'       => 'boolean',
+            'is_vegetarian'     => 'boolean',
+            'is_vegan'          => 'boolean',
+            'is_customizable'   => 'boolean',
+            'allergens'         => 'nullable|array',
+            'allergens.*'       => 'exists:allergens,id',
+            'ingredients'       => 'nullable|array',
+            'ingredients.*'     => 'string|max:100',
+            'related_items'     => 'nullable|array',
+            'related_items.*'   => 'exists:menu_items,id',
+            'toppings'          => 'nullable|array',
+            'toppings.*'        => 'exists:toppings,id',
+            'image'             => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'sizes'             => 'nullable|array',
+            'sizes.*.name'      => 'required|string|max:100',
+            'sizes.*.price_adjustment' => 'required|numeric|min:0',
+            'sizes.*.is_default'       => 'boolean',
+            'sizes.*.is_available'     => 'boolean',
+            'crusts'            => 'nullable|array',
+            'crusts.*.name'     => 'required|string|max:100',
+            'crusts.*.price_adjustment' => 'required|numeric|min:0',
+            'crusts.*.is_default'       => 'boolean',
+            'crusts.*.is_available'     => 'boolean',
         ]);
 
         // Handle image upload
@@ -104,6 +118,8 @@ class MenuItemController extends Controller
         if ($request->has('ingredients')) {
             $this->syncIngredients($item, $data['ingredients'] ?? []);
         }
+        $this->syncSizes($item, $data['sizes'] ?? []);
+        $this->syncCrusts($item, $data['crusts'] ?? []);
 
         $this->clearMenuCache();
 
@@ -113,7 +129,7 @@ class MenuItemController extends Controller
 
     public function edit(string $item): View
     {
-        $menuItem = MenuItem::with(['allergens', 'baseIngredients', 'relatedItems', 'toppings'])->findOrFail($item);
+        $menuItem = MenuItem::with(['allergens', 'baseIngredients', 'relatedItems', 'toppings', 'sizes', 'crusts'])->findOrFail($item);
 
         return view('admin.menu.edit', [
             'title'      => 'Edit: ' . $menuItem->name,
@@ -122,6 +138,8 @@ class MenuItemController extends Controller
             'allergens'  => Allergen::orderBy('sort_order')->get(),
             'allItems'   => MenuItem::where('id', '!=', $menuItem->id)->orderBy('name')->get(),
             'toppings'   => Topping::orderBy('sort_order')->get(),
+            'sizes'      => $menuItem->sizes,
+            'crusts'     => $menuItem->crusts,
         ]);
     }
 
@@ -130,25 +148,35 @@ class MenuItemController extends Controller
         $menuItem = MenuItem::findOrFail($item);
 
         $data = $request->validate([
-            'name'          => 'required|string|max:255|unique:menu_items,name,' . $menuItem->id,
-            'category_id'   => 'required|exists:categories,id',
-            'description'   => 'nullable|string',
-            'base_price'    => 'required|numeric|min:0',
-            'is_available'   => 'boolean',
-            'is_featured'    => 'boolean',
-            'is_vegetarian'  => 'boolean',
-            'is_vegan'       => 'boolean',
-            'is_customizable'=> 'boolean',
-            'allergens'     => 'nullable|array',
-            'allergens.*'   => 'exists:allergens,id',
-            'ingredients'   => 'nullable|array',
-            'ingredients.*' => 'string|max:100',
-            'related_items' => 'nullable|array',
-            'related_items.*'=> 'exists:menu_items,id',
-            'toppings'      => 'nullable|array',
-            'toppings.*'    => 'exists:toppings,id',
-            'image'         => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
-            'remove_image'  => 'nullable|boolean',
+            'name'              => 'required|string|max:255|unique:menu_items,name,' . $menuItem->id,
+            'category_id'       => 'required|exists:categories,id',
+            'description'       => 'nullable|string',
+            'base_price'        => 'required|numeric|min:0',
+            'is_available'      => 'boolean',
+            'is_featured'       => 'boolean',
+            'is_vegetarian'     => 'boolean',
+            'is_vegan'          => 'boolean',
+            'is_customizable'   => 'boolean',
+            'allergens'         => 'nullable|array',
+            'allergens.*'       => 'exists:allergens,id',
+            'ingredients'       => 'nullable|array',
+            'ingredients.*'     => 'string|max:100',
+            'related_items'     => 'nullable|array',
+            'related_items.*'   => 'exists:menu_items,id',
+            'toppings'          => 'nullable|array',
+            'toppings.*'        => 'exists:toppings,id',
+            'image'             => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'remove_image'      => 'nullable|boolean',
+            'sizes'             => 'nullable|array',
+            'sizes.*.name'      => 'required|string|max:100',
+            'sizes.*.price_adjustment' => 'required|numeric|min:0',
+            'sizes.*.is_default'       => 'boolean',
+            'sizes.*.is_available'     => 'boolean',
+            'crusts'            => 'nullable|array',
+            'crusts.*.name'     => 'required|string|max:100',
+            'crusts.*.price_adjustment' => 'required|numeric|min:0',
+            'crusts.*.is_default'       => 'boolean',
+            'crusts.*.is_available'     => 'boolean',
         ]);
 
         // Handle image upload
@@ -182,6 +210,8 @@ class MenuItemController extends Controller
         if ($request->has('ingredients')) {
             $this->syncIngredients($menuItem, $data['ingredients'] ?? []);
         }
+        $this->syncSizes($menuItem, $data['sizes'] ?? []);
+        $this->syncCrusts($menuItem, $data['crusts'] ?? []);
 
         $this->clearMenuCache();
 
@@ -227,6 +257,44 @@ class MenuItemController extends Controller
                 'menu_item_id' => $item->id,
                 'name'         => $name,
                 'sort_order'   => $i + 1,
+            ]);
+        }
+    }
+
+    private function syncSizes(MenuItem $item, array $sizes): void
+    {
+        $item->sizes()->delete();
+        $defaultSet = false;
+        foreach (array_values($sizes) as $i => $s) {
+            if (empty(trim($s['name'] ?? ''))) continue;
+            $isDefault = !$defaultSet && ($s['is_default'] ?? false);
+            if ($isDefault) $defaultSet = true;
+            MenuItemSize::create([
+                'menu_item_id'     => $item->id,
+                'name'             => trim($s['name']),
+                'price_adjustment' => (float) ($s['price_adjustment'] ?? 0),
+                'is_default'       => $isDefault,
+                'is_available'     => (bool) ($s['is_available'] ?? true),
+                'sort_order'       => $i,
+            ]);
+        }
+    }
+
+    private function syncCrusts(MenuItem $item, array $crusts): void
+    {
+        $item->crusts()->delete();
+        $defaultSet = false;
+        foreach (array_values($crusts) as $i => $c) {
+            if (empty(trim($c['name'] ?? ''))) continue;
+            $isDefault = !$defaultSet && ($c['is_default'] ?? false);
+            if ($isDefault) $defaultSet = true;
+            MenuItemCrust::create([
+                'menu_item_id'     => $item->id,
+                'name'             => trim($c['name']),
+                'price_adjustment' => (float) ($c['price_adjustment'] ?? 0),
+                'is_default'       => $isDefault,
+                'is_available'     => (bool) ($c['is_available'] ?? true),
+                'sort_order'       => $i,
             ]);
         }
     }

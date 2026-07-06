@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 
 class MenuItem extends Model
@@ -58,6 +59,16 @@ class MenuItem extends Model
         return $this->belongsToMany(Topping::class)->orderBy('sort_order');
     }
 
+    public function sizes(): HasMany
+    {
+        return $this->hasMany(MenuItemSize::class)->orderBy('sort_order');
+    }
+
+    public function crusts(): HasMany
+    {
+        return $this->hasMany(MenuItemCrust::class)->orderBy('sort_order');
+    }
+
     public function isPizza(): bool
     {
         return $this->category?->slug === 'pizza';
@@ -67,6 +78,28 @@ class MenuItem extends Model
     {
         return $this->toppings->where('is_available', true)
             ->map(fn (Topping $t) => ['name' => $t->name, 'price' => (float) $t->price])
+            ->values()->all();
+    }
+
+    public function sizesPayload(): array
+    {
+        return $this->sizes->where('is_available', true)
+            ->map(fn (MenuItemSize $s) => [
+                'name'       => $s->name,
+                'price_adj'  => (float) $s->price_adjustment,
+                'is_default' => $s->is_default,
+            ])
+            ->values()->all();
+    }
+
+    public function crustsPayload(): array
+    {
+        return $this->crusts->where('is_available', true)
+            ->map(fn (MenuItemCrust $c) => [
+                'name'       => $c->name,
+                'price_adj'  => (float) $c->price_adjustment,
+                'is_default' => $c->is_default,
+            ])
             ->values()->all();
     }
 

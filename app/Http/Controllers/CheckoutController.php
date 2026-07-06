@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\DeliveryZone;
 use App\Models\MenuItem;
+use App\Models\MenuItemCrust;
+use App\Models\MenuItemSize;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Promotion;
@@ -19,21 +21,29 @@ use Stripe\StripeClient;
 
 class CheckoutController extends Controller
 {
-    private static function sizeExtras(): array
+    private static function sizeExtrasForItem(MenuItem $item): array
     {
-        return [
-            '12" Standard' => 0.0,
-            '15" Large'    => (float) Setting::get('size_large_extra', '4.00'),
-        ];
+        $sizes = $item->sizes->where('is_available', true);
+        if ($sizes->isEmpty()) {
+            return [
+                '12" Standard' => 0.0,
+                '15" Large'    => (float) Setting::get('size_large_extra', '4.00'),
+            ];
+        }
+        return $sizes->pluck('price_adjustment', 'name')->map(fn ($v) => (float) $v)->all();
     }
 
-    private static function crustExtras(): array
+    private static function crustExtrasForItem(MenuItem $item): array
     {
-        return [
-            '48hr Sourdough' => 0.0,
-            'Gluten-Free'    => (float) Setting::get('crust_gluten_free_extra', '2.00'),
-            'Cauliflower'    => (float) Setting::get('crust_cauliflower_extra', '2.50'),
-        ];
+        $crusts = $item->crusts->where('is_available', true);
+        if ($crusts->isEmpty()) {
+            return [
+                '48hr Sourdough' => 0.0,
+                'Gluten-Free'    => (float) Setting::get('crust_gluten_free_extra', '2.00'),
+                'Cauliflower'    => (float) Setting::get('crust_cauliflower_extra', '2.50'),
+            ];
+        }
+        return $crusts->pluck('price_adjustment', 'name')->map(fn ($v) => (float) $v)->all();
     }
 
     public function index(): View
@@ -97,7 +107,7 @@ class CheckoutController extends Controller
         $user        = Auth::user();
 
         $slugs         = array_column($cartItems, 'id');
-        $menuItems     = MenuItem::whereIn('slug', $slugs)->where('is_available', true)->get()->keyBy('slug');
+        $menuItems     = MenuItem::with(['sizes', 'crusts'])->whereIn('slug', $slugs)->where('is_available', true)->get()->keyBy('slug');
         $toppingNames  = collect($cartItems)->flatMap(fn($ci) => array_column($ci['toppings'] ?? [], 'name'))->unique()->values();
         $toppingPrices = $toppingNames->isNotEmpty()
             ? Topping::whereIn('name', $toppingNames)->where('is_available', true)->get()->pluck('price', 'name')
@@ -106,9 +116,6 @@ class CheckoutController extends Controller
         $orderItems = [];
         $subtotal   = 0;
 
-        $sizeExtrasMap  = self::sizeExtras();
-        $crustExtrasMap = self::crustExtras();
-
         foreach ($cartItems as $ci) {
             $menuItem = $menuItems[$ci['id'] ?? ''] ?? null;
             if (!$menuItem) {
@@ -116,8 +123,8 @@ class CheckoutController extends Controller
             }
 
             $qty        = min(20, max(1, (int) ($ci['qty'] ?? 1)));
-            $sizeExtra  = $sizeExtrasMap[$ci['size'] ?? '']  ?? 0.0;
-            $crustExtra = $crustExtrasMap[$ci['crust'] ?? ''] ?? 0.0;
+            $sizeExtra  = self::sizeExtrasForItem($menuItem)[$ci['size'] ?? '']  ?? 0.0;
+            $crustExtra = self::crustExtrasForItem($menuItem)[$ci['crust'] ?? ''] ?? 0.0;
 
             $toppings      = [];
             $toppingsExtra = 0.0;

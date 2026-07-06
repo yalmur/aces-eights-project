@@ -98,11 +98,13 @@ const cartStore = {
   openDrawer(itemData) {
     this.drawerItem = itemData
     this.editingCartId = null
+    const defSize  = (itemData.sizes  || []).find(s => s.is_default) || (itemData.sizes  || [])[0] || null
+    const defCrust = (itemData.crusts || []).find(c => c.is_default) || (itemData.crusts || [])[0] || null
     this.draft = {
-      size: '12" Standard',
-      sizeExtra: 0,
-      crust: '48hr Sourdough',
-      crustExtra: 0,
+      size:       defSize  ? defSize.name       : null,
+      sizeExtra:  defSize  ? defSize.price_adj  : 0,
+      crust:      defCrust ? defCrust.name      : null,
+      crustExtra: defCrust ? defCrust.price_adj : 0,
       toppings: [],
       removedIngredients: [],
       chips: [],
@@ -126,12 +128,14 @@ const cartStore = {
       relatedItems: item.relatedItems,
       isCustomizable: item.isCustomizable,
       availableToppings: item.availableToppings,
+      sizes: item.sizes || [],
+      crusts: item.crusts || [],
     }
     this.editingCartId = cartId
     this.draft = {
-      size: item.size || '12" Standard',
+      size: item.size || null,
       sizeExtra: item.sizeExtra || 0,
-      crust: item.crust || '48hr Sourdough',
+      crust: item.crust || null,
       crustExtra: item.crustExtra || 0,
       toppings: (item.toppings || []).map(t => ({ ...t })),
       removedIngredients: [...(item.removedIngredients || [])],
@@ -202,12 +206,14 @@ const cartStore = {
 
   addToCart() {
     const toppingsExtra = this.draft.toppings.reduce((s, t) => s + t.price, 0)
-    const isPizza = this.drawerItem.category === 'pizza'
+    const hasSizes  = (this.drawerItem.sizes  || []).length > 0
+    const hasCrusts = (this.drawerItem.crusts || []).length > 0
+    const isPizza   = this.drawerItem.category === 'pizza'
     const lineTotal = (
       this.drawerItem.basePrice +
-      (isPizza ? this.draft.sizeExtra : 0) +
-      (isPizza ? this.draft.crustExtra : 0) +
-      (isPizza ? toppingsExtra : 0)
+      (hasSizes  ? this.draft.sizeExtra  : 0) +
+      (hasCrusts ? this.draft.crustExtra : 0) +
+      (isPizza   ? toppingsExtra         : 0)
     ) * this.draft.qty
 
     const cartItem = {
@@ -221,10 +227,12 @@ const cartStore = {
       relatedItems: this.drawerItem.relatedItems,
       isCustomizable: this.drawerItem.isCustomizable,
       availableToppings: this.drawerItem.availableToppings,
-      size:               isPizza ? this.draft.size        : null,
-      sizeExtra:          isPizza ? this.draft.sizeExtra   : 0,
-      crust:              isPizza ? this.draft.crust       : null,
-      crustExtra:         isPizza ? this.draft.crustExtra  : 0,
+      sizes:  this.drawerItem.sizes  || [],
+      crusts: this.drawerItem.crusts || [],
+      size:               hasSizes  ? this.draft.size        : null,
+      sizeExtra:          hasSizes  ? this.draft.sizeExtra   : 0,
+      crust:              hasCrusts ? this.draft.crust       : null,
+      crustExtra:         hasCrusts ? this.draft.crustExtra  : 0,
       toppings:           isPizza ? [...this.draft.toppings] : [],
       removedIngredients: [...this.draft.removedIngredients],
       chips:     [...this.draft.chips],

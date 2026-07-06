@@ -44,46 +44,39 @@
     {{-- Scrollable body --}}
     <div class="flex-1 overflow-y-auto px-6 py-6 space-y-8">
 
-      {{-- SIZE — pizza only, customizable items only --}}
-      <div x-show="$store.cart.drawerIsCustomizable && $store.cart.drawerItem?.category === 'pizza'">
+      {{-- SIZE — shown when item has sizes configured --}}
+      <div x-show="$store.cart.drawerIsCustomizable && ($store.cart.drawerItem?.sizes ?? []).length > 0">
         <h4 class="label-caps text-on-surface-variant mb-4">Choose Size</h4>
         <div class="grid grid-cols-2 gap-3">
-          <button @click="$store.cart.setSize('12&quot; Standard', 0)"
-                  :class="$store.cart.draft.size === '12&quot; Standard'
-                    ? 'border-2 border-primary bg-surface-container'
-                    : 'border border-outline-variant bg-surface-container-low hover:bg-surface-container'"
-                  class="p-4 text-center transition-colors">
-            <span class="block font-serif text-sm font-bold text-on-surface">12" Standard</span>
-            <span class="label-caps text-on-surface-variant text-[10px]">INCLUDED</span>
-          </button>
-          <button @click="$store.cart.setSize('15&quot; Large', 4)"
-                  :class="$store.cart.draft.size === '15&quot; Large'
-                    ? 'border-2 border-primary bg-surface-container'
-                    : 'border border-outline-variant bg-surface-container-low hover:bg-surface-container'"
-                  class="p-4 text-center transition-colors">
-            <span class="block font-serif text-sm font-bold text-on-surface">15" Large</span>
-            <span class="label-caps text-primary text-[10px]">+£4.00</span>
-          </button>
+          <template x-for="size in ($store.cart.drawerItem?.sizes ?? [])" :key="size.name">
+            <button @click="$store.cart.setSize(size.name, size.price_adj)"
+                    :class="$store.cart.draft.size === size.name
+                      ? 'border-2 border-primary bg-surface-container'
+                      : 'border border-outline-variant bg-surface-container-low hover:bg-surface-container'"
+                    class="p-4 text-center transition-colors">
+              <span class="block font-serif text-sm font-bold text-on-surface" x-text="size.name"></span>
+              <span :class="size.price_adj > 0 ? 'text-primary' : 'text-on-surface-variant'"
+                    class="label-caps text-[10px]"
+                    x-text="size.price_adj > 0 ? '+£' + size.price_adj.toFixed(2) : 'INCLUDED'"></span>
+            </button>
+          </template>
         </div>
       </div>
 
-      {{-- CRUST — pizza only, customizable items only --}}
-      <div x-show="$store.cart.drawerIsCustomizable && $store.cart.drawerItem?.category === 'pizza'">
+      {{-- CRUST — shown when item has crusts configured --}}
+      <div x-show="$store.cart.drawerIsCustomizable && ($store.cart.drawerItem?.crusts ?? []).length > 0">
         <h4 class="label-caps text-on-surface-variant mb-4">Crust</h4>
         <div class="flex flex-col gap-2">
-          <template x-for="[crust, extra, label] in [
-            ['48hr Sourdough', 0, 'INCLUDED'],
-            ['Gluten-Free', 2, '+£2.00'],
-            ['Cauliflower', 2.5, '+£2.50']
-          ]" :key="crust">
-            <button @click="$store.cart.setCrust(crust, extra)"
-                    :class="$store.cart.draft.crust === crust
+          <template x-for="crust in ($store.cart.drawerItem?.crusts ?? [])" :key="crust.name">
+            <button @click="$store.cart.setCrust(crust.name, crust.price_adj)"
+                    :class="$store.cart.draft.crust === crust.name
                       ? 'border-2 border-primary bg-surface-container'
                       : 'border border-outline-variant bg-surface-container-low hover:bg-surface-container'"
                     class="flex items-center justify-between px-4 py-3 transition-colors w-full text-left">
-              <span class="font-sans text-sm text-on-surface" x-text="crust"></span>
-              <span :class="extra > 0 ? 'text-primary' : 'text-on-surface-variant'"
-                    class="label-caps text-[10px]" x-text="label"></span>
+              <span class="font-sans text-sm text-on-surface" x-text="crust.name"></span>
+              <span :class="crust.price_adj > 0 ? 'text-primary' : 'text-on-surface-variant'"
+                    class="label-caps text-[10px]"
+                    x-text="crust.price_adj > 0 ? '+£' + crust.price_adj.toFixed(2) : 'INCLUDED'"></span>
             </button>
           </template>
         </div>
