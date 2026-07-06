@@ -62,7 +62,6 @@ class Deal extends Model
             'is_required'  => $slot->is_required,
             'is_free'      => $slot->is_free,
             'sort_order'   => $slot->sort_order,
-            'category_ids' => $slot->categories->pluck('id')->all(),
             'item_ids'     => $slot->menuItems->pluck('id')->all(),
         ])->all();
     }

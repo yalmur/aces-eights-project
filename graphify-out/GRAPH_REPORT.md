@@ -1,16 +1,16 @@
 # Graph Report - webapp  (2026-07-06)
 
 ## Corpus Check
-- 264 files · ~547,156 words
+- 264 files · ~547,053 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 70143 nodes · 85921 edges · 9247 communities (3656 shown, 5591 thin omitted)
+- 70143 nodes · 85921 edges · 9249 communities (3654 shown, 5595 thin omitted)
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 4410 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f947bc0f`
+- Built from commit: `f045d45e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1218,6 +1218,7 @@
 - [[_COMMUNITY_Community 1495|Community 1495]]
 - [[_COMMUNITY_Community 1496|Community 1496]]
 - [[_COMMUNITY_Community 1497|Community 1497]]
+- [[_COMMUNITY_Community 1498|Community 1498]]
 - [[_COMMUNITY_Community 1499|Community 1499]]
 - [[_COMMUNITY_Community 1500|Community 1500]]
 - [[_COMMUNITY_Community 1501|Community 1501]]
@@ -1520,6 +1521,7 @@
 - [[_COMMUNITY_Community 1837|Community 1837]]
 - [[_COMMUNITY_Community 1838|Community 1838]]
 - [[_COMMUNITY_Community 1839|Community 1839]]
+- [[_COMMUNITY_Community 1841|Community 1841]]
 - [[_COMMUNITY_Community 1843|Community 1843]]
 - [[_COMMUNITY_Community 1844|Community 1844]]
 - [[_COMMUNITY_Community 1845|Community 1845]]
@@ -1658,6 +1660,7 @@
 - [[_COMMUNITY_Community 1988|Community 1988]]
 - [[_COMMUNITY_Community 1989|Community 1989]]
 - [[_COMMUNITY_Community 1990|Community 1990]]
+- [[_COMMUNITY_Community 1991|Community 1991]]
 - [[_COMMUNITY_Community 1992|Community 1992]]
 - [[_COMMUNITY_Community 1993|Community 1993]]
 - [[_COMMUNITY_Community 1995|Community 1995]]
@@ -2222,7 +2225,6 @@
 - [[_COMMUNITY_Community 2605|Community 2605]]
 - [[_COMMUNITY_Community 2606|Community 2606]]
 - [[_COMMUNITY_Community 2607|Community 2607]]
-- [[_COMMUNITY_Community 2608|Community 2608]]
 - [[_COMMUNITY_Community 2609|Community 2609]]
 - [[_COMMUNITY_Community 2610|Community 2610]]
 - [[_COMMUNITY_Community 2611|Community 2611]]
@@ -6390,7 +6392,6 @@
 - [[_COMMUNITY_Community 9103|Community 9103]]
 - [[_COMMUNITY_Community 9104|Community 9104]]
 - [[_COMMUNITY_Community 9105|Community 9105]]
-- [[_COMMUNITY_Community 9106|Community 9106]]
 - [[_COMMUNITY_Community 9107|Community 9107]]
 - [[_COMMUNITY_Community 9110|Community 9110]]
 - [[_COMMUNITY_Community 9112|Community 9112]]
@@ -6478,6 +6479,8 @@
 - [[_COMMUNITY_Community 9244|Community 9244]]
 - [[_COMMUNITY_Community 9245|Community 9245]]
 - [[_COMMUNITY_Community 9246|Community 9246]]
+- [[_COMMUNITY_Community 9247|Community 9247]]
+- [[_COMMUNITY_Community 9248|Community 9248]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `Arr` - 506 edges
@@ -6508,7 +6511,7 @@
 - **Full Ordering Pipeline: Cart → Checkout → Stripe → Order Schema** — concept_alpine_cart_store, concept_stripe_checkout, concept_order_schema [INFERRED 0.95]
 - **Production Readiness: Rate Limiting + Image Upload + DEPLOY.md** — concept_rate_limiting, concept_image_upload, concept_cpanel_deploy [EXTRACTED 1.00]
 
-## Communities (9247 total, 5591 thin omitted)
+## Communities (9249 total, 5595 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.0
@@ -6536,7 +6539,7 @@ Nodes (19): dependencies, alpinejs, cropperjs, devDependencies, autoprefixer, ax
 
 ### Community 13 - "Community 13"
 Cohesion: 0.01
-Nodes (52): Requirements, Text, Text, Text, Ean, VarCloner, DateComparator, NumberComparator (+44 more)
+Nodes (54): Requirements, Text, Text, Text, Ean, VarCloner, DateComparator, NumberComparator (+46 more)
 
 ### Community 14 - "Community 14"
 Cohesion: 0.5
@@ -6595,8 +6598,8 @@ Cohesion: 0.67
 Nodes (3): Admin Auth Infrastructure, Admin Layout with Alpine.js Drawer, Plan 3: Admin Frontend
 
 ### Community 57 - "Community 57"
-Cohesion: 0.01
-Nodes (31): Writer, FileManipulationCommand, findAvailableModels(), installDevContainer(), TestSuiteBuilder, EnumMakeCommand, InterfaceMakeCommand, LangPublishCommand (+23 more)
+Cohesion: 0.02
+Nodes (22): Writer, CacheWarmerAggregate, TestSuiteBuilder, LangPublishCommand, StubPublishCommand, ClassNotFoundErrorEnhancer, DirectoryExists, NativeFileSessionHandler (+14 more)
 
 ### Community 69 - "Community 69"
 Cohesion: 0.02
@@ -6636,7 +6639,7 @@ Nodes (118): allFailingRequired(), anyFailingRequired(), checkDateTimeOrder(), c
 
 ### Community 250 - "Community 250"
 Cohesion: 0.02
-Nodes (26): DumpCompletionCommand, buildDockerCompose(), composePath(), configurePhpUnit(), prepareInstallation(), runCommands(), BroadcastingInstallCommand, CastMakeCommand (+18 more)
+Nodes (27): DumpCompletionCommand, buildDockerCompose(), composePath(), configurePhpUnit(), installDevContainer(), prepareInstallation(), runCommands(), CastMakeCommand (+19 more)
 
 ### Community 258 - "Community 258"
 Cohesion: 0.02
@@ -6655,8 +6658,8 @@ Cohesion: 0.07
 Nodes (3): IsReadable, IsWritable, SFTP
 
 ### Community 271 - "Community 271"
-Cohesion: 0.02
-Nodes (5): ArrayList, Arrays, Reflection, Type, Validators
+Cohesion: 0.03
+Nodes (4): Arrays, Reflection, Type, Validators
 
 ### Community 272 - "Community 272"
 Cohesion: 0.05
@@ -6703,8 +6706,8 @@ Cohesion: 0.05
 Nodes (49): average(), avg(), each(), eachSpread(), ensure(), every(), firstWhere(), forPage() (+41 more)
 
 ### Community 299 - "Community 299"
-Cohesion: 0.05
-Nodes (24): RequireLoader, JobRunner, Coverage, checkParams(), checkPlatform(), displayHelp(), ErrorHandler, getHomeDir() (+16 more)
+Cohesion: 0.04
+Nodes (26): ClearCompiledCommand, UpCommand, RequireLoader, JobRunner, Coverage, checkParams(), checkPlatform(), displayHelp() (+18 more)
 
 ### Community 302 - "Community 302"
 Cohesion: 0.05
@@ -6811,12 +6814,12 @@ Cohesion: 0.05
 Nodes (3): Middleware, AuthenticateSession, RedirectIfAuthenticated
 
 ### Community 360 - "Community 360"
-Cohesion: 0.03
-Nodes (8): BlockContinue, HeadingParser, ListBlockParser, ThematicBreakParser, EmbedParser, DescriptionContinueParser, DescriptionListContinueParser, DescriptionTermContinueParser
+Cohesion: 0.04
+Nodes (8): BlockContinue, HeadingParser, HtmlBlockParser, ListBlockParser, ThematicBreakParser, DescriptionContinueParser, DescriptionTermContinueParser, FootnoteParser
 
 ### Community 361 - "Community 361"
-Cohesion: 0.06
-Nodes (5): PdoSessionHandler, Identifier, DiffOnlyOutputBuilder, UnifiedDiffOutputBuilder, FileFactory
+Cohesion: 0.08
+Nodes (4): PdoSessionHandler, DiffOnlyOutputBuilder, UnifiedDiffOutputBuilder, FileFactory
 
 ### Community 366 - "Community 366"
 Cohesion: 0.06
@@ -6831,8 +6834,8 @@ Cohesion: 0.05
 Nodes (47): dealerdirect/phpcodesniffer-composer-installer, authors, autoload, autoload-dev, psr-4, psr-4, dev-main, dev-master (+39 more)
 
 ### Community 375 - "Community 375"
-Cohesion: 0.04
-Nodes (13): CramMd5Authenticator, LoginAuthenticator, PlainAuthenticator, XOAuth2Authenticator, KeyGenerateCommand, DkimSigner, Base64Encoder, MessageSent (+5 more)
+Cohesion: 0.03
+Nodes (14): CramMd5Authenticator, LoginAuthenticator, PlainAuthenticator, XOAuth2Authenticator, DkimSigner, Base64Encoder, MessageSent, ServerBag (+6 more)
 
 ### Community 376 - "Community 376"
 Cohesion: 0.05
@@ -6887,8 +6890,8 @@ Cohesion: 0.04
 Nodes (44): authors, autoload, psr-4, conflict, async-aws/core, async-aws/s3, aws/aws-sdk-php, guzzlehttp/guzzle (+36 more)
 
 ### Community 401 - "Community 401"
-Cohesion: 0.07
-Nodes (4): gs, kn, n(), rn
+Cohesion: 0.08
+Nodes (3): gs, kn, n()
 
 ### Community 402 - "Community 402"
 Cohesion: 0.04
@@ -6983,8 +6986,8 @@ Cohesion: 0.13
 Nodes (37): addTimestampsToAttachment(), attach(), attachNew(), attachOrFail(), attachUsingCustomClass(), baseAttachRecord(), castAttributes(), castKey() (+29 more)
 
 ### Community 453 - "Community 453"
-Cohesion: 0.1
-Nodes (7): _(), d(), g(), Ji, k(), on, st
+Cohesion: 0.07
+Nodes (8): _(), d(), g(), Ji, k(), on, rn, st
 
 ### Community 454 - "Community 454"
 Cohesion: 0.05
@@ -7012,7 +7015,7 @@ Nodes (58): data_fill(), data_forget(), data_get(), data_has(), data_set(), valu
 
 ### Community 463 - "Community 463"
 Cohesion: 0.06
-Nodes (56): casts(), ensureCastsAreStringValues(), except(), getArrayableAppends(), getArrayableAttributes(), getArrayableItems(), getArrayableRelations(), getAttribute() (+48 more)
+Nodes (49): addDateAttributesToArray(), addMutatedAttributesToArray(), attributesToArray(), casts(), ensureCastsAreStringValues(), except(), getArrayableAppends(), getArrayableAttributes() (+41 more)
 
 ### Community 464 - "Community 464"
 Cohesion: 0.06
@@ -7296,7 +7299,7 @@ Nodes (5): freezeSecond(), freezeTime(), travelBack(), travelTo(), Wormhole
 
 ### Community 619 - "Community 619"
 Cohesion: 0.1
-Nodes (17): deleteJson(), extractFilesFromDataArray(), from(), fromRoute(), getJson(), json(), optionsJson(), patchJson() (+9 more)
+Nodes (16): deleteJson(), from(), fromRoute(), getJson(), json(), optionsJson(), patchJson(), postJson() (+8 more)
 
 ### Community 620 - "Community 620"
 Cohesion: 0.07
@@ -7442,10 +7445,6 @@ Nodes (3): MapInput, InvokableCommand, Interaction
 Cohesion: 0.08
 Nodes (25): authors, autoload, psr-4, dev-master, config, sort-packages, description, extra (+17 more)
 
-### Community 695 - "Community 695"
-Cohesion: 0.06
-Nodes (5): Ki, l(), r(), W, Y
-
 ### Community 696 - "Community 696"
 Cohesion: 0.08
 Nodes (25): code:bash ($ composer require league/commonmark), code:php (use League\CommonMark\CommonMarkConverter;), code:php (use League\CommonMark\GithubFlavoredMarkdownConverter;), code:bash ($ composer test), code:bash ($ ./tests/benchmark/benchmark.php), Community Extensions, 👷‍♀️ Contributing, 👥 Credits & Acknowledgements (+17 more)
@@ -7536,7 +7535,7 @@ Nodes (24): authors, autoload, psr-4, dev-master, config, sort-packages, descrip
 
 ### Community 752 - "Community 752"
 Cohesion: 0.04
-Nodes (13): AttributeCommand, FormCommand, LayoutCommand, StubsCommand, TestCommand, ProcessDriver, SQLiteConnector, RouteListCommand (+5 more)
+Nodes (14): AttributeCommand, FormCommand, LayoutCommand, StubsCommand, TestCommand, ProcessDriver, SQLiteConnector, TestMakeCommand (+6 more)
 
 ### Community 754 - "Community 754"
 Cohesion: 0.08
@@ -7555,8 +7554,8 @@ Cohesion: 0.08
 Nodes (24): authors, autoload, psr-4, dev-master, config, sort-packages, description, extra (+16 more)
 
 ### Community 763 - "Community 763"
-Cohesion: 0.17
-Nodes (16): asJson(), castAttributeAsEncryptedString(), castAttributeAsHashedString(), castAttributeAsJson(), fillJsonAttribute(), getArrayAttributeWithValue(), getDates(), getJsonCastFlags() (+8 more)
+Cohesion: 0.16
+Nodes (11): asJson(), castAttributeAsEncryptedString(), castAttributeAsHashedString(), castAttributeAsJson(), fillJsonAttribute(), getArrayAttributeWithValue(), getJsonCastFlags(), hasAttributeSetMutator() (+3 more)
 
 ### Community 765 - "Community 765"
 Cohesion: 0.08
@@ -7588,7 +7587,7 @@ Nodes (3): validateTimezone(), SystemNodeProvider, Constant
 
 ### Community 780 - "Community 780"
 Cohesion: 0.02
-Nodes (19): Reader, CacheWarmerAggregate, LinkStub, ClearCompiledCommand, UpCommand, Debug, DebugClassLoader, AbstractFileExtractor (+11 more)
+Nodes (20): Reader, LinkStub, Builder, XmlConfigurationFileFinder, GenerateConfigurationCommand, Debug, DebugClassLoader, AbstractFileExtractor (+12 more)
 
 ### Community 781 - "Community 781"
 Cohesion: 0.15
@@ -7620,7 +7619,7 @@ Nodes (23): authors, autoload, files, psr-4, description, extra, thanks, homepag
 
 ### Community 798 - "Community 798"
 Cohesion: 0.08
-Nodes (23): 1.0.0 - 2015-05-19, [1.1.0] - 2015-06-24, [1.2.1] - 2015-11-02, [1.2.2] - 2016-01-22, [1.2.3] - 2016-02-18, 2.0.0 - 2021-06-30, 2.10.0 - 2026-05-19, 2.2.1 - 2022-03-20 (+15 more)
+Nodes (23): 1.0.0 - 2015-05-19, [1.1.0] - 2015-06-24, [1.2.0] - 2015-08-15, [1.2.1] - 2015-11-02, [1.2.2] - 2016-01-22, [1.2.3] - 2016-02-18, 2.0.0 - 2021-06-30, 2.10.0 - 2026-05-19 (+15 more)
 
 ### Community 800 - "Community 800"
 Cohesion: 0.08
@@ -7664,7 +7663,7 @@ Nodes (22): authors, autoload, psr-4, description, homepage, keywords, license, 
 
 ### Community 826 - "Community 826"
 Cohesion: 0.09
-Nodes (22): [11.5.12] - 2025-03-07, [11.5.30] - 2025-08-10, [11.5.34] - 2025-08-20, [11.5.36] - 2025-09-03, [11.5.39] - 2025-09-14, [11.5.40] - 2025-09-23, [11.5.41] - 2025-09-24, [11.5.42] - 2025-09-28 (+14 more)
+Nodes (22): [11.5.10] - 2025-02-25, [11.5.12] - 2025-03-07, [11.5.13] - 2025-03-18, [11.5.31] - 2025-08-11, [11.5.35] - 2025-08-28, [11.5.40] - 2025-09-23, [11.5.41] - 2025-09-24, [11.5.42] - 2025-09-28 (+14 more)
 
 ### Community 827 - "Community 827"
 Cohesion: 0.09
@@ -7767,8 +7766,8 @@ Cohesion: 0.1
 Nodes (20): authors, autoload, psr-4, dev-main, description, extra, branch-alias, thanks (+12 more)
 
 ### Community 894 - "Community 894"
-Cohesion: 0.14
-Nodes (29): addCastAttributesToArray(), asDecimal(), castAttribute(), compareClassCastableAttribute(), deviateClassCastableAttribute(), fromEncryptedString(), fromFloat(), fromJson() (+21 more)
+Cohesion: 0.13
+Nodes (32): addCastAttributesToArray(), asDecimal(), castAttribute(), compareClassCastableAttribute(), deviateClassCastableAttribute(), fromEncryptedString(), fromFloat(), fromJson() (+24 more)
 
 ### Community 899 - "Community 899"
 Cohesion: 0.12
@@ -7906,6 +7905,10 @@ Nodes (18): authors, autoload, autoload-dev, psr-4, psr-4, config, preferred-ins
 Cohesion: 0.1
 Nodes (8): RegisterProviders, beforeApplicationDestroyed(), callBeforeApplicationDestroyedCallbacks(), setUpTheTestEnvironment(), setUpTraits(), tearDownTheTestEnvironment(), HandleCors, ValidateCsrfToken
 
+### Community 1021 - "Community 1021"
+Cohesion: 0.04
+Nodes (10): FileManipulationCommand, findAvailableModels(), EnumMakeCommand, InterfaceMakeCommand, PruneCommand, ScopeMakeCommand, TraitMakeCommand, ModelInspector (+2 more)
+
 ### Community 1033 - "Community 1033"
 Cohesion: 0.11
 Nodes (17): Backers, Carbon, Carbon for enterprise, code:php (<?php), code:block2 ($ composer require nesbot/carbon), code:json ({), code:php (<?php), code:php (<?php) (+9 more)
@@ -7971,8 +7974,8 @@ Cohesion: 0.11
 Nodes (18): require, ext-filter, ext-hash, illuminate/collections, illuminate/container, illuminate/contracts, illuminate/http, illuminate/macroable (+10 more)
 
 ### Community 1071 - "Community 1071"
-Cohesion: 0.08
-Nodes (7): ApiInstallCommand, phpBinary(), requireComposerPackages(), ServeCommand, Listener, artisan_binary(), php_binary()
+Cohesion: 0.05
+Nodes (8): InstalledVersions, ApiInstallCommand, BroadcastingInstallCommand, phpBinary(), requireComposerPackages(), Listener, artisan_binary(), php_binary()
 
 ### Community 1076 - "Community 1076"
 Cohesion: 0.11
@@ -7999,8 +8002,8 @@ Cohesion: 0.15
 Nodes (3): ImplicitReturnPass, NoReturnValue, TimeitVisitor
 
 ### Community 1095 - "Community 1095"
-Cohesion: 0.23
-Nodes (16): call(), createTestRequest(), createTestResponse(), delete(), followRedirects(), formatServerHeaderKey(), get(), head() (+8 more)
+Cohesion: 0.21
+Nodes (17): call(), createTestRequest(), createTestResponse(), delete(), extractFilesFromDataArray(), followRedirects(), formatServerHeaderKey(), get() (+9 more)
 
 ### Community 1096 - "Community 1096"
 Cohesion: 0.12
@@ -8030,17 +8033,13 @@ Nodes (16): About, Acknowledgements, Author, Basic Usage, code:bash (composer re
 Cohesion: 0.12
 Nodes (16): 1.0, 2.0, 3.0, Additional Thanks, Branches, code:sh (composer install), code:sh (composer global require php:^8.1 squizlabs/php_codesniffer f), Contributing (+8 more)
 
-### Community 1127 - "Community 1127"
-Cohesion: 0.04
-Nodes (6): Builder, XmlConfigurationFileFinder, GenerateConfigurationCommand, ComposerScripts, TestResult, PendingProcess
-
 ### Community 1131 - "Community 1131"
 Cohesion: 0.12
 Nodes (16): code:php (// Before:), code:php (// Before:), code:php (// Before: automatically converted to //example.com/foo.), code:php (Query::build(['enabled' => true, 'disabled' => false]);), code:php (Query::build(['enabled' => true, 'disabled' => false], PHP_Q), Deprecated URI Methods Removed, Final Stream and Decorator Classes, Header Validation (+8 more)
 
 ### Community 1132 - "Community 1132"
 Cohesion: 0.02
-Nodes (18): LogBroadcaster, RedisBroadcaster, HasInDatabase, NotSoftDeletedInDatabase, SoftDeletedInDatabase, RegisterControllerArgumentLocatorsPass, JsonFileDumper, StreamedJsonResponse (+10 more)
+Nodes (18): LogBroadcaster, RedisBroadcaster, HasInDatabase, NotSoftDeletedInDatabase, SoftDeletedInDatabase, RegisterControllerArgumentLocatorsPass, JsonFileDumper, Checksum (+10 more)
 
 ### Community 1137 - "Community 1137"
 Cohesion: 0.18
@@ -8059,8 +8058,8 @@ Cohesion: 0.24
 Nodes (12): freshTimestamp(), freshTimestampString(), getCreatedAtColumn(), getQualifiedCreatedAtColumn(), getQualifiedUpdatedAtColumn(), getUpdatedAtColumn(), setCreatedAt(), setUpdatedAt() (+4 more)
 
 ### Community 1152 - "Community 1152"
-Cohesion: 0.08
-Nodes (6): h(), o(), s(), ts, Un(), x()
+Cohesion: 0.06
+Nodes (8): h(), o(), r(), ts, Un(), W, x(), Y
 
 ### Community 1153 - "Community 1153"
 Cohesion: 0.07
@@ -8304,7 +8303,7 @@ Nodes (12): authors, description, homepage, keywords, license, name, provide, ps
 
 ### Community 1444 - "Community 1444"
 Cohesion: 0.03
-Nodes (11): Iban, RC4, PublicKey, ASN1, Strings, extractPoint(), MSBLOB, SCP (+3 more)
+Nodes (11): Iban, PublicKey, ASN1, Strings, extractPoint(), MSBLOB, SCP, Person (+3 more)
 
 ### Community 1452 - "Community 1452"
 Cohesion: 0.15
@@ -8329,6 +8328,10 @@ Nodes (11): code:block1 (composer require sebastian/version), code:block2 (compo
 ### Community 1482 - "Community 1482"
 Cohesion: 0.15
 Nodes (12): code:yaml (Yaml::parse('072');), code:php (Yaml::dump(['foo' => new A(), 'bar' => 1], 0, 0, Yaml::DUMP_), code:yml (class: "Foo\Var"), code:yml (class: "Foo\\Var"), code:yaml (Yaml::parse('0o72');), code:yml (Yaml::parse('!foo bar', Yaml::PARSE_CUSTOM_TAGS);), code:php ($yaml = <<<YAML), code:php (+4 more)
+
+### Community 1498 - "Community 1498"
+Cohesion: 0.17
+Nodes (16): getAttribute(), getDates(), getRelationshipFromMethod(), getRelationValue(), handleLazyLoadingViolation(), hasAnyGetMutator(), hasAttribute(), hasAttributeGetMutator() (+8 more)
 
 ### Community 1499 - "Community 1499"
 Cohesion: 0.17
@@ -8383,8 +8386,8 @@ Cohesion: 0.2
 Nodes (9): Laravel Framework, About Laravel, Code of Conduct, Contributing, Laravel Sponsors, Learning Laravel, License, Premium Partners (+1 more)
 
 ### Community 1617 - "Community 1617"
-Cohesion: 0.21
-Nodes (12): addDateAttributesToArray(), addMutatedAttributesToArray(), asDate(), asDateTime(), asTimestamp(), attributesToArray(), fromDateTime(), getDateFormat() (+4 more)
+Cohesion: 0.4
+Nodes (6): asDate(), asDateTime(), asTimestamp(), fromDateTime(), getDateFormat(), isStandardDateFormat()
 
 ### Community 1618 - "Community 1618"
 Cohesion: 0.18
@@ -8495,12 +8498,12 @@ Cohesion: 0.31
 Nodes (8): extendPrepend(), extendPush(), isStackEmpty(), startPrepend(), startPush(), stopPrepend(), stopPush(), yieldPushContent()
 
 ### Community 1779 - "Community 1779"
-Cohesion: 0.16
-Nodes (10): applyInverseRelationToCollection(), applyInverseRelationToModel(), chaperone(), getInverseRelationship(), getPossibleInverseRelations(), guessInverseRelation(), inverse(), withoutChaperone() (+2 more)
+Cohesion: 0.36
+Nodes (9): applyInverseRelationToCollection(), applyInverseRelationToModel(), chaperone(), getInverseRelationship(), getPossibleInverseRelations(), guessInverseRelation(), inverse(), withoutChaperone() (+1 more)
 
 ### Community 1791 - "Community 1791"
-Cohesion: 0.33
-Nodes (5): [2.2.0] - 2018-06-05, Added, Change Log, Changed, Fixed
+Cohesion: 0.2
+Nodes (9): [2.2.0] - 2018-06-05, [3.0.0] - 2020-03-25, Added, Added, Change Log, Changed, Changed, Fixed (+1 more)
 
 ### Community 1799 - "Community 1799"
 Cohesion: 0.2
@@ -8656,7 +8659,7 @@ Nodes (8): code:php, Contributing, Contributing code and documentation, Debuggin
 
 ### Community 2090 - "Community 2090"
 Cohesion: 0.22
-Nodes (8): 1.0.0 - 2015-05-12, 1.0.1 - 2015-06-24, 2.0.1 - 2023-08-03, 2.4.1 - 2026-05-20, Changed, Changed, CHANGELOG, Fixed
+Nodes (8): 1.0.0 - 2015-05-12, 1.0.1 - 2015-06-24, 1.5.2 - 2022-08-07, 2.4.0 - 2026-05-20, Changed, Changed, Changed, CHANGELOG
 
 ### Community 2101 - "Community 2101"
 Cohesion: 0.22
@@ -8992,7 +8995,7 @@ Nodes (7): code:bash (cd C:\AcesAndEightsPizza\webapp), code:php (<?php), code:p
 
 ### Community 3000 - "Community 3000"
 Cohesion: 0.06
-Nodes (5): EnvironmentDecryptCommand, EnvironmentEncryptCommand, InvokeSerializedClosureCommand, Encrypter, ServerBag
+Nodes (5): EnvironmentDecryptCommand, EnvironmentEncryptCommand, InvokeSerializedClosureCommand, KeyGenerateCommand, Encrypter
 
 ### Community 3001 - "Community 3001"
 Cohesion: 0.38
@@ -9982,17 +9985,13 @@ Nodes (3): Concerns, Task 1 Report — OrderController Feature Tests, Tests writ
 Cohesion: 0.04
 Nodes (21): Content, Envelope, Authenticated, CurrentDeviceLogout, Login, Logout, OtherDeviceLogout, PasswordReset (+13 more)
 
-### Community 9169 - "Community 9169"
-Cohesion: 0.5
-Nodes (4): [3.0.0] - 2020-03-25, Added, Changed, Fixed
-
 ### Community 9185 - "Community 9185"
 Cohesion: 0.5
 Nodes (4): suggest, illuminate/console, php-http/discovery, symfony/psr-http-message-bridge
 
-### Community 9200 - "Community 9200"
+### Community 9198 - "Community 9198"
 Cohesion: 0.67
-Nodes (3): scripts, phpstan, test
+Nodes (3): require, php, psr/log
 
 ### Community 9214 - "Community 9214"
 Cohesion: 0.6
@@ -10001,16 +10000,16 @@ Nodes (3): getLocale(), getPluralizationRule(), trans()
 ## Knowledge Gaps
 - **7594 isolated node(s):** `$schema`, `name`, `type`, `description`, `keywords` (+7589 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **5591 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **5595 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Closure` connect `Community 1411` to `Community 512`, `Community 2`, `Community 516`, `Community 1030`, `Community 521`, `Community 10`, `Community 524`, `Community 1037`, `Community 529`, `Community 1556`, `Community 20`, `Community 533`, `Community 536`, `Community 2072`, `Community 1562`, `Community 1051`, `Community 30`, `Community 546`, `Community 549`, `Community 1576`, `Community 7213`, `Community 1071`, `Community 7216`, `Community 561`, `Community 563`, `Community 567`, `Community 2619`, `Community 3132`, `Community 4670`, `Community 574`, `Community 581`, `Community 582`, `Community 1608`, `Community 1100`, `Community 79`, `Community 595`, `Community 1621`, `Community 1627`, `Community 5213`, `Community 101`, `Community 614`, `Community 615`, `Community 1639`, `Community 617`, `Community 1127`, `Community 620`, `Community 621`, `Community 1132`, `Community 2157`, `Community 2169`, `Community 636`, `Community 655`, `Community 1686`, `Community 663`, `Community 1183`, `Community 1185`, `Community 2211`, `Community 1702`, `Community 2726`, `Community 1704`, `Community 2226`, `Community 694`, `Community 1214`, `Community 703`, `Community 2238`, `Community 725`, `Community 727`, `Community 731`, `Community 2268`, `Community 1245`, `Community 733`, `Community 1248`, `Community 745`, `Community 2796`, `Community 1774`, `Community 752`, `Community 1268`, `Community 759`, `Community 249`, `Community 1786`, `Community 1274`, `Community 254`, `Community 1280`, `Community 258`, `Community 1285`, `Community 262`, `Community 1293`, `Community 1298`, `Community 280`, `Community 1305`, `Community 284`, `Community 289`, `Community 802`, `Community 2339`, `Community 803`, `Community 2341`, `Community 806`, `Community 807`, `Community 295`, `Community 1833`, `Community 298`, `Community 1321`, `Community 1836`, `Community 1325`, `Community 813`, `Community 303`, `Community 304`, `Community 810`, `Community 2359`, `Community 316`, `Community 1344`, `Community 321`, `Community 834`, `Community 1347`, `Community 2371`, `Community 329`, `Community 843`, `Community 331`, `Community 1358`, `Community 2383`, `Community 336`, `Community 2382`, `Community 3410`, `Community 1362`, `Community 852`, `Community 847`, `Community 343`, `Community 344`, `Community 857`, `Community 346`, `Community 347`, `Community 350`, `Community 1375`, `Community 357`, `Community 2917`, `Community 359`, `Community 363`, `Community 364`, `Community 2413`, `Community 876`, `Community 880`, `Community 1392`, `Community 2932`, `Community 1400`, `Community 377`, `Community 890`, `Community 891`, `Community 382`, `Community 895`, `Community 9088`, `Community 2433`, `Community 387`, `Community 389`, `Community 2949`, `Community 902`, `Community 9099`, `Community 907`, `Community 909`, `Community 398`, `Community 9101`, `Community 1421`, `Community 3474`, `Community 403`, `Community 408`, `Community 1432`, `Community 410`, `Community 9119`, `Community 9125`, `Community 934`, `Community 1455`, `Community 437`, `Community 9141`, `Community 439`, `Community 440`, `Community 1465`, `Community 3001`, `Community 443`, `Community 9148`, `Community 1469`, `Community 949`, `Community 447`, `Community 293`, `Community 1992`, `Community 968`, `Community 2508`, `Community 9171`, `Community 980`, `Community 983`, `Community 1495`, `Community 991`, `Community 481`, `Community 994`, `Community 2020`, `Community 1510`, `Community 3047`, `Community 1512`, `Community 998`, `Community 504`, `Community 1519`, `Community 1009`, `Community 501`, `Community 502`, `Community 1015`, `Community 1526`?**
+- **Why does `Closure` connect `Community 1411` to `Community 512`, `Community 2`, `Community 516`, `Community 1030`, `Community 521`, `Community 10`, `Community 524`, `Community 1037`, `Community 529`, `Community 1556`, `Community 20`, `Community 533`, `Community 536`, `Community 2072`, `Community 1562`, `Community 1051`, `Community 30`, `Community 546`, `Community 549`, `Community 1576`, `Community 7213`, `Community 1071`, `Community 7216`, `Community 561`, `Community 563`, `Community 567`, `Community 1081`, `Community 2619`, `Community 3132`, `Community 4670`, `Community 574`, `Community 581`, `Community 582`, `Community 1608`, `Community 1100`, `Community 79`, `Community 595`, `Community 1621`, `Community 1627`, `Community 5213`, `Community 101`, `Community 614`, `Community 615`, `Community 1639`, `Community 617`, `Community 1127`, `Community 620`, `Community 621`, `Community 1132`, `Community 2157`, `Community 2169`, `Community 636`, `Community 655`, `Community 1686`, `Community 663`, `Community 1183`, `Community 1185`, `Community 1702`, `Community 2726`, `Community 1704`, `Community 2226`, `Community 694`, `Community 1214`, `Community 703`, `Community 2238`, `Community 725`, `Community 727`, `Community 731`, `Community 2268`, `Community 1245`, `Community 733`, `Community 1248`, `Community 745`, `Community 2796`, `Community 1774`, `Community 752`, `Community 1268`, `Community 759`, `Community 249`, `Community 250`, `Community 1786`, `Community 1274`, `Community 254`, `Community 1280`, `Community 258`, `Community 1285`, `Community 262`, `Community 1293`, `Community 1298`, `Community 280`, `Community 1305`, `Community 284`, `Community 289`, `Community 802`, `Community 2339`, `Community 803`, `Community 2341`, `Community 806`, `Community 807`, `Community 295`, `Community 1833`, `Community 298`, `Community 1321`, `Community 1836`, `Community 1325`, `Community 813`, `Community 303`, `Community 304`, `Community 810`, `Community 2359`, `Community 316`, `Community 1344`, `Community 321`, `Community 834`, `Community 1347`, `Community 2371`, `Community 329`, `Community 843`, `Community 331`, `Community 1358`, `Community 2383`, `Community 336`, `Community 2382`, `Community 3410`, `Community 1362`, `Community 852`, `Community 847`, `Community 343`, `Community 344`, `Community 857`, `Community 346`, `Community 347`, `Community 350`, `Community 1375`, `Community 357`, `Community 2917`, `Community 359`, `Community 363`, `Community 364`, `Community 2413`, `Community 876`, `Community 880`, `Community 1392`, `Community 2932`, `Community 1400`, `Community 377`, `Community 890`, `Community 891`, `Community 382`, `Community 895`, `Community 9088`, `Community 2433`, `Community 387`, `Community 389`, `Community 2949`, `Community 902`, `Community 9099`, `Community 907`, `Community 909`, `Community 398`, `Community 9101`, `Community 1421`, `Community 3474`, `Community 403`, `Community 408`, `Community 1432`, `Community 410`, `Community 9119`, `Community 9125`, `Community 934`, `Community 1455`, `Community 437`, `Community 9141`, `Community 439`, `Community 440`, `Community 1465`, `Community 3001`, `Community 443`, `Community 9148`, `Community 1469`, `Community 949`, `Community 447`, `Community 293`, `Community 1992`, `Community 968`, `Community 2508`, `Community 9171`, `Community 980`, `Community 983`, `Community 1495`, `Community 991`, `Community 481`, `Community 994`, `Community 2020`, `Community 1510`, `Community 3047`, `Community 1512`, `Community 998`, `Community 504`, `Community 1519`, `Community 1009`, `Community 501`, `Community 502`, `Community 1015`, `Community 1526`?**
   _High betweenness centrality (0.039) - this node is a cross-community bridge._
-- **Why does `Arr` connect `Community 20` to `Community 512`, `Community 516`, `Community 4`, `Community 524`, `Community 1037`, `Community 13`, `Community 527`, `Community 1039`, `Community 1556`, `Community 533`, `Community 4119`, `Community 536`, `Community 1052`, `Community 1055`, `Community 545`, `Community 36`, `Community 1573`, `Community 548`, `Community 1064`, `Community 1578`, `Community 7211`, `Community 559`, `Community 1072`, `Community 1073`, `Community 2608`, `Community 567`, `Community 1591`, `Community 3132`, `Community 4669`, `Community 1598`, `Community 69`, `Community 1611`, `Community 588`, `Community 589`, `Community 1621`, `Community 3166`, `Community 614`, `Community 615`, `Community 3176`, `Community 1643`, `Community 1132`, `Community 620`, `Community 622`, `Community 2156`, `Community 636`, `Community 1151`, `Community 1668`, `Community 1185`, `Community 1188`, `Community 2222`, `Community 1208`, `Community 702`, `Community 703`, `Community 1740`, `Community 727`, `Community 728`, `Community 729`, `Community 734`, `Community 1247`, `Community 1248`, `Community 741`, `Community 1258`, `Community 1263`, `Community 752`, `Community 1264`, `Community 1265`, `Community 1779`, `Community 1777`, `Community 751`, `Community 758`, `Community 247`, `Community 1784`, `Community 763`, `Community 254`, `Community 257`, `Community 1284`, `Community 1798`, `Community 262`, `Community 264`, `Community 267`, `Community 278`, `Community 1305`, `Community 3357`, `Community 286`, `Community 289`, `Community 2339`, `Community 292`, `Community 808`, `Community 1320`, `Community 298`, `Community 301`, `Community 813`, `Community 303`, `Community 306`, `Community 309`, `Community 822`, `Community 312`, `Community 313`, `Community 830`, `Community 320`, `Community 833`, `Community 2375`, `Community 328`, `Community 329`, `Community 327`, `Community 336`, `Community 338`, `Community 343`, `Community 857`, `Community 346`, `Community 347`, `Community 351`, `Community 1887`, `Community 354`, `Community 356`, `Community 2917`, `Community 1382`, `Community 357`, `Community 358`, `Community 359`, `Community 363`, `Community 1389`, `Community 1904`, `Community 368`, `Community 885`, `Community 888`, `Community 378`, `Community 894`, `Community 1918`, `Community 398`, `Community 911`, `Community 912`, `Community 913`, `Community 914`, `Community 403`, `Community 9109`, `Community 1945`, `Community 416`, `Community 929`, `Community 932`, `Community 420`, `Community 934`, `Community 1958`, `Community 426`, `Community 939`, `Community 429`, `Community 1455`, `Community 1457`, `Community 434`, `Community 433`, `Community 437`, `Community 439`, `Community 440`, `Community 1465`, `Community 443`, `Community 447`, `Community 964`, `Community 461`, `Community 462`, `Community 1487`, `Community 463`, `Community 3028`, `Community 468`, `Community 3033`, `Community 1504`, `Community 481`, `Community 994`, `Community 483`, `Community 3047`, `Community 1000`, `Community 3559`, `Community 3562`, `Community 2555`, `Community 1533`?**
+- **Why does `Arr` connect `Community 20` to `Community 512`, `Community 516`, `Community 4`, `Community 524`, `Community 1037`, `Community 13`, `Community 527`, `Community 1039`, `Community 1556`, `Community 533`, `Community 4119`, `Community 536`, `Community 1052`, `Community 1055`, `Community 545`, `Community 36`, `Community 1573`, `Community 548`, `Community 1064`, `Community 1578`, `Community 7211`, `Community 559`, `Community 1072`, `Community 1073`, `Community 567`, `Community 1591`, `Community 1081`, `Community 3132`, `Community 4669`, `Community 1598`, `Community 2621`, `Community 69`, `Community 588`, `Community 589`, `Community 1621`, `Community 3166`, `Community 614`, `Community 615`, `Community 3176`, `Community 1643`, `Community 1132`, `Community 620`, `Community 622`, `Community 2156`, `Community 636`, `Community 1151`, `Community 1668`, `Community 1185`, `Community 1188`, `Community 2222`, `Community 1208`, `Community 702`, `Community 703`, `Community 1740`, `Community 727`, `Community 728`, `Community 729`, `Community 734`, `Community 1247`, `Community 1248`, `Community 741`, `Community 1258`, `Community 1263`, `Community 752`, `Community 1264`, `Community 1265`, `Community 1779`, `Community 1777`, `Community 751`, `Community 758`, `Community 247`, `Community 1784`, `Community 763`, `Community 254`, `Community 257`, `Community 1284`, `Community 1798`, `Community 262`, `Community 264`, `Community 267`, `Community 278`, `Community 1305`, `Community 3357`, `Community 286`, `Community 289`, `Community 2339`, `Community 292`, `Community 808`, `Community 1320`, `Community 298`, `Community 301`, `Community 813`, `Community 303`, `Community 306`, `Community 309`, `Community 822`, `Community 312`, `Community 313`, `Community 830`, `Community 320`, `Community 833`, `Community 2375`, `Community 328`, `Community 329`, `Community 327`, `Community 336`, `Community 338`, `Community 343`, `Community 857`, `Community 346`, `Community 347`, `Community 351`, `Community 1887`, `Community 354`, `Community 356`, `Community 2917`, `Community 1382`, `Community 357`, `Community 358`, `Community 359`, `Community 363`, `Community 1389`, `Community 1904`, `Community 368`, `Community 885`, `Community 888`, `Community 378`, `Community 894`, `Community 1918`, `Community 398`, `Community 911`, `Community 912`, `Community 913`, `Community 914`, `Community 403`, `Community 9109`, `Community 1945`, `Community 416`, `Community 929`, `Community 932`, `Community 420`, `Community 934`, `Community 1958`, `Community 426`, `Community 939`, `Community 429`, `Community 1455`, `Community 1457`, `Community 434`, `Community 433`, `Community 437`, `Community 439`, `Community 440`, `Community 1465`, `Community 443`, `Community 447`, `Community 964`, `Community 461`, `Community 462`, `Community 1487`, `Community 463`, `Community 466`, `Community 468`, `Community 3028`, `Community 3033`, `Community 1504`, `Community 481`, `Community 994`, `Community 483`, `Community 3047`, `Community 1000`, `Community 3559`, `Community 3562`, `Community 2555`, `Community 1533`?**
   _High betweenness centrality (0.028) - this node is a cross-community bridge._
-- **Why does `json_encode()` connect `Community 1132` to `Community 1034`, `Community 1039`, `Community 4114`, `Community 1055`, `Community 31`, `Community 545`, `Community 550`, `Community 572`, `Community 69`, `Community 2129`, `Community 594`, `Community 2136`, `Community 1627`, `Community 2140`, `Community 2148`, `Community 1643`, `Community 619`, `Community 3189`, `Community 1153`, `Community 2189`, `Community 1168`, `Community 670`, `Community 1186`, `Community 1206`, `Community 1211`, `Community 701`, `Community 725`, `Community 1246`, `Community 734`, `Community 1764`, `Community 248`, `Community 254`, `Community 264`, `Community 1293`, `Community 276`, `Community 278`, `Community 286`, `Community 287`, `Community 806`, `Community 1321`, `Community 298`, `Community 301`, `Community 303`, `Community 310`, `Community 313`, `Community 1342`, `Community 320`, `Community 1351`, `Community 3400`, `Community 1352`, `Community 1880`, `Community 346`, `Community 349`, `Community 353`, `Community 1904`, `Community 886`, `Community 397`, `Community 1939`, `Community 1945`, `Community 2467`, `Community 419`, `Community 427`, `Community 944`, `Community 948`, `Community 3000`, `Community 1465`, `Community 1470`, `Community 450`, `Community 1990`, `Community 456`, `Community 462`, `Community 980`, `Community 1496`, `Community 3033`, `Community 1500`, `Community 1511`, `Community 2031`?**
+- **Why does `json_encode()` connect `Community 1132` to `Community 1153`, `Community 264`, `Community 1034`, `Community 2189`, `Community 1293`, `Community 1039`, `Community 1168`, `Community 397`, `Community 4114`, `Community 1939`, `Community 276`, `Community 278`, `Community 1945`, `Community 286`, `Community 1055`, `Community 31`, `Community 670`, `Community 1186`, `Community 2467`, `Community 545`, `Community 287`, `Community 806`, `Community 550`, `Community 419`, `Community 1321`, `Community 298`, `Community 427`, `Community 301`, `Community 303`, `Community 944`, `Community 948`, `Community 1206`, `Community 310`, `Community 3000`, `Community 1465`, `Community 313`, `Community 1211`, `Community 572`, `Community 701`, `Community 1342`, `Community 1470`, `Community 320`, `Community 450`, `Community 69`, `Community 1351`, `Community 3400`, `Community 1352`, `Community 456`, `Community 462`, `Community 2129`, `Community 594`, `Community 980`, `Community 725`, `Community 1496`, `Community 3033`, `Community 346`, `Community 1627`, `Community 2140`, `Community 2136`, `Community 1246`, `Community 734`, `Community 349`, `Community 353`, `Community 1500`, `Community 1764`, `Community 2148`, `Community 1511`, `Community 1643`, `Community 619`, `Community 2031`, `Community 1904`, `Community 1880`, `Community 3189`, `Community 886`, `Community 248`, `Community 254`?**
   _High betweenness centrality (0.017) - this node is a cross-community bridge._
 - **Are the 445 inferred relationships involving `Arr` (e.g. with `.shouldLogin()` and `.raw()`) actually correct?**
   _`Arr` has 445 INFERRED edges - model-reasoned connections that need verification._

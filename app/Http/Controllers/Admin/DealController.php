@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
 use App\Models\Deal;
 use App\Models\DealSlot;
 use App\Models\MenuItem;
@@ -26,7 +25,6 @@ class DealController extends Controller
         return view('admin.deals.edit', [
             'title'      => 'New Deal',
             'deal'       => null,
-            'categories' => Category::orderBy('sort_order')->get(),
             'menuItems'  => MenuItem::where('is_available', true)->orderBy('name')->get(),
         ]);
     }
@@ -46,11 +44,10 @@ class DealController extends Controller
 
     public function edit(Deal $deal): View
     {
-        $deal->load(['slots.categories', 'slots.menuItems']);
+        $deal->load(['slots.menuItems']);
         return view('admin.deals.edit', [
             'title'      => 'Edit Deal — ' . $deal->name,
             'deal'       => $deal,
-            'categories' => Category::orderBy('sort_order')->get(),
             'menuItems'  => MenuItem::where('is_available', true)->orderBy('name')->get(),
         ]);
     }
@@ -129,9 +126,6 @@ class DealController extends Controller
                 'sort_order'  => $i,
             ]);
 
-            if (!empty($s['category_ids'])) {
-                $slot->categories()->sync(array_filter((array) $s['category_ids'], 'is_numeric'));
-            }
             if (!empty($s['item_ids'])) {
                 $slot->menuItems()->sync(array_filter((array) $s['item_ids'], 'is_numeric'));
             }

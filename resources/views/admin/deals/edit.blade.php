@@ -124,7 +124,7 @@
       <div>
         <h2 class="font-mono text-[10px] uppercase tracking-widest text-on-surface-variant">2. Slots</h2>
         <p class="font-sans text-xs text-on-surface-variant mt-1">
-          Define what the customer picks. Categories = whole category allowed. Items = specific items only.
+          Define what the customer picks. Manually choose which items are allowed in each slot.
         </p>
       </div>
       <button type="button" @click="addSlot()"
@@ -182,29 +182,14 @@
             </label>
           </div>
 
-          {{-- Categories --}}
+          {{-- Items in this slot (manual only — no category auto-include) --}}
           <div class="mb-3">
-            <p class="admin-label mb-2">Eligible Categories <span class="normal-case font-sans font-normal tracking-normal">(any item in these categories)</span></p>
-            <div class="flex flex-wrap gap-2">
-              @foreach($categories as $cat)
-              <label class="flex items-center gap-1.5 cursor-pointer px-3 py-1.5 border transition-colors"
-                     :class="slot.category_ids.includes({{ $cat->id }}) ? 'border-primary bg-primary/5 text-primary' : 'border-surface-variant text-on-surface-variant hover:border-on-surface'">
-                <input type="checkbox" :name="'slots['+i+'][category_ids][]'" value="{{ $cat->id }}"
-                       @change="toggleCat(slot, {{ $cat->id }})"
-                       :checked="slot.category_ids.includes({{ $cat->id }})"
-                       class="sr-only">
-                <span class="font-mono text-[10px] uppercase">{{ $cat->name }}</span>
-              </label>
-              @endforeach
-            </div>
-          </div>
-
-          {{-- Specific items override --}}
-          <details class="mt-2">
-            <summary class="font-mono text-[10px] uppercase tracking-widest text-on-surface-variant cursor-pointer hover:text-primary transition-colors">
-              Override with specific items (optional)
-            </summary>
-            <div class="mt-3 max-h-48 overflow-y-auto border border-surface-variant bg-white p-3">
+            <p class="admin-label mb-2">
+              Items in This Slot *
+              <span class="normal-case font-sans font-normal tracking-normal" :class="slot.item_ids.length === 0 ? 'text-brand-error' : 'text-on-surface-variant'"
+                    x-text="slot.item_ids.length === 0 ? '(pick at least one item)' : '(' + slot.item_ids.length + ' selected)'"></span>
+            </p>
+            <div class="max-h-48 overflow-y-auto border border-surface-variant bg-white p-3">
               <div class="grid grid-cols-2 md:grid-cols-3 gap-1">
                 @foreach($menuItems as $item)
                 <label class="flex items-center gap-1.5 cursor-pointer p-1.5 hover:bg-surface-container-low rounded transition-colors">
@@ -217,7 +202,7 @@
                 @endforeach
               </div>
             </div>
-          </details>
+          </div>
         </div>
       </template>
 
@@ -252,19 +237,12 @@ function dealBuilder(existingSlots, initialType) {
         max_qty: 1,
         is_required: true,
         is_free: false,
-        category_ids: [],
         item_ids: [],
       });
     },
 
     removeSlot(key) {
       this.slots = this.slots.filter(s => s._key !== key);
-    },
-
-    toggleCat(slot, id) {
-      const idx = slot.category_ids.indexOf(id);
-      if (idx >= 0) slot.category_ids.splice(idx, 1);
-      else slot.category_ids.push(id);
     },
 
     toggleItem(slot, id) {

@@ -28,22 +28,9 @@ class DealSlot extends Model
         return $this->belongsToMany(MenuItem::class, 'deal_slot_menu_item');
     }
 
-    /** Returns eligible items: specific items if set, else all from allowed categories. */
+    /** Returns eligible items: only the items manually assigned to this slot. */
     public function eligibleItems(): Collection
     {
-        $specific = $this->menuItems()->where('is_available', true)->orderBy('sort_order')->get();
-        if ($specific->isNotEmpty()) {
-            return $specific;
-        }
-
-        $categoryIds = $this->categories()->pluck('categories.id');
-        if ($categoryIds->isEmpty()) {
-            return collect();
-        }
-
-        return MenuItem::where('is_available', true)
-            ->whereIn('category_id', $categoryIds)
-            ->orderBy('sort_order')
-            ->get();
+        return $this->menuItems()->where('is_available', true)->orderBy('sort_order')->get();
     }
 }

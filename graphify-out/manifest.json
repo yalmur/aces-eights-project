@@ -135,8 +135,8 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\Admin\\DealController.php": {
-    "mtime": 1783370963.0944827,
-    "ast_hash": "32553e41dfb1544558cd371e2c8d2682",
+    "mtime": 1783373037.6794264,
+    "ast_hash": "d5125d37867f19a7a7171d6014e75d27",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\Admin\\DeliveryController.php": {
@@ -210,13 +210,13 @@
     "semantic_hash": "9a643c27d66d40d0ea6dbe10940a9a18"
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Models\\Deal.php": {
-    "mtime": 1783367417.8187592,
-    "ast_hash": "ea931ef54c1140514daaed23b2f9d114",
+    "mtime": 1783372942.185006,
+    "ast_hash": "a0306274b91b22ee6f68322a56577faa",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Models\\DealSlot.php": {
-    "mtime": 1783367427.4410348,
-    "ast_hash": "3a96535dbd02bb92c68836c62fb5fc0e",
+    "mtime": 1783372914.3580642,
+    "ast_hash": "a16505a2d3821907afe8a186a43b1d2f",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Models\\DeliveryZone.php": {
@@ -665,8 +665,8 @@
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\admin\\deals\\edit.blade.php": {
-    "mtime": 1783370754.0193422,
-    "ast_hash": "bf2e914d8776e91684ed87c08d2df4d6",
+    "mtime": 1783373062.1490574,
+    "ast_hash": "a1f3b869f7a25cd4c9cfc7ec8c4ea1d6",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\admin\\deals\\index.blade.php": {
