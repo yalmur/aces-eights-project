@@ -63,6 +63,7 @@ class MenuItemController extends Controller
             'is_featured'    => 'boolean',
             'is_vegetarian'  => 'boolean',
             'is_vegan'       => 'boolean',
+            'is_customizable'=> 'boolean',
             'allergens'     => 'nullable|array',
             'allergens.*'   => 'exists:allergens,id',
             'ingredients'   => 'nullable|array',
@@ -88,6 +89,7 @@ class MenuItemController extends Controller
             'is_featured'   => $request->boolean('is_featured'),
             'is_vegetarian' => $request->boolean('is_vegetarian'),
             'is_vegan'      => $request->boolean('is_vegan'),
+            'is_customizable' => $request->boolean('is_customizable'),
             'sort_order'   => MenuItem::max('sort_order') + 1,
             'image_path'   => $imagePath,
         ]);
@@ -130,6 +132,7 @@ class MenuItemController extends Controller
             'is_featured'    => 'boolean',
             'is_vegetarian'  => 'boolean',
             'is_vegan'       => 'boolean',
+            'is_customizable'=> 'boolean',
             'allergens'     => 'nullable|array',
             'allergens.*'   => 'exists:allergens,id',
             'ingredients'   => 'nullable|array',
@@ -137,6 +140,7 @@ class MenuItemController extends Controller
             'related_items' => 'nullable|array',
             'related_items.*'=> 'exists:menu_items,id',
             'image'         => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'remove_image'  => 'nullable|boolean',
         ]);
 
         // Handle image upload
@@ -145,6 +149,9 @@ class MenuItemController extends Controller
                 Storage::disk('public')->delete($menuItem->image_path);
             }
             $menuItem->image_path = $request->file('image')->store('menu', 'public');
+        } elseif ($request->boolean('remove_image') && $menuItem->image_path) {
+            Storage::disk('public')->delete($menuItem->image_path);
+            $menuItem->image_path = null;
         }
 
         $menuItem->update([
@@ -157,6 +164,7 @@ class MenuItemController extends Controller
             'is_featured'   => $request->boolean('is_featured'),
             'is_vegetarian' => $request->boolean('is_vegetarian'),
             'is_vegan'      => $request->boolean('is_vegan'),
+            'is_customizable' => $request->boolean('is_customizable'),
             'image_path'   => $menuItem->image_path,
         ]);
 

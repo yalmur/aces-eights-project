@@ -11,7 +11,7 @@ class OurMenuController extends Controller
     public function index(): View
     {
         $sections = Cache::remember('public.our-menu.sections', 300, function () {
-            $categories = Category::with('availableItems.allergens')->orderBy('sort_order')->get();
+            $categories = Category::with('availableItems.allergens', 'availableItems.baseIngredients', 'availableItems.relatedItems')->orderBy('sort_order')->get();
             return $categories
                 ->filter(fn ($cat) => $cat->availableItems->isNotEmpty())
                 ->map(fn ($cat) => [
@@ -25,7 +25,13 @@ class OurMenuController extends Controller
                         'desc'      => $item->description ?? '',
                         'price'     => number_format((float) $item->base_price, 2),
                         'basePrice' => (float) $item->base_price,
+                        'image'     => $item->hasStoredImage()
+                            ? asset('storage/' . $item->image_path)
+                            : 'https://placehold.co/400x300/e4e2e1/1b1c1c?text=' . urlencode($item->name),
                         'allergens' => $item->allergens->where('is_visible', true)->pluck('name')->values()->all(),
+                        'ingredients'     => $item->baseIngredients->pluck('name')->values()->all(),
+                        'relatedItems'    => $item->relatedItemsPayload(),
+                        'isCustomizable'  => $item->is_customizable,
                     ])->all(),
                 ])
                 ->values()

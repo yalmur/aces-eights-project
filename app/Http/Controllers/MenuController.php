@@ -16,6 +16,7 @@ class MenuController extends Controller
             Category::with([
                 'availableItems.allergens',
                 'availableItems.baseIngredients',
+                'availableItems.relatedItems',
             ])
             ->orderBy('sort_order')
             ->get(),
@@ -31,12 +32,12 @@ class MenuController extends Controller
 
     public function show(string $slug): View
     {
-        $item = MenuItem::with(['category', 'allergens', 'baseIngredients'])
+        $item = MenuItem::with(['category', 'allergens', 'baseIngredients', 'relatedItems'])
             ->where('slug', $slug)
             ->where('is_available', true)
             ->firstOrFail();
 
-        $related = MenuItem::with(['allergens', 'category'])
+        $related = MenuItem::with(['allergens', 'category', 'baseIngredients', 'relatedItems'])
             ->where('category_id', $item->category_id)
             ->where('id', '!=', $item->id)
             ->where('is_available', true)

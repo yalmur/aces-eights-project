@@ -180,32 +180,48 @@
 <!-- Right Column: Media & Actions -->
 <div class="lg:col-span-5 space-y-12">
 <!-- Section 4: Image Upload -->
-<section class="industrial-border p-8 bg-surface-container-lowest">
+<section class="industrial-border p-8 bg-surface-container-lowest"
+  x-data="imageCropper(
+    {{ $item?->hasStoredImage() ? json_encode(asset('storage/' . $item->image_path)) : 'null' }},
+    {{ $item?->hasStoredImage() ? json_encode(basename($item->image_path)) : 'null' }}
+  )">
 <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-6 uppercase tracking-widest">Item Photography</h3>
-{{-- Existing image preview --}}
-@if($item?->hasStoredImage())
-<div class="mb-4 flex items-center gap-4">
-  <img src="{{ asset('storage/' . $item->image_path) }}" alt="{{ $item->name }}"
-       class="w-20 h-20 object-cover industrial-border">
+{{-- Selected/current image preview --}}
+<div class="mb-4 flex items-center gap-4" x-show="previewUrl" x-cloak>
+  <img :src="previewUrl" alt="Preview" class="w-20 h-20 object-cover industrial-border">
   <div>
     <p class="font-mono text-[10px] uppercase text-on-surface-variant">Current Image</p>
-    <p class="font-mono text-[10px] text-on-surface truncate max-w-[200px]">{{ basename($item->image_path) }}</p>
+    <p class="font-mono text-[10px] text-on-surface truncate max-w-[200px]" x-text="fileName"></p>
   </div>
 </div>
-@endif
 <div class="relative group cursor-pointer border-2 border-dashed border-industrial-gray h-80 flex flex-col items-center justify-center bg-surface overflow-hidden">
-<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" src="https://placehold.co/400x400/e4e2e1/1b1c1c?text=Upload+Photo" alt="Upload Photo"/>
-<div class="relative z-10 flex flex-col items-center text-on-surface text-center px-6">
+<img x-show="previewUrl" x-cloak :src="previewUrl" class="absolute inset-0 w-full h-full object-cover pointer-events-none" alt="Selected photo"/>
+<div class="relative z-10 flex flex-col items-center text-on-surface text-center px-6 pointer-events-none" x-show="!previewUrl">
 <span class="material-symbols-outlined text-4xl mb-4">cloud_upload</span>
 <p class="font-label-bold text-label-bold mb-1">Drag and drop or click</p>
 <p class="text-xs text-on-surface-variant">High-resolution JPEG or PNG. Max 2MB.</p>
 </div>
-<input type="file" name="image" accept="image/jpeg,image/png,image/jpg,image/webp"
+<input type="file" name="image" x-ref="fileInput" @change="onFileChange"
+       accept="image/jpeg,image/png,image/jpg,image/webp"
        class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
 </div>
+<input type="hidden" name="remove_image" x-ref="removeFlag" value="0">
 <div class="mt-4 flex gap-4">
-<button class="flex-1 py-2 industrial-border text-label-caps font-label-caps hover:bg-industrial-gray hover:text-white transition-colors" type="button">Edit Crop</button>
-<button class="flex-1 py-2 industrial-border text-label-caps font-label-caps hover:bg-error hover:text-white transition-colors" type="button">Remove</button>
+<button class="flex-1 py-2 industrial-border text-label-caps font-label-caps hover:bg-industrial-gray hover:text-white transition-colors disabled:opacity-40 disabled:cursor-not-allowed" type="button" :disabled="!previewUrl" @click="openCropper()">Edit Crop</button>
+<button class="flex-1 py-2 industrial-border text-label-caps font-label-caps hover:bg-error hover:text-white transition-colors disabled:opacity-40 disabled:cursor-not-allowed" type="button" :disabled="!previewUrl" @click="removeImage()">Remove</button>
+</div>
+
+{{-- Crop modal --}}
+<div x-show="cropping" x-cloak class="fixed inset-0 z-[100] bg-black/70 flex items-center justify-center p-6">
+  <div class="bg-surface-container-lowest industrial-border p-6 w-full max-w-lg">
+    <div class="h-96 bg-surface">
+      <img x-ref="cropImg" :src="previewUrl" class="max-w-full block" alt="Crop preview">
+    </div>
+    <div class="mt-4 flex gap-4">
+      <button type="button" class="flex-1 py-2 industrial-border text-label-caps font-label-caps hover:bg-industrial-gray hover:text-white transition-colors" @click="closeCropper()">Cancel</button>
+      <button type="button" class="flex-1 py-2 industrial-border gold-metallic text-label-caps font-label-caps" @click="applyCrop()">Apply Crop</button>
+    </div>
+  </div>
 </div>
 </section>
 <!-- Section 5: Status & Controls -->
@@ -244,6 +260,15 @@
 <div class="w-11 h-6 bg-industrial-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-700"></div>
 </label>
 </div>
+<div class="flex items-center justify-between">
+<span class="font-body-md">Customizable</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input type="hidden" name="is_customizable" value="0">
+<input name="is_customizable" type="checkbox" value="1" {{ old('is_customizable', $item?->is_customizable ?? true) ? 'checked' : '' }} class="sr-only peer"/>
+<div class="w-11 h-6 bg-industrial-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-oxblood-red"></div>
+</label>
+</div>
+<p class="text-[10px] font-mono text-on-surface-variant -mt-2">Turn off for items that can't be customised (e.g. drinks, desserts).</p>
 <div class="double-divider"></div>
 <div class="space-y-4">
 <button class="gold-metallic w-full py-4 text-on-primary font-headline-md text-headline-md industrial-border-thick active:scale-95 transition-transform" type="submit">

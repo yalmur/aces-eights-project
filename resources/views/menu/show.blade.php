@@ -98,7 +98,11 @@
             name: {{ json_encode($item->name) }},
             category: {{ json_encode($item->category->slug) }},
             basePrice: {{ (float) $item->base_price }},
-            allergens: {{ $allergenList }}
+            allergens: {{ $allergenList }},
+            image: {{ json_encode($imageUrl) }},
+            ingredients: {{ $item->baseIngredients->pluck('name')->values()->toJson() }},
+            relatedItems: {{ json_encode($item->relatedItemsPayload()) }},
+            isCustomizable: {{ json_encode($item->is_customizable) }}
           })"
           class="w-full bg-primary text-on-primary font-mono text-sm font-bold uppercase py-4 px-6 border-b-4 border-[#1b1c1c] hover:bg-primary/90 active:scale-[.99] transition-all flex items-center justify-center gap-3">
           <span class="material-symbols-outlined text-xl">add_shopping_cart</span>
@@ -130,7 +134,11 @@
                 name: {{ json_encode($rel->name) }},
                 category: {{ json_encode($rel->category->slug ?? $item->category->slug) }},
                 basePrice: {{ (float) $rel->base_price }},
-                allergens: {{ $relAllergens }}
+                allergens: {{ $relAllergens }},
+                image: {{ $rel->hasStoredImage() ? json_encode(asset('storage/' . $rel->image_path)) : json_encode('https://placehold.co/64x64/e4e2e1/1b1c1c?text=+') }},
+                ingredients: {{ $rel->baseIngredients->pluck('name')->values()->toJson() }},
+                relatedItems: {{ json_encode($rel->relatedItemsPayload()) }},
+                isCustomizable: {{ json_encode($rel->is_customizable) }}
               })"
               class="flex-shrink-0 w-9 h-9 flex items-center justify-center bg-surface-container border border-outline hover:bg-primary hover:text-on-primary hover:border-primary transition-colors">
               <span class="material-symbols-outlined text-[18px]">add</span>

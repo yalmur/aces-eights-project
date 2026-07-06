@@ -16,7 +16,7 @@ class MenuItem extends Model
     protected $fillable = [
         'category_id', 'name', 'slug', 'description',
         'base_price', 'image_path', 'is_available', 'is_featured', 'sort_order',
-        'is_vegetarian', 'is_vegan',
+        'is_vegetarian', 'is_vegan', 'is_customizable',
     ];
 
     public function hasStoredImage(): bool
@@ -28,8 +28,9 @@ class MenuItem extends Model
         'base_price'    => 'decimal:2',
         'is_available'  => 'boolean',
         'is_featured'   => 'boolean',
-        'is_vegetarian' => 'boolean',
-        'is_vegan'      => 'boolean',
+        'is_vegetarian'   => 'boolean',
+        'is_vegan'        => 'boolean',
+        'is_customizable' => 'boolean',
     ];
 
     public function category(): BelongsTo
@@ -55,6 +56,18 @@ class MenuItem extends Model
     public function isPizza(): bool
     {
         return $this->category?->slug === 'pizza';
+    }
+
+    public function relatedItemsPayload(): array
+    {
+        return $this->relatedItems->map(fn (self $r) => [
+            'id'    => $r->slug,
+            'name'  => $r->name,
+            'price' => (float) $r->base_price,
+            'image' => $r->hasStoredImage()
+                ? asset('storage/' . $r->image_path)
+                : 'https://placehold.co/64x64/e4e2e1/1b1c1c?text=+',
+        ])->values()->all();
     }
 
     public function getFormattedPriceAttribute(): string

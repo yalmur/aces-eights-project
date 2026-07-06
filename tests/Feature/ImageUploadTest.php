@@ -76,6 +76,23 @@ class ImageUploadTest extends TestCase
         Storage::disk('public')->assertExists($item->fresh()->image_path);
     }
 
+    public function test_admin_can_remove_image_without_replacement(): void
+    {
+        Storage::disk('public')->put('menu/existing.jpg', 'fake image');
+        $item = MenuItem::factory()->create(['image_path' => 'menu/existing.jpg']);
+
+        $this->actingAs($this->admin)->put("/admin/menu/{$item->id}", [
+            'name'         => $item->name,
+            'category_id'  => $item->category_id,
+            'base_price'   => $item->base_price,
+            'is_available' => '1',
+            'remove_image' => '1',
+        ]);
+
+        Storage::disk('public')->assertMissing('menu/existing.jpg');
+        $this->assertNull($item->fresh()->image_path);
+    }
+
     public function test_image_is_optional(): void
     {
         $category = Category::factory()->create();

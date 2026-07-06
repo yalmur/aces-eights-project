@@ -149,7 +149,11 @@
                         name: {{ json_encode($item->name) }},
                         category: '{{ $item->category->slug }}',
                         basePrice: {{ $item->base_price }},
-                        allergens: {{ $item->allergens->where('is_visible', true)->pluck('name') ->toJson() }}
+                        allergens: {{ $item->allergens->where('is_visible', true)->pluck('name') ->toJson() }},
+                        image: {{ $item->hasStoredImage() ? json_encode(asset('storage/' . $item->image_path)) : json_encode('https://placehold.co/400x300/e4e2e1/1b1c1c?text=' . urlencode($item->name)) }},
+                        ingredients: {{ $item->baseIngredients->pluck('name')->values()->toJson() }},
+                        relatedItems: {{ json_encode($item->relatedItemsPayload()) }},
+                        isCustomizable: {{ json_encode($item->is_customizable) }}
                       })"
                       class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                 <span class="material-symbols-outlined text-white text-[20px]">add</span>

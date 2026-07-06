@@ -406,6 +406,55 @@ class MenuItemTest extends TestCase
         ]);
     }
 
+    public function test_store_defaults_is_customizable_to_false_when_not_sent(): void
+    {
+        $category = Category::factory()->create();
+
+        $this->actingAs($this->admin)->post('/admin/menu', [
+            'name'        => 'Bottled Water',
+            'category_id' => $category->id,
+            'base_price'  => '2.00',
+        ]);
+
+        $this->assertDatabaseHas('menu_items', [
+            'name'            => 'Bottled Water',
+            'is_customizable' => false,
+        ]);
+    }
+
+    public function test_store_sets_is_customizable_true_when_checked(): void
+    {
+        $category = Category::factory()->create();
+
+        $this->actingAs($this->admin)->post('/admin/menu', [
+            'name'            => 'Custom Pizza',
+            'category_id'     => $category->id,
+            'base_price'      => '12.00',
+            'is_customizable' => '1',
+        ]);
+
+        $this->assertDatabaseHas('menu_items', [
+            'name'            => 'Custom Pizza',
+            'is_customizable' => true,
+        ]);
+    }
+
+    public function test_update_can_turn_off_is_customizable(): void
+    {
+        $item = MenuItem::factory()->create(['is_customizable' => true]);
+
+        $this->actingAs($this->admin)->put("/admin/menu/{$item->id}", [
+            'name'        => $item->name,
+            'category_id' => $item->category_id,
+            'base_price'  => $item->base_price,
+        ]);
+
+        $this->assertDatabaseHas('menu_items', [
+            'id'              => $item->id,
+            'is_customizable' => false,
+        ]);
+    }
+
     public function test_store_syncs_related_items_via_pivot(): void
     {
         $category = Category::factory()->create();

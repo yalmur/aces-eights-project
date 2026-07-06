@@ -22,8 +22,12 @@
        @click.stop>
 
     {{-- Header --}}
-    <div class="px-6 py-5 border-b border-outline-variant flex justify-between items-start flex-shrink-0">
-      <div>
+    <div class="px-6 py-5 border-b border-outline-variant flex justify-between items-start gap-4 flex-shrink-0">
+      <img x-show="$store.cart.drawerItem?.image" x-cloak
+           :src="$store.cart.drawerItem?.image"
+           :alt="$store.cart.drawerItem?.name"
+           class="w-16 h-16 object-cover border border-outline-variant flex-shrink-0">
+      <div class="flex-1 min-w-0">
         <h2 class="font-serif text-xl font-bold text-on-surface"
             x-text="$store.cart.drawerItem?.name ?? ''"></h2>
         <p class="font-mono text-xs text-primary mt-1"
@@ -40,8 +44,8 @@
     {{-- Scrollable body --}}
     <div class="flex-1 overflow-y-auto px-6 py-6 space-y-8">
 
-      {{-- SIZE — pizza only --}}
-      <div x-show="$store.cart.drawerItem?.category === 'pizza'">
+      {{-- SIZE — pizza only, customizable items only --}}
+      <div x-show="$store.cart.drawerIsCustomizable && $store.cart.drawerItem?.category === 'pizza'">
         <h4 class="label-caps text-on-surface-variant mb-4">Choose Size</h4>
         <div class="grid grid-cols-2 gap-3">
           <button @click="$store.cart.setSize('12&quot; Standard', 0)"
@@ -63,8 +67,8 @@
         </div>
       </div>
 
-      {{-- CRUST — pizza only --}}
-      <div x-show="$store.cart.drawerItem?.category === 'pizza'">
+      {{-- CRUST — pizza only, customizable items only --}}
+      <div x-show="$store.cart.drawerIsCustomizable && $store.cart.drawerItem?.category === 'pizza'">
         <h4 class="label-caps text-on-surface-variant mb-4">Crust</h4>
         <div class="flex flex-col gap-2">
           <template x-for="[crust, extra, label] in [
@@ -85,8 +89,8 @@
         </div>
       </div>
 
-      {{-- INGREDIENTS — pizza only, pre-checked, uncheck to remove --}}
-      <div x-show="$store.cart.drawerItem?.category === 'pizza' && $store.cart.drawerBaseIngredients.length > 0">
+      {{-- INGREDIENTS — any item with recorded base ingredients, pre-checked, uncheck to remove --}}
+      <div x-show="$store.cart.drawerIsCustomizable && $store.cart.drawerBaseIngredients.length > 0">
         <h4 class="label-caps text-on-surface-variant mb-1">Ingredients</h4>
         <p class="font-mono text-[10px] text-on-surface-variant mb-4">Uncheck boxes to remove base ingredients</p>
         <div class="flex flex-col gap-2">
@@ -113,8 +117,8 @@
         </div>
       </div>
 
-      {{-- TOPPINGS — pizza only, full 25-item list --}}
-      <div x-show="$store.cart.drawerItem?.category === 'pizza'">
+      {{-- TOPPINGS — pizza only, customizable items only, full 25-item list --}}
+      <div x-show="$store.cart.drawerIsCustomizable && $store.cart.drawerItem?.category === 'pizza'">
         <h4 class="label-caps text-on-surface-variant mb-4">Toppings</h4>
         <div class="grid grid-cols-1 gap-2">
           <template x-for="topping in $store.cart.allToppings" :key="topping.name">
@@ -136,6 +140,26 @@
               <span class="label-caps text-primary text-[10px]"
                     x-text="'+£' + topping.price.toFixed(2)"></span>
             </button>
+          </template>
+        </div>
+      </div>
+
+      {{-- UPSELLING & SIDES — customizable items only, admin-curated related items --}}
+      <div x-show="$store.cart.drawerIsCustomizable && ($store.cart.drawerItem?.relatedItems ?? []).length > 0" x-cloak>
+        <h4 class="label-caps text-on-surface-variant mb-4">Add a Side?</h4>
+        <div class="flex flex-col gap-2">
+          <template x-for="related in ($store.cart.drawerItem?.relatedItems ?? [])" :key="related.id">
+            <div class="flex items-center gap-3 px-3 py-2 border border-outline-variant bg-surface-container-low">
+              <img :src="related.image" :alt="related.name" class="w-10 h-10 object-cover flex-shrink-0 border border-outline-variant">
+              <div class="flex-1 min-w-0">
+                <p class="font-sans text-sm text-on-surface truncate" x-text="related.name"></p>
+                <p class="font-mono text-[10px] text-primary" x-text="'+£' + related.price.toFixed(2)"></p>
+              </div>
+              <button @click="$store.cart.addRelatedToCart(related)" type="button"
+                      class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-surface-container border border-outline hover:bg-primary hover:text-on-primary hover:border-primary transition-colors">
+                <span class="material-symbols-outlined text-[18px]">add</span>
+              </button>
+            </div>
           </template>
         </div>
       </div>

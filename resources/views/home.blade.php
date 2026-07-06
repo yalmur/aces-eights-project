@@ -184,7 +184,7 @@
 <div class="mt-6 flex justify-between items-center">
 <span class="font-label-bold text-label-bold text-primary-container">£{{ number_format($loop_item->base_price, 2) }}</span>
 <button class="text-on-surface hover:text-primary transition-colors"
-        @click="$store.cart.openDrawer({ id: {{ json_encode($loop_item->slug) }}, name: {{ json_encode($loop_item->name) }}, category: {{ json_encode($loop_item->category->slug ?? '') }}, basePrice: {{ (float) $loop_item->base_price }}, allergens: {{ $loop_item->allergens->where('is_visible', true)->pluck('name')->values()->toJson() }} })"
+        @click="$store.cart.openDrawer({ id: {{ json_encode($loop_item->slug) }}, name: {{ json_encode($loop_item->name) }}, category: {{ json_encode($loop_item->category->slug ?? '') }}, basePrice: {{ (float) $loop_item->base_price }}, allergens: {{ $loop_item->allergens->where('is_visible', true)->pluck('name')->values()->toJson() }}, image: {{ $loop_item->hasStoredImage() ? json_encode(asset('storage/' . $loop_item->image_path)) : json_encode('https://placehold.co/400x300/e4e2e1/1b1c1c?text=' . urlencode($loop_item->category->name ?? 'Item')) }}, ingredients: {{ $loop_item->baseIngredients->pluck('name')->values()->toJson() }}, relatedItems: {{ json_encode($loop_item->relatedItemsPayload()) }}, isCustomizable: {{ json_encode($loop_item->is_customizable) }} })"
         aria-label="Add {{ $loop_item->name }} to cart">
 <span class="material-symbols-outlined">add_circle</span>
 </button>
