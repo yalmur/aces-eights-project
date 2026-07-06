@@ -95,6 +95,7 @@ class DealController extends Controller
             'slug'           => 'nullable|string|max:120|unique:deals,slug' . ($excludeId ? ",{$excludeId}" : ''),
             'description'    => 'nullable|string|max:500',
             'deal_type'      => 'required|in:bundle,bogo,percentage_off,fixed_off',
+            'custom_label'   => 'nullable|string|max:120',
             'price'          => 'nullable|numeric|min:0',
             'discount_value' => 'nullable|numeric|min:0',
             'is_active'      => 'boolean',

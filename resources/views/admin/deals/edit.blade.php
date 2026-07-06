@@ -48,6 +48,13 @@
       </div>
     </div>
 
+    <div class="mb-6">
+      <label class="admin-label" for="custom_label">Custom Label <span class="normal-case font-sans font-normal tracking-normal">(optional — overrides the auto-generated badge text, e.g. "Family Deal" on a Bundle)</span></label>
+      <input id="custom_label" name="custom_label" type="text" maxlength="120"
+             value="{{ old('custom_label', $deal?->custom_label) }}"
+             class="admin-input w-full" placeholder="Leave blank to use the default label">
+    </div>
+
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
       {{-- Price: bundle only --}}
       <div x-show="dealType === 'bundle'">

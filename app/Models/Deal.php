@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 class Deal extends Model
 {
     protected $fillable = [
-        'name', 'slug', 'description', 'image_path', 'deal_type',
+        'name', 'slug', 'description', 'image_path', 'deal_type', 'custom_label',
         'price', 'discount_value', 'is_active', 'starts_at', 'ends_at', 'sort_order',
     ];
 
@@ -37,6 +37,10 @@ class Deal extends Model
 
     public function getTypeLabelAttribute(): string
     {
+        if ($this->custom_label) {
+            return $this->custom_label;
+        }
+
         return match ($this->deal_type) {
             'bundle'         => 'Bundle — £' . number_format($this->price, 2),
             'bogo'           => 'Buy 1 Get 1 Free',
