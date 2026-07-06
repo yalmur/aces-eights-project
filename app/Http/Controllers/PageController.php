@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactMessage;
+use App\Models\Deal;
 use App\Models\Promotion;
 use App\Models\Setting;
 use Illuminate\Http\RedirectResponse;
@@ -19,7 +20,10 @@ class PageController extends Controller
 
     public function deals(): View
     {
-        $deals = Promotion::active()->orderBy('created_at', 'desc')->get();
+        $deals = Deal::active()
+            ->with(['slots.categories', 'slots.menuItems'])
+            ->orderBy('sort_order')
+            ->get();
         return view('deals', ['title' => 'Deals & Offers', 'deals' => $deals]);
     }
 

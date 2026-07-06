@@ -24,6 +24,7 @@
   <x-footer />
 
   <x-cart-drawer />
+  <x-deal-drawer />
 
   @livewireScripts
 </body>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Allergen;
 use App\Models\Category;
+use App\Models\Deal;
 use App\Models\MenuItem;
 use App\Models\Topping;
 use Illuminate\Support\Facades\Cache;
@@ -28,11 +29,17 @@ class MenuController extends Controller
             Allergen::where('is_visible', true)->orderBy('sort_order')->get(),
         ]);
 
+        $deals = Deal::active()
+            ->with(['slots.categories', 'slots.menuItems'])
+            ->orderBy('sort_order')
+            ->get();
+
         return view('menu.index', [
             'title'      => 'Order Now',
             'categories' => $categories,
             'toppings'   => $toppings,
             'allergens'  => $allergens,
+            'deals'      => $deals,
         ]);
     }
 

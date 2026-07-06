@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Deal;
 use App\Models\DeliveryZone;
 use App\Models\MenuItem;
 use App\Models\MenuItemCrust;
@@ -106,17 +107,27 @@ class CheckoutController extends Controller
         }
         $user        = Auth::user();
 
-        $slugs         = array_column($cartItems, 'id');
-        $menuItems     = MenuItem::with(['sizes', 'crusts'])->whereIn('slug', $slugs)->where('is_available', true)->get()->keyBy('slug');
-        $toppingNames  = collect($cartItems)->flatMap(fn($ci) => array_column($ci['toppings'] ?? [], 'name'))->unique()->values();
+        $regularItems = array_filter($cartItems, fn ($ci) => empty($ci['isDeal']));
+        $dealItems    = array_filter($cartItems, fn ($ci) => !empty($ci['isDeal']));
+
+        $slugs         = array_column(array_values($regularItems), 'id');
+        $menuItems     = $slugs
+            ? MenuItem::with(['sizes', 'crusts'])->whereIn('slug', $slugs)->where('is_available', true)->get()->keyBy('slug')
+            : collect();
+        $toppingNames  = collect($regularItems)->flatMap(fn($ci) => array_column($ci['toppings'] ?? [], 'name'))->unique()->values();
         $toppingPrices = $toppingNames->isNotEmpty()
             ? Topping::whereIn('name', $toppingNames)->where('is_available', true)->get()->pluck('price', 'name')
+            : collect();
+
+        $dealIds    = array_column(array_values($dealItems), 'dealId');
+        $dealModels = $dealIds
+            ? Deal::whereIn('id', $dealIds)->where('is_active', true)->get()->keyBy('id')
             : collect();
 
         $orderItems = [];
         $subtotal   = 0;
 
-        foreach ($cartItems as $ci) {
+        foreach ($regularItems as $ci) {
             $menuItem = $menuItems[$ci['id'] ?? ''] ?? null;
             if (!$menuItem) {
                 return back()->withInput()->withErrors(['cart_items' => 'One or more items are unavailable.']);
@@ -142,6 +153,8 @@ class CheckoutController extends Controller
 
             $orderItems[] = [
                 'menu_item_id'        => $menuItem->id,
+                'deal_id'             => null,
+                'deal_selections'     => null,
                 'name'                => $menuItem->name,
                 'qty'                 => $qty,
                 'unit_price'          => (float) $menuItem->base_price,
@@ -151,6 +164,35 @@ class CheckoutController extends Controller
                 'crust_extra'         => $crustExtra,
                 'added_toppings'      => $toppings,
                 'removed_ingredients' => $ci['removedIngredients'] ?? [],
+                'instructions'        => $ci['instructions'] ?? null,
+                'line_total'          => $lineTotal,
+            ];
+        }
+
+        foreach ($dealItems as $ci) {
+            $deal = $dealModels[$ci['dealId'] ?? ''] ?? null;
+            if (!$deal) {
+                return back()->withInput()->withErrors(['cart_items' => 'One or more deals are unavailable.']);
+            }
+
+            $qty       = min(20, max(1, (int) ($ci['qty'] ?? 1)));
+            $unitPrice = (float) ($ci['basePrice'] ?? $ci['dealPrice'] ?? 0);
+            $lineTotal = $unitPrice * $qty;
+            $subtotal += $lineTotal;
+
+            $orderItems[] = [
+                'menu_item_id'        => null,
+                'deal_id'             => $deal->id,
+                'deal_selections'     => json_encode($ci['dealSlots'] ?? []),
+                'name'                => $deal->name,
+                'qty'                 => $qty,
+                'unit_price'          => $unitPrice,
+                'size'                => null,
+                'crust'               => null,
+                'size_extra'          => 0,
+                'crust_extra'         => 0,
+                'added_toppings'      => [],
+                'removed_ingredients' => [],
                 'instructions'        => $ci['instructions'] ?? null,
                 'line_total'          => $lineTotal,
             ];

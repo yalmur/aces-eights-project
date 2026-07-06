@@ -64,6 +64,11 @@
         <span class="material-symbols-outlined text-[20px]">campaign</span>
         Promotions
       </a>
+      <a href="{{ route('admin.deals.index') }}"
+         class="admin-nav-item {{ request()->routeIs('admin.deals.*') ? 'active' : '' }}">
+        <span class="material-symbols-outlined text-[20px]">local_offer</span>
+        Deals
+      </a>
       <p class="font-mono text-[9px] text-[#2B2B2B] px-4 pt-4 pb-1 uppercase tracking-widest">System</p>
       <a href="{{ route('admin.settings.index') }}"
          class="admin-nav-item {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">

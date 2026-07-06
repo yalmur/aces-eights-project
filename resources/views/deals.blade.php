@@ -1,115 +1,149 @@
 @extends('layouts.app')
+@push('head')
+<style>
+.deals-masthead { border-bottom: 4px double #690008; padding-bottom: 2rem; margin-bottom: 3rem; }
+.deals-masthead-rule { width:100%; height:1px; background:linear-gradient(90deg,transparent,#690008 20%,#690008 80%,transparent); margin:0.75rem 0; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+@endpush
 @section('content')
 
-<!-- Hero Banner -->
-<section class="relative bg-primary border-b-2 border-outline overflow-hidden">
-  <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24 text-center relative z-10">
-    <span class="font-label-bold text-label-bold text-on-primary-container uppercase tracking-widest block mb-4">Limited Time</span>
-    <h1 class="font-display text-display md:text-[64px] text-on-primary leading-[1.1] uppercase tracking-tighter mb-6">Deals &amp; Offers</h1>
-    <p class="font-body-lg text-body-lg text-on-primary-container max-w-xl mx-auto">
-      Use these codes at checkout to save on your next order. Forged for value, built to last.
+{{-- Masthead --}}
+<div class="max-w-container-max mx-auto px-6 lg:px-16 pt-20">
+    <div class="deals-masthead text-center">
+        <p class="font-mono text-[0.65rem] tracking-[0.3em] uppercase text-on-surface-variant mb-4">
+            Save More &middot; Order More &middot; Enjoy More
+        </p>
+        <div class="deals-masthead-rule"></div>
+        <h1 class="font-serif font-black uppercase tracking-[0.18em] text-4xl lg:text-5xl text-on-surface my-4">
+            Deals &amp; Offers
+        </h1>
+        <div class="deals-masthead-rule"></div>
+        <p class="font-mono text-[0.65rem] tracking-[0.3em] uppercase text-on-surface-variant mt-4">
+            Build your perfect meal &nbsp;&middot;&nbsp; Save every time
+        </p>
+    </div>
+</div>
+
+@if($deals->isNotEmpty())
+
+{{-- Deal type filter + cards --}}
+<div x-data="{ active: 'all' }">
+
+    {{-- Sticky filter bar --}}
+    <div class="sticky top-16 z-40 bg-surface/98 backdrop-blur-md border-b-2 border-[#690008]/30 shadow-sm">
+        <div class="max-w-container-max mx-auto px-6 md:px-16">
+            <div class="flex overflow-x-auto scrollbar-hide -mb-px">
+                <button @click="active = 'all'"
+                        :class="active === 'all' ? 'border-b-2 border-[#690008] text-[#690008] font-bold' : 'border-b-2 border-transparent text-on-surface-variant hover:text-on-surface'"
+                        class="px-4 py-3.5 font-mono text-[11px] uppercase tracking-widest whitespace-nowrap transition-colors flex-shrink-0">
+                    All Deals
+                </button>
+                @foreach($deals->pluck('deal_type')->unique() as $type)
+                <button @click="active = '{{ $type }}'"
+                        :class="active === '{{ $type }}' ? 'border-b-2 border-[#690008] text-[#690008] font-bold' : 'border-b-2 border-transparent text-on-surface-variant hover:text-on-surface'"
+                        class="px-4 py-3.5 font-mono text-[11px] uppercase tracking-widest whitespace-nowrap transition-colors flex-shrink-0">
+                    @php echo match($type) { 'bundle' => 'Bundles', 'bogo' => 'Buy 1 Get 1', 'percentage_off' => '% Off', 'fixed_off' => '£ Off', default => $type } @endphp
+                </button>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
+    {{-- Deal cards grid --}}
+    <div class="max-w-container-max mx-auto px-6 md:px-16 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            @foreach($deals as $deal)
+            @php $payload = $deal->toFrontendPayload(); @endphp
+            <div x-show="active === 'all' || active === '{{ $deal->deal_type }}'"
+                 class="group bg-surface border border-surface-variant hover:border-[#690008]/40 transition-all duration-300 overflow-hidden shadow-sm flex flex-col">
+
+                {{-- Image / placeholder --}}
+                @if($deal->image_path)
+                <div class="h-52 overflow-hidden flex-shrink-0">
+                    <img src="{{ asset('storage/' . $deal->image_path) }}" alt="{{ $deal->name }}"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                @else
+                <div class="h-52 bg-gradient-to-br from-[#690008]/10 to-[#690008]/5 flex flex-col items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-[56px] text-[#690008]/30 mb-2">local_offer</span>
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-[#690008]/40">{{ $deal->type_label }}</span>
+                </div>
+                @endif
+
+                <div class="p-6 flex flex-col flex-1">
+                    {{-- Badge + title --}}
+                    <div class="flex justify-between items-start gap-3 mb-3">
+                        <h3 class="font-serif text-xl font-bold text-on-surface leading-tight">{{ $deal->name }}</h3>
+                        <span class="font-mono text-[10px] font-bold uppercase tracking-wide px-2 py-1 flex-shrink-0
+                            @if($deal->deal_type === 'bundle') bg-[#690008] text-white
+                            @elseif($deal->deal_type === 'bogo') bg-green-700 text-white
+                            @elseif($deal->deal_type === 'percentage_off') bg-secondary-container text-on-secondary-container
+                            @else bg-surface-container-high text-on-surface
+                            @endif">
+                            {{ $deal->type_label }}
+                        </span>
+                    </div>
+
+                    @if($deal->description)
+                    <p class="font-sans text-sm text-on-surface-variant mb-4 flex-1">{{ $deal->description }}</p>
+                    @else
+                    <div class="flex-1"></div>
+                    @endif
+
+                    {{-- Slot pills (bundle/bogo) --}}
+                    @if($deal->hasSlots() && $deal->slots->isNotEmpty())
+                    <div class="flex flex-wrap gap-1.5 mb-5">
+                        @foreach($deal->slots as $slot)
+                        <span class="font-mono text-[10px] uppercase tracking-wide px-2 py-1 bg-surface-container border border-surface-variant text-on-surface-variant flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[12px]">check_box_outline_blank</span>
+                            {{ $slot->min_qty === $slot->max_qty ? $slot->max_qty.'×' : $slot->min_qty.'–'.$slot->max_qty.'×' }}
+                            {{ $slot->label }}
+                            @if($slot->is_free)<span class="text-green-700 font-bold">FREE</span>@endif
+                        </span>
+                        @endforeach
+                    </div>
+                    @endif
+
+                    {{-- Schedule badge --}}
+                    @if($deal->ends_at)
+                    <p class="font-mono text-[10px] text-on-surface-variant mb-4">
+                        <span class="material-symbols-outlined text-[13px] align-middle">schedule</span>
+                        Ends {{ $deal->ends_at->format('d M Y') }}
+                    </p>
+                    @endif
+
+                    {{-- CTA --}}
+                    <button @click="$store.dealCart.openDeal({{ json_encode($payload) }})"
+                            class="btn-primary w-full flex items-center justify-center gap-2 py-3 font-mono text-xs uppercase font-bold mt-auto">
+                        <span class="material-symbols-outlined text-[18px]">
+                            {{ in_array($deal->deal_type, ['bundle', 'bogo']) ? 'shopping_bag' : 'add_shopping_cart' }}
+                        </span>
+                        {{ in_array($deal->deal_type, ['bundle', 'bogo']) ? 'Build This Deal' : 'Add to Order' }}
+                    </button>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</div>
+
+@else
+
+{{-- Empty state --}}
+<div class="max-w-container-max mx-auto px-6 lg:px-16 py-24 text-center">
+    <span class="material-symbols-outlined text-[72px] text-on-surface-variant/30 block mb-6">local_offer</span>
+    <h2 class="font-serif text-2xl font-bold text-on-surface mb-3">No Active Deals Right Now</h2>
+    <p class="font-sans text-sm text-on-surface-variant mb-8 max-w-md mx-auto">
+        We're crafting something special. Check back soon for exclusive bundles and offers.
     </p>
-  </div>
-  <!-- Decorative cross-hatch overlay -->
-  <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: repeating-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%), repeating-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%); background-position: 0 0, 10px 10px; background-size: 20px 20px;"></div>
-</section>
+    <a href="{{ route('menu') }}" class="btn-primary inline-flex items-center gap-2 px-8 py-3 font-mono text-xs uppercase font-bold">
+        Browse Menu
+        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+    </a>
+</div>
 
-<div class="w-full h-2 border-t border-b border-outline my-0"></div>
-
-<!-- Active Deals Grid -->
-<section class="bg-surface py-16 md:py-20">
-  <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-
-    @if($deals->isNotEmpty())
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-      @foreach($deals as $deal)
-      <div class="border-2 border-outline bg-surface group hover:border-primary transition-colors duration-300 flex flex-col">
-        <!-- Deal type badge -->
-        <div class="px-6 pt-6 pb-4 border-b-2 border-outline bg-surface-container-low">
-          <div class="flex items-center justify-between mb-3">
-            <span class="font-mono text-[10px] font-bold uppercase tracking-widest px-3 py-1 border border-outline
-              @if($deal->type === 'percentage') bg-secondary-container text-on-secondary-container
-              @elseif($deal->type === 'fixed_amount') bg-primary-fixed text-on-primary-fixed
-              @elseif($deal->type === 'buy_one_get_one') bg-primary text-on-primary
-              @elseif($deal->type === 'multi_buy') bg-tertiary text-on-tertiary
-              @else bg-green-100 text-green-800
-              @endif">
-              @if($deal->type === 'percentage') {{ (float)$deal->value }}% OFF
-              @elseif($deal->type === 'fixed_amount') £{{ number_format($deal->value, 2) }} OFF
-              @elseif($deal->type === 'buy_one_get_one') BOGOF
-              @elseif($deal->type === 'multi_buy') 3 FOR 2
-              @else FREE DELIVERY
-              @endif
-            </span>
-            @if($deal->expires_at)
-            <span class="font-mono text-[10px] text-on-surface-variant">
-              Ends {{ $deal->expires_at->format('d M') }}
-            </span>
-            @endif
-          </div>
-          <h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">{{ $deal->name }}</h3>
-        </div>
-
-        <!-- Deal details -->
-        <div class="px-6 py-5 flex-1 flex flex-col">
-          <div class="space-y-3 flex-1">
-            @if($deal->min_order_amount)
-            <div class="flex items-center gap-2 text-on-surface-variant">
-              <span class="material-symbols-outlined text-sm">shopping_cart</span>
-              <span class="font-body-md text-body-md">Min. order: <strong class="text-on-surface">£{{ number_format($deal->min_order_amount, 2) }}</strong></span>
-            </div>
-            @endif
-            @if($deal->max_uses)
-            @php $remaining = max(0, $deal->max_uses - $deal->current_uses); @endphp
-            <div class="flex items-center gap-2 text-on-surface-variant">
-              <span class="material-symbols-outlined text-sm">confirmation_number</span>
-              <span class="font-body-md text-body-md">{{ $remaining }} use{{ $remaining !== 1 ? 's' : '' }} remaining</span>
-            </div>
-            @endif
-          </div>
-
-          <!-- Promo code display -->
-          <div class="mt-6 pt-4 border-t-2 border-dashed border-outline-variant">
-            <p class="font-mono text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2">Your Code</p>
-            <div class="flex items-center gap-3"
-                 x-data="{ copied: false }">
-              <code class="flex-1 bg-surface-container-high px-4 py-3 font-mono text-sm font-bold text-primary tracking-widest border border-outline text-center select-all">{{ $deal->code }}</code>
-              <button @click="navigator.clipboard.writeText('{{ $deal->code }}'); copied = true; setTimeout(() => copied = false, 2000)"
-                      class="px-4 py-3 border-2 border-outline font-mono text-[10px] font-bold uppercase hover:bg-primary hover:text-on-primary hover:border-primary transition-colors whitespace-nowrap"
-                      :class="copied ? 'bg-green-700 text-white border-green-700' : ''">
-                <span x-show="!copied">COPY</span>
-                <span x-show="copied" x-cloak>COPIED!</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      @endforeach
-    </div>
-
-    <!-- CTA -->
-    <div class="text-center mt-12 pt-8 border-t-2 border-outline">
-      <p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Ready to use your deal?</p>
-      <a href="{{ route('menu') }}" class="inline-flex items-center gap-2 bg-primary text-on-primary font-label-bold text-label-bold px-10 py-4 uppercase tracking-widest hover:brightness-110 transition-all border-b-4 border-primary-fixed-dim active:translate-y-1 active:border-b-0">
-        Order Now <span class="material-symbols-outlined text-base">arrow_forward</span>
-      </a>
-    </div>
-
-    @else
-    <!-- Empty state -->
-    <div class="text-center py-20 max-w-lg mx-auto">
-      <span class="material-symbols-outlined text-[64px] text-outline-variant mb-6">local_offer</span>
-      <h2 class="font-headline-md text-headline-md text-on-surface mb-4">No Active Deals Right Now</h2>
-      <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
-        We're cooking up something special. Check back soon for exclusive offers and discounts.
-      </p>
-      <a href="{{ route('menu') }}" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-on-surface font-label-bold text-label-bold uppercase tracking-widest hover:bg-on-surface hover:text-surface transition-colors">
-        Browse Menu <span class="material-symbols-outlined text-base">arrow_forward</span>
-      </a>
-    </div>
-    @endif
-
-  </div>
-</section>
+@endif
 
 @endsection

@@ -82,6 +82,9 @@ const cartStore = {
   },
 
   itemSummary(item) {
+    if (item.isDeal && item.dealSlots?.length) {
+      return item.dealSlots.map(s => s.label + ': ' + s.items.map(i => i.name).join(', ')).join(' · ')
+    }
     const parts = []
     if (item.size && item.size !== '12" Standard') parts.push(item.size)
     if (item.crust && item.crust !== '48hr Sourdough') parts.push(item.crust)
@@ -319,8 +322,132 @@ const adminNavStore = {
   close() { this.open = false },
 }
 
+const dealCartStore = {
+  open: false,
+  deal: null,          // current deal payload
+  selections: {},      // { slotId: [{ id, name, price }] }
+  qty: 1,
+  activeSlotIdx: 0,
+
+  openDeal(dealPayload) {
+    this.deal = dealPayload
+    this.selections = {}
+    for (const slot of (dealPayload.slots || [])) {
+      this.selections[slot.id] = []
+    }
+    this.qty = 1
+    this.activeSlotIdx = 0
+    this.open = true
+    document.body.style.overflow = 'hidden'
+  },
+
+  close() {
+    this.open = false
+    this.deal = null
+    document.body.style.overflow = ''
+  },
+
+  toggleSlotItem(slot, item) {
+    const sel = this.selections[slot.id] || []
+    const idx = sel.findIndex(s => s.id === item.id)
+    if (idx >= 0) {
+      sel.splice(idx, 1)
+    } else {
+      if (sel.length >= slot.max_qty) {
+        sel.splice(0, 1) // remove oldest if at capacity
+      }
+      sel.push({ id: item.id, name: item.name, price: item.price })
+    }
+    this.selections[slot.id] = sel
+  },
+
+  isItemSelected(slotId, itemId) {
+    return (this.selections[slotId] || []).some(s => s.id === itemId)
+  },
+
+  isSlotFilled(slotIdx) {
+    const slot = this.deal?.slots?.[slotIdx]
+    if (!slot) return false
+    return (this.selections[slot.id] || []).length >= slot.min_qty
+  },
+
+  get progressPct() {
+    if (!this.deal?.slots?.length) return 0
+    const filled = this.deal.slots.filter((s, i) => this.isSlotFilled(i)).length
+    return Math.round((filled / this.deal.slots.length) * 100)
+  },
+
+  get canAddToCart() {
+    if (!this.deal) return false
+    return this.deal.slots.every((s, i) => !s.is_required || this.isSlotFilled(i))
+  },
+
+  get totalPrice() {
+    if (!this.deal) return 0
+    if (this.deal.deal_type === 'bundle') return (this.deal.price ?? 0) * this.qty
+    if (this.deal.deal_type === 'bogo') {
+      // Sum items in non-free slots only
+      let total = 0
+      for (const slot of (this.deal.slots || [])) {
+        if (!slot.is_free) {
+          for (const item of (this.selections[slot.id] || [])) {
+            total += item.price
+          }
+        }
+      }
+      return total * this.qty
+    }
+    return 0
+  },
+
+  addToCart() {
+    if (!this.canAddToCart) return
+    const cartStore = Alpine.store('cart')
+    const slotSummary = (this.deal.slots || []).map(slot => ({
+      slotId: slot.id,
+      label: slot.label,
+      is_free: slot.is_free,
+      items: (this.selections[slot.id] || []).map(i => ({ id: i.id, name: i.name })),
+    }))
+    const cartItem = {
+      cartId: crypto.randomUUID(),
+      isDeal: true,
+      dealId: this.deal.id,
+      dealName: this.deal.name,
+      dealType: this.deal.deal_type,
+      dealPrice: this.deal.price,
+      id: 'deal-' + this.deal.id,
+      name: this.deal.name,
+      category: null,
+      basePrice: this.totalPrice / this.qty,
+      image: this.deal.image,
+      ingredients: [],
+      relatedItems: [],
+      isCustomizable: false,
+      availableToppings: [],
+      sizes: [],
+      crusts: [],
+      size: null,
+      sizeExtra: 0,
+      crust: null,
+      crustExtra: 0,
+      toppings: [],
+      removedIngredients: [],
+      chips: [],
+      instructions: slotSummary.map(s => s.label + ': ' + s.items.map(i => i.name).join(', ')).join(' | '),
+      dealSlots: slotSummary,
+      qty: this.qty,
+      lineTotal: this.totalPrice,
+    }
+    cartStore.items.push(cartItem)
+    cartStore._persist()
+    this.close()
+  },
+}
+
 Alpine.store('cart', cartStore)
 Alpine.store('adminNav', adminNavStore)
+Alpine.store('dealCart', dealCartStore)
 
 document.addEventListener('alpine:init', () => {
   Alpine.data('imageCropper', (existingUrl = null, existingName = null) => ({

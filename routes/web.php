@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Admin\MenuItemController;
 use App\Http\Controllers\Admin\DeliveryController;
 use App\Http\Controllers\Admin\PromotionController;
+use App\Http\Controllers\Admin\DealController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\OurMenuController;
 use App\Http\Controllers\PasswordResetController;
@@ -133,6 +134,15 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     // Kitchen Command
     Route::get('/kitchen', [App\Http\Controllers\Admin\KitchenController::class, 'index'])->name('kitchen.index');
     Route::get('/kitchen/poll', [App\Http\Controllers\Admin\KitchenController::class, 'poll'])->name('kitchen.poll');
+
+    // Deals
+    Route::get('/deals',                [DealController::class, 'index'])->name('deals.index');
+    Route::get('/deals/create',         [DealController::class, 'create'])->name('deals.create');
+    Route::post('/deals',               [DealController::class, 'store'])->name('deals.store');
+    Route::get('/deals/{deal}/edit',    [DealController::class, 'edit'])->name('deals.edit');
+    Route::put('/deals/{deal}',         [DealController::class, 'update'])->name('deals.update');
+    Route::delete('/deals/{deal}',      [DealController::class, 'destroy'])->name('deals.destroy');
+    Route::patch('/deals/{deal}/toggle',[DealController::class, 'toggle'])->name('deals.toggle');
 
     // Allergy Management
     Route::get('/allergy',                       [App\Http\Controllers\Admin\AllergyController::class, 'index'])->name('allergy.index');
