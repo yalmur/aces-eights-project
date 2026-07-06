@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Topping extends Model
 {
@@ -19,5 +20,10 @@ class Topping extends Model
     public function scopeAvailable($query)
     {
         return $query->where('is_available', true)->orderBy('sort_order');
+    }
+
+    public function menuItems(): BelongsToMany
+    {
+        return $this->belongsToMany(MenuItem::class);
     }
 }

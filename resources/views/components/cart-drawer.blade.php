@@ -117,11 +117,11 @@
         </div>
       </div>
 
-      {{-- TOPPINGS — pizza only, customizable items only, full 25-item list --}}
-      <div x-show="$store.cart.drawerIsCustomizable && $store.cart.drawerItem?.category === 'pizza'">
+      {{-- TOPPINGS — pizza only, customizable items only, per-item assigned list --}}
+      <div x-show="$store.cart.drawerIsCustomizable && $store.cart.drawerItem?.category === 'pizza' && $store.cart.drawerToppings.length > 0">
         <h4 class="label-caps text-on-surface-variant mb-4">Toppings</h4>
         <div class="grid grid-cols-1 gap-2">
-          <template x-for="topping in $store.cart.allToppings" :key="topping.name">
+          <template x-for="topping in $store.cart.drawerToppings" :key="topping.name">
             <button @click="$store.cart.toggleTopping(topping)"
                     :class="$store.cart.isToppingSelected(topping.name)
                       ? 'border-2 border-primary bg-surface-container'

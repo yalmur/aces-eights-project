@@ -121,6 +121,28 @@
 </div>
 </section>
 
+<!-- Section 3.4: Toppings -->
+<section class="industrial-border p-8 bg-surface-container-lowest mt-12">
+<h3 class="font-headline-md text-headline-md mb-2 flex items-center gap-3">
+<span class="material-symbols-outlined">local_pizza</span> Toppings
+</h3>
+<p class="font-mono text-[10px] text-on-surface-variant uppercase mb-6">Only shown to customers for pizza-category items. Manage the price list under Admin &rarr; Toppings.</p>
+@if($toppings->isEmpty())
+<p class="text-xs text-on-surface-variant font-mono">No toppings configured yet. Add some under Admin &rarr; Toppings first.</p>
+@else
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+@foreach($toppings as $topping)
+<label class="flex items-center gap-3 cursor-pointer group">
+  <input type="checkbox" name="toppings[]" value="{{ $topping->id }}"
+         {{ $item && $item->toppings->contains($topping->id) ? 'checked' : '' }}
+         class="w-5 h-5 border-2 border-industrial-gray text-oxblood-red focus:ring-oxblood-red rounded-sm"/>
+  <span class="font-body-md text-body-md group-hover:text-oxblood-red transition-colors">{{ $topping->name }} <span class="text-on-surface-variant text-xs">(+£{{ number_format($topping->price, 2) }})</span></span>
+</label>
+@endforeach
+</div>
+@endif
+</section>
+
 <!-- Section 3.5: Upselling & Sides -->
 <section class="industrial-border p-8 bg-surface-container-lowest mt-12">
 <div class="flex justify-between items-center mb-6">

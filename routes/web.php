@@ -105,6 +105,13 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::delete('/menu/{item}',      [MenuItemController::class, 'destroy'])->name('menu.destroy');
     Route::patch('/menu/{item}/toggle', [MenuItemController::class, 'toggleAvailability'])->name('menu.toggle');
 
+    // Toppings
+    Route::get('/toppings',                [App\Http\Controllers\Admin\ToppingController::class, 'index'])->name('toppings.index');
+    Route::post('/toppings',                [App\Http\Controllers\Admin\ToppingController::class, 'store'])->name('toppings.store');
+    Route::put('/toppings/{topping}',       [App\Http\Controllers\Admin\ToppingController::class, 'update'])->name('toppings.update');
+    Route::patch('/toppings/{topping}/toggle', [App\Http\Controllers\Admin\ToppingController::class, 'toggle'])->name('toppings.toggle');
+    Route::delete('/toppings/{topping}',    [App\Http\Controllers\Admin\ToppingController::class, 'destroy'])->name('toppings.destroy');
+
     // Delivery Zones
     Route::get('/delivery',           [DeliveryController::class, 'index'])->name('delivery.index');
     Route::post('/delivery',          [DeliveryController::class, 'store'])->name('delivery.store');

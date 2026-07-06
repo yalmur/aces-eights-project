@@ -7,6 +7,7 @@ use App\Models\Allergen;
 use App\Models\BaseIngredient;
 use App\Models\Category;
 use App\Models\MenuItem;
+use App\Models\Topping;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
@@ -49,6 +50,7 @@ class MenuItemController extends Controller
             'categories' => Category::orderBy('sort_order')->get(),
             'allergens'  => Allergen::orderBy('sort_order')->get(),
             'allItems'   => MenuItem::orderBy('name')->get(),
+            'toppings'   => Topping::orderBy('sort_order')->get(),
         ]);
     }
 
@@ -70,6 +72,8 @@ class MenuItemController extends Controller
             'ingredients.*' => 'string|max:100',
             'related_items' => 'nullable|array',
             'related_items.*'=> 'exists:menu_items,id',
+            'toppings'      => 'nullable|array',
+            'toppings.*'    => 'exists:toppings,id',
             'image'         => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
 
@@ -96,6 +100,7 @@ class MenuItemController extends Controller
 
         $item->allergens()->sync($data['allergens'] ?? []);
         $item->relatedItems()->sync($data['related_items'] ?? []);
+        $item->toppings()->sync($data['toppings'] ?? []);
         if ($request->has('ingredients')) {
             $this->syncIngredients($item, $data['ingredients'] ?? []);
         }
@@ -108,7 +113,7 @@ class MenuItemController extends Controller
 
     public function edit(string $item): View
     {
-        $menuItem = MenuItem::with(['allergens', 'baseIngredients', 'relatedItems'])->findOrFail($item);
+        $menuItem = MenuItem::with(['allergens', 'baseIngredients', 'relatedItems', 'toppings'])->findOrFail($item);
 
         return view('admin.menu.edit', [
             'title'      => 'Edit: ' . $menuItem->name,
@@ -116,6 +121,7 @@ class MenuItemController extends Controller
             'categories' => Category::orderBy('sort_order')->get(),
             'allergens'  => Allergen::orderBy('sort_order')->get(),
             'allItems'   => MenuItem::where('id', '!=', $menuItem->id)->orderBy('name')->get(),
+            'toppings'   => Topping::orderBy('sort_order')->get(),
         ]);
     }
 
@@ -139,6 +145,8 @@ class MenuItemController extends Controller
             'ingredients.*' => 'string|max:100',
             'related_items' => 'nullable|array',
             'related_items.*'=> 'exists:menu_items,id',
+            'toppings'      => 'nullable|array',
+            'toppings.*'    => 'exists:toppings,id',
             'image'         => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
             'remove_image'  => 'nullable|boolean',
         ]);
@@ -170,6 +178,7 @@ class MenuItemController extends Controller
 
         $menuItem->allergens()->sync($data['allergens'] ?? []);
         $menuItem->relatedItems()->sync($data['related_items'] ?? []);
+        $menuItem->toppings()->sync($data['toppings'] ?? []);
         if ($request->has('ingredients')) {
             $this->syncIngredients($menuItem, $data['ingredients'] ?? []);
         }

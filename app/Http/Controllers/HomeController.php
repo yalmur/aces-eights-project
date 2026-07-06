@@ -14,7 +14,7 @@ class HomeController extends Controller
         $featuredItems = Cache::remember('public.home.featured', 300, fn () =>
             MenuItem::where('is_featured', true)
                 ->where('is_available', true)
-                ->with('category', 'allergens', 'baseIngredients', 'relatedItems')
+                ->with('category', 'allergens', 'baseIngredients', 'relatedItems', 'toppings')
                 ->limit(6)
                 ->get()
         );

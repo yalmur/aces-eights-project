@@ -24,14 +24,13 @@
 </div>
 
 {{-- Alpine.js category filter + menu grid --}}
-<div x-data="{ active: 'all', view: 'grid', search: '', diet: '' }"
-     x-init="$store.cart.allToppings = {{ $toppings->map(fn($t) => ['name' => $t->name, 'price' => (float)$t->price])->toJson() }}">
+<div x-data="{ active: 'all', view: 'grid', search: '', diet: '', showFilters: false, excludedAllergens: [] }">
 
     {{-- Search & Filter Bar --}}
     <section class="sticky top-16 z-40 bg-surface/95 backdrop-blur-md px-6 md:px-margin-desktop py-6 border-b border-surface-variant">
         <div class="max-w-container-max mx-auto flex flex-col md:flex-row gap-6 items-center">
             {{-- Category chips --}}
-            <div class="flex gap-2 overflow-x-auto no-scrollbar w-full md:w-auto flex-1 pb-1">
+            <div class="flex flex-wrap gap-2 w-full md:w-auto flex-1 pb-1">
                 <button @click="active = 'all'" :class="{ 'active': active === 'all' }" class="chip whitespace-nowrap">All</button>
                 @foreach($categories as $category)
                 <button @click="active = '{{ $category->slug }}'"
@@ -57,8 +56,13 @@
                         <span class="material-symbols-outlined text-sm">close</span>
                     </button>
                 </div>
-                <button class="p-3 bg-surface-container border border-surface-variant hover:bg-surface-container-high transition-colors">
-                    <span class="material-symbols-outlined text-on-surface">tune</span>
+                <button @click="showFilters = !showFilters" type="button"
+                        :class="showFilters || excludedAllergens.length ? 'bg-primary-container' : 'bg-surface-container hover:bg-surface-container-high'"
+                        class="relative p-3 border border-surface-variant transition-colors">
+                    <span class="material-symbols-outlined" :class="showFilters || excludedAllergens.length ? 'text-on-primary' : 'text-on-surface'">tune</span>
+                    <span x-show="excludedAllergens.length" x-cloak
+                          x-text="excludedAllergens.length"
+                          class="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-primary text-white text-[10px] font-bold flex items-center justify-center"></span>
                 </button>
                 {{-- View toggle --}}
                 <div class="flex border border-surface-variant overflow-hidden flex-shrink-0">
@@ -84,6 +88,23 @@
                         </svg>
                     </button>
                 </div>
+            </div>
+        </div>
+
+        {{-- Allergen filter panel --}}
+        <div x-show="showFilters" x-cloak
+             class="max-w-container-max mx-auto mt-4 p-4 bg-surface-container border border-surface-variant">
+            <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-[10px] uppercase tracking-widest text-on-surface-variant">Exclude items containing:</span>
+                <button x-show="excludedAllergens.length" x-cloak @click="excludedAllergens = []"
+                        class="font-mono text-[10px] text-primary hover:underline uppercase tracking-widest">Clear</button>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                @foreach($allergens as $allergen)
+                <button @click="excludedAllergens = excludedAllergens.includes({{ json_encode($allergen->name) }}) ? excludedAllergens.filter(a => a !== {{ json_encode($allergen->name) }}) : [...excludedAllergens, {{ json_encode($allergen->name) }}]"
+                        :class="excludedAllergens.includes({{ json_encode($allergen->name) }}) ? 'active' : ''"
+                        type="button" class="chip whitespace-nowrap">{{ $allergen->name }}</button>
+                @endforeach
             </div>
         </div>
     </section>
@@ -116,7 +137,7 @@
       <div :class="view === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : view === 'list' ? 'flex flex-col gap-3' : 'grid grid-cols-2 lg:grid-cols-4 gap-4'">
 
         @foreach($category->availableItems as $item)
-        <div x-show="(!search || '{{ strtolower($item->name . ' ' . ($item->description ?? '')) }}'.includes(search.toLowerCase())) && (!diet || (diet === 'vegetarian' && {{ $item->is_vegetarian ? 'true' : 'false' }}) || (diet === 'vegan' && {{ $item->is_vegan ? 'true' : 'false' }}))"
+        <div x-show="(!search || '{{ strtolower($item->name . ' ' . ($item->description ?? '')) }}'.includes(search.toLowerCase())) && (!diet || (diet === 'vegetarian' && {{ $item->is_vegetarian ? 'true' : 'false' }}) || (diet === 'vegan' && {{ $item->is_vegan ? 'true' : 'false' }})) && !excludedAllergens.some(a => {{ json_encode($item->allergens->pluck('name')->values()->all()) }}.includes(a))"
              :class="view === 'list' ? 'flex flex-row' : 'flex flex-col'"
              class="group bg-surface-container-low border border-surface-variant hover:border-primary-container/30 transition-all duration-300 overflow-hidden shadow-sm">
           <div :class="view === 'list' ? 'w-32 h-auto flex-shrink-0' : view === 'compact' ? 'h-40 overflow-hidden' : 'h-64 overflow-hidden'"
@@ -153,7 +174,8 @@
                         image: {{ $item->hasStoredImage() ? json_encode(asset('storage/' . $item->image_path)) : json_encode('https://placehold.co/400x300/e4e2e1/1b1c1c?text=' . urlencode($item->name)) }},
                         ingredients: {{ $item->baseIngredients->pluck('name')->values()->toJson() }},
                         relatedItems: {{ json_encode($item->relatedItemsPayload()) }},
-                        isCustomizable: {{ json_encode($item->is_customizable) }}
+                        isCustomizable: {{ json_encode($item->is_customizable) }},
+                        availableToppings: {{ json_encode($item->toppingsPayload()) }}
                       })"
                       class="btn-add w-12 h-12 flex items-center justify-center touch-manipulation">
                 <span class="material-symbols-outlined text-white text-[20px]">add</span>

@@ -49,6 +49,11 @@
         <span class="material-symbols-outlined text-[20px]">local_shipping</span>
         Delivery
       </a>
+      <a href="{{ route('admin.toppings.index') }}"
+         class="admin-nav-item {{ request()->routeIs('admin.toppings.*') ? 'active' : '' }}">
+        <span class="material-symbols-outlined text-[20px]">local_pizza</span>
+        Toppings
+      </a>
       <a href="{{ route('admin.allergy.index') }}"
          class="admin-nav-item {{ request()->routeIs('admin.allergy.*') ? 'active' : '' }}">
         <span class="material-symbols-outlined text-[20px]">warning</span>

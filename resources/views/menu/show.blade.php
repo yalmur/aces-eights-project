@@ -102,7 +102,8 @@
             image: {{ json_encode($imageUrl) }},
             ingredients: {{ $item->baseIngredients->pluck('name')->values()->toJson() }},
             relatedItems: {{ json_encode($item->relatedItemsPayload()) }},
-            isCustomizable: {{ json_encode($item->is_customizable) }}
+            isCustomizable: {{ json_encode($item->is_customizable) }},
+            availableToppings: {{ json_encode($item->toppingsPayload()) }}
           })"
           class="w-full bg-primary text-on-primary font-mono text-sm font-bold uppercase py-4 px-6 border-b-4 border-[#1b1c1c] hover:bg-primary/90 active:scale-[.99] transition-all flex items-center justify-center gap-3">
           <span class="material-symbols-outlined text-xl">add_shopping_cart</span>
@@ -138,7 +139,8 @@
                 image: {{ $rel->hasStoredImage() ? json_encode(asset('storage/' . $rel->image_path)) : json_encode('https://placehold.co/64x64/e4e2e1/1b1c1c?text=+') }},
                 ingredients: {{ $rel->baseIngredients->pluck('name')->values()->toJson() }},
                 relatedItems: {{ json_encode($rel->relatedItemsPayload()) }},
-                isCustomizable: {{ json_encode($rel->is_customizable) }}
+                isCustomizable: {{ json_encode($rel->is_customizable) }},
+                availableToppings: {{ json_encode($rel->toppingsPayload()) }}
               })"
               class="flex-shrink-0 w-9 h-9 flex items-center justify-center bg-surface-container border border-outline hover:bg-primary hover:text-on-primary hover:border-primary transition-colors">
               <span class="material-symbols-outlined text-[18px]">add</span>

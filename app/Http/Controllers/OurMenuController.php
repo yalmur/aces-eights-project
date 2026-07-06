@@ -11,7 +11,7 @@ class OurMenuController extends Controller
     public function index(): View
     {
         $sections = Cache::remember('public.our-menu.sections', 300, function () {
-            $categories = Category::with('availableItems.allergens', 'availableItems.baseIngredients', 'availableItems.relatedItems')->orderBy('sort_order')->get();
+            $categories = Category::with('availableItems.allergens', 'availableItems.baseIngredients', 'availableItems.relatedItems', 'availableItems.toppings')->orderBy('sort_order')->get();
             return $categories
                 ->filter(fn ($cat) => $cat->availableItems->isNotEmpty())
                 ->map(fn ($cat) => [
@@ -32,6 +32,7 @@ class OurMenuController extends Controller
                         'ingredients'     => $item->baseIngredients->pluck('name')->values()->all(),
                         'relatedItems'    => $item->relatedItemsPayload(),
                         'isCustomizable'  => $item->is_customizable,
+                        'availableToppings' => $item->toppingsPayload(),
                     ])->all(),
                 ])
                 ->values()

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Allergen;
 use App\Models\Category;
 use App\Models\MenuItem;
 use App\Models\Topping;
@@ -12,32 +13,35 @@ class MenuController extends Controller
 {
     public function index(): View
     {
-        [$categories, $toppings] = Cache::remember('public.menu.index', 300, fn () => [
+        [$categories, $toppings, $allergens] = Cache::remember('public.menu.index', 300, fn () => [
             Category::with([
                 'availableItems.allergens',
                 'availableItems.baseIngredients',
                 'availableItems.relatedItems',
+                'availableItems.toppings',
             ])
             ->orderBy('sort_order')
             ->get(),
             Topping::available()->get(),
+            Allergen::where('is_visible', true)->orderBy('sort_order')->get(),
         ]);
 
         return view('menu.index', [
             'title'      => 'Order Now',
             'categories' => $categories,
             'toppings'   => $toppings,
+            'allergens'  => $allergens,
         ]);
     }
 
     public function show(string $slug): View
     {
-        $item = MenuItem::with(['category', 'allergens', 'baseIngredients', 'relatedItems'])
+        $item = MenuItem::with(['category', 'allergens', 'baseIngredients', 'relatedItems', 'toppings'])
             ->where('slug', $slug)
             ->where('is_available', true)
             ->firstOrFail();
 
-        $related = MenuItem::with(['allergens', 'category', 'baseIngredients', 'relatedItems'])
+        $related = MenuItem::with(['allergens', 'category', 'baseIngredients', 'relatedItems', 'toppings'])
             ->where('category_id', $item->category_id)
             ->where('id', '!=', $item->id)
             ->where('is_available', true)

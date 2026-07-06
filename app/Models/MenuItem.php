@@ -53,9 +53,21 @@ class MenuItem extends Model
         return $this->belongsToMany(MenuItem::class, 'menu_item_related', 'menu_item_id', 'related_menu_item_id');
     }
 
+    public function toppings(): BelongsToMany
+    {
+        return $this->belongsToMany(Topping::class)->orderBy('sort_order');
+    }
+
     public function isPizza(): bool
     {
         return $this->category?->slug === 'pizza';
+    }
+
+    public function toppingsPayload(): array
+    {
+        return $this->toppings->where('is_available', true)
+            ->map(fn (Topping $t) => ['name' => $t->name, 'price' => (float) $t->price])
+            ->values()->all();
     }
 
     public function relatedItemsPayload(): array

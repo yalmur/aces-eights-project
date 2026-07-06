@@ -31,34 +31,6 @@ const cartStore = {
     qty: 1,
   },
 
-  allToppings: [
-    { name: 'Aubergines',         price: 2.00 },
-    { name: 'Mixed Peppers',      price: 1.50 },
-    { name: 'Mushrooms',          price: 1.50 },
-    { name: 'Regular Pepperoni',  price: 2.00 },
-    { name: 'Nduja',              price: 2.00 },
-    { name: 'Spicy Ground Beef',  price: 2.00 },
-    { name: 'Broccoli',           price: 2.00 },
-    { name: 'Parmesan',           price: 2.00 },
-    { name: 'Pine Nuts',          price: 1.50 },
-    { name: 'Garlic Oil',         price: 1.50 },
-    { name: 'Mozzarella',         price: 2.00 },
-    { name: 'Olive Oil',          price: 1.50 },
-    { name: 'Smoky Pancetta',     price: 2.00 },
-    { name: 'Tomato Sauce',       price: 1.00 },
-    { name: 'Basil',              price: 0.50 },
-    { name: 'Red Onion',          price: 1.50 },
-    { name: 'Anchovies',          price: 2.00 },
-    { name: 'Chilli Flakes',      price: 1.00 },
-    { name: 'Whole Black Olives', price: 1.50 },
-    { name: 'Oregano',            price: 0.50 },
-    { name: 'Vegan Mozzarella',   price: 2.50 },
-    { name: 'Sicilian Sausage',   price: 2.00 },
-    { name: 'Hot Honey',          price: 2.00 },
-    { name: 'Speck Ham',          price: 2.00 },
-    { name: 'Provolone Picante',  price: 1.50 },
-  ],
-
   pizzaChips: [
     'WELL DONE CRUST', 'EXTRA SPICY', 'LESS SAUCE',
     'NO ONION', 'NO CHILLI', 'EXTRA CRISPY', 'CUT IN SQUARES',
@@ -105,6 +77,10 @@ const cartStore = {
     return this.drawerItem?.isCustomizable !== false
   },
 
+  get drawerToppings() {
+    return this.drawerItem?.availableToppings ?? []
+  },
+
   itemSummary(item) {
     const parts = []
     if (item.size && item.size !== '12" Standard') parts.push(item.size)
@@ -149,6 +125,7 @@ const cartStore = {
       ingredients: item.ingredients,
       relatedItems: item.relatedItems,
       isCustomizable: item.isCustomizable,
+      availableToppings: item.availableToppings,
     }
     this.editingCartId = cartId
     this.draft = {
@@ -243,6 +220,7 @@ const cartStore = {
       ingredients: this.drawerItem.ingredients,
       relatedItems: this.drawerItem.relatedItems,
       isCustomizable: this.drawerItem.isCustomizable,
+      availableToppings: this.drawerItem.availableToppings,
       size:               isPizza ? this.draft.size        : null,
       sizeExtra:          isPizza ? this.draft.sizeExtra   : 0,
       crust:              isPizza ? this.draft.crust       : null,
@@ -277,6 +255,7 @@ const cartStore = {
       ingredients: [],
       relatedItems: [],
       isCustomizable: false,
+      availableToppings: [],
       size: null,
       sizeExtra: 0,
       crust: null,
