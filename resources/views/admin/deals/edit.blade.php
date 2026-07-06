@@ -189,10 +189,21 @@
               <span class="normal-case font-sans font-normal tracking-normal" :class="slot.item_ids.length === 0 ? 'text-brand-error' : 'text-on-surface-variant'"
                     x-text="slot.item_ids.length === 0 ? '(pick at least one item)' : '(' + slot.item_ids.length + ' selected)'"></span>
             </p>
+            <div class="flex gap-2 mb-2">
+              <input type="text" x-model="slot.itemSearch" placeholder="Find item…"
+                     class="admin-input flex-1 text-xs">
+              <select x-model="slot.itemCategory" class="admin-input text-xs">
+                <option value="">All Categories</option>
+                @foreach($categories as $cat)
+                <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+                @endforeach
+              </select>
+            </div>
             <div class="max-h-48 overflow-y-auto border border-surface-variant bg-white p-3">
               <div class="grid grid-cols-2 md:grid-cols-3 gap-1">
                 @foreach($menuItems as $item)
-                <label class="flex items-center gap-1.5 cursor-pointer p-1.5 hover:bg-surface-container-low rounded transition-colors">
+                <label class="flex items-center gap-1.5 cursor-pointer p-1.5 hover:bg-surface-container-low rounded transition-colors"
+                       x-show="(!slot.itemCategory || slot.itemCategory == {{ $item->category_id }}) && {{ json_encode(strtolower($item->name)) }}.includes(slot.itemSearch.toLowerCase())">
                   <input type="checkbox" :name="'slots['+i+'][item_ids][]'" value="{{ $item->id }}"
                          @change="toggleItem(slot, {{ $item->id }})"
                          :checked="slot.item_ids.includes({{ $item->id }})"
@@ -227,7 +238,7 @@
 function dealBuilder(existingSlots, initialType) {
   return {
     dealType: initialType,
-    slots: existingSlots.map(s => ({ ...s, _key: Math.random() })),
+    slots: existingSlots.map(s => ({ ...s, _key: Math.random(), itemSearch: '', itemCategory: '' })),
 
     addSlot() {
       this.slots.push({
@@ -238,6 +249,8 @@ function dealBuilder(existingSlots, initialType) {
         is_required: true,
         is_free: false,
         item_ids: [],
+        itemSearch: '',
+        itemCategory: '',
       });
     },
 
