@@ -20,7 +20,7 @@
   </div>
 @endif
 
-<form method="POST"
+<form method="POST" enctype="multipart/form-data"
       action="{{ $isEdit ? route('admin.deals.update', $deal->id) : route('admin.deals.store') }}"
       x-data="dealBuilder({{ json_encode($deal?->slotsAdminPayload() ?? []) }}, {{ json_encode($deal?->deal_type ?? 'bundle') }})">
   @csrf
@@ -91,6 +91,20 @@
                value="{{ old('ends_at', $deal?->ends_at?->format('Y-m-d\TH:i')) }}"
                class="admin-input w-full">
       </div>
+    </div>
+
+    <div class="mb-6">
+      <label class="admin-label" for="image">Deal Image</label>
+      @if($isEdit && $deal->image_path)
+        <div class="mb-2 flex items-center gap-3">
+          <img src="{{ asset('storage/' . $deal->image_path) }}" class="h-20 w-32 object-cover border border-surface-variant">
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" name="remove_image" value="1" class="w-4 h-4 accent-primary">
+            <span class="font-mono text-[10px] uppercase tracking-wide text-brand-error">Remove image</span>
+          </label>
+        </div>
+      @endif
+      <input id="image" name="image" type="file" accept="image/png,image/jpeg,image/webp" class="admin-input w-full">
     </div>
 
     <div class="flex items-center gap-3">

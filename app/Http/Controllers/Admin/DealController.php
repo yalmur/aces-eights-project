@@ -9,6 +9,7 @@ use App\Models\DealSlot;
 use App\Models\MenuItem;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
 
@@ -33,6 +34,9 @@ class DealController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $data = $this->validated($request);
+        if ($request->hasFile('image')) {
+            $data['image_path'] = $request->file('image')->store('deals', 'public');
+        }
         $deal = Deal::create($data);
         if ($deal->hasSlots()) {
             $this->syncSlots($deal, $request->input('slots', []));
@@ -54,6 +58,13 @@ class DealController extends Controller
     public function update(Request $request, Deal $deal): RedirectResponse
     {
         $data = $this->validated($request, $deal->id);
+        if ($request->hasFile('image')) {
+            if ($deal->image_path) Storage::disk('public')->delete($deal->image_path);
+            $data['image_path'] = $request->file('image')->store('deals', 'public');
+        } elseif ($request->boolean('remove_image') && $deal->image_path) {
+            Storage::disk('public')->delete($deal->image_path);
+            $data['image_path'] = null;
+        }
         $deal->update($data);
         if ($deal->hasSlots()) {
             $this->syncSlots($deal, $request->input('slots', []));
@@ -66,6 +77,7 @@ class DealController extends Controller
     public function destroy(Deal $deal): RedirectResponse
     {
         $name = $deal->name;
+        if ($deal->image_path) Storage::disk('public')->delete($deal->image_path);
         $deal->delete();
         return redirect()->route('admin.deals.index')->with('success', "Deal '{$name}' deleted.");
     }
@@ -89,10 +101,13 @@ class DealController extends Controller
             'sort_order'     => 'integer|min:0',
             'starts_at'      => 'nullable|date',
             'ends_at'        => 'nullable|date|after_or_equal:starts_at',
+            'image'          => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'remove_image'   => 'nullable|boolean',
         ]);
+        unset($data['image'], $data['remove_image']);
 
         $data['is_active']   = $request->boolean('is_active');
-        $data['slug']        = $data['slug'] ?: Str::slug($data['name']);
+        $data['slug']        = ($data['slug'] ?? null) ?: Str::slug($data['name']);
         $data['sort_order']  = (int) ($data['sort_order'] ?? 0);
         return $data;
     }
