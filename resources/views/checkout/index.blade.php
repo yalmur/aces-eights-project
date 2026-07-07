@@ -229,11 +229,11 @@
 
             <!-- Right Column: Order Summary -->
             <div class="lg:col-span-5 sticky top-24">
-                <div class="bg-surface-container border-2 border-on-surface p-8" style="box-shadow: 4px 4px 0px 0px rgba(43, 43, 43, 1);">
-                    <div class="border-b-2 border-on-surface pb-4 mb-6">
+                <div class="border-2 border-on-surface" style="box-shadow: 4px 4px 0px 0px rgba(43, 43, 43, 1);">
+                    <div class="bg-surface-container-lowest border-b-2 border-on-surface px-8 pt-8 pb-4">
                         <h3 class="font-headline-md text-headline-md uppercase tracking-tighter">Order Summary</h3>
                     </div>
-                    <ul class="space-y-4 mb-8">
+                    <ul class="bg-surface-container-low space-y-4 px-8 py-6">
                         <template x-for="item in $store.cart.items" :key="item.cartId">
                             <li class="flex justify-between items-start">
                                 <div class="flex-1 min-w-0 pr-4">
@@ -247,7 +247,7 @@
                             Your cart is empty.
                         </li>
                     </ul>
-                    <div class="space-y-2 border-t border-outline-variant pt-6 mb-6">
+                    <div class="bg-surface-container-high border-t border-outline-variant space-y-2 px-8 py-6">
                         <div class="flex justify-between text-body-md">
                             <span>Subtotal</span>
                             <span x-text="'£' + $store.cart.subtotal.toFixed(2)"></span>
@@ -266,20 +266,22 @@
                             <span x-text="'−£' + promo.discount.toFixed(2)"></span>
                         </div>
                     </div>
-                    <div class="flex justify-between items-center border-t-4 border-double border-on-surface pt-4 mb-8">
-                        <span class="font-headline-md text-headline-md uppercase">Total Due</span>
-                        <span class="font-headline-md text-headline-md text-primary"
-                              x-text="'£' + orderTotal.toFixed(2)"></span>
+                    <div class="bg-secondary/10 border-t-4 border-double border-on-surface px-8 pt-6 pb-8">
+                        <div class="flex justify-between items-center mb-8">
+                            <span class="font-headline-md text-headline-md uppercase">Total Due</span>
+                            <span class="font-headline-md text-headline-md text-primary"
+                                  x-text="'£' + orderTotal.toFixed(2)"></span>
+                        </div>
+                        <button type="submit"
+                                :disabled="$store.cart.items.length === 0"
+                                :class="$store.cart.items.length === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-primary-container active:translate-y-1 active:border-b-0'"
+                                class="w-full bg-primary text-on-primary py-5 px-8 font-label-bold text-[18px] uppercase tracking-widest border-b-4 border-secondary transition-all">
+                            Place Order — Secure Checkout
+                        </button>
+                        <p class="text-center mt-6 text-[11px] font-label-bold text-on-surface-variant uppercase tracking-widest">
+                            By placing order you agree to our heritage terms
+                        </p>
                     </div>
-                    <button type="submit"
-                            :disabled="$store.cart.items.length === 0"
-                            :class="$store.cart.items.length === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-primary-container active:translate-y-1 active:border-b-0'"
-                            class="w-full bg-primary text-on-primary py-5 px-8 font-label-bold text-[18px] uppercase tracking-widest border-b-4 border-secondary transition-all">
-                        Place Order — Secure Checkout
-                    </button>
-                    <p class="text-center mt-6 text-[11px] font-label-bold text-on-surface-variant uppercase tracking-widest">
-                        By placing order you agree to our heritage terms
-                    </p>
                 </div>
 
                 <!-- Atmospheric Promo -->
