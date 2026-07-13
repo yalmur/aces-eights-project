@@ -9,7 +9,7 @@
 <span class="font-label-bold text-label-bold text-primary uppercase tracking-widest block">EST. 2010</span>
 <h1 class="font-display text-display md:text-[64px] text-primary leading-[1.1]">Authentic Italian pizza in the heart of London.</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
-    Handcrafted sourdough, freshly prepared every day and baked to perfection in our electric ovens. Nestled in the heart of Tufnell Park, we are more than a pizzeria — we are a family kitchen dedicated to great flavor.
+    Handcrafted sourdough, freshly prepared every day and baked to perfection in our stone-based ovens. Nestled in the heart of Tufnell Park, we are more than a pizzeria — we are a family kitchen dedicated to great flavor.
 </p>
 <div class="pt-4 flex flex-col sm:flex-row gap-4">
 <a href="https://www.acesandeightssaloonbar.com/booking/" target="_blank" rel="noopener" class="bg-primary text-on-primary font-label-bold text-label-bold px-8 py-4 uppercase tracking-wider border-b-4 border-primary-fixed-dim hover:bg-on-primary-fixed-variant transition-all active:translate-y-1 active:border-b-0 text-center">
