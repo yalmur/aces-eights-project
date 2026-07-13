@@ -37,28 +37,28 @@
 <!-- Divider -->
 <div class="w-full h-2 border-t border-b border-outline my-0"></div>
 
-<!-- Our Story Section: Industrial Heritage -->
+<!-- Our Story Section -->
 <section class="bg-surface py-20">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
 <div class="sticky top-32">
 <h2 class="font-headline-lg text-headline-lg text-primary mb-8 underline decoration-double decoration-outline-variant underline-offset-8">Our Story</h2>
 <div class="space-y-6 font-body-lg text-body-lg text-on-surface">
-<p>Born from the hum of machinery and the heat of the forge, Aces &amp; Eights was founded on a simple premise: that the best food is made by hand, with tools that have stood the test of time.</p>
-<p>Our journey began in 2010 on Fortess Road. We saw a kinship between the rugged, utilitarian spirit of early 20th-century American industry and the uncompromising precision of traditional Italian pizza-making.</p>
-<p class="border-l-4 border-primary pl-6 italic text-on-surface-variant font-body-md">"We don't just bake; we assemble excellence from the finest raw materials."</p>
+<p>When we opened our doors on Fortess Road back in 2010, we had a simple obsession: bringing genuinely incredible, handmade pizza to our North West London neighbourhood — the kind of local spot we wanted to hang out in ourselves.</p>
+<p>For over a decade, our pizza has been the main event. Whether you're craving a classic, thin-base Margherita or a loaded house specialty, every pie is hand-stretched fresh daily and baked to order.</p>
+<p class="border-l-4 border-primary pl-6 italic text-on-surface-variant font-body-md">"Food brings people together — we're fiercely proud to be a strictly 18+, fully inclusive venue where everyone is welcome."</p>
 </div>
 </div>
 <div class="grid grid-cols-1 gap-8">
 <div class="border-2 border-outline p-4 group overflow-hidden">
-{{-- Interior of a modern industrial pizzeria featuring exposed brick walls, vintage Edison bulb lighting, and heavy iron-framed furniture --}}
-<img class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500" src="{{ asset('images/site/about-restaurant-interior.jpg') }}" alt="Restaurant interior"/>
-<p class="mt-4 font-label-bold text-label-sm text-on-surface-variant uppercase tracking-tighter italic">The Workshop, Fortess Road</p>
+{{-- Behind the counter at Aces & Eights, Fortess Road: pizzas fresh from the oven --}}
+<img class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500" src="{{ asset('images/site/about-kitchen-cooking.jpg') }}" alt="Behind the counter at Aces & Eights"/>
+<p class="mt-4 font-label-bold text-label-sm text-on-surface-variant uppercase tracking-tighter italic">The Kitchen, Fortess Road</p>
 </div>
 <div class="bg-surface-container-high p-12 border-2 border-outline relative">
-<span class="material-symbols-outlined text-[80px] text-outline-variant absolute top-4 right-4 opacity-30">history</span>
-<h3 class="font-headline-md text-headline-md text-primary mb-4">A Legacy of Steam</h3>
-<p class="font-body-md text-body-md text-on-surface">Our space is built on the foundations of London's industrial past. We've preserved the raw architecture to remind us that quality requires a solid foundation.</p>
+<span class="material-symbols-outlined text-[80px] text-outline-variant absolute top-4 right-4 opacity-30">music_note</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">A Rock &amp; Roll Soul</h3>
+<p class="font-body-md text-body-md text-on-surface">Pair your slice with a local craft beer or classic cocktail, drop a coin in our jukebox, or catch weekend DJs spinning until late. Our basement hosts intimate live music and comedy — and it's available for private hire too.</p>
 </div>
 </div>
 </div>
