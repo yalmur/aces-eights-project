@@ -7,9 +7,9 @@
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 md:py-32 grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
 <div class="md:col-span-7 space-y-6">
 <span class="font-label-bold text-label-bold text-primary uppercase tracking-widest block">EST. 2010</span>
-<h1 class="font-display text-display md:text-[64px] text-primary leading-[1.1]">Authentic Industrial Italian pizza in the heart of London.</h1>
+<h1 class="font-display text-display md:text-[64px] text-primary leading-[1.1]">Authentic Italian pizza in the heart of London.</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
-    Handcrafted sourdough, fired by tradition, and served within the rugged walls of Tufnell Park. We are more than a pizzeria; we are a workshop of flavor.
+    Handcrafted sourdough, freshly prepared every day and baked to perfection in our electric ovens. Nestled in the heart of Tufnell Park, we are more than a pizzeria — we are a family kitchen dedicated to great flavor.
 </p>
 <div class="pt-4 flex flex-col sm:flex-row gap-4">
 <a href="https://www.acesandeightssaloonbar.com/booking/" target="_blank" rel="noopener" class="bg-primary text-on-primary font-label-bold text-label-bold px-8 py-4 uppercase tracking-wider border-b-4 border-primary-fixed-dim hover:bg-on-primary-fixed-variant transition-all active:translate-y-1 active:border-b-0 text-center">
@@ -23,8 +23,8 @@
 </div>
 <div class="md:col-span-5 relative">
 <div class="border-2 border-primary p-2">
-{{-- A cinematic, low-angle shot of a roaring stone-base pizza oven with glowing orange embers and dancing flames --}}
-<img class="w-full h-[500px] object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700" src="{{ asset('images/site/about-stone-oven.jpg') }}" alt="Stone-base pizza oven"/>
+{{-- Chef Murat presenting a freshly made pizza on the peel --}}
+<img class="w-full h-[500px] object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700" src="{{ asset('images/site/about-chef-murat.jpg') }}" alt="Chef Murat with a freshly made pizza"/>
 </div>
 <div class="absolute -bottom-6 -left-6 bg-secondary-container text-on-secondary-container p-6 border-2 border-outline hidden lg:block">
 <p class="font-display text-headline-md leading-none">48H</p>

@@ -80,10 +80,34 @@
 <section class="relative w-full min-h-screen flex items-center justify-center border-b-4 border-on-surface pt-24 pb-16" id="story">
   
   {{-- Video Background --}}
-  <div class="absolute inset-0 w-full h-full bg-black z-0">
-    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover saturate-[1.5] contrast-[1.1] brightness-[1.1]" poster="{{ asset('images/site/home-hero-pizza.jpg') }}">
-      <source src="{{ asset('videos/hero-pizza.mp4') }}" type="video/mp4">
-    </video>
+  <div class="absolute inset-0 w-full h-full bg-black z-0 overflow-hidden">
+    <iframe
+      id="hero-yt-bg"
+      src="https://www.youtube.com/embed/QeRI7ZAcSfs?autoplay=1&mute=1&loop=1&playlist=QeRI7ZAcSfs&start=10&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&playsinline=1&enablejsapi=1"
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none saturate-[1.5] contrast-[1.1] brightness-[1.1]"
+      style="width: 177.77vh; height: 56.25vw; min-width: 100%; min-height: 100%;"
+      title="Hero background video"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+    ></iframe>
+    <script>
+      // ponytail: YT has no URL param for playback rate, needs IFrame API
+      (function () {
+        var tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        document.head.appendChild(tag);
+        window.onYouTubeIframeAPIReady = function () {
+          new YT.Player('hero-yt-bg', {
+            events: {
+              onReady: function (e) { e.target.setPlaybackRate(2); },
+              onStateChange: function (e) {
+                if (e.data === YT.PlayerState.ENDED) { e.target.seekTo(10, true); e.target.playVideo(); }
+              },
+            },
+          });
+        };
+      })();
+    </script>
     {{-- Dark vignette to make the golden text pop --}}
     <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80"></div>
     <div class="absolute inset-0 bg-black/40"></div>
@@ -95,21 +119,21 @@
     {{-- Massive Boxed Headline (Matches Badge Style) --}}
     <div class="border-[3px] border-[#d4af37]/80 px-8 sm:px-12 py-6 sm:py-8 mb-8 shadow-[0_5px_15px_rgba(0,0,0,0.5)] bg-black/50 backdrop-blur-sm w-full max-w-5xl mx-auto">
       <h2 class="font-oswald text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#f2e3c6] tracking-[0.15em] leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] uppercase">
-        BORN IN FIRE. <br class="hidden sm:block"/> BUILT FOR FLAVOR.
+        STRETCHED THIN. <br class="hidden sm:block"/> BAKED FRESH DAILY.
       </h2>
     </div>
 
     {{-- Top Framed Badge --}}
     <div class="border-[3px] border-[#d4af37]/80 px-8 py-3 mb-8 shadow-[0_5px_15px_rgba(0,0,0,0.5)] bg-black/50 backdrop-blur-sm">
       <h1 class="font-oswald text-xl md:text-2xl lg:text-3xl font-bold text-[#f2e3c6] tracking-[0.15em] drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
-        ACES & EIGHTS PIZZA — EST. 2012
+        ACES & EIGHTS PIZZA — EST. 2010
       </h1>
     </div>
 
     {{-- Elegant Cursive Sub-Headline --}}
     <h3 class="font-script text-4xl sm:text-5xl md:text-6xl lg:text-[80px] leading-[1.1] text-transparent bg-clip-text bg-gradient-to-b from-[#ffe082] to-[#cba052] drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)] animate-pulse-glow mb-12 px-4" style="-webkit-text-stroke: 1px rgba(0,0,0,0.5);">
-      Forged in the Fire of Tradition,<br/>
-      Crafted with Industrial Flavor
+      Stretched Thin with Tradition,<br/>
+      Baked with Industrial Precision
     </h3>
     
     {{-- CTA Buttons --}}
@@ -149,10 +173,10 @@
 </ul>
 </div>
 <div class="col-span-1 md:col-span-7 h-80 md:h-[400px] border-2 border-on-surface relative bg-surface-container-highest p-2">
-<!-- data-alt: A wide shot of a rugged, industrial restaurant interior reminiscent of an early 20th-century workshop or foundry. The space features exposed brick walls, heavy steel beams, and vintage hanging factory lights. Diners are seated at solid wood and iron tables. The image is processed in stark black and white with high contrast, aligning with an industrial minimalist aesthetic, conveying permanence and authority. -->
-<img alt="Restaurant Interior" class="w-full h-full object-cover filter grayscale contrast-125" src="{{ asset('images/site/home-restaurant-interior.jpg') }}"/>
-<div class="absolute bottom-6 right-6 bg-primary-container text-on-primary rounded-full w-24 h-24 flex items-center justify-center font-display text-headline-md border border-[#D4AF37] shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]">
-                        No. 1
+<!-- data-alt: The Aces & Eights Pizza shopfront on Fortess Road, Tufnell Park, in full color. -->
+<img alt="Aces &amp; Eights Pizza Shopfront" class="w-full h-full object-cover" src="{{ asset('images/site/shop-building.jpg') }}"/>
+<div class="absolute bottom-6 right-6 bg-primary-container text-on-primary rounded-full w-24 h-24 flex flex-col items-center justify-center leading-tight font-display text-label-bold border border-[#D4AF37] shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)]">
+                        <span>Est.</span><span>2010</span>
                     </div>
 </div>
 </div>
