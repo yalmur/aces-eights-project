@@ -17,7 +17,7 @@
             class="industrial-input bg-transparent border-t-0 border-l-0 border-r-0 border-b-2 border-outline py-2 font-body-md focus:ring-0 placeholder:text-on-surface-variant/40 text-on-surface"
             id="email" name="email" type="email"
             value="{{ old('email') }}" required autofocus
-            placeholder="artisan@acesandeights.com"
+            placeholder="artisan@acesandeightspizza.com"
         />
         @error('email')
             <span class="font-label-sm text-label-sm text-error mt-1">{{ $message }}</span>

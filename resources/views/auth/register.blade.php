@@ -51,7 +51,7 @@
             id="email"
             name="email"
             type="email"
-            placeholder="artisan@acesandeights.com"
+            placeholder="artisan@acesandeightspizza.com"
             value="{{ old('email') }}"
             required
         />

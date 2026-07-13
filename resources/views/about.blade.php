@@ -73,42 +73,42 @@
 <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-<!-- Component 1: Flour -->
+<!-- Component 1: Dough -->
 <div class="md:col-span-8 bg-surface border-2 border-outline p-8 flex flex-col md:flex-row gap-8 items-center group">
 <div class="w-full md:w-1/2 overflow-hidden border border-outline">
-{{-- Close-up macro photography of double-fermented sourdough pizza crust showing intricate air bubbles and a perfectly charred leopard spot pattern --}}
-<img class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" src="{{ asset('images/site/about-sourdough-crust.jpg') }}" alt="Sourdough crust"/>
+{{-- Hand-stretched dough, topped fresh, ready for the oven --}}
+<img class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" src="{{ asset('images/site/about-dough-stretch.jpg') }}" alt="Hand-stretched pizza dough"/>
 </div>
 <div class="w-full md:w-1/2">
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Double-Fermented Sourdough</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Our signature dough undergoes a rigorous 48-hour cold fermentation process. This patience yields a complex flavor profile and a crust that is both airy and resilient.</p>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Double-Fermented, Hand-Stretched Dough</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">We never rush our dough — a slow, two-stage fermentation breaks down the heavy starches for a light, airy, easy-to-digest base. Every one is hand-stretched to order by our pizzaiolos, never a rolling pin or press.</p>
 </div>
 </div>
-<!-- Component 2: Tomatoes -->
+<!-- Component 2: Drinks -->
 <div class="md:col-span-4 bg-primary text-on-primary p-8 flex flex-col justify-between border-2 border-primary">
-<span class="material-symbols-outlined text-4xl">verified</span>
+<span class="material-symbols-outlined text-4xl">local_bar</span>
 <div>
-<h3 class="font-headline-md text-headline-md mb-2">San Marzano D.O.P</h3>
-<p class="font-body-md text-body-md text-on-primary-container">Grown in the volcanic soil of Mount Vesuvius, our tomatoes are hand-picked and crushed to preserve their vibrant acidity and sweetness.</p>
+<h3 class="font-headline-md text-headline-md mb-2">Local Brews &amp; Classic Cocktails</h3>
+<p class="font-body-md text-body-md text-on-primary-container">We partner with standout London and independent breweries, and our cocktails are made to order with premium spirits, fresh citrus and proper bar technique — no shortcuts, no pre-mixed bottles.</p>
 </div>
 </div>
-<!-- Component 3: The Fire -->
+<!-- Component 3: Atmosphere -->
 <div class="md:col-span-4 bg-surface-container border-2 border-outline p-8 group">
 <div class="border-b-2 border-outline pb-4 mb-4 flex justify-between items-end">
-<h3 class="font-headline-md text-headline-md text-primary">400°C Fire</h3>
-<span class="material-symbols-outlined text-primary">local_fire_department</span>
+<h3 class="font-headline-md text-headline-md text-primary">The Soundtrack</h3>
+<span class="material-symbols-outlined text-primary">music_note</span>
 </div>
-<p class="font-body-md text-body-md text-on-surface">We blast our pizzas at extreme temperatures for precisely 90 seconds, sealing in moisture while achieving the perfect char.</p>
+<p class="font-body-md text-body-md text-on-surface">A classic jukebox in the main bar, late-night weekend DJs, and an intimate basement built for live music and stand-up comedy — also available for private hire.</p>
 </div>
-<!-- Component 4: Mozzarella -->
+<!-- Component 4: Toppings & Bake -->
 <div class="md:col-span-8 bg-surface border-2 border-outline p-8 flex flex-col md:flex-row-reverse gap-8 items-center group">
 <div class="w-full md:w-1/2 overflow-hidden border border-outline">
-{{-- Studio photography of fresh Buffalo Mozzarella being torn by hand, revealing its creamy, fibrous interior --}}
-<img class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" src="{{ asset('images/site/about-mozzarella.jpg') }}" alt="Fior di latte mozzarella"/>
+{{-- Fresh, premium toppings on a hand-stretched base --}}
+<img class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" src="{{ asset('storage/menu-items/saporita.jpg') }}" alt="Premium pizza toppings"/>
 </div>
 <div class="w-full md:w-1/2 text-right md:text-left">
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Artisan Fior di Latte</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Delivered fresh, our mozzarella provides the creamy, clean finish that balances the bold acidity of our tomato base.</p>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Premium Toppings &amp; The Perfect Bake</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Rich tomato sauce and creamy mozzarella, topped with fresh ingredients that honour authentic Italian tradition. Baked for a slight, smoky char on the edge and a sturdy bite in the centre.</p>
 </div>
 </div>
 </div>
