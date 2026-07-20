@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-20T00:00:00Z",
+  "title": "Design System: Aces & Eights Pizza",
+  "extensions": {
+    "colorMeta": {
+      "oxblood-primary": { "role": "primary", "displayName": "Oxblood Primary", "canonical": "#690008", "tonalRamp": ["#2a0002", "#410003", "#4d0006", "#690008", "#8b1a1a", "#ac322e", "#ff9a91", "#ffb3ac", "#ffdad6"] },
+      "gilded-gold": { "role": "secondary", "displayName": "Gilded Gold", "canonical": "#D4AF37", "tonalRamp": ["#241a00", "#574500", "#735c00", "#996515", "#D4AF37", "#e9c349", "#fed65b", "#ffe088", "#F9E392"] },
+      "carbon-ink": { "role": "neutral", "displayName": "Carbon Ink", "canonical": "#1b1c1c", "tonalRamp": ["#000000", "#121212", "#1b1c1c", "#303030", "#58413f", "#8c716e", "#e0bfbc", "#f3f0f0", "#fcf9f8"] },
+      "parchment-surface": { "role": "neutral", "displayName": "Parchment Surface", "canonical": "#fcf9f8", "tonalRamp": ["#1b1c1c", "#303030", "#58413f", "#8c716e", "#dcd9d9", "#e4e2e1", "#eae7e7", "#f0eded", "#fcf9f8"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero and top-level page headings only." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings." },
+      "body": { "displayName": "Body", "purpose": "Descriptions, menu item copy, prose." },
+      "label": { "displayName": "Ledger Label", "purpose": "Prices, tags, allergens, nav items — always mono/uppercase/tracked." }
+    },
+    "shadows": [
+      { "name": "stamp", "value": "2px 2px 0 #1b1c1c", "purpose": "Default offset shadow for primary action buttons — the ink-stamped/letterpress look." },
+      { "name": "metallic-highlight", "value": "inset 0 1px 0 rgba(255,255,255,0.45)", "purpose": "Inner top highlight simulating a curved metal edge on glossy gold surfaces." },
+      { "name": "metallic-glow", "value": "inset 0 1px 0 rgba(255,255,255,0.4), 0 0 12px rgba(212,175,55,0.35)", "purpose": "Signature exception: soft glow reserved for the auth sign-in button only." },
+      { "name": "pressed", "value": "inset 0 2px 4px rgba(0,0,0,0.2)", "purpose": "Active/pressed collapse of the stamp shadow, paired with a 2px,2px translate." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "150ms ease", "purpose": "Default transition for hover/active state changes (color, filter, box-shadow)." },
+      { "name": "ease-admin", "value": "200ms ease", "purpose": "Admin nav item hover/active transitions." }
+    ],
+    "breakpoints": []
+  },
+  "components": [
+    {
+      "name": "Primary Button (Glossy Gold)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Aspirational/primary CTA — reserved for sign-in and signature moments, not general-purpose actions.",
+      "html": "<button class=\"ds-btn-primary\">SIGN IN</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #1b1c1c; border-radius: 2px; border: 1px solid #B8860B; background: linear-gradient(180deg, #F9E392 0%, #D4AF37 50%, #996515 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.45), 2px 2px 0 #1b1c1c; cursor: pointer; transition: filter 150ms ease, box-shadow 150ms ease; } .ds-btn-primary:hover { filter: brightness(0.92); } .ds-btn-primary:focus-visible { outline: 2px solid #690008; outline-offset: 2px; } .ds-btn-primary:active { filter: brightness(0.8); box-shadow: inset 0 2px 4px rgba(0,0,0,0.25); transform: translate(2px, 2px); }"
+    },
+    {
+      "name": "Add To Order Button",
+      "kind": "button",
+      "refersTo": "button-add",
+      "description": "Transactional CTA — the primary 'add to cart' action, distinct from the aspirational gold button.",
+      "html": "<button class=\"ds-btn-add\">ADD TO ORDER — £12.50</button>",
+      "css": ".ds-btn-add { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #ffffff; background-color: #690008; border: 1px solid #4d0006; border-radius: 2px; box-shadow: 2px 2px 0 #1b1c1c; cursor: pointer; transition: background-color 150ms ease, box-shadow 120ms ease, transform 100ms ease; } .ds-btn-add:hover { background-color: #8b1a1a; } .ds-btn-add:focus-visible { outline: 2px solid #D4AF37; outline-offset: 2px; } .ds-btn-add:active { background-color: #4d0006; box-shadow: 0 0 0 #1b1c1c; transform: translate(2px, 2px); }"
+    },
+    {
+      "name": "Secondary Button (Oxblood Outline)",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Low-emphasis alternative action.",
+      "html": "<button class=\"ds-btn-secondary\">VIEW MENU</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #690008; background: transparent; border: 2px solid #690008; border-radius: 2px; cursor: pointer; transition: background-color 150ms ease, color 150ms ease; } .ds-btn-secondary:hover { background-color: #690008; color: #ffffff; } .ds-btn-secondary:focus-visible { outline: 2px solid #690008; outline-offset: 2px; }"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Menu filter / allergen tag, toggleable.",
+      "html": "<span class=\"ds-chip\">GLUTEN FREE</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; padding: 4px 12px; border-radius: 9999px; border: 1px solid #8c716e; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #8c716e; background: #fcf9f8; cursor: pointer; transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease; } .ds-chip:hover, .ds-chip.active { background: #690008; color: #ffffff; border-color: #690008; }"
+    },
+    {
+      "name": "Ledger Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Bottom-border-only text input — the ledger/account-book style.",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"Delivery postcode\" />",
+      "css": ".ds-input { width: 100%; background: transparent; border: none; border-bottom: 2px solid #8c716e; padding: 4px 0 8px; font-family: 'Hanken Grotesk', sans-serif; font-size: 16px; color: #1b1c1c; transition: border-color 150ms ease; } .ds-input::placeholder { color: #58413f; } .ds-input:focus { outline: none; border-bottom-color: #690008; }"
+    },
+    {
+      "name": "Menu Item Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Flat, bordered container for dish listings and admin stat blocks.",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card-title\">Diavola</h3><p class=\"ds-card-body\">Tomato, mozzarella, spicy salami, chilli oil.</p></div>",
+      "css": ".ds-card { background: #fcf9f8; border: 1px solid #8c716e; border-radius: 2px; padding: 24px; } .ds-card-title { font-family: 'Source Serif 4', serif; font-size: 20px; font-weight: 700; color: #1b1c1c; margin-bottom: 8px; } .ds-card-body { font-family: 'Hanken Grotesk', sans-serif; font-size: 16px; line-height: 24px; color: #1b1c1c; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Gilded Furnace",
+    "overview": "A single London pizza shop's own system, not a food-delivery marketplace template. The furnace is the organizing image: oxblood red as the heat and structure, gilded gold as the glow it throws off — used deliberately, not decoratively. Depth comes from hard-edge stamped shadows and metallic gradients, never soft ambient blur, which keeps the whole system feeling ink-stamped and industrial rather than glossy-app-generic. Serif display headlines carry editorial authority; mono, uppercase, letter-spaced labels carry the ledger/ticket register for prices, tags, and admin navigation.",
+    "keyCharacteristics": [
+      "Oxblood + gilded gold as the dominant, deliberate identity",
+      "Hard-edge \"stamped\" shadows (solid offset, no blur) instead of soft Material-style elevation",
+      "Mono uppercase, letter-spaced labels for prices, tags, allergens, and admin nav — a ledger/ticket register",
+      "Serif display type for headlines, clean grotesk for body copy",
+      "Flat, bordered surfaces rather than card-shadow stacking"
+    ],
+    "rules": [
+      { "name": "The Furnace Ratio Rule", "body": "Oxblood carries structure (buttons, active states, brand chrome) at higher frequency than gold. Gold is the glow, not the fuel — reserve the full metallic gradient treatment for primary CTAs and one or two signature moments per screen.", "section": "colors" },
+      { "name": "The Ledger Label Rule", "body": "Anything that reads as metadata (price, tag, nav item, allergen marker) is JetBrains Mono, uppercase, letter-spaced. Anything that reads as content (dish name, description, heading) never is.", "section": "typography" },
+      { "name": "The Stamped Ledger Rule", "body": "No soft, blurred box-shadow anywhere in the system except the one named Metallic Glow exception. Depth comes from solid offset shadows, borders, and metallic gradients — never ambient blur.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use hard-edge Stamp shadows (2px 2px 0, solid, no blur) for elevated interactive elements.",
+      "Do reserve the full glossy gold gradient for primary/aspirational CTAs and signature moments — not every button.",
+      "Do keep all metadata (prices, tags, nav labels, allergens) in mono, uppercase, letter-spaced type.",
+      "Do use the 4px double-rule divider for menu section headings.",
+      "Do keep buttons and cards sharp-cornered (2px radius)."
+    ],
+    "donts": [
+      "Don't use soft, blurred box-shadow anywhere except the Metallic Glow exception on the auth sign-in button.",
+      "Don't make this look like a generic food-delivery marketplace template (stock Uber-Eats-style, no distinct identity).",
+      "Don't use gradient text (background-clip: text).",
+      "Don't soften card corners relative to buttons, or add card drop-shadows \"for depth\".",
+      "Don't mix content type (dish names, descriptions) into the mono/uppercase ledger register, or metadata into serif/sans content type."
+    ]
+  }
+}

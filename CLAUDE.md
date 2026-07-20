@@ -23,3 +23,7 @@ Graph output directory: `C:\AcesAndEightsPizza\webapp\graphify-out\`
 - `graph.json` — raw graph (RAG queries)
 - `graph.html` — interactive browser visualization
 - `GRAPH_REPORT.md` — audit report with god nodes and community map
+
+## Design Context
+
+`PRODUCT.md` and `DESIGN.md` at the project root capture strategic and visual design context (register: product, platform: web; North Star: "The Gilded Furnace" — oxblood + gilded gold, hard-edge stamped shadows, ledger-style mono labels). Every `/impeccable` command reads these before doing design work — check them before making UI/UX decisions.
