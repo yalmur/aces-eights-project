@@ -39,16 +39,6 @@
     "ast_hash": "804b9fdf6105c34a0a14bed82a9d6026",
     "semantic_hash": "804b9fdf6105c34a0a14bed82a9d6026"
   },
-  "C:\\AcesAndEightsPizza\\webapp\\.impeccable\\design.json": {
-    "mtime": 1784547015.6911712,
-    "ast_hash": "3625c1eebdfb3bf77ac195abafb82bbe",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\.impeccable\\live\\config.json": {
-    "mtime": 1784547068.0853038,
-    "ast_hash": "4663a273d905be565c0898ce9eebf844",
-    "semantic_hash": ""
-  },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Events\\OrderStatusUpdated.php": {
     "mtime": 1780708884.0,
     "ast_hash": "4a7e70a148849fa73e5cfb22f88c693e",
@@ -144,11 +134,6 @@
     "ast_hash": "6016263ca500bba88466f1b08c7d80c4",
     "semantic_hash": ""
   },
-  "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\Admin\\DealController.php": {
-    "mtime": 1783374115.4077,
-    "ast_hash": "8ace3e07c08e57a2732e0ccb1dae3f87",
-    "semantic_hash": ""
-  },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\Admin\\DeliveryController.php": {
     "mtime": 1780695718.0,
     "ast_hash": "4d1af7a69e6391847f9757baf2e4d29b",
@@ -177,11 +162,6 @@
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\Admin\\SettingsController.php": {
     "mtime": 1781921428.7804573,
     "ast_hash": "4c5f34c26ca890648629279db358edc0",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Controllers\\Admin\\ToppingController.php": {
-    "mtime": 1783336599.7814946,
-    "ast_hash": "b71e75f08258030f2441e5d421046b37",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Http\\Middleware\\EnsureUserIsAdmin.php": {
@@ -219,16 +199,6 @@
     "ast_hash": "9a643c27d66d40d0ea6dbe10940a9a18",
     "semantic_hash": "9a643c27d66d40d0ea6dbe10940a9a18"
   },
-  "C:\\AcesAndEightsPizza\\webapp\\app\\Models\\Deal.php": {
-    "mtime": 1783374092.3353868,
-    "ast_hash": "2f89e843e7dfd3bb5cf48d5843cf741d",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\app\\Models\\DealSlot.php": {
-    "mtime": 1783372914.3580642,
-    "ast_hash": "a16505a2d3821907afe8a186a43b1d2f",
-    "semantic_hash": ""
-  },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Models\\DeliveryZone.php": {
     "mtime": 1781880368.1211643,
     "ast_hash": "13c480e52685278d141d646a824410f7",
@@ -237,16 +207,6 @@
   "C:\\AcesAndEightsPizza\\webapp\\app\\Models\\MenuItem.php": {
     "mtime": 1783364798.6382046,
     "ast_hash": "9549ab8df2f028c0350788a4f64a4454",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\app\\Models\\MenuItemCrust.php": {
-    "mtime": 1783364778.157179,
-    "ast_hash": "d5c0249c538326fbdfbdeaddfbab2c9a",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\app\\Models\\MenuItemSize.php": {
-    "mtime": 1783364771.0527725,
-    "ast_hash": "6e6b749ff86aea438328556cb603519a",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\app\\Models\\Order.php": {
@@ -379,11 +339,6 @@
     "ast_hash": "1bcacd932eec1e2ea42ff11c35aae06f",
     "semantic_hash": "1bcacd932eec1e2ea42ff11c35aae06f"
   },
-  "C:\\AcesAndEightsPizza\\webapp\\database\\factories\\OrderItemFactory.php": {
-    "mtime": 1782428257.723909,
-    "ast_hash": "8588b205e9ee10e35dd3481e2c458650",
-    "semantic_hash": ""
-  },
   "C:\\AcesAndEightsPizza\\webapp\\database\\factories\\PromotionFactory.php": {
     "mtime": 1780527332.0,
     "ast_hash": "c47480f32eb1ba08e72582b1f6e22ea7",
@@ -509,76 +464,6 @@
     "ast_hash": "a00e682e0cb5aa8b675571179119b79d",
     "semantic_hash": ""
   },
-  "C:\\AcesAndEightsPizza\\webapp\\database\\migrations\\2026_06_19_000001_add_performance_indexes.php": {
-    "mtime": 1781880332.2761338,
-    "ast_hash": "6f2b87c5f0bc6eba6698b36e73446b56",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\database\\migrations\\2026_06_20_000001_create_party_hall_inquiries_table.php": {
-    "mtime": 1781921265.6223872,
-    "ast_hash": "f899817fbc148de5b3df8a40b7dd70b3",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\database\\migrations\\2026_06_20_032749_create_menu_item_related_table.php": {
-    "mtime": 1781926074.9218884,
-    "ast_hash": "d1a5c1552e976d1f3f03e83e89fd6d90",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\database\\migrations\\2026_06_20_040000_add_multi_buy_promo_types.php": {
-    "mtime": 1781925918.7173858,
-    "ast_hash": "6be2439b87cf4a3deb6e464c435c3bf9",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\database\\migrations\\2026_06_25_132756_add_composite_performance_indexes.php": {
-    "mtime": 1782394099.6714613,
-    "ast_hash": "f8416aaeafea810be6d568c7c713abb2",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\database\\migrations\\2026_07_06_094428_add_is_customizable_to_menu_items_table.php": {
-    "mtime": 1783331079.5538695,
-    "ast_hash": "2a5b00cb2ba6df8f9242f13cb93dd83d",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\database\\migrations\\2026_07_06_111543_create_menu_item_topping_table.php": {
-    "mtime": 1783336557.806085,
-    "ast_hash": "698728f119126a663561c1cb7e21eaf0",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\database\\migrations\\2026_07_06_120000_create_menu_item_sizes_table.php": {
-    "mtime": 1783364756.112041,
-    "ast_hash": "6c9591faf4a2847088c7ce867900c30f",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\database\\migrations\\2026_07_06_120001_create_menu_item_crusts_table.php": {
-    "mtime": 1783364763.5845163,
-    "ast_hash": "00d8433b960a9417dccb414ff8b872d8",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\database\\migrations\\2026_07_06_200000_create_deals_table.php": {
-    "mtime": 1783367377.4945457,
-    "ast_hash": "5fd96d723cafc5786551437fe6b74cd1",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\database\\migrations\\2026_07_06_200001_create_deal_slots_table.php": {
-    "mtime": 1783367384.9295077,
-    "ast_hash": "86025384a8302e02321e4dbe88c25ba9",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\database\\migrations\\2026_07_06_200002_create_deal_slot_pivots_table.php": {
-    "mtime": 1783367392.1637979,
-    "ast_hash": "849ab8c17eae025b72392eb9134bc13e",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\database\\migrations\\2026_07_06_200003_add_deal_fields_to_order_items_table.php": {
-    "mtime": 1783367399.4214067,
-    "ast_hash": "861fcad2961ad1835e4744c2548c0948",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\database\\migrations\\2026_07_06_210000_add_custom_label_to_deals_table.php": {
-    "mtime": 1783374063.7922518,
-    "ast_hash": "00ce0d5d6a06ed53326e4d92615f724b",
-    "semantic_hash": ""
-  },
   "C:\\AcesAndEightsPizza\\webapp\\database\\seeders\\AdminUserSeeder.php": {
     "mtime": 1780503724.0,
     "ast_hash": "38cc9421203a11dce8195c74186e1e53",
@@ -644,11 +529,6 @@
     "ast_hash": "d3e6416d1733c034deeb3a0680a10d7c",
     "semantic_hash": ""
   },
-  "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\deals.blade.php": {
-    "mtime": 1783368684.7800505,
-    "ast_hash": "fc99133432fff9c91fa82260a09f43b3",
-    "semantic_hash": ""
-  },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\home.blade.php": {
     "mtime": 1783943760.1939495,
     "ast_hash": "920610a054db06551a32c1835b2aa44b",
@@ -677,16 +557,6 @@
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\admin\\allergy\\index.blade.php": {
     "mtime": 1780695326.0,
     "ast_hash": "b5a1eb9fb22ef7bafadb8b970d464698",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\admin\\deals\\edit.blade.php": {
-    "mtime": 1783374132.416072,
-    "ast_hash": "603bb5a10796da949f2a365b9e9ffa45",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\admin\\deals\\index.blade.php": {
-    "mtime": 1783367499.8247259,
-    "ast_hash": "6bd626c623eb5b63e1aa0faa36133ac9",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\admin\\delivery\\index.blade.php": {
@@ -744,11 +614,6 @@
     "ast_hash": "af8310d0265c30078011c221de3ef53d",
     "semantic_hash": ""
   },
-  "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\admin\\toppings\\index.blade.php": {
-    "mtime": 1783336666.554603,
-    "ast_hash": "cff968fc99c46fbbdf3ccb7ea52c166d",
-    "semantic_hash": ""
-  },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\auth\\login.blade.php": {
     "mtime": 1783948252.916177,
     "ast_hash": "0bb675cd909aae9841d4ee250add496b",
@@ -772,11 +637,6 @@
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\components\\cart-drawer.blade.php": {
     "mtime": 1783365744.9839556,
     "ast_hash": "d8922a9915651c5517a271de3be37242",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\components\\deal-drawer.blade.php": {
-    "mtime": 1783367646.2364578,
-    "ast_hash": "6cb2783e1105d63759c39a49e9e8f71e",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\resources\\views\\components\\footer.blade.php": {
@@ -894,24 +754,9 @@
     "ast_hash": "7e567dc27e68d5b57bae16af07f68907",
     "semantic_hash": "7e567dc27e68d5b57bae16af07f68907"
   },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\AccountControllerTest.php": {
-    "mtime": 1782388732.398507,
-    "ast_hash": "79658826a249a09c7d12d9b3ab6d4c5e",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\AddressControllerTest.php": {
-    "mtime": 1782048146.0531898,
-    "ast_hash": "2a3d6d59ae8cff493f55be0cd49ac5fa",
-    "semantic_hash": ""
-  },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\AllergyAdminTest.php": {
     "mtime": 1782402621.6049378,
     "ast_hash": "6f7c8f00d383f242a822de1357cb6fed",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\AuthTest.php": {
-    "mtime": 1782387318.2317,
-    "ast_hash": "c8cdaafe50dfedcc22e919fc987ccdd3",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\BroadcastingTest.php": {
@@ -919,39 +764,14 @@
     "ast_hash": "e7ea661031f1d23f279403cbc4aa1b4a",
     "semantic_hash": "e7ea661031f1d23f279403cbc4aa1b4a"
   },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\CartControllerTest.php": {
-    "mtime": 1782034453.4989917,
-    "ast_hash": "82f77a2b922f09c173005adf499d55a9",
-    "semantic_hash": ""
-  },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\CheckoutTest.php": {
     "mtime": 1782391621.8415732,
     "ast_hash": "eb4bd19f8d6cd47c950bddcf25814986",
     "semantic_hash": ""
   },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\ContactFormTest.php": {
-    "mtime": 1782387526.7016008,
-    "ast_hash": "365e7477ab5b5117ef20cb1471770aec",
-    "semantic_hash": ""
-  },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\CustomerPagesTest.php": {
     "mtime": 1781880454.2855906,
     "ast_hash": "c428e3f02ea89fb5b48eb95a6aae062d",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\DealsPageTest.php": {
-    "mtime": 1781925875.4010093,
-    "ast_hash": "a36b48ea521e8801398582f2ecf1eaf8",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\DeliveryFeeTest.php": {
-    "mtime": 1782383267.9832876,
-    "ast_hash": "42429aa60e4a1c9e78859134976e5b11",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\DeliveryZoneModelTest.php": {
-    "mtime": 1782428158.6276095,
-    "ast_hash": "b468f58bd16505c10f4613a796de48ae",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\DeliveryZoneTest.php": {
@@ -969,24 +789,9 @@
     "ast_hash": "5215c08ce468dc9a30e372ef5da741ad",
     "semantic_hash": ""
   },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\MailableContentTest.php": {
-    "mtime": 1782389213.250132,
-    "ast_hash": "8029aa380ec0307a4353424539cc7f3c",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\MenuShowTest.php": {
-    "mtime": 1782389900.5122142,
-    "ast_hash": "35e4e89f14db53e02853600c44b943b4",
-    "semantic_hash": ""
-  },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\MenuTest.php": {
     "mtime": 1782390734.0430303,
     "ast_hash": "83ff1731c9abfae215e6f91f4bde6992",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\OrderControllerTest.php": {
-    "mtime": 1782057169.1660032,
-    "ast_hash": "b4c5385e27e6c44d73dfd9126f1c7a87",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\OrderEmailTest.php": {
@@ -994,29 +799,9 @@
     "ast_hash": "25b2f50f8bc5007b18a67cba3ab83748",
     "semantic_hash": ""
   },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\OrderModelTest.php": {
-    "mtime": 1782390766.3019364,
-    "ast_hash": "74df8c5fca717a9464a92601485fba12",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\OurMenuAndHomeControllerTest.php": {
-    "mtime": 1782388257.560354,
-    "ast_hash": "f94959b58c8882a4877863bfb2c9ce7d",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\PartyHallTest.php": {
-    "mtime": 1781923025.7557912,
-    "ast_hash": "f8782f300fd72b882dc917e3e42bb774",
-    "semantic_hash": ""
-  },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\PasswordResetTest.php": {
     "mtime": 1782387283.3155816,
     "ast_hash": "ba4ebc76ce7f0dd2ee94be76f7bf03c3",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\PromoControllerTest.php": {
-    "mtime": 1782058992.2415278,
-    "ast_hash": "2af369c44fb58bdaa99b05d1c727be3f",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\PromotionTest.php": {
@@ -1044,11 +829,6 @@
     "ast_hash": "db1b138b5569974e5db72dbba6c02441",
     "semantic_hash": ""
   },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\SocialAuthTest.php": {
-    "mtime": 1782383205.946232,
-    "ast_hash": "91c77e9300d0dddeebb4717504fc0ac6",
-    "semantic_hash": ""
-  },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\StripeWebhookTest.php": {
     "mtime": 1782388671.6724277,
     "ast_hash": "48928adde1d3f2cbfe095c65f0d8929d",
@@ -1069,34 +849,9 @@
     "ast_hash": "9807447dff9e8593e9221805e17956b0",
     "semantic_hash": ""
   },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\Admin\\DashboardTest.php": {
-    "mtime": 1782380007.1463914,
-    "ast_hash": "a4922fecfc1c37d3cd7c59ec81109cfd",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\Admin\\DeliveryControllerTest.php": {
-    "mtime": 1782428302.1950622,
-    "ast_hash": "a7781cfe35056037a767f438cddde9ba",
-    "semantic_hash": ""
-  },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\Admin\\InStoreOrderTest.php": {
     "mtime": 1782389364.651882,
     "ast_hash": "dfb046af4e4237fb057e73c80366111a",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\Admin\\KitchenIndexTest.php": {
-    "mtime": 1782367623.9623082,
-    "ast_hash": "9a79516230bf958d84227c2f54abd4a0",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\Admin\\KitchenPollTest.php": {
-    "mtime": 1781936670.3366423,
-    "ast_hash": "88c9478168ef6872945bf15f65b48c01",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\Admin\\MenuCacheTest.php": {
-    "mtime": 1782379973.462134,
-    "ast_hash": "28db28a28ae06b5692b8ae70806fd2bd",
     "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\Admin\\MenuItemTest.php": {
@@ -1104,95 +859,10 @@
     "ast_hash": "f09b9f8e85eb2a1d814d4c10249ad573",
     "semantic_hash": ""
   },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\Admin\\OrderIndexTest.php": {
-    "mtime": 1782048911.2160428,
-    "ast_hash": "65773a10bdb834447a79887e5d707ab6",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\Admin\\OrderShowTest.php": {
-    "mtime": 1782324109.3821156,
-    "ast_hash": "a56489773369322c2ff11fc4153d507a",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\Admin\\OrderStatusTest.php": {
-    "mtime": 1782404625.811009,
-    "ast_hash": "04d7f7668a82913ee5fe264aa61beebe",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\Admin\\PromotionControllerTest.php": {
-    "mtime": 1782404160.3683515,
-    "ast_hash": "7570496832488a91b9c99b1901a31a4c",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\Admin\\SettingsControllerTest.php": {
-    "mtime": 1782059174.7208085,
-    "ast_hash": "cf91403f77ae1f317aebada97213f7ab",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Feature\\Admin\\ToppingTest.php": {
-    "mtime": 1783337181.0100484,
-    "ast_hash": "ec7b7e60e99d873d19ac78ed809632c3",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Unit\\AllergenModelTest.php": {
-    "mtime": 1782056559.075572,
-    "ast_hash": "3e4eebfdd323d4612660ee0cb43cee37",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Unit\\BaseIngredientModelTest.php": {
-    "mtime": 1782402174.476352,
-    "ast_hash": "e5641b9c56f9b03a00923b99e57f0ab9",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Unit\\CategoryModelTest.php": {
-    "mtime": 1782404084.9345336,
-    "ast_hash": "7d9629778e92ac2c91aed43d77b1f724",
-    "semantic_hash": ""
-  },
   "C:\\AcesAndEightsPizza\\webapp\\tests\\Unit\\ExampleTest.php": {
     "mtime": 1773482040.0,
     "ast_hash": "3f679e9508c834f0ad95943455fcd836",
     "semantic_hash": "3f679e9508c834f0ad95943455fcd836"
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Unit\\MenuItemModelTest.php": {
-    "mtime": 1782404606.9582062,
-    "ast_hash": "fea73bc7fea90750cc35e8c753bc1ee6",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Unit\\OrderItemModelTest.php": {
-    "mtime": 1782428101.8608787,
-    "ast_hash": "1af035135e9afd9b2b4cad56d4aaff6b",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Unit\\OrderModelTest.php": {
-    "mtime": 1782378429.0182266,
-    "ast_hash": "8bec05a39bf4308e1281defe4d2f5ff7",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Unit\\PromotionModelTest.php": {
-    "mtime": 1782383175.1839247,
-    "ast_hash": "33b52b7d0d7fafb8de6865863216b6f5",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Unit\\SettingModelTest.php": {
-    "mtime": 1782378361.2493322,
-    "ast_hash": "962578f20df5329617818fe7a0af8bba",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Unit\\ToppingModelTest.php": {
-    "mtime": 1782403322.122185,
-    "ast_hash": "45c563174b7b71caf8bc29625f262774",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Unit\\UserAddressModelTest.php": {
-    "mtime": 1782047773.5435376,
-    "ast_hash": "79abff19d8eb40f880fb256a0bde2503",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\tests\\Unit\\UserModelTest.php": {
-    "mtime": 1782404617.8217087,
-    "ast_hash": "9c0ed868e8b50e5882c5603c6b36a634",
-    "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\AGENTS.md": {
     "mtime": 1780855158.0,
@@ -1209,25 +879,10 @@
     "ast_hash": "f77c67058f05f0353bacb8e7021a1087",
     "semantic_hash": "f77c67058f05f0353bacb8e7021a1087"
   },
-  "C:\\AcesAndEightsPizza\\webapp\\DESIGN.md": {
-    "mtime": 1784546965.5657032,
-    "ast_hash": "45472c5b7bef5d54a1efa5f454c2e042",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\PRODUCT.md": {
-    "mtime": 1784546559.7786152,
-    "ast_hash": "00faa3e1de1f35881e7c55b88fa295b8",
-    "semantic_hash": ""
-  },
   "C:\\AcesAndEightsPizza\\webapp\\README.md": {
     "mtime": 1773482040.0,
     "ast_hash": "c9fd29cc7c9057820aebcdcd6bbddca3",
     "semantic_hash": "c9fd29cc7c9057820aebcdcd6bbddca3"
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\.impeccable\\critique\\2026-07-20T11-49-33Z__resources-views-menu-index-blade-php.md": {
-    "mtime": 1784548173.537743,
-    "ast_hash": "a7efb7d0fb6d775623dd024fb9d24cd1",
-    "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\brainstorm\\1893-1780409492\\content\\customiser-cart.html": {
     "mtime": 1780409608.0,
@@ -1248,86 +903,6 @@
     "mtime": 1780410496.0,
     "ast_hash": "3a41bf2357ed459bafc78ef66d82d010",
     "semantic_hash": "3a41bf2357ed459bafc78ef66d82d010"
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\plan-session2.md": {
-    "mtime": 1782051086.9507039,
-    "ast_hash": "9392fdc3a992e8cf710ab941885fbd75",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\progress.md": {
-    "mtime": 1782052339.8115659,
-    "ast_hash": "2bdc3534b8868f0500b575f8264cbb2f",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\sprint2-plan.md": {
-    "mtime": 1782033730.5821743,
-    "ast_hash": "dc6877aa33deb4d7450a380f8cd9c8ed",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\sprint3-plan.md": {
-    "mtime": 1782045643.1350577,
-    "ast_hash": "a660970bc639e7309c7412fe64aa5181",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\sprint3-task1-report.md": {
-    "mtime": 1782045867.1327312,
-    "ast_hash": "ef72a1170d278d47f3068c5152bc1871",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\sprint3-task2-report.md": {
-    "mtime": 1782046170.7102978,
-    "ast_hash": "4beb2142519f7d1ea44d69923b2b73d3",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\sprint3-task3-report.md": {
-    "mtime": 1782046530.9177012,
-    "ast_hash": "9778135c446a0d8fb76e54bfc2e9f389",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\task-1-brief.md": {
-    "mtime": 1782403291.1107337,
-    "ast_hash": "547bec531576612c7e88bbe014fca080",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\task-2-brief.md": {
-    "mtime": 1782403453.2380211,
-    "ast_hash": "5f6be6496178021b878b025124555d26",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\task1-report.md": {
-    "mtime": 1782033983.6745408,
-    "ast_hash": "75ee0ddb3ca8b1e920890d7d12c8d3d9",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\task10-report.md": {
-    "mtime": 1782051485.0914822,
-    "ast_hash": "72a8c923a61a2c88471e6b9bc5110110",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\task11-report.md": {
-    "mtime": 1782051695.8008282,
-    "ast_hash": "8ba3eb66f9182e8c975012ad161b8d89",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\task12-report.md": {
-    "mtime": 1782051874.3241117,
-    "ast_hash": "a6744a39d29232f6aa94fa31725ee5bd",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\task2-report.md": {
-    "mtime": 1782034273.0061724,
-    "ast_hash": "317adb11c4b8d093168ba55f0f734691",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\task3-report.md": {
-    "mtime": 1782034517.1191702,
-    "ast_hash": "ee0ae5ae7c17b5a54a3f7684349758d1",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\.superpowers\\sdd\\task9-report.md": {
-    "mtime": 1782051306.504696,
-    "ast_hash": "27ff46dfcff26a6893da636a27424996",
-    "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\docs\\superpowers\\plans\\2026-06-02-plan-cart-customisation.md": {
     "mtime": 1780411634.0,
@@ -1364,20 +939,10 @@
     "ast_hash": "34b7b32f51ddf5b1299e771d4ccf9601",
     "semantic_hash": "34b7b32f51ddf5b1299e771d4ccf9601"
   },
-  "C:\\AcesAndEightsPizza\\webapp\\docs\\superpowers\\plans\\2026-07-20-kitchen-accept-reject-payment-hold.md": {
-    "mtime": 1784552509.8560045,
-    "ast_hash": "dc4d0e53d2559d429a53c030106be6f8",
-    "semantic_hash": ""
-  },
   "C:\\AcesAndEightsPizza\\webapp\\docs\\superpowers\\specs\\2026-06-02-cart-customisation-design.md": {
     "mtime": 1780411426.0,
     "ast_hash": "e4000e3034c980d2bcb0ef636258283f",
     "semantic_hash": "e4000e3034c980d2bcb0ef636258283f"
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\docs\\superpowers\\specs\\2026-07-20-kitchen-accept-reject-payment-hold-design.md": {
-    "mtime": 1784551664.2694066,
-    "ast_hash": "53b7576b067f4da593c5be5b68c15eb0",
-    "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\public\\robots.txt": {
     "mtime": 1773482040.0,
@@ -1388,21 +953,6 @@
     "mtime": 1779464054.0,
     "ast_hash": "27515d35bcc0e8471e106c2796f587a9",
     "semantic_hash": "27515d35bcc0e8471e106c2796f587a9"
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\public\\images\\site\\about-chef-murat.jpg": {
-    "mtime": 1783945299.7811835,
-    "ast_hash": "af6dd3054dcbc1d708700a981b6628d7",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\public\\images\\site\\about-dough-stretch.jpg": {
-    "mtime": 1783946822.6959372,
-    "ast_hash": "3553c78d34724a27d6402bfc415a65f7",
-    "semantic_hash": ""
-  },
-  "C:\\AcesAndEightsPizza\\webapp\\public\\images\\site\\about-kitchen-cooking.jpg": {
-    "mtime": 1783946165.5613918,
-    "ast_hash": "39220abc0034c33849d7d782c18f55ac",
-    "semantic_hash": ""
   },
   "C:\\AcesAndEightsPizza\\webapp\\public\\images\\site\\about-mozzarella.jpg": {
     "mtime": 1781134098.0,
@@ -1444,18 +994,1468 @@
     "ast_hash": "140b6b4025b25544a88521af8d653334",
     "semantic_hash": ""
   },
-  "C:\\AcesAndEightsPizza\\webapp\\public\\images\\site\\shop-building.jpg": {
-    "mtime": 1783943097.2707987,
-    "ast_hash": "a0c96ea66e5351d068c36b5a1b29e838",
-    "semantic_hash": ""
-  },
   "C:\\AcesAndEightsPizza\\webapp\\public\\sounds\\KitchenAlert.mp3": {
     "mtime": 1780559776.0,
     "ast_hash": "9b0d2135226fc39bf33b38f5a7cd7b3c",
     "semantic_hash": ""
   },
-  "C:\\AcesAndEightsPizza\\webapp\\public\\videos\\hero-pizza.mp4": {
-    "mtime": 1781928276.0552363,
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\artisan": {
+    "mtime": 1773478440.0,
+    "ast_hash": "e66bb13691f6184c762c196427d8e685",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\composer-setup.php": {
+    "mtime": 1780525298.0,
+    "ast_hash": "454ed70df56cec5c73b2aa38e673350f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\composer.json": {
+    "mtime": 1780699966.0,
+    "ast_hash": "dbb6cd4f9d9342dd48a48b46f431651f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\package.json": {
+    "mtime": 1783325986.0,
+    "ast_hash": "e3e8d46ca8686142208375002fff8ab4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\postcss.config.js": {
+    "mtime": 1780067872.0,
+    "ast_hash": "ef3ba2a81ba19f8ea5ddf625521e96f0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tailwind.config.js": {
+    "mtime": 1780504022.0,
+    "ast_hash": "c5907cc4dfb2e3b47f7ebe1d192b5c4a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tinker_input.php": {
+    "mtime": 1780709804.0,
+    "ast_hash": "9771247364d852c15395b897e4c5b52e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\vite.config.js": {
+    "mtime": 1780067988.0,
+    "ast_hash": "804b9fdf6105c34a0a14bed82a9d6026",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.impeccable\\design.json": {
+    "mtime": 1784547014.0,
+    "ast_hash": "3625c1eebdfb3bf77ac195abafb82bbe",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.impeccable\\live\\config.json": {
+    "mtime": 1784547068.0,
+    "ast_hash": "4663a273d905be565c0898ce9eebf844",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Events\\OrderStatusUpdated.php": {
+    "mtime": 1780708884.0,
+    "ast_hash": "4a7e70a148849fa73e5cfb22f88c693e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\AuthController.php": {
+    "mtime": 1780508276.0,
+    "ast_hash": "7a15ceb55608a26fefeab412f32a1c8e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\CartController.php": {
+    "mtime": 1780068360.0,
+    "ast_hash": "a846a615eb5bbaad3669cceef4e203bb",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\CheckoutController.php": {
+    "mtime": 1783367702.0,
+    "ast_hash": "835e4a59c5df6cfa9fce309db5c59692",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\Controller.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "25a307335c0719bc9a91b3f7babd186d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\HomeController.php": {
+    "mtime": 1783337046.0,
+    "ast_hash": "3aeda104e2ecd622af6b0dec750eada2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\MenuController.php": {
+    "mtime": 1783367568.0,
+    "ast_hash": "63fc49569b4c1a94ed409734986af223",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\OrderController.php": {
+    "mtime": 1784550388.0,
+    "ast_hash": "989fa571896baa5f12558dc729fe07c5",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\OurMenuController.php": {
+    "mtime": 1783337024.0,
+    "ast_hash": "9e0669fbc2d3006090971ac43ea2490e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\PageController.php": {
+    "mtime": 1783368622.0,
+    "ast_hash": "87cced89a6c83e22ee5b76d74d7980cc",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\PasswordResetController.php": {
+    "mtime": 1780673036.0,
+    "ast_hash": "9a372c35cef7ba57a5ee6f42f7fad36a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\PromoController.php": {
+    "mtime": 1780679086.0,
+    "ast_hash": "ceba4ba0f594634597e1bf7efafe4616",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\SocialAuthController.php": {
+    "mtime": 1781921244.0,
+    "ast_hash": "41e3701ec3edd625886dbe92234b4384",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\StripeWebhookController.php": {
+    "mtime": 1781936688.0,
+    "ast_hash": "6d660ce167db211d9d04c617d54dbdf1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\Account\\AccountController.php": {
+    "mtime": 1780545964.0,
+    "ast_hash": "2c3d09db03e106529e35c506159b1d21",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\Account\\AddressController.php": {
+    "mtime": 1780545984.0,
+    "ast_hash": "d928b1445280c2946bcd635b50b82557",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\Account\\PasswordController.php": {
+    "mtime": 1780545988.0,
+    "ast_hash": "7149b7744f27a9352672196909d3909e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\Admin\\AllergyController.php": {
+    "mtime": 1780695290.0,
+    "ast_hash": "2e2c93f1284e6def4e0504312248ac4a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\Admin\\DashboardController.php": {
+    "mtime": 1782321224.0,
+    "ast_hash": "6016263ca500bba88466f1b08c7d80c4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\Admin\\DealController.php": {
+    "mtime": 1783374114.0,
+    "ast_hash": "8ace3e07c08e57a2732e0ccb1dae3f87",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\Admin\\DeliveryController.php": {
+    "mtime": 1780695718.0,
+    "ast_hash": "4d1af7a69e6391847f9757baf2e4d29b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\Admin\\KitchenController.php": {
+    "mtime": 1780708900.0,
+    "ast_hash": "33a59af4b13cac53ce8a1916956b66b3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\Admin\\MenuItemController.php": {
+    "mtime": 1783364878.0,
+    "ast_hash": "62332507069567163f444fd8eb00a8c0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\Admin\\OrderController.php": {
+    "mtime": 1781880378.0,
+    "ast_hash": "73a3f68a7476042f02c97be0993cdd83",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\Admin\\PromotionController.php": {
+    "mtime": 1781925800.0,
+    "ast_hash": "90d4be4d901d6099c3530ceb5cea0cd1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\Admin\\SettingsController.php": {
+    "mtime": 1781921428.0,
+    "ast_hash": "4c5f34c26ca890648629279db358edc0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Controllers\\Admin\\ToppingController.php": {
+    "mtime": 1783336598.0,
+    "ast_hash": "b71e75f08258030f2441e5d421046b37",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Http\\Middleware\\EnsureUserIsAdmin.php": {
+    "mtime": 1780068232.0,
+    "ast_hash": "1dcab79e51387e089a129837d04032d8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Mail\\ContactMessage.php": {
+    "mtime": 1782389276.0,
+    "ast_hash": "e7c5db0992468d7ec8b012ee2a794017",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Mail\\OrderConfirmation.php": {
+    "mtime": 1782394240.0,
+    "ast_hash": "13951aa65d41864fc17ae32704c295f1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Mail\\OrderStatusUpdate.php": {
+    "mtime": 1780673246.0,
+    "ast_hash": "f324f183bf1fc3c849c14137ffd8cdcb",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Models\\Allergen.php": {
+    "mtime": 1780506076.0,
+    "ast_hash": "d807fef845da6c77048472430c3055fc",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Models\\BaseIngredient.php": {
+    "mtime": 1780506074.0,
+    "ast_hash": "f63c34e51bdfec3f532c16e532d0f9f5",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Models\\Category.php": {
+    "mtime": 1780506070.0,
+    "ast_hash": "9a643c27d66d40d0ea6dbe10940a9a18",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Models\\Deal.php": {
+    "mtime": 1783374092.0,
+    "ast_hash": "2f89e843e7dfd3bb5cf48d5843cf741d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Models\\DealSlot.php": {
+    "mtime": 1783372914.0,
+    "ast_hash": "a16505a2d3821907afe8a186a43b1d2f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Models\\DeliveryZone.php": {
+    "mtime": 1781880368.0,
+    "ast_hash": "13c480e52685278d141d646a824410f7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Models\\MenuItem.php": {
+    "mtime": 1783364798.0,
+    "ast_hash": "9549ab8df2f028c0350788a4f64a4454",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Models\\MenuItemCrust.php": {
+    "mtime": 1783364778.0,
+    "ast_hash": "d5c0249c538326fbdfbdeaddfbab2c9a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Models\\MenuItemSize.php": {
+    "mtime": 1783364770.0,
+    "ast_hash": "6e6b749ff86aea438328556cb603519a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Models\\Order.php": {
+    "mtime": 1784582078.0,
+    "ast_hash": "3b02ae1aa7eb7b4e5df26289b371fc30",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Models\\OrderItem.php": {
+    "mtime": 1780508380.0,
+    "ast_hash": "8cdb6b3af379201af79d3bcca4a429f0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Models\\Promotion.php": {
+    "mtime": 1781926024.0,
+    "ast_hash": "1d7522bdf590793e8b026fa5500cbb2c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Models\\Setting.php": {
+    "mtime": 1780527326.0,
+    "ast_hash": "9bda0fe1cebde0fdbc1ec07854dd831f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Models\\Topping.php": {
+    "mtime": 1783336576.0,
+    "ast_hash": "7436df42de7e44bcc64bfa7872d443e1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Models\\User.php": {
+    "mtime": 1781880254.0,
+    "ast_hash": "508b2877fc51cab5b6604c48a991073f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Models\\UserAddress.php": {
+    "mtime": 1780545768.0,
+    "ast_hash": "83edcec9f8a7f79900b977c0939a4123",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\app\\Providers\\AppServiceProvider.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "c0094f35cad6bba7636002a62186dae4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\bootstrap\\app.php": {
+    "mtime": 1780525360.0,
+    "ast_hash": "bbf9b5e1d550cb3a3ad04784dc658b81",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\bootstrap\\providers.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "888c810b5a4720916f07aa05dd2c2dd3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\config\\app.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "276578ad68424be59d0998379ae7d4cb",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\config\\auth.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "26354511ab860b301f2a3554bc388b91",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\config\\broadcasting.php": {
+    "mtime": 1780525352.0,
+    "ast_hash": "974349bb9e5de4db7a0fc10c75d0edfd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\config\\cache.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "022fdf20e95ddb79949954243e367003",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\config\\database.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "3cd69c7ecc842e4552e44eade546d91f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\config\\filesystems.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "bde1aa1027f0448f17348dbd93f3d7ea",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\config\\logging.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "d8255a5c07d3da72c7c9363f0c44bddd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\config\\mail.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "18601a927b48d38337ba2077426a7d60",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\config\\queue.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "f98ce92e7bf51db1fabaf8a30e12fc5a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\config\\services.php": {
+    "mtime": 1780699876.0,
+    "ast_hash": "9d2e4180cbb50adec614557e39f3bebd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\config\\session.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "6d9336e9ca1183588abbce7ff7a6f29a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\factories\\AllergenFactory.php": {
+    "mtime": 1780506190.0,
+    "ast_hash": "ae292c4425e078e1b889852229e9038c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\factories\\CategoryFactory.php": {
+    "mtime": 1780506166.0,
+    "ast_hash": "2b8af5336659b3fbc4d0bfaacb16b095",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\factories\\DeliveryZoneFactory.php": {
+    "mtime": 1780544906.0,
+    "ast_hash": "f3fbb4331116aff426741810d8a3281b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\factories\\MenuItemFactory.php": {
+    "mtime": 1780506174.0,
+    "ast_hash": "75b465b95eee390079032d4dde42d91e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\factories\\OrderFactory.php": {
+    "mtime": 1780508398.0,
+    "ast_hash": "1bcacd932eec1e2ea42ff11c35aae06f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\factories\\OrderItemFactory.php": {
+    "mtime": 1782428256.0,
+    "ast_hash": "8588b205e9ee10e35dd3481e2c458650",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\factories\\PromotionFactory.php": {
+    "mtime": 1780527332.0,
+    "ast_hash": "c47480f32eb1ba08e72582b1f6e22ea7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\factories\\ToppingFactory.php": {
+    "mtime": 1780506182.0,
+    "ast_hash": "7e498ad437dbd3876c39464f60ddd606",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\factories\\UserAddressFactory.php": {
+    "mtime": 1780545948.0,
+    "ast_hash": "649b6e786991e1fad6c3fbf3ddd3a023",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\factories\\UserFactory.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "1c9f381f9c2bc3027971a3bfdbe99164",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\0001_01_01_000000_create_users_table.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "138280095e9d19f2ba6fb830415602e2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\0001_01_01_000001_create_cache_table.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "f3f38b41650112a6282c8dd1f635afb0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\0001_01_01_000002_create_jobs_table.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "ead9cce2650b36345454f85e8c0214a0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_02_154724_add_role_to_users_table.php": {
+    "mtime": 1780503688.0,
+    "ast_hash": "b85f53fee909ffee0a075d93090365cf",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_03_170001_create_categories_table.php": {
+    "mtime": 1780505866.0,
+    "ast_hash": "8a54c5c809f872ae277134eb59de32b8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_03_170002_create_menu_items_table.php": {
+    "mtime": 1780505874.0,
+    "ast_hash": "725fcebbe9329af73a22e8f016065ebd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_03_170003_create_base_ingredients_table.php": {
+    "mtime": 1780505882.0,
+    "ast_hash": "f746c387548487f6cc7cb64b158551df",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_03_170004_create_toppings_table.php": {
+    "mtime": 1780505890.0,
+    "ast_hash": "92d5309b18fa729c719c6208035d0d79",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_03_170005_create_allergens_table.php": {
+    "mtime": 1780505896.0,
+    "ast_hash": "e390bf6b80fdd15869b7e8de103f12d6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_03_170006_create_allergen_menu_item_table.php": {
+    "mtime": 1780505904.0,
+    "ast_hash": "5b44458a6ffbce12a3b4c24dcb588168",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_03_170007_create_delivery_zones_table.php": {
+    "mtime": 1780505914.0,
+    "ast_hash": "960e1841704d851f1f91e276fe73fa87",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_03_173856_create_orders_table.php": {
+    "mtime": 1780675682.0,
+    "ast_hash": "ecd193a0ea129e75f4a93129623cee2b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_03_173857_create_order_items_table.php": {
+    "mtime": 1780508346.0,
+    "ast_hash": "443e7debd6d96a58344c6fc81b64cf25",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_03_225410_create_promotions_table.php": {
+    "mtime": 1781934318.0,
+    "ast_hash": "83b4363d7540cff35f67f046eb9765d3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_03_225412_add_promo_cols_to_orders_table.php": {
+    "mtime": 1780527260.0,
+    "ast_hash": "41bf2772376540b8d2384ca06e588935",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_03_225413_create_settings_table.php": {
+    "mtime": 1780527262.0,
+    "ast_hash": "b9afe2c39e7a985ffa1e39cbb9605146",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_04_040236_create_user_addresses_table.php": {
+    "mtime": 1780545762.0,
+    "ast_hash": "ae7b9fcadb6b17e6c7d661cb55f8b2b6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_05_160739_add_eat_in_to_orders_table.php": {
+    "mtime": 1780675670.0,
+    "ast_hash": "d47dc1a2ec60720b696179393b9b42c9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_05_193917_add_dietary_flags_to_menu_items_table.php": {
+    "mtime": 1780688388.0,
+    "ast_hash": "fb3f6ac30c21dc9f7acd61faa1ada33c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_05_214109_add_postcodes_to_delivery_zones_table.php": {
+    "mtime": 1780695690.0,
+    "ast_hash": "69ae67244a254a4c995af03811d53b2a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_05_225045_add_social_ids_to_users_table.php": {
+    "mtime": 1780699852.0,
+    "ast_hash": "a00e682e0cb5aa8b675571179119b79d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_19_000001_add_performance_indexes.php": {
+    "mtime": 1781880332.0,
+    "ast_hash": "6f2b87c5f0bc6eba6698b36e73446b56",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_20_000001_create_party_hall_inquiries_table.php": {
+    "mtime": 1781921264.0,
+    "ast_hash": "f899817fbc148de5b3df8a40b7dd70b3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_20_032749_create_menu_item_related_table.php": {
+    "mtime": 1781926074.0,
+    "ast_hash": "d1a5c1552e976d1f3f03e83e89fd6d90",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_20_040000_add_multi_buy_promo_types.php": {
+    "mtime": 1781925918.0,
+    "ast_hash": "6be2439b87cf4a3deb6e464c435c3bf9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_06_25_132756_add_composite_performance_indexes.php": {
+    "mtime": 1782394098.0,
+    "ast_hash": "f8416aaeafea810be6d568c7c713abb2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_07_06_094428_add_is_customizable_to_menu_items_table.php": {
+    "mtime": 1783331078.0,
+    "ast_hash": "2a5b00cb2ba6df8f9242f13cb93dd83d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_07_06_111543_create_menu_item_topping_table.php": {
+    "mtime": 1783336556.0,
+    "ast_hash": "698728f119126a663561c1cb7e21eaf0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_07_06_120000_create_menu_item_sizes_table.php": {
+    "mtime": 1783364756.0,
+    "ast_hash": "6c9591faf4a2847088c7ce867900c30f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_07_06_120001_create_menu_item_crusts_table.php": {
+    "mtime": 1783364762.0,
+    "ast_hash": "00d8433b960a9417dccb414ff8b872d8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_07_06_200000_create_deals_table.php": {
+    "mtime": 1783367376.0,
+    "ast_hash": "5fd96d723cafc5786551437fe6b74cd1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_07_06_200001_create_deal_slots_table.php": {
+    "mtime": 1783367384.0,
+    "ast_hash": "86025384a8302e02321e4dbe88c25ba9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_07_06_200002_create_deal_slot_pivots_table.php": {
+    "mtime": 1783367392.0,
+    "ast_hash": "849ab8c17eae025b72392eb9134bc13e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_07_06_200003_add_deal_fields_to_order_items_table.php": {
+    "mtime": 1783367398.0,
+    "ast_hash": "861fcad2961ad1835e4744c2548c0948",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\migrations\\2026_07_06_210000_add_custom_label_to_deals_table.php": {
+    "mtime": 1783374062.0,
+    "ast_hash": "00ce0d5d6a06ed53326e4d92615f724b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\seeders\\AdminUserSeeder.php": {
+    "mtime": 1780503724.0,
+    "ast_hash": "38cc9421203a11dce8195c74186e1e53",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\seeders\\AllergenSeeder.php": {
+    "mtime": 1780506262.0,
+    "ast_hash": "91d92634b576b46e56d2f23d579c4cb8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\seeders\\CategorySeeder.php": {
+    "mtime": 1780506258.0,
+    "ast_hash": "ee4a3927f8357444c28d1a12ac89c6c7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\seeders\\DatabaseSeeder.php": {
+    "mtime": 1780527344.0,
+    "ast_hash": "e5508596a55cf2aaf6478d51d11cf4b1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\seeders\\DeliveryZoneSeeder.php": {
+    "mtime": 1780506278.0,
+    "ast_hash": "e486ba07cec6308517eec444e11afeb9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\seeders\\MenuItemSeeder.php": {
+    "mtime": 1781134098.0,
+    "ast_hash": "559d07e3a61e69d2b65074eb2af91657",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\seeders\\SettingSeeder.php": {
+    "mtime": 1780527336.0,
+    "ast_hash": "613671f90b04c9771746731e8e3cab84",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\database\\seeders\\ToppingSeeder.php": {
+    "mtime": 1780506272.0,
+    "ast_hash": "8bbbfecd70e9a7d34d34ca00381271f6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\public\\index.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "d8eda274115af5fd2aaa8230af329ef7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\js\\app.js": {
+    "mtime": 1783367732.0,
+    "ast_hash": "379cd7c95bf217eacfa8352e7b9dcf90",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\js\\bootstrap.js": {
+    "mtime": 1773478440.0,
+    "ast_hash": "78f909acc19aea4717eddca5a87c1ba3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\about.blade.php": {
+    "mtime": 1783947816.0,
+    "ast_hash": "3f91cabcc945e271ea2d3245198ee91f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\contact.blade.php": {
+    "mtime": 1780701234.0,
+    "ast_hash": "d3e6416d1733c034deeb3a0680a10d7c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\deals.blade.php": {
+    "mtime": 1783368684.0,
+    "ast_hash": "fc99133432fff9c91fa82260a09f43b3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\home.blade.php": {
+    "mtime": 1783943760.0,
+    "ast_hash": "920610a054db06551a32c1835b2aa44b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\our-menu.blade.php": {
+    "mtime": 1783337036.0,
+    "ast_hash": "e0630d5d80e18c63ee6780045a197dd5",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\welcome.blade.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "f9f90b3bab40fd1d366e9b54466deac7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\account\\index.blade.php": {
+    "mtime": 1780700586.0,
+    "ast_hash": "6d2b26046370be2a3b48f6ae1a0c5ab4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\admin\\dashboard.blade.php": {
+    "mtime": 1780693584.0,
+    "ast_hash": "9fd5e06abdd8337267fdba43c727b5ae",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\admin\\allergy\\index.blade.php": {
+    "mtime": 1780695326.0,
+    "ast_hash": "b5a1eb9fb22ef7bafadb8b970d464698",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\admin\\deals\\edit.blade.php": {
+    "mtime": 1783374132.0,
+    "ast_hash": "603bb5a10796da949f2a365b9e9ffa45",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\admin\\deals\\index.blade.php": {
+    "mtime": 1783367498.0,
+    "ast_hash": "6bd626c623eb5b63e1aa0faa36133ac9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\admin\\delivery\\index.blade.php": {
+    "mtime": 1780695866.0,
+    "ast_hash": "b5eb9c761e7e89e9346f0dfa2fcdf785",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\admin\\kitchen\\index.blade.php": {
+    "mtime": 1780709702.0,
+    "ast_hash": "aedcb319dc8d4f35505aba469347828d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\admin\\kitchen\\_card.blade.php": {
+    "mtime": 1780705712.0,
+    "ast_hash": "effc5f04b35bbaad6d761bb59477ccd3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\admin\\menu\\edit.blade.php": {
+    "mtime": 1783364970.0,
+    "ast_hash": "b23e1afbb36b8c73a11800dafdcbe8d7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\admin\\menu\\index.blade.php": {
+    "mtime": 1781134066.0,
+    "ast_hash": "bedc9f0b4520b14eea53908d92dd8360",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\admin\\orders\\detail.blade.php": {
+    "mtime": 1780697938.0,
+    "ast_hash": "8d37a5ee2d8cde023cf282a8c45f2355",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\admin\\orders\\in-store.blade.php": {
+    "mtime": 1782397748.0,
+    "ast_hash": "5b390fd4e9ee625d6c9883f042ff14c9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\admin\\orders\\index.blade.php": {
+    "mtime": 1780703222.0,
+    "ast_hash": "94a743285bb5c346791d20ac1e5c2d84",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\admin\\promotions\\edit.blade.php": {
+    "mtime": 1781925824.0,
+    "ast_hash": "be68ec410fa147b950d0b84270a90204",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\admin\\promotions\\index.blade.php": {
+    "mtime": 1780544904.0,
+    "ast_hash": "f70c499fa5de4413987d0f615c299e7a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\admin\\settings\\index.blade.php": {
+    "mtime": 1781922722.0,
+    "ast_hash": "af8310d0265c30078011c221de3ef53d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\admin\\toppings\\index.blade.php": {
+    "mtime": 1783336666.0,
+    "ast_hash": "cff968fc99c46fbbdf3ccb7ea52c166d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\auth\\login.blade.php": {
+    "mtime": 1783948252.0,
+    "ast_hash": "0bb675cd909aae9841d4ee250add496b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\auth\\register.blade.php": {
+    "mtime": 1783948270.0,
+    "ast_hash": "253df99e2dfc50eba8c279c254c08765",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\cart\\index.blade.php": {
+    "mtime": 1780412458.0,
+    "ast_hash": "53538cc143c1864ee5266fd21c90b4f0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\checkout\\index.blade.php": {
+    "mtime": 1783338594.0,
+    "ast_hash": "1d12906ca6b7e2bfc3e1f637d1c9ac8f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\components\\cart-drawer.blade.php": {
+    "mtime": 1783365744.0,
+    "ast_hash": "d8922a9915651c5517a271de3be37242",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\components\\deal-drawer.blade.php": {
+    "mtime": 1783367646.0,
+    "ast_hash": "6cb2783e1105d63759c39a49e9e8f71e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\components\\footer.blade.php": {
+    "mtime": 1781925646.0,
+    "ast_hash": "85cd155732d178d34a46e30aae252f31",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\components\\header.blade.php": {
+    "mtime": 1781926658.0,
+    "ast_hash": "401a83a14919bbb241f3bbf0420fcba8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\components\\admin\\sidebar.blade.php": {
+    "mtime": 1783367468.0,
+    "ast_hash": "19404543405cd391d4b048d9c92c0315",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\components\\admin\\topbar.blade.php": {
+    "mtime": 1780068180.0,
+    "ast_hash": "34f859afa78bf5902f978fe985589659",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\emails\\contact.blade.php": {
+    "mtime": 1780701166.0,
+    "ast_hash": "90d346673afd9aa610e45b45a5318190",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\emails\\order-confirmation.blade.php": {
+    "mtime": 1780673190.0,
+    "ast_hash": "ff94c8b280c95d0529ee23b7852de749",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\emails\\order-status-update.blade.php": {
+    "mtime": 1780673262.0,
+    "ast_hash": "5a451a6064f8a019c3fa26dc5609df47",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\emails\\party-hall-inquiry.blade.php": {
+    "mtime": 1780689908.0,
+    "ast_hash": "01e130d6487129ed5fa8c2a91d8401e0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\errors\\403.blade.php": {
+    "mtime": 1780548904.0,
+    "ast_hash": "5a1fdc51feda77558e8dbc4970394275",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\errors\\404.blade.php": {
+    "mtime": 1780548898.0,
+    "ast_hash": "2e40808757420c94a4993a83ee238e98",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\errors\\500.blade.php": {
+    "mtime": 1780548900.0,
+    "ast_hash": "4c28edb72c76e564d008518f5cc150be",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\layouts\\admin.blade.php": {
+    "mtime": 1780504054.0,
+    "ast_hash": "67e713c5b1c37b9893089d6d5575430a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\layouts\\app.blade.php": {
+    "mtime": 1783368602.0,
+    "ast_hash": "6d53f6e6c70ea630ed3409bc54f649d7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\layouts\\guest.blade.php": {
+    "mtime": 1780336834.0,
+    "ast_hash": "293bde20ec59496668e16bdbd18a6b95",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\layouts\\kitchen.blade.php": {
+    "mtime": 1780705684.0,
+    "ast_hash": "c12d9a264be4e25377b3f81aade25a87",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\menu\\index.blade.php": {
+    "mtime": 1783368608.0,
+    "ast_hash": "c9e852b2ade014b02e5fe00df56ed14d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\menu\\show.blade.php": {
+    "mtime": 1783337102.0,
+    "ast_hash": "11d7a55bcc748c79873ef9871b76fdce",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\orders\\confirmation.blade.php": {
+    "mtime": 1780707262.0,
+    "ast_hash": "8fb0e866872411ec0293721f36cc1490",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\resources\\views\\orders\\tracking.blade.php": {
+    "mtime": 1780525502.0,
+    "ast_hash": "c7b707b5ae6a9abffd737d659948e61b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\routes\\channels.php": {
+    "mtime": 1780525356.0,
+    "ast_hash": "879e7bcdd17130d7828a083694c10819",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\routes\\console.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "3c6ce2e6d16444282b24a9aa63885563",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\routes\\web.php": {
+    "mtime": 1783367460.0,
+    "ast_hash": "9e01e7b2328d27429872ca399cab883a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\TestCase.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "7e567dc27e68d5b57bae16af07f68907",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\AccountControllerTest.php": {
+    "mtime": 1782388732.0,
+    "ast_hash": "79658826a249a09c7d12d9b3ab6d4c5e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\AddressControllerTest.php": {
+    "mtime": 1782048146.0,
+    "ast_hash": "2a3d6d59ae8cff493f55be0cd49ac5fa",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\AllergyAdminTest.php": {
+    "mtime": 1782402620.0,
+    "ast_hash": "6f7c8f00d383f242a822de1357cb6fed",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\AuthTest.php": {
+    "mtime": 1782387318.0,
+    "ast_hash": "c8cdaafe50dfedcc22e919fc987ccdd3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\BroadcastingTest.php": {
+    "mtime": 1780525434.0,
+    "ast_hash": "e7ea661031f1d23f279403cbc4aa1b4a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\CartControllerTest.php": {
+    "mtime": 1782034452.0,
+    "ast_hash": "82f77a2b922f09c173005adf499d55a9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\CheckoutTest.php": {
+    "mtime": 1782391620.0,
+    "ast_hash": "eb4bd19f8d6cd47c950bddcf25814986",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\ContactFormTest.php": {
+    "mtime": 1782387526.0,
+    "ast_hash": "365e7477ab5b5117ef20cb1471770aec",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\CustomerPagesTest.php": {
+    "mtime": 1781880454.0,
+    "ast_hash": "c428e3f02ea89fb5b48eb95a6aae062d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\DealsPageTest.php": {
+    "mtime": 1781925874.0,
+    "ast_hash": "a36b48ea521e8801398582f2ecf1eaf8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\DeliveryFeeTest.php": {
+    "mtime": 1782383266.0,
+    "ast_hash": "42429aa60e4a1c9e78859134976e5b11",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\DeliveryZoneModelTest.php": {
+    "mtime": 1782428158.0,
+    "ast_hash": "b468f58bd16505c10f4613a796de48ae",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\DeliveryZoneTest.php": {
+    "mtime": 1780544916.0,
+    "ast_hash": "e695e596eacd63a65b99511563b7b0b5",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\ExampleTest.php": {
+    "mtime": 1780545258.0,
+    "ast_hash": "fa9172e5faa489bb266042f9d3ea223f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\ImageUploadTest.php": {
+    "mtime": 1783326180.0,
+    "ast_hash": "5215c08ce468dc9a30e372ef5da741ad",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\MailableContentTest.php": {
+    "mtime": 1782389212.0,
+    "ast_hash": "8029aa380ec0307a4353424539cc7f3c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\MenuShowTest.php": {
+    "mtime": 1782389900.0,
+    "ast_hash": "35e4e89f14db53e02853600c44b943b4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\MenuTest.php": {
+    "mtime": 1782390734.0,
+    "ast_hash": "83ff1731c9abfae215e6f91f4bde6992",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\OrderControllerTest.php": {
+    "mtime": 1782057168.0,
+    "ast_hash": "b4c5385e27e6c44d73dfd9126f1c7a87",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\OrderEmailTest.php": {
+    "mtime": 1781934208.0,
+    "ast_hash": "25b2f50f8bc5007b18a67cba3ab83748",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\OrderModelTest.php": {
+    "mtime": 1782390766.0,
+    "ast_hash": "74df8c5fca717a9464a92601485fba12",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\OurMenuAndHomeControllerTest.php": {
+    "mtime": 1782388256.0,
+    "ast_hash": "f94959b58c8882a4877863bfb2c9ce7d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\PartyHallTest.php": {
+    "mtime": 1781923024.0,
+    "ast_hash": "f8782f300fd72b882dc917e3e42bb774",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\PasswordResetTest.php": {
+    "mtime": 1782387282.0,
+    "ast_hash": "ba4ebc76ce7f0dd2ee94be76f7bf03c3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\PromoControllerTest.php": {
+    "mtime": 1782058992.0,
+    "ast_hash": "2af369c44fb58bdaa99b05d1c727be3f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\PromotionTest.php": {
+    "mtime": 1782390804.0,
+    "ast_hash": "fe01e300315d63f716f80f1fe27a2bc1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\RateLimitTest.php": {
+    "mtime": 1780549092.0,
+    "ast_hash": "dfa68089ebd7fdc830ab127151f0acba",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\RegistrationTest.php": {
+    "mtime": 1782387308.0,
+    "ast_hash": "4c406692c4f3de5010a7480804e5a295",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\RouteSmokeTest.php": {
+    "mtime": 1781914614.0,
+    "ast_hash": "bf1c861393c7ac5338f466d442a5dc39",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\SettingsTest.php": {
+    "mtime": 1782389930.0,
+    "ast_hash": "db1b138b5569974e5db72dbba6c02441",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\SocialAuthTest.php": {
+    "mtime": 1782383204.0,
+    "ast_hash": "91c77e9300d0dddeebb4717504fc0ac6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\StripeWebhookTest.php": {
+    "mtime": 1782388670.0,
+    "ast_hash": "48928adde1d3f2cbfe095c65f0d8929d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\Account\\AddressTest.php": {
+    "mtime": 1782391580.0,
+    "ast_hash": "8d0f8071b8cdfb05f50b78154fa2713a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\Account\\PasswordChangeTest.php": {
+    "mtime": 1780545970.0,
+    "ast_hash": "7473f665af8c2c3aecca6a61baccc70c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\Account\\ReorderTest.php": {
+    "mtime": 1780673346.0,
+    "ast_hash": "9807447dff9e8593e9221805e17956b0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\Admin\\DashboardTest.php": {
+    "mtime": 1782380006.0,
+    "ast_hash": "a4922fecfc1c37d3cd7c59ec81109cfd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\Admin\\DeliveryControllerTest.php": {
+    "mtime": 1782428302.0,
+    "ast_hash": "a7781cfe35056037a767f438cddde9ba",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\Admin\\InStoreOrderTest.php": {
+    "mtime": 1782389364.0,
+    "ast_hash": "dfb046af4e4237fb057e73c80366111a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\Admin\\KitchenIndexTest.php": {
+    "mtime": 1782367622.0,
+    "ast_hash": "9a79516230bf958d84227c2f54abd4a0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\Admin\\KitchenPollTest.php": {
+    "mtime": 1781936670.0,
+    "ast_hash": "88c9478168ef6872945bf15f65b48c01",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\Admin\\MenuCacheTest.php": {
+    "mtime": 1782379972.0,
+    "ast_hash": "28db28a28ae06b5692b8ae70806fd2bd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\Admin\\MenuItemTest.php": {
+    "mtime": 1783331458.0,
+    "ast_hash": "f09b9f8e85eb2a1d814d4c10249ad573",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\Admin\\OrderIndexTest.php": {
+    "mtime": 1782048910.0,
+    "ast_hash": "65773a10bdb834447a79887e5d707ab6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\Admin\\OrderShowTest.php": {
+    "mtime": 1782324108.0,
+    "ast_hash": "a56489773369322c2ff11fc4153d507a",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\Admin\\OrderStatusTest.php": {
+    "mtime": 1782404624.0,
+    "ast_hash": "04d7f7668a82913ee5fe264aa61beebe",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\Admin\\PromotionControllerTest.php": {
+    "mtime": 1782404160.0,
+    "ast_hash": "7570496832488a91b9c99b1901a31a4c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\Admin\\SettingsControllerTest.php": {
+    "mtime": 1782059174.0,
+    "ast_hash": "cf91403f77ae1f317aebada97213f7ab",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Feature\\Admin\\ToppingTest.php": {
+    "mtime": 1783337180.0,
+    "ast_hash": "ec7b7e60e99d873d19ac78ed809632c3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Unit\\AllergenModelTest.php": {
+    "mtime": 1782056558.0,
+    "ast_hash": "3e4eebfdd323d4612660ee0cb43cee37",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Unit\\BaseIngredientModelTest.php": {
+    "mtime": 1782402174.0,
+    "ast_hash": "e5641b9c56f9b03a00923b99e57f0ab9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Unit\\CategoryModelTest.php": {
+    "mtime": 1782404084.0,
+    "ast_hash": "7d9629778e92ac2c91aed43d77b1f724",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Unit\\ExampleTest.php": {
+    "mtime": 1773478440.0,
+    "ast_hash": "3f679e9508c834f0ad95943455fcd836",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Unit\\MenuItemModelTest.php": {
+    "mtime": 1782404606.0,
+    "ast_hash": "fea73bc7fea90750cc35e8c753bc1ee6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Unit\\OrderItemModelTest.php": {
+    "mtime": 1782428100.0,
+    "ast_hash": "1af035135e9afd9b2b4cad56d4aaff6b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Unit\\OrderModelTest.php": {
+    "mtime": 1784582078.0,
+    "ast_hash": "8bec05a39bf4308e1281defe4d2f5ff7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Unit\\PromotionModelTest.php": {
+    "mtime": 1782383174.0,
+    "ast_hash": "33b52b7d0d7fafb8de6865863216b6f5",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Unit\\SettingModelTest.php": {
+    "mtime": 1782378360.0,
+    "ast_hash": "962578f20df5329617818fe7a0af8bba",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Unit\\ToppingModelTest.php": {
+    "mtime": 1782403322.0,
+    "ast_hash": "45c563174b7b71caf8bc29625f262774",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Unit\\UserAddressModelTest.php": {
+    "mtime": 1782047772.0,
+    "ast_hash": "79abff19d8eb40f880fb256a0bde2503",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\tests\\Unit\\UserModelTest.php": {
+    "mtime": 1782404616.0,
+    "ast_hash": "9c0ed868e8b50e5882c5603c6b36a634",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\AGENTS.md": {
+    "mtime": 1780855158.0,
+    "ast_hash": "388459d0fc5bdc52ad5048903929b6ad",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\CLAUDE.md": {
+    "mtime": 1788861617.1347027,
+    "ast_hash": "afe1dacd079b120bc4cea5e802372490",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\DEPLOY.md": {
+    "mtime": 1780548934.0,
+    "ast_hash": "f77c67058f05f0353bacb8e7021a1087",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\DESIGN.md": {
+    "mtime": 1784546964.0,
+    "ast_hash": "45472c5b7bef5d54a1efa5f454c2e042",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\PRODUCT.md": {
+    "mtime": 1784546558.0,
+    "ast_hash": "00faa3e1de1f35881e7c55b88fa295b8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\README.md": {
+    "mtime": 1773478440.0,
+    "ast_hash": "c9fd29cc7c9057820aebcdcd6bbddca3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.impeccable\\critique\\2026-07-20T11-49-33Z__resources-views-menu-index-blade-php.md": {
+    "mtime": 1784548172.0,
+    "ast_hash": "a7efb7d0fb6d775623dd024fb9d24cd1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.superpowers\\brainstorm\\1893-1780409492\\content\\customiser-cart.html": {
+    "mtime": 1780409608.0,
+    "ast_hash": "0573269de79b0495755f473212376a0e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.superpowers\\brainstorm\\1893-1780409492\\content\\kitchen-notes.html": {
+    "mtime": 1780410414.0,
+    "ast_hash": "68294a5156bfb4543e6928e069586196",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.superpowers\\brainstorm\\1893-1780409492\\content\\waiting-1.html": {
+    "mtime": 1780410154.0,
+    "ast_hash": "44b3ae034f564b8ed722d684a274336d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.superpowers\\brainstorm\\1893-1780409492\\content\\waiting-2.html": {
+    "mtime": 1780410496.0,
+    "ast_hash": "3a41bf2357ed459bafc78ef66d82d010",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.superpowers\\sdd\\plan-session2.md": {
+    "mtime": 1782051086.0,
+    "ast_hash": "9392fdc3a992e8cf710ab941885fbd75",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.superpowers\\sdd\\progress.md": {
+    "mtime": 1782052338.0,
+    "ast_hash": "2bdc3534b8868f0500b575f8264cbb2f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.superpowers\\sdd\\sprint2-plan.md": {
+    "mtime": 1782033730.0,
+    "ast_hash": "dc6877aa33deb4d7450a380f8cd9c8ed",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.superpowers\\sdd\\sprint3-plan.md": {
+    "mtime": 1782045642.0,
+    "ast_hash": "a660970bc639e7309c7412fe64aa5181",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.superpowers\\sdd\\sprint3-task1-report.md": {
+    "mtime": 1782045866.0,
+    "ast_hash": "ef72a1170d278d47f3068c5152bc1871",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.superpowers\\sdd\\sprint3-task2-report.md": {
+    "mtime": 1782046170.0,
+    "ast_hash": "4beb2142519f7d1ea44d69923b2b73d3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.superpowers\\sdd\\sprint3-task3-report.md": {
+    "mtime": 1782046530.0,
+    "ast_hash": "9778135c446a0d8fb76e54bfc2e9f389",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.superpowers\\sdd\\task-1-brief.md": {
+    "mtime": 1782403290.0,
+    "ast_hash": "547bec531576612c7e88bbe014fca080",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.superpowers\\sdd\\task-2-brief.md": {
+    "mtime": 1782403452.0,
+    "ast_hash": "5f6be6496178021b878b025124555d26",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.superpowers\\sdd\\task1-report.md": {
+    "mtime": 1782033982.0,
+    "ast_hash": "75ee0ddb3ca8b1e920890d7d12c8d3d9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.superpowers\\sdd\\task10-report.md": {
+    "mtime": 1782051484.0,
+    "ast_hash": "72a8c923a61a2c88471e6b9bc5110110",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.superpowers\\sdd\\task11-report.md": {
+    "mtime": 1782051694.0,
+    "ast_hash": "8ba3eb66f9182e8c975012ad161b8d89",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.superpowers\\sdd\\task12-report.md": {
+    "mtime": 1782051874.0,
+    "ast_hash": "a6744a39d29232f6aa94fa31725ee5bd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.superpowers\\sdd\\task2-report.md": {
+    "mtime": 1782034272.0,
+    "ast_hash": "317adb11c4b8d093168ba55f0f734691",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.superpowers\\sdd\\task3-report.md": {
+    "mtime": 1782034516.0,
+    "ast_hash": "ee0ae5ae7c17b5a54a3f7684349758d1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\.superpowers\\sdd\\task9-report.md": {
+    "mtime": 1782051306.0,
+    "ast_hash": "27ff46dfcff26a6893da636a27424996",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\docs\\superpowers\\plans\\2026-06-02-plan-cart-customisation.md": {
+    "mtime": 1780411634.0,
+    "ast_hash": "a6d4c9624be51abe77f4ac707fb8f2c4",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\docs\\superpowers\\plans\\2026-06-02-plan3-admin-frontend.md": {
+    "mtime": 1780415078.0,
+    "ast_hash": "df772c42891c819b29e8114a2d3e6aad",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\docs\\superpowers\\plans\\2026-06-03-plan4-database-menu-backend.md": {
+    "mtime": 1780505550.0,
+    "ast_hash": "fdb9eed40f652b36c8e1e78fe7acc80c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\docs\\superpowers\\plans\\2026-06-03-plan5-ordering-checkout.md": {
+    "mtime": 1780507898.0,
+    "ast_hash": "c40ca400689084e15133dcebac34bfc6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\docs\\superpowers\\plans\\2026-06-03-plan6-realtime-pusher.md": {
+    "mtime": 1780525020.0,
+    "ast_hash": "6803ddc6191b02780e2f51194731d535",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\docs\\superpowers\\plans\\2026-06-03-plan7-promotions-delivery-settings.md": {
+    "mtime": 1780526356.0,
+    "ast_hash": "9eca1825ee40d22f48c2f8c782d0dc08",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\docs\\superpowers\\plans\\2026-06-04-plan9-deploy-polish.md": {
+    "mtime": 1780546948.0,
+    "ast_hash": "34b7b32f51ddf5b1299e771d4ccf9601",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\docs\\superpowers\\plans\\2026-07-20-kitchen-accept-reject-payment-hold.md": {
+    "mtime": 1784552508.0,
+    "ast_hash": "dc4d0e53d2559d429a53c030106be6f8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\docs\\superpowers\\specs\\2026-06-02-cart-customisation-design.md": {
+    "mtime": 1780411426.0,
+    "ast_hash": "e4000e3034c980d2bcb0ef636258283f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\docs\\superpowers\\specs\\2026-07-20-kitchen-accept-reject-payment-hold-design.md": {
+    "mtime": 1784551664.0,
+    "ast_hash": "53b7576b067f4da593c5be5b68c15eb0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\public\\robots.txt": {
+    "mtime": 1773478440.0,
+    "ast_hash": "b6216d61c03e6ce0c9aea6ca7808f7ca",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\public\\images\\logo.jpg": {
+    "mtime": 1779464054.0,
+    "ast_hash": "27515d35bcc0e8471e106c2796f587a9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\public\\images\\site\\about-chef-murat.jpg": {
+    "mtime": 1783945298.0,
+    "ast_hash": "af6dd3054dcbc1d708700a981b6628d7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\public\\images\\site\\about-dough-stretch.jpg": {
+    "mtime": 1783946822.0,
+    "ast_hash": "3553c78d34724a27d6402bfc415a65f7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\public\\images\\site\\about-kitchen-cooking.jpg": {
+    "mtime": 1783946164.0,
+    "ast_hash": "39220abc0034c33849d7d782c18f55ac",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\public\\images\\site\\about-mozzarella.jpg": {
+    "mtime": 1781134098.0,
+    "ast_hash": "ab3179ab0ae6c17ad602a0192145575f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\public\\images\\site\\about-restaurant-interior.jpg": {
+    "mtime": 1781134098.0,
+    "ast_hash": "bd6348642cfd52ea94c952ed555a8291",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\public\\images\\site\\about-sourdough-crust.jpg": {
+    "mtime": 1781134098.0,
+    "ast_hash": "40a8389966ede0115ca5ae9a781a0a70",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\public\\images\\site\\about-stone-oven.jpg": {
+    "mtime": 1781134098.0,
+    "ast_hash": "2915735a399551ab14bbc2ca47e6ace1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\public\\images\\site\\home-hero-pizza.jpg": {
+    "mtime": 1781134098.0,
+    "ast_hash": "4f5f204c651771916531f580edbece8e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\public\\images\\site\\home-restaurant-interior.jpg": {
+    "mtime": 1781134098.0,
+    "ast_hash": "e97f669399eb33ad60945bae7784bdb3",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\public\\images\\site\\menu-meat-lover-hero.jpg": {
+    "mtime": 1781134098.0,
+    "ast_hash": "db2c13da96c9cea3814f5741e25131b2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\public\\images\\site\\party-hall-event.jpg": {
+    "mtime": 1781134098.0,
+    "ast_hash": "140b6b4025b25544a88521af8d653334",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\public\\images\\site\\shop-building.jpg": {
+    "mtime": 1783943096.0,
+    "ast_hash": "a0c96ea66e5351d068c36b5a1b29e838",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\public\\sounds\\KitchenAlert.mp3": {
+    "mtime": 1780559776.0,
+    "ast_hash": "9b0d2135226fc39bf33b38f5a7cd7b3c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\Dell Latitude\\OneDrive - University of Wales Trinity Saint David\\Desktop\\website projrct for pizza\\AcesAndEightsPizza\\Current_Development\\webapp\\public\\videos\\hero-pizza.mp4": {
+    "mtime": 1781928276.0,
     "ast_hash": "b492208cc97521c4cfc1eca80a8742c9",
     "semantic_hash": ""
   }
