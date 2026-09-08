@@ -2,7 +2,7 @@
 
 ## graphify Knowledge Graph
 
-A knowledge graph of this codebase lives at `C:\AcesAndEightsPizza\webapp\graphify-out\graph.json`.
+A knowledge graph of this codebase lives at `graphify-out\graph.json` (relative to the `webapp\` project root).
 
 **Before answering questions about architecture, dependencies, or "where is X" — query the graph first.**
 
@@ -19,7 +19,7 @@ Key god nodes (highest connectivity): `Controller`, `TestCase`, `Allergen`, `Pro
 
 To rebuild after significant changes: `/graphify . --update`
 
-Graph output directory: `C:\AcesAndEightsPizza\webapp\graphify-out\`
+Graph output directory: `graphify-out\` (relative to the `webapp\` project root)
 - `graph.json` — raw graph (RAG queries)
 - `graph.html` — interactive browser visualization
 - `GRAPH_REPORT.md` — audit report with god nodes and community map
